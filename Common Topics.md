@@ -96,12 +96,13 @@ Of course, all the silver topics carry over.
       * CPH (26, String Algorithms)
 
 ## Training Camp
-  * Persistent Segment Tree
+  * Persistent Segment Tree (I should actually learn this)
     * Tutorial
       * [Anudeep2011](https://blog.anudeep2011.com/persistent-segment-trees-explained-with-spoj-problems/)
       * [oml1111](https://drive.google.com/file/d/0BwGLW04WRv0ITEZjRWlMSFc2bk0/view)
-  * Splay Tree
+  * Splay Tree (I should actually learn this too)
     * [SEQ2](http://www.spoj.com/problems/SEQ2/)
+    * [Tree Rotations 2](http://main.edu.pl/en/archive/oi/18/rod)
   * Maximum Flow
     * Dinic
     * Edmonds-Karp

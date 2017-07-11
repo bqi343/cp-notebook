@@ -111,10 +111,12 @@ Of course, all the silver topics carry over.
   * Number Theory
     * CPH (24, Number Theory)
 
-## IOI
+## Misc OI
   * [PEG](http://wcipeg.com)
   * [Yandex](https://contest.yandex.ru/ioi/Info/)
   * [JOI](http://cms.ioi-jp.org/)
+  * [MAIN](http://main.edu.pl/en)
+  * [TLX](https://competition.ia-toki.org/contests)
   
 ## Other
   * [Heavy-Light Decomposition](https://blog.anudeep2011.com/heavy-light-decomposition/)

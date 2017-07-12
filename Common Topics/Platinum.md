@@ -1,6 +1,6 @@
 # Platinum
 
-Please refer to the [competitive programming handbook (CPH)](https://cses.fi/book.pdf). Also see the categorization of past USACO problems [here](https://github.com/bqi343/USACO/blob/master/USACO%20Contests.md).
+Please refer to the [competitive programming handbook (CPH)](https://cses.fi/book.pdf). Also see the categorization of past USACO problems.
 
 Of course, all the gold topics carry over. 
 
@@ -22,6 +22,7 @@ Of course, all the gold topics carry over.
       * CPH (23, Matrices)
   * Trees
     * Least Common Ancestor
+    * Heavy-Light Decomposition
   * Geometry
     * Convex Hull
       * Andrew's Monotone Chain
@@ -33,3 +34,4 @@ Of course, all the gold topics carry over.
       * Tries
     * Tutorial
       * CPH (26, String Algorithms)
+  * Other stuff I'm probably forgetting

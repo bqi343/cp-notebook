@@ -7,10 +7,10 @@ typedef long long ll;
 const int SZ = 1<<20;
 const ll INF = 1e18;
 
-struct Segtree { 
+struct LazySegTree { 
 	ll sum[2*SZ], lazy[2*SZ]; 
 	
-	Segtree() {
+	LazySegTree() {
 		memset (sum,0,sizeof sum);
 		memset (lazy,0,sizeof lazy);
 	}
@@ -50,7 +50,7 @@ struct Segtree {
 };
  
 int main() {
-	Segtree seg;
+	LazySegTree seg;
 	seg.upd(0,5,2);
 	seg.upd(5,7,3);
 	cout << seg.qsum(4,6) << "\n";

@@ -20,8 +20,6 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
     * HourRank: 3-4 problems, 1 hr
     * 101 Hack: 5 problems, 2 hrs
 
-**Note: This year, doing contests and upsolving the problems which I failed to do in-contest was the entire extent of my preparation, and it was fairly effective!** Of course, it has its drawbacks.
-
 ## Misc Contest Tools
   * [CF Visualizer](http://cfviz.netlify.com/compare.html)
   * [Code Drills](http://code-drills.com/)

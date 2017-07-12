@@ -14,16 +14,21 @@
   * Number Theory
     * CPH (24, Number Theory)
 
+## Collections
+  * [Algorithms Gym](http://codeforces.com/blog/entry/15729)
+  * [E-maxx](https://e-maxx-eng.appspot.com/)
+  * [Topcoder Tutorials](http://www.topcoder.com/community/data-science/data-science-tutorials/)
+  
 ## Misc OI
   * [PEG](http://wcipeg.com)
   * [Yandex](https://contest.yandex.ru/ioi/Info/)
   * [JOI](http://cms.ioi-jp.org/)
   * [MAIN](http://main.edu.pl/en)
   * [TLX](https://competition.ia-toki.org/contests)
-  
+
 ## Other
-  * [Heavy-Light Decomposition](https://blog.anudeep2011.com/heavy-light-decomposition/)
   * [Z Algorithm](http://codeforces.com/blog/entry/3107)
-  * [Algorithms Gym](http://codeforces.com/blog/entry/15729)
-  * [E-maxx](https://e-maxx-eng.appspot.com/)
-  * [Topcoder Tutorials](http://www.topcoder.com/community/data-science/data-science-tutorials/)
+  * FFT
+    * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)
+    * [CF Tutorial Pt 2](http://codeforces.com/blog/entry/48798)
+    * [CSAcademy](https://csacademy.com/blog/fast-fourier-transform-and-variations-of-it/)

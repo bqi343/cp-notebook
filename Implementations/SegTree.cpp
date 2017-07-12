@@ -17,6 +17,10 @@ struct SegTree {
   		for (seg[p += SZ] = value; p > 1; p >>= 1) seg[p>>1] = seg[p] + seg[p^1];
 	}
 
+	void build() {
+		for (int i = SZ-1; i > 0; --i) seg[i] = seg[2*i]+seg[2*i+1];	
+	}
+	
 	int qsum(int l, int r) {  // sum on interval [l, r)
 	  	int res = 0;
 	  	for (l += SZ, r += SZ; l < r; l >>= 1, r >>= 1) {

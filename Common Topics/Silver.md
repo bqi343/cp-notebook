@@ -1,6 +1,6 @@
 # Silver
 
-Please refer to the [competitive programming handbook (CPH)](https://cses.fi/book.pdf). Also see the categorization of past USACO problems [here](https://github.com/bqi343/USACO/blob/master/USACO%20Contests.md).
+Please refer to the [competitive programming handbook (CPH)](https://cses.fi/book.pdf). Also see the categorization of past USACO problems.
 
   * Binary Search (4 out of past 24 silver problems)
     * Tutorial

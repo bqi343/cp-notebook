@@ -4,21 +4,21 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
 
 ## Silver
 
-  * Binary Search + Data Structures (5 out of past 24 silver problems)
-    * Types
-      * (Multi) Set
-      * (Unordered) Map
-      * Vector
-      * Stack
-      * Queue
-      * Bitset (32x faster than bool array in certain cases)
+  * Binary Search (4 out of past 24 silver problems)
     * Tutorial
       * CPH (3, Sorting)
-      * CPH (4, Data Structures)
       * [Topcoder: Binary Search](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-search/)
     * Problems
       * [Technocup B](http://codeforces.com/problemset/problem/780/B)
       * [CF 377 D](http://codeforces.com/problemset/problem/732/D)
+  * Data Structures
+    * Types
+      * (Multi) Set
+      * (Unordered) Map
+      * (Priority) Queue
+      * Vector
+    * Tutorial
+      * CPH (4, Data Structures)
   * Brute Force (3)
     * Tutorial
       * CPH (5, Complete Search)
@@ -33,15 +33,12 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
   * Cumulative Sum (4)
     * Tutorial
       * CPH (9.1, Static Array Queries) 
-  * Graphs + Searching (6)
+  * Graphs I (6)
     * Tutorial
+      * [Topcoder Graphs Pt 1](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-1/)
       * [Topcoder Graphs Pt 2](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-2/)
-      * [Topcoder Graphs Pt 3](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-3/#floydWarshall)
-      * [Shortest Path](https://www.cs.cornell.edu/~wdtseng/icpc/notes/graph_part2.pdf)
       * CPH (11, Basics of Graphs)
       * CPH (12, Graph Traversals)
-      * CPH (13, Shortest paths)
-      * Also know [IDDFS](https://en.wikipedia.org/wiki/Iterative_deepening_depth-first_search).
       
 ## Gold
 
@@ -56,14 +53,19 @@ Of course, all the silver topics carry over.
       * CPH (9, Range Queries)
       * [Topcoder BIT](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/)
       * [Ordered Set](http://codeforces.com/blog/entry/11080) (similar use to BIT)
-  * Spanning Trees
-    * Tutorials
+  * Graphs II 
+    * Shortest Path (especially Dijkstra)
+      * [Topcoder Graphs Pt 3](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-3/)
+      * [Shortest Path](https://www.cs.cornell.edu/~wdtseng/icpc/notes/graph_part2.pdf)
+      * CPH (13, Shortest Paths)
+    * Minimal Spanning Tree
       * [Topcoder Union Find](https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/)
-      * CPH (15, Spanning trees)
-    * Problems
-      * [VK Cup R1 A](http://codeforces.com/problemset/problem/771/A)
-      * [8VC Elimination C](http://codeforces.com/problemset/problem/755/C)
-      * [CF 383 Div 1 B](http://codeforces.com/problemset/problem/741/B)
+      * CPH (15, Spanning Trees)
+      * Problems
+        * [VK Cup R1 A](http://codeforces.com/problemset/problem/771/A)
+        * [8VC Elimination C](http://codeforces.com/problemset/problem/755/C)
+        * [CF 383 Div 1 B](http://codeforces.com/problemset/problem/741/B)
+    * [IDDFS](https://en.wikipedia.org/wiki/Iterative_deepening_depth-first_search)
 
 ## Platinum
   * Segment Tree (8 out of past 24 platinum problems)

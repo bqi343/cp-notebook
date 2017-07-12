@@ -1,4 +1,5 @@
 # Silver
+
 Please refer to the [competitive programming handbook (CPH)](https://cses.fi/book.pdf). Also see the categorization of past USACO problems [here](https://github.com/bqi343/USACO/blob/master/USACO%20Contests.md).
 
   * Binary Search (4 out of past 24 silver problems)
@@ -31,6 +32,7 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
     * Tutorial
       * CPH (9.1, Static Array Queries) 
   * Graphs I (6)
+    * BFS / DFS
     * Tutorial
       * [Topcoder Graphs Pt 1](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-1/)
       * [Topcoder Graphs Pt 2](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-2/)

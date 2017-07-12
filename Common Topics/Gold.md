@@ -12,15 +12,17 @@ Of course, all the silver topics carry over.
     * Tutorials
       * CPH (9, Range Queries)
       * [Topcoder BIT](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/)
+      * [CSAcademy](https://csacademy.com/lesson/fenwick_trees)
       * [Ordered Set](http://codeforces.com/blog/entry/11080) (similar use to BIT)
   * Graphs II (7)
     * Shortest Path (especially Dijkstra)
       * [Topcoder Graphs Pt 3](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-3/)
       * [Shortest Path](https://www.cs.cornell.edu/~wdtseng/icpc/notes/graph_part2.pdf)
       * CPH (13, Shortest Paths)
-    * Minimal Spanning Tree
-      * [Topcoder Union Find](https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/)
+    * Minimal Spanning Tree + Disjoint Set Union
       * CPH (15, Spanning Trees)
+      * [Topcoder Union Find](https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/)
+      * [CSAcademy](https://csacademy.com/lesson/disjoint_data_sets)
       * Problems
         * [VK Cup R1 A](http://codeforces.com/problemset/problem/771/A)
         * [8VC Elimination C](http://codeforces.com/problemset/problem/755/C)

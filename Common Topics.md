@@ -48,12 +48,12 @@ Of course, all the silver topics carry over.
     * Tutorials
       * [Topcoder DP](https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/)
       * CPH (7, Dynamic Programming)
-  * BIT
+  * BIT (2)
     * Tutorials
       * CPH (9, Range Queries)
       * [Topcoder BIT](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/)
       * [Ordered Set](http://codeforces.com/blog/entry/11080) (similar use to BIT)
-  * Graphs II 
+  * Graphs II (7)
     * Shortest Path (especially Dijkstra)
       * [Topcoder Graphs Pt 3](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-3/)
       * [Shortest Path](https://www.cs.cornell.edu/~wdtseng/icpc/notes/graph_part2.pdf)
@@ -68,6 +68,9 @@ Of course, all the silver topics carry over.
     * [IDDFS](https://en.wikipedia.org/wiki/Iterative_deepening_depth-first_search)
 
 ## Platinum
+
+Of course, all the gold topics carry over.
+
   * Segment Tree (8 out of past 24 platinum problems)
     * Tutorial
       * CPH (9, Range Queries)
@@ -87,9 +90,10 @@ Of course, all the silver topics carry over.
   * Trees
     * Least Common Ancestor
   * Geometry
-    * Variants of Convex Hull
+    * Convex Hull
       * Andrew's Monotone Chain
       * Graham Scan
+    * Line Sweep
   * Strings
     * Topics
       * Hashing

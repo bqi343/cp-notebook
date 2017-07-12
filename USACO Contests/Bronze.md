@@ -1,5 +1,7 @@
 # Bronze
 
+This document is useless.
+
 | Contest         | # | Topic            | Result                 |
 | ------------- | ----- |---------------| ---------------------- |
 | 2015 Dec | 1 | | Done |

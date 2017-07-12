@@ -9,6 +9,10 @@ const int SZ = 1<<17;
 struct SegTree {
 	int seg[2*SZ];
 	
+	SegTree() {
+		memset(seg,0,sizeof seg);	
+	}
+	
 	void upd(int p, int value) {  // set value at position p
   		for (seg[p += SZ] = value; p > 1; p >>= 1) seg[p>>1] = seg[p] + seg[p^1];
 	}

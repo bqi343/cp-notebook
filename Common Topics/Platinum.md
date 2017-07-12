@@ -14,6 +14,9 @@ Of course, all the gold topics carry over.
     * Problems
       * [Educational CF 17 E](http://codeforces.com/problemset/problem/762/E)
       * [8VC Elimination D](http://codeforces.com/problemset/problem/755/D)
+  * Bitset DP
+    * CPH (10, Bit Manipulation)
+    * Showed up on old gold, but not on recent platinum contests.
   * Matrix
     * Topics
       * Multiplication

@@ -26,6 +26,8 @@ Of course, all the gold topics carry over.
   * Trees
     * Least Common Ancestor
     * Heavy-Light Decomposition
+      * [Anudeep2011](https://blog.anudeep2011.com/heavy-light-decomposition/)
+      * [AI-Cash](http://codeforces.com/blog/entry/22072)
   * Geometry
     * Convex Hull
       * Andrew's Monotone Chain

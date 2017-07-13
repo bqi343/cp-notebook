@@ -10,6 +10,7 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
     * Problems
       * [Technocup B](http://codeforces.com/problemset/problem/780/B)
       * [CF 377 D](http://codeforces.com/problemset/problem/732/D)
+      * [CF 424 D](http://codeforces.com/contest/831/problem/D)
   * Data Structures
     * Types
       * (Multi) Set
@@ -18,6 +19,8 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * Vector
     * Tutorial
       * CPH (4, Data Structures)
+    * Problems
+      * [CF 424 C](http://codeforces.com/contest/831/problem/C)
   * Brute Force (3)
     * Tutorial
       * CPH (5, Complete Search)

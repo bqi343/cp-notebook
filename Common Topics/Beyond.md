@@ -6,8 +6,8 @@
     * Problems
       * [COT](http://www.spoj.com/problems/COT/)
   * Splay Tree
-    * Link-Cut Tree
     * [Implementation](http://codeforces.com/blog/entry/18462)
+    * [Link-Cut Tree](https://en.wikipedia.org/wiki/Link/cut_tree)
     * Problems
       * [SEQ2](http://www.spoj.com/problems/SEQ2/)
       * [Tree Rotations 2](http://main.edu.pl/en/archive/oi/18/rod)

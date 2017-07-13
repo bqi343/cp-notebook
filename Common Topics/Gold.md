@@ -14,6 +14,9 @@ Of course, all the silver topics carry over.
       * [Topcoder BIT](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/)
       * [CSAcademy](https://csacademy.com/lesson/fenwick_trees)
       * [Ordered Set](http://codeforces.com/blog/entry/11080) (similar use to BIT)
+    * Problems
+      * [CF 423 Div 2 E](http://codeforces.com/contest/827/problem/C)
+      * [CF 424 Div 2 E](http://codeforces.com/contest/831/problem/E)
   * Graphs II (7)
     * Shortest Path (especially Dijkstra)
       * [Topcoder Graphs Pt 3](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-3/)

@@ -8,12 +8,11 @@ Just do problems; there are plenty of websites.
 
 ## C++11
 
-I recommend that you use C++11 over Java due to
-  * Speed
-  * Length / Simplicity
-  * #define + typedef
-  * auto
-  * Good Standard Template Library
+I recommend that you use C++11 over Java due to various reasons, such as
+  * better speed (especially important in codeforces)
+  * typically shorter / simpler
+  * miscellaneous shortcuts such as #define, typedef, auto
+  * good STL
  
 ## General Resources
   * [USACO Resources Page](http://www.usaco.org/index.php?page=resources)

@@ -39,4 +39,4 @@ Of course, all the gold topics carry over.
       * Tries
     * Tutorial
       * CPH (26, String Algorithms)
-  * Other stuff I'm probably forgetting
+  * Divide And Conquer

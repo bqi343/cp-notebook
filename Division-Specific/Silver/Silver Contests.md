@@ -1,7 +1,7 @@
 #  Silver
 
 | Contest         | #                          | Name | Topic            | Result                 |
-| ------------- | ------------------------------------- |---------------| ---------------------- |
+| ------------- | ------------------------------------- |---------------| ---------------------- | - |
 | 2015 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=570) | lightson | Graphs | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=571) | highcard | Binary Search | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=572) | bcount | Cumulative Sum | Done |
@@ -15,8 +15,8 @@
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=643) | diamond | Two Pointers | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=644) | closing | Graphs | Done |
 
-| Contest         | #                          | Topic            | Result                 |
-| ------------- | ------------------------------------- |---------------| ---------------------- |
+| Contest         | #                          | Name | Topic            | Result                 |
+| ------------- | ------------------------------------- |---------------| ---------------------- | - |
 | 2016 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=666) | haybales | Binary Search | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=667) | citystate | Map | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=668) | moocast | Graphs | Done |

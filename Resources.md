@@ -21,3 +21,17 @@ I recommend that you use C++11 over Java due to various reasons, such as
   * [Joshua Pan's Advice](https://www.quora.com/What-is-a-good-schedule-to-follow-for-becoming-better-at-competitive-programming-for-beginners)
   * [TJSCT](https://activities.tjhsst.edu/sct/lectures.php)
   * ["Awesome List"](http://codeforces.com/blog/entry/23054)
+
+
+## Algorithm Collections
+  * [Algorithms Gym](http://codeforces.com/blog/entry/15729)
+  * [E-maxx](https://e-maxx-eng.appspot.com/)
+  * [Topcoder Tutorials](http://www.topcoder.com/community/data-science/data-science-tutorials/)
+  * [KACTL](https://github.com/kth-competitive-programming/kactl)
+  
+## Misc OI
+  * [PEG](http://wcipeg.com)
+  * [Yandex](https://contest.yandex.ru/ioi/Info/)
+  * [JOI](http://cms.ioi-jp.org/)
+  * [MAIN](http://main.edu.pl/en)
+  * [TLX](https://competition.ia-toki.org/contests)

@@ -8,10 +8,10 @@
 | 2016 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=594) | angry | Binary Search | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=595) | div7 | Cumulative Sum | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=596) | gates | Graphs | Done |
-| 2016 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=618) | cbarn | Ad Hoc | Done |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=619) | balancing | Brute Force | Done |
+| 2016 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=618) | cbarn | | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=619) | balancing | | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=620) | pails | DP | Done |
-| 2016 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=642) | reduce | Brute Force | Done |
+| 2016 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=642) | reduce | | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=643) | diamond | Two Pointers | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=644) | closing | Graphs | Done |
 
@@ -22,10 +22,10 @@
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=668) | moocast | Graphs | Done |
 | 2017 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=690) | cowdance | Binary Search | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=691) | hps | Cumulative Sum | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=692) | cowcode | Recursion | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=692) | cowcode | | Done |
 | 2017 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=714) | helpcross | Two Pointers | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=715) | maxcross | Cumulative Sum | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=716) | countcross | Graphs | Done |
 | 2017 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=738) | pairup | Two Pointers | Done |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=739) | cownomics | Brute Force | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=739) | cownomics | | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=740) | where | Graphs | Done |

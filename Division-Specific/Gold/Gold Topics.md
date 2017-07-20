@@ -4,11 +4,11 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
 
 Of course, all the silver topics carry over.
 
-  * Dynamic Programming (DP) (8 out of past 24 gold problems)
+  * Dynamic Programming, aka DP (8 out of past 24 gold problems)
     * Tutorials
       * [Topcoder DP](https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/)
       * CPH (7, Dynamic Programming)
-  * BIT (2)
+  * Fenwick Tree, aka Binary Indexed Tree (2)
     * Tutorials
       * CPH (9, Range Queries)
       * [Topcoder BIT](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/)
@@ -22,7 +22,7 @@ Of course, all the silver topics carry over.
       * [Topcoder Graphs Pt 3](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-3/)
       * [Shortest Path](https://www.cs.cornell.edu/~wdtseng/icpc/notes/graph_part2.pdf)
       * CPH (13, Shortest Paths)
-    * Minimal Spanning Tree + Disjoint Set Union
+    * Disjoint Set Union, Minimal Spanning Tree
       * CPH (15, Spanning Trees)
       * [Topcoder Union Find](https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/)
       * [CSAcademy](https://csacademy.com/lesson/disjoint_data_sets)
@@ -30,4 +30,3 @@ Of course, all the silver topics carry over.
         * [VK Cup R1 A](http://codeforces.com/problemset/problem/771/A)
         * [8VC Elimination C](http://codeforces.com/problemset/problem/755/C)
         * [CF 383 Div 1 B](http://codeforces.com/problemset/problem/741/B)
-    * [IDDFS](https://en.wikipedia.org/wiki/Iterative_deepening_depth-first_search)

@@ -14,35 +14,37 @@ Of course, all the gold topics carry over.
     * Problems
       * [Educational CF 17 E](http://codeforces.com/problemset/problem/762/E)
       * [8VC Elimination D](http://codeforces.com/problemset/problem/755/D)
-  * Matrix
-    * Topics
-      * Multiplication
-      * Exponentiation
-    * Tutorial
-      * CPH (23, Matrices)
   * Trees
+    * Tutorial
+      * CPH (14, Tree Algorithms)
+      * CPH (18, Tree Queries)
     * Least Common Ancestor
     * Heavy-Light Decomposition
       * [Anudeep2011](https://blog.anudeep2011.com/heavy-light-decomposition/)
       * [AI-Cash](http://codeforces.com/blog/entry/22072)
-  * Divide and Conquer (DP Optimization)
+  * Matrix Exponentiation
+    * Tutorial
+      * CPH (23, Matrices)
+  * Divide and Conquer
 
 # Old Gold
 
 These topics haven’t appeared recently.
 
-  * Geometry
-    * Convex Hull
-      * Andrew's Monotone Chain
-      * Graham Scan
-    * Line Sweep
+  * Maximum Flow
+    * Tutorial
+      * CPH (20, Flows & Cuts)
+    * Edmonds-Karp
+    * Minimum Cut Problem
   * Strings
+    * Tutorial
+      * CPH (26, String Algorithms)
     * Topics
       * Hashing
       * Tries
+  * Sweep Line
     * Tutorial
-      * CPH (26, String Algorithms)
-  * Maximum Flow
-    * Dinic
-    * Edmonds-Karp
-    * Maximum Bipartite Matching
+      * CPH (30, Sweep Line Algorithms)
+    * Convex Hull
+      * Andrew's Monotone Chain
+      * Graham Scan

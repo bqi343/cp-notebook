@@ -3,6 +3,7 @@
 | Contest         | #                          | Topic            | Result                 |
 | ------------- | ------------------------------------- |---------------| ---------------------- |
 | 2011 Nov | 1 | BIT | Done |
+| | 2 | Searching | Done |
 | | 3 | Max Flow | Done |
 | 2011 Dec | 1 | Sortings | Done |
 | | 3 | Heavy-Light Decomposition | Done |

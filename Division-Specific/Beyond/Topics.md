@@ -11,9 +11,6 @@
     * Problems
       * [SEQ2](http://www.spoj.com/problems/SEQ2/)
       * [Tree Rotations 2](http://main.edu.pl/en/archive/oi/18/rod)
-  * Maximum Flow
-    * Dinic
-    * Edmonds-Karp
   * [Slope Trick](http://codeforces.com/blog/entry/47821)
   * [Manacher's Algorithm](https://www.hackerrank.com/topics/manachers-algorithm)
   * Number Theory

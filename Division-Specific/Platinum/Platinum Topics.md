@@ -14,9 +14,6 @@ Of course, all the gold topics carry over.
     * Problems
       * [Educational CF 17 E](http://codeforces.com/problemset/problem/762/E)
       * [8VC Elimination D](http://codeforces.com/problemset/problem/755/D)
-  * Bitset DP
-    * CPH (10, Bit Manipulation)
-    * Showed up on old gold, but not on recent platinum contests.
   * Matrix
     * Topics
       * Multiplication
@@ -28,6 +25,12 @@ Of course, all the gold topics carry over.
     * Heavy-Light Decomposition
       * [Anudeep2011](https://blog.anudeep2011.com/heavy-light-decomposition/)
       * [AI-Cash](http://codeforces.com/blog/entry/22072)
+  * Divide and Conquer (DP Optimization)
+
+# Old Gold
+
+These topics haven’t appeared recently.
+
   * Geometry
     * Convex Hull
       * Andrew's Monotone Chain
@@ -39,4 +42,7 @@ Of course, all the gold topics carry over.
       * Tries
     * Tutorial
       * CPH (26, String Algorithms)
-  * Divide And Conquer
+  * Maximum Flow
+    * Dinic
+    * Edmonds-Karp
+    * Maximum Bipartite Matching

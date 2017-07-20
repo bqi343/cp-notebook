@@ -12,20 +12,16 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * [CF 424 D](http://codeforces.com/contest/831/problem/D)
   * Data Structures
     * Types
-      * (Multi) Set
-      * (Unordered) Map
-      * (Priority) Queue
+      * Set, Multiset, Unordered Set
+      * Map, Unordered Map (Hashmap)
+      * Queue, Deque (Linked List)
+      * Priority Queue (Heap)
       * Vector
+      * Stack
     * Tutorial
       * CPH (4, Data Structures)
     * Problems
       * [CF 424 C](http://codeforces.com/contest/831/problem/C)
-  * Brute Force (3)
-    * Tutorial
-      * CPH (5, Complete Search)
-    * Problems
-      * [CF 387 Div 2 A](http://codeforces.com/problemset/problem/747/A)
-      * [ICCFR B](http://codeforces.com/problemset/problem/724/B)
   * Two Pointers (3)
     * Tutorial
       * CPH (8, Amortized Analysis)
@@ -35,7 +31,9 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
     * Tutorial
       * CPH (9.1, Static Array Queries) 
   * Graphs I (6)
-    * BFS / DFS
+    * BFS
+    * DFS
+    * Flood Fill
     * Tutorial
       * [Topcoder Graphs Pt 1](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-1/)
       * [Topcoder Graphs Pt 2](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-2/)

@@ -12,12 +12,15 @@
       * [SEQ2](http://www.spoj.com/problems/SEQ2/)
       * [Tree Rotations 2](http://main.edu.pl/en/archive/oi/18/rod)
   * [Slope Trick](http://codeforces.com/blog/entry/47821)
+    * [CEOI 2017.2.1](https://csacademy.com/contest/archive/task/building-bridges/)
   * [Manacher's Algorithm](https://www.hackerrank.com/topics/manachers-algorithm)
   * Number Theory
     * CPH (24, Number Theory)
 
 ## Other
   * [Z Algorithm](http://codeforces.com/blog/entry/3107)
+  * Articulation Points / Bridges
+    * [CEOI 2017.1.1](https://csacademy.com/contest/archive/task/one-way-streets/)
   * FFT
     * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)
     * [CF Tutorial Pt 2](http://codeforces.com/blog/entry/48798)

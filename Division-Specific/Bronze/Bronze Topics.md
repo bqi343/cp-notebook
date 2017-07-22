@@ -1,8 +1,8 @@
 # Bronze
 
-All questions about the format of USACO contests should be answered by the USACO website. You may want to explore the [USACO Training Pages](http://train.usaco.org/), although the problems are fairly outdated and the difficulty curve is pretty steep if you're just starting. 
+All questions about the format of USACO contests should be answered by the USACO website. You may want to explore the [USACO Training Pages](http://train.usaco.org/), although the problems are fairly outdated and the difficulty curve is pretty steep if you're just starting. Bronze contests usually just involve "algorithmic thinking." :D 
 
-Bronze contests usually just involve "algorithmic thinking." :D
+Please refer to the [competitive programming handbook (CPH)](https://cses.fi/book.pdf).
 
  * Basics
     * Fundamentals of C++ or Java
@@ -25,6 +25,6 @@ Bronze contests usually just involve "algorithmic thinking." :D
       * [CSA 38 A](https://csacademy.com/contest/round-38/task/shoe-pairs/)
       * [CSA 38 B](https://csacademy.com/contest/round-38/task/attack-and-speed/)
  * Greedy
-    * [CPH](https://cses.fi/book.pdf) (6, Greedy Algorithms)
+    * [CPH] (6, Greedy Algorithms)
     * Problem(s)
        * [Sure Bet](https://csacademy.com/contest/archive/task/sure-bet/)

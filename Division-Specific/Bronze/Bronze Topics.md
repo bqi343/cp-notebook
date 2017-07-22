@@ -1,5 +1,7 @@
 # Bronze
 
+All questions about the format of USACO contests should be answered by the USACO website. You may want to explore the [USACO Training Pages](http://train.usaco.org/), although the problems are fairly outdated and the difficulty curve is pretty steep if you're just starting. 
+
 Bronze contests usually just involve "algorithmic thinking." :D
 
  * Basics

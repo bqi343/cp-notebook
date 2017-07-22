@@ -41,7 +41,7 @@ class SegTree {
 			return res;
 		}
 		/*
-		int query(int l, int r) {  // sum on interval [l, r)
+		int query(int l, int r) {  // minimum on interval [l, r)
 			int res = MOD;
 			for (l += SZ, r += SZ; l < r; l >>= 1, r >>= 1) {
 				if (l&1) res = min(res,seg[l++]);

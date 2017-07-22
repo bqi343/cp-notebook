@@ -1,8 +1,6 @@
-[Competitive Programming Handbook (CPH)](https://cses.fi/book.pdf)
-
 # Bronze
 
-You shouldn't need much to pass bronze. Try the introductory problems if you want to.
+Bronze contests usually just involve "algorithmic thinking." :D
 
  * Basics
     * Fundamentals of C++ or Java
@@ -25,6 +23,6 @@ You shouldn't need much to pass bronze. Try the introductory problems if you wan
       * [CSA 38 A](https://csacademy.com/contest/round-38/task/shoe-pairs/)
       * [CSA 38 B](https://csacademy.com/contest/round-38/task/attack-and-speed/)
  * Greedy
-    * CPH 6 (Greedy Algorithms)
+    * [CPH](https://cses.fi/book.pdf) (6, Greedy Algorithms)
     * Problem(s)
        * [Sure Bet](https://csacademy.com/contest/archive/task/sure-bet/)

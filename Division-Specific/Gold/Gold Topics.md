@@ -32,3 +32,5 @@ Of course, all the silver topics carry over.
         * [CF 383 Div 1 B](http://codeforces.com/problemset/problem/741/B)
   * Hashing
     * CPH (26, String Algorithms)
+    * Problems
+      * [Palindromic Partitions](https://csacademy.com/contest/ceoi-2017-day-2/task/palindromic-partitions/)

@@ -25,6 +25,6 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * [CSA 38 A](https://csacademy.com/contest/round-38/task/shoe-pairs/)
       * [CSA 38 B](https://csacademy.com/contest/round-38/task/attack-and-speed/)
  * Greedy
-    * [CPH] (6, Greedy Algorithms)
+    * CPH (6, Greedy Algorithms)
     * Problem(s)
        * [Sure Bet](https://csacademy.com/contest/archive/task/sure-bet/)

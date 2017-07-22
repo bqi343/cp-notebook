@@ -24,7 +24,6 @@ You shouldn't need much to pass bronze. Try the introductory problems if you wan
       * [CSA 37 B (Div 2)](https://csacademy.com/contest/round-37/task/group-split/)
       * [CSA 38 A](https://csacademy.com/contest/round-38/task/shoe-pairs/)
       * [CSA 38 B](https://csacademy.com/contest/round-38/task/attack-and-speed/)
-      * [CEOI 2017 1.2](https://csacademy.com/contest/ceoi-2017-day-1/task/sure-bet/)
  * Greedy
     * CPH 6 (Greedy Algorithms)
     * Problem(s)

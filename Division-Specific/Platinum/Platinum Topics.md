@@ -36,12 +36,8 @@ These topics haven’t appeared recently.
       * CPH (20, Flows & Cuts)
     * Edmonds-Karp
     * Minimum Cut Problem
-  * Strings
-    * Tutorial
-      * CPH (26, String Algorithms)
-    * Topics
-      * Hashing
-      * Tries
+  * Tries
+    * CPH (26, String Algorithms)
   * Sweep Line
     * Tutorial
       * CPH (30, Sweep Line Algorithms)

@@ -7,20 +7,33 @@
       * [COT](http://www.spoj.com/problems/COT/)
   * Splay Tree
     * [Implementation](http://codeforces.com/blog/entry/18462)
-    * [Link-Cut Tree](https://en.wikipedia.org/wiki/Link/cut_tree)
+    * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
     * Problems
+      * [DYNACON1](http://www.spoj.com/problems/DYNACON1/)
       * [SEQ2](http://www.spoj.com/problems/SEQ2/)
       * [Tree Rotations 2](http://main.edu.pl/en/archive/oi/18/rod)
-  * [Slope Trick](http://codeforces.com/blog/entry/47821)
-    * [CEOI 2017.2.1](https://csacademy.com/contest/archive/task/building-bridges/)
-  * [Manacher's Algorithm](https://www.hackerrank.com/topics/manachers-algorithm)
+  * Slope Trick
+    * Tutorial
+      * [zscoder](http://codeforces.com/blog/entry/47821)
+    * Problem(s)
+      * [CEOI 2017.2.1](https://csacademy.com/contest/archive/task/building-bridges/)
+  * Manacher's Algorithm
+    * Tutorial
+      * [HackerRank](https://www.hackerrank.com/topics/manachers-algorithm)
   * Number Theory
-    * CPH (24, Number Theory)
+    * Tutorial
+       * CPH (24, Number Theory)
+  * Articulation Points / Bridges
+    * Tutorial
+       * [GeeksforGeeks](http://www.geeksforgeeks.org/articulation-points-or-cut-vertices-in-a-graph/)
+    * Problem(s)
+       * [CEOI 2017.1.1](https://csacademy.com/contest/archive/task/one-way-streets/)
 
 ## Other
-  * [Z Algorithm](http://codeforces.com/blog/entry/3107)
-  * Articulation Points / Bridges
-    * [CEOI 2017.1.1](https://csacademy.com/contest/archive/task/one-way-streets/)
+  * Strings
+    * KMP
+    * [Z Algorithm](http://codeforces.com/blog/entry/3107)
+    * Aho-Corasick
   * FFT
     * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)
     * [CF Tutorial Pt 2](http://codeforces.com/blog/entry/48798)

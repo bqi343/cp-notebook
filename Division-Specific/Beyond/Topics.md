@@ -5,13 +5,16 @@
       * [oml1111](https://drive.google.com/file/d/0BwGLW04WRv0ITEZjRWlMSFc2bk0/view)
     * Problems
       * [COT](http://www.spoj.com/problems/COT/)
+    * Variant(s)
+      * [Lazy Propogation](http://codeforces.com/blog/entry/47108?#comment-315047)
   * Splay Tree
     * [Implementation](http://codeforces.com/blog/entry/18462)
-    * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
     * Problems
       * [DYNACON1](http://www.spoj.com/problems/DYNACON1/)
       * [SEQ2](http://www.spoj.com/problems/SEQ2/)
       * [Tree Rotations 2](http://main.edu.pl/en/archive/oi/18/rod)
+    * Variant(s)
+      * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
   * Slope Trick
     * Tutorial
       * [zscoder](http://codeforces.com/blog/entry/47821)

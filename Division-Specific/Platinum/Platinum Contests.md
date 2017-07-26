@@ -2,11 +2,11 @@
 
 | Contest         | #                          | Topic            | Result                 |
 | ------------- | ------------------------------------- |---------------| ---------------------- |
-| 2011 Nov | 1 | BIT | Done |
+| 2011 Nov | 1 | Fenwick Tree | Done |
 | | 2 | Searching | Done |
-| | 3 | Max Flow | Done |
+| | 3 | Flows | Done |
 | 2011 Dec | 1 | Sortings | Done |
-| | 3 | Heavy-Light Decomposition | Done |
+| | 3 | Trees | Done |
 | 2012 Jan | 1 | Matrix | Done |
 | | 3 | DFS | Done |
 | 2012 Feb | 1 | Sortings | Done |
@@ -17,43 +17,43 @@
 | ------------- | ------------------------------------- |---------------| ---------------------- |
 | 2012 Nov |  1 | DP | Done |
 | |  2 | Stack | Done |
-| |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=195) | ? | `******t*tt*****t`|
+| |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=195) |  | `******t*tt*****t`|
 | 2012 Dec |  1 | Searching | Done |
-| |  2 | Trie, Bitset | Done |
+| |  2 | Strings | Done |
 | |  3 | Trees | Done |
 | 2013 Jan |  1 | Two Pointers | Done |
 | |  2 | DP | Done |
-| |  3 | SegTree | Done |
+| |  3 | Segment Tree | Done |
 | 2013 Feb |  1 | Binary Search | Done |
 | |  2 | Sortings | Done |
 | |  3 | Sortings, DP | Done |
 | 2013 Mar |  1 | DP | Done |
 | |  2 | Set | Done |
 | |  3 | DP | Done |
-| 2013 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=285) | ? | Incomplete |
-| |  [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=286) | ? | `***ttttttt` |
-| |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=287) | ? | Incomplete |
+| 2013 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=285) |  | Incomplete |
+| |  [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=286) |  | `***ttttttt` |
+| |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=287) |  | Incomplete |
 
 | Contest         | #                          | Topic            | Result                 |
 | ------------- | ------------------------------------- |---------------| ---------------------- |
-| 2013 Nov |  1 | Ad Hoc | Done |
+| 2013 Nov | 1 | | Done |
 | |  2 | Set | Done |
 | |  3 | Binary Search, DP | Done |
-| 2013 Dec |  1 | Graphs | Done |
+| 2013 Dec | 1 | Graphs | Done |
 | |  2 | SegTree | Done |
 | |  3 | Graphs | Done |
-| 2014 Jan |  1 | Geometry | Done |
+| 2014 Jan | 1 | Geometry | Done |
 | |  2 | Cumulative Sum | Done |
 | |  3 | DSU | Done |
-| 2014 Feb |  1 | Graphs | Done |
+| 2014 Feb | 1 | Graphs | Done |
 | |  2 | DP | Done |
-| |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=402) | ? | Not Done |
-| 2014 Mar |  1 | Segtree | Done |
+| |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=402) |  | Not Done |
+| 2014 Mar | 1 | Segtree | Done |
 | |  2 | Binary Search | Done |
 | |  3 | Greedy | Done |
-| 2014 Open |  1 | ? | `****tttttt` |
-| |  [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=437) | ? | Incomplete |
-| |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=438) | ? | Incomplete |
+| 2014 Open | 1 |  | `****tttttt` |
+| |  [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=437) |  | Incomplete |
+| |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=438) |  | Incomplete |
 
 | Contest         | #                          | Topic            | Result                 |
 | ------------- | ------------------------------------- |---------------| ---------------------- |
@@ -65,7 +65,7 @@
 | |  3 | Searching | Done |
 | 2015 Feb |  1 | SegTree | Done |
 | |  2 | Hashing | Done |
-| |  3 | ? | `*****xxxxxxxxxx` |
+| |  3 |  | `*****xxxxxxxxxx` |
 | 2015 Open |  1 | BigNums | Untested |
 | |  2 | DP | Done |
 | |  3 | Sortings | Done |
@@ -74,18 +74,18 @@
 
 | Contest         | #                          | Topic            | Result                 |
 | ------------- | ------------------------------------- |---------------| ---------------------- |
-| 2015 Dec |  1 | Trees | Done |
-| |  2 | SegTree | Done |
-|  |  3 | SegTree | Done |
+| 2015 Dec | 1 | Trees | Done |
+| | 2 | SegTree | Done |
+| | 3 | SegTree | Done |
 | 2016 Jan |  1 | Cumulative Sum | Done |
-|  |  2 | SegTree | Done |
-||  3 | DP | Not Done |
+| |  2 | SegTree | Done |
+| |  3 | DP | Not Done |
 | 2016 Feb |  1 | SegTree | Done |
 | |  2 | Graphs | Done |
 | |  3 | DP | Done |
 | 2016 Open |  1 | DP | Done |
-| |  2 | ? | `**x***xxx*` |
-|  |  3 | DP | `***!!!!!!!!!` |
+| | 2 | | `**x***xxx*` |
+| | 3 | DP | `***!!!!!!!!!` |
 
 | Contest         | #                          | Topic            | Result                 |
 | ------------- | ------------------------------------- |---------------| ---------------------- |

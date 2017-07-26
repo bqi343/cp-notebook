@@ -9,7 +9,8 @@
 | | 3 | Heavy-Light Decomposition | Done |
 | 2012 Jan | 1 | Matrix | Done |
 | | 3 | DFS | Done |
-| 2012 Feb | 3 | DFS | Done |
+| 2012 Feb | 1 | Sortings | Done |
+| | 3 | DFS | Done |
 | 2012 Mar | 3 | Bitset DP | Done |
 
 | Contest         | #                          | Topic            | Result                 |

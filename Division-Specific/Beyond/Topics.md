@@ -31,7 +31,9 @@
        * [GeeksforGeeks](http://www.geeksforgeeks.org/articulation-points-or-cut-vertices-in-a-graph/)
     * Problem(s)
        * [CEOI 2017.1.1](https://csacademy.com/contest/archive/task/one-way-streets/)
-
+  * Bellman-Ford & Linear Programming
+    * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
+    
 ## Other
   * Strings
     * KMP

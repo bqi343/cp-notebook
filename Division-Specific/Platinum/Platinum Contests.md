@@ -7,6 +7,7 @@
 | | 3 | Max Flow | Done |
 | 2011 Dec | 1 | Sortings | Done |
 | | 3 | Heavy-Light Decomposition | Done |
+| 2012 Jan | 1 | Matrix | Done |
 
 | Contest         | #                          | Topic            | Result                 |
 | ------------- | ------------------------------------- |---------------| ---------------------- |

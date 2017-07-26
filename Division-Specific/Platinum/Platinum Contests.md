@@ -6,6 +6,7 @@
 | | 2 | Searching | Done |
 | | 3 | Flows | Done |
 | 2011 Dec | 1 | Sortings | Done |
+| | 2 | Spanning Trees | Done |
 | | 3 | Trees | Done |
 | 2012 Jan | 1 | Matrix | Done |
 | | 3 | DFS | Done |

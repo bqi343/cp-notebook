@@ -106,11 +106,7 @@ class HeavyLight {
                 op(treePos[root[v]], treePos[v]);
             }
             if (depth[u] > depth[v]) swap(u, v);
-            op(treePos[u]+1, treePos[v]);
-        }
-
-        void set(int v, int value) {
-            tree.upd(treePos[v], treePos[v], value);
+            op(treePos[u]+1, treePos[v]); // assumes values are stored in edges, not vertices
         }
 
         void modifyPath(int u, int v, int value) {

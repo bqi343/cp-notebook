@@ -13,7 +13,8 @@
 | 2012 Feb | 1 | Sortings | Done |
 | | 2 | Map | Done |
 | | 3 | DFS | Done |
-| 2012 Mar | 3 | Bitset DP | Done |
+| 2012 Mar | 2 | Sortings | Done |
+| | 3 | Bitset DP | Done |
 
 | Contest         | #                          | Topic            | Result                 |
 | ------------- | ------------------------------------- |---------------| ---------------------- |

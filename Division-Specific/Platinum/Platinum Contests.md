@@ -19,7 +19,7 @@
 | | 3 | DP | Done |
 | 2012 Open | 1 | Stack | Done |
 | | 2 | Two Pointers, DP | Done |
-| | 3 | | `********ttt*t*t*t****` |
+| | 3 | Meet in the Middle | Done |
 
 | Contest         | #                          | Topic            | Result                 |
 | ------------- | ------------------------------------- |---------------| ---------------------- |

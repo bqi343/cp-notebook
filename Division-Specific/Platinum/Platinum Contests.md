@@ -17,7 +17,8 @@
 | 2012 Mar | 1 | Math | Done |
 | | 2 | Sortings | Done |
 | | 3 | Bitset DP | Done |
-| 2012 Open | 3 | | `********ttt*t*t*t****` |
+| 2012 Open | 2 | Two Pointers, DP | Done |
+| | 3 | | `********ttt*t*t*t****` |
 
 | Contest         | #                          | Topic            | Result                 |
 | ------------- | ------------------------------------- |---------------| ---------------------- |

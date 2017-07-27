@@ -6,7 +6,7 @@
 | | 2 | DFS | Done |
 | | 3 | Flows | Done |
 | 2011 Dec | 1 | Sortings | Done |
-| | 2 | Spanning Trees | Done |
+| | 2 | DSU | Done |
 | | 3 | Trees | Done |
 | 2012 Jan | 1 | Matrix | Done |
 | | 2 | DFS | `*******t**` |
@@ -16,7 +16,7 @@
 | | 3 | DFS | Done |
 | 2012 Mar | 1 | Math | Done |
 | | 2 | Sortings | Done |
-| | 3 | Bitset DP | Done |
+| | 3 | DP | Done |
 | 2012 Open | 1 | Stack | Done |
 | | 2 | Two Pointers, DP | Done |
 | | 3 | | `********ttt*t*t*t****` |
@@ -86,29 +86,29 @@
 | | 2 | SegTree | Done |
 | | 3 | SegTree | Done |
 | 2016 Jan |  1 | Cumulative Sum | Done |
-| |  2 | SegTree | Done |
-| |  3 | DP | Not Done |
+| | 2 | SegTree | Done |
+| | 3 | DP | Not Done |
 | 2016 Feb |  1 | SegTree | Done |
-| |  2 | Graphs | Done |
-| |  3 | DP | Done |
+| | 2 | Graphs | Done |
+| | 3 | DP | Done |
 | 2016 Open |  1 | DP | Done |
 | | 2 | | `**x***xxx*` |
 | | 3 | DP | `***!!!!!!!!!` |
 
 | Contest         | #                          | Topic            | Result                 |
 | ------------- | ------------------------------------- |---------------| ---------------------- |
-| 2016 Dec |  1 | Geometry | Done |
-|  |  2 | DP | Done |
-|  |  3 | Searching | Done |
+| 2016 Dec | 1 |  | Done |
+| | 2 | DP | Done |
+| | 3 | Searching | Done |
 | 2017 Jan |  1 | SegTree | Done |
-| |  2 | Binary Search | Done |
-| |  3 | DP | Done |
-| 2017 Feb |  1 | SegTree | Done |
-| |  2 | SegTree | Done |
-| |  3 | SegTree | Done |
+| | 2 | Binary Search | Done |
+| | 3 | DP | Done |
+| 2017 Feb |  1 | Fenwick Tree | Done |
+| | 2 | SegTree | Done |
+| | 3 | SegTree | Done |
 | 2017 Open |  1 | Cumulative Sum | Done |
-| |  2 | Spanning Trees | Done |
-| |  3 | Matrix | Done |
+| | 2 | DSU | Done |
+| | 3 | Matrix | Done |
 
 # USACO Camp
   * [What is it like to attend USACO Camp?](https://www.quora.com/What-is-it-like-to-attend-the-USACO-training-camp)

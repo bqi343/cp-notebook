@@ -38,7 +38,7 @@
 | 2013 Mar |  1 | DP | Done |
 | |  2 | Set | Done |
 | |  3 | DP | Done |
-| 2013 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=285) |  | Incomplete |
+| 2013 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=285) | Sortings | Done |
 | |  [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=286) |  | `***ttttttt` |
 | |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=287) |  | Incomplete |
 

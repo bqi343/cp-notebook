@@ -55,13 +55,13 @@
 | |  3 | DSU | Done |
 | 2014 Feb | 1 | Graphs | Done |
 | |  2 | DP | Done |
-| |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=402) |  | Not Done |
+| |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=402) |  | |
 | 2014 Mar | 1 | Segtree | Done |
 | |  2 | Binary Search | Done |
 | |  3 | Greedy | Done |
-| 2014 Open | 1 |  | `****tttttt` |
+| 2014 Open | 1 |  | `*****ttt*t` |
 | |  [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=437) |  | Incomplete |
-| |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=438) |  | Incomplete |
+| |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=438) |  |  |
 
 | Contest         | #                          | Topic            | Result                 |
 | ------------- | ------------------------------------- |---------------| ---------------------- |
@@ -87,7 +87,7 @@
 | | 3 | SegTree | Done |
 | 2016 Jan |  1 | Cumulative Sum | Done |
 | | 2 | SegTree | Done |
-| | 3 | DP | Not Done |
+| | 3 | DP | |
 | 2016 Feb |  1 | SegTree | Done |
 | | 2 | Graphs | Done |
 | | 3 | DP | Done |

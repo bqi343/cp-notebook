@@ -73,7 +73,7 @@
 | |  3 | Searching | Done |
 | 2015 Feb |  1 | SegTree | Done |
 | |  2 | Hashing | Done |
-| |  3 |  | `*****xxxxxxxxxx` |
+| |  3 |  | `*****tttttttttt` |
 | 2015 Open |  1 | BigNums | Untested |
 | |  2 | DP | Done |
 | |  3 | Sortings | Done |

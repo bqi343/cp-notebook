@@ -39,7 +39,7 @@
 | |  2 | Set | Done |
 | |  3 | DP | Done |
 | 2013 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=285) | Sortings | Done |
-| |  [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=286) |  | `***ttttttt` |
+| |  [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=286) | Trees | Done |
 | |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=287) |  | Incomplete |
 
 | Contest         | #                          | Topic            | Result                 |

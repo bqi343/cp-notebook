@@ -92,7 +92,7 @@
 | | 2 | Graphs | Done |
 | | 3 | DP | Done |
 | 2016 Open |  1 | DP | Done |
-| | 2 | | `**x***xxx*` |
+| | 2 | | `*******x**` |
 | | 3 | DP | Done |
 
 | Contest         | #                          | Topic            | Result                 |

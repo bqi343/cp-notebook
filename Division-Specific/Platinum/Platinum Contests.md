@@ -1,6 +1,6 @@
 # Old Gold
 
-| Contest         | #                          | Name | Topic            | Result                 |
+| Contest         | #  | Name | Topic            | Result                 |
 | ------------- | - | - | ---------------| ---------------------- |
 | 2011 Nov | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=91) | median | Fenwick Tree | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=92) | bsudoku | DFS | Done |
@@ -21,29 +21,29 @@
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=138) | bookshelf | Two Pointers, DP | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=139) | subsets | Meet in the Middle | Done |
 
-| Contest         | #                          | Topic            | Result                 |
-| ------------- | ------------------------------------- |---------------| ---------------------- |
-| 2012 Nov |  1 | DP | Done |
-| |  2 | Stack | Done |
-| |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=195) |  | `******t*tt*****t`|
-| 2012 Dec |  1 | Searching | Done |
-| |  2 | Strings | Done |
-| |  3 | Trees | Done |
-| 2013 Jan |  1 | Two Pointers | Done |
-| |  2 | DP | Done |
-| |  3 | Segment Tree | Done |
-| 2013 Feb |  1 | Binary Search | Done |
-| |  2 | Sortings | Done |
-| |  3 | Sortings, DP | Done |
-| 2013 Mar |  1 | DP | Done |
-| |  2 | Set | Done |
-| |  3 | DP | Done |
-| 2013 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=285) | Sortings | Done |
-| |  [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=286) | Trees | Done |
-| |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=287) | DP | Done |
+| Contest         | #  | Name | Topic            | Result                 |
+| ------------- | - | - | ---------------| ---------------------- |
+| 2012 Nov | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=193) | bbreeds | DP | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=194) | cbs | Stack | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=195) | btree | | `******t*tt*****t`|
+| 2012 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=211) | gangs | Searching | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=212) | first | Strings | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=213) | runaway | Trees | Done |
+| 2013 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=229) | lineup | Two Pointers | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=230) | island | DP | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=231) | seating | SegTree | Done |
+| 2013 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=247) | partition | Binary Search | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=248) | taxi | Sortings | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=249) | route | Sortings, DP | Done |
+| 2013 Mar | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=265) | cowrun | DP | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=266) | hillwalk | Set | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=267) | necklace | DP | Done |
+| 2013 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=285) | photo | Sortings | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=286) | yinyang | Trees | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=287) | eight | DP | Done |
 
-| Contest         | #                          | Topic            | Result                 |
-| ------------- | ------------------------------------- |---------------| ---------------------- |
+| Contest         | #  | Name | Topic            | Result                 |
+| ------------- | - | - | ---------------| ---------------------- |
 | 2013 Nov | 1 | | Done |
 | |  2 | Set | Done |
 | |  3 | Binary Search, DP | Done |
@@ -63,8 +63,8 @@
 | |  [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=437) | SegTree | Done |
 | |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=438) |  |  |
 
-| Contest         | #                          | Topic            | Result                 |
-| ------------- | ------------------------------------- |---------------| ---------------------- |
+| Contest         | #  | Name | Topic            | Result                 |
+| ------------- | - | - | ---------------| ---------------------- |
 | 2014 Dec |  1 | DP | Done |
 | |  2 | SegTree | Done |
 | |  3 | Set | Done |
@@ -80,8 +80,8 @@
 
 # Platinum
 
-| Contest         | #                          | Topic            | Result                 |
-| ------------- | ------------------------------------- |---------------| ---------------------- |
+| Contest         | #  | Name | Topic            | Result                 |
+| ------------- | - | - | ---------------| ---------------------- |
 | 2015 Dec | 1 | Trees | Done |
 | | 2 | SegTree | Done |
 | | 3 | SegTree | Done |
@@ -95,8 +95,8 @@
 | | 2 | | `*******x**` |
 | | 3 | DP | Done |
 
-| Contest         | #                          | Topic            | Result                 |
-| ------------- | ------------------------------------- |---------------| ---------------------- |
+| Contest         | #  | Name | Topic            | Result                 |
+| ------------- | - | - | ---------------| ---------------------- |
 | 2016 Dec | 1 |  | Done |
 | | 2 | DP | Done |
 | | 3 | Searching | Done |

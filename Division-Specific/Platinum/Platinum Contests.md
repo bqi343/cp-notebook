@@ -1,25 +1,25 @@
 # Old Gold
 
-| Contest         | #                          | Topic            | Result                 |
-| ------------- | ------------------------------------- |---------------| ---------------------- |
-| 2011 Nov | 1 | Fenwick Tree | Done |
-| | 2 | DFS | Done |
-| | 3 | Flows | Done |
-| 2011 Dec | 1 | Sortings | Done |
-| | 2 | DSU | Done |
-| | 3 | Trees | Done |
-| 2012 Jan | 1 | Matrix | Done |
-| | 2 | DFS | `*******t**` |
-| | 3 | DFS | Done |
-| 2012 Feb | 1 | Sortings | Done |
-| | 2 | Map | Done |
-| | 3 | DFS | Done |
-| 2012 Mar | 1 | Math | Done |
-| | 2 | Sortings | Done |
-| | 3 | DP | Done |
-| 2012 Open | 1 | Stack | Done |
-| | 2 | Two Pointers, DP | Done |
-| | 3 | Meet in the Middle | Done |
+| Contest         | #                          | Name | Topic            | Result                 |
+| ------------- | - | - | ---------------| ---------------------- |
+| 2011 Nov | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=91) | median | Fenwick Tree | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=92) | bsudoku | DFS | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=93) | steeple | Flows | Done |
+| 2011 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=100) | photo | Sortings | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=101) | simplify | DSU | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=102) | grassplant | Trees | Done |
+| 2012 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=109) | combos | Matrix | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=110) | cowrun | DFS | `*******t**` |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=111) | alliance | DFS | Done |
+| 2012 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=118) | coupons | Sortings | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=119) | symmetry | Map | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=120) | nearcows | DFS | Done |
+| 2012 Mar | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=127) | banner | Math | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=128) | restack | Sortings | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=129) | skyscraper | DP | Done |
+| 2012 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=137) | tied | Stack | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=138) | bookshelf | Two Pointers, DP | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=139) | subsets | Meet in the Middle | Done |
 
 | Contest         | #                          | Topic            | Result                 |
 | ------------- | ------------------------------------- |---------------| ---------------------- |
@@ -60,7 +60,7 @@
 | |  2 | Binary Search | Done |
 | |  3 | Greedy | Done |
 | 2014 Open | 1 |  | `*****ttt*t` |
-| |  [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=437) |  | Incomplete |
+| |  [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=437) | SegTree | Done |
 | |  [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=438) |  |  |
 
 | Contest         | #                          | Topic            | Result                 |

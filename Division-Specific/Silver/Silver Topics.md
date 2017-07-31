@@ -28,8 +28,11 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
     * Problems
       * [Educational CF 17 B](http://codeforces.com/problemset/problem/762/B)
   * Cumulative Sum (4)
+    * 1D, 2D
     * Tutorial
       * CPH (9.1, Static Array Queries) 
+    * Problems
+      * [CF 427 C](http://codeforces.com/contest/835/problem/C)
   * Graphs I (6)
     * BFS
     * DFS

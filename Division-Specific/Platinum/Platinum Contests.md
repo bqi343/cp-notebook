@@ -87,7 +87,7 @@
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=578) | haybales | SegTree | Done |
 | 2016 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=600) | fortmoo | Cumulative Sum | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=601) | mowing | SegTree | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=602) | lightsout | DP | |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=602) | lightsout | DP | Done |
 | 2016 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=624) | balancing | SegTree | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=625) | fencedin | Graphs | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=626) | cbarn | DP | Done |

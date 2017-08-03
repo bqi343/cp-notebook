@@ -8,6 +8,8 @@ Of course, all the silver topics carry over.
     * Tutorials
       * [Topcoder DP](https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/)
       * CPH (7, Dynamic Programming)
+    * Problem(s)
+      * [Round Subset](http://codeforces.com/contest/837/problem/D)
   * Fenwick Tree, aka Binary Indexed Tree (2)
     * Tutorials
       * CPH (9, Range Queries)

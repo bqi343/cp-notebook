@@ -5,6 +5,7 @@
       * [oml1111](https://drive.google.com/file/d/0BwGLW04WRv0ITEZjRWlMSFc2bk0/view)
     * Problems
       * [COT](http://www.spoj.com/problems/COT/)
+      * [Functions on the Segments](http://codeforces.com/contest/837/problem/G)
     * Variant(s)
       * [Lazy Propogation](http://codeforces.com/blog/entry/47108?#comment-315047)
   * Splay Tree

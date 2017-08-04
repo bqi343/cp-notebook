@@ -25,7 +25,7 @@ Of course, all the gold topics carry over.
   * Matrix Exponentiation
     * Tutorial
       * CPH (23, Matrices)
-  * Divide and Conquer
+  * Divide and Conquer Optimization
 
 # Old Gold
 
@@ -44,3 +44,5 @@ These topics haven’t appeared recently.
     * Convex Hull
       * Andrew's Monotone Chain
       * Graham Scan
+  * Bitset DP
+  * Meet in the Middle

@@ -1,4 +1,5 @@
 ## Training Camp
+
   * Persistent Segment Tree
     * Tutorial
       * [Anudeep2011](https://blog.anudeep2011.com/persistent-segment-trees-explained-with-spoj-problems/)
@@ -24,6 +25,7 @@
   * Manacher's Algorithm
     * Tutorial
       * [HackerRank](https://www.hackerrank.com/topics/manachers-algorithm)
+      * [adamant](http://codeforces.com/blog/entry/12143)
   * Number Theory
     * Tutorial
        * CPH (24, Number Theory)
@@ -34,6 +36,11 @@
        * [CEOI 2017.1.1](https://csacademy.com/contest/archive/task/one-way-streets/)
   * Bellman-Ford & Linear Programming
     * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
+  * Majority Algorithm
+    * Tutorial
+      * [Wikipedia](https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm)
+    * Problem(s)
+      * [DCJ Practice 2015 C](https://code.google.com/codejam/contest/4264486/dashboard#s=p2)
     
 ## Other
   * Strings

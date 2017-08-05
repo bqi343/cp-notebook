@@ -18,10 +18,13 @@ Of course, all the gold topics carry over.
     * Tutorial
       * CPH (14, Tree Algorithms)
       * CPH (18, Tree Queries)
-    * Least Common Ancestor
-    * Heavy-Light Decomposition
-      * [Anudeep2011](https://blog.anudeep2011.com/heavy-light-decomposition/)
-      * [AI-Cash](http://codeforces.com/blog/entry/22072)
+    * Topics
+      * Least Common Ancestor
+      * Centroid Decomposition
+        * [GeeksForGeeks](http://www.geeksforgeeks.org/centroid-decomposition-of-tree/)
+      * Heavy-Light Decomposition
+        * [Anudeep2011](https://blog.anudeep2011.com/heavy-light-decomposition/)
+        * [AI-Cash](http://codeforces.com/blog/entry/22072)
   * Matrix Exponentiation
     * Tutorial
       * CPH (23, Matrices)

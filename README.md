@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In competitive programming contests, one must solve well-defined problems by writing computer programs under specified limits or constraints. Typically, the most popular language is C++, followed by Java and Python.
+In competitive programming contests, one must solve well-defined problems by writing computer programs under specified limits or constraints. Typically, the most popular language is C++, followed by Java and Python. Here is my [C++ template](http://ideone.com/qMLEgu) if anyone is interested.
 
 ## Getting Started
 

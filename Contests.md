@@ -20,6 +20,14 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
     * HourRank: 3-4 problems, 1 hr
     * 101 Hack: 5 problems, 2 hrs
 
+## Other Contests
+  * Google Code Jam
+  * IPSC
+  * Facebook Hacker Cup
+  * HackerEarth
+  * Codechef
+  * Yandex Algorithm
+  
 ## Misc Contest Tools
   * [CF Visualizer](http://cfviz.netlify.com/compare.html)
   * [Code Drills](http://code-drills.com/)

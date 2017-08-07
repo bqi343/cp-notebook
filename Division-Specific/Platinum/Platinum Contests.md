@@ -59,9 +59,9 @@
 | 2014 Mar | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=418) | lazy | Segtree | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=419) | sabotage | Binary Search | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=420) | fcount | Greedy | Done |
-| 2014 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=436) | fairphoto |  | `*****ttt*t` |
+| 2014 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=436) | fairphoto | Bitmasks | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=437) | optics | SegTree | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=438) | code | Trees | `******t*t*` |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=438) | code | Trees, Strings | `******t*t*` |
 
 | Contest         | #  | Name | Topic            | Result                 |
 | ------------- | - | - | ---------------| ---------------------- |

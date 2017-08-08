@@ -41,6 +41,7 @@
       * [Wikipedia](https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm)
     * Problem(s)
       * [DCJ Practice 2015 C](https://code.google.com/codejam/contest/4264486/dashboard#s=p2)
+  * [2D BIT with Range Update + Query](https://arxiv.org/pdf/1311.6093v4.pdf)
     
 ## Other
   * Strings

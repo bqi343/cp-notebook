@@ -10,6 +10,7 @@ Of course, all the silver topics carry over.
       * CPH (7, Dynamic Programming)
     * Problem(s)
       * [Round Subset](http://codeforces.com/contest/837/problem/D)
+      * [Subset Trees](https://csacademy.com/contest/round-41/task/subset-trees/)
   * Fenwick Tree, aka Binary Indexed Tree (2)
     * Tutorials
       * CPH (9, Range Queries)

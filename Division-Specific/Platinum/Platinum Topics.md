@@ -11,9 +11,16 @@ Of course, all the gold topics carry over.
       * Also know: 2D range tree (segment tree + BIT)
       * [CSAcademy Tutorial](https://csacademy.com/lesson/segment_trees/)
       * [Codeforces Tutorial](http://codeforces.com/blog/entry/18051)
+    * Types
+      * Segment Tree
+      * Lazy Segment Tree
+      * Segment Tree + BIT
+      * 2D Segment Tree
+      * BIT with range modification
     * Problems
       * [Educational CF 17 E](http://codeforces.com/problemset/problem/762/E)
       * [8VC Elimination D](http://codeforces.com/problemset/problem/755/D)
+      * [Candles](https://csacademy.com/contest/round-41/task/candles/)
   * Trees
     * Tutorial
       * CPH (14, Tree Algorithms)

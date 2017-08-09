@@ -35,6 +35,8 @@ Of course, all the gold topics carry over.
   * Matrix Exponentiation
     * Tutorial
       * CPH (23, Matrices)
+    * Problem(s)
+      * [CF 420 Div 2 E](http://codeforces.com/contest/821/problem/E)
   * Divide and Conquer Optimization
 
 # Old Gold

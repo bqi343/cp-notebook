@@ -80,11 +80,11 @@ class HeavyLight {
             parent[0] = -1, depth[0] = 0;
             dfs(0);
             for (int i = 0, currentPos = 0; i < n; ++i)
-		if (parent[i] == -1 || heavy[parent[i]] != i)
-			for (int j = i; j != -1; j = heavy[j]) {
-				root[j] = i;
-				treePos[j] = currentPos++;
-			}
+				if (parent[i] == -1 || heavy[parent[i]] != i)
+					for (int j = i; j != -1; j = heavy[j]) {
+						root[j] = i;
+						treePos[j] = currentPos++;
+					}
         }
         
         int dfs(int v) {

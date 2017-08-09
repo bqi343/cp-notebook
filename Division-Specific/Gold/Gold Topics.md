@@ -8,6 +8,9 @@ Of course, all the silver topics carry over.
     * Tutorials
       * [Topcoder DP](https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/)
       * CPH (7, Dynamic Programming)
+    * Problem(s)
+      * [Round Subset](http://codeforces.com/contest/837/problem/D)
+      * [Subset Trees](https://csacademy.com/contest/round-41/task/subset-trees/)
   * Fenwick Tree, aka Binary Indexed Tree (2)
     * Tutorials
       * CPH (9, Range Queries)
@@ -30,3 +33,7 @@ Of course, all the silver topics carry over.
         * [VK Cup R1 A](http://codeforces.com/problemset/problem/771/A)
         * [8VC Elimination C](http://codeforces.com/problemset/problem/755/C)
         * [CF 383 Div 1 B](http://codeforces.com/problemset/problem/741/B)
+  * Hashing
+    * CPH (26, String Algorithms)
+    * Problems
+      * [Palindromic Partitions](https://csacademy.com/contest/ceoi-2017-day-2/task/palindromic-partitions/)

@@ -1,23 +1,53 @@
 ## Training Camp
+
   * Persistent Segment Tree
     * Tutorial
       * [Anudeep2011](https://blog.anudeep2011.com/persistent-segment-trees-explained-with-spoj-problems/)
       * [oml1111](https://drive.google.com/file/d/0BwGLW04WRv0ITEZjRWlMSFc2bk0/view)
     * Problems
       * [COT](http://www.spoj.com/problems/COT/)
+      * [Functions on the Segments](http://codeforces.com/contest/837/problem/G)
+    * Variant(s)
+      * [Lazy Propogation](http://codeforces.com/blog/entry/47108?#comment-315047)
   * Splay Tree
     * [Implementation](http://codeforces.com/blog/entry/18462)
-    * [Link-Cut Tree](https://en.wikipedia.org/wiki/Link/cut_tree)
     * Problems
+      * [DYNACON1](http://www.spoj.com/problems/DYNACON1/)
       * [SEQ2](http://www.spoj.com/problems/SEQ2/)
       * [Tree Rotations 2](http://main.edu.pl/en/archive/oi/18/rod)
-  * [Slope Trick](http://codeforces.com/blog/entry/47821)
-  * [Manacher's Algorithm](https://www.hackerrank.com/topics/manachers-algorithm)
+    * Variant(s)
+      * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
+  * Slope Trick
+    * Tutorial
+      * [zscoder](http://codeforces.com/blog/entry/47821)
+    * Problem(s)
+      * [CEOI 2017.2.1](https://csacademy.com/contest/archive/task/building-bridges/)
+  * Manacher's Algorithm
+    * Tutorial
+      * [HackerRank](https://www.hackerrank.com/topics/manachers-algorithm)
+      * [adamant](http://codeforces.com/blog/entry/12143)
   * Number Theory
-    * CPH (24, Number Theory)
-
+    * Tutorial
+       * CPH (24, Number Theory)
+  * Articulation Points / Bridges
+    * Tutorial
+       * [GeeksforGeeks](http://www.geeksforgeeks.org/articulation-points-or-cut-vertices-in-a-graph/)
+    * Problem(s)
+       * [CEOI 2017.1.1](https://csacademy.com/contest/archive/task/one-way-streets/)
+  * Bellman-Ford & Linear Programming
+    * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
+  * Majority Algorithm
+    * Tutorial
+      * [Wikipedia](https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm)
+    * Problem(s)
+      * [DCJ Practice 2015 C](https://code.google.com/codejam/contest/4264486/dashboard#s=p2)
+  * [2D BIT with Range Update + Query](https://arxiv.org/pdf/1311.6093v4.pdf)
+    
 ## Other
-  * [Z Algorithm](http://codeforces.com/blog/entry/3107)
+  * Strings
+    * KMP
+    * [Z Algorithm](http://codeforces.com/blog/entry/3107)
+    * Aho-Corasick
   * FFT
     * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)
     * [CF Tutorial Pt 2](http://codeforces.com/blog/entry/48798)

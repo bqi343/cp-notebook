@@ -12,15 +12,15 @@ Of course, all the gold topics carry over.
       * [CSAcademy Tutorial](https://csacademy.com/lesson/segment_trees/)
       * [Codeforces Tutorial](http://codeforces.com/blog/entry/18051)
     * Types
-      * Segment Tree
-      * Lazy Segment Tree
+      * (Lazy) Segment Tree
       * Segment Tree + BIT
       * 2D Segment Tree
       * BIT with range modification
     * Problems
-      * [Educational CF 17 E](http://codeforces.com/problemset/problem/762/E)
-      * [8VC Elimination D](http://codeforces.com/problemset/problem/755/D)
+      * [Radio Stations](http://codeforces.com/problemset/problem/762/E)
+      * [PolandBall and Polygon](http://codeforces.com/problemset/problem/755/D)
       * [Candles](https://csacademy.com/contest/round-41/task/candles/)
+      * [Cards](https://szkopul.edu.pl/problemset/problem/qpsk3ygf8MU7D_1Es0oc_xd8/site/?key=statement)
   * Trees
     * Tutorial
       * CPH (14, Tree Algorithms)

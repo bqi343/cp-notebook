@@ -39,6 +39,7 @@ bool unite(int x, int y) { // union-by-rank
 	if (hei[x] < hei[y]) swap(x,y);
 	hei[x] = max(hei[x],hei[y]+1);
 	par[y] = x;
+	return 1;
 }
 
 int main() {

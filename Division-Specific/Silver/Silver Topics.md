@@ -7,9 +7,9 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * [Topcoder: Binary Search](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-search/)
       * [CSAcademy](https://csacademy.com/lesson/binary_search)
     * Problems
-      * [Technocup B](http://codeforces.com/problemset/problem/780/B)
-      * [CF 377 D](http://codeforces.com/problemset/problem/732/D)
-      * [CF 424 D](http://codeforces.com/contest/831/problem/D)
+      * [The Meeting Place Cannot Be Changed](http://codeforces.com/problemset/problem/780/B)
+      * [Exams](http://codeforces.com/problemset/problem/732/D)
+      * [Office Keys](http://codeforces.com/contest/831/problem/D)
   * Data Structures (C++ STL)
     * Types
       * Set, Multiset, Unordered Set
@@ -21,18 +21,18 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
     * Tutorial
       * CPH (4, Data Structures)
     * Problems
-      * [CF 424 C](http://codeforces.com/contest/831/problem/C)
+      * [Jury Marks](http://codeforces.com/contest/831/problem/C)
   * Two Pointers (3)
     * Tutorial
       * CPH (8, Amortized Analysis)
     * Problems
-      * [Educational CF 17 B](http://codeforces.com/problemset/problem/762/B)
+      * [USB vs. PS/2](http://codeforces.com/problemset/problem/762/B)
   * Cumulative Sum (4)
     * 1D, 2D
     * Tutorial
       * CPH (9.1, Static Array Queries) 
     * Problems
-      * [CF 427 C](http://codeforces.com/contest/835/problem/C)
+      * [Star Sky](http://codeforces.com/contest/835/problem/C)
   * Graphs I (6)
     * Flood Fill
     * BFS, DFS
@@ -44,3 +44,5 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * CPH (12, Graph Traversals)
     * Problem(s)
       * [BFS-DFS](https://csacademy.com/contest/round-41/task/bfs-dfs/)
+      * [Hotels](https://szkopul.edu.pl/problemset/problem/gDw3iFkeVm7ZA3j_16-XR7jI/site/?key=statement)
+      * [Journey](http://codeforces.com/contest/839/problem/C)

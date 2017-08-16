@@ -49,5 +49,5 @@ class Main {
         int ans = 0;
         for (ArrayList<Integer> a: edge) if (unite(a.get(1),a.get(2)) == true) ans += a.get(0);
         System.out.println(ans);
-	}
+    }
 }

@@ -34,12 +34,15 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
     * Problems
       * [Star Sky](http://codeforces.com/contest/835/problem/C)
   * Graphs I (6)
-    * Flood Fill
-    * BFS, DFS
+    * Topics
+      * Flood Fill
+      * BFS
+      * DFS
     * Tutorial
       * [Topcoder Graphs Pt 1](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-1/)
       * [Topcoder Graphs Pt 2](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-2/)
       * [Graph Theory](https://csacademy.com/lessons/)
+      * [Flood Fill](https://en.wikipedia.org/wiki/Flood_fill)
       * CPH (11, Basics of Graphs)
       * CPH (12, Graph Traversals)
     * Problem(s)

@@ -34,6 +34,7 @@ Of course, all the silver topics carry over.
         * [VK Cup R1 A](http://codeforces.com/problemset/problem/771/A)
         * [8VC Elimination C](http://codeforces.com/problemset/problem/755/C)
         * [CF 383 Div 1 B](http://codeforces.com/problemset/problem/741/B)
+        * [Leha & Another Game on Graph](http://codeforces.com/contest/840/problem/B)
   * Hashing
     * CPH (26, String Algorithms)
     * Problems

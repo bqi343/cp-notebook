@@ -37,6 +37,7 @@ Of course, all the gold topics carry over.
       * CPH (23, Matrices)
     * Problem(s)
       * [CF 420 Div 2 E](http://codeforces.com/contest/821/problem/E)
+      * [Currencies](https://www.hackerrank.com/contests/gs-codesprint/challenges/currencies)
   * Divide and Conquer Optimization
 
 # Old Gold

@@ -14,8 +14,8 @@
       * [Splay Tree](http://codeforces.com/blog/entry/18462)
       	* [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
       * Treap
-	* [Implementation](http://blog.ruofeidu.com/treap-in-45-lines-of-c/)
-	* [Wikipedia](https://en.wikipedia.org/wiki/Treap)
+      	* [Implementation](http://blog.ruofeidu.com/treap-in-45-lines-of-c/)
+      	* [Wikipedia](https://en.wikipedia.org/wiki/Treap)
     * Problems
       * [DYNACON1](http://www.spoj.com/problems/DYNACON1/)
       * [SEQ2](http://www.spoj.com/problems/SEQ2/)

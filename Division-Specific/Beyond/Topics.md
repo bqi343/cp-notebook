@@ -9,14 +9,18 @@
       * [Functions on the Segments](http://codeforces.com/contest/837/problem/G)
     * Variant(s)
       * [Lazy Propogation](http://codeforces.com/blog/entry/47108?#comment-315047)
-  * Splay Tree
-    * [Implementation](http://codeforces.com/blog/entry/18462)
+  * Trees
+    * Types
+      * [Splay Tree](http://codeforces.com/blog/entry/18462)
+      	* [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
+      * Treap
+	* [Implementation](http://blog.ruofeidu.com/treap-in-45-lines-of-c/)
+	* [Wikipedia](https://en.wikipedia.org/wiki/Treap)
     * Problems
       * [DYNACON1](http://www.spoj.com/problems/DYNACON1/)
       * [SEQ2](http://www.spoj.com/problems/SEQ2/)
+      * [TREAP](http://www.spoj.com/problems/TREAP/)
       * [Tree Rotations 2](http://main.edu.pl/en/archive/oi/18/rod)
-    * Variant(s)
-      * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
   * Slope Trick
     * Tutorial
       * [zscoder](http://codeforces.com/blog/entry/47821)

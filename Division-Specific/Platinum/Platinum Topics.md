@@ -57,5 +57,9 @@ These topics haven’t appeared recently.
     * Convex Hull
       * Andrew's Monotone Chain
       * Graham Scan
+      * Slope Trick
+        * [zscoder](http://codeforces.com/blog/entry/47821)
+      * Problem(s)
+        * [CEOI 2017.2.1](https://csacademy.com/contest/archive/task/building-bridges/)
   * Bitset DP
   * Meet in the Middle

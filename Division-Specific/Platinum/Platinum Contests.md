@@ -73,7 +73,7 @@
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=516) | grass | SCC | Done |
 | 2015 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=532) | hopscotch | SegTree | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=533) | censor | Hashing | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=534) | fencing |  | `*****tttttttttt` |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=534) | fencing |  | Done |
 | 2015 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=552) | googol | BigNums | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=553) | palpath | DP | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=554) | trapped | Sortings | Done |

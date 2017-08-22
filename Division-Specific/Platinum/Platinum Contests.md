@@ -55,7 +55,7 @@
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=384) | skilevel | DSU | Done |
 | 2014 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=400) | rblock | Graphs | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=401) | dec | DP | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=402) | boarding | | |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=402) | boarding | BBST | Done |
 | 2014 Mar | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=418) | lazy | Segtree | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=419) | sabotage | Binary Search | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=420) | fcount | Greedy | Done |

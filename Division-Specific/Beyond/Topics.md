@@ -9,7 +9,7 @@
       * [Functions on the Segments](http://codeforces.com/contest/837/problem/G)
     * Variant(s)
       * [Lazy Propogation](http://codeforces.com/blog/entry/47108?#comment-315047)
-  * Trees
+  * Binary Trees
     * Types
       * [Splay Tree](http://codeforces.com/blog/entry/18462)
       	* [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
@@ -21,11 +21,6 @@
       * [SEQ2](http://www.spoj.com/problems/SEQ2/)
       * [TREAP](http://www.spoj.com/problems/TREAP/)
       * [Tree Rotations 2](http://main.edu.pl/en/archive/oi/18/rod)
-  * Slope Trick
-    * Tutorial
-      * [zscoder](http://codeforces.com/blog/entry/47821)
-    * Problem(s)
-      * [CEOI 2017.2.1](https://csacademy.com/contest/archive/task/building-bridges/)
   * Manacher's Algorithm
     * Tutorial
       * [HackerRank](https://www.hackerrank.com/topics/manachers-algorithm)

@@ -25,7 +25,7 @@
 | ------------- | - | - | ---------------| ---------------------- |
 | 2012 Nov | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=193) | bbreeds | DP | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=194) | cbs | Stack | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=195) | btree | | `******t*tt*****t`|
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=195) | btree | Trees | Done |
 | 2012 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=211) | gangs | Searching | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=212) | first | Strings | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=213) | runaway | Trees | Done |

@@ -1,143 +1,127 @@
 //http://codeforces.com/blog/entry/18462
 //https://sites.google.com/site/kc97ble/container/splay-tree/splaytree-cpp-3
- 
-#include<bits/stdc++.h>
- 
+
+#include <bits/extc++.h>
+
 using namespace std;
+using namespace __gnu_pbds;
  
-struct Node{
-    Node *par, *child[2];
-    int v;
+typedef long long ll;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
+template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
+
+#define FOR(i, a, b) for (int i=a; i<(b); i++)
+#define F0R(i, a) for (int i=0; i<(a); i++)
+#define FORd(i,a,b) for (int i = (b)-1; i >= a; i--)
+#define F0Rd(i,a) for (int i = (a)-1; i >= 0; i--)
+
+#define mp make_pair
+#define pb push_back
+#define f first
+#define s second
+#define lb lower_bound
+#define ub upper_bound
+
+const int MOD = 1000000007;
+ 
+struct node{
+    int val, sz;
+    node *p, *c[2];
+    node (int val): val(val), sz(1) {}
+    void recalc();
 };
+
+int cnt(node* n) { return n ? n->sz : 0; }
+void node::recalc() { sz = cnt(c[0]) + cnt(c[1]) + 1; }
+
+node *root;
  
-Node *root;
- 
-void setLink(Node *x, Node * y, int d) {
-   x->child[d] = y;
-   y->par = x;
+void setLink(node *x, node *y, int d) { 
+    if (x) x->c[d] = y; 
+    if (y) y->p = x; 
+}
+
+int getDir(node *x, node *y) { 
+    if (!x) return -1;
+    return x->c[0] == y ? 0 : 1; 
 }
  
-int getDir(Node * x, Node * y) {
-   return x->child[0] == y ? 0 : 1;
+void rotate(node *x, int d) {
+    node *y = x->c[d], *z = x->p;
+    setLink(x, y->c[d^1], d);
+    setLink(y, x, d^1);
+    setLink(z, y, getDir(z, x));
+    x->recalc(), y->recalc();
 }
  
-void rotate(Node * x, int d) {
-   Node * y = x->child[d], * z = x->par;
-   setLink(x, y->child[d^1], d);
-   setLink(y, x, d^1);
-   setLink(z, y, getDir(z, x));
-}
- 
-void splay(Node * x) {
-   while(x->par) {
-      Node * y = x->par, * z = y->par;
-      int dy = getDir(y, x), dz = getDir(z, y);
-      if (!z) rotate(y, dy);
-      else if (dy == dz) rotate(z, dz), rotate(y, dy);
-      else rotate(y, dy), rotate(z, dz);
-   }
-}
- 
-void Insert(int v) {
-    if(!root) {
-        root=(Node *)malloc(sizeof(Node));
-        root->child[0]=NULL;
-        root->child[1]=NULL;
-        root->par=NULL;
-        root->v=v;
-        return;
+void splay(node *x) {
+    while (x->p) {
+        node *y = x->p, *z = y->p;
+        int dy = getDir(y, x), dz = getDir(z, y);
+        if (!z) rotate(y, dy);
+        else if (dy == dz) rotate(z, dz), rotate(y, dy);
+        else rotate(y, dy), rotate(z, dz);
     }
-     
-    Node *P=root;
-    while(1) {
-        if(P->v==v) break; // not multiset
-         
-        int i = ((v < (P->v)) ? 0 : 1);
-         
-        if(P->child[i]) P = P->child[i];
-        else {
-            P->child[i]=(Node *)malloc(sizeof(Node));
-            P->child[i]->par = P;
-            P->child[i]->child[1]=NULL;
-            P->child[i]->child[0]=NULL;
-            P->child[i]->v = v;
-            P = P->child[i];
-            break;
-        }
-    } 
-    splay(P);
+    root = x;
 }
  
-void Inorder(Node *R) {
-    if(!R) return;
-     
-    Inorder(R->child[0]);
-     
-    cout << "v: " << R->v << " ";
-    if (R->child[0]) cout << "l: " << R->child[0]->v << " ";
-    if(R->child[1]) cout << "r: " << R->child[1]->v;
-    cout << "\n";
-     
-    Inorder(R->child[1]);
-}
- 
-Node* Find(int v) {
-    if(!root) return NULL;
-    Node *P=root;
-     
-    while (P) {
-        if(P->v == v) break;
-        int i;
-        if(v < (P->v)) i = 0;
-        else i = 1;
-         
-        if(P->child[i]) P=P->child[i];
-        else break;
+node* ins(node *par, node *&cur, int val) {
+    if (!cur) { 
+        cur = new node(val); cur->p = par;
+        return cur; 
     }
-     
-    splay(P);
-    if(P->v == v) return P;
-    else return NULL;
+    if (cur->val == val) return cur;
+    else {
+        node* x = ins(cur,cur->c[val < cur->val ? 0 : 1],val);
+        cur->recalc();
+        return x;
+    }
+}
+
+void ins(int val) {
+    splay(ins(NULL,root,val));    
+}
+
+bool find(node *&cur, int val) {
+    if (!cur) return 0;
+    if (cur->val == val) {
+        splay(cur);
+        return 1;
+    }
+    return find(cur->c[val < cur->val ? 0 : 1],val);
 }
  
-bool Erase(int v) {
-    Node *N=Find(v);
-    if(!N) return false;
-    splay(N); //check once more;
-     
-    Node *P = N->child[0];
+bool del(int v) {
+    if (!find(root,v)) return 0;
+    node *N = root, *P = N->c[0];
     if(!P) {
-        root = N->child[1];
-        root->par = NULL;
-        free(N);
-        return true;
+        root = N->c[1]; root->p = NULL, delete N;
+        return 1;
     }
-    while(P->child[1]) P = P->child[1];
-    if(N->child[1]) {
-        P->child[1] = N->child[1];
-        N->child[1]->par = P;
-    }
-    root = N->child[0];
-    root->par = NULL;
-     
-    free(N);
-    return true;
+    
+    while(P->c[1]) P = P->c[1];
+    setLink(P,N->c[1],1);
+    root = N->c[0], root->p = NULL, delete N;
+    return 1;
 }
- 
+
+void inOrder(node*& cur) {
+    if (!cur) return;
+    cout << "NODE " << cur->val << ": SIZE " << cur->sz << "\n";
+    if (cur->c[0]) cout << "LEFT: " << cur->c[0]->val << "\n";
+    if (cur->c[1]) cout << "RIGHT: " << cur->c[1]->val << "\n";
+    cout << "\n";
+    inOrder(cur->c[0]);
+    inOrder(cur->c[1]);
+}
+
 int main() {
-    while(1) {
-        int t; cin >> t;
-        if(t!=0 && t!=-1) Insert(t);
-        else if(t==0) {
-            cin >> t;
-            if(!Find(t)) cout << "Couldn't Find " << t << "!\n";
-            else cout << "Found " << t << "!\n";
-        } else {
-            cin >> t;
-            if(Erase(t)) cout << "Deleted " << t << "!\n";
-            else cout << "Couldn't Find " << t << "!\n";
-        }
-        if(root) cout << "root: " << root->v << "\n";
-        Inorder(root);
-    }
+    ins(1);
+    ins(9);
+    ins(3);
+    ins(7);
+    ins(4);
+    del(1);
+    inOrder(root);
 }

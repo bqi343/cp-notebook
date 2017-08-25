@@ -16,7 +16,6 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 #define FORd(i,a,b) for (int i = (b)-1; i >= a; i--)
 #define F0Rd(i,a) for (int i = (a)-1; i >= 0; i--)
 
-#define sz(x) (int)(x).size()
 #define mp make_pair
 #define pb push_back
 #define f first
@@ -27,9 +26,9 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 const int MOD = 1000000007;
 
 struct node {
-    int val, pri, sz;
+    int val, pri, sz = 1;
     node *c[2];
-    node (int val): val(val), pri(rand()) {}
+    node (int val): val(val), pri(rand()), sz(1) {}
     void recalc ();
 };
 
@@ -50,7 +49,7 @@ void ins(node *&p, int x){
         if (x == p->val) return;
         int t = (x < p->val) ? 0 : 1;
         ins(p->c[t], x); 
-        if (p->c[t]->pri < p->pri) rot(p,t);
+        if (p->c[t]->pri > p->pri) rot(p,t);
     }
     p->recalc();
 }
@@ -98,14 +97,26 @@ int find_by_order(node *&p, int x) {
 
 node* root;
 
+void inOrder(node*& cur) {
+    if (!cur) return;
+    cout << "NODE " << cur->val << " PRIORITY: " << cur->pri << " SIZE " << cur->sz << "\n";
+    if (cur->c[0]) cout << "LEFT: " << cur->c[0]->val << "\n";
+    if (cur->c[1]) cout << "RIGHT: " << cur->c[1]->val << "\n";
+    cout << "\n";
+    inOrder(cur->c[0]);
+    inOrder(cur->c[1]);
+}
+
 int main() {
     ios_base::sync_with_stdio(0);cin.tie(0);
-    F0R(i,10) ins(root,i);
-    del(root,5);
-    F0R(i,10) cout << order_of_key(root,i) << " ";
-    cout << "\n";
-    F0R(i,10) cout << find_by_order(root,i) << " ";
-    cout << "\n";
+    ins(root,1);
+    ins(root,9);
+    ins(root,3);
+    ins(root,7);
+    ins(root,4);
+    del(root,4);
+    
+    inOrder(root);
 }
 
 // read!

@@ -26,16 +26,14 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 
 const int MOD = 1000000007;
 
-class node {
-    public:
-        int val, pri, sz;
-        node *c[2];
-        node (int val): val(val), pri(rand()) {}
-        void recalc ();
+struct node {
+    int val, pri, sz;
+    node *c[2];
+    node (int val): val(val), pri(rand()) {}
+    void recalc ();
 };
 
 int cnt(node* n) { return n ? n->sz : 0; }
-
 void node::recalc() { sz = cnt(c[0]) + cnt(c[1]) + 1; }
 
 void rot (node *&p, int d) { // takes care of both left / right rotations

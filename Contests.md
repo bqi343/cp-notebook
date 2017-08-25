@@ -27,6 +27,7 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * HackerEarth
   * Codechef
   * Yandex Algorithm
+  * Russian Code Cup
   
 ## Misc Contest Tools
   * [CF Visualizer](http://cfviz.netlify.com/compare.html)

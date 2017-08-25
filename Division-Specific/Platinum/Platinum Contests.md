@@ -25,7 +25,7 @@
 | ------------- | - | - | ---------------| ---------------------- |
 | 2012 Nov | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=193) | bbreeds | DP | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=194) | cbs | Stack | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=195) | btree | | `******t*tt*****t`|
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=195) | btree | Trees | Done |
 | 2012 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=211) | gangs | Searching | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=212) | first | Strings | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=213) | runaway | Trees | Done |
@@ -55,7 +55,7 @@
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=384) | skilevel | DSU | Done |
 | 2014 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=400) | rblock | Graphs | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=401) | dec | DP | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=402) | boarding | | |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=402) | boarding | BBST | Done |
 | 2014 Mar | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=418) | lazy | Segtree | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=419) | sabotage | Binary Search | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=420) | fcount | Greedy | Done |

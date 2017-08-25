@@ -60,6 +60,7 @@ These topics haven’t appeared recently.
       * Graham Scan
       * Slope Trick
         * [zscoder](http://codeforces.com/blog/entry/47821)
+        * [Line Container](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/LineContainer.h)
       * Problem(s)
         * [CEOI 2017.2.1](https://csacademy.com/contest/archive/task/building-bridges/)
   * Bitset DP

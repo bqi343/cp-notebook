@@ -32,9 +32,10 @@ Of course, all the gold topics carry over.
       * Heavy-Light Decomposition
         * [Anudeep2011](https://blog.anudeep2011.com/heavy-light-decomposition/)
         * [AI-Cash](http://codeforces.com/blog/entry/22072)
-  * Matrix Exponentiation
+  * Matrices
     * Tutorial
       * CPH (23, Matrices)
+      * [Implementation](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Matrix.h)
     * Problem(s)
       * [CF 420 Div 2 E](http://codeforces.com/contest/821/problem/E)
       * [Currencies](https://www.hackerrank.com/contests/gs-codesprint/challenges/currencies)

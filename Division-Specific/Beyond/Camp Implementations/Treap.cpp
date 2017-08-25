@@ -1,129 +1,114 @@
-// based on http://blog.ruofeidu.com/treap-in-45-lines-of-c/
+// http://blog.ruofeidu.com/treap-in-45-lines-of-c/
+// https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Treap.h
 
-#include <bits/stdc++.h>
- 
+#include <bits/extc++.h>
+
 using namespace std;
-//using namespace __gnu_pbds;
-  
+using namespace __gnu_pbds;
+ 
 typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int, int> pii;
- 
-#define FOR(i, a, b) for (int i=a; i<b; i++)
-#define F0R(i, a) for (int i=0; i<a; i++)
-  
+template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
+
+#define FOR(i, a, b) for (int i=a; i<(b); i++)
+#define F0R(i, a) for (int i=0; i<(a); i++)
+#define FORd(i,a,b) for (int i = (b)-1; i >= a; i--)
+#define F0Rd(i,a) for (int i = (a)-1; i >= 0; i--)
+
+#define sz(x) (int)(x).size()
 #define mp make_pair
 #define pb push_back
 #define f first
 #define s second
- 
+#define lb lower_bound
+#define ub upper_bound
+
 const int MOD = 1000000007;
 
 class node {
     public:
         int val, pri, sz;
         node *c[2];
-        node() {
-            pri = -1, sz = 0, val = 0;
-        }
-        node (int v) {
-            pri = rand(), val = v, sz = 1;
-        }
+        node (int val): val(val), pri(rand()) {}
+        void recalc ();
 };
 
-class treap {
-    public:
-        node *root, *null;
-    
-        treap () { 
-            null = new node(); 
-            null->c[0] = null->c[1] = null; 
-            root = null; 
-        }
-        
-        void update(node*& p){ 
-            if(p == null) return;
-            p->sz = 1+p->c[0]->sz+p->c[1]->sz;
-        }
-        
-        void rot (node *&p, int d) { // takes care of both left / right rotations
-            node *q = p->c[d]; 
-            p->c[d] = q->c[d^1]; 
-            q->c[d^1] = p; 
-            update(p), update(q); 
-            p = q; 
-        }
-        
-        void ins(node *&p, int x){
-            if (p == null) {
-                p = new node(x);  p->c[0] = p->c[1] = null;
-            } else {
-                int t = (x < p->val) ? 0 : 1;
-                ins(p->c[t], x); 
-                if (p->c[t]->pri < p->pri) rot(p,t);
-            }
-            update(p);
-        }
-        
-        void del(node *&p, int x){
-            if (p == null) return; 
-            if (p->val == x) del(p); 
-            else {
-                int t = (x < p->val) ? 0 : 1;
-                del(p->c[t],x); 
-            }
-            update(p);
-        }
-        
-        void del(node *&p){ 
-            if (p->c[0] == null && p->c[1] == null) {
-                delete p; p = null;
-                return;
-            }
-            int t = (p->c[0]->pri > p->c[1]->pri) ? 0 : 1;
-            rot(p,t); del(p->c[t^1]);
-            update(p); 
-        }
-        
-        bool find(node *&p, int x){
-            if(p == null) return false; 
-            if (x == p->val) return true; 
-            int t = (x < p->val) ? 0 : 1;
-            return find(p->c[t],x);
-        }
-        
-        int get(node *&p, int x) {
-            if (p->c[0]->sz == x) return p->val; 
-            if (p->c[0]->sz < x) return get(p->c[1],x-(p->c[0]->sz)-1);
-            return get(p->c[0],x);
-        }
-        
-        void ins(int x){ 
-            if (find(root,x)) return;
-            ins(root,x); 
-        }
-        
-        void del(int x){ 
-            if (!find(root,x)) return;
-            del(root,x); 
-        }
-        
-        bool find(int x){ return find(root,x); }
- 
-        int get(int x) { return get(root,x); }
-}; 
+int cnt(node* n) { return n ? n->sz : 0; }
 
-treap T;
+void node::recalc() { sz = cnt(c[0]) + cnt(c[1]) + 1; }
+
+void rot (node *&p, int d) { // takes care of both left / right rotations
+    node *q = p->c[d]; 
+    p->c[d] = q->c[d^1]; 
+    q->c[d^1] = p; 
+    p->recalc(), q->recalc();
+    p = q;
+}
+        
+void ins(node *&p, int x){
+    if (!p) p = new node(x);
+    else {
+        if (x == p->val) return;
+        int t = (x < p->val) ? 0 : 1;
+        ins(p->c[t], x); 
+        if (p->c[t]->pri < p->pri) rot(p,t);
+    }
+    p->recalc();
+}
+
+void del(node *&p){ 
+    F0R(t,2) if (!p->c[t]) {
+        node* tmp = p->c[t^1];
+        delete p; p = tmp;
+        return;
+    }
+    int t = (p->c[0]->pri > p->c[1]->pri) ? 0 : 1;
+    rot(p,t); del(p->c[t^1]);
+    p->recalc(); 
+}
+
+void del(node *&p, int x){
+    if (!p) return;
+    if (p->val == x) del(p); 
+    else {
+        int t = (x < p->val) ? 0 : 1;
+        del(p->c[t],x); 
+    }
+    if (p) p->recalc();
+}     
+
+bool find(node *&p, int x) {
+    if (!p) return 0;
+    if (p->val == x) return 1;
+    int t = p->val < x ? 0 : 1;
+    return find(p->c[t],x);
+}
+        
+int order_of_key(node *&p, int x){ // how many less than x
+    if (!p) return 0; 
+    if (x <= p->val) return order_of_key(p->c[0],x);
+    return order_of_key(p->c[1],x)+1+cnt(p->c[0]);
+}
+        
+int find_by_order(node *&p, int x) {
+    if (!p) return MOD;
+    if (cnt(p->c[0]) == x) return p->val; 
+    if (cnt(p->c[0]) < x) return find_by_order(p->c[1],x-cnt(p->c[0])-1);
+    return find_by_order(p->c[0],x);
+}
+
+node* root;
 
 int main() {
-    ios_base::sync_with_stdio(0); cin.tie(0);
-    
-    int N; cin >> N;
-    F0R(i,N) {
-        char x; int k;
-        cin >> x >> k;
-        if (x == 'I') T.ins(k);
-        else if (x == 'D') T.del(k);
-        else if (x == 'N') cout << T.get(k) << "\n"; // get kth element, starting from 0
-    }
+    ios_base::sync_with_stdio(0);cin.tie(0);
+    F0R(i,10) ins(root,i);
+    del(root,5);
+    F0R(i,10) cout << order_of_key(root,i) << " ";
+    cout << "\n";
+    F0R(i,10) cout << find_by_order(root,i) << " ";
+    cout << "\n";
 }
+
+// read!
+// ll vs. int!

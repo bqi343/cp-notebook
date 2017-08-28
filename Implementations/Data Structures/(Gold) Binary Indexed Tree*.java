@@ -1,4 +1,3 @@
-// Don't place your source in a package
 import java.util.*;
 import java.lang.*;
 import java.io.*;

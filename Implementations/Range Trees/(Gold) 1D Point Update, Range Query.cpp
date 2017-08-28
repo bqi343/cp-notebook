@@ -77,10 +77,10 @@ int main() {
     BIT<1<<17> b;
     b.upd(5,2);
     b.upd(4,1);
-    cout << b.query(3,5) << "\n"; // 3
+    cout << b.query(3,5) << "\n";
     
     Seg<1<<17> s;
     s.upd(5,2);
     s.upd(4,1);
-    cout << s.query(3,5) << "\n"; // 3
+    cout << s.query(3,5) << "\n";
 }

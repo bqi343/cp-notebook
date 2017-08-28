@@ -35,6 +35,7 @@ Of course, all the gold topics carry over.
   * Matrices
     * Tutorial
       * CPH (23, Matrices)
+      * [Implementation](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Matrix.h)
     * Problem(s)
       * [CF 420 Div 2 E](http://codeforces.com/contest/821/problem/E)
       * [Currencies](https://www.hackerrank.com/contests/gs-codesprint/challenges/currencies)
@@ -60,6 +61,7 @@ These topics haven’t appeared recently.
       * Graham Scan
       * Slope Trick
         * [zscoder](http://codeforces.com/blog/entry/47821)
+        * [Line Container](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/LineContainer.h)
       * Problem(s)
         * [CEOI 2017.2.1](https://csacademy.com/contest/archive/task/building-bridges/)
   * Bitset DP

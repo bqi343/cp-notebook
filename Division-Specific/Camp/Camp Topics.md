@@ -45,6 +45,8 @@
 ## Other
   * Strings
     * KMP
+    * Minimum Rotation
+    * Suffix Tree / Array
     * [Z Algorithm](http://codeforces.com/blog/entry/3107)
     * Aho-Corasick
   * FFT

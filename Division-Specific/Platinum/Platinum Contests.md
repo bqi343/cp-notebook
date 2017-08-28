@@ -50,7 +50,7 @@
 | 2013 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=364) | vacationgold | Graphs | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=365) | optmilk | SegTree | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=366) | shufflegold | Graphs | Done |
-| 2014 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=382) | curling | Geometry | Done |
+| 2014 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=382) | curling | Convex Hull | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=383) | skicourse | Cumulative Sum | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=384) | skilevel | DSU | Done |
 | 2014 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=400) | rblock | Graphs | Done |
@@ -73,7 +73,7 @@
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=516) | grass | SCC | Done |
 | 2015 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=532) | hopscotch | SegTree | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=533) | censor | Hashing | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=534) | fencing |  | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=534) | fencing | Convex Hull | Done |
 | 2015 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=552) | googol | BigNums | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=553) | palpath | DP | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=554) | trapped | Sortings | Done |

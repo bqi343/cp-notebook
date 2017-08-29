@@ -26,14 +26,14 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 #define ub upper_bound
 
 const int MOD = 1000000007;
-const int SZ = 1<<17;
+const int SZ = ;
 
 // Sparse SegTree
 struct node {
     int val = 0;
     node* c[2];
     
-    void upd(int ind, int v, int L = 0, int R = (1<<17)-1) { // set an element equal to v
+    void upd(int ind, int v, int L = 0, int R = SZ-1) { // set an element equal to v
         if (L == ind && R == ind) { val = v; return; }
         
         int M = (L+R)/2;

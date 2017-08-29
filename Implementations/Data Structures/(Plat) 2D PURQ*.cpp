@@ -1,4 +1,4 @@
-// 2D PURQ
+// 2D Point Update, Range Query
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -26,7 +26,7 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 #define ub upper_bound
 
 const int MOD = 1000000007;
-const int SZ = ;
+const int SZ = 1<<17;
 
 // Sparse SegTree
 struct node {
@@ -61,7 +61,7 @@ struct node {
     }
 };
 
-// 2D SegTree
+// 2D SegTree, note similarity to 1D SegTree!
 struct Node {
     node seg;
     Node* c[2];
@@ -110,21 +110,21 @@ struct SegBit {
     }
 };
 
-Node* n = new Node();
-SegBit* s = new SegBit();
+Node n;
+SegBit s;
 
 int main() {
     ios_base::sync_with_stdio(0);cin.tie(0);
     
-    n->upd(5,7,2);
-    n->upd(3,2,20);
-    n->upd(5,8,200);
-    cout << n->query(3,5,2,7) << "\n"; // 22
+    n.upd(5,7,2);
+    n.upd(3,2,20);
+    n.upd(5,8,200);
+    cout << n.query(3,5,2,7) << "\n"; // 22
     
-    s->upd(5,7,2);
-    s->upd(3,2,20);
-    s->upd(5,8,200);
-    cout << s->query(3,5,2,7) << "\n"; // 22
+    s.upd(5,7,2);
+    s.upd(3,2,20);
+    s.upd(5,8,200);
+    cout << s.query(3,5,2,7) << "\n"; // 22
 }
 
 // read!

@@ -26,7 +26,7 @@ const int MOD = 1000000007;
 double PI = 4*atan(1);
 
 int o = 0, ans = 0;
-int trie[60000000][2];
+int trie[60000000][2]; // easily changed to character
 
 void ins(int x) {
     int cur = 0;

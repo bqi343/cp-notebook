@@ -112,13 +112,20 @@ void inOrder(tnode *&cur) {
     inOrder(cur->c[1]);
 }
 
-pair<tnode*,tnode*> split(tnode* cur, int k) { // one with all values < k, other with all values > k
-    ins(cur,k,1);
-    pair<tnode*,tnode*> ans = {cur->c[0],cur->c[1]};
-    delete cur;
-    return ans;
-}
+pair<tnode*,tnode*> split(tnode* t, int v) { // >= x goes to the right
+	if (!t) return {t,t};
 
+	if (v <= t->val) {
+		pair<tnode*,tnode*> p = split(t->c[0], v);
+		t->c[0] = p.s; t->recalc();
+		return {p.f, t};
+	} else {
+		pair<tnode*,tnode*> p = split(t->c[1], v);
+		t->c[1] = p.f; t->recalc();
+		return {t, p.s};
+	}
+}
+	
 tnode* merge(tnode* a, tnode* b) {
     tnode* x = new tnode(0); x->pri = INT_MAX;
     x->c[0] = a, x->c[1] = b;
@@ -137,7 +144,7 @@ int main() {
     inOrder(root);
     cout << "--------\n\n";
     ins(root1,10);
-    root = merge(root,root1); // fix this??
+    root = merge(root,root1); 
     inOrder(root);
     cout << "--------\n\n";
     

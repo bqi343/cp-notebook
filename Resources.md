@@ -21,6 +21,8 @@ I recommend that you use C++11 over Java due to various reasons, such as
   * [Joshua Pan's Advice](https://www.quora.com/What-is-a-good-schedule-to-follow-for-becoming-better-at-competitive-programming-for-beginners)
   * [TJSCT](https://activities.tjhsst.edu/sct/lectures.php)
   * ["Awesome List"](http://codeforces.com/blog/entry/23054)
+  * [Competitive Programming Course](https://github.com/SuprDewd/T-414-AFLV)
+  * [Competitive Programming Playlist](https://www.commonlounge.com/community/862d2091c64e447cacde77d4c76a9ac3)
 
 
 ## Algorithm Collections

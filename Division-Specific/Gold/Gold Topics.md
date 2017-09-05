@@ -36,6 +36,7 @@ Of course, all the silver topics carry over.
         * [8VC Elimination C](http://codeforces.com/problemset/problem/755/C)
         * [CF 383 Div 1 B](http://codeforces.com/problemset/problem/741/B)
         * [Leha & Another Game on Graph](http://codeforces.com/contest/840/problem/B)
+        * [Spanning Tree Fraction](https://www.hackerrank.com/contests/w31/challenges/spanning-tree-fraction)
   * Hashing
     * CPH (26, String Algorithms)
     * Problems

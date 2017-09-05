@@ -33,6 +33,8 @@ Of course, all the gold topics carry over.
       * Heavy-Light Decomposition
         * [Anudeep2011](https://blog.anudeep2011.com/heavy-light-decomposition/)
         * [AI-Cash](http://codeforces.com/blog/entry/22072)
+    * Problem(s)
+        * [Ciel the Commander](http://codeforces.com/problemset/problem/321/C)
   * Matrices
     * Tutorial
       * CPH (23, Matrices)

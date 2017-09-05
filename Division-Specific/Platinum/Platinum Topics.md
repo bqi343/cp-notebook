@@ -20,6 +20,7 @@ Of course, all the gold topics carry over.
       * [Radio Stations](http://codeforces.com/problemset/problem/762/E)
       * [PolandBall and Polygon](http://codeforces.com/problemset/problem/755/D)
       * [Candles](https://csacademy.com/contest/round-41/task/candles/)
+      * [Anton & Permutation](http://codeforces.com/contest/785/problem/E)
       * [Cards](https://szkopul.edu.pl/problemset/problem/qpsk3ygf8MU7D_1Es0oc_xd8/site/?key=statement)
   * Trees
     * Tutorial

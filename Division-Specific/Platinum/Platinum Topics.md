@@ -13,15 +13,18 @@ Of course, all the gold topics carry over.
       * [Codeforces Tutorial](http://codeforces.com/blog/entry/18051)
     * Types
       * (Lazy) Segment Tree
+        * Minimum Query + Number of Minimums
       * Segment Tree + BIT
       * 2D Segment Tree
       * BIT with range modification
+      * 2D BIT
     * Problems
       * [Radio Stations](http://codeforces.com/problemset/problem/762/E)
       * [PolandBall and Polygon](http://codeforces.com/problemset/problem/755/D)
       * [Candles](https://csacademy.com/contest/round-41/task/candles/)
       * [Anton & Permutation](http://codeforces.com/contest/785/problem/E)
       * [Cards](https://szkopul.edu.pl/problemset/problem/qpsk3ygf8MU7D_1Es0oc_xd8/site/?key=statement)
+      * [Crowded Cities](https://dmoj.ca/problem/bfs17p6)
   * Trees
     * Tutorial
       * CPH (14, Tree Algorithms)
@@ -35,6 +38,7 @@ Of course, all the gold topics carry over.
         * [AI-Cash](http://codeforces.com/blog/entry/22072)
     * Problem(s)
         * [Ciel the Commander](http://codeforces.com/problemset/problem/321/C)
+        * [Hot & Cold](https://dmoj.ca/problem/bts17p7)
   * Matrices
     * Tutorial
       * CPH (23, Matrices)

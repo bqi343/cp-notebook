@@ -23,6 +23,7 @@ Of course, all the silver topics carry over.
       * [DNA Evolution](http://codeforces.com/contest/827/problem/C)
       * [Cards Sorting](http://codeforces.com/contest/831/problem/E)
       * [Sorting Steps](https://csacademy.com/contest/round-42/task/sorting-steps/)
+      * [Sour Candy](https://dmoj.ca/problem/bts17p6)
   * Graphs II (7)
     * Shortest Path (especially Dijkstra)
       * [Topcoder Graphs Pt 3](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-3/)

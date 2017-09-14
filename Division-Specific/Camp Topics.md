@@ -16,11 +16,13 @@
       * Treap
       	* [Implementation](http://blog.ruofeidu.com/treap-in-45-lines-of-c/)
       	* [Wikipedia](https://en.wikipedia.org/wiki/Treap)
+       * Split, Merge, Lazy Propogation
     * Problems
       * [DYNACON1](http://www.spoj.com/problems/DYNACON1/)
       * [SEQ2](http://www.spoj.com/problems/SEQ2/)
       * [TREAP](http://www.spoj.com/problems/TREAP/)
       * [Tree Rotations 2](http://main.edu.pl/en/archive/oi/18/rod)
+      * [Points & Distances](https://www.hackerearth.com/problem/algorithm/septembereasy-points-and-distances-d30d0e6b/description/)
   * Manacher's Algorithm
     * Tutorial
       * [HackerRank](https://www.hackerrank.com/topics/manachers-algorithm)
@@ -44,9 +46,7 @@
     
 ## Other
   * Strings
-    * KMP
-    * Minimum Rotation
-    * Suffix Tree / Array
+    * [Suffix Array](https://github.com/SuprDewd/T-414-AFLV/tree/master/11_strings)
     * [Z Algorithm](http://codeforces.com/blog/entry/3107)
     * Aho-Corasick
   * FFT

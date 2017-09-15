@@ -42,11 +42,13 @@ Of course, all the gold topics carry over.
   * Matrices
     * Tutorial
       * CPH (23, Matrices)
+      * Exponentiation
+      * Gaussian Elimination?
       * [Implementation](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Matrix.h)
     * Problem(s)
       * [CF 420 Div 2 E](http://codeforces.com/contest/821/problem/E)
       * [Currencies](https://www.hackerrank.com/contests/gs-codesprint/challenges/currencies)
-    * [Implementation](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Matrix.h)
+      * [Wet Shark & Blocks](http://codeforces.com/problemset/problem/621/E)
   * Divide and Conquer Optimization
 
 # Old Gold

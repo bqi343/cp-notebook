@@ -10,6 +10,8 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * [The Meeting Place Cannot Be Changed](http://codeforces.com/problemset/problem/780/B)
       * [Exams](http://codeforces.com/problemset/problem/732/D)
       * [Office Keys](http://codeforces.com/contest/831/problem/D)
+      * [Fire in the City](http://codeforces.com/problemset/problem/845/E)
+      * [Level Generation](http://codeforces.com/problemset/problem/818/F)
   * Data Structures (C++ STL)
     * Types
       * Set, Multiset, Unordered Set
@@ -27,12 +29,16 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * CPH (8, Amortized Analysis)
     * Problems
       * [USB vs. PS/2](http://codeforces.com/problemset/problem/762/B)
+      * [Jury Meeting](http://codeforces.com/problemset/problem/853/B)
+      * [CF 418 C](http://codeforces.com/problemset/problem/814/C)
+      * [Cellular Network](http://codeforces.com/problemset/problem/702/C)
   * Cumulative Sum (4)
     * 1D, 2D
     * Tutorial
       * CPH (9.1, Static Array Queries) 
     * Problems
       * [Star Sky](http://codeforces.com/contest/835/problem/C)
+      * [Monitor](http://codeforces.com/problemset/problem/846/D)
   * Graphs I (6)
     * Topics
       * Flood Fill
@@ -49,3 +55,5 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * [BFS-DFS](https://csacademy.com/contest/round-41/task/bfs-dfs/)
       * [Hotels](https://szkopul.edu.pl/problemset/problem/gDw3iFkeVm7ZA3j_16-XR7jI/site/?key=statement)
       * [Journey](http://codeforces.com/contest/839/problem/C)
+      * [Mother of Dragons](http://codeforces.com/problemset/problem/839/E)
+      * [Okabe & City](http://codeforces.com/problemset/problem/821/D)

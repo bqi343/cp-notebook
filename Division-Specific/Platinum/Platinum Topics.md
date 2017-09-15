@@ -71,5 +71,6 @@ These topics haven’t appeared recently.
         * [Line Container](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/LineContainer.h)
       * Problem(s)
         * [CEOI 2017.2.1](https://csacademy.com/contest/archive/task/building-bridges/)
+        * [Fence Orthogonality](https://open.kattis.com/problems/fenceortho)
   * Bitset DP
   * Meet in the Middle

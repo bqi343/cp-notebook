@@ -9,7 +9,7 @@
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=101) | simplify | DSU | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=102) | grassplant | Trees | Done |
 | 2012 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=109) | combos | Matrix | Done |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=110) | cowrun | DFS | `*******t**` |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=110) | cowrun | DFS | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=111) | alliance | DFS | Done |
 | 2012 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=118) | coupons | Sortings | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=119) | symmetry | Map | Done |

@@ -56,5 +56,5 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * [BFS-DFS](https://csacademy.com/contest/round-41/task/bfs-dfs/)
       * [Hotels](https://szkopul.edu.pl/problemset/problem/gDw3iFkeVm7ZA3j_16-XR7jI/site/?key=statement)
       * [Journey](http://codeforces.com/contest/839/problem/C)
-      * [Mother of Dragons](http://codeforces.com/problemset/problem/839/E)
       * [Okabe & City](http://codeforces.com/problemset/problem/821/D)
+      * [Wizard's Tour](http://codeforces.com/contest/860/problem/D)

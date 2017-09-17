@@ -24,6 +24,7 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * CPH (4, Data Structures)
     * Problems
       * [Jury Marks](http://codeforces.com/contest/831/problem/C)
+      * [Polycarp's Phone Book](http://codeforces.com/contest/860/problem/B)
   * Two Pointers (3)
     * Tutorial
       * CPH (8, Amortized Analysis)

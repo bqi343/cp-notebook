@@ -39,6 +39,7 @@ Of course, all the gold topics carry over.
     * Problem(s)
         * [Ciel the Commander](http://codeforces.com/problemset/problem/321/C)
         * [Hot & Cold](https://dmoj.ca/problem/bts17p7)
+        * [CF 434 Div 1 E](http://codeforces.com/contest/860/problem/E)
   * Matrices
     * Tutorial
       * CPH (23, Matrices)

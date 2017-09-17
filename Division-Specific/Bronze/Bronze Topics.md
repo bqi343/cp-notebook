@@ -28,3 +28,4 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
     * CPH (6, Greedy Algorithms)
     * Problem(s)
        * [Sure Bet](https://csacademy.com/contest/archive/task/sure-bet/)
+       * [Did you Mean...](http://codeforces.com/contest/860/problem/A)

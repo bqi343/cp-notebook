@@ -33,8 +33,10 @@ I recommend that you use C++11 over Java due to various reasons, such as
   * [Coding Library](https://github.com/radoslav11/Coding-Library?files=1)
   
 ## Misc OI
-  * [PEG](http://wcipeg.com)
-  * [Yandex](https://contest.yandex.ru/ioi/Info/)
-  * [JOI](http://cms.ioi-jp.org/)
-  * [MAIN](http://main.edu.pl/en)
-  * [TLX](https://competition.ia-toki.org/contests)
+  * [WCIPEG (Past IOI)](http://wcipeg.com)
+  * [Yandex (Past IOI)](https://contest.yandex.ru/ioi/Info/)
+  * [USACO](http://www.usaco.org/)
+  * [Japan OI](http://cms.ioi-jp.org/)
+  * [Poland OI](https://szkopul.edu.pl/portal/)
+  * [Italy OI](https://training.olinfo.it/#/overview)
+  * [Indonesia OI](https://competition.ia-toki.org/contests)

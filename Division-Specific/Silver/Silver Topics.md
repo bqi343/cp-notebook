@@ -7,7 +7,8 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * [Topcoder: Binary Search](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-search/)
       * [CSAcademy](https://csacademy.com/lesson/binary_search)
     * Problems
-      * [Preparing for Merge Sort](http://codeforces.com/contest/847/problem/B)
+      * [Preparing for Merge Sort](http://codeforces.com/contest/847/problem/B) [](53)
+      * [Packmen](http://codeforces.com/contest/847/problem/E) [](57)
       * [The Meeting Place Cannot Be Changed](http://codeforces.com/problemset/problem/780/B)
       * [Exams](http://codeforces.com/problemset/problem/732/D)
       * [Office Keys](http://codeforces.com/contest/831/problem/D)

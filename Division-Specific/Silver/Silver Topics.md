@@ -41,7 +41,7 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * CPH (9.1, Static Array Queries) 
     * Problems
       * [Star Sky](http://codeforces.com/contest/835/problem/C)
-      * [Monitor](http://codeforces.com/problemset/problem/846/D)
+      * [Monitor](http://codeforces.com/problemset/problem/846/D) [](60)
   * Graphs I (6)
     * Topics
       * Flood Fill
@@ -55,7 +55,8 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * CPH (11, Basics of Graphs)
       * CPH (12, Graph Traversals)
     * Problem(s)
-      * [BFS-DFS](https://csacademy.com/contest/round-41/task/bfs-dfs/)
+      * [BFS-DFS](https://csacademy.com/contest/round-41/task/bfs-dfs/) [](50)
+      * [Noise Level](http://codeforces.com/contest/847/problem/I) [](74)
       * [Hotels](https://szkopul.edu.pl/problemset/problem/gDw3iFkeVm7ZA3j_16-XR7jI/site/?key=statement)
       * [Journey](http://codeforces.com/contest/839/problem/C)
       * [Okabe & City](http://codeforces.com/problemset/problem/821/D)

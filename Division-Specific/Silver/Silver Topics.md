@@ -22,23 +22,24 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * Stack
     * Tutorial
       * CPH (4, Data Structures)
-    * Problems
-      * [Jury Marks](http://codeforces.com/contest/831/problem/C)
-      * [Polycarp's Phone Book](http://codeforces.com/contest/860/problem/B)
+    * Problems (sorted by length)
+      * [Polycarp's Phone Book](http://codeforces.com/contest/860/problem/B) [](56)
+      * [Jury Marks](http://codeforces.com/contest/831/problem/C) [](67)
+      * [Mahmoud & Ehab & Function](http://codeforces.com/contest/862/problem/E) [](74)
   * Two Pointers (3)
     * Tutorial
       * CPH (8, Amortized Analysis)
-    * Problems
-      * [USB vs. PS/2](http://codeforces.com/problemset/problem/762/B)
-      * [Jury Meeting](http://codeforces.com/problemset/problem/853/B)
-      * [CF 418 C](http://codeforces.com/problemset/problem/814/C)
-      * [Cellular Network](http://codeforces.com/problemset/problem/702/C)
+    * Problems (sorted by length)
+      * [Cellular Network](http://codeforces.com/problemset/problem/702/C) [](48)
+      * [USB vs. PS/2](http://codeforces.com/problemset/problem/762/B) [](53)
+      * [CF 418 C](http://codeforces.com/problemset/problem/814/C) [](54)
+      * [Jury Meeting](http://codeforces.com/problemset/problem/853/B) [](90)
   * Cumulative Sum (4)
     * 1D, 2D
     * Tutorial
       * CPH (9.1, Static Array Queries) 
-    * Problems
-      * [Star Sky](http://codeforces.com/contest/835/problem/C)
+    * Problems (sorted by length)
+      * [Star Sky](http://codeforces.com/contest/835/problem/C) [](54)
       * [Monitor](http://codeforces.com/problemset/problem/846/D) [](60)
   * Graphs I (6)
     * Topics

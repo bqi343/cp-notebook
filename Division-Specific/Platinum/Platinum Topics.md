@@ -18,13 +18,11 @@ Of course, all the gold topics carry over.
       * 2D Segment Tree
       * BIT with range modification
       * 2D BIT
-    * Problems
-      * [Radio Stations](http://codeforces.com/problemset/problem/762/E)
-      * [PolandBall and Polygon](http://codeforces.com/problemset/problem/755/D)
-      * [Candles](https://csacademy.com/contest/round-41/task/candles/)
-      * [Anton & Permutation](http://codeforces.com/contest/785/problem/E)
-      * [Cards](https://szkopul.edu.pl/problemset/problem/qpsk3ygf8MU7D_1Es0oc_xd8/site/?key=statement)
-      * [Crowded Cities](https://dmoj.ca/problem/bfs17p6)
+    * Problems (sorted by length)
+      * [Cards](https://szkopul.edu.pl/problemset/problem/qpsk3ygf8MU7D_1Es0oc_xd8/site/?key=statement) [](81)
+      * [Anton & Permutation](http://codeforces.com/contest/785/problem/E) [](85)
+      * [Crowded Cities](https://dmoj.ca/problem/bfs17p6) [](89)
+      * [Candles](https://csacademy.com/contest/round-41/task/candles/) [](94)
   * Trees
     * Tutorial
       * CPH (14, Tree Algorithms)
@@ -37,9 +35,9 @@ Of course, all the gold topics carry over.
         * [Anudeep2011](https://blog.anudeep2011.com/heavy-light-decomposition/)
         * [AI-Cash](http://codeforces.com/blog/entry/22072)
     * Problem(s)
-        * [Ciel the Commander](http://codeforces.com/problemset/problem/321/C)
-        * [Hot & Cold](https://dmoj.ca/problem/bts17p7)
-        * [CF 434 Div 1 E](http://codeforces.com/contest/860/problem/E)
+        * [Ciel the Commander](http://codeforces.com/problemset/problem/321/C) [](71)
+        * [CF 434 Div 1 E](http://codeforces.com/contest/860/problem/E) [](101)
+        * [Hot & Cold](https://dmoj.ca/problem/bts17p7) [](105)
   * Matrices
     * Tutorial
       * CPH (23, Matrices)
@@ -47,9 +45,9 @@ Of course, all the gold topics carry over.
       * Gaussian Elimination?
       * [Implementation](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Matrix.h)
     * Problem(s)
-      * [CF 420 Div 2 E](http://codeforces.com/contest/821/problem/E)
-      * [Currencies](https://www.hackerrank.com/contests/gs-codesprint/challenges/currencies)
-      * [Wet Shark & Blocks](http://codeforces.com/problemset/problem/621/E)
+      * [Wet Shark & Blocks](http://codeforces.com/problemset/problem/621/E) [](55)
+      * [CF 420 Div 2 E](http://codeforces.com/contest/821/problem/E) [](81)
+      * [Currencies](https://www.hackerrank.com/contests/gs-codesprint/challenges/currencies) [](107)
   * Divide and Conquer Optimization
 
 # Old Gold

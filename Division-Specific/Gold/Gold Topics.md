@@ -34,10 +34,10 @@ Of course, all the silver topics carry over.
     * CPH (15, Spanning Trees)
     * [Topcoder Union Find](https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/)
     * [CSAcademy](https://csacademy.com/lesson/disjoint_data_sets)
-    * Problems
-      * [VK Cup R1 A](http://codeforces.com/problemset/problem/771/A)
-      * [CF 383 Div 1 B](http://codeforces.com/problemset/problem/741/B)
+    * Problems (sorted by Length)
       * [PolandBall & Forest](http://codeforces.com/problemset/problem/755/C) [](56)
+      * [Bear & Friendship Condition](http://codeforces.com/problemset/problem/771/A) [](57)
+      * [CF 383 Div 1 B](http://codeforces.com/problemset/problem/741/B) [](70)
       * [Spanning Tree Fraction](https://www.hackerrank.com/contests/w31/challenges/spanning-tree-fraction) [](78)
       * [Leha & Another Game on Graph](http://codeforces.com/contest/840/problem/B) [](89)
   * Hashing

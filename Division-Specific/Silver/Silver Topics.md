@@ -26,6 +26,7 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
       * [Polycarp's Phone Book](http://codeforces.com/contest/860/problem/B) [](56)
       * [Jury Marks](http://codeforces.com/contest/831/problem/C) [](67)
       * [Mahmoud & Ehab & Function](http://codeforces.com/contest/862/problem/E) [](74)
+      * [Karen & Cards](http://codeforces.com/contest/815/problem/D) [](86)
   * Two Pointers (3)
     * Tutorial
       * CPH (8, Amortized Analysis)

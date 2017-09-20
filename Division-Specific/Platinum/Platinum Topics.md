@@ -12,13 +12,15 @@ Of course, all the gold topics carry over.
       * [CSAcademy Tutorial](https://csacademy.com/lesson/segment_trees/)
       * [Codeforces Tutorial](http://codeforces.com/blog/entry/18051)
     * Types
-      * (Lazy) Segment Tree
-        * Minimum Query + Number of Minimums
-      * Segment Tree + BIT
-      * 2D Segment Tree
-      * BIT with range modification
-      * 2D BIT
-      * Merge-Sort Tree
+      * 1D
+        * (Lazy) Segment Tree
+          * Minimum Query + Number of Minimums
+        * BIT with range modification
+      * 2D
+        * Segment Tree + BIT
+        * 2D Segment Tree
+        * 2D BIT
+        * Merge-Sort Tree
     * Problems (sorted by length)
       * [Cards](https://szkopul.edu.pl/problemset/problem/qpsk3ygf8MU7D_1Es0oc_xd8/site/?key=statement) [](81)
       * [Anton & Permutation](http://codeforces.com/contest/785/problem/E) [](85)

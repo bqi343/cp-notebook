@@ -16,14 +16,13 @@
       * Treap
         * [Wikipedia](https://en.wikipedia.org/wiki/Treap)
         * Split, Merge, Lazy Propogation
-    * Problems
+    * Problems (sorted by length)
       * [Hitchhiking](http://codeforces.com/contest/809/problem/D) [](132)
       * [DYNACON1](http://www.spoj.com/problems/DYNACON1/) [](140)
+      * [Yet Another Array Queries Problem](http://codeforces.com/contest/863/problem/D) [](153)
+        * Due to the low value of m, a BBST is not required.
       * [TREAP](http://www.spoj.com/problems/TREAP/) [](173)
       * [Points & Distances](https://www.hackerearth.com/problem/algorithm/septembereasy-points-and-distances-d30d0e6b/description/) [](185)
-      * [TEMPLEQ](http://www.spoj.com/problems/TEMPLEQ/) [](213)
-      * [SEQ2](http://www.spoj.com/problems/SEQ2/) [](233)
-        * Note the comments.
   * Manacher's Algorithm
     * Tutorial
       * [HackerRank](https://www.hackerrank.com/topics/manachers-algorithm)

@@ -30,17 +30,23 @@ const int MOD = 1000000007;
 struct node{
     int val, sz;
     node *p, *c[2];
-    node (int val): val(val), sz(1) {}
-    void recalc();
+    node (int v) {
+        val = v, sz = 1;
+    }
+    void recalc() {
+        sz = 1;
+        if (c[0]) sz += c[0]->sz;
+        if (c[1]) sz += c[1]->sz;
+    }
 };
-
-int cnt(node* n) { return n ? n->sz : 0; }
-void node::recalc() { sz = cnt(c[0]) + cnt(c[1]) + 1; }
 
 node *root;
 
 void setLink(node *x, node *y, int d) {
-    if (x) x->c[d] = y;
+    if (x) {
+        x->c[d] = y;
+        x->recalc();
+    }
     if (y) y->p = x;
 }
 
@@ -68,28 +74,32 @@ void splay(node *x) {
     root = x;
 }
 
-node* ins(node *par, node *&cur, int val) {
-    if (!cur) {
-        cur = new node(val); cur->p = par;
-        return cur;
+node* ins(node* cur, int v) {
+    if (!cur) return cur = new node(v);
+    if (cur->val == v) return cur;
+    int t = v < cur->val ? 0 : 1;
+    
+    if (!cur->c[t]) {
+        setLink(cur,new node(v),t);
+        return cur->c[t];
+    } else {
+        node* x = ins(cur->c[t],v); 
+        cur->recalc();
+        return x;
     }
-    if (cur->val == val) return cur;
-    node* x = ins(cur,cur->c[val < cur->val ? 0 : 1],val);
-    cur->recalc();
-    return x;
 }
 
 void ins(int val) {
-    splay(ins(NULL,root,val));
+    splay(ins(root,val));
 }
 
-bool find(node *&cur, int val) {
+bool find(node *cur, int v) {
     if (!cur) return 0;
-    if (cur->val == val) {
+    if (cur->val == v) {
         splay(cur);
         return 1;
     }
-    return find(cur->c[val < cur->val ? 0 : 1],val);
+    return find(cur->c[v < cur->val ? 0 : 1],v);
 }
 
 bool del(int v) {
@@ -111,7 +121,7 @@ bool del(int v) {
     return 1;
 }
 
-void inOrder(node*& cur) {
+void inOrder(node* cur) {
     if (!cur) return;
     cout << "NODE " << cur->val << ": SIZE " << cur->sz << "\n";
     if (cur->c[0]) cout << "LEFT: " << cur->c[0]->val << "\n";
@@ -123,9 +133,11 @@ void inOrder(node*& cur) {
 
 int main() {
     for (int i = 0; i < 10; ++i) ins(rand() % 50);
-    find(root,35);
     inOrder(root);
-    cout << "-------\n\n";
-    del(35);
+    cout << "--------\n\n";
+    del(21);
     inOrder(root);
 }
+
+// read!
+// ll vs int!

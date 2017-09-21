@@ -24,87 +24,20 @@ typedef pair<int, int> pii;
 const int MOD = 1000000007;
 
 struct tnode {
-    int val, pri, sz = 1;
+    int val, pri;
     tnode *c[2];
-    tnode (int val): val(val), pri(rand()/2), sz(1) {
+    tnode (int v) {
         c[0] = c[1] = NULL;
+        pri = rand(); // note that this is < (1<<15) on windows!
+        val = v;
     }
-    void recalc ();
 };
-
-int cnt(tnode* n) { return n ? n->sz : 0; }
-void tnode::recalc() { sz = cnt(c[0]) + cnt(c[1]) + 1; }
-
-void rot (tnode *&p, int d) { // takes care of both left / right rotations
-    tnode *q = p->c[d];
-    p->c[d] = q->c[d^1];
-    q->c[d^1] = p;
-    p->recalc(), q->recalc();
-    p = q;
-}
-
-void ins(tnode *&p, int x, int tmp = 0){
-    if (!p) {
-        p = new tnode(x);
-        if (tmp) p->pri = INT_MAX;
-    } else {
-        if (x == p->val) {
-            p->pri = INT_MAX;
-            return;
-        }
-        int t = (x < p->val) ? 0 : 1;
-        ins(p->c[t], x,tmp);
-        if (p->c[t]->pri > p->pri) rot(p,t);
-    }
-    p->recalc();
-}
-
-void del(tnode *&p){
-    F0R(t,2) if (!p->c[t]) {
-        tnode* tmp = p->c[t^1];
-        delete p; p = tmp;
-        return;
-    }
-    int t = (p->c[0]->pri > p->c[1]->pri) ? 0 : 1;
-    rot(p,t); del(p->c[t^1]);
-    p->recalc();
-}
-
-void del(tnode *&p, int x){
-    if (!p) return;
-    if (p->val == x) del(p);
-    else {
-        int t = (x < p->val) ? 0 : 1;
-        del(p->c[t],x);
-    }
-    if (p) p->recalc();
-}
-
-bool find(tnode *&p, int x) {
-    if (!p) return 0;
-    if (p->val == x) return 1;
-    int t = p->val < x ? 0 : 1;
-    return find(p->c[t],x);
-}
-
-int order_of_key(tnode *&p, int x){ // how many less than x
-    if (!p) return 0;
-    if (x <= p->val) return order_of_key(p->c[0],x);
-    return order_of_key(p->c[1],x)+1+cnt(p->c[0]);
-}
-
-int find_by_order(tnode *&p, int x) {
-    if (!p) return MOD;
-    if (cnt(p->c[0]) == x) return p->val;
-    if (cnt(p->c[0]) < x) return find_by_order(p->c[1],x-cnt(p->c[0])-1);
-    return find_by_order(p->c[0],x);
-}
 
 tnode *root, *root1;
 
-void inOrder(tnode *&cur) {
+void inOrder(tnode *cur) {
     if (!cur) return;
-    cout << "NODE " << cur->val << " PRIORITY: " << cur->pri << " SIZE " << cur->sz << "\n";
+    cout << "NODE " << cur->val << " PRIORITY: " << cur->pri << "\n";
     if (cur->c[0]) cout << "LEFT: " << cur->c[0]->val << "\n";
     if (cur->c[1]) cout << "RIGHT: " << cur->c[1]->val << "\n";
     cout << "\n";
@@ -117,33 +50,56 @@ pair<tnode*,tnode*> split(tnode* t, int v) { // >= x goes to the right
 
 	if (v <= t->val) {
 		pair<tnode*,tnode*> p = split(t->c[0], v);
-		t->c[0] = p.s; t->recalc();
+		t->c[0] = p.s;
 		return {p.f, t};
 	} else {
 		pair<tnode*,tnode*> p = split(t->c[1], v);
-		t->c[1] = p.f; t->recalc();
+		t->c[1] = p.f; 
 		return {t, p.s};
 	}
 }
 	
-tnode* merge(tnode* a, tnode* b) {
-    tnode* x = new tnode(0); x->pri = INT_MAX;
-    x->c[0] = a, x->c[1] = b;
-    del(x); return x;
+tnode* merge(tnode* l, tnode* r) {
+    if (!l) return r; 
+    if (!r) return l;
+    if (l->pri > r->pri) {
+        l->c[1] = merge(l->c[1],r);
+        return l;
+    } else {
+        r->c[0] = merge(l,r->c[0]);
+        return r;
+    }
+}
+
+tnode* ins(tnode* x, int v) {
+    auto a = split(x,v);
+    auto b = split(a.s,v+1);
+    delete b.f;
+    
+    tnode* z = new tnode(v);
+    return merge(merge(a.f,z),b.s);
+}
+
+tnode* del(tnode* x, int v) {
+    auto a = split(x,v);
+    auto b = split(a.s,v+1);
+    delete b.f;
+    
+    return merge(a.f,b.s);
 }
 
 int main() {
     ios_base::sync_with_stdio(0);cin.tie(0);
-    ins(root,1);
-    ins(root,9);
-    ins(root,3);
-    ins(root,7);
-    ins(root,4);
-    del(root,4);
+    root = ins(root,1);
+    root = ins(root,9);
+    root = ins(root,3);
+    root = ins(root,7);
+    root = ins(root,4);
+    root = del(root,4);
     
     inOrder(root);
     cout << "--------\n\n";
-    ins(root1,10);
+    root1 = ins(root1,10);
     root = merge(root,root1); 
     inOrder(root);
     cout << "--------\n\n";

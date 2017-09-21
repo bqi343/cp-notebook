@@ -12,18 +12,18 @@
   * Balanced Binary Search Trees
     * Types
       * [Splay Tree](http://codeforces.com/blog/entry/18462)
-      	* [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
+        * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
       * Treap
-      	* [Implementation](http://blog.ruofeidu.com/treap-in-45-lines-of-c/)
-      	* [Wikipedia](https://en.wikipedia.org/wiki/Treap)
-       * Split, Merge, Lazy Propogation
+        * [Wikipedia](https://en.wikipedia.org/wiki/Treap)
+        * Split, Merge, Lazy Propogation
     * Problems
       * [Hitchhiking](http://codeforces.com/contest/809/problem/D) [](132)
       * [DYNACON1](http://www.spoj.com/problems/DYNACON1/) [](140)
       * [TREAP](http://www.spoj.com/problems/TREAP/) [](173)
       * [Points & Distances](https://www.hackerearth.com/problem/algorithm/septembereasy-points-and-distances-d30d0e6b/description/) [](185)
       * [TEMPLEQ](http://www.spoj.com/problems/TEMPLEQ/) [](213)
-      * [SEQ2](http://www.spoj.com/problems/SEQ2/)
+      * [SEQ2](http://www.spoj.com/problems/SEQ2/) [](233)
+        * Note the comments.
   * Manacher's Algorithm
     * Tutorial
       * [HackerRank](https://www.hackerrank.com/topics/manachers-algorithm)

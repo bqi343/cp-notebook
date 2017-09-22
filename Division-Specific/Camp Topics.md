@@ -23,7 +23,9 @@
         * Due to the low value of m, a BBST is not required.
       * [TREAP](http://www.spoj.com/problems/TREAP/) [](173)
       * [Points & Distances](https://www.hackerearth.com/problem/algorithm/septembereasy-points-and-distances-d30d0e6b/description/) [](185)
-  * Manacher's Algorithm
+  * Strings
+    * Manacher's Algorithm
+    * [Z Algorithm](http://codeforces.com/blog/entry/3107)
     * Tutorial
       * [HackerRank](https://www.hackerrank.com/topics/manachers-algorithm)
       * [adamant](http://codeforces.com/blog/entry/12143)
@@ -47,7 +49,6 @@
 ## Other
   * Strings
     * [Suffix Array](https://github.com/SuprDewd/T-414-AFLV/tree/master/11_strings)
-    * [Z Algorithm](http://codeforces.com/blog/entry/3107)
     * Aho-Corasick
   * FFT
     * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)

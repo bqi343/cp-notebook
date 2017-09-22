@@ -1,5 +1,7 @@
 # Binary Search
 
+## 2
+
   * Binary Search (4 out of past 24 silver problems)
     * Tutorial
       * CPH (3, Sorting)

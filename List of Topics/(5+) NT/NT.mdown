@@ -1,0 +1,10 @@
+# NT
+
+## 5
+  * Modular Inverse
+
+## Other
+  * NTT / FFT
+    * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)
+    * [CF Tutorial Pt 2](http://codeforces.com/blog/entry/48798)
+    * [CSAcademy](https://csacademy.com/blog/fast-fourier-transform-and-variations-of-it/)

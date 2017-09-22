@@ -56,16 +56,23 @@ Of course, all the gold topics carry over.
 
 # Old Gold
 
-These topics haven’t appeared recently.
+These topics haven’t appeared in recent platinum contests. Keep in mind that they do appear at training camp.
 
   * Maximum Flow
     * Tutorial
       * CPH (20, Flows & Cuts)
     * Edmonds-Karp
+    * Dinic
     * Minimum Cut Problem
+    * Problems
+      * [Goods Transportation](http://codeforces.com/problemset/problem/724/E) [](52)
+      * [Almost Permutation](http://codeforces.com/contest/863/problem/F) [](105)
+      * [Machine Programming](http://codeforces.com/problemset/problem/164/C) [](110)
+      * [Students Initiation](http://codeforces.com/problemset/problem/847/J) [](134)
+      * [Card Game](http://codeforces.com/problemset/problem/808/F) [](135)
   * Tries
     * CPH (26, String Algorithms)
-  * Sweep Line
+  * Geometry
     * Tutorial
       * CPH (30, Sweep Line Algorithms)
     * Convex Hull

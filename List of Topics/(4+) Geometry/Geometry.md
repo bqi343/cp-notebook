@@ -13,3 +13,6 @@
     * Problem(s)
       * [CEOI 2017.2.1](https://csacademy.com/contest/archive/task/building-bridges/)
       * [Fence Orthogonality](https://open.kattis.com/problems/fenceortho)
+
+## Other
+  * [Easy Geo w/ std::complex](http://codeforces.com/blog/entry/22175)

@@ -35,7 +35,35 @@
       * [CF 383 Div 1 B](http://codeforces.com/problemset/problem/741/B) [](70)
       * [Spanning Tree Fraction](https://www.hackerrank.com/contests/w31/challenges/spanning-tree-fraction) [](78)
       * [Leha & Another Game on Graph](http://codeforces.com/contest/840/problem/B) [](89)
-    
+
+## 4
+  * Trees
+    * Tutorial
+      * CPH (14, Tree Algorithms)
+      * CPH (18, Tree Queries)
+    * Topics
+      * Least Common Ancestor
+      * Centroid Decomposition
+        * [GeeksForGeeks](http://www.geeksforgeeks.org/centroid-decomposition-of-tree/)
+      * (Old Gold) Heavy-Light Decomposition
+        * [Anudeep2011](https://blog.anudeep2011.com/heavy-light-decomposition/)
+        * [AI-Cash](http://codeforces.com/blog/entry/22072)
+    * Problem(s)
+        * [Ciel the Commander](http://codeforces.com/problemset/problem/321/C) [](71)
+        * [CF 434 Div 1 E](http://codeforces.com/contest/860/problem/E) [](101)
+        * [Hot & Cold](https://dmoj.ca/problem/bts17p7) [](105)
+  * (Old Gold) Maximum Flow
+    * Tutorial
+      * CPH (20, Flows & Cuts)
+    * Edmonds-Karp
+    * Minimum Cut
+    * Problems
+      * [Goods Transportation](http://codeforces.com/problemset/problem/724/E) [](52)
+      * [Almost Permutation](http://codeforces.com/contest/863/problem/F) [](105)
+      * [Machine Programming](http://codeforces.com/problemset/problem/164/C) [](110)
+      * [Students Initiation](http://codeforces.com/problemset/problem/847/J) [](134)
+      * [Card Game](http://codeforces.com/problemset/problem/808/F) [](135)
+
 ## 5
   * Articulation Points / Bridges
     * Tutorial
@@ -44,3 +72,10 @@
        * [CEOI 2017.1.1](https://csacademy.com/contest/archive/task/one-way-streets/)
   * Bellman-Ford & Linear Programming
     * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
+
+## Other
+  * Hopcroft-Karp Bipartite Matching
+  * Dinic's Algorithm
+  * Push-Relabel
+  * Min Cost Max Flow
+  * Euler Tour

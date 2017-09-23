@@ -15,6 +15,9 @@
 
 ## Other
   * Hopcroft-Karp Bipartite Matching
-  * Dinic's Algorithm
-  * Push-Relabel
+  * Faster Max Flow
+    * Dinic's Algorithm
+    * Push-Relabel
   * Min Cost Max Flow
+    * SPFA
+    * Reweighting distances

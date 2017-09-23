@@ -13,5 +13,8 @@
       * [Students Initiation](http://codeforces.com/problemset/problem/847/J) [](134)
       * [Card Game](http://codeforces.com/problemset/problem/808/F) [](135)
 
-## 5
-  * Dinic, Push-Relabel
+## Other
+  * Hopcroft-Karp Bipartite Matching
+  * Dinic's Algorithm
+  * Push-Relabel
+  * Min Cost Max Flow

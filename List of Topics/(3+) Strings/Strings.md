@@ -27,3 +27,4 @@
   * Suffix Array / Tree
     * [Tutorial](https://github.com/SuprDewd/T-414-AFLV/blob/master/11_strings/aflv_11_strings.pdf)
   * Aho-Corasick
+  * KMP

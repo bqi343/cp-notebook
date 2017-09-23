@@ -14,7 +14,7 @@
 
 ## 4
   * Divide and Conquer Optimization
-  * Meet in the Middle (Old Gold)
-  * Bitset DP (Old Gold)
+  * (Old Gold) Meet in the Middle 
+  * (Old Gold) Bitset DP 
     * Problem(s)
       * [Guards in the Storehouse](http://codeforces.com/problemset/problem/845/F) [](71)

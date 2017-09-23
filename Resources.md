@@ -25,7 +25,6 @@ I recommend that you use C++11 over Java due to various reasons, such as
   * [Competitive Programming Playlist](https://www.commonlounge.com/community/862d2091c64e447cacde77d4c76a9ac3)
   * [Large List of Problems](http://codeforces.com/blog/entry/54526?#comment-385378)
 
-
 ## Algorithm Collections
   * [Algorithms Gym](http://codeforces.com/blog/entry/15729)
   * [E-maxx](https://e-maxx-eng.appspot.com/)

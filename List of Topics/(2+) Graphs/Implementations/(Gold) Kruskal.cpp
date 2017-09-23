@@ -25,29 +25,39 @@ typedef pair<int, int> pii;
 const int MOD = 1000000007;
 double PI = 4*atan(1);
 
-int par[100], hei[100], ans = 0;
+int ans = 0;
 vector<pair<int,pii>> edge;
 
-int get(int x) { // path compression
-	if (par[x] != x) par[x] = get(par[x]);
-	return par[x];
-}
+template<int SZ> struct DSU {
+    int par[SZ], sz[SZ];
+    DSU() {
+        F0R(i,SZ) par[i] = i, sz[i] = 1;
+    }
+    
+    int get(int x) { // path compression
+    	if (par[x] != x) par[x] = get(par[x]);
+    	return par[x];
+    }
+    
+    bool unite(int x, int y) { // union-by-rank
+    	x = get(x), y = get(y);
+    	if (x == y) return 0;
+    	if (sz[x] < sz[y]) swap(x,y);
+    	sz[x] += sz[y], par[y] = x;
+    	return 1;
+    }
+};
 
-bool unite(int x, int y) { // union-by-rank
-	x = get(x), y = get(y);
-	if (x == y) return 0;
-	if (hei[x] < hei[y]) swap(x,y);
-	hei[x] = max(hei[x],hei[y]+1);
-	par[y] = x;
-	return 1;
-}
+DSU<100> D;
 
 int main() {
-	F0R(i,100) par[i] = i, hei[i] = 1;
 	F0R(i,100) FOR(j,i+1,100) if (rand() % 5 == 0) edge.pb({rand() % 100+1,{i,j}});
 	
 	sort(edge.begin(),edge.end());
-	for (auto a: edge) if (unite(a.s.f,a.s.s)) ans += a.f;
+	for (auto a: edge) if (D.unite(a.s.f,a.s.s)) ans += a.f;
 	
-	cout << ans;
+	cout << D.sz[D.get(5)] << " " << ans;
 }
+
+// read!
+// ll vs int!

@@ -1,4 +1,6 @@
 // 1D range update, range query
+// Counting Haybales
+// http://www.usaco.org/index.php?page=viewproblem2&cpid=578
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -29,21 +31,24 @@ const int MOD = 1000000007;
 const ll INF = 1e18;
 
 template<int SZ> struct LazySegTree {
-    ll sum[2*SZ], lazy[2*SZ];
+    ll sum[2*SZ], mn[2*SZ], lazy[2*SZ]; // set SZ to a power of 2
     
     LazySegTree() {
         memset (sum,0,sizeof sum);
+        memset (mn,0,sizeof mn);
         memset (lazy,0,sizeof lazy);
     }
     
     void push(int ind, int L, int R) {
         sum[ind] += (R-L+1)*lazy[ind];
+        mn[ind] += lazy[ind];
         if (L != R) lazy[2*ind] += lazy[ind], lazy[2*ind+1] += lazy[ind];
         lazy[ind] = 0;
     }
     
     void pull(int ind) {
         sum[ind] = sum[2*ind]+sum[2*ind+1];
+        mn[ind] = min(mn[2*ind],mn[2*ind+1]);
     }
     
     void build() {
@@ -57,6 +62,15 @@ template<int SZ> struct LazySegTree {
         
         int M = (L+R)/2;
         return qsum(lo,hi,2*ind,L,M)+qsum(lo,hi,2*ind+1,M+1,R);
+    }
+
+    ll qmin(int lo, int hi, int ind = 1, int L = 0, int R = SZ-1) {
+        push(ind,L,R);
+        if (lo > R || L > hi) return MOD;
+        if (lo <= L && R <= hi) return mn[ind];
+        
+        int M = (L+R)/2;
+        return min(qmin(lo,hi,2*ind,L,M),qmin(lo,hi,2*ind+1,M+1,R));
     }
     
     void upd(int lo, int hi, int inc, int ind = 1, int L = 0, int R = SZ-1) {
@@ -77,5 +91,5 @@ template<int SZ> struct LazySegTree {
 int main() {
     LazySegTree<1<<17> seg;
     seg.upd(2,5,7);
-    cout << seg.qsum(1,2) << " " << seg.qsum(4,6) << "\n"; // 7 14
+    cout << seg.qsum(1,2) << " " << seg.qsum(4,6) << " " << seg.qmin(3,4) << "\n"; // 7 14 7
 }

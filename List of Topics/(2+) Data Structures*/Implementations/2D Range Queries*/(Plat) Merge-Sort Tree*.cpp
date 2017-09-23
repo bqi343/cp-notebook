@@ -25,27 +25,28 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 
 const int MOD = 1000000007;
 
-Tree<int> val[100001];
-
-int N,K;
-pii pos[100000];
-ll ans = 0;
-
-void upd(int x, int y) {
-    for (;x <= N; x += (x&-x)) val[x].insert(y);
-}
-
-int query(int x, int y) {
-    int t = 0;    
-    for (;x > 0; x -= (x&-x)) t += val[x].order_of_key(y+1);
-    return t;
-}
-
-int query(int lox, int hix, int loy, int hiy) {
-    return query(hix,hiy)-query(lox-1,hiy)-query(hix,loy-1)+query(lox-1,loy-1);
-}
+template<int SZ> struct mstree { 
+    Tree<int> val[SZ+1];
+    
+    void upd(int x, int y) { // x-coordinate between 1 and SZ inclusive
+        for (;x <= SZ; x += (x&-x)) val[x].insert(y);
+    }
+    
+    int query(int x, int y) {
+        int t = 0;    
+        for (;x > 0; x -= (x&-x)) t += val[x].order_of_key(y+1);
+        return t;
+    }
+    
+    int query(int lox, int hix, int loy, int hiy) { // query number of elements within a rectangle
+        return query(hix,hiy)-query(lox-1,hiy)-query(hix,loy-1)+query(lox-1,loy-1);
+    }
+};
 
 int main() {
+	mstree<100000> m;
+	m.upd(3,6); m.upd(4,5);
+	cout << m.query(3,5,4,6) << " " << m.query(3,5,4,5);
 }
 
 // read!

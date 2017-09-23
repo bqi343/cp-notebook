@@ -31,34 +31,31 @@ struct tnode {
         pri = rand(); // note that this is < (1<<15) on windows!
         val = v;
     }
+    
+    void inOrder() {
+        cout << "NODE " << val << " PRIORITY: " << pri << "\n";
+        if (c[0]) cout << "LEFT: " << c[0]->val << "\n";
+        if (c[1]) cout << "RIGHT: " << c[1]->val << "\n";
+        cout << "\n";
+        if (c[0]) c[0]->inOrder();
+        if (c[1]) c[1]->inOrder();
+    }
 };
 
-tnode *root, *root1;
-
-void inOrder(tnode *cur) {
-    if (!cur) return;
-    cout << "NODE " << cur->val << " PRIORITY: " << cur->pri << "\n";
-    if (cur->c[0]) cout << "LEFT: " << cur->c[0]->val << "\n";
-    if (cur->c[1]) cout << "RIGHT: " << cur->c[1]->val << "\n";
-    cout << "\n";
-    inOrder(cur->c[0]);
-    inOrder(cur->c[1]);
-}
-
 pair<tnode*,tnode*> split(tnode* t, int v) { // >= x goes to the right
-	if (!t) return {t,t};
+    if (!t) return {t,t};
 
-	if (v <= t->val) {
-		pair<tnode*,tnode*> p = split(t->c[0], v);
-		t->c[0] = p.s;
-		return {p.f, t};
-	} else {
-		pair<tnode*,tnode*> p = split(t->c[1], v);
-		t->c[1] = p.f; 
-		return {t, p.s};
-	}
+    if (v <= t->val) {
+        pair<tnode*,tnode*> p = split(t->c[0], v);
+        t->c[0] = p.s;
+        return {p.f, t};
+    } else {
+        pair<tnode*,tnode*> p = split(t->c[1], v);
+        t->c[1] = p.f; 
+        return {t, p.s};
+    }
 }
-	
+    
 tnode* merge(tnode* l, tnode* r) {
     if (!l) return r; 
     if (!r) return l;
@@ -88,6 +85,8 @@ tnode* del(tnode* x, int v) {
     return merge(a.f,b.s);
 }
 
+tnode *root, *root1;
+
 int main() {
     ios_base::sync_with_stdio(0);cin.tie(0);
     root = ins(root,1);
@@ -97,17 +96,17 @@ int main() {
     root = ins(root,4);
     root = del(root,4);
     
-    inOrder(root);
+    root->inOrder();
     cout << "--------\n\n";
     root1 = ins(root1,10);
     root = merge(root,root1); 
-    inOrder(root);
+    root->inOrder();
     cout << "--------\n\n";
     
     auto a = split(root,7);
-    inOrder(a.f);
+    a.f->inOrder();
     cout << "--------\n\n";
-    inOrder(a.s);
+    a.s->inOrder();
 }
 
 // read!

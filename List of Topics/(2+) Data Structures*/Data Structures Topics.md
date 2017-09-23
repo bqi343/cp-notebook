@@ -86,7 +86,8 @@
       * [Lazy Propogation](http://codeforces.com/blog/entry/47108?#comment-315047)
   * Balanced Binary Search Trees
     * Types
-      * [Splay Tree](http://codeforces.com/blog/entry/18462)
+      * Splay Tree
+        * [Splay Tree Implementation](http://codeforces.com/blog/entry/18462)
         * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
       * Treap
         * [Wikipedia](https://en.wikipedia.org/wiki/Treap)

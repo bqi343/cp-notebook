@@ -50,7 +50,7 @@ struct node {
         lazy = 0;
     }
     
-    int query(int low, int high, int L, int R) { 
+    int query(int low, int high, int L, int R) {  // queries minimum
         push();
         if (low <= L && R <= high) return val;
         if (R < low || high < L) return MOD;

@@ -1,0 +1,23 @@
+# Flows
+
+## 4
+  * (Old Gold) Maximum Flow
+    * Tutorial
+      * CPH (20, Flows & Cuts)
+    * Edmonds-Karp
+    * Minimum Cut
+    * Problems
+      * [Goods Transportation](http://codeforces.com/problemset/problem/724/E) [](52)
+      * [Almost Permutation](http://codeforces.com/contest/863/problem/F) [](105)
+      * [Machine Programming](http://codeforces.com/problemset/problem/164/C) [](110)
+      * [Students Initiation](http://codeforces.com/problemset/problem/847/J) [](134)
+      * [Card Game](http://codeforces.com/problemset/problem/808/F) [](135)
+
+## Other
+  * Hopcroft-Karp Bipartite Matching
+  * Faster Max Flow
+    * Dinic's Algorithm
+    * Push-Relabel
+  * Min Cost Max Flow
+    * SPFA
+    * Reweighting distances

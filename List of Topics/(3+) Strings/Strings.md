@@ -22,6 +22,8 @@
       * [adamant](http://codeforces.com/blog/entry/12143)
 
 ## More
-  * [Z Algorithm](http://codeforces.com/blog/entry/3107)
+  * Z Algorithm
+    * [Tutorial](http://codeforces.com/blog/entry/3107)
   * Suffix Array / Tree
+    * [Tutorial](https://github.com/SuprDewd/T-414-AFLV/blob/master/11_strings/aflv_11_strings.pdf)
   * Aho-Corasick

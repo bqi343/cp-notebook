@@ -74,8 +74,12 @@
     * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
 
 ## Other
-  * Hopcroft-Karp Bipartite Matching
-  * Dinic's Algorithm
-  * Push-Relabel
-  * Min Cost Max Flow
+  * Flows
+    * Hopcroft-Karp Bipartite Matching
+      * Faster Max Flow
+      * Dinic's Algorithm
+      * Push-Relabel
+    * Min Cost Max Flow
+      * SPFA
+      * Reweighting distances
   * Euler Tour

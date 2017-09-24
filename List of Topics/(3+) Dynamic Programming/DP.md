@@ -18,3 +18,9 @@
   * (Old Gold) Bitset DP 
     * Problem(s)
       * [Guards in the Storehouse](http://codeforces.com/problemset/problem/845/F) [](71)
+ 
+## Other
+  * Digit DP
+    * Split queries [l,r] into [0,r]-[0,l-1].
+    * Problem(s)
+      * [Slytherin](http://codeforces.com/contest/855/problem/E) 

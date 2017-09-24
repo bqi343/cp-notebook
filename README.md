@@ -17,8 +17,7 @@ Please see the "List of Topics" for details. I tried to keep the lists of topics
 Obviously, there are many resources which already exist. However, most of them were either too long and overwhelming, or lacking in some aspect. Also, none of them focused specifically on USACO contests. Therefore, I decided to create a personal collection which I could easily refer to during CodeForces contests or ahead of USACO contests.
 
 ## Very Rough Codeforces to USACO
-
-	* 1200+: Silver
-	* 1400+: Gold
-	* 1600+: Platinum
-	* 1800+: Training Camp
+  * 1200+: Silver
+  * 1400+: Gold
+  * 1600+: Platinum
+  * 1800+: Training Camp

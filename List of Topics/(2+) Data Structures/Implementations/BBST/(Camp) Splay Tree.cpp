@@ -1,5 +1,6 @@
-//http://codeforces.com/blog/entry/18462
-//https://sites.google.com/site/kc97ble/container/splay-tree/splaytree-cpp-3
+// http://codeforces.com/blog/entry/18462
+// https://sites.google.com/site/kc97ble/container/splay-tree/splaytree-cpp-3
+// 15 min
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>

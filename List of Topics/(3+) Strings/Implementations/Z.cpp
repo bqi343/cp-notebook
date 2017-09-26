@@ -1,3 +1,5 @@
+// in my opinion, easier to use than KMP
+// 3 min
 // http://codeforces.com/blog/entry/3107
 
 #include <bits/stdc++.h>

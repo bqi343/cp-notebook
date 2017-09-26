@@ -1,4 +1,5 @@
 // https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain
+// 5 min
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>

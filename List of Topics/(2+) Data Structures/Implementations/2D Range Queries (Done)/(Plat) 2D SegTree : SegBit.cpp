@@ -1,4 +1,5 @@
 // 2D Point Update, Range Query
+// 9 min
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>

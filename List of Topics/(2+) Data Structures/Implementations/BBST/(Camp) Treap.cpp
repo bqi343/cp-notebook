@@ -1,4 +1,5 @@
-// http://blog.ruofeidu.com/treap-in-45-lines-of-c/
+// Easiest BBST
+// 7 min
 // https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Treap.h
 
 #include <bits/stdc++.h>

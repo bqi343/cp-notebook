@@ -1,4 +1,5 @@
 // 1D range update, range query
+// 6 min
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>

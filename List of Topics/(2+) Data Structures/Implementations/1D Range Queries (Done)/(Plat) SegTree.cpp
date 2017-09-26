@@ -1,4 +1,5 @@
 // 1D point update, range query
+// 2 min
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -28,28 +29,37 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 const int MOD = 1000000007;
 const ll INF = 1e18;
 
-template<int SZ> struct BIT {
-    int bit[SZ+1];
+template<int SZ> struct Seg {
+    typedef int T;
+    T seg[2*SZ], MN = 0;
     
-    BIT() {
-        memset(bit,0,sizeof bit);
+    Seg() {
+        memset(seg,0,sizeof seg);
     }
     
-    void upd(int k, int val) {
-        for( ;k <= SZ; k += (k&-k)) bit[k] += val;
+    T comb(T a, T b) { return a+b; } // easily change this to min or max
+    
+    void upd(int p, T value) {  // set value at position p
+        for (seg[p += SZ] = value; p > 1; p >>= 1) seg[p>>1] = comb(seg[p],seg[p^1]);
     }
     
-    int query(int k) {
-        int temp = 0;
-        for (;k > 0;k -= (k&-k)) temp += bit[k];
-        return temp;
+    void build() {
+        F0Rd(i,SZ) seg[i] = comb(seg[2*i],seg[2*i+1]);
     }
-    int query(int l, int r) { return query(r)-query(l-1); }
+    
+    T query(int l, int r) {  // sum on interval [l, r]
+        T res = MN; r++;
+        for (l += SZ, r += SZ; l < r; l >>= 1, r >>= 1) {
+            if (l&1) res = comb(res,seg[l++]);
+            if (r&1) res = comb(res,seg[--r]);
+        }
+        return res;
+    }
 };
 
 int main() {
-    BIT<1<<17> b;
-    b.upd(5,2);
-    b.upd(4,1);
-    cout << b.query(3,5) << "\n";
+    Seg<1<<17> s;
+    s.upd(5,2);
+    s.upd(4,1);
+    cout << s.query(3,5) << "\n";
 }

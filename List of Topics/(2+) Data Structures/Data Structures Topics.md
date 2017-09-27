@@ -5,7 +5,9 @@
   * C++ STL
     * Types
       * Set, Multiset, Unordered Set
+        * [Set Custom Comparator](https://stackoverflow.com/questions/23042947/how-to-create-a-stdset-with-custom-comparator-in-c)
       * Map, Unordered Map (Hashmap)
+        * [Unordered Map Custom Class](https://stackoverflow.com/questions/17016175/c-unordered-map-using-a-custom-class-type-as-the-key)
       * Queue, Deque (Linked List)
       * Priority Queue (Heap)
       * Vector

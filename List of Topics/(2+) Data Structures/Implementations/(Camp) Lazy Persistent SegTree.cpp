@@ -28,37 +28,51 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 const int MOD = 1000000007;
 
 struct node {
-    int val = 0;
+    int val = 0, lazy = 0;
     node* c[2];
     
-    int query(int low, int high, int L, int R) { 
-        if (low <= L && R <= high) return val;
-        if (R < low || high < L) return MOD;
-        int M = (L+R)/2;
-        return min(c[0]->query(low,high,L,M),c[1]->query(low,high,M+1,R));
-    }
-    
-    void upd(node* ne, int ind, int val, int L, int R) {
-        *ne = *this;
-        if (L == ind && R == ind) {
-            ne->val += val;
-            return;
+    void push() {
+        if (!lazy) return;
+        val += lazy;
+        
+        if (c[0]) {
+            c[0] = new node(*c[0]);
+            c[0]->lazy += lazy;
         }
         
-        int M = (L+R)/2;
-        if (ind <= M) {
-            ne->c[0] = new node();
-            c[0]->upd(ne->c[0],ind,val,L,M);
-        } else {
-            ne->c[1] = new node();
-            c[1]->upd(ne->c[1],ind,val,M+1,R);
+        if (c[1]) { 
+            c[1] = new node(*c[1]);
+            c[1]->lazy += lazy;
         }
-        ne->val = min(ne->c[0]->val,ne->c[1]->val);
+        
+        lazy = 0;
+    }
+    
+    int query(int low, int high, int L, int R) {  
+        if (low <= L && R <= high) return val+lazy;
+        if (R < low || high < L) return MOD;
+        int M = (L+R)/2;
+        return lazy+min(c[0]->query(low,high,L,M),c[1]->query(low,high,M+1,R));
+    }
+    
+    void upd(int low, int high, int v, int L, int R) {
+        push();
+        if (low <= L && R <= high) {
+            lazy = v; push();
+            return;
+        }
+        if (R < low || high < L) return;
+        
+        int M = (L+R)/2;
+        c[0] = new node(*c[0]), c[1] = new node(*c[1]);
+        c[0]->upd(low,high,v,L,M);
+        c[1]->upd(low,high,v,M+1,R);
+        val = min(c[0]->val,c[1]->val);
     }
     
     void build(vi& arr, int L, int R) {
         if (L == R) {
-            if (L < arr.size()) val = arr[L];
+            if (L < (int)arr.size()) val = arr[L];
             else val = 0;
             return;
         }
@@ -77,9 +91,9 @@ template<int SZ> struct pers {
     
     pers() { loc[0] = new node(); }
     
-    void upd(int ind, int val) {
-        loc[nex] = new node();
-        loc[nex-1]->upd(loc[nex],ind,val,0,SZ-1);
+    void upd(int low, int high, int val) {
+        loc[nex] = new node(*loc[nex-1]);
+        loc[nex]->upd(low,high,val,0,SZ-1);
         nex++;
     }
     void build(vi& arr) { 
@@ -96,14 +110,15 @@ int main() {
     vi arr = {1,7,2,3,5,9,4,6};
     p.build(arr);
     
-    p.upd(1,2); // 1 9 2 3 5 9 4 6
+    p.upd(1,2,2); // 1 9 4 3 5 9 4 6
+    
     F0R(i,8) {
         FOR(j,i,8) cout << p.query(1,i,j) << " ";
         cout << "\n";
     }
     cout << "\n";
     
-    p.upd(4,5); // 1 9 4 3 10 9 4 6
+    p.upd(4,7,5); // 1 9 4 3 10 14 9 11
     F0R(i,8) {
         FOR(j,i,8) cout << p.query(2,i,j) << " ";
         cout << "\n";

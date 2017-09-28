@@ -50,6 +50,7 @@
         * [AI-Cash](http://codeforces.com/blog/entry/22072)
     * Problem(s)
         * [Ciel the Commander](http://codeforces.com/problemset/problem/321/C) [](71)
+        * [Sagheer & Kindergarten](http://codeforces.com/contest/812/problem/D) [](71)
         * [CF 434 Div 1 E](http://codeforces.com/contest/860/problem/E) [](101)
         * [Hot & Cold](https://dmoj.ca/problem/bts17p7) [](105)
   * (Old Gold) Maximum Flow

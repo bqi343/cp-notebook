@@ -15,7 +15,8 @@ I typically do not use implementations marked with "*".
     * Problem(s)
       * [DCJ Practice 2015 C](https://code.google.com/codejam/contest/4264486/dashboard#s=p2)
 
- ## Other
+## Other
   * Game Theory
   	* Tutorial
   	  * [HackerRank](https://www.hackerrank.com/topics/game-theory-and-grundy-numbers)
+  * Square Root Decomposition

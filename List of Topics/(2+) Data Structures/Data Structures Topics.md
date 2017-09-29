@@ -91,14 +91,17 @@
       * Splay Tree
         * [Splay Tree Implementation](http://codeforces.com/blog/entry/18462)
         * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
+        * Problems
+          * [DYNACON1](http://www.spoj.com/problems/DYNACON1/) [](140)
+          * [Tree Rotations 2](https://szkopul.edu.pl/problemset/problem/b0BM0al2crQBt6zovEtJfOc6/site/?key=statement) [](193)
       * Treap
         * [Wikipedia](https://en.wikipedia.org/wiki/Treap)
         * Split, Merge, Lazy Propogation
-    * Problems (sorted by length)
-      * [Hitchhiking](http://codeforces.com/contest/809/problem/D) [](132)
-      * [DYNACON1](http://www.spoj.com/problems/DYNACON1/) [](140)
-      * [Yet Another Array Queries Problem](http://codeforces.com/contest/863/problem/D) [](153)
-        * Due to the low value of m, a BBST is not required.
-      * [TREAP](http://www.spoj.com/problems/TREAP/) [](173)
-      * [Points & Distances](https://www.hackerearth.com/problem/algorithm/septembereasy-points-and-distances-d30d0e6b/description/) [](185)
+        * Problems
+          * [Hitchhiking](http://codeforces.com/contest/809/problem/D) [](132)
+          * [Yet Another Array Queries Problem](http://codeforces.com/contest/863/problem/D) [](153)
+            * Due to the low value of m, a BBST is not required.
+          * [TREAP](http://www.spoj.com/problems/TREAP/) [](173)
+          * [Points & Distances](https://www.hackerearth.com/problem/algorithm/septembereasy-points-and-distances-d30d0e6b/description/) [](185)
+          * [TEMPLEQ](http://www.spoj.com/problems/TEMPLEQ/) [](213)
   * [2D BIT with Range Update + Query](https://arxiv.org/pdf/1311.6093v4.pdf)

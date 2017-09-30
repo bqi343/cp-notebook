@@ -105,3 +105,6 @@
           * [Points & Distances](https://www.hackerearth.com/problem/algorithm/septembereasy-points-and-distances-d30d0e6b/description/) [](185)
           * [TEMPLEQ](http://www.spoj.com/problems/TEMPLEQ/) [](213)
   * [2D BIT with Range Update + Query](https://arxiv.org/pdf/1311.6093v4.pdf)
+
+## Other
+  * [Wavelet Tree](http://codeforces.com/blog/entry/52854)

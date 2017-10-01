@@ -27,7 +27,6 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 
 const int MOD = 1000000007;
 
-ll N,M,K,I, p[150000];
 const int NIL = -1;
 
 int count = 0;

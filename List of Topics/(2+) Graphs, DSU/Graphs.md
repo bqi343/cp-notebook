@@ -68,9 +68,12 @@
 ## 5
   * Articulation Points / Bridges
     * Tutorial
-       * [GeeksforGeeks](http://www.geeksforgeeks.org/articulation-points-or-cut-vertices-in-a-graph/)
+      * [GeeksforGeeks](http://www.geeksforgeeks.org/articulation-points-or-cut-vertices-in-a-graph/)
     * Problem(s)
-       * [CEOI 2017.1.1](https://csacademy.com/contest/archive/task/one-way-streets/)
+      * [CEOI 2017.1.1](https://csacademy.com/contest/archive/task/one-way-streets/)
+  * Biconnected Components
+    * Problem(s)
+      * [Investment](https://dmoj.ca/problem/tle17c1p6)
   * Bellman-Ford & Linear Programming
     * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
 

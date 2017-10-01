@@ -17,6 +17,9 @@ I typically do not use implementations marked with "*".
 
 ## Other
   * Game Theory
-  	* Tutorial
-  	  * [HackerRank](https://www.hackerrank.com/topics/game-theory-and-grundy-numbers)
+  	 * Tutorial
+  	   * [HackerRank](https://www.hackerrank.com/topics/game-theory-and-grundy-numbers)
+    * Problem(s)
+      * [Factorization Game](https://www.hackerearth.com/problem/algorithm/mancunian-and-factorization-game-b8794702/)
+      * [Arpa & Game](http://codeforces.com/contest/850/problem/C)
   * Square Root Decomposition

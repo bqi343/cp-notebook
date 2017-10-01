@@ -33,8 +33,8 @@
       * [PolandBall & Forest](http://codeforces.com/problemset/problem/755/C) [](56)
       * [Bear & Friendship Condition](http://codeforces.com/problemset/problem/771/A) [](57)
       * [CF 383 Div 1 B](http://codeforces.com/problemset/problem/741/B) [](70)
+      * [Birthday Gifts](https://www.hackerearth.com/practice/math/combinatorics/inclusion-exclusion/practice-problems/algorithm/mancunian-and-birthday-gifts-d44faa15/) [](73)
       * [Spanning Tree Fraction](https://www.hackerrank.com/contests/w31/challenges/spanning-tree-fraction) [](78)
-      * [Leha & Another Game on Graph](http://codeforces.com/contest/840/problem/B) [](89)
 
 ## 4
   * Trees
@@ -53,7 +53,7 @@
         * [Sagheer & Kindergarten](http://codeforces.com/contest/812/problem/D) [](71)
         * [CF 434 Div 1 E](http://codeforces.com/contest/860/problem/E) [](101)
         * [Hot & Cold](https://dmoj.ca/problem/bts17p7) [](105)
-  * (Old Gold) Maximum Flow
+  * (Old Gold) Flows
     * Tutorial
       * CPH (20, Flows & Cuts)
     * Edmonds-Karp

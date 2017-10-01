@@ -15,6 +15,7 @@
     * Tutorial
       * CPH (4, Data Structures)
     * Problems (sorted by length)
+      * [Beautiful Triplets](https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/practice-problems/algorithm/mancunian-and-beautiful-triplets-30968257/) [](54) 
       * [Polycarp's Phone Book](http://codeforces.com/contest/860/problem/B) [](56)
       * [Jury Marks](http://codeforces.com/contest/831/problem/C) [](67)
       * [Mahmoud & Ehab & Function](http://codeforces.com/contest/862/problem/E) [](74)
@@ -24,6 +25,7 @@
     * Tutorial
       * CPH (9.1, Static Array Queries) 
     * Problems (sorted by length)
+      * [K-Reachability](https://www.hackerearth.com/problem/algorithm/mancunian-and-k-reachability-ad7aca82/) [](51)
       * [Star Sky](http://codeforces.com/contest/835/problem/C) [](54)
       * [Monitor](http://codeforces.com/problemset/problem/846/D) [](60)
 ## 3
@@ -39,6 +41,7 @@
       * [Radio Stations](http://codeforces.com/problemset/problem/762/E) [](53)
       * [PolandBall and Polygon](http://codeforces.com/problemset/problem/755/D) [](65)
       * [Dog Show](http://codeforces.com/contest/847/problem/D) [](70)
+      * [Twin Permutations](https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/mancunian-and-twin-permutations-d988930c/description/) [](80)
 
 ## 4
 

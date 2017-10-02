@@ -24,4 +24,5 @@ I typically do not use implementations marked with "*".
       * [Arpa & Game](http://codeforces.com/contest/850/problem/C)
       * [Division Game](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2959)
       * [Apple Tree](http://codeforces.com/contest/812/problem/E)
-  * Square Root Decomposition
+  * Mo's Square Root Decomposition
+    * [Mo's on Trees](http://codeforces.com/blog/entry/43230)

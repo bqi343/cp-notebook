@@ -22,4 +22,6 @@ I typically do not use implementations marked with "*".
     * Problem(s)
       * [Factorization Game](https://www.hackerearth.com/problem/algorithm/mancunian-and-factorization-game-b8794702/)
       * [Arpa & Game](http://codeforces.com/contest/850/problem/C)
+      * [Division Game](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2959)
+      * [Apple Tree](http://codeforces.com/contest/812/problem/E)
   * Square Root Decomposition

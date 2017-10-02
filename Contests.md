@@ -19,16 +19,19 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * [HackerRank](https://www.hackerrank.com/dashboard)
     * HourRank: 3-4 problems, 1 hr
     * 101 Hack: 5 problems, 2 hrs
+  * [HackerEarth](http://hackerearth.com/)
+    * Monthly "Easy"
+  * [Codechef](http://codechef.com/)
+    * Lunchtime, Cookoff
+  * [Don Mills OJ](http://dmoj.ca/)
 
-## Other Contests
-  * Google Code Jam
-  * IPSC
-  * Facebook Hacker Cup
-  * HackerEarth
-  * Codechef
-  * Yandex Algorithm
-  * Russian Code Cup
-  * Don Mills OJ
+## Annual Contests
+  * [Facebook Hacker Cup](https://www.facebook.com/hackercup/): January
+  * [Bubble Cup](http://bubblecup.org/): March
+  * [Russian Code Cup](http://www.russiancodecup.ru/en/): March
+  * [Google Code Jam](https://code.google.com/codejam/): April
+  * [Yandex Algorithm](https://contest.yandex.ru/contest-list/): April
+  * [IPSC](https://ipsc.ksp.sk/rules): July 
   
 ## Misc Contest Tools
   * [CF Visualizer](http://cfviz.netlify.com/compare.html)

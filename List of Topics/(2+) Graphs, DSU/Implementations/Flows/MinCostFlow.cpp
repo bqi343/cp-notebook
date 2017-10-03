@@ -31,7 +31,7 @@ struct Edge {
 
 template<int SZ> struct mcf {
     pii pre[SZ];
-    int cost[SZ], SC, SNC;
+    int cost[SZ], num[SZ], SC, SNC;
     vector<Edge> adj[SZ]; 
      
     void addEdge(int u, int v, int C, int cost) {
@@ -42,8 +42,8 @@ template<int SZ> struct mcf {
     } 
     
     bool bfs() {
-        F0R(i,SZ) cost[i] = MOD;
-        cost[0] = 0;
+        F0R(i,SZ) cost[i] = MOD, num[i] = 0;
+        cost[SC] = 0, num[SC] = MOD;
         priority_queue<pii,vector<pii>,greater<pii>> todo; todo.push({0,SC}); 
         // doesn't handle negative edges very well
         // no negative cycles
@@ -54,11 +54,12 @@ template<int SZ> struct mcf {
             for (auto a: adj[x.s]) if (x.f+a.cost < cost[a.v] && a.flow < a.C) {
                 pre[a.v] = {x.s,a.rev};
                 cost[a.v] = x.f+a.cost;
+                num[a.v] = min(a.C-a.flow,num[x.s]);
                 todo.push({cost[a.v],a.v});
             }
         }
         
-        return 0;
+        return num[SNC] > 0;
     }
     
     pii mincostflow(int sc, int snc) {
@@ -66,11 +67,11 @@ template<int SZ> struct mcf {
         
         int flo = 0, ans = 0;
         while (bfs()) {
-            flo ++, ans += cost[SNC];
+            flo += num[SNC], ans += (ll)num[SNC]*cost[SNC];
             for (int x = SNC; x != SC; x = pre[x].f) {
-                adj[x][pre[x].s].flow --;
+                adj[x][pre[x].s].flow -= num[SNC];
                 int t = adj[x][pre[x].s].rev;
-                adj[pre[x].f][t].flow ++;
+                adj[pre[x].f][t].flow += num[SNC];
             }
         }
         

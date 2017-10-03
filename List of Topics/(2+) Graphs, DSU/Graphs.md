@@ -78,6 +78,7 @@
     * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
 
 ## Other
+  *Some problems sourced from [here](http://codeforces.com/blog/entry/54526?#comment-385354).*
   * Flows
     * Hopcroft-Karp Bipartite Matching
       * Faster Max Flow
@@ -86,4 +87,9 @@
     * Min Cost Max Flow
       * SPFA
       * Reweighting distances
+      * Problems
+        * [April Fool's Problem](http://codeforces.com/contest/802/problem/N)
+        * [Acme Corporation](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2660)
+        * [Students Initiation](http://codeforces.com/contest/847/problem/J)
+        * [Almost Permutation](http://codeforces.com/contest/863/problem/F)
   * Euler Tour

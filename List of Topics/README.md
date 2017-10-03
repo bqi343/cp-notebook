@@ -16,7 +16,7 @@ I typically do not use implementations marked with "*".
       * [DCJ Practice 2015 C](https://code.google.com/codejam/contest/4264486/dashboard#s=p2)
 
 ## Other
-  *Some problems sourced from [here](http://codeforces.com/blog/entry/54526?#comment-385354)*
+  *Some problems sourced from [here.](http://codeforces.com/blog/entry/54526?#comment-385354)*
   * Game Theory
   	 * Tutorial
   	   * [HackerRank](https://www.hackerrank.com/topics/game-theory-and-grundy-numbers)

@@ -1,3 +1,4 @@
+
 // http://www.geeksforgeeks.org/ford-fulkerson-algorithm-for-maximum-flow-problem/
 
 #include <bits/stdc++.h>
@@ -25,63 +26,66 @@ typedef pair<int, int> pii;
 const int MOD = 1000000007;
 double PI = 4*atan(1);
 
-const int SZ = 100;
-  
 struct Edge {
     int v, flow, C, rev, cost;
 };
- 
-pii pre[SZ];
-int cost[SZ], SC, SNC;
-vector<Edge> adj[SZ]; 
- 
-void addEdge(int u, int v, int C, int cost) {
-    Edge a{v, 0, C, (int)adj[v].size(), cost};
-    Edge b{u, 0, 0, (int)adj[u].size(), -cost};
-    adj[u].pb(a);
-    adj[v].pb(b); 
-} 
 
-bool bfs() {
-    F0R(i,SZ) cost[i] = MOD;
-    cost[0] = 0;
-    priority_queue<pii,vector<pii>,greater<pii>> todo; todo.push({0,SC}); 
-    // doesn't handle negative edges very well
-    // no negative cycles
+template<int SZ> struct mcf {
+    pii pre[SZ];
+    int cost[SZ], SC, SNC;
+    vector<Edge> adj[SZ]; 
+     
+    void addEdge(int u, int v, int C, int cost) {
+        Edge a{v, 0, C, (int)adj[v].size(), cost};
+        Edge b{u, 0, 0, (int)adj[u].size(), -cost};
+        adj[u].pb(a);
+        adj[v].pb(b); 
+    } 
     
-    while (todo.size()) {
-        pii x = todo.top(); todo.pop();
-        for (auto a: adj[x.s]) if (x.f+a.cost < cost[a.v] && a.flow < a.C) {
-            pre[a.v] = {x.s,a.rev};
-            cost[a.v] = x.f+a.cost;
-            todo.push({cost[a.v],a.v});
+    bool bfs() {
+        F0R(i,SZ) cost[i] = MOD;
+        cost[0] = 0;
+        priority_queue<pii,vector<pii>,greater<pii>> todo; todo.push({0,SC}); 
+        // doesn't handle negative edges very well
+        // no negative cycles
+        
+        while (todo.size()) {
+            pii x = todo.top(); todo.pop();
+            if (x.s == SNC) return 1;
+            for (auto a: adj[x.s]) if (x.f+a.cost < cost[a.v] && a.flow < a.C) {
+                pre[a.v] = {x.s,a.rev};
+                cost[a.v] = x.f+a.cost;
+                todo.push({cost[a.v],a.v});
+            }
         }
+        
+        return 0;
     }
     
-    return cost[SNC] != MOD;
-}
-
-pii mincostflow(int sc, int snc) {
-    SC = sc, SNC = snc;
-    
-    int flo = 0, ans = 0;
-    while (bfs()) {
-        flo ++, ans += cost[SNC];
-        for (int x = SNC; x != SC; x = pre[x].f) {
-            adj[x][pre[x].s].flow --;
-            int t = adj[x][pre[x].s].rev;
-            adj[pre[x].f][t].flow ++;
+    pii mincostflow(int sc, int snc) {
+        SC = sc, SNC = snc;
+        
+        int flo = 0, ans = 0;
+        while (bfs()) {
+            flo ++, ans += cost[SNC];
+            for (int x = SNC; x != SC; x = pre[x].f) {
+                adj[x][pre[x].s].flow --;
+                int t = adj[x][pre[x].s].rev;
+                adj[pre[x].f][t].flow ++;
+            }
         }
+        
+        return {flo,ans};
     }
-    
-    return {flo,ans};
-}
+};
+
+mcf<100> m;
 
 int main() {
-    addEdge(0, 1, 16, 5);
-    addEdge(1, 2, 13, 7);
-    addEdge(1, 2, 13, 8);
+    m.addEdge(0, 1, 16, 5);
+    m.addEdge(1, 2, 13, 7);
+    m.addEdge(1, 2, 13, 8);
     
-    pii x = mincostflow(0,2);
+    pii x = m.mincostflow(0,2);
     cout << x.f << " " << x.s;
 }

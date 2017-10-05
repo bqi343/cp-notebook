@@ -4,8 +4,9 @@
   * Hashing
     * CPH (26, String Algorithms)
       * sum of powers mod a large prime
-      * xor hashing
+      * xor hashing (graph adjacency lists)
     * Problems (sorted by length)
+      * [Labeling Cities](http://codeforces.com/contest/794/problem/D) [](75)
       * [Palindromic Partitions](https://csacademy.com/contest/ceoi-2017-day-2/task/palindromic-partitions/) [](91)
       * [Liar](http://codeforces.com/problemset/problem/822/E) [](93)
       * [Palindromic Characteristics](http://codeforces.com/problemset/problem/835/D) [](100)

@@ -1,4 +1,4 @@
-# NT
+# Number Theory
 
 ## 5
   * Modular Inverse
@@ -8,3 +8,10 @@
     * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)
     * [CF Tutorial Pt 2](http://codeforces.com/blog/entry/48798)
     * [CSAcademy](https://csacademy.com/blog/fast-fourier-transform-and-variations-of-it/)
+
+# Combinatorics
+
+## 5
+
+  * Combinations, Stars & Bars
+    * [Barrels & Boxes](http://codeforces.com/contest/768/problem/F) [](83)

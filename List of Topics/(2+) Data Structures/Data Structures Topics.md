@@ -89,6 +89,7 @@
       * [Army Creation](http://codeforces.com/contest/813/problem/E)
       * [COT](http://www.spoj.com/problems/COT/)
       * [Functions on the Segments](http://codeforces.com/contest/837/problem/G)
+      * [Till I Collapse](http://codeforces.com/contest/786/problem/C)
     * Variant(s)
       * [Lazy Propogation](http://codeforces.com/blog/entry/47108?#comment-315047)
   * Balanced Binary Search Trees

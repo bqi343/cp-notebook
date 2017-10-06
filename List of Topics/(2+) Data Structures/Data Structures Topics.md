@@ -65,6 +65,7 @@
     * Problems (sorted by length)
       * [Cards](https://szkopul.edu.pl/problemset/problem/qpsk3ygf8MU7D_1Es0oc_xd8/site/?key=statement) [](81)
       * [Anton & Permutation](http://codeforces.com/contest/785/problem/E) [](85)
+      * [Antiquity](http://codeforces.com/contest/869/problem/E) [](87)
       * [Crowded Cities](https://dmoj.ca/problem/bfs17p6) [](89)
       * [Candles](https://csacademy.com/contest/round-41/task/candles/) [](94)
       * [Nervous Barriers](http://codeforces.com/contest/781/problem/E) [](99)

@@ -17,15 +17,6 @@ I typically do not use implementations marked with "*".
 
 ## Other
   *Some problems sourced from [here.](http://codeforces.com/blog/entry/54526?#comment-385354)*
-  * Game Theory
-  	 * Tutorial
-  	   * [HackerRank](https://www.hackerrank.com/topics/game-theory-and-grundy-numbers)
-    * Problem(s)
-      * [Division Game](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2959)
-      * [Game of Stones](http://codeforces.com/problemset/problem/768/E) [](59)
-      * [Factorization Game](https://www.hackerearth.com/problem/algorithm/mancunian-and-factorization-game-b8794702/) [](61)
-      * [Arpa & Game](http://codeforces.com/contest/850/problem/C) [](66)
-      * [Apple Tree](http://codeforces.com/contest/812/problem/E) [](67)
   * Mo's Square Root Decomposition
     * [Mo's on Trees](http://codeforces.com/blog/entry/43230)
     * Problem(s)

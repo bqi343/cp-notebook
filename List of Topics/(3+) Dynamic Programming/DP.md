@@ -13,9 +13,7 @@
       * [Wrong Brackets](https://csacademy.com/contest/round-51/task/wrong-brackets/) [](69)
 
 ## 4
-  * Divide and Conquer Optimization
-  * (Old Gold) Meet in the Middle 
-  * (Old Gold) Bitset DP 
+  * (Old Gold) Bitmask DP 
     * Problem(s)
       * [Guards in the Storehouse](http://codeforces.com/problemset/problem/845/F) [](71)
  

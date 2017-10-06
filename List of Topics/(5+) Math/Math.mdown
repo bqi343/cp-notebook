@@ -2,6 +2,9 @@
 
 ## 5
   * Modular Inverse
+  * Chinese Remainder Theorem
+  * Phi Function
+  * Eratosthenes' Sieve
 
 ## Other
   * NTT / FFT

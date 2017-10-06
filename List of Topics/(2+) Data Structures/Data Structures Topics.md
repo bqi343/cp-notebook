@@ -78,6 +78,7 @@
       * [Wet Shark & Blocks](http://codeforces.com/problemset/problem/621/E) [](55)
       * [CF 420 Div 2 E](http://codeforces.com/contest/821/problem/E) [](81)
       * [Currencies](https://www.hackerrank.com/contests/gs-codesprint/challenges/currencies) [](107)
+      
 ## 5
 
   * Persistent Segment Tree 
@@ -85,6 +86,7 @@
       * [Anudeep2011](https://blog.anudeep2011.com/persistent-segment-trees-explained-with-spoj-problems/)
       * [oml1111](https://drive.google.com/file/d/0BwGLW04WRv0ITEZjRWlMSFc2bk0/view)
     * Problems
+      * [Army Creation](http://codeforces.com/contest/813/problem/E)
       * [COT](http://www.spoj.com/problems/COT/)
       * [Functions on the Segments](http://codeforces.com/contest/837/problem/G)
     * Variant(s)

@@ -1,4 +1,6 @@
-# Binary Search
+# Strategies
+
+[Competitive Programming Course](https://github.com/SuprDewd/T-414-AFLV/tree/master/04_problem_solving_paradigms)
 
 ## 2
 
@@ -13,3 +15,18 @@
       * [Level Generation](http://codeforces.com/problemset/problem/818/F) [](54)
       * [Packmen](http://codeforces.com/contest/847/problem/E) [](57)
       * [Office Keys](http://codeforces.com/problemset/problem/830/A) [](60)
+  * Two Pointers (3/24 Silver)
+    * Tutorial
+      * CPH (8, Amortized Analysis)
+    * Problems (sorted by length)
+      * [Cellular Network](http://codeforces.com/problemset/problem/702/C) [](48)
+      * [USB vs. PS/2](http://codeforces.com/problemset/problem/762/B) [](53)
+      * [CF 418 C](http://codeforces.com/problemset/problem/814/C) [](54)
+      * [Jury Meeting](http://codeforces.com/problemset/problem/853/B) [](90)
+  * Complete Search, Backtracking
+
+## 4
+
+  * Divide and Conquer Optimization
+  * (Old Gold) Meet in the Middle 
+  * (Old Gold) Ternary Search

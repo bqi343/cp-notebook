@@ -22,7 +22,8 @@
       * Push-Relabel
     * Min Cost Max Flow
       * SPFA
-      * Reweighting distances
+      * Johnson's Algorithm (reweight distances)
+        * [Wikipedia](https://en.wikipedia.org/wiki/Johnson%27s_algorithm))
       * Problems
         * [April Fool's Problem](http://codeforces.com/contest/802/problem/N)
         * [Acme Corporation](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2660)

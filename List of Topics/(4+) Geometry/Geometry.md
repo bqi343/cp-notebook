@@ -14,7 +14,9 @@
       * [CEOI 2017.2.1](https://csacademy.com/contest/archive/task/building-bridges/)
       * [Fence Orthogonality](https://open.kattis.com/problems/fenceortho)
       * [Buy Low Sell High](http://codeforces.com/contest/866/problem/D)
-  * Projection of Point onto Line, Circumcircle, Intersection of Two Lines, etc.
   
 ## Other
-  * [Easy Geo w/ std::complex](http://codeforces.com/blog/entry/22175)
+  * Projection of Point onto Line, Circumcircle, Intersection of Two Lines, etc.
+    * [Easy Geo w/ std::complex](http://codeforces.com/blog/entry/22175)
+    * Problem(s)
+      * [Birthday Cake](https://open.kattis.com/problems/birthdaycake)

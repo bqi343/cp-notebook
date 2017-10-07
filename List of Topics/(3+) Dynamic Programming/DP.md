@@ -19,6 +19,8 @@
  
 ## Other
   * Digit DP
-    * Split queries [l,r] into [0,r]-[0,l-1].
+    * Tutorial
+      * [Digit DP](http://codeforces.com/blog/entry/53960)
     * Problem(s)
       * [Slytherin](http://codeforces.com/contest/855/problem/E) 
+      * [Magic Numbers](http://codeforces.com/contest/628/problem/D)

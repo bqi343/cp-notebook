@@ -29,3 +29,4 @@
         * [Acme Corporation](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2660)
         * [Students Initiation](http://codeforces.com/contest/847/problem/J)
         * [Almost Permutation](http://codeforces.com/contest/863/problem/F)
+        * [Machine Programming](http://codeforces.com/contest/164/problem/C)

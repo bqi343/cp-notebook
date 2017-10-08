@@ -1,7 +1,14 @@
-# Strategies
+# Paradigms
 
 [Competitive Programming Course](https://github.com/SuprDewd/T-414-AFLV/tree/master/04_problem_solving_paradigms)
 
+## 1
+  * Greedy Algorithms
+    * CPH (6, Greedy Algorithms)
+      * Problem(s)
+        * [Sure Bet](https://csacademy.com/contest/archive/task/sure-bet/)
+        * [Did you Mean...](http://codeforces.com/contest/860/problem/A)
+        
 ## 2
 
   * Binary Search (4 out of past 24 silver problems)

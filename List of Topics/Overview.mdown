@@ -1,0 +1,35 @@
+# Bronze Topics
+
+	* Complexity Analysis (Big O Notation)
+	* Sorting
+	* Greedy Algorithms
+	    * CPH (6, Greedy Algorithms)
+	    * Problem(s)
+	        * [Sure Bet](https://csacademy.com/contest/archive/task/sure-bet/)
+	        * [Did you Mean...](http://codeforces.com/contest/860/problem/A)
+
+# Silver Topics
+
+## Data Structures
+  * C++ STL
+  * Cumulative Sum
+
+## Graphs
+  * Representing Graphs (list of edges, adjacency list, adjacency matrix)
+  * Types of Graphs (directed, undirected, trees, etc)
+  * Flood Fill
+  * Breadth-first Search
+  * Depth First Search
+
+## Paradigms
+  * Binary Search
+  * Two Pointers 
+  * Complete Search, Backtracking
+
+# Gold Topics
+
+  * Binary Indexed Tree
+  * Shortest Path
+  * Disjoint Set Union
+  * Dynamic Programming
+  * Hashing

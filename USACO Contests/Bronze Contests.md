@@ -6,9 +6,6 @@ All questions about the format of USACO contests should be answered by the USACO
 
 Please refer to the [competitive programming handbook (CPH)](https://cses.fi/book.pdf).
 
-* Basics
-    * Fundamentals of C++ or Java
-    * Chapters 1 & 2 of CPH
 * Introductory Problems
     * CodeFights
         * [April Marathon B](https://codefights.com/tournaments/BLhuiuSY4neuXPXet/B)
@@ -26,11 +23,6 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
         * [CSA 37 B (Div 2)](https://csacademy.com/contest/round-37/task/group-split/)
         * [CSA 38 A](https://csacademy.com/contest/round-38/task/shoe-pairs/)
         * [CSA 38 B](https://csacademy.com/contest/round-38/task/attack-and-speed/)
-* Greedy
-    * CPH (6, Greedy Algorithms)
-    * Problem(s)
-        * [Sure Bet](https://csacademy.com/contest/archive/task/sure-bet/)
-        * [Did you Mean...](http://codeforces.com/contest/860/problem/A)
 
 
 # Contests 

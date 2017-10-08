@@ -3,9 +3,11 @@
 ## 2
   * Graph Basics (6/24 Silver)
     * Topics
+      * Representing Graphs (list of edges, adjacency list, adjacency matrix)
+      * Types of Graphs (directed, undirected, trees, etc)
       * Flood Fill
-      * BFS
-      * DFS
+      * Breadth-first Search
+      * Depth First Search
     * Tutorial
       * [Topcoder Graphs Pt 1](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-1/)
       * [Topcoder Graphs Pt 2](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-2/)

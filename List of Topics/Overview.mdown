@@ -1,12 +1,12 @@
 # Bronze Topics
 
-	* Complexity Analysis (Big O Notation)
-	* Sorting
-	* Greedy Algorithms
-	    * CPH (6, Greedy Algorithms)
-	    * Problem(s)
-	        * [Sure Bet](https://csacademy.com/contest/archive/task/sure-bet/)
-	        * [Did you Mean...](http://codeforces.com/contest/860/problem/A)
+  * Complexity Analysis (Big O Notation)
+  * Sorting
+  * Greedy Algorithms
+    * CPH (6, Greedy Algorithms)
+      * Problem(s)
+	* [Sure Bet](https://csacademy.com/contest/archive/task/sure-bet/)
+	* [Did you Mean...](http://codeforces.com/contest/860/problem/A)
 
 # Silver Topics
 

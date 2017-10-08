@@ -50,6 +50,7 @@ template<int SZ> struct mcf {
         
         while (todo.size()) {
             pii x = todo.top(); todo.pop();
+            if (x.f > cost[x.s]) continue;
             for (auto a: adj[x.s]) if (x.f+a.cost < cost[a.v] && a.flow < a.C) {
                 pre[a.v] = {x.s,a.rev};
                 cost[a.v] = x.f+a.cost;

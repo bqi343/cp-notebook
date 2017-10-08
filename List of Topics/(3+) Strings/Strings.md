@@ -21,8 +21,11 @@
     * Tutorial
       * [HackerRank](https://www.hackerrank.com/topics/manachers-algorithm)
       * [adamant](http://codeforces.com/blog/entry/12143)
+  * Palindromic Tree
+    * Tutorial
+      * [adamant](http://codeforces.com/blog/entry/13959)
 
-## More
+## Other
   * Z Algorithm
     * [Tutorial](http://codeforces.com/blog/entry/3107)
   * Suffix Array / Tree

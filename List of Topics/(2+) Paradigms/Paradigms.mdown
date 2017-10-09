@@ -34,9 +34,5 @@
 
 ## 4
 
-  * Divide and Conquer Optimization
-    * [DP With Divide & Conquer](http://codeforces.com/blog/entry/8219)
-    * Problem(s)
-      * [Minimization Problem](http://codeforces.com/contest/868/problem/F)
   * (Old Gold) Meet in the Middle 
   * (Old Gold) Ternary Search

@@ -1,7 +1,10 @@
 # DP
 
+[DP Problems](http://codeforces.com/blog/entry/325)
+[Optimizations](http://codeforces.com/blog/entry/8219)
+      
 ## 3
-  * Dynamic Programming (8/24 gold)
+  * Intro to Dynamic Programming (8/24 gold)
     * Tutorials
       * [Topcoder DP](https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/)
       * CPH (7, Dynamic Programming)
@@ -13,7 +16,11 @@
       * [Wrong Brackets](https://csacademy.com/contest/round-51/task/wrong-brackets/) [](69)
 
 ## 4
-  * (Old Gold) Bitmask DP 
+  * Divide and Conquer Optimization
+    * [DP With Divide & Conquer](http://codeforces.com/blog/entry/8219)
+    * Problem(s)
+      * [Minimization Problem](http://codeforces.com/contest/868/problem/F)
+  * (Old Gold) DP with Bitmasks
     * Problem(s)
       * [Guards in the Storehouse](http://codeforces.com/problemset/problem/845/F) [](71)
  

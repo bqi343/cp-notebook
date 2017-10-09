@@ -1,7 +1,4 @@
 # DP
-
-[DP Problems](http://codeforces.com/blog/entry/325)
-[Optimizations](http://codeforces.com/blog/entry/8219)
       
 ## 3
   * Intro to Dynamic Programming (8/24 gold)
@@ -22,6 +19,7 @@
       * [Minimization Problem](http://codeforces.com/contest/868/problem/F)
   * (Old Gold) DP with Bitmasks
     * Problem(s)
+      * [Cat & Mice](https://open.kattis.com/problems/catandmice) [](66)
       * [Guards in the Storehouse](http://codeforces.com/problemset/problem/845/F) [](71)
  
 ## Other
@@ -31,3 +29,5 @@
     * Problem(s)
       * [Slytherin](http://codeforces.com/contest/855/problem/E) 
       * [Magic Numbers](http://codeforces.com/contest/628/problem/D)
+  * [DP Problems](http://codeforces.com/blog/entry/325)
+  * [More Optimizations](http://codeforces.com/blog/entry/8219)

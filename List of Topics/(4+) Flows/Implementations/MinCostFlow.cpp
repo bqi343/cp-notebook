@@ -32,22 +32,26 @@ struct Edge {
 template<int SZ> struct mcf {
     pii pre[SZ];
     int cost[SZ], num[SZ], SC, SNC;
-    vector<Edge> adj[SZ]; 
-     
+    ll flo, ans, ccost;
+    vector<Edge> adj[SZ];
+
     void addEdge(int u, int v, int C, int cost) {
         Edge a{v, 0, C, (int)adj[v].size(), cost};
         Edge b{u, 0, 0, (int)adj[u].size(), -cost};
-        adj[u].pb(a);
-        adj[v].pb(b); 
-    } 
+        adj[u].pb(a), adj[v].pb(b);
+    }
+
+    void reweight() {
+    	F0R(i,SZ) {
+    	    for (auto& p: adj[i]) p.cost += cost[i]-cost[p.v];
+    	}
+    }
     
-    bool bfs() {
+    bool spfa() {
         F0R(i,SZ) cost[i] = MOD, num[i] = 0;
         cost[SC] = 0, num[SC] = MOD;
-        priority_queue<pii,vector<pii>,greater<pii>> todo; todo.push({0,SC}); 
-        // doesn't handle negative edges very well
-        // no negative cycles
-        
+        priority_queue<pii,vector<pii>,greater<pii>> todo; todo.push({0,SC});
+
         while (todo.size()) {
             pii x = todo.top(); todo.pop();
             if (x.f > cost[x.s]) continue;
@@ -59,23 +63,29 @@ template<int SZ> struct mcf {
             }
         }
         
+        ccost += cost[SNC];
         return num[SNC] > 0;
+    }
+
+    void backtrack() {
+        flo += num[SNC], ans += (ll)num[SNC]*ccost;
+        for (int x = SNC; x != SC; x = pre[x].f) {
+            adj[x][pre[x].s].flow -= num[SNC];
+            int t = adj[x][pre[x].s].rev;
+            adj[pre[x].f][t].flow += num[SNC];
+        }
     }
     
     pii mincostflow(int sc, int snc) {
         SC = sc, SNC = snc;
+        flo = ans = ccost = 0;
         
-        int flo = 0, ans = 0;
-        while (bfs()) {
-            flo += num[SNC], ans += (ll)num[SNC]*cost[SNC];
-            for (int x = SNC; x != SC; x = pre[x].f) {
-                adj[x][pre[x].s].flow -= num[SNC];
-                int t = adj[x][pre[x].s].rev;
-                adj[pre[x].f][t].flow += num[SNC];
-            }
+        spfa();
+        while (1) {
+            reweight();
+            if (!spfa()) return {flo,ans};
+            backtrack();
         }
-        
-        return {flo,ans};
     }
 };
 

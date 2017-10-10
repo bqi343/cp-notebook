@@ -14,6 +14,7 @@
       * [CSAcademy](https://csacademy.com/blog/fast-fourier-transform-and-variations-of-it/)
     * Problem(s)
       * [K-Inversions](https://open.kattis.com/problems/kinversions)
+      * [Big Integer](https://dmoj.ca/problem/bts17p8)
 
 # Combinatorics
 

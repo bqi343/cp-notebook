@@ -11,13 +11,14 @@
       * [Fashion](https://csacademy.com/contest/rmi-2017-day-1/task/fashion/statement/) [](95)
       * [Card Game](http://codeforces.com/problemset/problem/808/F) [](135)
 
+## 5
+  * Hopcroft-Karp Bipartite Matching
+  * Faster Max Flow
+    * Dinic's Algorithm
+    * Push-Relabel
+      
 ## Other
   *Some problems sourced from [here](http://codeforces.com/blog/entry/54526?#comment-385354).*
-  * More Flows
-    * Hopcroft-Karp Bipartite Matching
-      * Faster Max Flow
-      * Dinic's Algorithm
-      * Push-Relabel
     * Min Cost Max Flow
       * Tutorial
         * [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/minimum-cost-flow-part-two-algorithms/)

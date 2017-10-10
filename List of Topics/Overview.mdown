@@ -29,3 +29,22 @@
   * Disjoint Set Union
   * Dynamic Programming
   * Hashing
+
+# Plat Topics
+
+  * Data Structures
+    * Segment Tree & Variants
+    * Matrices
+  * Paradigms
+    * Meet in the Middle
+    * Ternary Search
+  * DP
+    * Bitmasks
+    * Divide & Conquer
+  * Strings
+    * Tries
+  * Geometry
+    * Convex Hull
+  * Trees
+    * LCA
+    * HLD

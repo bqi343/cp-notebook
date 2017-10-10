@@ -24,20 +24,18 @@ typedef pair<int, int> pii;
 #define lb lower_bound
 #define ub upper_bound
 
-const int MOD = 1000000007;
-
 const ll mod = (119 << 23) + 1, root = 3; // = 998244353
 // For p < 2^30 there is also e.g. (5 << 25, 3), (7 << 26, 3),
 // (479 << 21, 3) and (483 << 21, 5). The last two are > 10^9.
 
 typedef vector<ll> vl;
 
-ll modpow(ll b, ll p) { // MOD is prime
+ll modpow(ll b, ll p) { // mod is prime
     ll ans = 1;
     while (p) {
-        if (p&1) ans = ans*b % MOD;
+        if (p&1) ans = ans*b % mod;
         p >>= 1;
-        b = b*b % MOD;
+        b = b*b % mod;
     }
     return ans;
 }

@@ -8,8 +8,8 @@
     * Minimum Cut
     * Problems
       * [Goods Transportation](http://codeforces.com/problemset/problem/724/E) [](52)
+      * [Fashion](https://csacademy.com/contest/rmi-2017-day-1/task/fashion/statement/) [](95)
       * [Almost Permutation](http://codeforces.com/contest/863/problem/F) [](105)
-      * [Machine Programming](http://codeforces.com/problemset/problem/164/C) [](110)
       * [Students Initiation](http://codeforces.com/problemset/problem/847/J) [](134)
       * [Card Game](http://codeforces.com/problemset/problem/808/F) [](135)
 

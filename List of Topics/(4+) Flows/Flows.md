@@ -19,13 +19,13 @@
       
 ## Other
   *Some problems sourced from [here](http://codeforces.com/blog/entry/54526?#comment-385354).*
-    * Min Cost Max Flow
-      * Tutorial
-        * [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/minimum-cost-flow-part-two-algorithms/)
-        * [Johnson's Algorithm](https://en.wikipedia.org/wiki/Johnson%27s_algorithm)
-      * Problems
-        * [April Fool's Problem](http://codeforces.com/contest/802/problem/N)
-        * [Acme Corporation](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2660)
-        * [Students Initiation](http://codeforces.com/contest/847/problem/J)
-        * [Almost Permutation](http://codeforces.com/contest/863/problem/F)
-        * [Machine Programming](http://codeforces.com/contest/164/problem/C)
+  * Min Cost Max Flow
+    * Tutorial
+      * [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/minimum-cost-flow-part-two-algorithms/)
+      * [Johnson's Algorithm](https://en.wikipedia.org/wiki/Johnson%27s_algorithm)
+    * Problems
+      * [April Fool's Problem](http://codeforces.com/contest/802/problem/N)
+      * [Acme Corporation](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2660)
+      * [Students Initiation](http://codeforces.com/contest/847/problem/J)
+      * [Almost Permutation](http://codeforces.com/contest/863/problem/F)
+      * [Machine Programming](http://codeforces.com/contest/164/problem/C)

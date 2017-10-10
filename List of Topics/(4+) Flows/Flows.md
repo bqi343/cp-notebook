@@ -1,7 +1,7 @@
 # Flows
 
 ## 4
-  * (Old Gold) Flows
+  * (Old Gold) Maximum Flow
     * Tutorial
       * CPH (20, Flows & Cuts)
     * Edmonds-Karp
@@ -13,7 +13,7 @@
 
 ## Other
   *Some problems sourced from [here](http://codeforces.com/blog/entry/54526?#comment-385354).*
-  * Flows
+  * More Flows
     * Hopcroft-Karp Bipartite Matching
       * Faster Max Flow
       * Dinic's Algorithm

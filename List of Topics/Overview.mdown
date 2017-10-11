@@ -6,21 +6,19 @@
 
 # Silver Topics
 
-## Data Structures
-  * C++ STL
-  * Cumulative Sum
-
-## Graphs
-  * Representing Graphs (list of edges, adjacency list, adjacency matrix)
-  * Types of Graphs (directed, undirected, trees, etc)
-  * Flood Fill
-  * Breadth-first Search
-  * Depth First Search
-
-## Paradigms
-  * Binary Search
-  * Two Pointers 
-  * Complete Search, Backtracking
+  * Data Structures
+    * C++ STL
+    * Cumulative Sum
+  * Graphs
+    * Representing Graphs (list of edges, adjacency list, adjacency matrix)
+    * Types of Graphs (directed, undirected, trees, etc)
+    * Flood Fill
+    * Breadth-first Search
+    * Depth First Search
+  * Paradigms
+    * Binary Search
+    * Two Pointers 
+    * Complete Search, Backtracking
 
 # Gold Topics
 

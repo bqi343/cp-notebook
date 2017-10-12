@@ -1,3 +1,5 @@
+// https://open.kattis.com/problems/primesieve
+
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
@@ -26,10 +28,10 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 const int MOD = 1000000007;
 
 struct Sieve {
-    bool comp[1000001];
+    bitset<100000001> comp;
     Sieve() {
-        FOR(i,2,1001) if (!comp[i]) {
-            for (int j = i*i; j <= 1000000; j += i) comp[j] = 1;
+        FOR(i,2,10001) if (!comp[i]) {
+            for (int j = i*i; j <= 100000000; j += i) comp[j] = 1;
         }
     }
     bool isprime(int x) {
@@ -38,10 +40,17 @@ struct Sieve {
     }
 };
 
+int n,q,ans=0;
+
 int main() {
-	ios_base::sync_with_stdio(0);cin.tie(0);
-	Sieve s;
-	FOR(i,1,101) cout << i << " " << s.isprime(i) << "\n";
+    ios_base::sync_with_stdio(0);cin.tie(0);
+    Sieve s; cin >> n >> q;
+    FOR(i,1,n+1) if (s.isprime(i)) ans ++;
+    cout << ans << "\n";
+    F0R(i,q) {
+        int x; cin >> x;
+        cout << s.isprime(x) << "\n";
+    }
 }
 
 // read!

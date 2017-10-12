@@ -1,4 +1,5 @@
 // https://github.com/SuprDewd/T-414-AFLV/blob/master/11_strings/aflv_11_strings.pdf
+// https://open.kattis.com/problems/suffixsorting
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -69,10 +70,18 @@ struct suffix_array {
 
 int main() {
 	ios_base::sync_with_stdio(0);cin.tie(0);
-	suffix_array x("abciowaeobabciowl");
-	for (int i: x.idx) cout << i << " ";
-	cout << "\n";
-	cout << x.lcp(0,10);
+	string s;
+	while (getline(cin,s)) {
+	    if (s[s.length()-1] == '\r') s.erase(s.end()-1);
+	    suffix_array sa = suffix_array(s);
+	    int z; cin >> z;
+	    F0R(i,z) {
+	        int x; cin >> x;
+	        cout << sa.idx[x] << " ";
+	    }
+	    cout << "\n";
+	    getline(cin,s);
+	}
 }
 
 // read!

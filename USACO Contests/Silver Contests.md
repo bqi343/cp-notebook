@@ -10,7 +10,7 @@
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=596) | gates | Graphs - Flood Fill | Done |
 | 2016 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=618) | cbarn | | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=619) | balancing | | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=620) | pails | DP | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=620) | pails | Graphs | Done |
 | 2016 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=642) | reduce | | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=643) | diamond | Two Pointers | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=644) | closing | Graphs - Flood Fill | Done |

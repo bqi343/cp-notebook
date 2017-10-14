@@ -23,7 +23,12 @@
       * [Hotels](https://szkopul.edu.pl/problemset/problem/gDw3iFkeVm7ZA3j_16-XR7jI/site/?key=statement) [](61)
 
 ## 3
-  * Shortest Path (especially Dijkstra)
+  * Shortest Path
+    * Types
+      * Dijkstra
+      * Shortest Path Faster Algorithm
+      * Floyd-Warshall
+      * Bellman-Ford
     * [Topcoder Graphs Pt 3](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-3/)
     * [Shortest Path](https://www.cs.cornell.edu/~wdtseng/icpc/notes/graph_part2.pdf)
     * CPH (13, Shortest Paths)

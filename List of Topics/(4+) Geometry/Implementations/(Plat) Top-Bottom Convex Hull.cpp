@@ -1,5 +1,6 @@
 // https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain
 // 5 min
+// https://open.kattis.com/problems/convexhull
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -32,8 +33,10 @@ ll cross(pii O, pii A, pii B) {
 }
 
 vector<pii> convex_hull(vector<pii> P) {
+    sort(P.begin(),P.end()); P.erase(unique(P.begin(),P.end()),P.end());
+    if (P.size() == 1) return P;
+    
     int n = P.size();
-    sort(P.begin(),P.end());
     
     vector<pii> bot = {P[0]};
     FOR(i,1,n) {
@@ -54,7 +57,13 @@ vector<pii> convex_hull(vector<pii> P) {
 }
 
 int main() {
-    vector<pii> P = {{0,0},{1,0},{1,1},{0,1},{2,2},{3,2},{2,3}};
-    vector<pii> hull = convex_hull(P);
-    for (pii x: hull) cout << x.f << " " << x.s << "\n";
+    int n;
+    while (cin >> n) {
+        if (n == 0) break;
+        vector<pii> P(n); F0R(i,n) cin >> P[i].f >> P[i].s;
+        vector<pii> hull = convex_hull(P);
+        
+        cout << hull.size() << "\n";
+        for (auto a: hull) cout << a.f << " " << a.s << "\n";
+    }
 }

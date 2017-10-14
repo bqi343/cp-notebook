@@ -20,3 +20,4 @@
     * [Easy Geo w/ std::complex](http://codeforces.com/blog/entry/22175)
     * Problem(s)
       * [Birthday Cake](https://open.kattis.com/problems/birthdaycake)
+      * [Racing Off Track](https://open.kattis.com/contests/acpc17open/problems/racingofftrack)

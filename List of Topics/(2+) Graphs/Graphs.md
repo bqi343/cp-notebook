@@ -29,9 +29,17 @@
       * Shortest Path Faster Algorithm
       * Floyd-Warshall
       * Bellman-Ford
-    * [Topcoder Graphs Pt 3](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-3/)
-    * [Shortest Path](https://www.cs.cornell.edu/~wdtseng/icpc/notes/graph_part2.pdf)
-    * CPH (13, Shortest Paths)
+    * Tutorial
+      * [Topcoder Graphs Pt 3](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-3/)
+      * [Shortest Path](https://www.cs.cornell.edu/~wdtseng/icpc/notes/graph_part2.pdf)
+      * CPH (13, Shortest Paths)
+    * Problem(s)
+      * [Lane Switching](https://open.kattis.com/contests/acpc17open/problems/laneswitching)
+  * Topological Sort
+    * Tutorial
+      * [Wikipedia](https://en.wikipedia.org/wiki/Topological_sorting)
+    * Problem(s)
+      * [Quantum](https://open.kattis.com/contests/acpc17open/problems/quantumsuperposition)
 
 ## 5
   * Articulation Points / Bridges

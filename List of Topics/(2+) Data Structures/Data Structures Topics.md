@@ -77,8 +77,10 @@
       * [Implementation](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Matrix.h)
     * Problem(s)
       * [Wet Shark & Blocks](http://codeforces.com/problemset/problem/621/E) [](55)
-      * [CF 420 Div 2 E](http://codeforces.com/contest/821/problem/E) [](81)
+      * [Okabe](http://codeforces.com/contest/821/problem/E) [](81)
+      * [Vasya & Shifts](http://codeforces.com/contest/832/problem/E) [](90)
       * [Currencies](https://www.hackerrank.com/contests/gs-codesprint/challenges/currencies) [](107)
+      * [Bitland](http://codeforces.com/problemset/problem/780/F)
       
 ## 5
 

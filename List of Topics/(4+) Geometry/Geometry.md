@@ -16,8 +16,16 @@
       * [Buy Low Sell High](http://codeforces.com/contest/866/problem/D)
   
 ## Other
-  * Projection of Point onto Line, Circumcircle, Intersection of Two Lines, etc.
+  * Topics
+    * Projection of Point onto Line
+    * Circumcircle
+    * Intersection of Two Lines
+    * Distance Between Point & Segment, Two Segments
+  * Tutorial  
     * [Easy Geo w/ std::complex](http://codeforces.com/blog/entry/22175)
-    * Problem(s)
-      * [Birthday Cake](https://open.kattis.com/problems/birthdaycake)
-      * [Racing Off Track](https://open.kattis.com/contests/acpc17open/problems/racingofftrack)
+  * Problem(s)
+    * [Arpa & Geo](http://codeforces.com/problemset/problem/851/B)
+    * [Tell Your World](http://codeforces.com/problemset/problem/849/B)
+    * [Gleb & Pizza](http://codeforces.com/problemset/problem/842/B)
+    * [Birthday Cake](https://open.kattis.com/problems/birthdaycake)
+    * [Racing Off Track](https://open.kattis.com/contests/acpc17open/problems/racingofftrack)

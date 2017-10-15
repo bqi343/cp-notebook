@@ -99,7 +99,7 @@
 | ------------- | - | - | ---------------| ---------------------- |
 | 2016 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=672) | triangles |  | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=673) | team | DP | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=674) | roboherd | Searching | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=674) | roboherd | Binary Search | Done |
 | 2017 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=696) | promote | SegTree | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=697) | tallbarn | Binary Search | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=698) | subrev | DP | Done |

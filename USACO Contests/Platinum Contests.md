@@ -92,7 +92,7 @@
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=625) | fencedin | Graphs | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=626) | cbarn | DP | Done |
 | 2016 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=648) | 262144 | DP | Done |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=649) | bcs | | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=649) | bcs | Hashing | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=650) | landscape | DP | Done |
 
 | Contest         | #  | Name | Topic            | Result                 |

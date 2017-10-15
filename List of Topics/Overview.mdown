@@ -31,7 +31,7 @@
 # Plat Topics
 
   * Data Structures
-    * Segment Tree & Variants
+    * Segment Tree & Variants (by far the most common!)
     * Matrices
   * Paradigms
     * Meet in the Middle

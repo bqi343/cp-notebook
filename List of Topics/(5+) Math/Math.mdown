@@ -16,6 +16,8 @@
       * [K-Inversions](https://open.kattis.com/problems/kinversions)
       * [Big Integer](https://dmoj.ca/problem/bts17p8)
       * [Matchings](https://open.kattis.com/contests/acpc17open/problems/matchings)
+      * [Fuzzy](http://codeforces.com/problemset/problem/528/D)
+      * [Thief](http://codeforces.com/problemset/problem/632/E)
 
 # Combinatorics
 

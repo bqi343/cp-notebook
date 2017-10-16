@@ -23,3 +23,7 @@ Obviously, there are many resources which already exist. However, most of them w
   * 1400+: Gold
   * 1600+: Platinum
   * 1800+: Training Camp
+
+## A Reminder For Myself
+
+**Always** check for typos and integer overflow.

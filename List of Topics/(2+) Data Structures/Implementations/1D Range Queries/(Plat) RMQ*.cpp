@@ -1,6 +1,3 @@
-// constant time, linearithmic space
-// 5 min
-
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
@@ -28,21 +25,26 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 
 const int MOD = 1000000007;
 
-struct RMQ {
-    int stor[100000][17];
-    void build(vi& x) {
-        memset(stor,0,sizeof stor);
-        F0R(i,x.size()) stor[i][0] = x[i];
-        FOR(j,1,17) F0R(i,100000-(1<<(j-1))) 
-            stor[i][j] = min(stor[i][j-1],stor[i+(1<<(j-1))][j-1]);
+template<class T, int SZ> struct RMQ {
+    T stor[SZ][31-__builtin_clz(SZ)];
+    
+    T comb(T a, T b) {
+        return min(a,b);
     }
-    int query(int l, int r) {
+    
+    void build(vector<T>& x) {
+        F0R(i,x.size()) stor[i][0] = x[i];
+        FOR(j,1,31-__builtin_clz(SZ)) F0R(i,SZ-(1<<(j-1))) 
+            stor[i][j] = comb(stor[i][j-1],stor[i+(1<<(j-1))][j-1]);
+    }
+    
+    T query(int l, int r) {
         int x = 31-__builtin_clz(r-l+1);
-        return min(stor[l][x],stor[r-(1<<x)+1][x]);
+        return comb(stor[l][x],stor[r-(1<<x)+1][x]);
     }
 };
 
-RMQ R;
+RMQ<int,100000> R;
 
 int main() {
 	ios_base::sync_with_stdio(0);cin.tie(0);
@@ -55,6 +57,3 @@ int main() {
 	    cout << a << " " << b << " " << R.query(a,b) << "\n";
 	}
 }
-
-// read!
-// ll vs. int!

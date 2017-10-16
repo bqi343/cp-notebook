@@ -44,7 +44,7 @@ I recommend that you use C++11 over Java due to various reasons, such as
 ## Regional HS Contests
   * [PClassic](http://pclassic.org/)
   * [VT HSPC](https://icpc.cs.vt.edu/#/hscontest2017)
+    * [Kattis](https://open.kattis.com/problem-sources/2016%20Virginia%20Tech%20High%20School%20Programming%20Contest)
   * [Code Quest](http://www.lockheedmartin.com/us/who-we-are/community/codequest/code-quest-moorestown.html)
   * [UCF HSPT](https://hspt.ucfprogrammingteam.org/index.php/hspt-online-edition)
-    * [Kattis](https://open.kattis.com/problem-sources/2016%20Virginia%20Tech%20High%20School%20Programming%20Contest)
   

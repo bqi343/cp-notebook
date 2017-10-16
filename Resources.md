@@ -30,7 +30,7 @@ I recommend that you use C++11 over Java due to various reasons, such as
   * [E-maxx](https://e-maxx-eng.appspot.com/)
   * [Topcoder Tutorials](http://www.topcoder.com/community/data-science/data-science-tutorials/)
   * [KACTL (KTH Royal Institute of Tech)](https://github.com/kth-competitive-programming/kactl)
-  * [Coding Library](https://github.com/radoslav11/Coding-Library?files=1)
+  * [Coding Library (radoslav11)](https://github.com/radoslav11/Coding-Library?files=1)
   
 ## Misc OI
   * [WCIPEG (Past IOI)](http://wcipeg.com)

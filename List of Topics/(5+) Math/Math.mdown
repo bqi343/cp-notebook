@@ -18,6 +18,7 @@
       * [Matchings](https://open.kattis.com/contests/acpc17open/problems/matchings)
       * [Fuzzy](http://codeforces.com/problemset/problem/528/D)
       * [Thief](http://codeforces.com/problemset/problem/632/E)
+      * [Counting Triplets*](https://toph.co/p/counting-triplets)
 
 # Combinatorics
 

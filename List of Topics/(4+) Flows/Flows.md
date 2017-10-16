@@ -31,3 +31,4 @@
       * [Students Initiation](http://codeforces.com/contest/847/problem/J)
       * [Almost Permutation](http://codeforces.com/contest/863/problem/F)
       * [Machine Programming](http://codeforces.com/contest/164/problem/C)
+      * [Four Melodies](http://codeforces.com/contest/818/problem/G)

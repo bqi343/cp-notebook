@@ -1,6 +1,4 @@
-// Easiest BBST
-// 7 min
-// https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Treap.h
+// https://github.com/radoslav11/Coding-Library/blob/master/data_structures/persistent_treap.cpp
 
 #include <bits/stdc++.h>
 

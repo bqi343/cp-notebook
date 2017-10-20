@@ -1,29 +1,3 @@
-/*#include <cstdlib>
-#include <bitset>
-#include <functional>
-#include <utility>
-#include <ctime>
-#include <tuple>
-#include <climits>	
-#include <cstring>	
-#include <string>	
-#include <array>
-#include <vector>
-#include <set>
-#include <map>
-#include <unordered_set>
-#include <unordered_map>
-#include <stack>
-#include <queue>
-#include <algorithm>
-#include <iterator>
-#include <cmath>
-#include <complex>
-#include <iostream>	
-#include <fstream>
-#include <iomanip>
-#include <cstdio>*/
-
 #include <bits/stdc++.h>
 // #include <ext/pb_ds/tree_policy.hpp>
 // #include <ext/pb_ds/assoc_container.hpp>

@@ -1,14 +1,40 @@
+/*#include <cstdlib>
+#include <bitset>
+#include <functional>
+#include <utility>
+#include <ctime>
+#include <tuple>
+#include <climits>	
+#include <cstring>	
+#include <string>	
+#include <array>
+#include <vector>
+#include <set>
+#include <map>
+#include <unordered_set>
+#include <unordered_map>
+#include <stack>
+#include <queue>
+#include <algorithm>
+#include <iterator>
+#include <cmath>
+#include <complex>
+#include <iostream>	
+#include <fstream>
+#include <iomanip>
+#include <cstdio>*/
+
 #include <bits/stdc++.h>
-#include <ext/pb_ds/tree_policy.hpp>
-#include <ext/pb_ds/assoc_container.hpp>
+// #include <ext/pb_ds/tree_policy.hpp>
+// #include <ext/pb_ds/assoc_container.hpp>
 
 using namespace std;
-using namespace __gnu_pbds;
+// using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int, int> pii;
-template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
+// template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i = a; i < int(b); i++)
 #define F0R(i, a) for (int i = 0; i < int(a); i++)
@@ -23,6 +49,7 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 #define ub upper_bound
 
 const int MOD = 1000000007;
+const double PI = 4*atan(1);
 
 int main() {
 	ios_base::sync_with_stdio(0);cin.tie(0);

@@ -4,11 +4,12 @@
   *Some problems sourced from [here.](http://codeforces.com/blog/entry/54526?#comment-385354)*
   * Game Theory
   	* Tutorial
-  	   * [HackerRank](https://www.hackerrank.com/topics/game-theory-and-grundy-numbers)
+  	 * [HackerRank](https://www.hackerrank.com/topics/game-theory-and-grundy-numbers)
       * [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/algorithm-games/)
     * Topics
        * Nim
        * Grundy Numbers
+       * Sprague-Grundy Theorem
     * Problem(s)
       * [Division Game](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2959)
       * [Game of Stones](http://codeforces.com/problemset/problem/768/E) [](59)

@@ -42,3 +42,18 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * [CF Predictor](https://chrome.google.com/webstore/detail/cf-predictor/ocfloejijfhhkkdmheodbaanephbnfhn)
   * [CF Enhancer](https://chrome.google.com/webstore/detail/codeforces-enhancer/ocmandagmgmkcplckgnfgaokpgkfenmp)
   
+## Misc OI
+  * [WCIPEG (Past IOI)](http://wcipeg.com)
+  * [Yandex (Past IOI)](https://contest.yandex.ru/ioi/Info/)
+  * [USACO](http://www.usaco.org/)
+  * [Japan OI](http://cms.ioi-jp.org/)
+  * [Poland OI](https://szkopul.edu.pl/portal/)
+  * [Italy OI](https://training.olinfo.it/#/overview)
+  * [Indonesia OI](https://competition.ia-toki.org/contests)
+
+## Regional HS Contests
+  * [PClassic](http://pclassic.org/)
+  * [VT HSPC](https://icpc.cs.vt.edu/#/hscontest2017)
+    * [Kattis](https://open.kattis.com/problem-sources/2016%20Virginia%20Tech%20High%20School%20Programming%20Contest)
+  * [Code Quest](http://www.lockheedmartin.com/us/who-we-are/community/codequest/code-quest-moorestown.html)
+  * [UCF HSPT](https://hspt.ucfprogrammingteam.org/index.php/hspt-online-edition)

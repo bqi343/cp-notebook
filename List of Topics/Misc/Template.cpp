@@ -26,7 +26,7 @@ const int MOD = 1000000007;
 
 int main() {
 	ios_base::sync_with_stdio(0);cin.tie(0);
-	F0R(i,5) cout << "HI";
+	
 }
 
 // read!

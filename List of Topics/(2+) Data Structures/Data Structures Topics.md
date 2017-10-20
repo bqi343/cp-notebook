@@ -28,6 +28,7 @@
       * [K-Reachability](https://www.hackerearth.com/problem/algorithm/mancunian-and-k-reachability-ad7aca82/) [](51)
       * [Star Sky](http://codeforces.com/contest/835/problem/C) [](54)
       * [Monitor](http://codeforces.com/problemset/problem/846/D) [](60)
+
 ## 3
 
   * Fenwick Tree, aka Binary Indexed Tree (2/24 Gold)
@@ -117,3 +118,5 @@
 
 ## Other
   * [Wavelet Tree](http://codeforces.com/blog/entry/52854)
+  * [Ji Driver Segment Tree](http://codeforces.com/blog/entry/54750#comment-387839)
+    * English Tutorial?

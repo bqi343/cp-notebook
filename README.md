@@ -8,11 +8,9 @@ In competitive programming contests, one must solve well-defined problems by wri
 
 ## Getting Started
 
-Start learning any one of the above languages simply by searching up a tutorial [such as this](https://www.google.com/url?q=http%3A%2F%2Fwww.cplusplus.com%2Fdoc%2Ftutorial%2F&sa=D) and attempting some of the USACO bronze problems. You should be able to get past USACO Bronze fairly quickly. After that, you can start doing past USACO problems as well as the USACO training pages. (I haven't actually worked through any books.) 
+Start learning any one of the above languages simply by searching up a tutorial [such as this](https://www.google.com/url?q=http%3A%2F%2Fwww.cplusplus.com%2Fdoc%2Ftutorial%2F&sa=D) and attempting some of the USACO bronze problems. You should be able to get past USACO Bronze fairly quickly, assuming you know how the input / output works. After that, you can start doing past USACO problems as well as the USACO training pages. (I haven't actually worked through any books.) 
 
 Once you are familiar with the basics and learn some algorithms, you can start doing some contests. [AtCoder Beginner Contests](http://atcoder.jp/) are a good place to start.
-
-Please see the "List of Topics" for details. 
 
 ## Why did I create this?
 

@@ -92,14 +92,14 @@
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=625) | fencedin | Graphs | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=626) | cbarn | DP | Done |
 | 2016 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=648) | 262144 | DP | Done |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=649) | bcs | | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=649) | bcs | Hashing | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=650) | landscape | DP | Done |
 
 | Contest         | #  | Name | Topic            | Result                 |
 | ------------- | - | - | ---------------| ---------------------- |
-| 2016 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=672) | triangles |  | Done |
+| 2016 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=672) | triangles | Geometry | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=673) | team | DP | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=674) | roboherd | Searching | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=674) | roboherd | Binary Search | Done |
 | 2017 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=696) | promote | SegTree | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=697) | tallbarn | Binary Search | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=698) | subrev | DP | Done |

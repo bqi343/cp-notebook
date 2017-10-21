@@ -28,6 +28,7 @@
       * [K-Reachability](https://www.hackerearth.com/problem/algorithm/mancunian-and-k-reachability-ad7aca82/) [](51)
       * [Star Sky](http://codeforces.com/contest/835/problem/C) [](54)
       * [Monitor](http://codeforces.com/problemset/problem/846/D) [](60)
+
 ## 3
 
   * Fenwick Tree, aka Binary Indexed Tree (2/24 Gold)
@@ -77,8 +78,10 @@
       * [Implementation](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Matrix.h)
     * Problem(s)
       * [Wet Shark & Blocks](http://codeforces.com/problemset/problem/621/E) [](55)
-      * [CF 420 Div 2 E](http://codeforces.com/contest/821/problem/E) [](81)
+      * [Okabe](http://codeforces.com/contest/821/problem/E) [](81)
+      * [Vasya & Shifts](http://codeforces.com/contest/832/problem/E) [](90)
       * [Currencies](https://www.hackerrank.com/contests/gs-codesprint/challenges/currencies) [](107)
+      * [Bitland](http://codeforces.com/problemset/problem/780/F)
       
 ## 5
 
@@ -115,3 +118,5 @@
 
 ## Other
   * [Wavelet Tree](http://codeforces.com/blog/entry/52854)
+  * [Ji Driver Segment Tree](http://codeforces.com/blog/entry/54750#comment-387839)
+    * English Tutorial?

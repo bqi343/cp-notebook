@@ -1,4 +1,4 @@
-// https://open.kattis.com/problems/primesieve
+// https://open.kattis.com/problems/longincsubseq
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -27,30 +27,36 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 
 const int MOD = 1000000007;
 
-template<int SZ> struct Sieve {
-    bitset<SZ+1> comp;
-    Sieve() {
-        for (int i = 2; i*i <= SZ; ++i) if (!comp[i]) {
-            for (int j = i*i; j <= SZ; j += i) comp[j] = 1;
-        }
-    }
-    bool isprime(int x) {
-        if (x == 1) return 0;
-        return !comp[x];
-    }
-};
+int n, pre[100000], a[100000];
+set<pair<ll,pii>> bes; // number, length, index
 
-int n,q,ans=0;
+void solve() {
+    bes.clear(); bes.insert({-1e18,{0,-1}});
+    F0R(i,n) {
+        cin >> a[i];
+        auto b = *prev(bes.lb({a[i],{-MOD,-MOD}}));
+        pre[i] = b.s.s;
+        auto it = bes.lb({a[i],{-MOD,-MOD}});
+        if (it != bes.end() && it->s.f == b.s.f+1) bes.erase(it);
+        bes.insert({a[i],{b.s.f+1,i}});
+    }
+    auto z = *bes.rbegin();
+    vi ans;
+    
+    int ind = z.s.s;
+    while (ind != -1) {
+        ans.pb(ind);
+        ind = pre[ind];
+    }
+    reverse(ans.begin(),ans.end());
+    cout << ans.size() << "\n";
+    for (int i: ans) cout << i << " ";
+    cout << "\n";
+}
 
 int main() {
     ios_base::sync_with_stdio(0);cin.tie(0);
-    Sieve<100000000> s; cin >> n >> q;
-    FOR(i,1,n+1) if (s.isprime(i)) ans ++;
-    cout << ans << "\n";
-    F0R(i,q) {
-        int x; cin >> x;
-        cout << s.isprime(x) << "\n";
-    }
+    while (cin >> n) solve();
 }
 
 // read!

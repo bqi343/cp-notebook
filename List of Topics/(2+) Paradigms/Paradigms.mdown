@@ -8,6 +8,9 @@
       * Problem(s)
         * [Sure Bet](https://csacademy.com/contest/archive/task/sure-bet/)
         * [Did you Mean...](http://codeforces.com/contest/860/problem/A)
+        * [Permutation](http://codeforces.com/problemset/problem/864/D)
+        * [Bus](http://codeforces.com/problemset/problem/864/C)
+        * [Kayaking](http://codeforces.com/problemset/problem/863/B)
         
 ## 2
 
@@ -28,6 +31,7 @@
     * Problems (sorted by length)
       * [Cellular Network](http://codeforces.com/problemset/problem/702/C) [](48)
       * [USB vs. PS/2](http://codeforces.com/problemset/problem/762/B) [](53)
+      * [K-Good Segment](http://codeforces.com/problemset/problem/616/D) [](53)
       * [CF 418 C](http://codeforces.com/problemset/problem/814/C) [](54)
       * [Jury Meeting](http://codeforces.com/problemset/problem/853/B) [](90)
   * Complete Search, Backtracking

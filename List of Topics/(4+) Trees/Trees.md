@@ -15,5 +15,6 @@
     * Problem(s)
         * [Ciel the Commander](http://codeforces.com/problemset/problem/321/C) [](71)
         * [Sagheer & Kindergarten](http://codeforces.com/contest/812/problem/D) [](71)
-        * [CF 434 Div 1 E](http://codeforces.com/contest/860/problem/E) [](101)
+        * [Arkady & Nobody-Men](http://codeforces.com/contest/860/problem/E) [](101)
+        * [Diadem](http://codeforces.com/contest/855/problem/D) [](104)
         * [Hot & Cold](https://dmoj.ca/problem/bts17p7) [](105)

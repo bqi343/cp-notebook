@@ -17,8 +17,8 @@
  * March: USACO Camp Qualification
  * April: CodeForces Grandmaster, AtCoder Orange
  * May: Distributed Code Jam Round 2 Qualifier
- * June: IOI Qualification, Codechef 6 stars
+ * June: IOI Qualification
  * July: CSAcademy Red
- * August: TopCoder Red, Codeforces International Grandmaster
+ * August: TopCoder Red, Codeforces International Grandmaster, Codechef 7 stars
 
 

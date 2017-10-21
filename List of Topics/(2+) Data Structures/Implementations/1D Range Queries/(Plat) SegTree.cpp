@@ -29,8 +29,7 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 const int MOD = 1000000007;
 const ll INF = 1e18;
 
-template<int SZ> struct Seg {
-    typedef int T;
+template<class T, int SZ> struct Seg {
     T seg[2*SZ], MN = 0;
     
     Seg() {
@@ -58,7 +57,7 @@ template<int SZ> struct Seg {
 };
 
 int main() {
-    Seg<1<<17> s;
+    Seg<int,1<<17> s;
     s.upd(5,2);
     s.upd(4,1);
     cout << s.query(3,5) << "\n";

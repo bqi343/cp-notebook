@@ -1,4 +1,4 @@
-// Persistent segment tree with lazy updates!
+// Persistent segment tree w/o lazy updates!
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>

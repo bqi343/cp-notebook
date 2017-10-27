@@ -50,6 +50,7 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * [Poland OI](https://szkopul.edu.pl/portal/)
   * [Italy OI](https://training.olinfo.it/#/overview)
   * [Indonesia OI](https://competition.ia-toki.org/contests)
+  * [List of 2017 IOI Participants](http://weaselcrow.com/pro/cf/ioi2017/)
 
 ## Regional HS Contests
   * [PClassic](http://pclassic.org/)

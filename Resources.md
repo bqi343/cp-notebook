@@ -4,10 +4,12 @@
 
 Well, I just did as many contests as I possibly could, and tried to complete the ones I could not finish during the contest. I'm not sure if there's a better way.
 
-If you feel that you are week in a certain topic, just search up some problems to do with websites such as the following:
+If you feel that you are weak in a certain topic, just search up some problems to do with websites such as the following:
   * [Codeforces Problemset](http://codeforces.com/problemset)
   * [HackerRank Dashboard](https://www.hackerrank.com/domains/algorithms/warmup)
   * [CSAcademy Archive](https://csacademy.com/contest/archive/)
+
+Of course, note that many tasks are simply implementation.
 
 ## C++11
 

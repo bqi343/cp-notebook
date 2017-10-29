@@ -1,10 +1,13 @@
 # README
 
-## How do I get better at [insert common topic]?
+## How do you train??
 
-Just do problems; there are plenty of websites.
+Well, I just did as many contests as I possibly could, and tried to complete the ones I could not finish during the contest. I'm not sure if there's a better way.
+
+If you feel that you are week in a certain topic, just search up some problems to do with websites such as the following:
   * [Codeforces Problemset](http://codeforces.com/problemset)
-  * [HackerRank Dashboard](https://www.hackerrank.com/dashboard)
+  * [HackerRank Dashboard](https://www.hackerrank.com/domains/algorithms/warmup)
+  * [CSAcademy Archive](https://csacademy.com/contest/archive/)
 
 ## C++11
 
@@ -23,7 +26,7 @@ I recommend that you use C++11 over Java due to various reasons, such as
   * [Awesome List (Inishan)](http://codeforces.com/blog/entry/23054)
   * [Competitive Programming Course (SuprDewd)](https://github.com/SuprDewd/T-414-AFLV)
   * [Competitive Programming Playlist](https://www.commonlounge.com/community/862d2091c64e447cacde77d4c76a9ac3)
-  * [Large List of Problems (Morass)](http://codeforces.com/blog/entry/54526?#comment-385378)
+  * [Problem Topics (Morass)](http://codeforces.com/blog/entry/55274)
 
 ## Algorithm Collections
   * [Algorithms Gym (PrinceOfPersia)](http://codeforces.com/blog/entry/15729)

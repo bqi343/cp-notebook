@@ -4,15 +4,15 @@
 
 ## Introduction
 
-In competitive programming contests, one must solve well-defined problems by writing computer programs under specified limits or constraints. Typically, the most popular language is C++, followed by Java and Python. Here is my [C++ template](http://ideone.com/qMLEgu) if anyone is interested.
+In competitive programming contests, one must solve well-defined problems by writing computer programs under specified limits or constraints. Typically, the most popular language is C++, followed by Java and Python. 
 
 ## Getting Started
 
-Start learning C++ simply by searching up a tutorial [such as this](https://www.google.com/url?q=http%3A%2F%2Fwww.cplusplus.com%2Fdoc%2Ftutorial%2F&sa=D). No prior experience is needed! If you know some other language such as Java, I recommend you switch to C++ ASAP. [Codefights](https://codefights.com/) is a good way to practice syntax. [This link](https://www.quora.com/What-is-a-good-schedule-to-follow-for-becoming-better-at-competitive-programming-for-beginners) is helpful.
+Start learning C++ simply by searching up a tutorial [such as this](https://www.google.com/url?q=http%3A%2F%2Fwww.cplusplus.com%2Fdoc%2Ftutorial%2F&sa=D). No prior experience is needed! If you know some other language such as Java or Python, I recommend you switch to C++ ASAP. [Codefights](https://codefights.com/) is a good way to practice syntax. [This link](https://www.quora.com/What-is-a-good-schedule-to-follow-for-becoming-better-at-competitive-programming-for-beginners) is helpful.
 
 Attempt some USACO Bronze problems. Assuming you know how the input / output works, you should soon be able to advance to silver. After that, you can start doing past USACO silver problems as well as the USACO training pages. Also, start doing contests! [AtCoder Beginner Contests](http://atcoder.jp/) are recommended.
 
-[Also, check out the rest of the resources!]
+[Also, check out the rest of this compilation!]
 
 ## Why did I create this?
 

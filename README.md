@@ -8,20 +8,18 @@ In competitive programming contests, one must solve well-defined problems by wri
 
 ## Getting Started
 
-Start learning any one of the above languages simply by searching up a tutorial [such as this](https://www.google.com/url?q=http%3A%2F%2Fwww.cplusplus.com%2Fdoc%2Ftutorial%2F&sa=D) and attempting some of the USACO bronze problems. You should be able to get past USACO Bronze fairly quickly, assuming you know how the input / output works. After that, you can start doing past USACO problems as well as the USACO training pages. (I haven't actually worked through any books.) 
+Start learning C++ simply by searching up a tutorial [such as this](https://www.google.com/url?q=http%3A%2F%2Fwww.cplusplus.com%2Fdoc%2Ftutorial%2F&sa=D). No prior experience is needed! If you know some other language such as Java, I recommend you switch to C++ ASAP. [Codefights](https://codefights.com/) is a good way to practice syntax. [This link](https://www.quora.com/What-is-a-good-schedule-to-follow-for-becoming-better-at-competitive-programming-for-beginners) is helpful.
 
-Once you are familiar with the basics and learn some algorithms, you can start doing some contests. [AtCoder Beginner Contests](http://atcoder.jp/) are a good place to start.
+Attempt some USACO Bronze problems. Assuming you know how the input / output works, you should soon be able to advance to silver. After that, you can start doing past USACO silver problems as well as the USACO training pages. Also, start doing contests! [AtCoder Beginner Contests](http://atcoder.jp/) are recommended.
+
+[Also, check out the rest of the resources!]
 
 ## Why did I create this?
 
-Obviously, there are many resources which already exist. However, most of them were either too long and overwhelming, or lacking in some aspect. Also, none of them focused specifically on USACO contests. Therefore, I decided to create a personal collection which I could easily refer to during CodeForces contests or ahead of USACO contests.
+Obviously, there are many resources which already exist. However, most of them were either too long, or lacking in some aspect. Furthermore, none of them focused specifically on USACO contests. Therefore, I decided to create a personal collection which I could easily refer to during CodeForces contests or ahead of USACO contests.
 
 ## Very Rough Codeforces to USACO
   * 1200+: Silver
   * 1400+: Gold
   * 1600+: Platinum
   * 1800+: Training Camp
-
-## A Reminder For Myself
-
-**Always** check for typos and integer overflow.

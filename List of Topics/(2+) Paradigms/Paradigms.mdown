@@ -18,7 +18,7 @@
     * Tutorial
       * CPH (3, Sorting)
       * [Topcoder Binary Search](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-search/)
-      * [CSAcademy Binary Seearch](https://csacademy.com/lesson/binary_search)
+      * [CSAcademy Binary Search](https://csacademy.com/lesson/binary_search)
       * [KA Binary Search](https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search)
     * Problems (sorted by length)
       * [The Meeting Place Cannot Be Changed](http://codeforces.com/contest/782/problem/B) [](48)

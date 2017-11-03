@@ -74,7 +74,7 @@ template<int SZ> struct LazySegTree {
         return min(qmin(lo,hi,2*ind,L,M),qmin(lo,hi,2*ind+1,M+1,R));
     }
     
-    void upd(int lo, int hi, int inc, int ind = 1, int L = 0, int R = SZ-1) {
+    void upd(int lo, int hi, ll inc, int ind = 1, int L = 0, int R = SZ-1) {
         push(ind,L,R);
         if (hi < L || R < lo) return;
         if (lo <= L && R <= hi) {

@@ -2,22 +2,22 @@
 
 This collection is composed of the algorithms I have needed for USACO contests, plus a few more. [CPH](https://cses.fi/book.pdf) refers to the competitive programmer's handbook.
 
-Note that 1 corresponds to bronze, while 5 corresponds to camp. Topics marked with "Old Gold" have not appeared in recent platinum contests.
+Topics marked with "Old Gold" have not appeared in recent platinum contests.
 
-# Bronze Topics
+# Bronze Topics (1)
 
   * Complexity Analysis (Big O Notation)
   * Sorting
   * Greedy Algorithms
 
-# Silver Topics
+# Silver Topics (2)
 
   * Data Structures
     * C++ STL
     * Cumulative Sum
   * Graphs
-    * Representing Graphs (list of edges, adjacency list, adjacency matrix)
-    * Types of Graphs (directed, undirected, trees, etc)
+    * Representing Graphs
+    * Types of Graphs 
     * Flood Fill
     * Breadth-first Search
     * Depth First Search
@@ -26,7 +26,7 @@ Note that 1 corresponds to bronze, while 5 corresponds to camp. Topics marked wi
     * Two Pointers 
     * Complete Search, Backtracking
 
-# Gold Topics
+# Gold Topics (3)
 
   * Binary Indexed Tree
   * Shortest Path
@@ -34,7 +34,7 @@ Note that 1 corresponds to bronze, while 5 corresponds to camp. Topics marked wi
   * Dynamic Programming
   * Hashing
 
-# Plat Topics
+# Plat Topics (4)
 
   * Data Structures
     * Segment Tree & Variants (by far the most common!)
@@ -53,7 +53,8 @@ Note that 1 corresponds to bronze, while 5 corresponds to camp. Topics marked wi
     * LCA
     * HLD
 
-# Camp Topics
+# Camp Topics (5)
+
   * Majority Algo
   * Data Structures
     * Persistent SegTree
@@ -62,7 +63,7 @@ Note that 1 corresponds to bronze, while 5 corresponds to camp. Topics marked wi
     * Articulation Points, Bridges, BCC, SCC
     * Bellman Ford & Linear Programming
   * Strings
-    * Manacher
+    * Manacher, Z
   * Flows
     * Bipartite Matching
     * Faster Max Flow

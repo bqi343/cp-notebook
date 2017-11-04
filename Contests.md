@@ -53,8 +53,20 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * [List of 2017 IOI Participants](http://weaselcrow.com/pro/cf/ioi2017/)
 
 ## Regional HS Contests
-  * Philadelphia: [PClassic](http://pclassic.org/)
-  * Moorestown: [Code Quest](http://www.lockheedmartin.com/us/who-we-are/community/codequest/code-quest-moorestown.html)
-  * Online: [VT HSPC](https://icpc.cs.vt.edu/#/hscontest2017)
+  * [PClassic](http://pclassic.org/)
+    * Philadelphia
+    * 4 hours
+    * November, April
+  * [VT HSPC](https://icpc.cs.vt.edu/#/hscontest2017)
+    * Online
+    * 5 hours
     * [Kattis](https://open.kattis.com/problem-sources/2016%20Virginia%20Tech%20High%20School%20Programming%20Contest)
-  * Online: [UCF HSPT](https://hspt.ucfprogrammingteam.org/index.php/hspt-online-edition)
+    * December
+  * [UCF HSPT](https://hspt.ucfprogrammingteam.org/index.php/hspt-online-edition)
+    * Online
+    * 4 hours
+    * December
+  * [Code Quest](http://www.lockheedmartin.com/us/who-we-are/community/codequest/code-quest-moorestown.html)
+    * Moorestown 
+    * 2.5 hours
+    * April

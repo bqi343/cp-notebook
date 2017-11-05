@@ -12,7 +12,7 @@ Start learning C++ simply by searching up a tutorial [such as this](https://www.
 
 Attempt some USACO Bronze problems. Assuming you know how the input / output works, you should soon be able to advance to silver. After that, you can start doing past USACO silver problems as well as the USACO training pages. Also, start doing contests! [AtCoder Beginner Contests](http://atcoder.jp/) are recommended.
 
-[Also, check out the rest of this compilation!]
+Check out the rest of this compilation! If you have done well in math contests, then it shouldn't be too hard to pick up competitive programming as well.
 
 ## Why did I create this?
 

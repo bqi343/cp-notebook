@@ -14,10 +14,13 @@
 
 ## 4
   * Divide and Conquer Optimization
-    * [DP With Divide & Conquer](http://codeforces.com/blog/entry/8219)
+    * Tutorial
+      * [DP With Divide & Conquer](http://codeforces.com/blog/entry/8219)
     * Problem(s)
       * [Minimization Problem](http://codeforces.com/contest/868/problem/F)
   * (Old Gold) DP with Bitmasks
+    * Tutorial
+      * CPH (10, Bit Manipulation)
     * Problem(s)
       * [Cat & Mice](https://open.kattis.com/problems/catandmice) [](66)
       * [Guards in the Storehouse](http://codeforces.com/problemset/problem/845/F) [](71)

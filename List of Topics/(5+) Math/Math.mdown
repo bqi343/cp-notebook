@@ -1,10 +1,13 @@
 # Number Theory
 
 ## 5
-  * Modular Inverse
-  * Chinese Remainder Theorem
-  * Phi Function
-  * Eratosthenes' Sieve
+  * Tutorial
+    * CPH (21, NT)
+  * Topics
+    * Modular Inverse
+    * Chinese Remainder Theorem
+    * Phi Function
+    * Eratosthenes' Sieve
 
 ## Other
   * NTT / FFT
@@ -18,12 +21,13 @@
       * [Matchings](https://open.kattis.com/contests/acpc17open/problems/matchings)
       * [Fuzzy](http://codeforces.com/problemset/problem/528/D)
       * [Thief](http://codeforces.com/problemset/problem/632/E)
-      * [Counting Triplets*](https://toph.co/p/counting-triplets)
+      * [Counting Triplets](https://toph.co/p/counting-triplets)
 
 # Combinatorics
 
 ## 5
-
+  * Tutorial
+    * CPH (22, Combinatorics)
   * Combinations, Stars & Bars
     * [Obsession](http://codeforces.com/contest/869/problem/C) [](79)
     * [Barrels & Boxes](http://codeforces.com/contest/768/problem/F) [](83)

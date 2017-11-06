@@ -2,7 +2,11 @@
 
 [Competitive Programming Course](https://github.com/SuprDewd/T-414-AFLV/tree/master/04_problem_solving_paradigms)
 
-## 1
+## 2
+
+  * Complete Search
+    * Tutorial
+      * CPH (5, Complete Search)
   * Greedy Algorithms
     * Tutorial
       * CPH (6, Greedy Algorithms)
@@ -12,12 +16,6 @@
       * [Permutation](http://codeforces.com/problemset/problem/864/D)
       * [Bus](http://codeforces.com/problemset/problem/864/C)
       * [Kayaking](http://codeforces.com/problemset/problem/863/B)
-        
-## 2
-
-  * Complete Search
-    * Tutorial
-      * CPH (5, Complete Search)
   * Binary Search (4 out of past 24 silver problems)
     * Tutorial
       * CPH (3, Sorting)

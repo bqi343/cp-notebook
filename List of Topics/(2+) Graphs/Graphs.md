@@ -38,6 +38,7 @@
       * [Lane Switching](https://open.kattis.com/contests/acpc17open/problems/laneswitching)
   * Topological Sort
     * Tutorial
+      * CPH (16, Directed Graphs)
       * [Wikipedia](https://en.wikipedia.org/wiki/Topological_sorting)
     * Problem(s)
       * [Quantum](https://open.kattis.com/contests/acpc17open/problems/quantumsuperposition)
@@ -53,9 +54,13 @@
       * [One-Way Streets](https://csacademy.com/contest/archive/task/one-way-streets/)
       * [Investment](https://dmoj.ca/problem/tle17c1p6)
   * Strongly Connected Components
+    * Tutorial
+      * CPH (17, Strong Connectivity)
     * 2-SAT
   * Bellman-Ford & Linear Programming
     * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
 
 ## Other
   * Eulerian Tour / Cycle
+    * Tutorial
+      * CPH (19, Path & Circuits)

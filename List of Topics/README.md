@@ -7,6 +7,7 @@ Topics marked with "Old Gold" have not appeared in recent platinum contests.
 # Bronze Topics (1)
 
   * Complexity Analysis (Big O Notation)
+  * Brute Force
   * Sorting
   * Greedy Algorithms
 

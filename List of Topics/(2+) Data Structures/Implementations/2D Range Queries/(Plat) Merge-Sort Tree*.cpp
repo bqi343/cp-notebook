@@ -26,7 +26,7 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 const int MOD = 1000000007;
 
 template<int SZ> struct mstree { 
-    Tree<int> val[SZ+1];
+    Tree<int> val[SZ+1]; // for offline queries use vector instead
     
     void upd(int x, int y) { // x-coordinate between 1 and SZ inclusive
         for (;x <= SZ; x += (x&-x)) val[x].insert(y);

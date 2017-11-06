@@ -20,5 +20,5 @@
  * June: IOI Qualification
  * July: CSAcademy Red
  * August: TopCoder Red, Codeforces International Grandmaster, Codechef 7 stars
-
+ * November: AtCoder Red
 

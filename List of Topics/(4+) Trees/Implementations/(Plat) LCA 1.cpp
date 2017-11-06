@@ -1,5 +1,3 @@
-// Debug the Bugs
-
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
@@ -26,45 +24,59 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 #define ub upper_bound
 
 const int MOD = 1000000007;
-const int MAXN = 100001, MAXK = 20;
+const int MAXN = 100001, MAXK = 17;
 
-vi edges[MAXN];
-int parK[MAXK][MAXN];
-int depth[MAXN],wei[MAXN];
+int Q;
 
-int V,Q;
-
-void dfs(int u, int prev){
-    parK[0][u] = prev;
-    depth[u] = depth[prev]+1;
-    for (int v: edges[u]) if (v != prev) dfs(v, u);
-}
-
-int lca(int u, int v){
-    if (depth[u] < depth[v]) swap(u,v);
+struct LCA {
+    int V;
+    vi edges[MAXN];
+    int parK[MAXK][MAXN];
+    int depth[MAXN];
     
-    F0Rd(k,MAXK)  if (depth[u]>=depth[v]+(1<<k))  u = parK[k][u];
-    F0Rd(k,MAXK) if(parK[k][u] != parK[k][v]) u = parK[k][u], v = parK[k][v];
+    void addEdge(int u, int v) {
+        edges[u].pb(v), edges[v].pb(u);
+    }
     
-    if(u != v) u = parK[0][u], v = parK[0][v];
-    return u;
-}
+    void dfs(int u, int prev){
+        parK[0][u] = prev;
+        depth[u] = depth[prev]+1;
+        for (int v: edges[u]) if (v != prev) dfs(v, u);
+    }
+    
+    void construct() {
+        dfs(1, 0);
+        FOR(k,1,MAXK) FOR(i,1,V+1)
+            parK[k][i] = parK[k-1][parK[k-1][i]];
+    }
+    
+    int lca(int u, int v){
+        if (depth[u] < depth[v]) swap(u,v);
+        
+        F0Rd(k,MAXK)  if (depth[u] >= depth[v]+(1<<k))  u = parK[k][u];
+        F0Rd(k,MAXK) if (parK[k][u] != parK[k][v]) u = parK[k][u], v = parK[k][v];
+        
+        if(u != v) u = parK[0][u], v = parK[0][v];
+        return u;
+    }
+    
+    int dist(int u, int v) {
+        return depth[u]+depth[v]-2*depth[lca(u,v)];
+    }
+};
+
+LCA L;
 
 int main(){
-    int u, v, root;
-    cin >> V >> Q >> root;
-    F0R(i,V-1) {
-        cin >> u >> v;
-        edges[u].pb(v);
-        edges[v].pb(u);
+    cin >> L.V >> Q;
+    F0R(i,L.V-1) {
+        int u,v; cin >> u >> v;
+        L.addEdge(u,v);
     }
-    dfs(root, -1);
-    
-    FOR(k,1,MAXK) FOR(i,1,V+1)
-    parK[k][i] = parK[k-1][parK[k-1][i]];
+    L.construct();
     
     F0R(i,Q) {
-        cin >> u >> v;
-        cout << lca(u,v) << "\n";
+        int u,v; cin >> u >> v;
+        cout << L.dist(u,v) << "\n";
     }
 }

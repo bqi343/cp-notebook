@@ -11,7 +11,8 @@
     * Tutorial
       * [Topcoder Graphs Pt 1](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-1/)
       * [Topcoder Graphs Pt 2](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-2/)
-      * [Graph Theory](https://csacademy.com/lessons/)
+      * [CSA Graph Theory](https://csacademy.com/lessons/)
+      * [KA Graphs](https://www.khanacademy.org/computing/computer-science/algorithms/breadth-first-search/a/breadth-first-search-and-its-uses)
       * [Flood Fill](https://en.wikipedia.org/wiki/Flood_fill)
       * CPH (11, Basics of Graphs)
       * CPH (12, Graph Traversals)

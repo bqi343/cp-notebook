@@ -14,6 +14,7 @@
       * Stack
     * Tutorial
       * CPH (4, Data Structures)
+      * [Reference](http://www.cplusplus.com/reference/stl/)
     * Problems (sorted by length)
       * [Beautiful Triplets](https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/practice-problems/algorithm/mancunian-and-beautiful-triplets-30968257/) [](54) 
       * [Polycarp's Phone Book](http://codeforces.com/contest/860/problem/B) [](56)
@@ -25,6 +26,7 @@
     * Tutorial
       * CPH (9.1, Static Array Queries) 
     * Problems (sorted by length)
+      * [Nikita & String](http://codeforces.com/contest/877/problem/B) [](48)
       * [K-Reachability](https://www.hackerearth.com/problem/algorithm/mancunian-and-k-reachability-ad7aca82/) [](51)
       * [Star Sky](http://codeforces.com/contest/835/problem/C) [](54)
       * [Monitor](http://codeforces.com/problemset/problem/846/D) [](60)

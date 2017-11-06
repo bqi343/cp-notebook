@@ -50,10 +50,23 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * [Poland OI](https://szkopul.edu.pl/portal/)
   * [Italy OI](https://training.olinfo.it/#/overview)
   * [Indonesia OI](https://competition.ia-toki.org/contests)
+  * [List of 2017 IOI Participants](http://weaselcrow.com/pro/cf/ioi2017/)
 
 ## Regional HS Contests
   * [PClassic](http://pclassic.org/)
+    * Philadelphia
+    * 4 hours
+    * November, April
   * [VT HSPC](https://icpc.cs.vt.edu/#/hscontest2017)
+    * Online
+    * 5 hours
     * [Kattis](https://open.kattis.com/problem-sources/2016%20Virginia%20Tech%20High%20School%20Programming%20Contest)
-  * [Code Quest](http://www.lockheedmartin.com/us/who-we-are/community/codequest/code-quest-moorestown.html)
+    * December
   * [UCF HSPT](https://hspt.ucfprogrammingteam.org/index.php/hspt-online-edition)
+    * Online
+    * 4 hours
+    * December
+  * [Code Quest](http://www.lockheedmartin.com/us/who-we-are/community/codequest/code-quest-moorestown.html)
+    * Moorestown 
+    * 2.5 hours
+    * April

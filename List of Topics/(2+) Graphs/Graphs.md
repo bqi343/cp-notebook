@@ -57,6 +57,8 @@
     * Tutorial
       * CPH (17, Strong Connectivity)
     * 2-SAT
+    * Problem(s)
+      * [Proving Equivalences](https://open.kattis.com/problems/equivalences)
   * Bellman-Ford & Linear Programming
     * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
 
@@ -64,3 +66,5 @@
   * Eulerian Tour / Cycle
     * Tutorial
       * CPH (19, Path & Circuits)
+    * Problem(s)
+      * [Matching Substrings](https://csacademy.com/contest/archive/task/matching-substrings/)

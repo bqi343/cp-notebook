@@ -46,3 +46,5 @@ I recommend that you use C++11 over Java due to various reasons, such as
   * [KACTL (KTH Royal Institute of Tech)](https://github.com/kth-competitive-programming/kactl)
   * [Coding Library (radoslav11)](https://github.com/radoslav11/Coding-Library?files=1)
   
+### Other
+  * [Learn X In Minutes](https://learnxinyminutes.com/)

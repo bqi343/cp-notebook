@@ -1,6 +1,10 @@
-# Number Theory
+# Math
 
-## 5
+[CPC.9](https://github.com/SuprDewd/T-414-AFLV/tree/master/09_mathematics)
+
+## Number Theory
+
+### 5
   * Tutorial
     * CPH (21, NT)
   * Topics
@@ -9,7 +13,7 @@
     * Phi Function
     * Eratosthenes' Sieve
 
-## Other
+### Other
   * NTT / FFT
     * Tutorial
       * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)
@@ -23,9 +27,9 @@
       * [Thief](http://codeforces.com/problemset/problem/632/E)
       * [Counting Triplets](https://toph.co/p/counting-triplets)
 
-# Combinatorics
+## Combinatorics
 
-## 5
+### 5
   * Tutorial
     * CPH (22, Combinatorics)
   * Combinations, Stars & Bars

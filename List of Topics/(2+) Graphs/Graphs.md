@@ -57,7 +57,8 @@
     * Tutorial
       * CPH (17, Strong Connectivity)
     * Topics
-      * Kosaraju
+      * Tarjan
+      * [Kosaraju](https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm)
       * 2-SAT
     * Problem(s)
       * [Proving Equivalences](https://open.kattis.com/problems/equivalences)

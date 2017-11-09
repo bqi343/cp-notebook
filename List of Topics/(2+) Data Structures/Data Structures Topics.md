@@ -101,14 +101,17 @@
   * Balanced Binary Search Trees
     * Types
       * Splay Tree
-        * [Splay Tree Implementation](http://codeforces.com/blog/entry/18462)
-        * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
+        * Notes
+          * [Splay Tree Implementation](http://codeforces.com/blog/entry/18462)
+          * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
         * Problems
           * [DYNACON1](http://www.spoj.com/problems/DYNACON1/) [](140)
           * [Tree Rotations 2](https://szkopul.edu.pl/problemset/problem/b0BM0al2crQBt6zovEtJfOc6/site/?key=statement) [](193)
       * Treap
-        * [Wikipedia](https://en.wikipedia.org/wiki/Treap)
-        * Split, Merge, Lazy Propogation
+        * Notes
+          * [Wikipedia](https://en.wikipedia.org/wiki/Treap)
+          * Split, Merge, Lazy Propogation
+          * Insertions and deletions are most easily done with split and merge functions.
         * Problems
           * [Hitchhiking](http://codeforces.com/contest/809/problem/D) [](132)
           * [Yet Another Array Queries Problem](http://codeforces.com/contest/863/problem/D) [](153)

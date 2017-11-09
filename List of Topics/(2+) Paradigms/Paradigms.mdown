@@ -41,4 +41,10 @@
 ## 4
 
   * (Old Gold) Meet in the Middle 
+    * Tutorial
+      * [GeeksforGeeks](http://www.geeksforgeeks.org/meet-in-the-middle/)
+    * Problem(s)
+      * [Maximum Subsequence](http://codeforces.com/contest/888/problem/E)
   * (Old Gold) Ternary Search
+    * Tutorial
+      * [Wikipedia](https://en.wikipedia.org/wiki/Ternary_search)

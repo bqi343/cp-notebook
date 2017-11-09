@@ -1,6 +1,6 @@
 # Paradigms
 
-[CPH.4](https://github.com/SuprDewd/T-414-AFLV/tree/master/04_problem_solving_paradigms)
+[CPC.4](https://github.com/SuprDewd/T-414-AFLV/tree/master/04_problem_solving_paradigms)
 
 ## 2
 
@@ -10,6 +10,7 @@
   * Greedy Algorithms
     * Tutorial
       * CPH (6, Greedy Algorithms)
+      * [CPC.5](https://github.com/SuprDewd/T-414-AFLV/tree/master/05_greedy_algorithms)
     * Problem(s)
       * [Sure Bet](https://csacademy.com/contest/archive/task/sure-bet/)
       * [Did you Mean...](http://codeforces.com/contest/860/problem/A)

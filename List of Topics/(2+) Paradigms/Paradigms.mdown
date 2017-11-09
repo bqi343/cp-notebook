@@ -1,6 +1,6 @@
 # Paradigms
 
-[Competitive Programming Course](https://github.com/SuprDewd/T-414-AFLV/tree/master/04_problem_solving_paradigms)
+[CPH.4](https://github.com/SuprDewd/T-414-AFLV/tree/master/04_problem_solving_paradigms)
 
 ## 2
 

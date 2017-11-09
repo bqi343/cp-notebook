@@ -1,5 +1,7 @@
 # Geometry
 
+[CPC.12](https://github.com/SuprDewd/T-414-AFLV/tree/master/12_geometry)
+
 ## Miscellaneous
   * Topics
     * Complex Numbers

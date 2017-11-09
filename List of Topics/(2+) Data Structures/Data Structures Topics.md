@@ -14,7 +14,8 @@
       * Stack
     * Tutorial
       * CPH (4, Data Structures)
-      * [Reference](http://www.cplusplus.com/reference/stl/)
+      * [C++ Reference](http://www.cplusplus.com/reference/stl/)
+      * [CPC.2](https://github.com/SuprDewd/T-414-AFLV/tree/master/02_data_structures)
     * Problems (sorted by length)
       * [Beautiful Triplets](https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/practice-problems/algorithm/mancunian-and-beautiful-triplets-30968257/) [](54) 
       * [Polycarp's Phone Book](http://codeforces.com/contest/860/problem/B) [](56)

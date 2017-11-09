@@ -38,8 +38,9 @@
     * Tutorials
       * CPH (9, Range Queries)
       * [Topcoder BIT](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/)
-      * [CSAcademy](https://csacademy.com/lesson/fenwick_trees)
+      * [CSAcademy BIT](https://csacademy.com/lesson/fenwick_trees)
       * [Ordered Set](http://codeforces.com/blog/entry/11080) (similar use to BIT)
+      * [CPC.3](https://github.com/SuprDewd/T-414-AFLV/tree/master/03_data_structures)
     * Problems (sorted by length)
       * [Sorting Steps](https://csacademy.com/contest/round-42/task/sorting-steps/) [](42)
       * [Radio Stations](http://codeforces.com/problemset/problem/762/E) [](53)
@@ -49,7 +50,7 @@
 
 ## 4
 
-  * Segment Tree (8/24 Plat)
+  * Variations on Segment Tree (8/24 Plat)
     * Tutorial
       * CPH (9, Range Queries)
       * CPH (28, Segment Trees Revisited)  

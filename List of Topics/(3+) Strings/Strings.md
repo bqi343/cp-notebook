@@ -1,5 +1,7 @@
 # Strings
 
+[CPC.11](https://github.com/SuprDewd/T-414-AFLV/tree/master/11_strings)
+
 ## 3
   * Hashing
     * CPH (26, String Algorithms)

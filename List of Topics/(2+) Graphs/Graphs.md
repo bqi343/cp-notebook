@@ -56,7 +56,9 @@
   * Strongly Connected Components
     * Tutorial
       * CPH (17, Strong Connectivity)
-    * 2-SAT
+    * Topics
+      * Kosaraju
+      * 2-SAT
     * Problem(s)
       * [Proving Equivalences](https://open.kattis.com/problems/equivalences)
   * Bellman-Ford & Linear Programming

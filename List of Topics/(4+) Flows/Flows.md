@@ -8,8 +8,10 @@
   * (Old Gold) Maximum Flow
     * Tutorial
       * CPH (20, Flows & Cuts)
-    * Edmonds-Karp
-    * Minimum Cut
+    * Topics
+      * Edmonds-Karp Algorithm
+      * Minimum-Cut Max-Flow Theorem
+      * [Closure Problem](https://en.wikipedia.org/wiki/Closure_problem)
     * Problems
       * [Goods Transportation](http://codeforces.com/problemset/problem/724/E) [](52)
       * [Fashion](https://csacademy.com/contest/rmi-2017-day-1/task/fashion/statement/) [](95)

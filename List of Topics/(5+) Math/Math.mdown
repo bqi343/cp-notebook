@@ -19,6 +19,7 @@
       * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)
       * [CF Tutorial Pt 2](http://codeforces.com/blog/entry/48798)
       * [CSAcademy](https://csacademy.com/blog/fast-fourier-transform-and-variations-of-it/)
+      * [adamant](http://codeforces.com/blog/entry/55572)
     * Problem(s)
       * [K-Inversions](https://open.kattis.com/problems/kinversions)
       * [Big Integer](https://dmoj.ca/problem/bts17p8)

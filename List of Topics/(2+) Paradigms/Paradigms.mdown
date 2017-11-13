@@ -7,6 +7,9 @@
   * Complete Search
     * Tutorial
       * CPH (5, Complete Search)
+    * Problem(s)
+      * [Maximum Clique Problem](https://en.wikipedia.org/wiki/Clique_problem)
+      * [Coloring Graphs](https://open.kattis.com/problems/coloring) 
   * Greedy Algorithms
     * Tutorial
       * CPH (6, Greedy Algorithms)

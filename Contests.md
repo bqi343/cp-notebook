@@ -58,6 +58,7 @@ Mostly for CodeForces, some more useful than others.
   * [Poland OI](https://szkopul.edu.pl/portal/)
   * [Italy OI](https://training.olinfo.it/#/overview)
   * [Indonesia OI](https://competition.ia-toki.org/contests)
+  * [Baltic OI](http://www.boi2017.org/)
   * [COCI](http://hsin.hr/coci/)
 
 ## Regional HS Contests

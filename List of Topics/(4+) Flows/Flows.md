@@ -2,14 +2,19 @@
 
 *Some problems sourced from [here](http://codeforces.com/blog/entry/54526?#comment-385354).*
   
+[CPC.10](https://github.com/SuprDewd/T-414-AFLV/tree/master/10_graphs_3_network_flow)
+
 ## 4
   * (Old Gold) Maximum Flow
     * Tutorial
       * CPH (20, Flows & Cuts)
-    * Edmonds-Karp
-    * Minimum Cut
+    * Topics
+      * Edmonds-Karp Algorithm
+      * Minimum-Cut Max-Flow Theorem
+      * [Closure Problem](https://en.wikipedia.org/wiki/Closure_problem)
     * Problems
       * [Goods Transportation](http://codeforces.com/problemset/problem/724/E) [](52)
+      * [MUL](http://arc085.contest.atcoder.jp/tasks/arc085_c) [](67)
       * [Fashion](https://csacademy.com/contest/rmi-2017-day-1/task/fashion/statement/) [](95)
       * [Fast Flow](http://www.spoj.com/problems/FASTFLOW/) [](107)
       * [Card Game](http://codeforces.com/problemset/problem/808/F) [](135)

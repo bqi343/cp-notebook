@@ -33,24 +33,33 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * [Yandex Algorithm](https://contest.yandex.ru/contest-list/): April
   * [IPSC](https://ipsc.ksp.sk/rules): July 
   
-## Misc Contest Tools
-  * [CF Visualizer](http://cfviz.netlify.com/compare.html)
+## Contest Tools
+
+Mostly for CodeForces, some more useful than others.
+
   * [Code Drills](http://code-drills.com/)
   * [DataBread](http://databread.in/board.php)
   * [Stopstalk](https://www.stopstalk.com)
+  * [CF Visualizer](http://cfviz.netlify.com/compare.html)
   * [CF Achievements](http://cfa.yuldashev.net/)
   * [CF Predictor](https://chrome.google.com/webstore/detail/cf-predictor/ocfloejijfhhkkdmheodbaanephbnfhn)
   * [CF Enhancer](https://chrome.google.com/webstore/detail/codeforces-enhancer/ocmandagmgmkcplckgnfgaokpgkfenmp)
   
 ## Misc OI
-  * [WCIPEG (Past IOI)](http://wcipeg.com)
-  * [Yandex (Past IOI)](https://contest.yandex.ru/ioi/Info/)
+
+(only including those which are open to outside participation)
+
+  * IOI
+    * [List of 2017 IOI Participants](http://weaselcrow.com/pro/cf/ioi2017/)
+    * [WCIPEG](http://wcipeg.com)
+    * [Yandex](https://contest.yandex.ru/ioi/Info/)
   * [USACO](http://www.usaco.org/)
   * [Japan OI](http://cms.ioi-jp.org/)
   * [Poland OI](https://szkopul.edu.pl/portal/)
   * [Italy OI](https://training.olinfo.it/#/overview)
   * [Indonesia OI](https://competition.ia-toki.org/contests)
-  * [List of 2017 IOI Participants](http://weaselcrow.com/pro/cf/ioi2017/)
+  * [Baltic OI](http://www.boi2017.org/)
+  * [COCI](http://hsin.hr/coci/)
 
 ## Regional HS Contests
   * [PClassic](http://pclassic.org/)

@@ -1,5 +1,7 @@
 # Geometry
 
+[CPC.12](https://github.com/SuprDewd/T-414-AFLV/tree/master/12_geometry)
+
 ## Miscellaneous
   * Topics
     * Complex Numbers
@@ -12,6 +14,7 @@
     * Point in Polygon
     * KD Tree
   * Tutorial  
+    * [Point Class](http://codeforces.com/blog/entry/48122)
     * [Easy Geo w/ std::complex](http://codeforces.com/blog/entry/22175)
     * CPH (29, Geometry)
   * Problem(s)

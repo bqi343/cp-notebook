@@ -1,6 +1,10 @@
-# Number Theory
+# Math
 
-## 5
+[CPC.9](https://github.com/SuprDewd/T-414-AFLV/tree/master/09_mathematics)
+
+## Number Theory
+
+### 5
   * Tutorial
     * CPH (21, NT)
   * Topics
@@ -9,12 +13,13 @@
     * Phi Function
     * Eratosthenes' Sieve
 
-## Other
+### Other
   * NTT / FFT
     * Tutorial
       * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)
       * [CF Tutorial Pt 2](http://codeforces.com/blog/entry/48798)
       * [CSAcademy](https://csacademy.com/blog/fast-fourier-transform-and-variations-of-it/)
+      * [adamant](http://codeforces.com/blog/entry/55572)
     * Problem(s)
       * [K-Inversions](https://open.kattis.com/problems/kinversions)
       * [Big Integer](https://dmoj.ca/problem/bts17p8)
@@ -23,9 +28,9 @@
       * [Thief](http://codeforces.com/problemset/problem/632/E)
       * [Counting Triplets](https://toph.co/p/counting-triplets)
 
-# Combinatorics
+## Combinatorics
 
-## 5
+### 5
   * Tutorial
     * CPH (22, Combinatorics)
   * Combinations, Stars & Bars

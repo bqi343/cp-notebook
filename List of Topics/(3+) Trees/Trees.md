@@ -5,8 +5,10 @@
 
   * Disjoint Set Union, Minimal Spanning Tree
     * CPH (15, Spanning Trees)
-    * [Topcoder Union Find](https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/)
-    * [CSAcademy](https://csacademy.com/lesson/disjoint_data_sets)
+    * Tutorial
+      * [Topcoder Union Find](https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/)
+      * [CSAcademy DSU](https://csacademy.com/lesson/disjoint_data_sets)
+      * [CPC.3](https://github.com/SuprDewd/T-414-AFLV/tree/master/03_data_structures)
     * Problems (sorted by length)
       * [PolandBall & Forest](http://codeforces.com/problemset/problem/755/C) [](56)
       * [Bear & Friendship Condition](http://codeforces.com/problemset/problem/771/A) [](57)
@@ -21,6 +23,7 @@
       * CPH (18, Tree Queries)
     * Topics
       * Least Common Ancestor
+      * Diameter of a Tree
       * Centroid Decomposition
         * [GeeksForGeeks](http://www.geeksforgeeks.org/centroid-decomposition-of-tree/)
       * (Old Gold) Heavy-Light Decomposition

@@ -14,7 +14,8 @@
       * Stack
     * Tutorial
       * CPH (4, Data Structures)
-      * [Reference](http://www.cplusplus.com/reference/stl/)
+      * [C++ Reference](http://www.cplusplus.com/reference/stl/)
+      * [CPC.2](https://github.com/SuprDewd/T-414-AFLV/tree/master/02_data_structures)
     * Problems (sorted by length)
       * [Beautiful Triplets](https://www.hackerearth.com/practice/algorithms/greedy/basics-of-greedy-algorithms/practice-problems/algorithm/mancunian-and-beautiful-triplets-30968257/) [](54) 
       * [Polycarp's Phone Book](http://codeforces.com/contest/860/problem/B) [](56)
@@ -37,8 +38,9 @@
     * Tutorials
       * CPH (9, Range Queries)
       * [Topcoder BIT](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/)
-      * [CSAcademy](https://csacademy.com/lesson/fenwick_trees)
+      * [CSAcademy BIT](https://csacademy.com/lesson/fenwick_trees)
       * [Ordered Set](http://codeforces.com/blog/entry/11080) (similar use to BIT)
+      * [CPC.3](https://github.com/SuprDewd/T-414-AFLV/tree/master/03_data_structures)
     * Problems (sorted by length)
       * [Sorting Steps](https://csacademy.com/contest/round-42/task/sorting-steps/) [](42)
       * [Radio Stations](http://codeforces.com/problemset/problem/762/E) [](53)
@@ -48,7 +50,7 @@
 
 ## 4
 
-  * Segment Tree (8/24 Plat)
+  * Variations on Segment Tree (8/24 Plat)
     * Tutorial
       * CPH (9, Range Queries)
       * CPH (28, Segment Trees Revisited)  
@@ -80,6 +82,7 @@
       * [Implementation](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Matrix.h)
     * Problem(s)
       * [Wet Shark & Blocks](http://codeforces.com/problemset/problem/621/E) [](55)
+      * [Xor Cycle](https://csacademy.com/contest/archive/task/xor_cycle/statement/) [](78)
       * [Okabe](http://codeforces.com/contest/821/problem/E) [](81)
       * [Vasya & Shifts](http://codeforces.com/contest/832/problem/E) [](90)
       * [Currencies](https://www.hackerrank.com/contests/gs-codesprint/challenges/currencies) [](107)
@@ -101,19 +104,23 @@
   * Balanced Binary Search Trees
     * Types
       * Splay Tree
-        * [Splay Tree Implementation](http://codeforces.com/blog/entry/18462)
-        * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
+        * Notes
+          * [Splay Tree Implementation](http://codeforces.com/blog/entry/18462)
+          * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
         * Problems
           * [DYNACON1](http://www.spoj.com/problems/DYNACON1/) [](140)
           * [Tree Rotations 2](https://szkopul.edu.pl/problemset/problem/b0BM0al2crQBt6zovEtJfOc6/site/?key=statement) [](193)
       * Treap
-        * [Wikipedia](https://en.wikipedia.org/wiki/Treap)
-        * Split, Merge, Lazy Propogation
+        * Notes
+          * [Wikipedia](https://en.wikipedia.org/wiki/Treap)
+          * Split, Merge, Lazy Propogation
+          * Insertions and deletions are most easily done with split and merge functions.
         * Problems
           * [Hitchhiking](http://codeforces.com/contest/809/problem/D) [](132)
           * [Yet Another Array Queries Problem](http://codeforces.com/contest/863/problem/D) [](153)
             * Due to the low value of m, a BBST is not required.
           * [TREAP](http://www.spoj.com/problems/TREAP/) [](173)
+          * [Strings](https://csacademy.com/contest/archive/task/strings/) [](181)
           * [Points & Distances](https://www.hackerearth.com/problem/algorithm/septembereasy-points-and-distances-d30d0e6b/description/) [](185)
           * [TEMPLEQ](http://www.spoj.com/problems/TEMPLEQ/) [](213)
   * [2D BIT with Range Update + Query](https://arxiv.org/pdf/1311.6093v4.pdf)

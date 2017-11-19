@@ -1,15 +1,19 @@
 # Paradigms
 
-[Competitive Programming Course](https://github.com/SuprDewd/T-414-AFLV/tree/master/04_problem_solving_paradigms)
+[CPC.4](https://github.com/SuprDewd/T-414-AFLV/tree/master/04_problem_solving_paradigms)
 
 ## 2
 
   * Complete Search
     * Tutorial
       * CPH (5, Complete Search)
+    * Problem(s)
+      * [Maximum Clique Problem](https://en.wikipedia.org/wiki/Clique_problem)
+      * [Coloring Graphs](https://open.kattis.com/problems/coloring) 
   * Greedy Algorithms
     * Tutorial
       * CPH (6, Greedy Algorithms)
+      * [CPC.5](https://github.com/SuprDewd/T-414-AFLV/tree/master/05_greedy_algorithms)
     * Problem(s)
       * [Sure Bet](https://csacademy.com/contest/archive/task/sure-bet/)
       * [Did you Mean...](http://codeforces.com/contest/860/problem/A)
@@ -41,4 +45,10 @@
 ## 4
 
   * (Old Gold) Meet in the Middle 
+    * Tutorial
+      * [GeeksforGeeks](http://www.geeksforgeeks.org/meet-in-the-middle/)
+    * Problem(s)
+      * [Maximum Subsequence](http://codeforces.com/contest/888/problem/E)
   * (Old Gold) Ternary Search
+    * Tutorial
+      * [Wikipedia](https://en.wikipedia.org/wiki/Ternary_search)

@@ -14,6 +14,7 @@
       * [CSA Graph Theory](https://csacademy.com/lessons/)
       * [KA Graphs](https://www.khanacademy.org/computing/computer-science/algorithms/breadth-first-search/a/breadth-first-search-and-its-uses)
       * [Flood Fill](https://en.wikipedia.org/wiki/Flood_fill)
+      * [CPC.7](https://github.com/SuprDewd/T-414-AFLV/tree/master/07_graphs_1)
       * CPH (11, Basics of Graphs)
       * CPH (12, Graph Traversals)
     * Problems (sorted by length)
@@ -32,8 +33,9 @@
       * Bellman-Ford
     * Tutorial
       * [Topcoder Graphs Pt 3](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-graphs-and-their-data-structures-section-3/)
-      * [Shortest Path](https://www.cs.cornell.edu/~wdtseng/icpc/notes/graph_part2.pdf)
+      * [Cornell](https://www.cs.cornell.edu/~wdtseng/icpc/notes/graph_part2.pdf)
       * CPH (13, Shortest Paths)
+      * [CPC.8](https://github.com/SuprDewd/T-414-AFLV/tree/master/08_graphs_2)
     * Problem(s)
       * [Lane Switching](https://open.kattis.com/contests/acpc17open/problems/laneswitching)
   * Topological Sort
@@ -56,7 +58,12 @@
   * Strongly Connected Components
     * Tutorial
       * CPH (17, Strong Connectivity)
-    * 2-SAT
+    * Topics
+      * Tarjan
+      * [Kosaraju](https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm)
+      * 2-SAT
+    * Problem(s)
+      * [Proving Equivalences](https://open.kattis.com/problems/equivalences)
   * Bellman-Ford & Linear Programming
     * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
 
@@ -64,3 +71,5 @@
   * Eulerian Tour / Cycle
     * Tutorial
       * CPH (19, Path & Circuits)
+    * Problem(s)
+      * [Matching Substrings](https://csacademy.com/contest/archive/task/matching-substrings/)

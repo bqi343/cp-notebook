@@ -27,7 +27,7 @@ const double PI = 4*atan(1);
 
 int main() {
 	ios_base::sync_with_stdio(0);cin.tie(0);
-	
+	cout << "HI";
 }
 
 // read!

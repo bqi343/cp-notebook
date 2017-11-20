@@ -31,8 +31,8 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 const int MOD = 1000000007;
 const ll INF = 1e18;
 
-template<int SZ> struct LazySegTree {
-    ll sum[2*SZ], mn[2*SZ], lazy[2*SZ]; // set SZ to a power of 2
+template<class T, int SZ> struct LazySegTree {
+    T sum[2*SZ], mn[2*SZ], lazy[2*SZ]; // set SZ to a power of 2
     
     LazySegTree() {
         memset (sum,0,sizeof sum);
@@ -53,10 +53,10 @@ template<int SZ> struct LazySegTree {
     }
     
     void build() {
-        for (int i = SZ-1; i > 0; --i) pull(i);
+        F0Rd(i,SZ) pull(i);
     }
     
-    ll qsum(int lo, int hi, int ind = 1, int L = 0, int R = SZ-1) {
+    T qsum(int lo, int hi, int ind = 1, int L = 0, int R = SZ-1) {
         push(ind,L,R);
         if (lo > R || L > hi) return 0;
         if (lo <= L && R <= hi) return sum[ind];
@@ -65,7 +65,7 @@ template<int SZ> struct LazySegTree {
         return qsum(lo,hi,2*ind,L,M)+qsum(lo,hi,2*ind+1,M+1,R);
     }
 
-    ll qmin(int lo, int hi, int ind = 1, int L = 0, int R = SZ-1) {
+    T qmin(int lo, int hi, int ind = 1, int L = 0, int R = SZ-1) {
         push(ind,L,R);
         if (lo > R || L > hi) return MOD;
         if (lo <= L && R <= hi) return mn[ind];
@@ -90,7 +90,7 @@ template<int SZ> struct LazySegTree {
 };
 
 int main() {
-    LazySegTree<1<<17> seg;
+    LazySegTree<int,1<<17> seg;
     seg.upd(2,5,7);
     cout << seg.qsum(1,2) << " " << seg.qsum(4,6) << " " << seg.qmin(3,4) << "\n"; // 7 14 7
 }

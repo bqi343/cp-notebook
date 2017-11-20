@@ -1,3 +1,5 @@
+// example use: http://codeforces.com/contest/839/problem/C
+
 /*#include <ext/pb_ds/assoc_container.hpp> 
 #include <ext/pb_ds/tree_policy.hpp>*/
 #include <bits/stdc++.h>
@@ -28,9 +30,9 @@ double PI = 4*atan(1);
 int n; // number of nodes
 vi adj[100001]; // for each vertex store adjacent vertices
 
-void dfs(int par, int node) {
+void dfs(int par, int node) { // store parent of the node so we don't dfs backwards
 	for (int i: adj[node]) if (i != par) dfs(node,i); // dfs through all the children of node
-	// do problem-specific stuff
+	// do what you want
 
 }
 
@@ -42,5 +44,5 @@ int main() {
 	    adj[a].pb(b);
 	    adj[b].pb(a);
 	}
-	dfs(0,1); // dfs starting at node 1
+	dfs(0,1); // dfs starting at the root, which has no parent (so we pass 0)
 }

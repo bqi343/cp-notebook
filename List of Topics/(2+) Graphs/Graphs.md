@@ -61,9 +61,10 @@
     * Topics
       * Tarjan
       * [Kosaraju](https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm)
-      * 2-SAT
+      * [2-SAT](http://codeforces.com/blog/entry/16205)
     * Problem(s)
       * [Proving Equivalences](https://open.kattis.com/problems/equivalences)
+      * [Mushrooms](http://codeforces.com/contest/894/problem/E)
   * Bellman-Ford & Linear Programming
     * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
 

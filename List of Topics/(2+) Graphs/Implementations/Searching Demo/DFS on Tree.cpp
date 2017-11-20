@@ -25,12 +25,12 @@ typedef pair<int, int> pii;
 const int MOD = 1000000007;
 double PI = 4*atan(1);
 
-int n;
-vi adj[100001];
+int n; // number of nodes
+vi adj[100001]; // for each vertex store adjacent vertices
 
 void dfs(int par, int node) {
-    for (int i: adj[node]) if (i != par) dfs(node,i);
-	// do stuff
+	for (int i: adj[node]) if (i != par) dfs(node,i); // dfs through all the children of node
+	// do problem-specific stuff
 
 }
 
@@ -38,9 +38,9 @@ int main() {
 	ios_base::sync_with_stdio(0);cin.tie(0);
 	cin >> n;
 	F0R(i,n-1) {
-	    int a,b; cin >> a >> b;
+	    int a,b; cin >> a >> b; // read in the edges
 	    adj[a].pb(b);
 	    adj[b].pb(a);
 	}
-	dfs(0,1);
+	dfs(0,1); // dfs starting at node 1
 }

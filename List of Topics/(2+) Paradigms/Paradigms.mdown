@@ -9,6 +9,7 @@
       * CPH (5, Complete Search)
     * Problem(s)
       * [Maximum Clique Problem](https://en.wikipedia.org/wiki/Clique_problem)
+      * [Cracker Barrel Game](https://open.kattis.com/problems/crackerbarrel)
       * [Coloring Graphs](https://open.kattis.com/problems/coloring) 
   * Greedy Algorithms
     * Tutorial

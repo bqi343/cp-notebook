@@ -23,6 +23,7 @@
       * [Journey](http://codeforces.com/contest/839/problem/C) [](54)
       * [Wizard's Tour](http://codeforces.com/contest/860/problem/D) [](59)
       * [Hotels](https://szkopul.edu.pl/problemset/problem/gDw3iFkeVm7ZA3j_16-XR7jI/site/?key=statement) [](61)
+      * [Birthday](https://open.kattis.com/problems/birthday) [](70)
 
 ## 3
   * Shortest Path

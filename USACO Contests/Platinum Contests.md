@@ -61,7 +61,7 @@
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=420) | fcount | Greedy | Done |
 | 2014 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=436) | fairphoto | Bitmasks | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=437) | optics | SegTree | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=438) | code | Trees, Strings | `******t*t*` |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=438) | code | Trees, Strings | `******t***` |
 
 | Contest         | #  | Name | Topic            | Result                 |
 | ------------- | - | - | ---------------| ---------------------- |

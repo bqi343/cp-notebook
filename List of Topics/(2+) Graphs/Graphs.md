@@ -64,8 +64,11 @@
       * [Kosaraju](https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm)
       * [2-SAT](http://codeforces.com/blog/entry/16205)
     * Problem(s)
-      * [Proving Equivalences](https://open.kattis.com/problems/equivalences)
+      * [TFRIENDS](http://www.spoj.com/problems/TFRIENDS/)
+      * [CAPCITY](http://www.spoj.com/problems/CAPCITY/)
       * [Mushrooms](http://codeforces.com/contest/894/problem/E)
+      * [Proving Equivalences](https://open.kattis.com/problems/equivalences)
+      * [Scheme](http://codeforces.com/contest/22/problem/E) (harder version of above)
   * Bellman-Ford & Linear Programming
     * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
 
@@ -75,3 +78,5 @@
       * CPH (19, Path & Circuits)
     * Problem(s)
       * [Matching Substrings](https://csacademy.com/contest/archive/task/matching-substrings/)
+
+*Some problems sourced from [here](http://codeforces.com/blog/entry/55274).*

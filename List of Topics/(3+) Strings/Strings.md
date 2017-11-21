@@ -27,8 +27,18 @@
     * Tutorial
       * [HackerRank](https://www.hackerrank.com/topics/manachers-algorithm)
       * [adamant](http://codeforces.com/blog/entry/12143)
-  * Z Algorithm
-    * [Tutorial](http://codeforces.com/blog/entry/3107)
+  * String Searching
+    * Z Algorithm (I prefer)
+      * Tutorial
+        * [paladin8](http://codeforces.com/blog/entry/3107)
+    * KMP
+      * Tutorial
+        * [GeeksForGeeks](http://www.geeksforgeeks.org/searching-for-patterns-set-2-kmp-algorithm/)
+        * [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-string-searching-algorithms/)
+    * Aho-Corasick
+      * Tutorial
+        * [Suffix Automata](http://codeforces.com/blog/entry/20861)
+        * [GeeksForGeeks](http://www.geeksforgeeks.org/aho-corasick-algorithm-pattern-searching/)
 
 ## Other
   * Palindromic Tree
@@ -37,10 +47,3 @@
   * Suffix Array
     * Tutorial
       * [CPC.11](https://github.com/SuprDewd/T-414-AFLV/blob/master/11_strings/aflv_11_strings.pdf)
-  * Aho-Corasick
-    * Tutorial
-      * [Suffix Automata](http://codeforces.com/blog/entry/20861)
-      * [GeeksForGeeks](http://www.geeksforgeeks.org/aho-corasick-algorithm-pattern-searching/)
-  * KMP
-    * Tutorial
-      * [GeeksForGeeks](http://www.geeksforgeeks.org/searching-for-patterns-set-2-kmp-algorithm/)

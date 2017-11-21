@@ -16,7 +16,9 @@
 
 ## 4 
   * (Old Gold) Tries
-    * CPH (26, String Algorithms)
+    * Tutorial
+      * CPH (26, String Algorithms)
+      * [Algorithm Gym](http://codeforces.com/blog/entry/15729)
     * Problem(s)
       * [Xor-MST](http://codeforces.com/contest/888/problem/G)
 
@@ -32,7 +34,13 @@
   * Palindromic Tree
     * Tutorial
       * [adamant](http://codeforces.com/blog/entry/13959)
-  * Suffix Array / Tree
-    * [Tutorial](https://github.com/SuprDewd/T-414-AFLV/blob/master/11_strings/aflv_11_strings.pdf)
+  * Suffix Array
+    * Tutorial
+      * [CPC.11](https://github.com/SuprDewd/T-414-AFLV/blob/master/11_strings/aflv_11_strings.pdf)
   * Aho-Corasick
+    * Tutorial
+      * [Suffix Automata](http://codeforces.com/blog/entry/20861)
+      * [GeeksForGeeks](http://www.geeksforgeeks.org/aho-corasick-algorithm-pattern-searching/)
   * KMP
+    * Tutorial
+      * [GeeksForGeeks](http://www.geeksforgeeks.org/searching-for-patterns-set-2-kmp-algorithm/)

@@ -45,6 +45,8 @@
       * [Wikipedia](https://en.wikipedia.org/wiki/Topological_sorting)
     * Problem(s)
       * [Quantum](https://open.kattis.com/contests/acpc17open/problems/quantumsuperposition)
+      * [Minimal Labels](http://codeforces.com/contest/825/problem/E)
+      * [Courses](http://codeforces.com/contest/770/problem/C)
 
 ## 5
   * Biconnected Components

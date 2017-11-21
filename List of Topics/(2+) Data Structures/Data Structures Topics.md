@@ -34,46 +34,51 @@
 
 ## 3
 
-  * Fenwick Tree, aka Binary Indexed Tree (2/24 Gold)
+  * 1D Range Query w/ Point Update (2/24 Gold)
     * Tutorials
       * CPH (9, Range Queries)
-      * [Topcoder BIT](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/)
-      * [CSAcademy BIT](https://csacademy.com/lesson/fenwick_trees)
-      * [Ordered Set](http://codeforces.com/blog/entry/11080) (similar use to BIT)
-      * [CPC.3](https://github.com/SuprDewd/T-414-AFLV/tree/master/03_data_structures)
+      * Binary Indexed Tree
+        * [Topcoder BIT](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/)
+        * [CSAcademy BIT](https://csacademy.com/lesson/fenwick_trees)
+        * [Indexed Set](http://codeforces.com/blog/entry/11080)
+          * Often used in place of BIT
+      * Segment Tree
+        * [CPC.3](https://github.com/SuprDewd/T-414-AFLV/tree/master/03_data_structures)
+        * [CSAcademy Tutorial](https://csacademy.com/lesson/segment_trees/)
+        * [Codeforces Tutorial](http://codeforces.com/blog/entry/18051)
     * Problems (sorted by length)
       * [Sorting Steps](https://csacademy.com/contest/round-42/task/sorting-steps/) [](42)
       * [Radio Stations](http://codeforces.com/problemset/problem/762/E) [](53)
       * [PolandBall and Polygon](http://codeforces.com/problemset/problem/755/D) [](65)
       * [Dog Show](http://codeforces.com/contest/847/problem/D) [](70)
-      * [Twin Permutations](https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/mancunian-and-twin-permutations-d988930c/description/) [](80)
+      * [Cards](https://szkopul.edu.pl/problemset/problem/qpsk3ygf8MU7D_1Es0oc_xd8/site/?key=statement) [](81)
 
 ## 4
 
-  * Variations on Segment Tree (8/24 Plat)
-    * Tutorial
-      * CPH (9, Range Queries)
+  * Segment Tree Variations (8/24 Plat)
+    * 1D
+      * Lazy Segment Tree
+        * CPH (28, Segment Trees Revisited)  
+        * [CSAcademy Tutorial](https://csacademy.com/lesson/segment_trees/)
+        * [Codeforces Tutorial](http://codeforces.com/blog/entry/18051)
+        * Special: Minimum Query w/ Number of Minimums
+      * BIT with range modification
+        * [GeeksForGeeks](http://www.geeksforgeeks.org/binary-indexed-tree-range-updates-point-queries/)
+      * Problem(s)
+        * [Candles](https://csacademy.com/contest/round-41/task/candles/) [](94)
+    * 2D
       * CPH (28, Segment Trees Revisited)  
-      * Also know: 2D range tree (segment tree + BIT)
-      * [CSAcademy Tutorial](https://csacademy.com/lesson/segment_trees/)
-      * [Codeforces Tutorial](http://codeforces.com/blog/entry/18051)
-    * Types
-      * 1D
-        * (Lazy) Segment Tree
-          * Minimum Query + Number of Minimums
-        * BIT with range modification
-      * 2D
-        * Segment Tree + BIT
-        * 2D Segment Tree
-        * 2D BIT
-        * Merge-Sort Tree
-    * Problems (sorted by length)
-      * [Cards](https://szkopul.edu.pl/problemset/problem/qpsk3ygf8MU7D_1Es0oc_xd8/site/?key=statement) [](81)
-      * [Anton & Permutation](http://codeforces.com/contest/785/problem/E) [](85)
-      * [Antiquity](http://codeforces.com/contest/869/problem/E) [](87)
-      * [Crowded Cities](https://dmoj.ca/problem/bfs17p6) [](89)
-      * [Candles](https://csacademy.com/contest/round-41/task/candles/) [](94)
-      * [Nervous Barriers](http://codeforces.com/contest/781/problem/E) [](99)
+      * Segment Tree + BIT
+      * 2D Segment Tree
+      * 2D BIT
+      * Merge-Sort Tree
+      * Problems
+        * [Twin Permutations](https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/mancunian-and-twin-permutations-d988930c/description/) [](80)
+        * [Anton & Permutation](http://codeforces.com/contest/785/problem/E) [](85)
+        * [Antiquity](http://codeforces.com/contest/869/problem/E) [](87)
+        * [Crowded Cities](https://dmoj.ca/problem/bfs17p6) [](89)
+        * [Xors](http://codeforces.com/contest/341/problem/D) [](96)
+        * [Nervous Barriers](http://codeforces.com/contest/781/problem/E) [](99)
   * Matrices
     * Tutorial
       * CPH (23, Matrices)

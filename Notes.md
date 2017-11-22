@@ -39,12 +39,11 @@ I recommend that you use C++11 over Java due to various reasons, such as
   * [Problem Topics (Morass)](http://codeforces.com/blog/entry/55274)
 
 ### Algorithm Collections
-  * [Thomas Jefferson Senior Computer Team (currently not working)](https://activities.tjhsst.edu/sct/lectures.php)
-  * [Algorithms Gym (PrinceOfPersia)](http://codeforces.com/blog/entry/15729)
   * [E-maxx](https://e-maxx-eng.appspot.com/)
   * [Topcoder Tutorials](http://www.topcoder.com/community/data-science/data-science-tutorials/)
   * [KACTL (KTH Royal Institute of Tech)](https://github.com/kth-competitive-programming/kactl)
   * [Coding Library (radoslav11)](https://github.com/radoslav11/Coding-Library?files=1)
+  * [CSAcademy](https://csacademy.com/lessons/)
   
 ### Other
   * [Learn X In Minutes](https://learnxinyminutes.com/)

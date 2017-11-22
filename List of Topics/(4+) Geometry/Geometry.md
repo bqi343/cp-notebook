@@ -14,6 +14,7 @@
     * Point in Polygon
     * KD Tree
   * Tutorial  
+    * [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/geometry-concepts-basic-concepts/)
     * [Point Class](http://codeforces.com/blog/entry/48122)
     * [Easy Geo w/ std::complex](http://codeforces.com/blog/entry/22175)
     * CPH (29, Geometry)
@@ -25,18 +26,21 @@
     * [Racing Off Track](https://open.kattis.com/contests/acpc17open/problems/racingofftrack)
 
 ## 4
-  * (Old Gold) Convex Hull
+  * (Old Gold) Sweep Line Algorithms
     * Tutorial
       * CPH (30, Sweep Line Algorithms)
+      * [TopCoder Line Sweep](https://www.topcoder.com/community/data-science/data-science-tutorials/line-sweep-algorithms/)
     * Topics
-      * Andrew's Monotone Chain
-      * Graham Scan
-      * Lichao Segment Tree
+      * Convex Hull
+        * [Wikipedia](https://en.wikipedia.org/wiki/Convex_hull_algorithms)
+        * Andrew's Monotone Chain (I prefer)
+        * Graham Scan
       * Slope Trick
+        * [Lichao Segment Tree](http://codeforces.com/blog/entry/51275?#comment-351510)
         * [zscoder](http://codeforces.com/blog/entry/47821)
-        * [Line Container](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/LineContainer.h)
+        * [KACTL: Line Container](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/LineContainer.h)
     * Problem(s)
-      * [CEOI 2017.2.1](https://csacademy.com/contest/archive/task/building-bridges/)
+      * [Bridges](https://csacademy.com/contest/archive/task/building-bridges/)
       * [Fence Orthogonality](https://open.kattis.com/problems/fenceortho)
       * [Buy Low Sell High](http://codeforces.com/contest/866/problem/D)
   

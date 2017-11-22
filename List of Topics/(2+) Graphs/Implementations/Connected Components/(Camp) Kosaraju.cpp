@@ -1,57 +1,47 @@
 // 3 min
 
-/*#include <ext/pb_ds/assoc_container.hpp> 
-#include <ext/pb_ds/tree_policy.hpp>*/
-#include <bits/stdc++.h>
+const int MX = 100001;
 
-using namespace std;
-//using namespace __gnu_pbds;
- 
-typedef long long ll;
-typedef vector<int> vi;
-typedef pair<int, int> pii;
-//typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
+struct scc {
+    vi adj[MX], radj[MX], todo;
+    int comp[MX], N, M;
+    bool visit[MX];
 
-#define FOR(i, a, b) for (int i=a; i<b; i++)
-#define F0R(i, a) for (int i=0; i<a; i++)
-#define FORd(i,a,b) for (int i = (b)-1; i >= a; i--)
-#define F0Rd(i,a) for (int i = (a)-1; i >= 0; i--)
- 
-#define mp make_pair
-#define pb push_back
-#define f first
-#define s second
-#define lb lower_bound
-#define ub upper_bound
-
-const int MOD = 1000000007;
-double PI = 4*atan(1);
-
-vi adj[100001], radj[100001], todo;
-int comp[100001], N, M;
-bool visit[100001];
-
-void dfs(int v) {
-	visit[v] = 1; 
-	for (int w: adj[v]) if (!visit[w]) dfs(w);
-	todo.pb(v);
-}
-
-void dfs2(int v, int val) {
-	comp[v] = val;
-	for (int w: radj[v]) if (!comp[w]) dfs2(w,val);
-}
-
-int main() {
-	cin >> N >> M;
-	F0R(i,M) {
-		int a,b; cin >> a >> b;
+    scc() {
+        memset(comp,0,sizeof comp);
+        memset(visit,0,sizeof visit);
+    }
+    
+    void dfs(int v) {
+    	visit[v] = 1; 
+    	for (int w: adj[v]) if (!visit[w]) dfs(w);
+    	todo.pb(v);
+    }
+    
+    void dfs2(int v, int val) {
+    	comp[v] = val;
+    	for (int w: radj[v]) if (!comp[w]) dfs2(w,val);
+    }
+    
+    void addEdge(int a, int b) {
 		adj[a].pb(b);
 		radj[b].pb(a);
+    }
+    
+    void genSCC() {
+    	FOR(i,1,N+1) if (!visit[i]) dfs(i);
+    	reverse(todo.begin(),todo.end());
+    	for (int i: todo) if (!comp[i]) dfs2(i,i);
+    }
+};
+
+scc S;
+
+int main() {
+	cin >> S.N >> S.M;
+	F0R(i,S.M) {
+		int a,b; cin >> a >> b;
+		S.addEdge(a,b);
 	}
-	FOR(i,1,N+1) if (!visit[i]) dfs(i);
-	for (int x: todo) cout << x << "\n";
-	reverse(todo.begin(),todo.end());
-	for (int i: todo) if (!comp[i]) dfs2(i,i);
-	FOR(i,1,N+1) cout << i << " " << comp[i] << "\n";
+	S.genSCC();
 }

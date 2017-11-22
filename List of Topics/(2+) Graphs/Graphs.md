@@ -38,6 +38,9 @@
       * CPH (13, Shortest Paths)
       * [CPC.8](https://github.com/SuprDewd/T-414-AFLV/tree/master/08_graphs_2)
     * Problem(s)
+      * [EZDIJKST](http://www.spoj.com/problems/EZDIJKST/en/)
+      * [ARBITRAG](http://www.spoj.com/problems/ARBITRAG/)
+      * [ADATRIP](http://www.spoj.com/problems/ADATRIP/)
       * [Lane Switching](https://open.kattis.com/contests/acpc17open/problems/laneswitching)
   * Topological Sort
     * Tutorial

@@ -2,7 +2,8 @@
 
 ## 2015
 
- * June: Started USACO Training & Competitive Programming in General
+ * June: Started competitive programming with Codeforces & USACO Training Pages
+    * 0 problems on first codeforces round!
  * December: USACO Platinum Qualification
 
 ## 2016

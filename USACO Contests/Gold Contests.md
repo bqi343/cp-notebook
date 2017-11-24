@@ -4,6 +4,10 @@
 | --------------- | - | --------- | ---------------- | ---------------------- |
 | 2012 Mar        | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=126) | landscape | DP | Done |
 
+| Contest         | # | Name      | Topic            | Result                 |
+| --------------- | - | --------- | ---------------- | ---------------------- |
+| 2015 Feb        | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=531) | superbull | Trees | Done |
+
 # Gold
 
 | Contest         | # | Name      | Topic            | Result                 |
@@ -32,5 +36,5 @@
 | 2017 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=717) | visitfj | Graphs | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=718) | nocross | DP | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=719) | circlecross | Fenwick Tree | Done |
-| 2017 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=741) | cownomics | Two Pointers, Hashing, Binary Search | Done |
+| 2017 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=741) | cownomics | Two Pointers, Hashing | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=743) | art2 | Stack | Done |

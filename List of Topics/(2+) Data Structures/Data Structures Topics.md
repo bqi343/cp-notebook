@@ -79,6 +79,7 @@
         * [Crowded Cities](https://dmoj.ca/problem/bfs17p6) [](89)
         * [Xors](http://codeforces.com/contest/341/problem/D) [](96)
         * [Nervous Barriers](http://codeforces.com/contest/781/problem/E) [](99)
+        * [Subtree Minimum Query](http://codeforces.com/contest/893/submission/32588564) [](100)
   * Matrices
     * Tutorial
       * CPH (23, Matrices)

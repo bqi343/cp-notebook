@@ -1,42 +1,81 @@
-// https://github.com/kth-competitive-programming/kactl/blob/master/content/numerical/FFT.h
+// https://pastebin.com/3Tnj5mRu
+// also see NTT
 
-typedef valarray<complex<double> > carray;
+typedef complex<double> cd;
+typedef vector<cd> vcd;
 
-void fft(carray& x, carray& roots) {
-	int N = sz(x);
-	if (N <= 1) return;
-	carray even = x[slice(0, N/2, 2)];
-	carray odd = x[slice(1, N/2, 2)];
-	carray rs = roots[slice(0, N/2, 2)];
-	fft(even, rs); fft(odd, rs);
-	F0R(k,N/2) {
-		auto t = roots[k] * odd[k];
-		x[k    ] = even[k] + t;
-		x[k+N/2] = even[k] - t;
-	}
+int get(int s) {
+    return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
 }
 
-typedef vector<double> vd;
+vcd fft(const vcd &as) {
+    int n = as.size(), k = get(n);
+    
+    vi rev(n);
+    rev[0] = 0;
+    int high1 = -1;
+    FOR(i,1,n) {
+        if ((i & (i - 1)) == 0) high1++;
+        rev[i] = rev[i ^ (1 << high1)]; 
+        rev[i] |= (1 << (k - high1 - 1)); 
+    }
+    
+    vcd roots(n);
+    F0R(i,n) {
+        double alpha = 2 * M_PI * i / n;
+        roots[i] = cd(cos(alpha), sin(alpha));
+    }
+    
+    vcd cur(n);
+    F0R(i,n) cur[i] = as[rev[i]];
+    
+    for (int len = 1; len < n; len <<= 1) {
+        vcd ncur(n);
+        int rstep = roots.size() / (len * 2);
+        for (int pdest = 0; pdest < n;) {
+            int p1 = pdest;
+            F0R(i,len) {
+                cd val = roots[i * rstep] * cur[p1 + len];
+                ncur[pdest] = cur[p1] + val;
+                ncur[pdest + len] = cur[p1] - val;
+                pdest++, p1++;
+            }
+            pdest += len;
+        }
+        cur.swap(ncur);
+    }
+    return cur;
+}
+ 
+vcd fft_rev(vcd &as) {
+    vcd res = fft(as);
+    F0R(i,sz(res)) res[i] /= as.size();
+    reverse(res.begin() + 1, res.end());
+    return res;
+}
 
-vd conv(const vd& a, const vd& b) {
-	int s = sz(a) + sz(b) - 1, L = 32-__builtin_clz(s), n = 1<<L;
+vcd conv(vcd a, vcd b) {
+	int s = sz(a)+sz(b)-1, L = get(s), n = 1<<L;
 	if (s <= 0) return {};
-	carray av(n), bv(n), roots(n);
-	F0R(i,n) roots[i] = polar(1.0, -2 * M_PI * i / n);
-	copy(a.begin(),a.end(),begin(av)); fft(av, roots);
-	copy(b.begin(),b.end(),begin(bv)); fft(bv, roots);
-	roots = roots.apply(conj);
-	carray cv = av * bv; fft(cv, roots);
-	vd c(s); F0R(i,s) c[i] = cv[i].real() / n;
-	return c;
+	
+	a.resize(n); a = fft(a);
+	b.resize(n); b = fft(b);
+	
+	F0R(i,n) a[i] *= b[i];
+	a = fft_rev(a);
+	
+	a.resize(s);
+	return a;
 }
 
-int main() {
-	ios_base::sync_with_stdio(0);cin.tie(0);
-	vd a = {1,1}, b = {1,1};
-	vd c = conv(a,b);
-	for (auto d: c) cout << d << " ";
+vcd square(vcd a) {
+    int s = 2*sz(a)-1, L = get(s), n = 1<<L;
+	if (s <= 0) return {};
+	
+	a.resize(n); a = fft(a);
+	F0R(i,n) a[i] *= a[i];
+	a = fft_rev(a);
+	
+	a.resize(s);
+	return a;
 }
-
-// read!
-// ll vs. int!

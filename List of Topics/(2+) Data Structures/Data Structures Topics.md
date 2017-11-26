@@ -67,6 +67,7 @@
       * Problems
         * [Cards](https://szkopul.edu.pl/problemset/problem/qpsk3ygf8MU7D_1Es0oc_xd8/site/?key=statement) [](81)
         * [Candles](https://csacademy.com/contest/round-41/task/candles/) [](94)
+        * [Eyes Closed](http://codeforces.com/contest/895/problem/E) [](133)
     * 2D
       * CPH (28, Segment Trees Revisited)  
       * 2D Segment Tree, Segment Tree + BIT, Merge-Sort Tree

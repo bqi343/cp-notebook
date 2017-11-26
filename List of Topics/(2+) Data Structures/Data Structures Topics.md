@@ -47,6 +47,7 @@
         * [CSAcademy Tutorial](https://csacademy.com/lesson/segment_trees/)
         * [Codeforces Tutorial](http://codeforces.com/blog/entry/18051)
     * Problems (sorted by length)
+      * [FENWICK](http://www.spoj.com/problems/FENTREE/)
       * [Sorting Steps](https://csacademy.com/contest/round-42/task/sorting-steps/) [](42)
       * [Radio Stations](http://codeforces.com/problemset/problem/762/E) [](53)
       * [PolandBall and Polygon](http://codeforces.com/problemset/problem/755/D) [](65)

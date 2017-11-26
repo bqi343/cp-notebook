@@ -23,6 +23,7 @@
     * Tutorial
       * CPH (10, Bit Manipulation)
     * Problem(s)
+      * [Square Subsets](http://codeforces.com/contest/895/problem/C) [](63)
       * [Cat & Mice](https://open.kattis.com/problems/catandmice) [](66)
       * [Guards in the Storehouse](http://codeforces.com/problemset/problem/845/F) [](71)
  

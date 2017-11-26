@@ -83,6 +83,7 @@
       * CPH (19, Path & Circuits)
     * Problems
       * [Weird Journey](http://codeforces.com/contest/789/problem/D) [](65)
+      * [Traveling Graph](http://codeforces.com/contest/21/problem/D) [](86)
       * [Matching Substrings](https://csacademy.com/contest/archive/task/matching-substrings/) [](87)
 
 *Some problems sourced from [here](http://codeforces.com/blog/entry/55274).*

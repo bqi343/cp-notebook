@@ -1,28 +1,6 @@
-// https://github.com/kth-competitive-programming/kactl/blob/master/content/number-theory/NTT.h
-
-/*#include <ext/pb_ds/assoc_container.hpp> 
-#include <ext/pb_ds/tree_policy.hpp>*/
-#include <bits/stdc++.h>
-
-using namespace std;
-//using namespace __gnu_pbds;
- 
-typedef long long ll;
-typedef vector<int> vi;
-typedef pair<int, int> pii;
-//typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
-
-#define FOR(i, a, b) for (int i=a; i<b; i++)
-#define F0R(i, a) for (int i=0; i<a; i++)
-#define FORd(i,a,b) for (int i = (b)-1; i >= a; i--)
-#define F0Rd(i,a) for (int i = (a)-1; i >= 0; i--)
- 
-#define mp make_pair
-#define pb push_back
-#define f first
-#define s second
-#define lb lower_bound
-#define ub upper_bound
+// inspired by
+// https://github.com/kth-competitive-programming/kactl/blob/master/content/numerical/FFT.h
+// https://pastebin.com/3Tnj5mRu
 
 const ll mod = (119 << 23) + 1, root = 3; // = 998244353
 // For p < 2^30 there is also e.g. (5 << 25, 3), (7 << 26, 3),
@@ -30,49 +8,55 @@ const ll mod = (119 << 23) + 1, root = 3; // = 998244353
 
 typedef vector<ll> vl;
 
-ll modpow(ll b, ll p) { // mod is prime
-    return !p?1:modpow(b*b%mod,p/2)*(p&1?b:1)%mod;
+ll modpow(ll b, ll p) { return !p?1:modpow(b*b%mod,p/2)*(p&1?b:1)%mod; }
+
+ll inv (ll b) { return modpow(b,mod-2); }
+
+int get(int s) {
+    return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
 }
 
-ll in (ll b) {
-    return modpow(b,mod-2);
+vl ntt(vl& a) { 
+    int n = a.size(), x = get(n); 
+    vl res, RES(n), roots(n);
+    roots[0] = 1, roots[1] = modpow(root,(mod-1)/n);
+    FOR(i,2,n) roots[i] = roots[i-1]*roots[1] % mod;
+    
+    res = a;
+    FOR(i,1,x+1) {
+        int inc = n>>i;
+        F0R(j,inc) for (int k = 0; k < n; k += inc)  // 1<<i numbers
+            RES[k+j] = (res[2*k%n+j]+roots[k]*res[2*k%n+j+inc]) % mod;
+        swap(res,RES);
+    }
+    
+    return res;
 }
 
-void ntt(ll* x, ll* temp, ll* roots, int N, int skip) {
-	if (N == 1) return;
-	int n2 = N/2;
-	ntt(x     , temp, roots, n2, skip*2);
-	ntt(x+skip, temp, roots, n2, skip*2);
-	F0R(i,N) temp[i] = x[i*skip];
-    F0R(i,n2) {
-		ll s = temp[2*i], t = temp[2*i+1]*roots[skip*i];
-		x[skip*i] = (s+t) % mod; x[skip*(i+n2)] = ((s-t)%mod+mod)%mod;
-	}
-}
-
-void ntt(vl& x, bool inv = 0) {
-	ll e = modpow(root, (mod-1) / int(x.size()));
-	if (inv) e = in(e);
-	vl roots(x.size(), 1), temp = roots;
-	FOR(i,1,x.size()) roots[i] = roots[i-1]*e%mod;
-	ntt(&x[0], &temp[0], &roots[0], x.size(), 1);
+vl ntt_rev(vl& a) {
+    vl res = ntt(a);
+    ll in = inv(a.size());
+    F0R(i,sz(res)) res[i] = res[i]*in % mod;
+    reverse(res.begin() + 1, res.end());
+    return res;
 }
 
 vl conv(vl a, vl b) {
-	int s = int(a.size()) + int(b.size()) - 1; if (s <= 0) return {};
-	int L = s > 1 ? 32 - __builtin_clz(s - 1) : 0, n = 1 << L;
-	if (s <= 200) { // (factor 10 optimization for |a|,|b| = 10)
-		vl c(s);
-		F0R(i,a.size()) F0R(j,b.size()) c[i+j] = (c[i+j]+a[i]*b[j]) % mod;
-		return c;
-	}
-	a.resize(n); ntt(a);
-	b.resize(n); ntt(b);
-	vl c(n); ll d = in(n);
-	F0R(i,n) c[i] = a[i]*b[i]%mod*d%mod;
-	ntt(c, 1); c.resize(s); return c;
+    int s = sz(a)+sz(b)-1, L = get(s), n = 1<<L;
+    if (s <= 0) return {};
+    
+    a.resize(n); a = ntt(a);
+    b.resize(n); b = ntt(b);
+    
+    F0R(i,n) a[i] = a[i]*b[i] % mod;
+    a = ntt_rev(a);
+    
+    a.resize(s);
+    return a;
 }
 
 int main() {
-    
+    ios_base::sync_with_stdio(0);cin.tie(0);
+    vl x = conv({1,2,3,4,5,6,7,8},{1,2,3,4,5,6,7,8});
+    for (auto a: x) cout << a << "\n";
 }

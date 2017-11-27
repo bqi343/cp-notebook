@@ -89,14 +89,13 @@ Topics marked with "Old Gold" have not appeared in recent platinum contests.
 # stuff which I should remember how to do from scratch
 
   * Data Structures
-    * Misc stuff about set, map
-    * Lazy Persistent Segment Tree
     * Splay Tree, Link-Cut Tree
   * Graphs
     * BCC
     * Euler Tour
   * Strings
     * KMP
+    * Booth
     * Aho-Corasick
     * Palindromic Tree
     * Suffix Array

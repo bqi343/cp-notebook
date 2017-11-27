@@ -46,13 +46,13 @@
     * Tutorial
       * CPH (16, Directed Graphs)
       * [Wikipedia](https://en.wikipedia.org/wiki/Topological_sorting)
-    * Problem(s)
-      * [Quantum](https://open.kattis.com/contests/acpc17open/problems/quantumsuperposition)
-      * [Minimal Labels](http://codeforces.com/contest/825/problem/E)
-      * [Courses](http://codeforces.com/contest/770/problem/C)
+    * Problems
+      * [Minimal Labels](http://codeforces.com/contest/825/problem/E) [](53)
+      * [Courses](http://codeforces.com/contest/770/problem/C) [](80)
+      * [Quantum](https://open.kattis.com/contests/acpc17open/problems/quantumsuperposition) [](84)
 
 ## 5
-  * Biconnected Components
+  * **Biconnected Components**
     * Related
       * Articulation Points 
       * Bridges
@@ -68,20 +68,22 @@
       * Tarjan
       * [Kosaraju](https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm)
       * [2-SAT](http://codeforces.com/blog/entry/16205)
-    * Problem(s)
-      * [TFRIENDS](http://www.spoj.com/problems/TFRIENDS/)
-      * [CAPCITY](http://www.spoj.com/problems/CAPCITY/)
-      * [Mushrooms](http://codeforces.com/contest/894/problem/E)
-      * [Proving Equivalences](https://open.kattis.com/problems/equivalences)
-      * [Scheme](http://codeforces.com/contest/22/problem/E) (harder version of above)
+    * Problems
+      * [Proving Equivalences](https://open.kattis.com/problems/equivalences) [](78)
+        * harder version: [Scheme](http://codeforces.com/contest/22/problem/E) 
+      * [TFRIENDS](http://www.spoj.com/problems/TFRIENDS/) [](84)
+      * [Mushrooms](http://codeforces.com/contest/894/problem/E) [](89)
+      * [CAPCITY](http://www.spoj.com/problems/CAPCITY/) [](103)
   * Bellman-Ford & Linear Programming
     * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
 
 ## Other
-  * Eulerian Tour / Cycle
+  * **Eulerian Tour / Cycle**
     * Tutorial
       * CPH (19, Path & Circuits)
-    * Problem(s)
-      * [Matching Substrings](https://csacademy.com/contest/archive/task/matching-substrings/)
+    * Problems
+      * [Weird Journey](http://codeforces.com/contest/789/problem/D) [](65)
+      * [Traveling Graph](http://codeforces.com/contest/21/problem/D) [](86)
+      * [Matching Substrings](https://csacademy.com/contest/archive/task/matching-substrings/) [](87)
 
 *Some problems sourced from [here](http://codeforces.com/blog/entry/55274).*

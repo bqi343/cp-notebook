@@ -22,11 +22,11 @@
 ## 5
   * Hopcroft-Karp Bipartite Matching
   * Faster Max Flow
-    * Dinic's Algorithm
+    * **Dinic's Algorithm**
     * Push-Relabel
       
 ## Other
-  * Min Cost Max Flow
+  * **Min Cost Max Flow**
     * Tutorial
       * [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/minimum-cost-flow-part-two-algorithms/)
       * [Johnson's Algorithm](https://en.wikipedia.org/wiki/Johnson%27s_algorithm)

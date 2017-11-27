@@ -30,8 +30,7 @@ Topics marked with "Old Gold" have not appeared in recent platinum contests.
 # Gold Topics (3)
 
   * Data Structures
-  	* 10 - Segment Tree
-  	* Binary Indexed Tree
+  	* 10 - Binary Indexed Tree
   * Graphs
   	* 11 - Shortest Path
   	* Topological Sorting
@@ -44,7 +43,7 @@ Topics marked with "Old Gold" have not appeared in recent platinum contests.
 # Plat Topics (4)
 
   * Data Structures
-    * 15 - Lazy, 2D Segment Tree
+    * 15 - Segment Tree & Related
     * 16 - Matrices
   * 17 - Paradigms
     * Meet in the Middle
@@ -86,3 +85,27 @@ Topics marked with "Old Gold" have not appeared in recent platinum contests.
   	* Eulerian Tour
   * Games
   * Mo's Algorithm
+
+# stuff which I should remember how to do from scratch
+
+  * Data Structures
+    * Splay Tree, Link-Cut Tree
+  * Graphs
+    * BCC
+    * Euler Tour
+  * Strings
+    * KMP
+    * Booth
+    * Aho-Corasick
+    * Palindromic Tree
+    * Suffix Array
+  * Trees
+    * Heavy-Light Decomposition
+  * Flows
+    * Dinic
+    * MinCost MaxFlow
+  * Geometry
+    * Line Container
+  * Math
+    * NTT / FFT
+

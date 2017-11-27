@@ -8,7 +8,7 @@
         * [Set Custom Comparator](https://stackoverflow.com/questions/23042947/how-to-create-a-stdset-with-custom-comparator-in-c)
       * Map, Unordered Map (Hashmap)
         * [Unordered Map Custom Class](https://stackoverflow.com/questions/17016175/c-unordered-map-using-a-custom-class-type-as-the-key)
-      * Queue, Deque (Linked List)
+      * Queue, Deque, Linked List
       * Priority Queue (Heap)
       * Vector
       * Stack
@@ -34,7 +34,7 @@
 
 ## 3
 
-  * 1D Range Query w/ Point Update (2/24 Gold)
+  * Binary Indexed Tree (2/24 Gold)
     * Tutorials
       * CPH (9, Range Queries)
       * Binary Indexed Tree
@@ -42,21 +42,21 @@
         * [CSAcademy BIT](https://csacademy.com/lesson/fenwick_trees)
         * [Indexed Set](http://codeforces.com/blog/entry/11080)
           * Often used in place of BIT
-      * Segment Tree
-        * [CPC.3](https://github.com/SuprDewd/T-414-AFLV/tree/master/03_data_structures)
-        * [CSAcademy Tutorial](https://csacademy.com/lesson/segment_trees/)
-        * [Codeforces Tutorial](http://codeforces.com/blog/entry/18051)
     * Problems (sorted by length)
+      * [FENWICK](http://www.spoj.com/problems/FENTREE/)
       * [Sorting Steps](https://csacademy.com/contest/round-42/task/sorting-steps/) [](42)
       * [Radio Stations](http://codeforces.com/problemset/problem/762/E) [](53)
       * [PolandBall and Polygon](http://codeforces.com/problemset/problem/755/D) [](65)
       * [Dog Show](http://codeforces.com/contest/847/problem/D) [](70)
-      * [Cards](https://szkopul.edu.pl/problemset/problem/qpsk3ygf8MU7D_1Es0oc_xd8/site/?key=statement) [](81)
 
 ## 4
 
-  * Segment Tree Variations (8/24 Plat)
+  * Segment Tree & Related (8/24 Plat)
     * 1D
+      * Segment Tree
+        * [CPC.3](https://github.com/SuprDewd/T-414-AFLV/tree/master/03_data_structures)
+        * [CSAcademy Tutorial](https://csacademy.com/lesson/segment_trees/)
+        * [Codeforces Tutorial](http://codeforces.com/blog/entry/18051)
       * Lazy Segment Tree
         * CPH (28, Segment Trees Revisited)  
         * [CSAcademy Tutorial](https://csacademy.com/lesson/segment_trees/)
@@ -64,14 +64,14 @@
         * Special: Minimum Query w/ Number of Minimums
       * BIT with range modification
         * [GeeksForGeeks](http://www.geeksforgeeks.org/binary-indexed-tree-range-updates-point-queries/)
-      * Problem(s)
+      * Problems
+        * [Cards](https://szkopul.edu.pl/problemset/problem/qpsk3ygf8MU7D_1Es0oc_xd8/site/?key=statement) [](81)
         * [Candles](https://csacademy.com/contest/round-41/task/candles/) [](94)
+        * [Eyes Closed](http://codeforces.com/contest/895/problem/E) [](133)
     * 2D
       * CPH (28, Segment Trees Revisited)  
-      * Segment Tree + BIT
-      * 2D Segment Tree
+      * 2D Segment Tree, Segment Tree + BIT, Merge-Sort Tree
       * 2D BIT
-      * Merge-Sort Tree
       * Problems
         * [Twin Permutations](https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/mancunian-and-twin-permutations-d988930c/description/) [](80)
         * [Anton & Permutation](http://codeforces.com/contest/785/problem/E) [](85)
@@ -79,11 +79,12 @@
         * [Crowded Cities](https://dmoj.ca/problem/bfs17p6) [](89)
         * [Xors](http://codeforces.com/contest/341/problem/D) [](96)
         * [Nervous Barriers](http://codeforces.com/contest/781/problem/E) [](99)
+        * [Subtree Minimum Query](http://codeforces.com/contest/893/submission/32588564) [](100)
   * Matrices
     * Tutorial
       * CPH (23, Matrices)
       * Exponentiation
-      * Gaussian Elimination?
+      * Gaussian Elimination
       * [Implementation](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Matrix.h)
     * Problem(s)
       * [Wet Shark & Blocks](http://codeforces.com/problemset/problem/621/E) [](55)
@@ -95,7 +96,7 @@
       
 ## 5
 
-  * Persistent Segment Tree 
+  * **Persistent Segment Tree**
     * Tutorial
       * [Anudeep2011](https://blog.anudeep2011.com/persistent-segment-trees-explained-with-spoj-problems/)
       * [oml1111](https://drive.google.com/file/d/0BwGLW04WRv0ITEZjRWlMSFc2bk0/view)
@@ -108,7 +109,7 @@
       * [Lazy Propogation](http://codeforces.com/blog/entry/47108?#comment-315047)
   * Balanced Binary Search Trees
     * Types
-      * Splay Tree
+      * **Splay Tree**
         * Notes
           * [Splay Tree Implementation](http://codeforces.com/blog/entry/18462)
           * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)

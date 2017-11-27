@@ -10,8 +10,8 @@
     * Intersection of Two Lines
     * Distance Between Point & Segment, Two Segments
     * Polygon Area
-    * Closest Pair
     * Point in Polygon
+    * Closest Pair
     * KD Tree
   * Tutorial  
     * [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/geometry-concepts-basic-concepts/)
@@ -38,7 +38,7 @@
       * Slope Trick
         * [Lichao Segment Tree](http://codeforces.com/blog/entry/51275?#comment-351510)
         * [zscoder](http://codeforces.com/blog/entry/47821)
-        * [KACTL: Line Container](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/LineContainer.h)
+        * [KACTL: **Line Container**](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/LineContainer.h)
     * Problem(s)
       * [Bridges](https://csacademy.com/contest/archive/task/building-bridges/)
       * [Fence Orthogonality](https://open.kattis.com/problems/fenceortho)

@@ -82,4 +82,5 @@ Mostly for CodeForces, some more useful than others.
   * [Cornell HSPC](https://www.cs.cornell.edu/events/cornell-high-school-programming-contest)
     * New York
     * 3 hours
+    * [Hackerrank](https://www.hackerrank.com/contests/cornell-university-high-school-programming-contest-2017)
     * April

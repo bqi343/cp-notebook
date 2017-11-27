@@ -8,7 +8,7 @@
         * [Set Custom Comparator](https://stackoverflow.com/questions/23042947/how-to-create-a-stdset-with-custom-comparator-in-c)
       * Map, Unordered Map (Hashmap)
         * [Unordered Map Custom Class](https://stackoverflow.com/questions/17016175/c-unordered-map-using-a-custom-class-type-as-the-key)
-      * Queue, Deque (Linked List)
+      * Queue, Deque, Linked List
       * Priority Queue (Heap)
       * Vector
       * Stack
@@ -84,7 +84,7 @@
     * Tutorial
       * CPH (23, Matrices)
       * Exponentiation
-      * Gaussian Elimination?
+      * Gaussian Elimination
       * [Implementation](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Matrix.h)
     * Problem(s)
       * [Wet Shark & Blocks](http://codeforces.com/problemset/problem/621/E) [](55)
@@ -96,7 +96,7 @@
       
 ## 5
 
-  * Persistent Segment Tree 
+  * **Persistent Segment Tree**
     * Tutorial
       * [Anudeep2011](https://blog.anudeep2011.com/persistent-segment-trees-explained-with-spoj-problems/)
       * [oml1111](https://drive.google.com/file/d/0BwGLW04WRv0ITEZjRWlMSFc2bk0/view)
@@ -109,7 +109,7 @@
       * [Lazy Propogation](http://codeforces.com/blog/entry/47108?#comment-315047)
   * Balanced Binary Search Trees
     * Types
-      * Splay Tree
+      * **Splay Tree**
         * Notes
           * [Splay Tree Implementation](http://codeforces.com/blog/entry/18462)
           * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)

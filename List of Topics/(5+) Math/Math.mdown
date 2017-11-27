@@ -14,7 +14,7 @@
     * Eratosthenes' Sieve
 
 ### Other
-  * NTT / FFT
+  * **NTT / FFT**
     * Tutorial
       * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)
       * [CF Tutorial Pt 2](http://codeforces.com/blog/entry/48798)

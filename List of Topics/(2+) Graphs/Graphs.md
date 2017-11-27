@@ -52,7 +52,7 @@
       * [Quantum](https://open.kattis.com/contests/acpc17open/problems/quantumsuperposition) [](84)
 
 ## 5
-  * Biconnected Components
+  * **Biconnected Components**
     * Related
       * Articulation Points 
       * Bridges
@@ -78,7 +78,7 @@
     * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
 
 ## Other
-  * Eulerian Tour / Cycle
+  * **Eulerian Tour / Cycle**
     * Tutorial
       * CPH (19, Path & Circuits)
     * Problems

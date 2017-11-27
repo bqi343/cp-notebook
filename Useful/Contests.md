@@ -79,3 +79,7 @@ Mostly for CodeForces, some more useful than others.
     * Moorestown 
     * 2.5 hours
     * April
+  * [Cornell HSPC](https://www.cs.cornell.edu/events/cornell-high-school-programming-contest)
+    * New York
+    * 3 hours
+    * April

@@ -21,7 +21,7 @@ struct tnode {
     }
 };
 
-pair<tnode*,tnode*> split(tnode* t, int v) { // >= x goes to the right
+pair<tnode*,tnode*> split(tnode* t, int v) { // >= v goes to the right
     if (!t) return {t,t};
 
     if (v <= t->val) {

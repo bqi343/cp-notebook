@@ -1,3 +1,6 @@
+// compute the minimum spanning tree in O(ElogE) time
+// https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
+
 template<int SZ> struct DSU {
     int par[SZ], sz[SZ];
     DSU() {

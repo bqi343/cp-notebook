@@ -119,6 +119,7 @@
       * Treap
         * Notes
           * [Wikipedia](https://en.wikipedia.org/wiki/Treap)
+          * [Sutherland Programming Club](http://sutherland-programming-club.co.nf/previous%20years/16-17/tutorial.html)
           * Split, Merge, Lazy Propogation
           * Insertions and deletions are most easily done with split and merge functions.
         * Problems

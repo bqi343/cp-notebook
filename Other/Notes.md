@@ -8,6 +8,7 @@ If you feel that you are weak in a certain topic, just search up some problems t
   * [Codeforces Problemset](http://codeforces.com/problemset)
   * [HackerRank Dashboard](https://www.hackerrank.com/domains/algorithms/warmup)
   * [CSAcademy Archive](https://csacademy.com/contest/archive/)
+  * [A2OJ](https://a2oj.com/)
 
 Of course, note that many tasks are simply implementation.
 

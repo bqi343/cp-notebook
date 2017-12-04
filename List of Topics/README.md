@@ -1,8 +1,8 @@
 # README
 
-This collection is composed of the algorithms I have needed for USACO contests, plus a few more. [CPH](https://cses.fi/book.pdf) refers to the competitive programmer's handbook.
-
-Topics marked with "Old Gold" have not appeared in recent platinum contests.
+  * This collection is composed of the algorithms I have needed for USACO contests, plus a few more. 
+  * [CPH](https://cses.fi/book.pdf) refers to the competitive programmer's handbook.
+  * Please see "Misc" for my C++ template.
 
 # Bronze Topics (1)
 

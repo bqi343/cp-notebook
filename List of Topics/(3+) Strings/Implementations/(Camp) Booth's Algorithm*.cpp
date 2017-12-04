@@ -1,5 +1,6 @@
 // https://en.wikipedia.org/wiki/Lexicographically_minimal_string_rotation#Booth.27s_Algorithm
 // not sure how this works :(
+// have not used in actual contest
 
 int least_rotation(string S) {
     S += S;

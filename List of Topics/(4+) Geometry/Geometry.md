@@ -42,5 +42,5 @@
     * Problem(s)
       * [Bridges](https://csacademy.com/contest/archive/task/building-bridges/)
       * [Fence Orthogonality](https://open.kattis.com/problems/fenceortho)
-      * [Buy Low Sell High](http://codeforces.com/contest/866/problem/D)
+      * [A2OJ](https://a2oj.com/category?ID=22)
   

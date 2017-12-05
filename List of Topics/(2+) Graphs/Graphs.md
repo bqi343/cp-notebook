@@ -50,8 +50,8 @@
       * [Wikipedia](https://en.wikipedia.org/wiki/Topological_sorting)
     * Problems
       * [Minimal Labels](http://codeforces.com/contest/825/problem/E) [](53)
-      * [Courses](http://codeforces.com/contest/770/problem/C) [](80)
       * [Quantum](https://open.kattis.com/contests/acpc17open/problems/quantumsuperposition) [](84)
+      * [A2OJ](https://a2oj.com/category?ID=31)
 
 ## 5
   * **Biconnected Components**
@@ -63,6 +63,7 @@
     * Problem(s)
       * [One-Way Streets](https://csacademy.com/contest/archive/task/one-way-streets/)
       * [Investment](https://dmoj.ca/problem/tle17c1p6)
+      * [A2OJ](https://a2oj.com/category?ID=128)
   * Strongly Connected Components
     * Tutorial
       * CPH (17, Strong Connectivity)

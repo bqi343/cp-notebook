@@ -123,13 +123,9 @@
           * Split, Merge, Lazy Propogation
           * Insertions and deletions are most easily done with split and merge functions.
         * Problems
-          * [Hitchhiking](http://codeforces.com/contest/809/problem/D) [](132)
-          * [Yet Another Array Queries Problem](http://codeforces.com/contest/863/problem/D) [](153)
-            * Due to the low value of m, a BBST is not required.
-          * [TREAP](http://www.spoj.com/problems/TREAP/) [](173)
+          * [A2OJ](https://a2oj.com/category?ID=190)
           * [Strings](https://csacademy.com/contest/archive/task/strings/) [](181)
           * [Points & Distances](https://www.hackerearth.com/problem/algorithm/septembereasy-points-and-distances-d30d0e6b/description/) [](185)
-          * [TEMPLEQ](http://www.spoj.com/problems/TEMPLEQ/) [](213)
   * [2D BIT with Range Update + Query](https://arxiv.org/pdf/1311.6093v4.pdf)
 
 ## Other

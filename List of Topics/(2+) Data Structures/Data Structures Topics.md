@@ -43,11 +43,8 @@
         * [Indexed Set](http://codeforces.com/blog/entry/11080)
           * Often used in place of BIT
     * Problems (sorted by length)
-      * [FENWICK](http://www.spoj.com/problems/FENTREE/)
       * [Sorting Steps](https://csacademy.com/contest/round-42/task/sorting-steps/) [](42)
-      * [Radio Stations](http://codeforces.com/problemset/problem/762/E) [](53)
-      * [PolandBall and Polygon](http://codeforces.com/problemset/problem/755/D) [](65)
-      * [Dog Show](http://codeforces.com/contest/847/problem/D) [](70)
+      * [A2OJ](https://a2oj.com/category?ID=26)
 
 ## 4
 
@@ -67,7 +64,7 @@
       * Problems
         * [Cards](https://szkopul.edu.pl/problemset/problem/qpsk3ygf8MU7D_1Es0oc_xd8/site/?key=statement) [](81)
         * [Candles](https://csacademy.com/contest/round-41/task/candles/) [](94)
-        * [Eyes Closed](http://codeforces.com/contest/895/problem/E) [](133)
+        * [A2OJ](https://a2oj.com/category?ID=25)
     * 2D
       * CPH (28, Segment Trees Revisited)  
       * 2D Segment Tree, Segment Tree + BIT, Merge-Sort Tree
@@ -87,16 +84,14 @@
       * Gaussian Elimination
       * [Implementation](https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Matrix.h)
     * Problem(s)
-      * [Wet Shark & Blocks](http://codeforces.com/problemset/problem/621/E) [](55)
       * [Xor Cycle](https://csacademy.com/contest/archive/task/xor_cycle/statement/) [](78)
-      * [Okabe](http://codeforces.com/contest/821/problem/E) [](81)
       * [Vasya & Shifts](http://codeforces.com/contest/832/problem/E) [](90)
       * [Currencies](https://www.hackerrank.com/contests/gs-codesprint/challenges/currencies) [](107)
-      * [Bitland](http://codeforces.com/problemset/problem/780/F)
+      * [A2OJ](https://a2oj.com/category?ID=32)
       
 ## 5
 
-  * **Persistent Segment Tree**
+  * Persistent Segment Tree
     * Tutorial
       * [Anudeep2011](https://blog.anudeep2011.com/persistent-segment-trees-explained-with-spoj-problems/)
       * [oml1111](https://drive.google.com/file/d/0BwGLW04WRv0ITEZjRWlMSFc2bk0/view)

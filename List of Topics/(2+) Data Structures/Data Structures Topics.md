@@ -118,14 +118,12 @@
           * [Tree Rotations 2](https://szkopul.edu.pl/problemset/problem/b0BM0al2crQBt6zovEtJfOc6/site/?key=statement) [](193)
       * Treap
         * Notes
-          * [Wikipedia](https://en.wikipedia.org/wiki/Treap)
-          * [Sutherland Programming Club](http://sutherland-programming-club.co.nf/previous%20years/16-17/tutorial.html)
-          * Split, Merge, Lazy Propogation
-          * Insertions and deletions are most easily done with split and merge functions.
+          * [PPT](https://docs.google.com/presentation/d/14xgtdDWnIBwmJRAuIdZ8FvLZcX9uRxnNoGOGAQRDIvc/edit?usp=sharing)
         * Problems
           * [A2OJ](https://a2oj.com/category?ID=190)
           * [Strings](https://csacademy.com/contest/archive/task/strings/) [](181)
           * [Points & Distances](https://www.hackerearth.com/problem/algorithm/septembereasy-points-and-distances-d30d0e6b/description/) [](185)
+          * [CARDSHUF](https://www.codechef.com/JAN12/problems/CARDSHUF/)
   * [2D BIT with Range Update + Query](https://arxiv.org/pdf/1311.6093v4.pdf)
 
 ## Other

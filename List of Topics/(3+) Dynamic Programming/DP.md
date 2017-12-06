@@ -32,7 +32,6 @@
     * Tutorial
       * [Digit DP](http://codeforces.com/blog/entry/53960)
     * Problem(s)
-      * [Slytherin](http://codeforces.com/contest/855/problem/E) 
-      * [Magic Numbers](http://codeforces.com/contest/628/problem/D)
+      * [A2OJ](https://a2oj.com/category?ID=315)
   * [DP Problems](http://codeforces.com/blog/entry/325)
   * [More Optimizations](http://codeforces.com/blog/entry/8219)

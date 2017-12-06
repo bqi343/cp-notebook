@@ -22,6 +22,7 @@
       * [Jury Marks](http://codeforces.com/contest/831/problem/C) [](67)
       * [Mahmoud & Ehab & Function](http://codeforces.com/contest/862/problem/E) [](74)
       * [Karen & Cards](http://codeforces.com/contest/815/problem/D) [](86) 
+      * [Tournament](http://codeforces.com/contest/878/problem/C) [](106)
   * Cumulative Sum (4/24 silver)
     * 1D, 2D
     * Tutorial

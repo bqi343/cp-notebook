@@ -24,9 +24,8 @@
       * [K-Inversions](https://open.kattis.com/problems/kinversions)
       * [Big Integer](https://dmoj.ca/problem/bts17p8)
       * [Matchings](https://open.kattis.com/contests/acpc17open/problems/matchings)
-      * [Fuzzy](http://codeforces.com/problemset/problem/528/D)
-      * [Thief](http://codeforces.com/problemset/problem/632/E)
       * [Counting Triplets](https://toph.co/p/counting-triplets)
+      * [A2OJ](https://a2oj.com/category?ID=42)
 
 ## Combinatorics
 

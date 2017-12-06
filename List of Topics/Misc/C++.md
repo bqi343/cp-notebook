@@ -27,3 +27,6 @@ The list only the ones I actually use.
 
 ## Other
  * [Intro to Command Line](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
+ * Pragma Optimization
+   * [Welcome](http://codeforces.com/contest/896/problem/E)
+   * [Nagini](http://codeforces.com/contest/855/problem/F)

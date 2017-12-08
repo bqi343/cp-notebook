@@ -54,7 +54,7 @@
       * [A2OJ](https://a2oj.com/category?ID=31)
 
 ## 5
-  * **Biconnected Components**
+  * Biconnected Components
     * Related
       * Articulation Points 
       * Bridges
@@ -81,12 +81,11 @@
     * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
 
 ## Other
-  * **Eulerian Tour / Cycle**
+  * Eulerian Tour / Cycle
     * Tutorial
       * CPH (19, Path & Circuits)
     * Problems
-      * [Weird Journey](http://codeforces.com/contest/789/problem/D) [](65)
-      * [Traveling Graph](http://codeforces.com/contest/21/problem/D) [](86)
       * [Matching Substrings](https://csacademy.com/contest/archive/task/matching-substrings/) [](87)
+      * [A2OJ](https://a2oj.com/category?ID=24)
 
 *Some problems sourced from [here](http://codeforces.com/blog/entry/55274).*

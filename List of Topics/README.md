@@ -3,6 +3,7 @@
   * This collection is composed of the algorithms I have needed for USACO contests, plus a few more. 
   * [CPH](https://cses.fi/book.pdf) refers to the competitive programmer's handbook.
   * Please see "Misc" for my C++ template.
+  * **bold** = particularly useful for VT HSPC
 
 # Bronze Topics (1)
 
@@ -15,13 +16,13 @@
   * 4 - Data Structures
     * C++ STL
     * Cumulative Sum
-  * Graphs
+  * **Graphs**
     * 5 - Representing Graphs
     * Types of Graphs 
     * Flood Fill
     * 6 - Breadth-first Search
     * Depth First Search
-  * Paradigms
+  * **Paradigms**
     * 7 - Complete Search
     * Greedy
     * 8 - Binary Search
@@ -31,12 +32,12 @@
 
   * Data Structures
   	* 10 - Binary Indexed Tree
-  * Graphs
+  * **Graphs**
   	* 11 - Shortest Path
   	* Topological Sorting
   * Trees
   	* 12 - Disjoint Set Union
-  * 13 - Dynamic Programming
+  * **13 - Dynamic Programming**
   * Strings
   	* 14 - Hashing
 
@@ -108,4 +109,3 @@
     * Line Container
   * Math
     * NTT / FFT
-

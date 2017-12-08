@@ -9,6 +9,7 @@ If you feel that you are weak in a certain topic, just search up some problems t
   * [HackerRank Dashboard](https://www.hackerrank.com/domains/algorithms/warmup)
   * [CSAcademy Archive](https://csacademy.com/contest/archive/)
   * [A2OJ](https://a2oj.com/)
+  * [Problem Topics (Morass)](http://codeforces.com/blog/entry/55274)
 
 Of course, note that many tasks are simply implementation.
 
@@ -29,22 +30,25 @@ I recommend that you use C++11 over Java due to various reasons, such as
 ### Books
   * [Competitive Programming Handbook (CPH)](https://cses.fi/book.pdf)
   * [Competitive Programming Book (Steven, Felix)](http://www.comp.nus.edu.sg/~stevenha/myteaching/competitive_programming/cp1.pdf)
+  * Introduction to Algorithms
 
 ### Courses
   * [Competitive Programming Course (SuprDewd)](https://github.com/SuprDewd/T-414-AFLV)
-  * [Algorithms, Part 1](https://www.coursera.org/learn/algorithms-part1)
-  * [Stanford](http://web.stanford.edu/class/cs97si/)
-  
-### Problem Collections
   * [Competitive Programming Playlist](https://www.commonlounge.com/community/862d2091c64e447cacde77d4c76a9ac3)
-  * [Problem Topics (Morass)](http://codeforces.com/blog/entry/55274)
+  * [Algorithms, Part 1](https://www.coursera.org/learn/algorithms-part1)
 
 ### Algorithm Collections
   * [E-maxx](https://e-maxx-eng.appspot.com/)
   * [Topcoder Tutorials](http://www.topcoder.com/community/data-science/data-science-tutorials/)
-  * [KACTL (KTH Royal Institute of Tech)](https://github.com/kth-competitive-programming/kactl)
   * [Coding Library (radoslav11)](https://github.com/radoslav11/Coding-Library?files=1)
   * [CSAcademy](https://csacademy.com/lessons/)
+
+### ACM-ICPC Stuff
+  * [Stanford](http://web.stanford.edu/class/cs97si/)
+  * [KACTL (KTH Royal Institute of Tech)](https://github.com/kth-competitive-programming/kactl)
+  * [Virginia Tech](https://icpc.cs.vt.edu/#/)
+  * [Carnegie-Mellon](https://contest.cs.cmu.edu/295/f17/)
+  * [ICPCGate](https://icpcgate.org/contest/index.php)
   
 ### Other
   * [Learn X In Minutes](https://learnxinyminutes.com/)

@@ -53,6 +53,7 @@ Mostly for CodeForces, some more useful than others.
     * [List of 2017 IOI Participants](http://weaselcrow.com/pro/cf/ioi2017/)
     * [WCIPEG](http://wcipeg.com)
     * [Yandex](https://contest.yandex.ru/ioi/Info/)
+    * [IOI 2018 Syllabus](https://people.ksp.sk/~misof/ioi-syllabus/ioi-syllabus.pdf)
   * [USACO](http://www.usaco.org/)
   * [Japan OI](http://cms.ioi-jp.org/)
   * [Poland OI](https://szkopul.edu.pl/portal/)

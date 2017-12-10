@@ -19,13 +19,12 @@
       * CPH (12, Graph Traversals)
     * Problems (mostly DFS)
       * [Bipartiteness](http://codeforces.com/contest/862/problem/B) [](49)
+      * [Birthday](https://open.kattis.com/problems/birthday) [](70)
+      * [UCF HSPT 2017 Online Mazes](https://hspt.ucfprogrammingteam.org/hsptFiles/problemSet1617Online.pdf) [](75)
       * [BFS-DFS](https://csacademy.com/contest/round-41/task/bfs-dfs/) [](50)
       * [Journey](http://codeforces.com/contest/839/problem/C) [](54)
       * [Wizard's Tour](http://codeforces.com/contest/860/problem/D) [](59)
       * [Hotels](https://szkopul.edu.pl/problemset/problem/gDw3iFkeVm7ZA3j_16-XR7jI/site/?key=statement) [](61)
-      * [Birthday](https://open.kattis.com/problems/birthday) [](70)
-      * [UCF HSPT 2017 Online Mazes](https://hspt.ucfprogrammingteam.org/hsptFiles/problemSet1617Online.pdf) [](75)
-      * [Robot Turtles](https://open.kattis.com/problems/robotturtles) [](100)
 
 ## 3
   * Shortest Path
@@ -44,6 +43,7 @@
       * [ARBITRAG](http://www.spoj.com/problems/ARBITRAG/)
       * [ADATRIP](http://www.spoj.com/problems/ADATRIP/)
       * [Lane Switching](https://open.kattis.com/contests/acpc17open/problems/laneswitching)
+      * [Robot Turtles](https://open.kattis.com/problems/robotturtles) [](100)
   * Topological Sort
     * Tutorial
       * CPH (16, Directed Graphs)

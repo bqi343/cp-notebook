@@ -13,6 +13,8 @@
 
 # Silver Topics (2)
 
+[TJIOI](https://github.com/tjsct/tjioi-study-guide)
+
   * 4 - Data Structures
     * C++ STL
     * Cumulative Sum
@@ -29,6 +31,8 @@
     * 9 - Two Pointers 
 
 # Gold Topics (3)
+
+[TJIOI](https://github.com/tjsct/tjioi-study-guide)
 
   * Data Structures
   	* 10 - Binary Indexed Tree

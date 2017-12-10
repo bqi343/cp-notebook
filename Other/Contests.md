@@ -55,6 +55,7 @@ Mostly for CodeForces, some more useful than others.
     * [Yandex](https://contest.yandex.ru/ioi/Info/)
     * [IOI 2018 Syllabus](https://people.ksp.sk/~misof/ioi-syllabus/ioi-syllabus.pdf)
   * [USACO](http://www.usaco.org/)
+    * [Old Problems](http://tjsct.wikidot.com/usaco/)
   * [Japan OI](http://cms.ioi-jp.org/)
   * [Poland OI](https://szkopul.edu.pl/portal/)
   * [Italy OI](https://training.olinfo.it/#/overview)

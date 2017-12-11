@@ -7,80 +7,82 @@
 
 # Bronze Topics (1)
 
-  * 1 - C++ Basics (CPH 1, Introduction)
-  * 2 - Complexity Analysis (CPH 2, Time Complexity)
-  * 3 - Sorting (CPH 3, Sorting)
+[What topics do I need to know?](https://www.quora.com/What-topics-algorithms-should-be-mastered-to-pass-each-of-the-four-divisions-of-USACO)
+
+  * C++ Basics (CPH 1, Introduction)
+  * Complexity Analysis (CPH 2, Time Complexity)
+  * Sorting (CPH 3, Sorting)
 
 # Silver Topics (2)
 
 [TJIOI](https://github.com/tjsct/tjioi-study-guide)
 
-  * 4 - Data Structures
+  * Data Structures
     * C++ STL
     * Cumulative Sum
   * **Graphs**
-    * 5 - Representing Graphs
+    * Representing Graphs
     * Types of Graphs 
     * Flood Fill
-    * 6 - Breadth-first Search
+    * Breadth-first Search
     * Depth First Search
   * **Paradigms**
-    * 7 - Complete Search
+    * Complete Search
     * Greedy
-    * 8 - Binary Search
-    * 9 - Two Pointers 
+    * Binary Search
+    * Two Pointers 
 
 # Gold Topics (3)
 
-[TJIOI](https://github.com/tjsct/tjioi-study-guide)
-
   * Data Structures
-  	* 10 - Binary Indexed Tree
+  	* Binary Indexed Tree
   * **Graphs**
-  	* 11 - Shortest Path
-  	* Topological Sorting
+  	* Shortest Path
+  	* Topological Sort
   * Trees
-  	* 12 - Disjoint Set Union
-  * **13 - Dynamic Programming**
+  	* Disjoint Set Union
+  * **Dynamic Programming**
   * Strings
-  	* 14 - Hashing
+  	* Hashing
 
 # Plat Topics (4)
 
   * Data Structures
-    * 15 - Segment Tree & Related
-    * 16 - Matrices
-  * 17 - Paradigms
+    * Segment Tree & Related
+    * Matrices
+  * Paradigms
     * Meet in the Middle
     * Ternary Search
-  * 18 - DP
+  * DP
     * Bitmasks
     * Divide & Conquer
   * Strings
-    * 19 - Tries
+    * Tries
   * Geometry
-    * 20 - Convex Hull
-  * 21 - Trees
+    * Convex Hull
+  * Trees
     * LCA
     * HLD
 
 # Camp Topics (5)
 
-  * 22 - Math
+  * Math
   	* Combo
   	* NT
   * Misc
   	* Majority Algo
   * Data Structures
-    * 23 - Persistent SegTree
-    * 24 - BBST
-  * 25 - Graphs
+    * Persistent SegTree
+    * BBST
+  * Graphs
     * Articulation Points, Bridges, BCC, SCC
     * Bellman Ford & Linear Programming
-  * 26 - Strings
+  * Strings
     * Manacher
     * Z
-  * 27 - Flows
+    * KMP
+    * Aho-Corasick
+  * Flows
     * Bipartite Matching
     * Faster Max Flow
 
@@ -90,26 +92,3 @@
   	* Eulerian Tour
   * Games
   * Mo's Algorithm
-
-# stuff which I should remember how to do from scratch
-
-  * Data Structures
-    * Splay Tree, Link-Cut Tree
-  * Graphs
-    * BCC
-    * Euler Tour
-  * Strings
-    * KMP
-    * Booth
-    * Aho-Corasick
-    * Palindromic Tree
-    * Suffix Array
-  * Trees
-    * Heavy-Light Decomposition
-  * Flows
-    * Dinic
-    * MinCost MaxFlow
-  * Geometry
-    * Line Container
-  * Math
-    * NTT / FFT

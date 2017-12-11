@@ -63,10 +63,10 @@ Mostly for CodeForces, some more useful than others.
   * [Baltic OI](http://www.boi2017.org/)
   * [COCI](http://hsin.hr/coci/)
 
-## Regional HS Contests
+## HS Contests
   * [PClassic](http://pclassic.org/)
-    * Philadelphia
-    * 4 hours
+    * Philadelphia (drive time 1 hr)
+    * 9:15am-5:00pm
     * November, April
   * [VT HSPC](https://icpc.cs.vt.edu/#/hscontest2017)
     * Online
@@ -78,11 +78,11 @@ Mostly for CodeForces, some more useful than others.
     * 4 hours
     * December
   * [Code Quest](http://www.lockheedmartin.com/us/who-we-are/community/codequest/code-quest-moorestown.html)
-    * Moorestown 
-    * 2.5 hours
+    * Moorestown (drive time 1 hr)
+    * 7:00am-2:00pm
     * April
   * [Cornell HSPC](https://www.cs.cornell.edu/events/cornell-high-school-programming-contest)
-    * New York
-    * 3 hours
+    * New York (drive time 2-3 hrs)
+    * 11:30am-4:30pm?
     * [Hackerrank](https://www.hackerrank.com/contests/cornell-university-high-school-programming-contest-2017)
     * April

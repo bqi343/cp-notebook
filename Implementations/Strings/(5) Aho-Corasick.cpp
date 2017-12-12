@@ -2,7 +2,7 @@
 
 string arr[200];
 int val[200], states = 1;
-
+queue<int> update;
 const int MAXS = 201;
 const int MAXC = 26;
  
@@ -61,7 +61,16 @@ int findNextState(int currentState, char nextInput) {
     int answer = currentState;
     int ch = nextInput - 'a';
 
-    while (g[answer][ch] == -1) answer = f[answer];
+    while (g[answer][ch] == -1){ 
+        update.push(answer);
+        answer = f[answer];
+    }
+    if (update.size()){
+        while (update.size()){
+            int k = update.front(); update.pop();
+            g[k][nextInput-'a'] = g[answer][ch]; //cache state transitions: often necessary if we don't want to explicitly compute all of them
+        }
+    }
     return g[answer][ch];
 }
 

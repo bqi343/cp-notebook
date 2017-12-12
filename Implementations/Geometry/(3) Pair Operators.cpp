@@ -1,9 +1,3 @@
-const double PI = 4*atan(1);
-
-template<class T> double mag(pair<T,T> p) {
-    return sqrt(p.f*p.f+p.s*p.s);
-}
- 
 template<class T> pair<T,T> operator+(const pair<T,T>& l, const pair<T,T>& r) {
     return {l.f+r.f,l.s+r.s};
 }
@@ -19,7 +13,11 @@ template<class T> pair<T,T> operator*(const pair<T,T>& l, T r) {
 template<class T> pair<T,T> operator/(const pair<T,T>& l, T r) {
     return {l.f/r,l.s/r};
 }
- 
+
+template<class T> double mag(pair<T,T> p) {
+    return sqrt(p.f*p.f+p.s*p.s);
+}
+
 template<class T> pair<T,T> operator*(const pair<T,T>& l, const pair<T,T>& r) {
     // l.f+l.s*i, r.f+r.s*i
     return {l.f*r.f-l.s*r.s,l.s*r.f+l.f*r.s};

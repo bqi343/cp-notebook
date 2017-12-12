@@ -113,6 +113,3 @@ int main() {
     del(21);
     inOrder(root);
 }
-
-// read!
-// ll vs int!

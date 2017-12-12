@@ -24,6 +24,3 @@ int main() {
 	topo();
 	for (int i: res) cout << i << " ";
 }
-
-// read!
-// ll vs. int!

@@ -31,6 +31,3 @@ int main() {
 	x = get("abcab","uwetrabcerabcab");
 	for (int i: x) cout << i << " ";
 }
-
-// read!
-// ll vs. int!

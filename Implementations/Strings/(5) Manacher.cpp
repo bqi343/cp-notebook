@@ -30,6 +30,3 @@ int main() {
 	vi a2 = manacher("aabbaaccaabbaa");
 	for (int i: a2) cout << i << " ";
 }
-
-// read!
-// ll vs. int!

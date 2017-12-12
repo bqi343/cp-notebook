@@ -103,6 +103,3 @@ int main() {
     s.upd(5,8,200);
     cout << s.query(3,5,2,7) << "\n"; // 22
 }
-
-// read!
-// ll vs. int!

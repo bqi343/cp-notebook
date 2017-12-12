@@ -50,6 +50,3 @@ int main() {
 	    cout << a.s.f.f << " " << a.s.f.s << " " << a.s.s.f << " " << a.s.s.s << "\n";
 	}
 }
-
-// read!
-// ll vs. int!

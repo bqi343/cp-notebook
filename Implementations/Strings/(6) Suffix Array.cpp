@@ -56,6 +56,3 @@ int main() {
 	    getline(cin,s);
 	}
 }
-
-// read!
-// ll vs. int!

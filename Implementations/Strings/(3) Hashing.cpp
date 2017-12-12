@@ -35,6 +35,3 @@ int main() {
     gen();
     F0R(i,s.length()) FOR(j,i,s.length()) cout << i << " " << j << " " << get(i,j).f << " " << get(i,j).s << "\n";
 }
-
-// read!
-// ll vs. int!

@@ -1,5 +1,4 @@
-// https://ideone.com/Tkters
-// have not used in actual contest
+// Source: https://ideone.com/Tkters
 
 int MAX = 1000000;
 int a[300000];

@@ -1,5 +1,5 @@
-// https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm
-// have not used in actual contest
+// Source: https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm
+// unused
   
 int Pair_U[100], Pair_V[100], Dist[100];
 vi U, V, Adj[100];

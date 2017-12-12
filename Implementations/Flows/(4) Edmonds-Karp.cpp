@@ -1,4 +1,4 @@
-// http://www.geeksforgeeks.org/ford-fulkerson-algorithm-for-maximum-flow-problem/
+// Source: GeeksforGeeks
 
 const int SZ = 100;
   

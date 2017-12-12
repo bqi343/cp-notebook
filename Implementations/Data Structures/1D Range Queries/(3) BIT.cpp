@@ -1,5 +1,4 @@
 // 1D point update, range query
-// 2 min
 
 template<int SZ> struct BIT {
     int bit[SZ+1];

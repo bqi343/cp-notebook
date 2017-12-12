@@ -1,5 +1,4 @@
 // 1D point update, range query
-// 2 min
 
 template<class T, int SZ> struct Seg {
     T seg[2*SZ], MN = 0;

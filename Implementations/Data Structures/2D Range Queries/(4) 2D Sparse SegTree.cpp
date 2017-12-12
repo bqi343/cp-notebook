@@ -1,6 +1,5 @@
-// 2D Segment Tree
-// Supports 2D Point Update, Range Query
-// Implementation time: 9 min
+// 2D Segment Tree and SegBIT
+// 2D Point Update, Range Query
 
 const int SZ = 1<<17;
 

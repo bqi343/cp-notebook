@@ -1,7 +1,5 @@
 // 1D range update, range query
-// 4 min
-// Counting Haybales
-// http://www.usaco.org/index.php?page=viewproblem2&cpid=578
+// Inspiration: USACO Counting Haybales
 
 const ll INF = MOD; // change if ll ...
 

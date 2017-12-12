@@ -1,4 +1,4 @@
-// https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Matrix.h
+// Source: KACTL
 
 template<int SZ> struct mat {
     array<array<ll,SZ>,SZ> d;

@@ -1,6 +1,5 @@
-// in my opinion, easier to use than KMP
-// 3 min
-// http://codeforces.com/blog/entry/3107
+// Source: http://codeforces.com/blog/entry/3107
+// better than KMP?
 
 vi z(string s) {
     int N = s.length(); s += '#';

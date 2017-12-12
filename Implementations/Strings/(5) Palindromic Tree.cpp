@@ -1,4 +1,4 @@
-// http://codeforces.com/blog/entry/13959
+// Source: http://codeforces.com/blog/entry/13959
 
 const int maxn = 1e5, sigma = 26;
  

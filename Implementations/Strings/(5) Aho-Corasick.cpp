@@ -1,4 +1,4 @@
-// http://www.geeksforgeeks.org/aho-corasick-algorithm-pattern-searching/
+// Source: GeeksForGeeks
 
 string arr[200];
 int val[200], states = 1;

@@ -1,6 +1,4 @@
-const int SZ = 1000;
-
-struct BIT2D { 
+template<int SZ> struct BIT2D { 
     int bit[SZ+1][SZ+1];
     void upd(int X, int Y, int val) {
         for (; X <= SZ; X += (X&-X))
@@ -18,9 +16,9 @@ struct BIT2D {
         return query(X2,Y2)-query(X1-1,Y2)-query(X2,Y1-1)+query(X1-1,Y1-1);
     }
 };
- 
+
 int main() {
-	BIT2D x; 
+	BIT2D<1000> x; 
 	x.upd(2,5,7);
 	x.upd(3,6,8);
 	x.upd(4,6,9);

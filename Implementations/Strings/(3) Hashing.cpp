@@ -45,10 +45,21 @@ struct hsh {
     }
 };
 
-hsh h;
+int lcp(hsh& a, hsh& b) {
+    int lo = 0, hi = min(sz(a.S),sz(b.S));
+    while (lo < hi) {
+        int mid = (lo+hi+1)/2;
+        if (a.get(0,mid-1) == b.get(0,mid-1)) lo = mid;
+        else hi = mid-1;
+    }
+    return lo;
+}
 
 int main() {
     string _S = "abacaba";
-    h.gen(_S);
+    hsh h; h.gen(_S);
     F0R(i,sz(_S)) FOR(j,i,sz(_S)) cout << i << " " << j << " " << h.get(i,j).f << " " << h.get(i,j).s << "\n";
+    
+    hsh H; H.gen("abadaba");
+    cout << lcp(h,H);
 }

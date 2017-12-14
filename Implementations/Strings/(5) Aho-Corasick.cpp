@@ -1,4 +1,5 @@
 // Source: GeeksForGeeks
+// also see https://ideone.com/0cMjZJ
 
 string arr[200];
 int val[200], states = 1;

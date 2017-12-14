@@ -16,9 +16,9 @@ template<class T> pair<T,T> operator*(const pair<T,T>& l, const pair<T,T>& r) {
     return {l.f*r.f%MOD,l.s*r.s%MOD};
 }
     
-template<int SZ> struct hsh {
+struct hsh {
     string S; 
-    pll po[SZ], ipo[SZ], cum[SZ];
+    vector<pll> po, ipo, cum;
     pll base = mp(948392576,573928192);
     
     ll modpow(ll b, ll p) {
@@ -31,8 +31,9 @@ template<int SZ> struct hsh {
     
     void gen(string _S) {
         S = _S;
+        po.resize(sz(S)), ipo.resize(sz(S)), cum.resize(sz(S)+1);
         po[0] = ipo[0] = {1,1};
-        FOR(i,1,SZ) {
+        FOR(i,1,sz(S)) {
             po[i] = po[i-1]*base;
             ipo[i] = {inv(po[i].f),inv(po[i].s)};
         }
@@ -44,10 +45,10 @@ template<int SZ> struct hsh {
     }
 };
 
-hsh<200000> h;
+hsh h;
 
 int main() {
     string _S = "abacaba";
     h.gen(_S);
-    F0R(i,_S.length()) FOR(j,i,_S.length()) cout << i << " " << j << " " << h.get(i,j).f << " " << h.get(i,j).s << "\n";
+    F0R(i,sz(_S)) FOR(j,i,sz(_S)) cout << i << " " << j << " " << h.get(i,j).f << " " << h.get(i,j).s << "\n";
 }

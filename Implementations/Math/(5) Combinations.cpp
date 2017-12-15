@@ -1,5 +1,3 @@
-const int MOD = 1000000007;
-
 template<int SZ> struct Combo {
     ll fac[SZ+1], ifac[SZ+1];
     
@@ -24,10 +22,3 @@ template<int SZ> struct Combo {
         return tmp;
     }
 };
-
-Combo<400000> C;
-
-int main() {
-	ios_base::sync_with_stdio(0);cin.tie(0);
-	cout << C.comb(5,3);
-}

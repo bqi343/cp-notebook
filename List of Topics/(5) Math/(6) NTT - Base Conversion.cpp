@@ -1,11 +1,13 @@
-// NTT Template
+// 2017 VT HSPC - Alien Codebreaking
+
+[Poly Template]
 
 struct Base {
     vl po10[21];
     const int base = 27;
     
     Base() {
-    	po10[0] = {10};
+        po10[0] = {10};
         FOR(i,1,21) {
             po10[i] = Poly::NTT::conv(po10[i-1],po10[i-1]);
             normalize(po10[i]);
@@ -18,32 +20,22 @@ struct Base {
             x[i+1] += x[i]/base;
             x[i] %= base;
         }
-        while (x.size() && x.back() == 0) x.pop_back();
+        while (sz(x) && !x.back()) x.pop_back();
     }
     
-    vl transform(vl x) {
-        int L = get(sz(x)), n = 1<<L; 
-        x.resize(n);
+    vl convert(vl in) {
+        if (sz(in) == 1) return in;
+        vl l = convert(vl(in.begin(),in.begin()+sz(in)/2));
+        vl r = convert(vl(in.begin()+sz(in)/2,in.end()));
         
-        FOR(i,1,L+1) {
-            int inc = n>>i;
-            F0R(j,inc) {
-                int z = 1<<(i-1); // 1<<(i-1)
-                
-                vl tmp(x.begin()+(2*j+1)*z,x.begin()+(2*j+2)*z);
-                FOR(k,(2*j+1)*z,(2*j+2)*z) x[k] = 0;
-                tmp = Poly::NTT::conv(tmp,po10[i-1]); normalize(tmp);
-                F0R(k,2*z) {
-                    if (k < sz(tmp)) x[k+2*j*z] += tmp[k];
-                    if (x[k+2*j*z] >= base) {
-                        x[k+2*j*z] -= base;
-                        x[k+2*j*z+1] ++;
-                    }
-                }
-            }
-        }
-        normalize(x);
-        return x;
+        r = Poly::NTT::conv(r,po10[get(sz(in))-1]);
+        normalize(r);
+        
+        int z = max(sz(l),sz(r));
+        r.resize(z);
+        F0R(i,sz(l)) r[i] += l[i];
+        normalize(r);
+        return r;
     }
 };
 

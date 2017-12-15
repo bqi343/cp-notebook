@@ -22,13 +22,12 @@ struct BCC {
         
         for (int i: adj[u]) if (i != par[u]) {
             if (disc[i] == -1) {
-                par[i] = u;
-                child ++;
+                child ++; par[i] = u;
                 st.pb({u,i});
                 BCCutil(i);
                 low[u] = min(low[u],low[i]);
                 
-                if ((disc[u] == 0 && child > 1) || (disc[u] != 0 && disc[u] <= low[i])) {
+                if ((disc[u] == 0 && child > 1) || (disc[u] != 0 && disc[u] <= low[i])) { // checks for articulation point
                     vector<pii> tmp;
                     while (st.back() != mp(u,i)) tmp.pb(st.back()), st.pop_back();
                     tmp.pb(st.back()), st.pop_back();

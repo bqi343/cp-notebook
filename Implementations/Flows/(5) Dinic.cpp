@@ -1,4 +1,4 @@
-// http://www.geeksforgeeks.org/dinics-algorithm-maximum-flow/
+// source: GeeksForGeeks
 
 const int SZ = 1000;
  

@@ -1,6 +1,8 @@
-// http://codeforces.com/blog/entry/18462
-// https://sites.google.com/site/kc97ble/container/splay-tree/splaytree-cpp-3
-// 15 min
+/*
+Sources: 
+* http://codeforces.com/blog/entry/18462
+* https://sites.google.com/site/kc97ble/container/splay-tree/splaytree-cpp-3
+*/
 
 struct node{
     int val, sz;

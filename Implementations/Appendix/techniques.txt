@@ -1,4 +1,4 @@
-(from KACTL)
+Source: KACTL
 
 Recursion
 Divide and conquer

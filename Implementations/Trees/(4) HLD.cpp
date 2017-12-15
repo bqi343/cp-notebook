@@ -1,7 +1,7 @@
-// http://codeforces.com/blog/entry/22072
-// http://www.usaco.org/index.php?page=viewproblem2&cpid=102
+// Source: http://codeforces.com/blog/entry/22072
+// Use: http://www.usaco.org/index.php?page=viewproblem2&cpid=102
 
-// LazySegTree Template goes here
+[LazySegTree Template]
 
 vector<vi> graph;
 

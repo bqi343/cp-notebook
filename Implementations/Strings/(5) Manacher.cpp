@@ -1,7 +1,5 @@
-// http://codeforces.com/blog/entry/12143
-// Manacher's Algorithm: Calculates length of largest palindrome centered at each character of string
-// Also computes even-length palindromes
-// 9 min
+// Source: http://codeforces.com/blog/entry/12143
+// Calculates length of largest palindrome centered at each character of string
 
 vi manacher(string s) {
     string s1 = "@";

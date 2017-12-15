@@ -1,4 +1,4 @@
-// https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/LineContainer.h
+// Source: KACTL
 
 bool Q;
 struct Line {

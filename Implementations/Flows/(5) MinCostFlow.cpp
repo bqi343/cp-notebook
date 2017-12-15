@@ -1,4 +1,4 @@
-// http://www.geeksforgeeks.org/ford-fulkerson-algorithm-for-maximum-flow-problem/
+// Source: GeeksForGeeks
 
 struct Edge {
     int v, flow, C, rev, cost;

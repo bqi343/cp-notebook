@@ -30,6 +30,7 @@ I recommend that you use C++11 over Java due to various reasons, such as
 ### Books
   * [Competitive Programming Handbook (CPH)](https://cses.fi/book.pdf)
   * [Competitive Programming Book (Steven, Felix)](http://www.comp.nus.edu.sg/~stevenha/myteaching/competitive_programming/cp1.pdf)
+  * [Guide](https://github.com/alwayswimmin/cs_guide)
   * Introduction to Algorithms
 
 ### Courses
@@ -42,6 +43,7 @@ I recommend that you use C++11 over Java due to various reasons, such as
   * [Topcoder Tutorials](http://www.topcoder.com/community/data-science/data-science-tutorials/)
   * [Coding Library (radoslav11)](https://github.com/radoslav11/Coding-Library?files=1)
   * [CSAcademy](https://csacademy.com/lessons/)
+  * [TJSCT](https://activities.tjhsst.edu/sct/)
 
 ### ACM-ICPC Stuff
   * [Stanford](http://web.stanford.edu/class/cs97si/)

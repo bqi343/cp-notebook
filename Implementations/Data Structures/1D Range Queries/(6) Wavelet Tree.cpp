@@ -1,4 +1,7 @@
-// Source: https://ideone.com/Tkters
+/**
+* Source: https://ideone.com/Tkters
+* Unused
+*/
 
 int MAX = 1000000;
 int a[300000];
@@ -70,8 +73,4 @@ int main() {
 			cout << T.count(l, r, k) << endl;
 		}
 	}
-	return 0;
 }
-
-// read!
-// ll vs. int!

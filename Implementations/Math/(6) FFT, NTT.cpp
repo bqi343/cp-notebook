@@ -1,6 +1,7 @@
-// inspired by
-// https://github.com/kth-competitive-programming/kactl/blob/master/content/numerical/FFT.h
-// https://pastebin.com/3Tnj5mRu
+/**
+* inspired by KACTL
+* https://pastebin.com/3Tnj5mRu
+*/
 
 typedef complex<double> cd;
 typedef vector<cd> vcd;

@@ -1,4 +1,7 @@
-// Source: http://codeforces.com/blog/entry/13959
+/**
+* Source: http://codeforces.com/blog/entry/13959
+* Unused
+*/
 
 const int maxn = 1e5, sigma = 26;
  
@@ -28,11 +31,3 @@ void add_letter(int c) {
     }
     last = to[last][c];
 }
-
-int main() {
-	ios_base::sync_with_stdio(0);cin.tie(0);
-	
-}
-
-// read!
-// ll vs. int!

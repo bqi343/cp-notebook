@@ -1,5 +1,7 @@
-// Source: https://github.com/SuprDewd/T-414-AFLV/blob/master/11_strings/aflv_11_strings.pdf
-// Use: https://open.kattis.com/problems/suffixsorting
+/**
+* Source: SuprDewd CP Course
+* Task: https://open.kattis.com/problems/suffixsorting
+*/
 
 struct suffix_array {
     int N;

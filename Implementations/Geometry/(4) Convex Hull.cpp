@@ -1,6 +1,7 @@
-// https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain
-// 5 min
-// https://open.kattis.com/problems/convexhull
+/**
+* Source: Wikibooks
+* Task: https://open.kattis.com/problems/convexhull
+*/
 
 ll cross(pii O, pii A, pii B) {
     return (ll)(A.f-O.f)*(B.s-O.s)-(ll)(A.s-O.s)*(B.f-O.f);

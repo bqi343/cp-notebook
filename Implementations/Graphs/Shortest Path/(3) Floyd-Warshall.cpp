@@ -1,8 +1,10 @@
-// https://open.kattis.com/problems/allpairspath
+/**
+* Source: https://open.kattis.com/problems/allpairspath
+*/
 
 const ll INF = 1e18;
 
-int n,m,q;
+int n,m,q; // vertices, edges, queries
 ll dist[150][150], bad[150][150];
 
 void solve() {
@@ -32,11 +34,3 @@ void solve() {
     }
     cout << "\n";
 }
-
-int main() {
-    ios_base::sync_with_stdio(0);cin.tie(0);
-    while (cin >> n >> m >> q) solve();
-}
-
-// read!
-// ll vs. int!

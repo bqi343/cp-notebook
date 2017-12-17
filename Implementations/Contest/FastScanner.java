@@ -1,4 +1,6 @@
-// credits to UCF
+/**
+* Source: Matt Fontaine?
+*/
 
 class FastScanner {
     private InputStream stream;

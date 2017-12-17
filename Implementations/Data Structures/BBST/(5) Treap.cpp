@@ -1,6 +1,7 @@
-// Easiest BBST
-// https://github.com/kth-competitive-programming/kactl/blob/master/content/data-structures/Treap.h
-// lazy persistent order statistics tree!
+/**
+* Source: KACTL
+* Description: easiest BBST
+*/
 
 struct tnode {
     ll val, lazy;
@@ -108,16 +109,3 @@ int main() {
     root1->inOrder(1);
     cout << root->sz << " " << root1->sz << "\n";
 }
-
-/*
-Output:
-
-1 3 9 
-------------
-1 3 4 7 
-------------
-1 3 9 
-------------
-4 3
-
-*/

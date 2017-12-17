@@ -1,5 +1,3 @@
-// 3 min
-
 const int MX = 100001;
 
 struct scc {

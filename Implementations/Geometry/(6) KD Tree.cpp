@@ -1,6 +1,8 @@
-// https://github.com/kth-competitive-programming/kactl/blob/master/content/geometry/kdTree.h
-// supports nearest neighbor query in O(log n) assuming random distribution
-// have not used in actual contest
+/**
+* Source: KACTL
+* Description: Supports nearest neighbor query in O(log n) assuming random distribution
+* unused
+*/
 
 int t = 0, cur = 0;
 
@@ -85,6 +87,3 @@ int main() {
 	    cout << y.d[0] << " " << y.d[1] << " " << root->get(y).d[0] << " " << root->get(y).d[1] << "\n";
 	}
 }
-
-// read!
-// ll vs. int!

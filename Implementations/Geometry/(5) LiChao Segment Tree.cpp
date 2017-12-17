@@ -1,4 +1,7 @@
-// http://codeforces.com/blog/entry/51275?#comment-351413
+/**
+* Source: http://codeforces.com/blog/entry/51275?#comment-351413
+* Unused
+*/
 
 const int N = 100000 + 5;
 
@@ -44,6 +47,3 @@ int main() {
         }
     }
 }
-
-// read!
-// ll vs. int!

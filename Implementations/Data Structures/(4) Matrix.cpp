@@ -1,4 +1,6 @@
-// Source: KACTL
+/**
+* Source: KACTL
+*/
 
 template<int SZ> struct mat {
     array<array<ll,SZ>,SZ> d;

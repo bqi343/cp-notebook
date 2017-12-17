@@ -1,5 +1,4 @@
 // 1D range update, range query
-// 6 min
 
 template<int SZ> struct BIT {
     ll bit[2][SZ+1]; // sums piecewise linear functions

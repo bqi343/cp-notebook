@@ -26,19 +26,10 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 
 const int MOD = 1000000007;
 
-/*void solve() {
-    
-}*/
-
 int main() {
 	ios_base::sync_with_stdio(0);cin.tie(0);
-	/*int n; cin >> n;
-	FOR(i,1,n+1) {
-	    cout << "Case #" << i << ": ";
-	    solve();
-	    cout << "\n";
-	}*/
+	
 }
 
-// read!read!read!read!read!read!read!read!read!read!read!read!read!read!read!read!
+// read!read!read!read!read!read!read!
 // ll vs. int!

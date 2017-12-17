@@ -1,4 +1,9 @@
-// https://open.kattis.com/problems/segmentintersection
+/**
+* Source: https://open.kattis.com/problems/segmentintersection
+* If numbers are small enough, fractions are recommended.
+*/
+
+typedef pair<double,double> pdd;
 
 pii A,B,C,D;
 
@@ -54,6 +59,3 @@ int main() {
 	cout << fixed << setprecision(2);
 	F0R(i,n) solve();
 }
-
-// read!
-// ll vs. int!

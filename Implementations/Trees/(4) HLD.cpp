@@ -1,11 +1,13 @@
-// Source: http://codeforces.com/blog/entry/22072
-// Use: http://www.usaco.org/index.php?page=viewproblem2&cpid=102
+/**
+* Source: http://codeforces.com/blog/entry/22072
+* Task: http://www.usaco.org/index.php?page=viewproblem2&cpid=102
+*/
 
-[LazySegTree Template]
+// insert LazySegTree Template
 
 vector<vi> graph;
 
-template <int V> struct HeavyLight {
+template <int V> struct HeavyLight { // sum queries, sum updates
     int parent[V], heavy[V], depth[V];
     int root[V], treePos[V];
     LazySegTree<V> tree;
@@ -74,24 +76,3 @@ int main() {
 	    else cout << H.queryPath(A,B) << "\n";
 	}
 }
-
-/*
-Input 
-4 6
-1 4
-2 4
-3 4
-P 2 3
-P 1 3
-Q 3 4
-P 1 4
-Q 2 4
-Q 1 4
-*/
-
-/*
-Output
-2
-1
-2
-*/

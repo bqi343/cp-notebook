@@ -1,4 +1,7 @@
-// https://open.kattis.com/problems/shortestpath3
+/**
+* Source: https://open.kattis.com/problems/shortestpath3
+* Useful with linear programming
+*/
 
 const ll INF = 1e18;
 
@@ -26,14 +29,3 @@ void solve() {
     }
     cout << "\n";
 }
-
-int main() {
-	ios_base::sync_with_stdio(0);cin.tie(0);
-	while (cin >> n >> m >> q >> s) {
-	    if (n+m+q+s == 0) break;
-	    solve();
-	}
-}
-
-// read!
-// ll vs. int!

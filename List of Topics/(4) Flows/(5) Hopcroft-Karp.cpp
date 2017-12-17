@@ -1,5 +1,7 @@
-// Source: https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm
-// unused
+/*
+* Source: https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm
+* unused
+*/
   
 int Pair_U[100], Pair_V[100], Dist[100];
 vi U, V, Adj[100];
@@ -50,11 +52,3 @@ int HK () {
                     
     return matching;
 }
-    
-int main() {
-	ios_base::sync_with_stdio(0);cin.tie(0);
-	
-}
-
-// read!
-// ll vs. int!

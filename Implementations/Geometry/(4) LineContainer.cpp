@@ -1,4 +1,7 @@
-// Source: KACTL
+/**
+* Source: KACTL
+* Unused
+*/
 
 bool Q;
 struct Line {

@@ -53,8 +53,8 @@ struct node {
             point lo1 = lo; lo1.d[ax] = p[M].d[ax];
             point hi1 = hi; hi1.d[ax] = p[M].d[ax]-1;
             
-            if (M) c[0] = new node((ax+1)%2,lo,hi1,{p.begin(),p.begin()+M});
-            c[1] = new node((ax+1)%2,lo1,hi,{p.begin()+M,p.end()});
+            if (M) c[0] = new node((ax+1)%2,lo,hi1, {p.begin(),p.begin()+M});
+            c[1] = new node((ax+1)%2,lo1,hi, {p.begin()+M,p.end()});
         } else if (p.size() == 1) {
             pt = new point(p[0]);
         }

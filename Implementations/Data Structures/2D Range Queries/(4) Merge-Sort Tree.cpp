@@ -15,7 +15,8 @@ template<int SZ> struct mstree {
     }
     
     int query(int lox, int hix, int loy, int hiy) { // query number of elements within a rectangle
-        return query(hix,hiy)-query(lox-1,hiy)-query(hix,loy-1)+query(lox-1,loy-1);
+        return query(hix,hiy)-query(lox-1,hiy)
+            -query(hix,loy-1)+query(lox-1,loy-1);
     }
 };
 

@@ -1,7 +1,6 @@
 /*
-Sources: 
+* Source: 
 * http://codeforces.com/blog/entry/18462
-* https://sites.google.com/site/kc97ble/container/splay-tree/splaytree-cpp-3
 */
 
 struct node{

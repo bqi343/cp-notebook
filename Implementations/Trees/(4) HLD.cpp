@@ -1,6 +1,6 @@
 /**
 * Source: http://codeforces.com/blog/entry/22072
-* Task: http://www.usaco.org/index.php?page=viewproblem2&cpid=102
+* Task: USACO Grass Planting
 */
 
 // insert LazySegTree Template

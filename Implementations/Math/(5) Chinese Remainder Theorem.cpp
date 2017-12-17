@@ -1,4 +1,6 @@
-// https://open.kattis.com/problems/generalchineseremainder
+/**
+* Task: Kattis generalchineseremainder
+*/
 
 ll n,m,a,b; 
 map<ll,pii> M;

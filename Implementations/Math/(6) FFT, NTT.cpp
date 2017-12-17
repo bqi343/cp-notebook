@@ -21,8 +21,10 @@ namespace Poly {
             res = a;
             FOR(i,1,x+1) {
                 int inc = n>>i;
-                F0R(j,inc) for (int k = 0; k < n; k += inc)  // 1<<i numbers
-                    RES[k+j] = res[2*k%n+j]+roots[k]*res[2*k%n+j+inc];
+                F0R(j,inc) for (int k = 0; k < n; k += inc)  {
+                    int t = 2*k%n+j;
+                    RES[k+j] = res[t]+roots[k]*res[t+inc];
+                }
                 swap(res,RES);
             }
             
@@ -76,8 +78,10 @@ namespace Poly {
             res = a;
             FOR(i,1,x+1) {
                 int inc = n>>i;
-                F0R(j,inc) for (int k = 0; k < n; k += inc)  // 1<<i numbers
-                    RES[k+j] = (res[2*k%n+j]+roots[k]*res[2*k%n+j+inc]) % mod;
+                F0R(j,inc) for (int k = 0; k < n; k += inc) {
+                    int t = 2*k%n+j;
+                    RES[k+j] = (res[t]+roots[k]*res[t+inc]) % mod;
+                }
                 swap(res,RES);
             }
             

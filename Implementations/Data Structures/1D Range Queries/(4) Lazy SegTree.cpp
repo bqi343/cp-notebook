@@ -34,7 +34,7 @@ template<class T, int SZ> struct LazySegTree {
         if (lo <= L && R <= hi) return sum[ind];
         
         int M = (L+R)/2;
-        return qsum(lo,hi,2*ind,L,M)+qsum(lo,hi,2*ind+1,M+1,R);
+        return qsum(lo,hi,2*ind,L,M) + qsum(lo,hi,2*ind+1,M+1,R);
     }
 
     T qmin(int lo, int hi, int ind = 1, int L = 0, int R = SZ-1) {
@@ -43,7 +43,7 @@ template<class T, int SZ> struct LazySegTree {
         if (lo <= L && R <= hi) return mn[ind];
         
         int M = (L+R)/2;
-        return min(qmin(lo,hi,2*ind,L,M),qmin(lo,hi,2*ind+1,M+1,R));
+        return min(qmin(lo,hi,2*ind,L,M), qmin(lo,hi,2*ind+1,M+1,R));
     }
     
     void upd(int lo, int hi, ll inc, int ind = 1, int L = 0, int R = SZ-1) {

@@ -42,7 +42,8 @@ void solve() {
             cout << "Impossible\n";
             return;
         }
-        adj1[circuit[i]].erase(adj1[circuit[i]].find(circuit[i+1]));
+        int t = circuit[i];
+        adj1[t].erase(adj1[t].find(circuit[i+1]));
     }
     F0R(i,M+1) cout << circuit[i] << " ";
     cout << "\n";

@@ -69,7 +69,8 @@ struct node { // with lazy updates
         if (low <= L && R <= high) return val+lazy;
         if (R < low || high < L) return MOD;
         int M = (L+R)/2;
-        return lazy+min(c[0]->query(low,high,L,M),c[1]->query(low,high,M+1,R));
+        int t = min(c[0]->query(low,high,L,M),c[1]->query(low,high,M+1,R));
+        return lazy+t;
     }
     
     node* upd(int low, int high, int v, int L, int R) {

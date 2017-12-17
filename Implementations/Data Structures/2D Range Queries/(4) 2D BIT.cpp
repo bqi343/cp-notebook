@@ -13,7 +13,8 @@ template<int SZ> struct BIT2D {
         return ans;
     }
     int query(int X1, int X2, int Y1, int Y2) {
-        return query(X2,Y2)-query(X1-1,Y2)-query(X2,Y1-1)+query(X1-1,Y1-1);
+        return query(X2,Y2)-query(X1-1,Y2)
+            -query(X2,Y1-1)+query(X1-1,Y1-1);
     }
 };
 

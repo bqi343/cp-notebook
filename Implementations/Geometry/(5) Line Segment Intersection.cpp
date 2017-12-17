@@ -24,7 +24,8 @@ int sgn(pii a, pii b, pii c) {
 }
 
 pdd get(pii a, pii b, pii c, pii d) {
-    return (abs(sgn(a,b,c))*d+abs(sgn(a,b,d))*c)/(abs(sgn(a,b,c))+abs(sgn(a,b,d)));
+    return (abs(sgn(a,b,c))*d+abs(sgn(a,b,d))*c)
+     /(abs(sgn(a,b,c))+abs(sgn(a,b,d)));
 }
 
 void solve() {

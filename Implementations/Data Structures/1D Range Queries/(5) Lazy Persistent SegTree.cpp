@@ -1,3 +1,31 @@
+#include <bits/stdc++.h>
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+
+using namespace std;
+using namespace __gnu_pbds;
+ 
+typedef long long ll;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
+template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
+
+#define FOR(i, a, b) for (int i=a; i<(b); i++)
+#define F0R(i, a) for (int i=0; i<(a); i++)
+#define FORd(i,a,b) for (int i = (b)-1; i >= a; i--)
+#define F0Rd(i,a) for (int i = (a)-1; i >= 0; i--)
+
+#define sz(x) (int)(x).size()
+#define mp make_pair
+#define pb push_back
+#define f first
+#define s second
+#define lb lower_bound
+#define ub upper_bound
+#define all(x) x.begin(), x.end()
+
+const int MOD = 1000000007;
+
 struct Node { // without lazy updates
     int val = 0;
     Node* c[2];
@@ -57,7 +85,6 @@ struct node { // with lazy updates
     
     void push() {
         if (!lazy) return;
-        val += lazy;
         F0R(i,2) if (c[i]) {
             c[i] = new node(*c[i]);
             c[i]->lazy += lazy;
@@ -66,7 +93,7 @@ struct node { // with lazy updates
     }
     
     int query(int low, int high, int L, int R) {  
-        if (low <= L && R <= high) return val+lazy;
+        if (low <= L && R <= high) return val;
         if (R < low || high < L) return MOD;
         int M = (L+R)/2;
         int t = min(c[0]->query(low,high,L,M),c[1]->query(low,high,M+1,R));
@@ -74,14 +101,13 @@ struct node { // with lazy updates
     }
     
     node* upd(int low, int high, int v, int L, int R) {
-        push();
         if (R < low || high < L) return this;
         node* x = copy();
-        
         if (low <= L && R <= high) {
-            x->lazy = v; x->push();
+            x->lazy += v, x->val += v;
             return x;
         }
+        push();
         
         int M = (L+R)/2;
         x->c[0] = x->c[0]->upd(low,high,v,L,M);
@@ -93,7 +119,7 @@ struct node { // with lazy updates
     
     void build(vi& arr, int L, int R) {
         if (L == R) {
-            if (L < (int)arr.size()) val = arr[L];
+            if (L < sz(arr)) val = arr[L];
             else val = 0;
             return;
         }

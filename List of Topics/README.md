@@ -69,8 +69,8 @@
   * Math
   	* Combo
   	* NT
-  * Misc
-  	* Majority Algo
+  * [Majority Algorithm](https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm)
+    * [DCJ Practice 2015 C](https://code.google.com/codejam/contest/4264486/dashboard#s=p2)
   * Data Structures
     * Persistent SegTree
     * BBST

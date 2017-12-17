@@ -42,11 +42,3 @@ void solve() {
         test(z);
     }
 }
-
-int main() {
-    ios_base::sync_with_stdio(0);cin.tie(0);
-    while (cin >> n) {
-        if (n == 0) break;
-        solve();
-    }
-}

@@ -57,7 +57,6 @@ struct node { // with lazy updates
     
     void push() {
         if (!lazy) return;
-        val += lazy;
         F0R(i,2) if (c[i]) {
             c[i] = new node(*c[i]);
             c[i]->lazy += lazy;
@@ -74,14 +73,13 @@ struct node { // with lazy updates
     }
     
     node* upd(int low, int high, int v, int L, int R) {
-        push();
         if (R < low || high < L) return this;
-        node* x = copy();
-        
         if (low <= L && R <= high) {
-            x->lazy = v; x->push();
+            x->lazy += v, x->val += v;
             return x;
         }
+        push();
+        node* x = copy();
         
         int M = (L+R)/2;
         x->c[0] = x->c[0]->upd(low,high,v,L,M);

@@ -1,18 +1,19 @@
-// source: GeeksForGeeks
-
-const int SZ = 1000;
+/**
+* Source: GeeksForGeeks
+* Used
+*/
  
 struct Edge {
     int v, flow, C, rev;
 };
  
-struct Dinic {
+template<int SZ> struct Dinic {
     int level[SZ], start[SZ];
     vector<Edge> adj[SZ]; 
      
     void addEdge(int u, int v, int C) {
-        Edge a{v, 0, C, (int)adj[v].size()};
-        Edge b{u, 0, 0, (int)adj[u].size()};
+        Edge a{v, 0, C, sz(adj[v])};
+        Edge b{u, 0, 0, sz(adj[u])};
         adj[u].pb(a), adj[v].pb(b); 
     } 
      
@@ -67,7 +68,7 @@ struct Dinic {
     } 
 };
   
-Dinic D;
+Dinic<1000> D;
 
 int main() {
     D.addEdge(0, 1, 16 );

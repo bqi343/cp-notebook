@@ -13,8 +13,7 @@ struct Dinic {
     void addEdge(int u, int v, int C) {
         Edge a{v, 0, C, (int)adj[v].size()};
         Edge b{u, 0, 0, (int)adj[u].size()};
-        adj[u].pb(a);
-        adj[v].pb(b); 
+        adj[u].pb(a), adj[v].pb(b); 
     } 
      
     bool BFS(int s, int t) {
@@ -55,7 +54,7 @@ struct Dinic {
         return 0;
     }
      
-    int DinicMaxflow(int s, int t) {
+    int maxFlow(int s, int t) {
         if (s == t) return -1;
         int total = 0;  
       
@@ -82,5 +81,5 @@ int main() {
     D.addEdge(4, 3, 7 );
     D.addEdge(4, 5, 4);
   
-    cout << "Maximum flow " << D.DinicMaxflow(0, 5);
+    cout << "Maximum flow " << D.maxFlow(0, 5);
 }

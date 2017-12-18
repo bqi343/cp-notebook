@@ -35,8 +35,7 @@ void rot(snode* x, int d) {
 }
 
 snode* splay(snode* x) {
-    if (!x) return x;
-    while (x->p) {
+    while (x && x->p) {
         snode* y = x->p, *z = y->p;
         int dy = getDir(y, x), dz = getDir(z, y);
         if (!z) rot(y, dy);
@@ -46,14 +45,20 @@ snode* splay(snode* x) {
     return x;
 }
 
-snode* find(snode *cur, int v) { // first one >= v
-    if (!cur) return NULL;
-    snode* x;
+pair<snode*,snode*> find(snode *cur, int v) { 
+    // first one >= v
+    // x.f is result, x.s is lowest
+    if (!cur) return {cur,cur};
     if (cur->val >= v) {
-        x = find(cur->c[0],v);
-        return x?x:cur;
-    } 
-    return find(cur->c[1],v);
+        auto x = find(cur->c[0],v);
+        if (!x.f) x.f = cur;
+        if (!x.s) x.s = cur;
+        return x;
+    } else {
+        auto x = find(cur->c[1],v);
+        if (!x.s) x.s = cur;
+        return x;
+    }
 }
 
 snode* getmx(snode* x) {
@@ -64,18 +69,16 @@ snode* getmx(snode* x) {
 
 pair<snode*,snode*> split(snode* x, int v) {
     if (!x) return {x,x};
-    snode* y = find(x,v);
-    if (!y) return {splay(getmx(x)),NULL};
+    auto y = find(x,v); y.s = splay(y.s);
+    if (!y.f) return {y.s,NULL};
     
-    y = splay(y); 
-    auto z = y->c[0]; setLink(y,NULL,0), setLink(NULL,z,0);
-    return {z,y};
+    y.f = splay(y.f); 
+    auto z = y.f->c[0]; setLink(y.f,NULL,0), setLink(NULL,z,0);
+    return {z,y.f};
 }
 
 snode* merge(snode* x, snode* y) {
     if (!x) return y;
-    if (!y) return x;
-    
     x = splay(getmx(x));
     setLink(x,y,1);
     return x;

@@ -2,19 +2,14 @@
 
 [CPC.9](https://github.com/SuprDewd/T-414-AFLV/tree/master/09_mathematics)
 
-## Number Theory
+## Algebra
 
-### 5
-  * Tutorial
-    * CPH (21, NT)
-  * Topics
-    * Modular Inverse
-    * Chinese Remainder Theorem
-    * Phi Function
-    * Eratosthenes' Sieve
-
-### Other
-  * **NTT / FFT**
+### 6
+  * Karatsuba
+    * [Wikipedia](https://en.wikipedia.org/wiki/Karatsuba_algorithm)
+    * [Implementation](http://codeforces.com/contest/623/submission/15807539)
+    * Typically not needed due to FFT / NTT.
+  * FFT / NTT
     * Tutorial
       * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)
       * [CF Tutorial Pt 2](http://codeforces.com/blog/entry/48798)
@@ -27,6 +22,17 @@
       * [Counting Triplets](https://toph.co/p/counting-triplets)
       * [A2OJ](https://a2oj.com/category?ID=42)
 
+## Number Theory
+
+### 5
+  * Tutorial
+    * CPH (21, NT)
+  * Topics
+    * Modular Inverse
+    * Chinese Remainder Theorem
+    * Phi Function
+    * Eratosthenes' Sieve
+
 ## Combinatorics
 
 ### 5
@@ -38,7 +44,7 @@
     * [Barrels & Boxes](http://codeforces.com/contest/768/problem/F) [](83)
     * [String Mark](http://codeforces.com/contest/895/problem/D) [](108)
 
-### Other
+### 6
   *Some problems sourced from [here.](http://codeforces.com/blog/entry/54526?#comment-385354)*
   * Game Theory
     * Tutorial

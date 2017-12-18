@@ -1,116 +1,108 @@
 /*
-* Source: 
-* http://codeforces.com/blog/entry/18462
+* Based off treap code.
 */
 
-struct node{
-    int val, sz;
-    node *p, *c[2];
-    node (int v) {
-        val = v, sz = 1;
+struct snode {
+    int val;
+    snode *p, *c[2];
+    snode (int v) {
+        val = v;
+        c[0] = c[1] = p = NULL;
     }
-    void recalc() {
-        sz = 1;
-        if (c[0]) sz += c[0]->sz;
-        if (c[1]) sz += c[1]->sz;
+    void inOrder(bool f = 0) {
+        if (c[0]) c[0]->inOrder();
+        cout << val << " ";
+        if (c[1]) c[1]->inOrder();
+        if (f) cout << "\n------------\n";
     }
 };
 
-node *root;
-
-void setLink(node *x, node *y, int d) {
-    if (x) {
-        x->c[d] = y;
-        x->recalc();
-    }
+void setLink(snode* x, snode* y, int d) {
+    if (x) x->c[d] = y;
     if (y) y->p = x;
 }
 
-int getDir(node *x, node *y) {
+int getDir(snode* x, snode* y) {
     if (!x) return -1;
     return x->c[0] == y ? 0 : 1;
 }
 
-void rot(node *x, int d) {
-    node *y = x->c[d], *z = x->p;
+void rot(snode* x, int d) {
+    snode *y = x->c[d], *z = x->p;
     setLink(x, y->c[d^1], d);
     setLink(y, x, d^1);
     setLink(z, y, getDir(z, x));
-    x->recalc(), y->recalc();
 }
 
-void splay(node *x) {
+snode* splay(snode* x) {
+    if (!x) return x;
     while (x->p) {
-        node *y = x->p, *z = y->p;
+        snode* y = x->p, *z = y->p;
         int dy = getDir(y, x), dz = getDir(z, y);
         if (!z) rot(y, dy);
         else if (dy == dz) rot(z, dz), rot(y, dy);
         else rot(y, dy), rot(z, dz);
     }
-    root = x;
+    return x;
 }
 
-node* ins(node* cur, int v) {
-    if (!cur) return cur = new node(v);
-    if (cur->val == v) return cur;
-    int t = v < cur->val ? 0 : 1;
+snode* find(snode *cur, int v) { // first one >= v
+    if (!cur) return NULL;
+    snode* x;
+    if (cur->val >= v) {
+        x = find(cur->c[0],v);
+        return x?x:cur;
+    } 
+    return find(cur->c[1],v);
+}
+
+snode* getmx(snode* x) {
+    if (!x) return x;
+    if (x->c[1]) return getmx(x->c[1]);
+    return x;
+}
+
+pair<snode*,snode*> split(snode* x, int v) {
+    if (!x) return {x,x};
+    snode* y = find(x,v);
+    if (!y) return {splay(getmx(x)),NULL};
     
-    if (!cur->c[t]) {
-        setLink(cur,new node(v),t);
-        return cur->c[t];
-    } else {
-        node* x = ins(cur->c[t],v); 
-        cur->recalc();
-        return x;
-    }
+    y = splay(y); 
+    auto z = y->c[0]; setLink(y,NULL,0), setLink(NULL,z,0);
+    return {z,y};
 }
 
-void ins(int val) {
-    splay(ins(root,val));
-}
-
-bool find(node *cur, int v) {
-    if (!cur) return 0;
-    if (cur->val == v) {
-        splay(cur);
-        return 1;
-    }
-    return find(cur->c[v < cur->val ? 0 : 1],v);
-}
-
-bool del(int v) {
-    if (!find(root,v)) return 0;
-    node *N = root, *P = N->c[0];
-    if(!P) {
-        root = N->c[1]; root->p = NULL, delete N;
-        return 1;
-    }
+snode* merge(snode* x, snode* y) {
+    if (!x) return y;
+    if (!y) return x;
     
-    while(P->c[1]) P = P->c[1];
-    setLink(P,N->c[1],1);
-    root = N->c[0], root->p = NULL, delete N;
+    x = splay(getmx(x));
+    setLink(x,y,1);
+    return x;
+}
+
+snode* ins(snode* x, int v) { // insert value v
+    auto a = split(x,v);
+    return merge(merge(a.f, new snode(v)),a.s);
+}
+
+snode* del(snode* x, int v) { // delete all values equal to v
+    auto a = split(x,v), b = split(a.s,v+1);
+    return merge(a.f,b.s);
+}
+
+snode* root;
     
-    while (P) {
-        P->recalc();
-        P = P->p;
-    }
-    return 1;
-}
-
-void inOrder(node* cur) {
-    if (!cur) return;
-    cout << "NODE " << cur->val << ": SIZE " << cur->sz << "\n";
-    if (cur->c[0]) cout << "LEFT: " << cur->c[0]->val << "\n";
-    if (cur->c[1]) cout << "RIGHT: " << cur->c[1]->val << "\n";
-    cout << "\n";
-    inOrder(cur->c[0]);
-    inOrder(cur->c[1]);
-}
-
 int main() {
-    for (int i = 0; i < 10; ++i) ins(rand() % 50);
-    inOrder(root);
-    cout << "--------\n\n";
-    del(21);
-    inOrder(root);
+    root = ins(root,1);
+    root = ins(root,9);
+    root = ins(root,3);
+    
+    root->inOrder(1);
+    
+    root = ins(root,7);
+    root = ins(root,4);
+    root = del(root,9);
+    
+    root->inOrder(1);
 }

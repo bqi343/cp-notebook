@@ -1,3 +1,7 @@
+/**
+* Source: USACO Camp
+*/
+
 const int MAXN = 100001, MAXK = 17;
 
 int Q;

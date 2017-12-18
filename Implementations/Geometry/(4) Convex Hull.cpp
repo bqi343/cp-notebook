@@ -1,6 +1,6 @@
 /**
 * Source: Wikibooks
-* Task: https://open.kattis.com/problems/convexhull
+* Usage: https://open.kattis.com/problems/convexhull
 */
 
 ll cross(pii O, pii A, pii B) {
@@ -27,7 +27,7 @@ vector<pii> convex_hull(vector<pii> P) {
     }
     up.pop_back();
     
-    bot.insert(bot.end(),up.begin(),up.end());
+    bot.insert(bot.end(),all(up));
     return bot;
 }
 

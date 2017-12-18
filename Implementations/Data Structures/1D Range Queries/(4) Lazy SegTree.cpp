@@ -1,7 +1,9 @@
-// 1D range update, range query
-// Inspiration: USACO Counting Haybales
+/**
+* Source: USACO Counting Haybales
+* 1D range update, range query
+*/
 
-const ll INF = MOD; // change if ll ...
+const ll INF = 1e18; 
 
 template<class T, int SZ> struct LazySegTree {
     T sum[2*SZ], mn[2*SZ], lazy[2*SZ]; // set SZ to a power of 2
@@ -61,8 +63,4 @@ template<class T, int SZ> struct LazySegTree {
     }
 };
 
-int main() {
-    LazySegTree<int,1<<17> seg;
-    seg.upd(2,5,7);
-    cout << seg.qsum(1,2) << " " << seg.qsum(4,6) << " " << seg.qmin(3,4) << "\n"; // 7 14 7
-}
+// LazySegTree<ll,1<<17> b;

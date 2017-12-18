@@ -1,4 +1,6 @@
-// Source: GeeksForGeeks
+/**
+* Source: GeeksForGeeks
+*/
 
 struct Edge {
     int v, flow, C, rev, cost;
@@ -11,8 +13,8 @@ template<int SZ> struct mcf {
     vector<Edge> adj[SZ];
 
     void addEdge(int u, int v, int C, int cost) {
-        Edge a{v, 0, C, (int)adj[v].size(), cost};
-        Edge b{u, 0, 0, (int)adj[u].size(), -cost};
+        Edge a{v, 0, C, sz(adj[v]), cost};
+        Edge b{u, 0, 0, sz(adj[u]), -cost};
         adj[u].pb(a), adj[v].pb(b);
     }
 

@@ -1,3 +1,7 @@
+/**
+* Source: own?
+*/
+
 template<int MX> struct tri {
     int nex = 0, ans = 0;
     int trie[MX][2]; // easily changed to character

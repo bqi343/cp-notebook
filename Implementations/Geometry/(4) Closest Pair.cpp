@@ -1,5 +1,8 @@
-// https://open.kattis.com/problems/closestpair2
-// Nlog^2N
+/**
+* Source: GeeksForGeeks
+* Description: Nlog^2N, can be improved
+* Use: https://open.kattis.com/problems/closestpair2
+*/
 
 pair<double,pair<pdd,pdd>> MN = {INF,{{0,0},{0,0}}};
 

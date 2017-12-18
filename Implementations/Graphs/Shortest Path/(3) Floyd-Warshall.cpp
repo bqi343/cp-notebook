@@ -1,5 +1,6 @@
 /**
-* Source: https://open.kattis.com/problems/allpairspath
+* Source: own
+* Usage: https://open.kattis.com/problems/allpairspath
 */
 
 const ll INF = 1e18;

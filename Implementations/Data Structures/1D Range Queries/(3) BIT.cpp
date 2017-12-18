@@ -1,27 +1,23 @@
-// 1D point update, range query
+/**
+* Source: own
+* Description: 1D point update, range query
+*/
 
-template<int SZ> struct BIT {
-    int bit[SZ+1];
+template<class T, int SZ> struct BIT {
+    T bit[SZ+1];
     
-    BIT() {
-        memset(bit,0,sizeof bit);
-    }
+    BIT() { memset(bit,0,sizeof bit); }
     
-    void upd(int k, int val) {
+    void upd(int k, T val) { // add val to index k
         for( ;k <= SZ; k += (k&-k)) bit[k] += val;
     }
     
-    int query(int k) {
-        int temp = 0;
+    T query(int k) {
+        T temp = 0;
         for (;k > 0;k -= (k&-k)) temp += bit[k];
         return temp;
     }
-    int query(int l, int r) { return query(r)-query(l-1); }
+    T query(int l, int r) { return query(r)-query(l-1); } // range query [l,r]
 };
 
-int main() {
-    BIT<1<<17> b;
-    b.upd(5,2);
-    b.upd(4,1);
-    cout << b.query(3,5) << "\n";
-}
+// BIT<int,1<<17> b;

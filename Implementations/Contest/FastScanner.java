@@ -1,5 +1,5 @@
 /**
-* Source: Matt Fontaine?
+* Source: Matt Fontaine
 */
 
 class FastScanner {

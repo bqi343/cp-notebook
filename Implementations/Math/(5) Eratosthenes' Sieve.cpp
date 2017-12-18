@@ -1,4 +1,7 @@
-// https://open.kattis.com/problems/primesieve
+/**
+* Source: KACTL?
+* https://open.kattis.com/problems/primesieve
+*/
 
 template<int SZ> struct Sieve {
     bitset<SZ+1> comp;
@@ -12,16 +15,3 @@ template<int SZ> struct Sieve {
         return !comp[x];
     }
 };
-
-int n,q,ans=0;
-
-int main() {
-    ios_base::sync_with_stdio(0);cin.tie(0);
-    Sieve<100000000> s; cin >> n >> q;
-    FOR(i,1,n+1) if (s.isprime(i)) ans ++;
-    cout << ans << "\n";
-    F0R(i,q) {
-        int x; cin >> x;
-        cout << s.isprime(x) << "\n";
-    }
-}

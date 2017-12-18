@@ -1,5 +1,6 @@
 /**
-* Task: Kattis generalchineseremainder
+* Source: Own
+* Usage: Kattis generalchineseremainder
 */
 
 ll n,m,a,b; 

@@ -1,6 +1,5 @@
 /**
 * Source: GeeksForGeeks
-* Used
 */
  
 struct Edge {

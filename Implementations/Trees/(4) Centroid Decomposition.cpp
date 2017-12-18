@@ -1,3 +1,7 @@
+/**
+* Source: own
+*/
+
 const int MX = 100001;
 
 int N, visit[MX], sub[MX], par[MX];

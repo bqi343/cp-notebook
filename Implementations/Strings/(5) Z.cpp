@@ -1,5 +1,7 @@
-// Source: http://codeforces.com/blog/entry/3107
-// better than KMP?
+/**
+* Source: http://codeforces.com/blog/entry/3107
+* similar to KMP
+*/
 
 vi z(string s) {
     int N = s.length(); s += '#';

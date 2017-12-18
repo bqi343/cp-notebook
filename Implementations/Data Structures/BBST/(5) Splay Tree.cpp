@@ -1,5 +1,5 @@
 /*
-* Based off treap code.
+* Description: based off treap code
 */
 
 struct snode {
@@ -45,26 +45,19 @@ snode* splay(snode* x) {
     return x;
 }
 
-pair<snode*,snode*> find(snode *cur, int v) { 
-    // first one >= v
-    // x.f is result, x.s is lowest
+pair<snode*,snode*> find(snode *cur, int v) { // x.f is result, x.s is lowest
     if (!cur) return {cur,cur};
+    pair<snode*,snode*> x;
     if (cur->val >= v) {
-        auto x = find(cur->c[0],v);
+        x = find(cur->c[0],v);
         if (!x.f) x.f = cur;
-        if (!x.s) x.s = cur;
-        return x;
-    } else {
-        auto x = find(cur->c[1],v);
-        if (!x.s) x.s = cur;
-        return x;
-    }
+    } else x = find(cur->c[1],v); 
+    if (!x.s) x.s = cur;
+    return x;
 }
 
 snode* getmx(snode* x) {
-    if (!x) return x;
-    if (x->c[1]) return getmx(x->c[1]);
-    return x;
+    return x->c[1]?getmx(x->c[1]):x;
 }
 
 pair<snode*,snode*> split(snode* x, int v) {

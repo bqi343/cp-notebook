@@ -1,5 +1,7 @@
-// https://open.kattis.com/problems/eulerianpath
-// extra log factor
+/**
+* Description: extra log factor
+* Usage: https://open.kattis.com/problems/eulerianpath
+*/
 
 vi circuit;
 multiset<int> adj[10000], adj1[10000];

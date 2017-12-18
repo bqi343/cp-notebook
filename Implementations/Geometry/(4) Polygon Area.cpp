@@ -1,6 +1,6 @@
 /**
 * Description: Shoelace Formula
-* Task: https://open.kattis.com/problems/polygonarea
+* Usage: https://open.kattis.com/problems/polygonarea
 */ 
 
 double area(vector<pii> v) {

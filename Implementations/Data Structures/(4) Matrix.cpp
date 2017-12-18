@@ -44,15 +44,9 @@ template<int SZ> struct mat {
     }
 };
 
-int main() {
-	ios_base::sync_with_stdio(0);cin.tie(0);
-	mat<2> x; 
-	x.d[0][0] = 1, x.d[1][0] = 2, x.d[1][1] = 1, x.d[0][1] = 3;
-	x.print();
-	
-	mat<2> y = x*x;
-	y.print();
-	
-	mat<2> z = x^5;
-	z.print();
-}
+/*
+mat<2> x; x.d[0][0] = 1, x.d[1][0] = 2, x.d[1][1] = 1, x.d[0][1] = 3;
+mat<2> y = x*x;
+mat<2> z = x^5;
+x.print(), y.print(), z.print();
+*/

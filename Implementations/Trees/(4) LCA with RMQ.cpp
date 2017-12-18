@@ -1,4 +1,7 @@
-// Euler Tour LCA w/ O(1) query
+/**
+* Description: Euler Tour LCA w/ O(1) query
+* Source: own
+*/
 
 const int MAXN = 100001, MAXK = 17;
 

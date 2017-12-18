@@ -1,5 +1,7 @@
-// Source: http://codeforces.com/blog/entry/12143
-// Calculates length of largest palindrome centered at each character of string
+/**
+* Source: http://codeforces.com/blog/entry/12143
+* Description: Calculates length of largest palindrome centered at each character of string
+*/
 
 vi manacher(string s) {
     string s1 = "@";

@@ -1,5 +1,7 @@
-// 2D Segment Tree and SegBIT
-// 2D Point Update, Range Query
+/**
+* Source: USACO Mowing the Field
+* Description: 2D Point Update, Range Query
+*/
 
 const int SZ = 1<<17;
 
@@ -90,8 +92,6 @@ Node n;
 SegBit s;
 
 int main() {
-    ios_base::sync_with_stdio(0);cin.tie(0);
-    
     n.upd(5,7,2);
     n.upd(3,2,20);
     n.upd(5,8,200);

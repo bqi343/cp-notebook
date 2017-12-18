@@ -1,3 +1,7 @@
+/**
+* Source: Own
+*/
+
 template<int SZ> struct Combo {
     ll fac[SZ+1], ifac[SZ+1];
     

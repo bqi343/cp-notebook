@@ -1,4 +1,7 @@
-// https://open.kattis.com/problems/pointinpolygon
+/**
+* Source: own
+* Usage: https://open.kattis.com/problems/pointinpolygon
+*/
 
 int n,m;
 pii p[1000];

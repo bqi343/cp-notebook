@@ -1,5 +1,5 @@
 /**
-* Source: Wikipeddia
+* Source: Wikipedia
 * unused
 */
 

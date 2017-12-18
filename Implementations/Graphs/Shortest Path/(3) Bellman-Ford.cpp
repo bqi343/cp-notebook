@@ -1,6 +1,7 @@
 /**
-* Source: https://open.kattis.com/problems/shortestpath3
-* Useful with linear programming
+* Source: own
+* Description: can be useful with linear programming
+* Usage: https://open.kattis.com/problems/shortestpath3
 */
 
 const ll INF = 1e18;

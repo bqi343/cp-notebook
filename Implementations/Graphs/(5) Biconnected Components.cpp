@@ -1,4 +1,6 @@
-// http://www.geeksforgeeks.org/biconnected-components/
+/**
+* Source: http://www.geeksforgeeks.org/biconnected-components/
+*/
 
 struct BCC {
     int V, ti = 0;

@@ -1,3 +1,7 @@
+/**
+* Source: StackOverflow
+*/
+
 struct cmp {
     bool operator()(const int& l, const int& r) const {
         return l > r;
@@ -13,13 +17,3 @@ struct hsh {
 set<int,cmp> s;
 map<int,int,cmp> m;
 unordered_map<pii,int,hsh> u;
-
-int main() {
-	cout << "---\nSET\n---\n";
-	s.insert(1), s.insert(2);
-	for (int i: s) cout << i << "\n";
-	
-	cout << "---\nMAP\n---\n";
-	m[1] = 5, m[2] = 10;
-	for (pii i: m) cout << i.f << " " << i.s << "\n";
-}

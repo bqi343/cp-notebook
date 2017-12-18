@@ -1,3 +1,8 @@
+/**
+* Source: Wikipedia
+* Description: generates SCC in topological order
+*/ 
+
 const int MX = 100001;
 
 struct scc {
@@ -22,13 +27,12 @@ struct scc {
     }
     
     void addEdge(int a, int b) {
-		adj[a].pb(b);
-		radj[b].pb(a);
+		adj[a].pb(b), radj[b].pb(a);
     }
     
     void genSCC() {
     	FOR(i,1,N+1) if (!visit[i]) dfs(i);
-    	reverse(todo.begin(),todo.end());
+    	reverse(all(todo)); // toposort 
     	for (int i: todo) if (!comp[i]) dfs2(i,i);
     }
 };

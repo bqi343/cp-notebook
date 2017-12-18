@@ -1,3 +1,7 @@
+/**
+* Source: own
+*/
+
 typedef pair<ll, ll> pll;
 
 template<class T> pair<T,T> operator+(const pair<T,T>& l, const pair<T,T>& r) {

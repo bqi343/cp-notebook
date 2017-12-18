@@ -1,3 +1,7 @@
+/**
+* Source: own
+*/
+
 template<class T> pair<T,T> operator+(const pair<T,T>& l, const pair<T,T>& r) {
     return {l.f+r.f,l.s+r.s};
 }

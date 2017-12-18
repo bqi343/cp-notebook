@@ -1,4 +1,7 @@
-// 1D point update, range query
+/*
+* Source: http://codeforces.com/blog/entry/18051
+* Description: 1D point update, range query
+*/
 
 template<class T, int SZ> struct Seg {
     T seg[2*SZ], MN = 0;
@@ -27,9 +30,4 @@ template<class T, int SZ> struct Seg {
     }
 };
 
-int main() {
-    Seg<int,1<<17> s;
-    s.upd(5,2);
-    s.upd(4,1);
-    cout << s.query(3,5) << "\n";
-}
+// Seg<int,1<<17> b;

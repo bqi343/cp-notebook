@@ -1,3 +1,7 @@
+/**
+* Source: http://codeforces.com/blog/entry/47108?#comment-315047
+*/
+
 struct Node { // without lazy updates
     int val = 0;
     Node* c[2];
@@ -11,7 +15,8 @@ struct Node { // without lazy updates
         if (low <= L && R <= high) return val;
         if (R < low || high < L) return MOD;
         int M = (L+R)/2;
-        return min(c[0]->query(low,high,L,M),c[1]->query(low,high,M+1,R));
+        return min(c[0]->query(low,high,L,M),
+                   c[1]->query(low,high,M+1,R));
     }
     
     Node* upd(int ind, int v, int L, int R) {
@@ -68,8 +73,8 @@ struct node { // with lazy updates
         if (low <= L && R <= high) return val;
         if (R < low || high < L) return MOD;
         int M = (L+R)/2;
-        int t = min(c[0]->query(low,high,L,M),c[1]->query(low,high,M+1,R));
-        return lazy+t;
+        return lazy+min(c[0]->query(low,high,L,M), 
+                        c[1]->query(low,high,M+1,R));
     }
     
     node* upd(int low, int high, int v, int L, int R) {

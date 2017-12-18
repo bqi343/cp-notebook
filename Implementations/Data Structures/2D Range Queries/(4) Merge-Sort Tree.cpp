@@ -1,3 +1,7 @@
+/**
+* Source: own
+*/
+
 template<int SZ> struct mstree { 
     Tree<pii> val[SZ+1]; // for offline queries use vector with binary search instead
     

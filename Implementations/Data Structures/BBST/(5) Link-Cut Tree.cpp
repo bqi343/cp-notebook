@@ -1,3 +1,7 @@
+/**
+* Source: Dhruv Rohatgi
+*/
+
 int p[100001], pp[100001], c[100001][2], sum[100001];
 
 int getDir(int x, int y) {
@@ -29,13 +33,13 @@ void splay(int x) {
     }
 }
 
-void dis(int v, int d) { // fix
+void dis(int v, int d) { 
     p[c[v][d]] = 0, pp[c[v][d]] = v;
     sum[v] -= sum[c[v][d]];
     c[v][d] = 0; 
 }
 
-void con(int v, int d) { // fix
+void con(int v, int d) { 
     c[pp[v]][d] = v;
     sum[pp[v]] += sum[v];
     p[v] = pp[v], pp[v] = 0;

@@ -1,6 +1,5 @@
 /**
-* inspired by KACTL
-* https://pastebin.com/3Tnj5mRu
+* Sources: KACTL, https://pastebin.com/3Tnj5mRu
 */
 
 typedef complex<double> cd;

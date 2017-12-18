@@ -1,5 +1,7 @@
 /*
-* Also see lazy persistent treap.
+* Source: own?
+* Description: Easiest BBST
+* Note: Also see lazy persistent treap.
 */
 
 struct tnode {

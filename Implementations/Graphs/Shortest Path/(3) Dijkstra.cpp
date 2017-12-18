@@ -1,3 +1,7 @@
+/**
+* Source: own
+*/
+
 template<int SZ> struct Dijkstra {
     int dist[SZ];
     vector<pii> adj[SZ];

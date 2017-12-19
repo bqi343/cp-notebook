@@ -29,8 +29,7 @@
 ## 3
   * Shortest Path
     * Types
-      * Dijkstra
-      * Shortest Path Faster Algorithm
+      * Dijkstra (+Shortest Path Faster Algorithm)
       * Floyd-Warshall
       * Bellman-Ford
     * Tutorial
@@ -53,7 +52,7 @@
       * [Quantum](https://open.kattis.com/contests/acpc17open/problems/quantumsuperposition) [](84)
       * [A2OJ](https://a2oj.com/category?ID=31)
 
-## 5
+## 4
   * Biconnected Components
     * Related
       * Articulation Points 
@@ -73,14 +72,13 @@
       * [2-SAT](http://codeforces.com/blog/entry/16205)
     * Problems
       * [Proving Equivalences](https://open.kattis.com/problems/equivalences) [](78)
-        * harder version: [Scheme](http://codeforces.com/contest/22/problem/E) 
-      * [TFRIENDS](http://www.spoj.com/problems/TFRIENDS/) [](84)
-      * [Mushrooms](http://codeforces.com/contest/894/problem/E) [](89)
-      * [CAPCITY](http://www.spoj.com/problems/CAPCITY/) [](103)
+      * [A2OJ](https://a2oj.com/category?ID=231)
+
+## 5
   * Bellman-Ford & Linear Programming
     * [Tutorial](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
 
-## Other
+## 6
   * Eulerian Tour / Cycle
     * Tutorial
       * CPH (19, Path & Circuits)

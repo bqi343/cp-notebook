@@ -13,7 +13,7 @@ If anyone can tell me how to enable g++-7 on mac that would be highly appreciate
 
 ## IDE
 
-The list only the ones I actually use.
+The list only the ones I have actually usedd.
 
 ### Actual
  * [Sublime Text 3](https://www.sublimetext.com/)

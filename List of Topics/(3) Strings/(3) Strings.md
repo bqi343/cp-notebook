@@ -17,36 +17,40 @@
       * [Berland SU Computer Network](http://codeforces.com/contest/847/problem/L) [](142)
 
 ## 4 
-  * (Old Gold) Tries
-    * Tutorial
-      * CPH (26, String Algorithms)
-      * [Algorithm Gym](http://codeforces.com/blog/entry/15729)
-    * Problem(s)
-      * [Xor-MST](http://codeforces.com/contest/888/problem/G)
-
-## 5
-  * Manacher's Algorithm
-    * Tutorial
-      * [HackerRank](https://www.hackerrank.com/topics/manachers-algorithm)
-      * [adamant](http://codeforces.com/blog/entry/12143)
-  * String Searching
-    * Z Algorithm (I prefer)
+  * String Matching
+    * Tries
+      * Tutorial
+        * CPH (26, String Algorithms)
+        * [Algorithm Gym](http://codeforces.com/blog/entry/15729)
+      * Problems
+        * [A2OJ](https://a2oj.com/category?ID=49)
+    * Z, KMP
       * Tutorial
         * [paladin8](http://codeforces.com/blog/entry/3107)
-    * KMP
-      * Tutorial
         * [GeeksForGeeks](http://www.geeksforgeeks.org/searching-for-patterns-set-2-kmp-algorithm/)
         * [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-string-searching-algorithms/)
       * Booth's Algorithm
+      * Problems
+        * [A2OJ](https://a2oj.com/category?ID=29)
     * Aho-Corasick
       * Tutorial
-        * [Suffix Automata](http://codeforces.com/blog/entry/20861)
+        * [adamant](http://codeforces.com/blog/entry/14854)
         * [GeeksForGeeks](http://www.geeksforgeeks.org/aho-corasick-algorithm-pattern-searching/)
-
-## Other
-  * Palindromic Tree
-    * Tutorial
-      * [adamant](http://codeforces.com/blog/entry/13959)
+      * Problems
+        * [A2OJ](https://a2oj.com/category?ID=35)
   * Suffix Array
     * Tutorial
       * [CPC.11](https://github.com/SuprDewd/T-414-AFLV/blob/master/11_strings/aflv_11_strings.pdf)
+    * Problems
+      * [A2OJ](https://a2oj.com/category?ID=44)
+
+## 5
+  * Manacher
+    * Tutorial
+      * [HackerRank](https://www.hackerrank.com/topics/manachers-algorithm)
+      * [adamant](http://codeforces.com/blog/entry/12143)
+
+## 6
+  * Misc String Data Structures
+    * [Suffix Automata](http://codeforces.com/blog/entry/20861)
+    * [Palindromic Tree](http://codeforces.com/blog/entry/13959)

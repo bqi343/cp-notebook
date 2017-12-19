@@ -3,7 +3,7 @@
 
 ## 3
 
-  * Disjoint Set Union, Minimal Spanning Tree
+  * Disjoint Set Union, Minimum Spanning Tree
     * CPH (15, Spanning Trees)
     * Tutorial
       * [Topcoder Union Find](https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/)
@@ -17,7 +17,8 @@
       * [Spanning Tree Fraction](https://www.hackerrank.com/contests/w31/challenges/spanning-tree-fraction) [](78)
       
 ## 4
-  * Trees
+
+  * Tree Queries
     * Tutorial
       * CPH (14, Tree Algorithms)
       * CPH (18, Tree Queries)
@@ -26,9 +27,9 @@
       * Diameter of a Tree
       * Centroid Decomposition
         * [GeeksForGeeks](http://www.geeksforgeeks.org/centroid-decomposition-of-tree/)
-      * (Old Gold) Heavy-Light Decomposition
+      * Heavy-Light Decomposition
         * [Anudeep2011](https://blog.anudeep2011.com/heavy-light-decomposition/)
         * [AI-Cash](http://codeforces.com/blog/entry/22072)
-    * Problem(s)
+    * Problems
         * [Hot & Cold](https://dmoj.ca/problem/bts17p7) [](105)
         * [A2OJ](https://a2oj.com/category?ID=319)

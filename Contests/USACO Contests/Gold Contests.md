@@ -38,3 +38,18 @@
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=719) | circlecross | Data Structures | Done |
 | 2017 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=741) | cownomics | Two Pointers, Hashing | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=743) | art2 | Stack | Done |
+
+| Contest         | # | Name      | Topic            | Result                 |
+| --------------- | - | --------- | ---------------- | ---------------------- |
+| 2017 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=669) | piepie | BFS | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=670) | barnpainting | Trees, DP | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=671) | hayfeast | Data Structures | Done |
+| 2018 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=693) | | | |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=694) | | | |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=695) | | | |
+| 2018 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=717) | | | |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=718) | | | |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=719) | | | |
+| 2018 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=741) | | | |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=743) | | | |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=743) | | | |

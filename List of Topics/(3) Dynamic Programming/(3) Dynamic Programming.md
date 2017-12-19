@@ -1,12 +1,13 @@
-# DP
+# Dynamic Programming
       
 ## 3
-  * Intro to Dynamic Programming (8/24 gold)
+  * Intro (8/24 gold)
     * Tutorials
       * [Topcoder DP](https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/)
       * CPH (7, Dynamic Programming)
       * [CPC.6](https://github.com/SuprDewd/T-414-AFLV/tree/master/06_dynamic_programming)
-    * Problems (sorted by length)
+    * Problems 
+      * LIS, LCS, Distinct Subsequences
       * [Interleaving Parentheses](https://community.topcoder.com/stat?c=problem_statement&pm=14635&rd=16933)
       * [K-Ordered LCS](https://www.hackerearth.com/problem/algorithm/mancunian-and-k-ordered-lcs-e6a4b8c6/) [](51)
       * [Round Subset](http://codeforces.com/contest/837/problem/D) [](59)
@@ -14,20 +15,21 @@
       * [Wrong Brackets](https://csacademy.com/contest/round-51/task/wrong-brackets/) [](69)
 
 ## 4
-  * Divide and Conquer Optimization
-    * Tutorial
-      * [DP With Divide & Conquer](http://codeforces.com/blog/entry/8219)
-    * Problem(s)
-      * [Minimization Problem](http://codeforces.com/contest/868/problem/F)
-  * (Old Gold) DP with Bitmasks
+  * Bitmasks
     * Tutorial
       * CPH (10, Bit Manipulation)
     * Problem(s)
+      * Traveling Salesman Problem (small n)
       * [Square Subsets](http://codeforces.com/contest/895/problem/C) [](63)
       * [Cat & Mice](https://open.kattis.com/problems/catandmice) [](66)
       * [Guards in the Storehouse](http://codeforces.com/problemset/problem/845/F) [](71)
+  * Divide and Conquer
+    * Tutorial
+      * [DP With Divide & Conquer](http://codeforces.com/blog/entry/8219)
+    * Problem
+      * [Minimization Problem](http://codeforces.com/contest/868/problem/F)
  
-## Other
+## 6
   * Digit DP
     * Tutorial
       * [Digit DP](http://codeforces.com/blog/entry/53960)

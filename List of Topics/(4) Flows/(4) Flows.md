@@ -5,7 +5,7 @@
 [CPC.10](https://github.com/SuprDewd/T-414-AFLV/tree/master/10_graphs_3_network_flow)
 
 ## 4
-  * (Old Gold) Maximum Flow
+  * Maximum Flow
     * Tutorial
       * CPH (20, Flows & Cuts)
     * Topics
@@ -20,20 +20,16 @@
       * [Card Game](http://codeforces.com/problemset/problem/808/F) [](135)
 
 ## 5
-  * Hopcroft-Karp Bipartite Matching
   * Faster Max Flow
-    * **Dinic's Algorithm**
+    * Hopcroft-Karp Bipartite Matching
+    * Dinic's Algorithm
     * Push-Relabel
       
-## Other
-  * **Min Cost Max Flow**
+## 6
+  * Minimum Cost Flow
     * Tutorial
       * [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/minimum-cost-flow-part-two-algorithms/)
       * [Johnson's Algorithm](https://en.wikipedia.org/wiki/Johnson%27s_algorithm)
     * Problems
       * [April Fool's Problem](http://codeforces.com/contest/802/problem/N)
-      * [Acme Corporation](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2660)
-      * [Students Initiation](http://codeforces.com/contest/847/problem/J)
-      * [Almost Permutation](http://codeforces.com/contest/863/problem/F)
-      * [Machine Programming](http://codeforces.com/contest/164/problem/C)
-      * [Four Melodies](http://codeforces.com/contest/818/problem/G)
+      * [A2OJ](https://a2oj.com/category?ID=662)

@@ -1,3 +1,5 @@
+// https://arxiv.org/pdf/1311.6093v4.pdf
+
 const int MOD = 1000000007, SZ = 1000;
 
 struct BIT2D { 

@@ -110,6 +110,21 @@
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=745) | grass | DSU | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=746) | cowbasic | Matrix | Done |
 
+| Contest         | #  | Name | Topic            | Result                 |
+| ------------- | - | - | ---------------| ---------------------- |
+| 2017 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=672) | standingout | Hashing | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=673) | pushabox | DP | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=674) | greedy | Binary Search | Done |
+| 2018 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=696) |  |  | |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=697) |  |  | |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=698) |  |  | |
+| 2018 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=720) |  |  | |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=721) |  |  | |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=722) |  |  | |
+| 2018 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=744) |  |  | |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=745) |  |  | |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=746) |  |  | |
+
 # USACO Camp
   * [What is it like to attend USACO Camp?](https://www.quora.com/What-is-it-like-to-attend-the-USACO-training-camp)
   * [How do I get into USACO Camp?](https://www.quora.com/How-do-I-get-into-the-USACO-training-camp)

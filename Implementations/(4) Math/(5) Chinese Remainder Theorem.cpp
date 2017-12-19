@@ -62,11 +62,10 @@ void solve() {
         a1 = naive(a2,po(x.f,x.s.f),a1,x.s.s);
         a2 *= po(x.f,x.s.f);
     }
-    cout << (long long)a1 << " " << (long long)a2 << "\n";
+    cout << (ll)a1 << " " << (ll)a2 << "\n";
 }
 
 int main() {
-    ios_base::sync_with_stdio(0);cin.tie(0);
     int T; cin >> T;
     F0R(i,T) solve();
 }

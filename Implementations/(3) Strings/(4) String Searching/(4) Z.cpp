@@ -24,7 +24,6 @@ vi get(string a, string b) { // find prefixes of a in b
 }
 
 int main() {
-	ios_base::sync_with_stdio(0);cin.tie(0);
 	vi x = z("abcababcabcaba");
 	for (int i: x) cout << i << " ";
 	cout << "\n";

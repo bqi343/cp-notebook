@@ -120,8 +120,6 @@ namespace Poly {
 }
 
 int main() {
-    ios_base::sync_with_stdio(0);cin.tie(0);
-    
     vcd x = Poly::FFT::conv({1,2,3,4,5,6,7,8},{1,2,3,4,5,6,7,8});
     for (auto a: x) cout << a << "\n";
     cout << "\n";

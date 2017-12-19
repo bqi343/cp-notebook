@@ -77,7 +77,6 @@ struct node {
 node* root;
 
 int main() {
-	ios_base::sync_with_stdio(0);cin.tie(0);
 	vector<point> x; 
 	F0R(i,100000) x.pb(point(rand() % 1000000000, rand() % 1000000000));
 	

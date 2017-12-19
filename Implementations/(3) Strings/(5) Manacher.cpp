@@ -22,7 +22,6 @@ vi manacher(string s) {
 }
 
 int main() {
-	ios_base::sync_with_stdio(0);cin.tie(0);
 	vi a1 = manacher("abacaba");
 	for (int i: a1) cout << i << " ";
 	cout << "\n";

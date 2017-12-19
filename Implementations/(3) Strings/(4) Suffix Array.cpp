@@ -44,7 +44,6 @@ struct suffix_array {
 };
 
 int main() {
-	ios_base::sync_with_stdio(0);cin.tie(0);
 	string s;
 	while (getline(cin,s)) {
 	    if (s[s.length()-1] == '\r') s.erase(s.end()-1);

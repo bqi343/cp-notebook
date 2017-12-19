@@ -50,11 +50,3 @@ void solve() {
     F0R(i,M+1) cout << circuit[i] << " ";
     cout << "\n";
 }
-
-int main() {
-    ios_base::sync_with_stdio(0);cin.tie(0);
-    while (cin >> N >> M) {
-        if (N+M == 0) break;
-        solve();
-    }
-}

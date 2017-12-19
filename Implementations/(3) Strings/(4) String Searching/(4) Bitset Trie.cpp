@@ -30,7 +30,3 @@ template<int MX> struct tri {
         ans = max(ans,x);
     }
 };
-
-int main() {
-    
-}

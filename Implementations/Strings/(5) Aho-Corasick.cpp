@@ -1,82 +1,80 @@
-/**
-* Source: GeeksForGeeks
-* also see https://ideone.com/0cMjZJ
+/** 
+ * Source: https://ideone.com/0cMjZJ
+ * Usage: https://open.kattis.com/problems/stringmultimatching
 */
 
-string arr[200];
-int val[200], states = 1;
-queue<int> update;
-const int MAXS = 201;
-const int MAXC = 26;
- 
-int n, out[MAXS], f[MAXS], g[MAXS][MAXC];
-
-int buildMatchingMachine() {
-    memset(out, 0, sizeof out);
-    memset(g, -1, sizeof g);
+template<int SZ> struct Aho {
+    int link[SZ], dict[SZ], sz = 1, num = 0;
+    vector<pii> ind[SZ];
+    map<char,int> to[SZ];
+    vi oc[SZ];
+    queue<int> q;
     
-    F0R(i,n) {
-        string word = arr[i];
-        int currentState = 0;
- 
-        F0R(j,word.size()) {
-            int ch = word[j] - 'a';
-            if (g[currentState][ch] == -1) g[currentState][ch] = states++;
-            currentState = g[currentState][ch];
+    Aho() {
+        memset(link,0,sizeof link);
+        memset(dict,0,sizeof dict);
+    }
+
+    void add(string s) {
+        int v = 0;
+        for(auto c: s) {
+            if (!to[v].count(c)) to[v][c] = sz++;
+            v = to[v][c];
         }
- 
-        out[currentState] += val[i];
+        dict[v] = v; ind[v].pb({++num,sz(s)});
     }
  
-    F0R(ch,MAXC) if (g[0][ch] == -1) g[0][ch] = 0;
-    memset(f, -1, sizeof f);
-    queue<int> q;
- 
-    F0R(ch,MAXC) 
-        if (g[0][ch] != 0) {
-            f[g[0][ch]] = 0; 
-            q.push(g[0][ch]);
-        }
- 
-    while (q.size()) {
-        int state = q.front();
-        q.pop();
- 
-        F0R(ch,MAXC) {
-            if (g[state][ch] != -1) {
-                int failure = f[state];
-                while (g[failure][ch] == -1) failure = f[failure];
- 
-                failure = g[failure][ch];
-                f[g[state][ch]] = failure;
-
-                out[g[state][ch]] += out[failure];
- 
-                q.push(g[state][ch]);
+    void push_links() {
+        link[0] = -1; q.push(0);
+        while (sz(q)) {
+            int v = q.front(); q.pop();
+            for (auto it: to[v]) {
+                char c = it.f; int u = it.s, j = link[v];
+                while (j != -1 && !to[j].count(c)) j = link[j];
+                if (j != -1) {
+                    link[u] = to[j][c];
+                    if (!dict[u]) dict[u] = dict[link[u]];
+                }
+                q.push(u);
             }
         }
     }
- 
-    return states;
-}
- 
-int findNextState(int currentState, char nextInput) {
-    int answer = currentState;
-    int ch = nextInput - 'a';
-
-    while (g[answer][ch] == -1){ 
-        update.push(answer);
-        answer = f[answer];
-    }
-    if (update.size()){
-        while (update.size()){
-            int k = update.front(); update.pop();
-            g[k][nextInput-'a'] = g[answer][ch]; //cache state transitions: often necessary if we don't want to explicitly compute all of them
+    
+    void process(int pos, int cur) {
+        cur = dict[cur];
+        while (cur) {
+            for (auto a: ind[cur]) oc[a.f].pb(pos-a.s+1);
+            cur = dict[link[cur]];
         }
     }
-    return g[answer][ch];
-}
+    
+    int nex(int pos, int cur, char c) {
+        while (cur != -1 && !to[cur].count(c)) cur = link[cur];
+        if (cur == -1) cur = 0;
+        else cur = to[cur][c];
+        process(pos, cur);
+        return cur;
+    }
+};
 
-int main() {
+Aho<100001> A;
 
+int n;
+
+void solve() {
+    A = Aho<100001>();
+    cin >> n;
+    F0R(i,n) {
+        string pat; getline(cin,pat); if (!i) getline(cin,pat);
+        A.add(pat);
+    }
+    A.push_links();
+    
+    string t; getline(cin,t);
+    int cur = 0;
+    F0R(i,sz(t)) cur = A.nex(i,cur,t[i]);
+    FOR(i,1,n+1) {
+        for (int j: A.oc[i]) cout << j << " ";
+        cout << "\n";
+    }
 }

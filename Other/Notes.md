@@ -30,13 +30,14 @@ I recommend that you use C++11 over Java due to various reasons, such as
 ### Books
   * [Competitive Programming Handbook (CPH)](https://cses.fi/book.pdf)
   * [Competitive Programming Book (Steven, Felix)](http://www.comp.nus.edu.sg/~stevenha/myteaching/competitive_programming/cp1.pdf)
-  * [Guide](https://github.com/alwayswimmin/cs_guide)
+  * [Samuel Hsiang Guide](https://github.com/alwayswimmin/cs_guide)
+  * [Principles of Algorithmic Problem Solving](http://www.csc.kth.se/~jsannemo/slask/main.pdf)
   * Introduction to Algorithms
 
 ### Courses
   * [Competitive Programming Course (SuprDewd)](https://github.com/SuprDewd/T-414-AFLV)
   * [Competitive Programming Playlist](https://www.commonlounge.com/community/862d2091c64e447cacde77d4c76a9ac3)
-  * [Algorithms, Part 1](https://www.coursera.org/learn/algorithms-part1)
+  * [Algorithms Pt 1 (and Pt 2)](https://www.coursera.org/learn/algorithms-part1)
 
 ### Algorithm Collections
   * [E-maxx](https://e-maxx-eng.appspot.com/)
@@ -45,9 +46,9 @@ I recommend that you use C++11 over Java due to various reasons, such as
   * [CSAcademy](https://csacademy.com/lessons/)
   * [TJSCT](https://activities.tjhsst.edu/sct/)
 
-### ACM-ICPC Stuff
+### ACM-ICPC
   * [Stanford](http://web.stanford.edu/class/cs97si/)
-  * [KACTL (KTH Royal Institute of Tech)](https://github.com/kth-competitive-programming/kactl)
+  * [KACTL](https://github.com/kth-competitive-programming/kactl)
   * [Virginia Tech](https://icpc.cs.vt.edu/#/)
   * [Carnegie-Mellon](https://contest.cs.cmu.edu/295/f17/)
   * [ICPCGate](https://icpcgate.org/contest/index.php)

@@ -1,5 +1,6 @@
 /**
 * Sources: KACTL, https://pastebin.com/3Tnj5mRu
+* Usage: https://open.kattis.com/problems/polymul2/
 */
 
 typedef complex<double> cd;

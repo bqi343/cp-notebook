@@ -1,3 +1,7 @@
+/**
+* Source: own
+*/
+
 int distinct(string S) {
     vi tot(26);
     int ans = 1;

@@ -1,3 +1,7 @@
+/**
+* Source: own
+*/
+
 vi bes = {0};
 int n;
 
@@ -13,7 +17,6 @@ void ad(int x) {
 }
 
 int main() {
-    ios_base::sync_with_stdio(0);cin.tie(0);
     cin >> n;
     F0R(i,n) {
         int x; cin >> x;

@@ -51,6 +51,7 @@
       * [adamant](http://codeforces.com/blog/entry/12143)
 
 ## 6
-  * Misc String Data Structures
+  * String Suffix Structures
     * [Suffix Automata](http://codeforces.com/blog/entry/20861)
+    * [Suffix Tree](http://codeforces.com/blog/entry/16780)
     * [Palindromic Tree](http://codeforces.com/blog/entry/13959)

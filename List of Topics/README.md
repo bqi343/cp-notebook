@@ -2,7 +2,7 @@
 
   * This collection is composed of the algorithms I have needed for USACO contests, plus a few more. 
   * [CPH](https://cses.fi/book.pdf) refers to the competitive programmer's handbook.
-  * Please see "Misc" for my C++ template.
+  * Go [here](https://github.com/bqi343/USACO/blob/master/Implementations/notebook.pdf) for implementations.
 
 # Bronze Topics (1)
 

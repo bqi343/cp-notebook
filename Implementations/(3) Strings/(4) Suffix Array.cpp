@@ -1,6 +1,7 @@
 /**
 * Source: SuprDewd CP Course
 * Task: https://open.kattis.com/problems/suffixsorting
+* KACTL version is slightly faster
 */
 
 struct suffix_array {

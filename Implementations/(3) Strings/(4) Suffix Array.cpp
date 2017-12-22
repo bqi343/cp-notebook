@@ -1,38 +1,55 @@
 /**
 * Source: SuprDewd CP Course
 * Task: https://open.kattis.com/problems/suffixsorting
+* KACTL version is slightly faster
 */
 
 struct suffix_array {
     int N;
     vector<vi> P;
-    vector<pair<pii,int>> L;
+    vector<array<int,3>> L;
     vi idx;
     string str;
     
+    /*void bucket(int ind) {
+        int mn = MOD, mx = -MOD;
+        
+        for (auto a: L) mn = min(mn,a[ind]), mx = max(mx,a[ind]);
+        vector<array<int,3>> tmp[mx-mn+1];
+        F0Rd(i,sz(L)) tmp[L[i][ind]-mn].pb(L[i]);
+        
+        int nex = 0;
+        F0R(i,mx-mn+1) for (auto a: tmp[i]) L[nex++] = a;
+    }
+    
+    void bucket_sort() {
+        bucket(1), bucket(0);
+    }*/
+    
     suffix_array(string _str) {
-        str = _str; N = str.length();
+        str = _str; N = sz(str);
         P.pb(vi(N)); L.resize(N);
         F0R(i,N) P[0][i] = str[i];
         
         for (int stp = 1, cnt = 1; cnt < N; stp ++, cnt *= 2) {
             P.pb(vi(N));
-            F0R(i,N) L[i] = {{P[stp-1][i],i+cnt < N ? P[stp-1][i+cnt] : -1},i};
-            sort(L.begin(),L.end());
+            F0R(i,N) L[i] = {P[stp-1][i],i+cnt < N ? P[stp-1][i+cnt] : -1,i};
+            sort(all(L));
+            // bucket_sort();
             F0R(i,N) {
-                if (i && L[i].f == L[i-1].f) P[stp][L[i].s] = P[stp][L[i-1].s];
-                else P[stp][L[i].s] = i;
+                if (i && mp(L[i][0],L[i][1]) == mp(L[i-1][0],L[i-1][1])) P[stp][L[i][2]] = P[stp][L[i-1][2]];
+                else P[stp][L[i][2]] = i;
             }
         }
         
         idx.resize(N);
-        F0R(i,P[P.size()-1].size()) idx[P[P.size()-1][i]] = i;
+        F0R(i,sz(P.back())) idx[P.back()[i]] = i;
     }
     
     int lcp(int x, int y) {
         int res = 0;
         if (x == y) return N-x;
-        for (int k = P.size() - 1; k >= 0 && x < N && y < N; k--) {
+        for (int k = sz(P) - 1; k >= 0 && x < N && y < N; k--) {
             if (P[k][x] == P[k][y]) {
                 x += 1 << k;
                 y += 1 << k;
@@ -42,18 +59,3 @@ struct suffix_array {
         return res;
     }
 };
-
-int main() {
-	string s;
-	while (getline(cin,s)) {
-	    if (s[s.length()-1] == '\r') s.erase(s.end()-1);
-	    suffix_array sa = suffix_array(s);
-	    int z; cin >> z;
-	    F0R(i,z) {
-	        int x; cin >> x;
-	        cout << sa.idx[x] << " ";
-	    }
-	    cout << "\n";
-	    getline(cin,s);
-	}
-}

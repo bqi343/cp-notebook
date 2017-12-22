@@ -30,7 +30,7 @@ struct BCC {
                 BCCutil(i);
                 low[u] = min(low[u],low[i]);
                 
-                if (disc[u] <= low[i]) { // articulation point, unless maybe u=root
+                if ((disc[u] == 0 && child > 1) || (disc[u] != 0 && disc[u] <= low[i])) { // articulation point!
                     vector<pii> tmp;
                     while (st.back() != mp(u,i)) tmp.pb(st.back()), st.pop_back();
                     tmp.pb(st.back()), st.pop_back();

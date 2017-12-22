@@ -1,5 +1,6 @@
 /**
 * Source: Own
+* Usage: https://codefights.com/tournaments/s8thqrnQL2YPK7XQt/L
 */
 
 typedef complex<double> cd;

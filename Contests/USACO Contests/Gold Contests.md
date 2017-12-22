@@ -41,9 +41,9 @@
 
 | Contest         | # | Name      | Topic            | Result                 |
 | --------------- | - | --------- | ---------------- | ---------------------- |
-| 2017 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=669) | piepie | BFS | Done |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=670) | barnpainting | Trees, DP | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=671) | hayfeast | Data Structures | Done |
+| 2017 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=765) | piepie | BFS | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=766) | barnpainting | Trees, DP | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=767) | hayfeast | Data Structures | Done |
 | 2018 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=693) | | | |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=694) | | | |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=695) | | | |

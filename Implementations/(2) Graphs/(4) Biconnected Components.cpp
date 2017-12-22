@@ -1,5 +1,6 @@
 /**
 * Source: http://www.geeksforgeeks.org/biconnected-components/
+* Some corrections!
 */
 
 struct BCC {
@@ -29,7 +30,7 @@ struct BCC {
                 BCCutil(i);
                 low[u] = min(low[u],low[i]);
                 
-                if ((disc[u] == 0 && child > 1) || (disc[u] != 0 && disc[u] <= low[i])) { // checks for articulation point
+                if (disc[u] <= low[i]) { // articulation point, unless maybe u=root
                     vector<pii> tmp;
                     while (st.back() != mp(u,i)) tmp.pb(st.back()), st.pop_back();
                     tmp.pb(st.back()), st.pop_back();

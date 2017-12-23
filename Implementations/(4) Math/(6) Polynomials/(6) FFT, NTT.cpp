@@ -128,10 +128,10 @@ namespace Poly {
 }
 
 int main() {
-    vl x = Poly::FFT::convll({1,2,3,4,5,6,7,8},{1,2,3,4,5,6,7,8});
+    vl x = Poly::FFT::convll({1,2,3,4,5,6,7,8}, {1,2,3,4,5,6,7,8});
     for (auto a: x) cout << a << "\n";
     cout << "\n";
     
-    vl X = Poly::NTT::conv({1,2,3,4,5,6,7,8},{1,2,3,4,5,6,7,8});
+    vl X = Poly::NTT::conv({1,2,3,4,5,6,7,8}, {1,2,3,4,5,6,7,8});
     for (auto a: X) cout << a << "\n";
 }

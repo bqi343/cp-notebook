@@ -50,6 +50,7 @@
     * Tutorial
       * [GeeksforGeeks](http://www.geeksforgeeks.org/meet-in-the-middle/)
     * Problems
+      * Discrete Logarithm
       * [A2OJ](https://a2oj.com/category?ID=30)
   * Ternary Search
     * Tutorial

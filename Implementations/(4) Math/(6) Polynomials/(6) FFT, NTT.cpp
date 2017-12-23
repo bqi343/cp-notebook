@@ -58,6 +58,14 @@ namespace Poly {
             a.resize(s);
             return a;
         }
+        
+        vl convll(vl a, vl b) {
+            vcd A(sz(a)); F0R(i,sz(a)) A[i] = a[i];
+            vcd B(sz(b)); F0R(i,sz(b)) B[i] = b[i];
+            vcd X = conv(A,B);
+            vl x(sz(X)); F0R(i,sz(X)) x[i] = round(X[i].real());
+            return x;
+        }
     }
     
     namespace NTT {
@@ -120,7 +128,7 @@ namespace Poly {
 }
 
 int main() {
-    vcd x = Poly::FFT::conv({1,2,3,4,5,6,7,8},{1,2,3,4,5,6,7,8});
+    vl x = Poly::FFT::convll({1,2,3,4,5,6,7,8},{1,2,3,4,5,6,7,8});
     for (auto a: x) cout << a << "\n";
     cout << "\n";
     

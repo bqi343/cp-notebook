@@ -1,6 +1,9 @@
-// 2017 VT HSPC - Alien Codebreaking
+/**
+* Description: NTT Application
+* Usage: 2017 VT HSPC - Alien Codebreaking
+*/
 
-[Poly Template]
+// insert NTT template
 
 struct Base {
     vl po10[21];
@@ -42,7 +45,6 @@ struct Base {
 Base B;
 
 int main() {
-	ios_base::sync_with_stdio(0);cin.tie(0);
 	F0R(i,10) F0R(j,10) F0R(k,10) {
 	    vl z = {k,j,i};
 	    vl o = B.transform(z);

@@ -1,4 +1,4 @@
-// not original
+// taken from ksun48
 
 template <class T>
 struct Point {

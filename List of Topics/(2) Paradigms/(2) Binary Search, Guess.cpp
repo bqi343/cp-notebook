@@ -1,6 +1,8 @@
-// Basic example of binary search
-// Guess the Number
-// https://open.kattis.com/problems/guess
+/**
+* Description: Basic example of binary search
+* Guess the Number
+* https://open.kattis.com/problems/guess
+*/
 
 int main() {
     int lo = 1, hi = 1000;

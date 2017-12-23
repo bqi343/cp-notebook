@@ -65,7 +65,7 @@ Mostly for CodeForces, some more useful than others.
 
 ## HS Contests
   * [PClassic](http://pclassic.org/)
-    * Philadelphia (drive time 1 hr)
+    * Philadelphia (1 hr)
     * 9:15am-5:00pm
     * November, April
   * [VT HSPC](https://icpc.cs.vt.edu/#/hscontest2017)
@@ -78,11 +78,17 @@ Mostly for CodeForces, some more useful than others.
     * 4 hours
     * December
   * [Code Quest](http://www.lockheedmartin.com/us/who-we-are/community/codequest/code-quest-moorestown.html)
-    * Moorestown (drive time 1 hr)
+    * Moorestown (1 hr)
     * 7:00am-2:00pm
     * April
   * [Cornell HSPC](https://www.cs.cornell.edu/events/cornell-high-school-programming-contest)
-    * New York (drive time 2-3 hrs)
+    * New York (2-3 hrs)
     * 11:30am-4:30pm?
     * [Hackerrank](https://www.hackerrank.com/contests/cornell-university-high-school-programming-contest-2017)
     * April
+
+## Very Rough Codeforces to USACO
+  * 1200+: Silver
+  * 1400+: Gold
+  * 1600+: Platinum
+  * 1800+: Training Camp

@@ -18,8 +18,6 @@ Check out the rest of this compilation! If you have done well in math contests, 
 
 Obviously, there are many resources which already exist. However, most of them were either too long, or lacking in some aspect. Furthermore, none of them focused specifically on USACO contests. Therefore, I decided to create a personal collection which I could easily refer to during CodeForces contests or ahead of USACO contests.
 
-## Very Rough Codeforces to USACO
-  * 1200+: Silver
-  * 1400+: Gold
-  * 1600+: Platinum
-  * 1800+: Training Camp
+## Contributing
+
+If you want to add something useful or correct an error, please email me at bqi343@gmail.com. It would be highly appreciated!

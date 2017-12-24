@@ -29,7 +29,7 @@
         * [paladin8](http://codeforces.com/blog/entry/3107)
         * [GeeksForGeeks](http://www.geeksforgeeks.org/searching-for-patterns-set-2-kmp-algorithm/)
         * [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-string-searching-algorithms/)
-      * Booth's Algorithm
+        * [Minimum Rotation](https://github.com/kth-competitive-programming/kactl/blob/master/content/strings/MinRotation.h)
       * Problems
         * [A2OJ](https://a2oj.com/category?ID=29)
     * Aho-Corasick

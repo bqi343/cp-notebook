@@ -23,5 +23,3 @@ template<class T, int SZ> struct BIT2D {
             -query(X2,Y1-1)+query(X1-1,Y1-1);
     }
 };
-
-// BIT2D<int,1000> b; 

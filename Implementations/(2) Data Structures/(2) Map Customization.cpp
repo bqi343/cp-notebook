@@ -1,4 +1,5 @@
 /**
+* Description: Define your own comparator / hash function
 * Source: StackOverflow
 */
 

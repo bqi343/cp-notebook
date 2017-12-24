@@ -1,5 +1,6 @@
 /**
-* Similar to 2D segtree, less memory
+* Description: Similar to 2D segtree, less memory
+* For more complex queries use a customized treap
 */
 
 template<int SZ> struct mstree { 
@@ -12,7 +13,7 @@ template<int SZ> struct mstree {
         }
     }
     
-    int query(int x, int y) {
+    int query(int x, int y) { 
         int t = 0;    
         for (;x > 0; x -= x&-x) t += val[x].order_of_key({y,MOD});
         return t;
@@ -23,9 +24,3 @@ template<int SZ> struct mstree {
             -query(hix,loy-1)+query(lox-1,loy-1);
     }
 };
-
-int main() {
-	mstree<100000> m;
-	m.upd(3,6); m.upd(4,5);
-	cout << m.query(3,5,4,6) << " " << m.query(3,5,4,5); // 2, 1
-}

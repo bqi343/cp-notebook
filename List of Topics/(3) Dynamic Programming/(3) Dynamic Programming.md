@@ -6,8 +6,14 @@
       * [Topcoder DP](https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/)
       * CPH (7, Dynamic Programming)
       * [CPC.6](https://github.com/SuprDewd/T-414-AFLV/tree/master/06_dynamic_programming)
+    * Examples
+      * DP with Balanced Parentheses
+      * DP with Trees
+      * Knapsack
+      * Longest Increasing Subsequence
+      * Longest Common Subsequeence
+      * Distinct Subsequences
     * Problems 
-      * LIS, LCS, Distinct Subsequences
       * [Interleaving Parentheses](https://community.topcoder.com/stat?c=problem_statement&pm=14635&rd=16933)
       * [K-Ordered LCS](https://www.hackerearth.com/problem/algorithm/mancunian-and-k-ordered-lcs-e6a4b8c6/) [](51)
       * [Round Subset](http://codeforces.com/contest/837/problem/D) [](59)

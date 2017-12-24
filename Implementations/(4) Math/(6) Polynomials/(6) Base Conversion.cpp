@@ -3,7 +3,7 @@
 * Usage: 2017 VT HSPC - Alien Codebreaking
 */
 
-// insert NTT template
+// NTT template
 
 struct Base {
     vl po10[21];
@@ -12,7 +12,7 @@ struct Base {
     Base() {
         po10[0] = {10};
         FOR(i,1,21) {
-            po10[i] = Poly::NTT::conv(po10[i-1],po10[i-1]);
+            po10[i] = NTT::conv(po10[i-1],po10[i-1]);
             normalize(po10[i]);
         }
     }
@@ -31,7 +31,7 @@ struct Base {
         vl l = convert(vl(in.begin(),in.begin()+sz(in)/2));
         vl r = convert(vl(in.begin()+sz(in)/2,in.end()));
         
-        r = Poly::NTT::conv(r,po10[get(sz(in))-1]);
+        r = NTT::conv(r,po10[get(sz(in))-1]);
         normalize(r);
         
         int z = max(sz(l),sz(r));

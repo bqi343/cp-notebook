@@ -29,5 +29,3 @@ template<class T, int SZ> struct Seg {
         return res;
     }
 };
-
-// Seg<int,1<<17> b;

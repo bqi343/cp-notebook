@@ -1,5 +1,5 @@
 /**
-* Description: 1D range minimum query in constant time
+* Description: Supports 1D range minimum query in constant time
 */
 
 template<class T, int SZ> struct RMQ {
@@ -20,5 +20,3 @@ template<class T, int SZ> struct RMQ {
         return comb(stor[l][x],stor[r-(1<<x)+1][x]);
     }
 };
-
-// RMQ<int,100000> R;

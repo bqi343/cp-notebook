@@ -1,9 +1,9 @@
 /**
-* Source: USACO Counting Haybales
-* 1D range update, range query
+* Description: 1D range update, range query
+* Usage: USACO Counting Haybales
 */
 
-const ll INF = 1e18; 
+const ll INF = 1e18; // setting this to MOD can be disastrous :(
 
 template<class T, int SZ> struct LazySegTree {
     T sum[2*SZ], mn[2*SZ], lazy[2*SZ]; // set SZ to a power of 2
@@ -62,5 +62,3 @@ template<class T, int SZ> struct LazySegTree {
         pull(ind);
     }
 };
-
-// LazySegTree<ll,1<<17> b;

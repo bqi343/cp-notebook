@@ -1,5 +1,5 @@
 /**
-* Note the use of xdir and ydir
+* Note: Use xdir and ydir
 */
 
 int xdir[4] = {0,1,0,-1}, ydir[4] = {1,0,-1,0};

@@ -8,4 +8,7 @@ void compress(vi& x) {
     for (int& i: x) i = m[i];
 }
 
-// vi x = {2,4,3,6}; compress(x); 
+int main() {
+	vi x = {2,4,3,6}; compress(x); 
+	// now x={0,2,1,3}
+}

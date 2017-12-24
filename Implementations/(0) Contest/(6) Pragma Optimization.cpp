@@ -1,5 +1,7 @@
 /**
  * Source: Misc solutions to CF Nagini
+ * Description: 10^{10} operations are ok!
+ * Passes the occasional disgusting CF task
  */
 
 #pragma GCC optimize ("O3")

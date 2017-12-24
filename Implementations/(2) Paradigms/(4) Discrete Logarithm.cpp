@@ -1,5 +1,6 @@
 /**
- * Description: find k such that primitive^k=x, meet in the middle!
+ * Description: find k such that primitive^k=x
+ * meet in the middle, O(sqrt(MOD))
  * Source: Own
  */
  

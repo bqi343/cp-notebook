@@ -18,5 +18,3 @@ template<class T, int SZ> struct BIT {
     }
     T query(int l, int r) { return query(r)-query(l-1); } // range query [l,r]
 };
-
-// BIT<int,1<<17> b;

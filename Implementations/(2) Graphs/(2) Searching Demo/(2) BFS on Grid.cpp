@@ -1,9 +1,13 @@
+/**
+* Note the use of xdir and ydir
+*/
+
 int xdir[4] = {0,1,0,-1}, ydir[4] = {1,0,-1,0};
 int dist[21][21];
 queue<pii> todo;
 
 void process(pii x) {
-	F0R(i,4) { // easily iterate through adjacent points
+	F0R(i,4) { 
 		pii y = {x.f+xdir[i],x.s+ydir[i]};
 		if (y.f < 0 || y.f > 20 || y.s < 0 || y.s > 20) continue; // ignore this point if it's outside of grid
 		if (dist[y.f][y.s] == MOD) { // test whether point has been visited or not

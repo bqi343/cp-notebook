@@ -1,5 +1,5 @@
 /**
-* Source: own
+* Description: Demonstrates use of map
 */
 
 void compress(vi& x) {

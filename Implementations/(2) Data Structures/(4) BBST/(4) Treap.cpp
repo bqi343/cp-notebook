@@ -1,5 +1,5 @@
 /*
-* Source: own?
+* Sources: various
 * Description: Easiest BBST
 * Note: Also see lazy persistent treap.
 */

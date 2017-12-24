@@ -1,6 +1,6 @@
 /**
-* Source: own
 * Usage: https://open.kattis.com/problems/intervalcover
+* Description: Example of greedy algorithm
 */
 
 double A,B,cur;

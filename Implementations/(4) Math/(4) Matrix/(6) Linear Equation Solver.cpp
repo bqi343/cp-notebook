@@ -1,5 +1,5 @@
 /**
-* Source: Own
+* Description: Gaussian Elimination
 * Usage: https://open.kattis.com/problems/equationsolverplus
 */
 

@@ -1,5 +1,5 @@
 /**
-* Source: own
+* Similar to 2D segtree, less memory
 */
 
 template<int SZ> struct mstree { 

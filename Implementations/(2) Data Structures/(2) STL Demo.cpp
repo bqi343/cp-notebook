@@ -10,7 +10,7 @@ struct cmp {
 
 struct hsh {
     size_t operator()(const pii& k) const {
-        return hash<int>()(k.f)^(hash<int>()(k.s^293849182));
+        return k.f^k.s; // bad, but you get the point
     }
 };
 

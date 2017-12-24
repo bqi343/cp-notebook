@@ -1,5 +1,6 @@
 /**
 * Source: own
+* Description: Pairs reduce frequency of collision
 */
 
 typedef pair<ll, ll> pll;
@@ -49,7 +50,7 @@ struct hsh {
     }
 };
 
-int lcp(hsh& a, hsh& b) {
+int lcp(hsh& a, hsh& b) { // can be used to generate a suffix array
     int lo = 0, hi = min(sz(a.S),sz(b.S));
     while (lo < hi) {
         int mid = (lo+hi+1)/2;

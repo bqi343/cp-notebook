@@ -1,6 +1,8 @@
 /**
- * Source: Own
- * the number of operations needed s.t. phi(phi(...phi(n)...))=1 is O(log n)
+ * Observation: number of operations needed s.t. 
+ *                phi(phi(...phi(n)...))=1 
+ * is O(log n).
+ * Euler's theorem: a^{\phi(p)}\equiv 1 (mod p), gcd(a,p)=1
  */
  
 int phi(int x) {

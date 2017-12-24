@@ -1,6 +1,5 @@
 /**
-* Source: own
-* Description: 1D point update, range query
+* Description: 1D range sum query with point update
 */
 
 template<class T, int SZ> struct BIT {

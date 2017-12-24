@@ -1,3 +1,7 @@
+/**
+* Description: sorts vertices such that if there exists an edge x->y, then x goes before y
+*/
+
 int N,M, in[100001];
 vi res, adj[100001];
 

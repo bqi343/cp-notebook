@@ -1,5 +1,5 @@
 /**
-* Source: own?
+* Source: Algorithms Gym
 */
 
 template<int MX> struct tri {

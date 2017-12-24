@@ -1,5 +1,4 @@
 /**
-* Source: own
 * Usage: https://open.kattis.com/problems/allpairspath
 */
 

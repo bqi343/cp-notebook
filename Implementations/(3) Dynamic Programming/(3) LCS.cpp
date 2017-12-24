@@ -1,5 +1,5 @@
 /**
-* Source: own
+* Description: Classic DP example
 */
 
 int dp[1001][1001];

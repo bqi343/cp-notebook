@@ -1,5 +1,7 @@
 /**
-* Source: own
+* Description: Uses same principle as 1D BIT
+* Supports point update & range query
+* Range update is also possible
 */
 
 template<class T, int SZ> struct BIT2D { 

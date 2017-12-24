@@ -1,5 +1,5 @@
 /**
-* Source: own
+* Description: DP eliminates overcounting
 */
 
 int distinct(string S) {

@@ -1,5 +1,6 @@
 /**
-* Source: Own
+* Usage: CF Brain Network
+* Might not be obvious why this works!
 */
 
 int n, dist[MX];

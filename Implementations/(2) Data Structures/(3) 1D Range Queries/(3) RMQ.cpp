@@ -1,6 +1,5 @@
 /**
-* Source: own
-* Description: 1D range query
+* Description: 1D range minimum query in constant time
 */
 
 template<class T, int SZ> struct RMQ {

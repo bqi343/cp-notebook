@@ -1,5 +1,5 @@
 /**
- * Source: CF Nagini
+ * Source: Misc solutions to CF Nagini
  */
 
 #pragma GCC optimize ("O3")

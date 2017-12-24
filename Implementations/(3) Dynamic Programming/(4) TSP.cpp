@@ -1,6 +1,5 @@
 /**
-* Source: own
-* Description: Example of bitset DP
+* Description: Bitset DP example
 */
 
 const int MX = 18;

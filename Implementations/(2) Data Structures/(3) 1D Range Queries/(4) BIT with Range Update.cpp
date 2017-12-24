@@ -1,5 +1,5 @@
 /**
-* Source: own
+* Source: GeeksForGeeks?
 * Description: 1D range update, range query
 */
 

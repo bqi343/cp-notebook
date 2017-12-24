@@ -1,5 +1,6 @@
 /**
-* Source: own
+* Description: shortest path!
+* Works with negative edge weights (aka SPFA?)
 */
 
 template<int SZ> struct Dijkstra {

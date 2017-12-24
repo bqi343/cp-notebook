@@ -1,7 +1,7 @@
 /**
-* Source: own
-* Description: can be useful with linear programming
 * Usage: https://open.kattis.com/problems/shortestpath3
+* Description: can be useful with linear programming
+* Constraints of the form x_i-x_j<k
 */
 
 const ll INF = 1e18;

@@ -14,12 +14,13 @@
  * December: AtCoder Yellow
 
 ## 2017
- * January: CodeForces Master
+ * January: CodeForces Master, Perfect USACO
  * March: USACO Camp Qualification
  * April: CodeForces Grandmaster, AtCoder Orange
  * May: Distributed Code Jam Round 2 Qualifier
  * June: IOI Qualification
  * July: CSAcademy Red
- * August: TopCoder Red, Codeforces International Grandmaster, Codechef 7 stars
+ * August: TopCoder Red, Codeforces IGM, Codechef 7 stars
+ * September: DMOJ 1st
  * November: AtCoder Red
-
+ * December: CodeForces IGM for 2 consecutive rounds (!), Perfect USACO

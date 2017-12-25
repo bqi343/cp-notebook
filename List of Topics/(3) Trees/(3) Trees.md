@@ -24,7 +24,7 @@
       * CPH (18, Tree Queries)
     * Topics
       * Least Common Ancestor
-      * Diameter of a Tree
+      * Heavy Light Set
       * Centroid Decomposition
         * [GeeksForGeeks](http://www.geeksforgeeks.org/centroid-decomposition-of-tree/)
       * Heavy-Light Decomposition
@@ -33,3 +33,7 @@
     * Problems
         * [Hot & Cold](https://dmoj.ca/problem/bts17p7) [](105)
         * [A2OJ](https://a2oj.com/category?ID=319)
+
+## 5
+  * Diameter of Tree
+    * [Tree Construction](https://csacademy.com/contest/archive/task/tree-construct)

@@ -18,7 +18,6 @@
       * CPH (11, Basics of Graphs)
       * CPH (12, Graph Traversals)
     * Problems (mostly DFS)
-      * Tree Diameter
       * [Bipartiteness](http://codeforces.com/contest/862/problem/B) [](49)
       * [Birthday](https://open.kattis.com/problems/birthday) [](70)
       * [UCF HSPT 2017 Online Mazes](https://hspt.ucfprogrammingteam.org/hsptFiles/problemSet1617Online.pdf) [](75)

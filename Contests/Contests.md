@@ -51,8 +51,10 @@ Mostly for CodeForces, some more useful than others.
 
   * IOI
     * [List of 2017 IOI Participants](http://weaselcrow.com/pro/cf/ioi2017/)
-    * [WCIPEG](http://wcipeg.com)
-    * [Yandex](https://contest.yandex.ru/ioi/Info/)
+    * Problems
+      * [WCIPEG](http://wcipeg.com)
+      * [Yandex](https://contest.yandex.ru/ioi/Info/)
+      * [DMOJ](https://dmoj.ca/problems/?search=ioi)
     * [IOI 2018 Syllabus](https://people.ksp.sk/~misof/ioi-syllabus/ioi-syllabus.pdf)
   * [USACO](http://www.usaco.org/)
     * [Old Problems](http://tjsct.wikidot.com/usaco/)

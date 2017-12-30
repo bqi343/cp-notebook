@@ -10,5 +10,5 @@ double area(vector<pii> v) {
         x += (ll)v[i].f*v[j].s;
         x -= (ll)v[j].f*v[i].s;
     }
-    return x/2;
+    return abs(x)/2;
 }

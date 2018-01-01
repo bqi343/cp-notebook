@@ -7,6 +7,7 @@
 # Bronze Topics (1)
 
 [What topics do I need to know?](https://www.quora.com/What-topics-algorithms-should-be-mastered-to-pass-each-of-the-four-divisions-of-USACO)
+[VPlanet](https://vplanetcoding.com/)
 
   * C++ Basics (CPH 1, Introduction)
   * Complexity Analysis (CPH 2, Time Complexity)
@@ -15,7 +16,6 @@
 # Silver Topics (2)
 
 [TJIOI](https://github.com/tjsct/tjioi-study-guide)
-
 [Codefights Interview Practice](https://codefights.com/interview-practice)
 
   * Data Structures

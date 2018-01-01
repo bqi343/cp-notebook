@@ -23,4 +23,7 @@
  * August: TopCoder Red, Codeforces IGM, Codechef 7 stars
  * September: DMOJ 1st
  * November: AtCoder Red
- * December: CodeForces IGM for 2 consecutive rounds (!), Perfect USACO
+ * December: CodeForces IGM for 2 consecutive rounds (!), Perfect USACO, 1st Div 2 CF 1st
+ 
+## 2018
+ * ?

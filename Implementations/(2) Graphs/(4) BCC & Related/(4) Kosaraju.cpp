@@ -3,17 +3,10 @@
 * Description: generates SCC in topological order
 */ 
 
-const int MX = 100001;
-
-struct scc {
-    vi adj[MX], radj[MX], todo;
-    int comp[MX], N, M;
-    bool visit[MX];
-
-    scc() {
-        memset(comp,0,sizeof comp);
-        memset(visit,0,sizeof visit);
-    }
+template<int SZ> struct scc {
+    vi adj[SZ], radj[SZ], todo;
+    int N, comp[SZ];
+    bitset<SZ> visit;
     
     void dfs(int v) {
     	visit[v] = 1; 
@@ -31,19 +24,9 @@ struct scc {
     }
     
     void genSCC() {
+        FOR(i,1,N+1) comp[i] = visit[i] = 0;
     	FOR(i,1,N+1) if (!visit[i]) dfs(i);
     	reverse(all(todo)); // toposort 
     	for (int i: todo) if (!comp[i]) dfs2(i,i);
     }
 };
-
-scc S;
-
-int main() {
-	cin >> S.N >> S.M;
-	F0R(i,S.M) {
-		int a,b; cin >> a >> b;
-		S.addEdge(a,b);
-	}
-	S.genSCC();
-}

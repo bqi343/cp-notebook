@@ -1,5 +1,6 @@
 /**
 * Source: Algorithms Gym
+* Verification: January Easy 2018 - Shubham and Subarray Xor
 */
 
 template<int MX> struct tri {

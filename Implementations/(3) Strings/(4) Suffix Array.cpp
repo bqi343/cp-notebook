@@ -2,6 +2,8 @@
 * Source: SuprDewd CP Course
 * Task: https://open.kattis.com/problems/suffixsorting
 * KACTL version is slightly faster
+* Verification: USACO December 2017: Standing out from the herd: http://usaco.org/index.php?page=viewproblem2&cpid=768
+* Code to Verify: https://pastebin.com/y2Z9FYr6
 */
 
 struct suffix_array {

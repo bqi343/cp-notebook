@@ -1,6 +1,7 @@
 /**
 * Source: own
 * Description: computes the minimum spanning tree in O(ElogE) time
+* Verification: USACO superbull
 */
 
 template<int SZ> struct DSU {

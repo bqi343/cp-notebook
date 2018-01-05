@@ -1,6 +1,7 @@
 /**
 * Description: Euler Tour LCA w/ O(1) query
 * Source: own
+* untested
 */
 
 const int MAXN = 100001, MAXK = 17;
@@ -12,7 +13,7 @@ struct RMQ2 {
     pii rmq[MAXK][2*MAXN];
     int depth[MAXN], pos[MAXN];
     
-    int N, nex=0;
+    int N, R, nex = 0;
     
     void addEdge(int u, int v) {
         edges[u].pb(v), edges[v].pb(u);
@@ -28,7 +29,7 @@ struct RMQ2 {
     }
     
     void construct() {
-        dfs(1, 0);
+        dfs(R, 0);
         FOR(k,1,MAXK) F0R(i,nex) if (i+(1<<(k-1)) < nex) rmq[k][i] = min(rmq[k-1][i],rmq[k-1][i+(1<<(k-1))]);
     }
     
@@ -43,19 +44,3 @@ struct RMQ2 {
         return depth[u]+depth[v]-2*depth[lca(u,v)];
     }
 };
-
-RMQ2 R;
-
-int main(){
-    cin >> R.N >> Q;
-    F0R(i,R.N-1) {
-        int u,v; cin >> u >> v;
-        R.addEdge(u,v);
-    }
-    R.construct();
-    
-    F0R(i,Q) {
-        int u,v; cin >> u >> v;
-        cout << R.dist(u,v) << "\n";
-    }
-}

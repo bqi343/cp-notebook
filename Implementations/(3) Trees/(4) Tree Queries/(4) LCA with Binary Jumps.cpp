@@ -1,5 +1,6 @@
 /**
 * Source: USACO Camp
+* Verification: Debug the Bugs
 */
 
 const int MAXN = 100001, MAXK = 17;
@@ -7,7 +8,7 @@ const int MAXN = 100001, MAXK = 17;
 int Q;
 
 struct LCA {
-    int V;
+    int V, R;
     vi edges[MAXN];
     int parK[MAXK][MAXN];
     int depth[MAXN];
@@ -23,7 +24,7 @@ struct LCA {
     }
     
     void construct() {
-        dfs(1, 0);
+        dfs(R, 0);
         FOR(k,1,MAXK) FOR(i,1,V+1)
             parK[k][i] = parK[k-1][parK[k-1][i]];
     }
@@ -42,19 +43,3 @@ struct LCA {
         return depth[u]+depth[v]-2*depth[lca(u,v)];
     }
 };
-
-LCA L;
-
-int main(){
-    cin >> L.V >> Q;
-    F0R(i,L.V-1) {
-        int u,v; cin >> u >> v;
-        L.addEdge(u,v);
-    }
-    L.construct();
-    
-    F0R(i,Q) {
-        int u,v; cin >> u >> v;
-        cout << L.dist(u,v) << "\n";
-    }
-}

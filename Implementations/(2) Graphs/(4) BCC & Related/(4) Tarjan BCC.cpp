@@ -1,6 +1,8 @@
 /**
 * Source: http://www.geeksforgeeks.org/biconnected-components/
 * Some corrections!
+* Verification: USACO December 2017, Push a Box
+* Code: https://pastebin.com/yUWuzTH8
 */
 
 template<int SZ> struct BCC {

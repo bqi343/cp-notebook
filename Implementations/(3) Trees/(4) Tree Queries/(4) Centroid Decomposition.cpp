@@ -1,5 +1,7 @@
 /**
 * Source: own
+* Verification Problem: Ciel and Commander (http://codeforces.com/contest/321/problem/C)
+* Code: http://codeforces.com/contest/321/submission/33952270
 */
 
 const int MX = 100001;

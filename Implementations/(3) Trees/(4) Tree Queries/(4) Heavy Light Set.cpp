@@ -1,5 +1,6 @@
 /**
 * Description: offline subtree queries in O(Nlog^2N)
+* Verification: January Easy 2018 - Shubham & Tree 1
 */
 
 const int MX = 200001;

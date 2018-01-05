@@ -1,5 +1,7 @@
 /**
 * Source: GeeksForGeeks
+* Verification: Problem Fashion (https://csacademy.com/contest/rmi-2017-day-1/task/fashion/)
+* Code: https://pastebin.com/VJxTvEg1
 */
  
 struct Edge {

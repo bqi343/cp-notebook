@@ -1,21 +1,30 @@
 /**
 * Description: Bitset DP example
+* Solves TSP for small N
 */
 
-const int MX = 18;
-const double INF = 1e18;
+const int MX = 15;
 
-double dp[MX][1<<MX], dist[MX][MX];
+int N, dp[MX][1<<MX], dist[MX][MX];
 
-double solve() {
-    F0R(i,MX) F0R(j,1<<MX) dp[i][j] = INF;
+int solve() {
+    F0R(i,N) F0R(j,1<<N) dp[i][j] = MOD;
     
     dp[0][1] = 0;
-    F0R(j,1<<MX) F0R(i,MX) if (j&(1<<i)) 
-        F0R(k,MX) if (!(j&(1<<k))) 
+    F0R(j,1<<N) F0R(i,N) if (j&(1<<i)) 
+        F0R(k,N) if (!(j&(1<<k))) 
             dp[k][j^(1<<k)] = min(dp[k][j^(1<<k)],dp[i][j]+dist[i][k]);
         
-    double ans = INF;
-    FOR(j,1,MX) ans = min(ans,dp[j][(1<<MX)-1]+dist[j][0]);
+    int ans = MOD;
+    FOR(j,1,N) ans = min(ans,dp[j][(1<<N)-1]+dist[j][0]);
     return ans;
+}
+
+int main() {
+	int T; cin >> T;
+	F0R(i,T) {
+	    cin >> N; N++;
+	    F0R(j,N) F0R(k,N) if (j != k) cin >> dist[j][k];
+	    cout << solve() << "\n";
+	}
 }

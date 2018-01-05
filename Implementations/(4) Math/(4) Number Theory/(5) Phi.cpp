@@ -3,6 +3,7 @@
  *                phi(phi(...phi(n)...))=1 
  * is O(log n).
  * Euler's theorem: a^{\phi(p)}\equiv 1 (mod p), gcd(a,p)=1
+ * Verification: CF Power Tower
  */
  
 int phi(int x) {

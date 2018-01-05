@@ -1,6 +1,6 @@
 /**
 * Source: http://codeforces.com/blog/entry/22072
-* Task: USACO Grass Planting
+* Verification: USACO Grass Planting
 */
 
 // insert LazySegTree Template
@@ -18,11 +18,11 @@ template <int V> struct HeavyLight { // sum queries, sum updates
         parent[1] = -1, depth[1] = 0;
         dfs(1);
         for (int i = 1, currentPos = 0; i <= n; ++i)
-			if (parent[i] == -1 || heavy[parent[i]] != i)
-				for (int j = i; j != -1; j = heavy[j]) {
-					root[j] = i;
-					treePos[j] = currentPos++;
-				}
+		if (parent[i] == -1 || heavy[parent[i]] != i)
+			for (int j = i; j != -1; j = heavy[j]) {
+				root[j] = i;
+				treePos[j] = currentPos++;
+			}
     }
     
     int dfs(int v) {

@@ -1,7 +1,9 @@
 /**
-* Usage: CF Brain Network
 * Might not be obvious why this works!
+* Verification: http://www.spoj.com/problems/PT07Z/
 */
+
+const int MX = 10001;
 
 int n, dist[MX];
 vi adj[MX];
@@ -19,8 +21,17 @@ void dfs(int cur) {
 }
 
 int treeDiameter() {
-    dfs(0);
-    int bes = 0; F0R(i,n) if (dist[i] > dist[bes]) bes = i;
-    dfs(bes); F0R(i,n) if (dist[i] > dist[bes]) bes = i;
+    dfs(1);
+    int bes = 0; FOR(i,1,n+1) if (dist[i] > dist[bes]) bes = i;
+    dfs(bes); FOR(i,1,n+1) if (dist[i] > dist[bes]) bes = i;
     return dist[bes];
+}
+
+int main() {
+    cin >> n;
+    F0R(i,n-1) {
+        int a, b; cin >> a >> b;
+        adj[a].pb(b), adj[b].pb(a);
+    }
+    cout << treeDiameter();
 }

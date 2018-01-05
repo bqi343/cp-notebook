@@ -18,8 +18,3 @@ void solve() {
     for (int i: ans) cout << i << " ";
     cout << "\n";
 }
-
-int main() {
-    ios_base::sync_with_stdio(0);cin.tie(0);
-    while (cin >> C >> n) solve();
-}

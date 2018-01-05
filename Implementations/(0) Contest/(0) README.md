@@ -1,6 +1,7 @@
 # C++
 
 ## Reference
+
  * [cplusplus](http://www.cplusplus.com/reference/)
  * [cppreference](http://en.cppreference.com/w/)
 
@@ -16,6 +17,7 @@ If anyone can tell me how to enable g++-7 on mac that would be highly appreciate
 The list only the ones I have actually used.
 
 ### Actual
+
  * [Sublime Text 3](https://www.sublimetext.com/)
    * [Build System](https://stackoverflow.com/questions/23789410/how-to-edit-sublime-text-build-settings)
  * [Geany](https://www.geany.org/)
@@ -26,12 +28,12 @@ The list only the ones I have actually used.
    * bad on mac :(
 
 ### Online
+
  * [Cloud9](https://c9.io/)
  * [CSA](https://csacademy.com/workspace/)
  * [Ideone](http://ideone.com/)
 
 ## Other
+
  * [Intro to Command Line](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
- * Pragma Optimization
-   * [Welcome](http://codeforces.com/contest/896/problem/E)
-   * [Nagini](http://codeforces.com/contest/855/problem/F)
+

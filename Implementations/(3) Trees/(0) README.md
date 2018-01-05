@@ -32,6 +32,7 @@
         * [AI-Cash](http://codeforces.com/blog/entry/22072)
     * Problems
         * [Hot & Cold](https://dmoj.ca/problem/bts17p7) [](105)
+        * [Root LCA Queries](https://csacademy.com/contest/archive/task/root-lca-queries/) [](107)
         * [A2OJ](https://a2oj.com/category?ID=319)
 
 ## 5

@@ -1,6 +1,7 @@
 /*
 * Source: http://codeforces.com/blog/entry/18051
 * Description: 1D point update, range query
+* Verification: SPOJ Fenwick
 */
 
 template<class T, int SZ> struct Seg {

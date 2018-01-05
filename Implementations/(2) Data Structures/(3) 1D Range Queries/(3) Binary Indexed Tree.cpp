@@ -1,5 +1,6 @@
 /**
 * Description: 1D range sum query with point update
+* Verification: SPOJ Fenwick
 */
 
 template<class T, int SZ> struct BIT {

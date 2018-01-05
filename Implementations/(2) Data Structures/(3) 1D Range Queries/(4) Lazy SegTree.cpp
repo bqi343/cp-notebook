@@ -1,6 +1,6 @@
 /**
 * Description: 1D range update, range query
-* Usage: USACO Counting Haybales
+* Verification: SPOJ Horrible
 */
 
 const ll INF = 1e18; // setting this to MOD can be disastrous :(

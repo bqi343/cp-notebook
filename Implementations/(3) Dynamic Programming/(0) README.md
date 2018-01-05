@@ -32,7 +32,8 @@
   * Divide and Conquer
     * Tutorial
       * [DP With Divide & Conquer](http://codeforces.com/blog/entry/8219)
-    * Problem
+    * Problems
+      * [Two Sawmills](https://szkopul.edu.pl/problemset/problem/ovRIpLFK3IhyFPjnVXeZtGxH/site/?key=statement)
       * [Minimization Problem](http://codeforces.com/contest/868/problem/F)
  
 ## 6

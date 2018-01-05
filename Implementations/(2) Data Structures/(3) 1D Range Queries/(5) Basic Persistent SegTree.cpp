@@ -1,5 +1,7 @@
 /**
 * Description: persistent segtree node without lazy updates
+* Verification: Codeforces Problem 893F - Subtree Minimum Query
+* Implementation: http://codeforces.com/contest/893/submission/32652140
 */ 
 
 struct Node { 

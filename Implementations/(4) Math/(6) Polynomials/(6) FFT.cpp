@@ -1,6 +1,6 @@
 /**
 * Sources: KACTL, https://pastebin.com/3Tnj5mRu
-* Usage: https://open.kattis.com/problems/polymul2/
+* Verification: SPOJ polymul
 */
 
 typedef complex<double> cd;
@@ -68,7 +68,14 @@ namespace FFT {
 }
 
 int main() {
-    vl x = FFT::convll({1,2,3,4,5,6,7,8}, {1,2,3,4,5,6,7,8});
-    for (auto a: x) cout << a << "\n";
-    cout << "\n";
+    int T; cin >> T;
+    F0R(i,T) {
+        int N; cin >> N;
+        vl a(N+1), b(N+1);
+        F0R(j,N+1) cin >> a[N-j];
+        F0R(j,N+1) cin >> b[N-j];
+        vl x = FFT::convll(a,b);
+        F0Rd(j,sz(x)) cout << x[j] << " ";
+        cout << "\n";
+    }
 }

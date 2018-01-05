@@ -1,9 +1,9 @@
 /**
-* Description: Supports 1D range minimum query in constant time
+* Description: Supports 1D range minimum query in constant time.
 */
 
 template<class T, int SZ> struct RMQ {
-    T stor[SZ][31-__builtin_clz(SZ)];
+    T stor[SZ][32-__builtin_clz(SZ)];
     
     T comb(T a, T b) {
         return min(a,b);
@@ -11,7 +11,7 @@ template<class T, int SZ> struct RMQ {
     
     void build(vector<T>& x) {
         F0R(i,sz(x)) stor[i][0] = x[i];
-        FOR(j,1,31-__builtin_clz(SZ)) F0R(i,SZ-(1<<(j-1))) 
+        FOR(j,1,32-__builtin_clz(SZ)) F0R(i,SZ-(1<<(j-1))) 
             stor[i][j] = comb(stor[i][j-1],stor[i+(1<<(j-1))][j-1]);
     }
     

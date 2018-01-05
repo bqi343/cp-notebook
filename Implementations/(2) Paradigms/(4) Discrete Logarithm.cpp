@@ -2,6 +2,7 @@
  * Description: find k such that primitive^k=x
  * meet in the middle, O(sqrt(MOD))
  * Source: Own
+ * Verification: PA 2006 - Professor Laugh's Numbers
  */
  
 const int BLOCK = 32000;

@@ -1,5 +1,6 @@
 /**
 * Source: KACTL
+* Verification: https://dmoj.ca/problem/si17c1p5
 */
 
 template<int SZ> struct mat {

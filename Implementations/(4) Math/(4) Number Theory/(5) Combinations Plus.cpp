@@ -1,5 +1,6 @@
 /**
 * Description: Extends combo to a power of a prime
+* Verification: https://dmoj.ca/problem/tle17c4p5
 */
 
 typedef pair<ll,ll> pll;

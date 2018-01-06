@@ -96,7 +96,7 @@
       * [A2OJ](https://a2oj.com/category?ID=651)
   * Splay Tree
     * Notes
-      * [Splay Tree Implementation](http://codeforces.com/blog/entry/18462)
+      * [Splay Tree Presentation](https://web.stanford.edu/class/archive/cs/cs166/cs166.1146/lectures/08/Slides08.pdf)
       * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
     * Problems
       * [DYNACON1](http://www.spoj.com/problems/DYNACON1/) [](140)

@@ -3,7 +3,7 @@
 * Description: Use for both LCA's
 */
 
-RMQ2 L;
+LCA L;
 
 int Q;
 

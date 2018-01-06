@@ -1,6 +1,6 @@
 /**
 * Source: USACO Mowing the Field
-* Description: sparse segtree of sparse 1D segtrees
+* Dependency: Sparse SegTree
 */
 
 const int SZ = 1<<17;

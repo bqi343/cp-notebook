@@ -2,40 +2,41 @@
 * Description: Euler Tour LCA w/ O(1) query
 * Source: own
 * Verification: Debug the Bugs
+* Dependency: Range Minimum Query
 */
 
-const int MAXN = 100001, MAXK = 18;
+const int MAXN = 100001;
 
-struct RMQ2 {
+struct LCA {
     vi edges[MAXN];
-    pii rmq[MAXK][2*MAXN];
+    RMQ<pii,2*MAXN> r;
+    vector<pii> tmp;
     int depth[MAXN], pos[MAXN];
     
-    int N, R, nex = 0;
+    int V, R;
     
     void addEdge(int u, int v) {
         edges[u].pb(v), edges[v].pb(u);
     }
     
     void dfs(int u, int prev){
-        pos[u] = nex; depth[u] = depth[prev]+1;
-        rmq[0][nex++] = {depth[u],u};
+        pos[u] = sz(tmp); depth[u] = depth[prev]+1;
+        tmp.pb({depth[u],u});
         for (int v: edges[u]) if (v != prev) {
             dfs(v, u);
-            rmq[0][nex++] = {depth[u],u};
+            tmp.pb({depth[u],u});
         }
     }
     
     void construct() {
         dfs(R, 0);
-        FOR(k,1,MAXK) F0R(i,nex) if (i+(1<<(k-1)) < nex) rmq[k][i] = min(rmq[k-1][i],rmq[k-1][i+(1<<(k-1))]);
+        r.build(tmp);
     }
     
     int lca(int u, int v){
         u = pos[u], v = pos[v];
         if (u > v) swap(u,v);
-        int x = 31-__builtin_clz(v-u+1);
-        return min(rmq[x][u],rmq[x][v-(1<<x)+1]).s;
+        return r.query(u,v).s;
     }
     
     int dist(int u, int v) {

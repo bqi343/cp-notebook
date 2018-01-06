@@ -1,9 +1,8 @@
 /**
 * Source: http://codeforces.com/blog/entry/22072
+* Dependency: Lazy SegTree
 * Verification: USACO Grass Planting
 */
-
-// insert LazySegTree Template
 
 vector<vi> graph;
 

@@ -95,18 +95,3 @@ int find_by_order(int x) {
     root = merge(merge(b.f,b.s),a.s);
     return t;
 }
-
-int main() {
-	ios_base::sync_with_stdio(0);cin.tie(0);
-	
-	int Q; cin >> Q;
-	F0R(i,Q) {
-	    char c; int d; cin >> c >> d;
-		if (c == 'I') root = ins(root,d);
-		else if (c == 'D') root = del(root,d);
-		else if (c == 'K') {
-			if (!root || root->sz < d) cout << "invalid\n";
-			else cout << find_by_order(d) << "\n";
-		} else cout << order_of_key(d) << "\n";
-	}
-}

@@ -1,7 +1,9 @@
-// SPOJ fenwick
+/*
+* Link: http://www.spoj.com/problems/FENTREE/
+* Description: Use with SegTree, BIT, Sparse SegTree
+*/
 
-BIT<ll,1000000> B;
-// Seg<ll,1<<20> B;
+Seg<ll,1<<20> B;
 
 int main() {
 	int N; cin >> N;

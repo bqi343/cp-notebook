@@ -1,10 +1,10 @@
 /**
-* Description: SPOJ fastflow
-* Verify Dinic, Push-Relabel
+* Link: http://www.spoj.com/problems/FASTFLOW/
+* Use with Dinic, Push-Relabel
 */
 
 int N,M;
-PushRelabel<5001> D; // or Dinic
+PushRelabel<5001> D; 
 
 int main() {
     cin >> N >> M;

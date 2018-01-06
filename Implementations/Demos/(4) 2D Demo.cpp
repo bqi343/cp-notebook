@@ -1,3 +1,8 @@
+/**
+* Link: http://www.spoj.com/problems/MATSUM/ (modified)
+* Description: Use with 2D BIT, 2D SegBIT, 2D SegTree
+*/
+
 int main() {
     BIT2D<int,1024> B = BIT2D<int,1024>();
     Node<int> S = Node<int>();

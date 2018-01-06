@@ -1,23 +1,25 @@
 /*
-* Description: based off treap code
+* Description: Based off treap code
+* Source: https://sites.google.com/site/kc97ble/container/splay-tree/splaytree-cpp-3
+* Verification: http://www.spoj.com/problems/ORDERSET/
 */
 
 struct snode {
     int val, sz;
     snode *p, *c[2];
-
+    
     snode (int v) {
         val = v, sz = 1;
         c[0] = c[1] = p = NULL;
     }
-
+    
     void inOrder(bool f = 0) {
         if (c[0]) c[0]->inOrder();
         cout << val << " ";
         if (c[1]) c[1]->inOrder();
         if (f) cout << "\n------------\n";
     }
-
+    
     void recalc() {
         sz = 1+(c[0]?c[0]->sz:0)+(c[1]?c[1]->sz:0);
     }
@@ -26,6 +28,13 @@ struct snode {
 void setLink(snode* x, snode* y, int d) {
     if (x) x->c[d] = y, x->recalc();
     if (y) y->p = x;
+}
+
+snode* unLink(snode* x, int d) {
+    snode* y = x->c[d];
+    x->c[d] = NULL; x->recalc();
+    if (y) y->p = NULL;
+    return y;
 }
 
 int getDir(snode* x, snode* y) {
@@ -51,15 +60,12 @@ snode* splay(snode* x) {
     return x;
 }
 
-pair<snode*,snode*> find(snode *cur, int v) { // x.f is result, x.s is lowest
-    if (!cur) return {cur,cur};
-    pair<snode*,snode*> x;
-    if (cur->val >= v) {
-        x = find(cur->c[0],v);
-        if (!x.f) x.f = cur;
-    } else x = find(cur->c[1],v); 
-    if (!x.s) x.s = cur;
-    return x;
+snode* find(snode *cur, int v) { 
+    if (!cur) return cur;
+    snode* x;
+    if (cur->val >= v) x = find(cur->c[0],v);
+    else x = find(cur->c[1],v); 
+    return x?x:cur;
 }
 
 snode* getmx(snode* x) {
@@ -68,15 +74,24 @@ snode* getmx(snode* x) {
 
 pair<snode*,snode*> split(snode* x, int v) {
     if (!x) return {x,x};
-    auto y = find(x,v); y.s = splay(y.s);
-    if (!y.f) return {y.s,NULL};
-    
-    y.f = splay(y.f); 
-    auto z = y.f->c[0]; setLink(y.f,NULL,0), setLink(NULL,z,0);
-    return {z,y.f};
+    snode* y = find(x,v); y = splay(y);
+    if (y->val >= v) return {unLink(y,0),y};
+    else return {y,unLink(y,1)};
 }
 
-// split by order ...
+snode* find_by_order(snode* x, int v) {
+    int tmp = x->c[0]?x->c[0]->sz:0;
+    if (v < tmp) return find_by_order(x->c[0],v);
+    else if (v == tmp) return x;
+    else return find_by_order(x->c[1],v-tmp-1);
+}
+
+pair<snode*,snode*> split_by_order(snode* x, int v) { // left subtree has v elements
+    if (!x) return {x,x};
+    if (v == x->sz) return {x,NULL};
+    snode* y = find_by_order(x,v); y = splay(y);
+    return {unLink(y,0),y};
+}
 
 snode* merge(snode* x, snode* y) {
     if (!x) return y;
@@ -85,9 +100,12 @@ snode* merge(snode* x, snode* y) {
     return x;
 }
 
+// same as treap
+
 snode* ins(snode* x, int v) { // insert value v
     auto a = split(x,v);
-    return merge(merge(a.f, new snode(v)),a.s);
+    auto b = split(a.s,v+1);
+    return merge(a.f,merge(new snode(v),b.s));
 }
 
 snode* del(snode* x, int v) { // delete all values equal to v

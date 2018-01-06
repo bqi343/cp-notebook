@@ -32,6 +32,7 @@
 
 ## 3
 
+  * Minimum Deque
   * Basic 1D Range Queries
     * Binary Indexed Tree (2/24 Gold)
       * Tutorial

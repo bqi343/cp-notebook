@@ -1,9 +1,12 @@
-// SPOJ horrible
+/**
+* Link: http://www.spoj.com/problems/HORRIBLE/
+* Description: Use with range BIT, lazy segtree
+*/
 
 int main() {
     int T; cin >> T;
     F0R(i,T) {
-        BITrange<ll,100000> B = BITrange<ll,100000>(); // LazySegTree<ll,1<<17>
+        LazySegTree<ll,1<<17> B = LazySegTree<ll,1<<17>(); 
         int N, C; cin >> N >> C;
         F0R(j,C) {
             int t; cin >> t;
@@ -12,7 +15,7 @@ int main() {
                 B.upd(p,q,v);
             } else {
                 int p,q; cin >> p >> q;
-                cout << B.query(p,q) << "\n"; // qsum
+                cout << B.qsum(p,q) << "\n"; 
             }
         }
     }

@@ -1,4 +1,9 @@
-// RMQ2 L;
+/**
+* Debug the Bugs
+* Description: Use for both LCA's
+*/
+
+RMQ2 L;
 
 int Q;
 

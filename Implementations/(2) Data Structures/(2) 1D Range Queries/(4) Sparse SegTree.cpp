@@ -4,11 +4,11 @@
 
 const int SZ = 1<<20;
 
-struct node {
-    ll val = 0;
-    node* c[2];
+template<class T> struct node {
+    T val = 0;
+    node<T>* c[2];
     
-    void upd(int ind, int v, int L = 0, int R = SZ-1) { // add v
+    void upd(int ind, T v, int L = 0, int R = SZ-1) { // add v
         if (L == ind && R == ind) { val += v; return; }
         
         int M = (L+R)/2;
@@ -25,12 +25,12 @@ struct node {
         if (c[1]) val += c[1]->val;
     }
     
-    ll query(int low, int high, int L = 0, int R = SZ-1) { // query sum of segment
+    T query(int low, int high, int L = 0, int R = SZ-1) { // query sum of segment
         if (low <= L && R <= high) return val;
         if (high < L || R < low) return 0;
         
         int M = (L+R)/2;
-        ll t = 0;
+        T t = 0;
         if (c[0]) t += c[0]->query(low,high,L,M);
         if (c[1]) t += c[1]->query(low,high,M+1,R);
         return t;

@@ -52,3 +52,21 @@ struct Node {
         val = min(c[0]->val,c[1]->val);
     }
 };
+
+template<int SZ> struct pers {
+    Node* loc[SZ+1]; // stores location of root after ith update
+    int nex = 1;
+    
+    pers() { loc[0] = new Node(); }
+    
+    void upd(int ind, int val) {
+        loc[nex] = loc[nex-1]->upd(ind,val,0,SZ-1);
+        nex++;
+    }
+    void build(vi& arr) { 
+        loc[0]->build(arr,0,SZ-1);
+    }
+    int query(int ti, int low, int high) { 
+        return loc[ti]->query(low,high,0,SZ-1);
+    }
+};

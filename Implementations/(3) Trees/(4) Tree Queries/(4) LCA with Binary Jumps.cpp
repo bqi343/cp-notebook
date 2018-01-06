@@ -5,8 +5,6 @@
 
 const int MAXN = 100001, MAXK = 17;
 
-int Q;
-
 struct LCA {
     int V, R;
     vi edges[MAXN];

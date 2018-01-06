@@ -1,3 +1,7 @@
+// RMQ2 L;
+
+int Q;
+
 int main() {
     cin >> L.V >> Q >> L.R;
     F0R(i,L.V-1) {

@@ -1,6 +1,7 @@
 /**
 * Source: Wikipedia
 * Description: generates SCC in topological order
+* Verification: SPOJ capcity
 */ 
 
 template<int SZ> struct scc {

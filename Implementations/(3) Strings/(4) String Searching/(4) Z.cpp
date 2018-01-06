@@ -1,6 +1,7 @@
 /**
 * Source: http://codeforces.com/blog/entry/3107
-* similar to KMP
+* Description: similar to KMP
+* Verification: POI 12 Template
 */
 
 vi z(string s) {

@@ -1,12 +1,10 @@
 /**
 * Description: Euler Tour LCA w/ O(1) query
 * Source: own
-* untested
+* Verification: Debug the Bugs
 */
 
-const int MAXN = 100001, MAXK = 17;
-
-int Q;
+const int MAXN = 100001, MAXK = 18;
 
 struct RMQ2 {
     vi edges[MAXN];

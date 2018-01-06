@@ -2,6 +2,7 @@
 * Description: Uses same principle as 1D BIT
 * Supports point update & range query
 * Range update is also possible
+* Verification: SPOJ matsum
 */
 
 template<class T, int SZ> struct BIT2D { 
@@ -23,3 +24,26 @@ template<class T, int SZ> struct BIT2D {
             -query(X2,Y1-1)+query(X1-1,Y1-1);
     }
 };
+
+int T;
+
+int main() {
+    ios_base::sync_with_stdio(0);cin.tie(0);
+    cin >> T;
+    F0R(i,T) {
+        int N; cin >> N;
+        BIT2D<ll,1024> B = BIT2D<ll,1024>();
+        while (1) {
+            string c; cin >> c;
+            if (c == "SET") {
+                int x, y,num; cin >> x >> y >> num;
+                x++, y++;
+                B.upd(x,y,num-B.query(x,x,y,y));
+            } else if (c == "SUM") {
+                int x1, y1, x2, y2; cin >> x1 >> y1 >> x2 >> y2;
+                x1 ++, y1 ++, x2 ++, y2++;
+                cout << B.query(x1,x2,y1,y2) << "\n";
+            } else break;
+        }
+    }
+}

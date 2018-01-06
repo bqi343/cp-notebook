@@ -5,7 +5,9 @@
 */
  
 struct Edge {
-    int v, flow, C, rev;
+    int v;
+    ll flow, C;
+    int rev;
 };
  
 template<int SZ> struct Dinic {
@@ -35,15 +37,15 @@ template<int SZ> struct Dinic {
         return level[t] >= 0;
     }
       
-    int sendFlow(int u, int flow, int t) {
+    ll sendFlow(int u, ll flow, int t) {
         if (u == t) return flow;
       
-        for (  ; start[u] < adj[u].size(); start[u] ++) {
+        for (  ; start[u] < sz(adj[u]); start[u] ++) {
             Edge &e = adj[u][start[u]]; 
                                           
             if (level[e.v] == level[u]+1 && e.flow < e.C) {
-                int curr_flow = min(flow, e.C - e.flow);
-                int temp_flow = sendFlow(e.v, curr_flow, t);
+                ll curr_flow = min(flow, e.C - e.flow);
+                ll temp_flow = sendFlow(e.v, curr_flow, t);
     
                 if (temp_flow > 0) {
                     e.flow += temp_flow;
@@ -56,13 +58,13 @@ template<int SZ> struct Dinic {
         return 0;
     }
      
-    int maxFlow(int s, int t) {
+    ll maxFlow(int s, int t) {
         if (s == t) return -1;
-        int total = 0;  
+        ll total = 0;  
       
         while (BFS(s, t)) {
             F0R(i,SZ) start[i] = 0;
-            while (int flow = sendFlow(s, INT_MAX, t)) total += flow;
+            while (ll flow = sendFlow(s, INT_MAX, t)) total += flow;
         }
      
         return total;

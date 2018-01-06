@@ -1,6 +1,7 @@
 /**
 * Source: own
 * Description: Pairs reduce frequency of collision
+* Verification: Dec 17 Plat 1
 */
 
 typedef pair<ll, ll> pll;

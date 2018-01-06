@@ -1,5 +1,6 @@
 /**
-* Description: Use if you are working with integers only
+* Description: Use if you are working with non-negative integers
+* Verification: http://codeforces.com/contest/632/submission/33953285
 */
 
 typedef vector<ll> vl;

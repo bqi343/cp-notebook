@@ -1,15 +1,18 @@
 /**
  * Source: http://codeforces.com/blog/entry/14378
- * Unused
+ * Verification: SPOJ fastflow
  */
  
 struct Edge {
-    int v, flow, C, rev;
+    int v;
+    ll flow, C;
+    int rev;
 };
 
 template <int SZ> struct PushRelabel {
     vector<Edge> adj[SZ];
-    int excess[SZ], dist[SZ], count[SZ+1], b = 0;
+    ll excess[SZ];
+    int dist[SZ], count[SZ+1], b = 0;
     bool active[SZ];
     vi B[SZ];
     
@@ -28,7 +31,7 @@ template <int SZ> struct PushRelabel {
     }
 
     void push (int v, Edge &e) {
-        int amt = min(excess[v], e.C-e.flow);
+        ll amt = min(excess[v], e.C-e.flow);
         if (dist[v] == dist[e.v]+1 && amt > 0) {
             e.flow += amt, adj[e.v][e.rev].flow -= amt;
             excess[e.v] += amt, excess[v] -= amt;
@@ -63,7 +66,7 @@ template <int SZ> struct PushRelabel {
         }
     }
 
-    int maxFlow (int s, int t) {
+    ll maxFlow (int s, int t) {
         for (auto &e: adj[s]) excess[s] += e.C;
         
         count[0] = SZ;

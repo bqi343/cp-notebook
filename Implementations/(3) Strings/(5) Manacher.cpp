@@ -1,6 +1,7 @@
 /**
 * Source: http://codeforces.com/blog/entry/12143
 * Description: Calculates length of largest palindrome centered at each character of string
+* Verification: http://www.spoj.com/problems/MSUBSTR/
 */
 
 vi manacher(string s) {
@@ -17,15 +18,20 @@ vi manacher(string s) {
     }
     
     ans.erase(ans.begin());
-    F0R(i,ans.size()) if ((i&1) == (ans[i]&1)) ans[i] ++; // adjust lengths
+    F0R(i,sz(ans)) if ((i&1) == (ans[i]&1)) ans[i] ++; // adjust lengths
     return ans;
 }
 
 int main() {
-	vi a1 = manacher("abacaba");
-	for (int i: a1) cout << i << " ";
-	cout << "\n";
-	
-	vi a2 = manacher("aabbaaccaabbaa");
-	for (int i: a2) cout << i << " ";
+    int T; cin >> T;
+    F0R(i,T) {
+        pii bes = {0,0};
+        string s; cin >> s;
+        vi t = manacher(s);
+        for (int i: t) {
+            if (i > bes.f) bes = {i,1};
+            else if (i == bes.f) bes.s++;
+        }
+        cout << bes.f << " " << bes.s << "\n";
+    }
 }

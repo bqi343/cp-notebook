@@ -3,22 +3,28 @@
 */
 
 struct snode {
-    int val;
+    int val, sz;
     snode *p, *c[2];
+
     snode (int v) {
-        val = v;
+        val = v, sz = 1;
         c[0] = c[1] = p = NULL;
     }
+
     void inOrder(bool f = 0) {
         if (c[0]) c[0]->inOrder();
         cout << val << " ";
         if (c[1]) c[1]->inOrder();
         if (f) cout << "\n------------\n";
     }
+
+    void recalc() {
+        sz = 1+(c[0]?c[0]->sz:0)+(c[1]?c[1]->sz:0);
+    }
 };
 
 void setLink(snode* x, snode* y, int d) {
-    if (x) x->c[d] = y;
+    if (x) x->c[d] = y, x->recalc();
     if (y) y->p = x;
 }
 
@@ -70,6 +76,8 @@ pair<snode*,snode*> split(snode* x, int v) {
     return {z,y.f};
 }
 
+// split by order ...
+
 snode* merge(snode* x, snode* y) {
     if (!x) return y;
     x = splay(getmx(x));
@@ -88,3 +96,18 @@ snode* del(snode* x, int v) { // delete all values equal to v
 }
 
 snode* root;
+
+int order_of_key(int x) {
+    auto a = split(root,x);
+    int t = a.f?a.f->sz:0;
+    root = merge(a.f,a.s);
+    return t;
+}
+
+int find_by_order(int x) {
+    auto a = split_by_order(root,x);
+    auto b = split_by_order(a.f,x-1);
+    int t = b.s->val;
+    root = merge(merge(b.f,b.s),a.s);
+    return t;
+}

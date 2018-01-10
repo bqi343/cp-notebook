@@ -5,8 +5,13 @@
 const int SZ = 1<<20;
 
 template<class T> struct node {
-    T val = 0;
+    T val;
     node<T>* c[2];
+    
+    node() {
+        val = 0;
+        c[0] = c[1] = NULL;    
+    }
     
     void upd(int ind, T v, int L = 0, int R = SZ-1) { // add v
         if (L == ind && R == ind) { val += v; return; }

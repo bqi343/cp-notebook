@@ -14,7 +14,15 @@ template<class T, int SZ> struct Seg {
     T comb(T a, T b) { return a+b; } // easily change this to min or max
     
     void upd(int p, T value) {  // set value at position p
-        for (seg[p += SZ] = value; p > 1; p >>= 1) seg[p>>1] = comb(seg[p],seg[p^1]);
+        for (seg[p += SZ] = value; p > 1; p >>= 1){ 
+            //be careful here: some updates are noncommutative! 
+            if (p < (p^1)){
+                 seg[p>>1] = comb(seg[p],seg[p^1]);
+            }
+            else{
+                 seg[p>>1] = comb(seg[p^1], seg[p]);    
+            }
+        }
     }
     
     void build() {

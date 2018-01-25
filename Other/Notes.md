@@ -45,6 +45,7 @@ I recommend that you use C++11 over Java due to various reasons, such as
   * [Coding Library (radoslav11)](https://github.com/radoslav11/Coding-Library?files=1)
   * [CSAcademy](https://csacademy.com/lessons/)
   * [TJSCT](https://activities.tjhsst.edu/sct/)
+  * [List of CF Tutorials](http://codeforces.com/blog/entry/57282)
 
 ### ACM-ICPC
   * [Stanford](http://web.stanford.edu/class/cs97si/)

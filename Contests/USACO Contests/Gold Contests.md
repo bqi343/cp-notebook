@@ -44,9 +44,9 @@
 | 2017 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=765) | piepie | BFS | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=766) | barnpainting | Trees, DP | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=767) | hayfeast | Data Structures | Done |
-| 2018 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=693) | | | |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=694) | | | |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=695) | | | |
+| 2018 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=789) | mootube | DSU | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=790) | atlarge | DFS | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=791) | spainting | DP | Done |
 | 2018 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=717) | | | |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=718) | | | |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=719) | | | |

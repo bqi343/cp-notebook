@@ -1,0 +1,136 @@
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+#include <bits/stdc++.h>
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+ 
+using namespace std;
+using namespace __gnu_pbds;
+  
+typedef long long ll;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
+template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
+ 
+#define FOR(i, a, b) for (int i=a; i<(b); i++)
+#define F0R(i, a) for (int i=0; i<(a); i++)
+#define FORd(i,a,b) for (int i = (b)-1; i >= a; i--)
+#define F0Rd(i,a) for (int i = (a)-1; i >= 0; i--)
+ 
+#define sz(x) (int)(x).size()
+#define mp make_pair
+#define pb push_back
+#define f first
+#define s second
+#define lb lower_bound
+#define ub upper_bound
+#define all(x) x.begin(), x.end()
+ 
+const int MOD = 1000000007;
+ 
+int N,M,R;
+vi c, r;
+ll cum[100001], ans, t;
+vector<pii> tmp;
+ 
+int main() {
+    freopen("rental.in","r",stdin);
+    freopen("rental.out","w",stdout);
+    cin >> N >> M >> R;
+     
+    c.resize(N);
+    F0R(i,N) cin >> c[i];
+    sort(c.rbegin(),c.rend());
+    F0R(i,M) {
+        int Q,P; cin >> Q >> P;
+        tmp.pb({P,Q});
+    }
+    sort(all(tmp));
+     
+    r.resize(R);
+    F0R(i,R) cin >> r[i];
+    sort(r.rbegin(),r.rend());
+     
+    F0R(i,sz(r)) cum[i+1] = cum[i]+r[i];
+    F0R(i,N+1) {
+        ans = max(ans,t+cum[min(R,N-i)]);
+        if (i == N) break;
+        int cur = c[i];
+        while (sz(tmp) && cur > 0) {
+            ll z = min(tmp.back().s,cur);
+            tmp.back().s -= z, cur -= z;
+            t += z*tmp.back().f;
+            if (tmp.back().s == 0) tmp.pop_back();
+        }
+    }
+    cout << ans;
+}
+ 
+// read!read!read!read!read!read!read!read!read!read!read!read!read!read!read!read!
+// ll vs. int!

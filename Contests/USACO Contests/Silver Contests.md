@@ -35,9 +35,9 @@
 | 2017 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=762) | homework |  | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=763) | measurement | Data Structures, Hashing | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=764) | shuffle | Graphs | Done |
-| 2018 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=690) | | | |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=691) | | | |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=692) | | | |
+| 2018 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=786) | lifeguards | Sorting | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=787) | rental | Sorting | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=788) | mootube | DFS | Done |
 | 2018 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=714) | | | |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=715) | | | |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=716) | | | |

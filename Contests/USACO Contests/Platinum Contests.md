@@ -116,7 +116,7 @@
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=769) | pushabox | DP | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=770) | greedy | Binary Search | Done |
 | 2018 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=792) | lifeguards | DP, Deque | Done |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=793) | atlarge | Trees | |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=793) | atlarge | Trees | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=794) | sprinklers | Cumulative Sum | Done |
 | 2018 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=720) |  |  | |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=721) |  |  | |

@@ -66,6 +66,7 @@
       * [adamant](http://codeforces.com/blog/entry/55572)
     * Problems
       * Base Conversion
+      * Bitwise XOR, And, Or
       * [K-Inversions](https://open.kattis.com/problems/kinversions)
       * [Big Integer](https://dmoj.ca/problem/bts17p8)
       * [Matchings](https://open.kattis.com/contests/acpc17open/problems/matchings)

@@ -105,5 +105,4 @@
 ## 6
 
   * [Wavelet Tree](http://codeforces.com/blog/entry/52854)
-  * [Ji Driver Segment Tree](http://codeforces.com/blog/entry/54750#comment-387839)
-    * English Tutorial?
+  * [Segment Tree Beats](http://codeforces.com/blog/entry/57319)

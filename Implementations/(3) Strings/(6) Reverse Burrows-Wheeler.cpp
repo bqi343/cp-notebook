@@ -1,5 +1,4 @@
 /**
-* Description: Reverses Burrows-Wheeler, if valid
 * Verification: https://cses.fi/problemset/task/1113/
 */
 

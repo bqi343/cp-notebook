@@ -1,1 +1,0 @@
-INDEX VERSION 1.130+/Users/Hui/Desktop/bc18-scaffold/bot/.metadata/.plugins/org.eclipse.jdt.core

@@ -1,3 +1,8 @@
+/**
+* Source: own
+* Verification: Jan 18 Lifeguards
+*/
+
 struct MinDeque { 
     int lo = 0, hi = -1;
     deque<pii> d;

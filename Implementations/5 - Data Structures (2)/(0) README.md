@@ -1,5 +1,7 @@
 # 5 - Data Structures
 
+## 2
+
   * Types
     * Set, Multiset, Unordered Set
     * Map, Unordered Map (Hashmap)
@@ -8,6 +10,7 @@
     * Priority Queue (Heap)
     * Vector
     * Stack
+    * Bitset
   * Tutorial
     * CPH (4, Data Structures)
     * [C++ Reference](http://www.cplusplus.com/reference/stl/)

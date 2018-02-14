@@ -32,12 +32,15 @@ Useful:
  * [Expii](https://www.expii.com/)
  * [Alcumus](https://artofproblemsolving.com/alcumus)
  * [Past Contests](https://artofproblemsolving.com/community/c3158_usa_contests)
+ * [Handouts](https://artofproblemsolving.com/community/c5h1578191_handout_compilation)
  
 Maybe Useful:
  * [Enjoy the Problems](https://artofproblemsolving.com/community/c5h1211223p6004200)
  * [The Blog of Evan Chen](https://usamo.wordpress.com/) 
  * [BOGTRO](https://artofproblemsolving.com/community/c5h1264874p6581946)
  * [Po-Shen Loh's Website](http://www.math.cmu.edu/~lohp/olympiad.shtml)
+ * [PHS Math Team](https://sites.google.com/view/phsmathteam)
+ * [TJHSST](https://activities.tjhsst.edu/vmt/index.html)
 
 Sources:
  * [Math Competition Resources](http://artofproblemsolving.com/wiki/index.php/Resources_for_mathematics_competitions)

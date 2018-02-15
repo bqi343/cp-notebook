@@ -1,6 +1,6 @@
 /**
 * Description: Similar to FWHT
-* Source: https://csacademy.com/blog/fast-fourier-transform-and-variations-of-it
+* Source: CSA - FFT And Variations
 */
 
 typedef vector<double> vd;

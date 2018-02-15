@@ -34,9 +34,3 @@
       * [Level Generation](http://codeforces.com/problemset/problem/818/F) [](54)
       * [Packmen](http://codeforces.com/contest/847/problem/E) [](57)
       * [Office Keys](http://codeforces.com/problemset/problem/830/A) [](60)
-
-## 4
-
-  * Ternary Search
-    * Tutorial
-      * [Wikipedia](https://en.wikipedia.org/wiki/Ternary_search)

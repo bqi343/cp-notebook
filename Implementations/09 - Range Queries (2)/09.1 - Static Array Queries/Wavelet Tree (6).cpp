@@ -49,8 +49,10 @@ template<int SZ> struct wavelet {
         
         int M = (L+R)/2;
         int t = getl(ind,rind)-getl(ind,lind-1);
-        if (t >= k) return query(getl(ind,lind-1)+1,getl(ind,rind),k,2*ind,L,M);
-        return query(getr(ind,lind-1)+1,getr(ind,rind),k-t,2*ind+1,M+1,R);
+        if (t >= k) return query(getl(ind,lind-1)+1, 
+                                getl(ind,rind),k,2*ind,L,M);
+        return query(getr(ind,lind-1)+1,
+                    getr(ind,rind),k-t,2*ind+1,M+1,R);
     }
 };
 

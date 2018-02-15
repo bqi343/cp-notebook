@@ -1,6 +1,6 @@
 /**
 * Source: GeeksForGeeks
-* Verification: Problem Fashion (https://csacademy.com/contest/rmi-2017-day-1/task/fashion/)
+* Verification: Problem Fashion (RMI 2017 Day 1)
 * Code: https://pastebin.com/VJxTvEg1
 */
  

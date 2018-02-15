@@ -1,6 +1,6 @@
-# 8.2 - Amortized Analysis
+# 8 - Algorithm Design
 
-# 2
+## 2
   * Two Pointers (3/24 Silver)
     * Tutorial
       * CPH (8, Amortized Analysis)
@@ -11,5 +11,11 @@
       * [CF 418 C](http://codeforces.com/problemset/problem/814/C) [](54)
       * [Jury Meeting](http://codeforces.com/problemset/problem/853/B) [](90)
 
-# 3
+## 3
   * Minimum Deque
+
+## 4
+
+  * Ternary Search
+    * Tutorial
+      * [Wikipedia](https://en.wikipedia.org/wiki/Ternary_search)

@@ -1,6 +1,6 @@
 /**
 * Source: http://codeforces.com/blog/entry/47108?#comment-315047
-* Description: Node + lazy updatess
+* Description: Node + lazy updates
 */
 
 struct node { 

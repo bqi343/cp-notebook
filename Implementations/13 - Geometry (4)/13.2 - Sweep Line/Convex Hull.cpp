@@ -4,7 +4,8 @@
 */
 
 ll cross(pii O, pii A, pii B) {
-    return (ll)(A.f-O.f)*(B.s-O.s)-(ll)(A.s-O.s)*(B.f-O.f);
+    return (ll)(A.f-O.f)*(B.s-O.s)
+            -(ll)(A.s-O.s)*(B.f-O.f);
 }
 
 vector<pii> convex_hull(vector<pii> P) {

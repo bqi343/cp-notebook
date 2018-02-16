@@ -1,12 +1,18 @@
-var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Princeton"); // name of results sheet
-var DATA;
-var nP = 12, nC = 6, win = 7;
-var tot = 0;
+var sheet, DATA;
+var nP, win, nC = 6;
 var ui = SpreadsheetApp.getUi();
 var name = "";
+var totPoints = 0, numParticipants = 0;
+
+function genName() {
+  name = SpreadsheetApp.getActiveSpreadsheet().getName();
+  if (name.length >= 8 && name.substring(name.length-8,name.length).toLowerCase() == " results")
+    name = name.substring(0,name.length-8);
+}
 
 function onOpen() {
   ui.createAddonMenu()
+      .addItem('Initialize Sheet', 'init')
       .addItem('Generate Results', 'RESULTS')
       .addItem('Email Results', 'EMAIL')
       .addToUi();
@@ -21,19 +27,48 @@ function Comp(a, b) {
 function getWeight(percent) {
   if (percent == 0) return 0;
   return 1+Math.log(100/percent);
-  /*
+}
+
+function getWeight2(percent) {
   if (percent <= 5.738) return 8;
   if (percent <= 13.208) return 7;
   if (percent <= 23.333) return 6;
   if (percent <= 37.838) return 5;
   if (percent <= 60.345) return 4;
-  return 3;*/
+  return 3;
+}
+
+function input() {
+  sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  DATA = sheet.getDataRange().getValues();
+  genName();
+  
+  nP = parseInt(sheet.getRange(2,2).getValue());
+  if (isNaN(nP)) {
+    nP = 12;
+    sheet.getRange(2,2).setValue(12);
+  }
+  
+  win = parseInt(sheet.getRange(3,2).getValue());
+  if (isNaN(win)) {
+    Logger.log(win);
+    win = 8;
+    sheet.getRange(3,2).setValue(8);
+  }
 }
 
 function init() {
-  if (sheet.getMaxColumns() >= nP+nC) sheet.deleteColumns(nP+nC,sheet.getMaxColumns()-nP-nC+1); // correct # of columns
+  input();
+  
+  // correct # of rows + columns
+  if (sheet.getMaxColumns() >= nP+nC) sheet.deleteColumns(nP+nC,sheet.getMaxColumns()-nP-nC+1); 
+  if (sheet.getMaxRows() >= 100) sheet.deleteRows(100,sheet.getMaxRows()-100+1); 
   
   // labels
+  sheet.getRange(1,1).setValue("# of Participants");
+  sheet.getRange(2,1).setValue("# of Problems");
+  sheet.getRange(3,1).setValue("# of Winners");
+  
   for (var i = 1; i <= nP; ++i) sheet.getRange(5,i+nC-1).setValue(i);
   sheet.getRange(1,nC-1,3,1).setValues([["Answer Key"],["%"],["Weight"]]);
   sheet.getRange(1,nC-1,3,1).setFontStyle("italic");
@@ -49,14 +84,21 @@ function init() {
   sheet.getRange(1,1,sheet.getMaxRows(),sheet.getMaxColumns()).setFontFamily("Times New Roman");
   
   // columns
-  for (var i = 1; i <= sheet.getMaxColumns(); ++i) sheet.autoResizeColumn(i);
+  for (var i = 1; i <= sheet.getMaxColumns(); ++i) {
+    sheet.autoResizeColumn(i);
+    if (sheet.getColumnWidth(i) < 40) sheet.setColumnWidth(i,40);
+  }
+  
+}
+
+function normalizeScore() {
+  for (var i = 5; i < 5+numParticipants; i++)
+    sheet.getRange(i+1,nC-1).setValue(sheet.getRange(i+1,nC-1).getValue()/totPoints*100); 
 }
 
 function RESULTS() {
   init();
-  var numParticipants = 0;
   for (var i = 6; i <= 100; ++i) if(sheet.getRange(i,1).getValue().length>0) numParticipants++; 
-  sheet.getRange(1,1).setValue("Number of Participants");
   sheet.getRange(1,2).setValue(numParticipants);
   
   DATA = sheet.getDataRange().getValues(), arr = [[]];
@@ -77,10 +119,9 @@ function RESULTS() {
   
   for (var i = 0; i < nP; ++i) arr[0][i] = getWeight(arr[0][i]); // now generate weights
 
-  tot = 0;
   for (var i = 0; i < nP; ++i) { 
     sheet.getRange(3,nC+i).setValue(arr[0][i]); // set weights 
-    tot += arr[0][i];
+    totPoints += arr[0][i];
   }
   
   for (var j = 0; j < nP; ++j) {
@@ -91,8 +132,7 @@ function RESULTS() {
     }
   }
   
-    for (var i = 5; i < 5+numParticipants; i++)
-      sheet.getRange(i+1,nC-1).setValue(sheet.getRange(i+1,nC-1).getValue()/tot*100);
+  normalizeScore();
   
   // sort participants by score
   var range = sheet.getRange(6,1,numParticipants,nP+nC-1);
@@ -101,12 +141,12 @@ function RESULTS() {
 }
 
 function EMAIL() {
-  DATA = sheet.getDataRange().getValues();
+  input();
   
   for (var i = 5; i < 5+DATA[0][1]; ++i) {
     var row = DATA[i], message = "Here is <b>"+row[0]+"'s</b> score report for the <b>" + name + "</b>.<br><br>";
     
-    message += "Your final score is <b>"+Math.round(1000*row[nC-2])/1000+"</b>.<br><br>";
+    message += "Your final score is <b>"+Math.round(1000*row[nC-2])/1000+"</b> out of 100.<br><br>";
     
     message += "<table style='width:100%;'border = 1 cellpadding = 5>"
       + "<tr>"
@@ -128,9 +168,10 @@ function EMAIL() {
       message += "</td></tr>";
     }
     message += "</table><br><br>"
-    + "Please respond if you have any questions.<br><br>~Ben";
+    + "Please respond if you have any questions."; 
 
     sheet.getRange(i+1,3).setValue("Yes");
+    // ensure that you don't send emails before done
     // if (row[2] != "Yes") MailApp.sendEmail({to: row[1],subject: name+" Score Report",htmlBody: message});
     if (i == 5) MailApp.sendEmail({to: "bqi343@gmail.com",subject: name+" Score Report",htmlBody: message});
   }

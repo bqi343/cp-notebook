@@ -25,13 +25,13 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
     * Lunchtime, Cookoff
   * [Don Mills OJ](http://dmoj.ca/)
 
-## Annual Contests
-  * [Facebook Hacker Cup](https://www.facebook.com/hackercup/): January
-  * [Bubble Cup](http://bubblecup.org/): March
+## Annual Contests 
   * [Russian Code Cup](http://www.russiancodecup.ru/en/): March
+  * [Bubble Cup](http://bubblecup.org/): April
   * [Google Code Jam](https://code.google.com/codejam/): April
-  * [Yandex Algorithm](https://contest.yandex.ru/contest-list/): April
   * [IPSC](https://ipsc.ksp.sk/rules): July 
+  * ~~[Facebook Hacker Cup](https://www.facebook.com/hackercup/): January (indefinitely delayed 2018)~~
+  * ~~[Yandex Algorithm](https://contest.yandex.ru/contest-list/): April (bad times)~~
   
 ## Contest Tools
 

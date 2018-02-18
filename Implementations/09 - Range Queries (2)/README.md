@@ -55,6 +55,7 @@
       * Problems
         * [Twin Permutations](https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/mancunian-and-twin-permutations-d988930c/description/) [](80)
         * [Crowded Cities](https://dmoj.ca/problem/bfs17p6) [](89)
+        * [Tetris 3D](https://szkopul.edu.pl/problemset/problem/OQjANSOOD_-c38gh8p6g3Gxp/site/?key=statement) [](93)
         * [A2OJ](https://a2oj.com/category?ID=650)
   * Treap
       * Notes

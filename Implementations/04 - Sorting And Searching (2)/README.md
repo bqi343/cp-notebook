@@ -34,3 +34,10 @@
       * [Level Generation](http://codeforces.com/problemset/problem/818/F) [](54)
       * [Packmen](http://codeforces.com/contest/847/problem/E) [](57)
       * [Office Keys](http://codeforces.com/problemset/problem/830/A) [](60)
+      
+## 6
+  * Parallel Binary Search
+    * Tutorial
+      * CP Guide 15.5.3
+    * Problem
+      * [Meteors](https://szkopul.edu.pl/problemset/problem/7JrCYZ7LhEK4nBR5zbAXpcmM/site/?key=statement)

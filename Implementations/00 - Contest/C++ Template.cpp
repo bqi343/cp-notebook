@@ -10,9 +10,10 @@ using namespace std;
 using namespace __gnu_pbds;
  
 typedef long long ll;
+typedef long double ld;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
-template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+typedef pair<int, int> pi;
+template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
 #define F0R(i, a) for (int i=0; i<(a); i++)
@@ -29,11 +30,12 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_or
 #define all(x) x.begin(), x.end()
 
 const int MOD = 1000000007;
+const double PI = 4*atan(1);
 
 int main() {
-	ios_base::sync_with_stdio(0);cin.tie(0);
-	
+    ios_base::sync_with_stdio(0); cin.tie(0);
+    
 }
 
-// read!read!read!read!read!read!read!
-// ll vs. int!
+// read the question correctly (is y a vowel?)
+// look out for special cases (n=1?) and overflow (ll vs int?)

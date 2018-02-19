@@ -13,6 +13,9 @@ typedef long long ll;
 typedef long double ld;
 typedef vector<int> vi;
 typedef pair<int, int> pi;
+typedef pair<ll,ll> pl;
+typedef pair<double,double> pd;
+
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
@@ -31,6 +34,7 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 
 const int MOD = 1000000007;
 const double PI = 4*atan(1);
+const ll INF = 1e18;
 
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(0);

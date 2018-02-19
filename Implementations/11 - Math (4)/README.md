@@ -2,6 +2,7 @@
 
 [CPC.9](https://github.com/SuprDewd/T-414-AFLV/tree/master/09_mathematics)
 
+  * [Fraction Class](https://martin-thoma.com/fractions-in-cpp/)
 
 ### 4
 

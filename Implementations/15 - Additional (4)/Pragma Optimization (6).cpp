@@ -8,12 +8,11 @@
 #pragma GCC optimize ("O3")
 #pragma GCC target ("sse4")
 
-// template
-
 int q, mx[100001], mn[100001];
 
 int main() {
-    ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);cout.tie(0);
     cin >> q;
     F0R(i,100001) mx[i] = -MOD, mn[i] = MOD;
     F0R(i,q) {

@@ -1,6 +1,5 @@
 /**
-* Source: http://www.geeksforgeeks.org/biconnected-components/
-* Some corrections!
+* Source: GeeksForGeeks (corrected)
 * Verification: USACO December 2017, Push a Box
 * Code: https://pastebin.com/yUWuzTH8
 */

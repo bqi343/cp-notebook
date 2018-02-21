@@ -1,6 +1,6 @@
 /** 
  * Source: https://ideone.com/0cMjZJ
- * Usage: https://open.kattis.com/problems/stringmultimatching
+ * Usage: Kattis stringmultimatching
 */
 
 template<int SZ> struct Aho {

@@ -1,6 +1,6 @@
 /**
 * Source: KACTL
-* Unused
+* Verification: CSA Squared Ends
 */
 
 bool Q;
@@ -11,7 +11,7 @@ struct Line {
 	}
 };
 
-struct LineContainer : multiset<Line> {
+struct LineContainer : multiset<Line> { 
 	const ll inf = LLONG_MAX;
 	ll div(ll a, ll b) { // floored division
 	    if (b < 0) a *= -1, b *= -1;
@@ -34,13 +34,9 @@ struct LineContainer : multiset<Line> {
 		while ((y = x) != begin() && (--x)->p >= y->p) isect(x, erase(y));
 	}
 	
-	ll query(ll x) {
+	ll query(ll x) { // gives max value
 		assert(!empty());
 		Q = 1; auto l = *lb({0,0,x}); Q = 0;
 		return l.k * x + l.m;
 	}
 };
-
-int main() {
-    
-}

@@ -1,5 +1,5 @@
 /**
-* Source: https://open.kattis.com/problems/segmentintersection
+* Verification: Kattis segmentintersection
 * If numbers are small enough, fractions are recommended.
 */
 

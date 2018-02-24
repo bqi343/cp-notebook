@@ -31,11 +31,11 @@ map<int,int> hsh, ra, cur;
 vector<vi> v;
 
 void process(int i) {
-    hsh[cur[v[i][1]]] ^= ra[v[i][1]];
-    if (hsh[cur[v[i][1]]] == 0) hsh.erase(cur[v[i][1]]);
-    
-    cur[v[i][1]] += v[i][2];
-    hsh[cur[v[i][1]]] ^= ra[v[i][1]];
+	hsh[cur[v[i][1]]] ^= ra[v[i][1]];
+	if (hsh[cur[v[i][1]]] == 0) hsh.erase(cur[v[i][1]]);
+
+	cur[v[i][1]] += v[i][2];
+	hsh[cur[v[i][1]]] ^= ra[v[i][1]];
 }
 
 int main() {
@@ -43,17 +43,18 @@ int main() {
 	freopen("measurement.out","w",stdout);
 	cin >> N >> G;
 	
-    cur[0] = G;
-    ra[0] = rand();
+	cur[0] = G;
+	ra[0] = rand();
+	
 	F0R(i,N) {
 	    int day,id,c; string change; cin >> day >> id >> change;
 	    if (change[0] == '+') c = stoi(change.substr(1,sz(change)-1));
 	    else c = stoi(change);
-	    
+
 	    ra[id] = rand(), cur[id] = G;
 	    v.pb({day,id,c});
 	}
-	
+
 	for (auto a: ra) hsh[G] ^= a.s;
 	sort(all(v));
 	for (int i = 0; i < sz(v);) {

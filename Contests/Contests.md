@@ -33,18 +33,19 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * ~~[Facebook Hacker Cup](https://www.facebook.com/hackercup/): January (indefinitely delayed 2018)~~
   * ~~[Yandex Algorithm](https://contest.yandex.ru/contest-list/): April (bad times)~~
   
-## Contest Tools
-
-Mostly for CodeForces, some more useful than others.
-
-  * [Code Drills](http://code-drills.com/)
-  * [DataBread](http://databread.in/board.php)
-  * [Stopstalk](https://www.stopstalk.com)
-  * [CF Visualizer](http://cfviz.netlify.com/compare.html)
-  * [CF Achievements](http://cfa.yuldashev.net/)
-  * [CF Predictor](https://chrome.google.com/webstore/detail/cf-predictor/ocfloejijfhhkkdmheodbaanephbnfhn)
-  * [CF Enhancer](https://chrome.google.com/webstore/detail/codeforces-enhancer/ocmandagmgmkcplckgnfgaokpgkfenmp)
   
+## Online HS
+
+ * [VT HSPC](https://icpc.cs.vt.edu/#/hscontest2017)
+    * Online
+    * 5 hours
+    * [Kattis](https://open.kattis.com/problem-sources/2016%20Virginia%20Tech%20High%20School%20Programming%20Contest)
+    * December
+  * [UCF HSPT](https://hspt.ucfprogrammingteam.org/index.php/hspt-online-edition)
+    * Online
+    * 4 hours
+    * December
+    
 ## Misc OI
 
 (only including those which are open to outside participation)
@@ -65,30 +66,19 @@ Mostly for CodeForces, some more useful than others.
   * [Baltic OI](http://www.boi2017.org/)
   * [COCI](http://hsin.hr/coci/)
 
-## HS Contests
-  * [PClassic](http://pclassic.org/)
-    * Philadelphia (1 hr)
-    * 9:15am-5:00pm
-    * November, April
-  * [VT HSPC](https://icpc.cs.vt.edu/#/hscontest2017)
-    * Online
-    * 5 hours
-    * [Kattis](https://open.kattis.com/problem-sources/2016%20Virginia%20Tech%20High%20School%20Programming%20Contest)
-    * December
-  * [UCF HSPT](https://hspt.ucfprogrammingteam.org/index.php/hspt-online-edition)
-    * Online
-    * 4 hours
-    * December
-  * [Code Quest](http://www.lockheedmartin.com/us/who-we-are/community/codequest/code-quest-moorestown.html)
-    * Moorestown (1 hr)
-    * 7:00am-2:00pm
-    * April
-  * [Cornell HSPC](https://www.cs.cornell.edu/events/cornell-high-school-programming-contest)
-    * New York (2-3 hrs)
-    * 11:30am-4:30pm?
-    * [Hackerrank](https://www.hackerrank.com/contests/cornell-university-high-school-programming-contest-2017)
-    * April
+  
+## Contest Tools
 
+Mostly for CodeForces, some more useful than others.
+
+  * [Code Drills](http://code-drills.com/)
+  * [DataBread](http://databread.in/board.php)
+  * [Stopstalk](https://www.stopstalk.com)
+  * [CF Visualizer](http://cfviz.netlify.com/compare.html)
+  * [CF Achievements](http://cfa.yuldashev.net/)
+  * [CF Predictor](https://chrome.google.com/webstore/detail/cf-predictor/ocfloejijfhhkkdmheodbaanephbnfhn)
+  * [CF Enhancer](https://chrome.google.com/webstore/detail/codeforces-enhancer/ocmandagmgmkcplckgnfgaokpgkfenmp)
+  
 ## Very Rough Codeforces to USACO
   * 1200+: Silver
   * 1400+: Gold

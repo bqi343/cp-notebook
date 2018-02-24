@@ -25,8 +25,10 @@
       * [Kosaraju](https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm)
       * [2-SAT](http://codeforces.com/blog/entry/16205)
     * Problems
-      * [Proving Equivalences](https://open.kattis.com/problems/equivalences) [](78)
       * [A2OJ](https://a2oj.com/category?ID=231)
+      * [Proving Equivalences](https://open.kattis.com/problems/equivalences) [](78)
+      * [Festival](https://szkopul.edu.pl/problemset/problem/p9uJo01RR9ouMLLAYroFuQ-7/site/?key=statement) [](173)
+        * [Linear Programming Trick](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
   * Maximum Flow
     * Tutorial
       * CPH (20, Flows & Cuts)

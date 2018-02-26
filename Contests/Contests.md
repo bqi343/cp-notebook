@@ -29,6 +29,7 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * [Russian Code Cup](http://www.russiancodecup.ru/en/): March
   * [Bubble Cup](http://bubblecup.org/): April
   * [Google Code Jam](https://code.google.com/codejam/): April
+    * Kickstart: February - November
   * [IPSC](https://ipsc.ksp.sk/rules): July 
   * ~~[Facebook Hacker Cup](https://www.facebook.com/hackercup/): January (indefinitely delayed 2018)~~
   * ~~[Yandex Algorithm](https://contest.yandex.ru/contest-list/): April (bad times)~~

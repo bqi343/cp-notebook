@@ -27,9 +27,6 @@ If you have qualified for (J)MO:
  * Add to this resources page!
  * Do USACO.
 
-http://yufeizhao.com/olympiad/
-http://www.mit.edu/~evanchen/FAQs/contest.html 
-
 ## Links
 
 Olympiad:

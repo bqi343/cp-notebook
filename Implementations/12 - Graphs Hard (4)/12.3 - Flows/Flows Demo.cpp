@@ -1,6 +1,6 @@
 /**
 * Link: http://www.spoj.com/problems/FASTFLOW/
-* Use with Dinic, Push-Relabel
+* Use with Dinic, Push-Relabel, Edmonds-Karp
 */
 
 int N,M;

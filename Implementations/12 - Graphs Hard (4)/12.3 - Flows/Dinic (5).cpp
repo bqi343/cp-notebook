@@ -20,7 +20,7 @@ template<int SZ> struct Dinic {
         adj[u].pb(a), adj[v].pb(b); 
     } 
      
-    bool BFS(int s, int t) {
+    bool bfs(int s, int t) {
         F0R(i,SZ) level[i] = -1;
         level[s] = 0;  
       
@@ -62,7 +62,7 @@ template<int SZ> struct Dinic {
         if (s == t) return -1;
         ll total = 0;  
       
-        while (BFS(s, t)) {
+        while (bfs(s, t)) {
             F0R(i,SZ) start[i] = 0;
             while (ll flow = sendFlow(s, INT_MAX, t)) total += flow;
         }

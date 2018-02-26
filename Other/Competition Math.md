@@ -22,23 +22,31 @@ If you consistently score 120+ on AMC 10:
 
 If you have qualified for (J)MO:
  * At this point, you should consistently score 140+ on AMC 10.
- * Win JMO by bashing geometry problems.
+ * Win JMO because of the geometry.
+   * [EGMO](https://www.maa.org/press/ebooks/euclidean-geometry-in-mathematical-olympiads)
  * Add to this resources page!
  * Do USACO.
 
+http://yufeizhao.com/olympiad/
+http://www.mit.edu/~evanchen/FAQs/contest.html 
+
 ## Links
 
+Olympiad:
+ * [Evan Chen](http://web.evanchen.cc/FAQs/contest.html)
+   * [Blog](https://usamo.wordpress.com/) 
+ * [Yufei Zhao](http://yufeizhao.com/olympiad/)
+ * [Po-Shen Loh](http://www.math.cmu.edu/~lohp/olympiad.shtml)
+ 
 Useful:
  * [Expii](https://www.expii.com/)
  * [Alcumus](https://artofproblemsolving.com/alcumus)
  * [Past Contests](https://artofproblemsolving.com/community/c3158_usa_contests)
  * [Handouts](https://artofproblemsolving.com/community/c5h1578191_handout_compilation)
  
-Maybe Useful:
+Interesting:
  * [Enjoy the Problems](https://artofproblemsolving.com/community/c5h1211223p6004200)
- * [The Blog of Evan Chen](https://usamo.wordpress.com/) 
  * [BOGTRO](https://artofproblemsolving.com/community/c5h1264874p6581946)
- * [Po-Shen Loh's Website](http://www.math.cmu.edu/~lohp/olympiad.shtml)
  * [PHS Math Team](https://sites.google.com/view/phsmathteam)
  * [TJHSST](https://activities.tjhsst.edu/vmt/index.html)
 

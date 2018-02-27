@@ -118,9 +118,9 @@
 | 2018 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=792) | lifeguards | DP, Deque | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=793) | atlarge | Trees | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=794) | sprinklers | Cumulative Sum | Done |
-| 2018 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=720) |  |  | |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=721) |  |  | |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=722) |  |  | |
+| 2018 Feb | [1](http://www.usaco.org/index.php?page=viewproblem&cpid=804) | slingshot | SegTree | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=805) | newbarn | Trees | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=806) | gymnast | Math | Done |
 | 2018 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=744) |  |  | |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=745) |  |  | |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=746) |  |  | |

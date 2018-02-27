@@ -47,9 +47,9 @@
 | 2018 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=789) | mootube | DSU | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=790) | atlarge | DFS | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=791) | spainting | DP | Done |
-| 2018 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=717) | | | |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=718) | | | |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=719) | | | |
+| 2018 Feb | [1](http://www.usaco.org/index.php?page=viewproblem&cpid=801) | snowboots | Set | |
+| | [2](http://www.usaco.org/index.php?page=viewproblem&cpid=802) | dirtraverse | DFS | |
+| | [3](http://www.usaco.org/index.php?page=viewproblem&cpid=803) | taming | DP | |
 | 2018 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=741) | | | |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=743) | | | |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=743) | | | |

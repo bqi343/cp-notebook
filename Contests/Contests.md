@@ -26,14 +26,15 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * [Don Mills OJ](http://dmoj.ca/)
 
 ## Annual Contests 
+  * [BattleCode](https://www.battlecode.org): January
   * [Russian Code Cup](http://www.russiancodecup.ru/en/): March
   * [Bubble Cup](http://bubblecup.org/): April
   * [Google Code Jam](https://code.google.com/codejam/): April
     * Kickstart: February - November
   * [IPSC](https://ipsc.ksp.sk/rules): July 
+  * [SnackDown](https://www.codechef.com/snackdown/2017/schedule): May
   * ~~[Facebook Hacker Cup](https://www.facebook.com/hackercup/): January (indefinitely delayed 2018)~~
   * ~~[Yandex Algorithm](https://contest.yandex.ru/contest-list/): April (bad times)~~
-  
   
 ## Online HS
 

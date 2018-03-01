@@ -42,8 +42,8 @@ vpi v;
 vector<array<int,3>> q;
 
 int main() {
-    // freopen("snowboots.in","r",stdin);
-    // freopen("snowboots.out","w",stdout);
+    freopen("snowboots.in","r",stdin);
+    freopen("snowboots.out","w",stdout);
     
     cin >> N >> B;
     F0R(i,N) m.insert(i);

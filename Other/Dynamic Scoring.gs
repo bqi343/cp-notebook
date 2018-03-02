@@ -5,6 +5,58 @@ var ui = SpreadsheetApp.getUi();
 var name = "";
 var totPoints = 0, numParticipants = 0, emailMode, yourEmail;
 
+function moveFiles(sourceFileId, targetFolderId) {
+  var file = DriveApp.getFileById(sourceFileId);
+  file.getParents().next().removeFile(file);
+  DriveApp.getFolderById(targetFolderId).addFile(file);
+}
+
+function getFolder() {
+  var thisFileId = SpreadsheetApp.getActiveSpreadsheet().getId();
+  var thisFile = DriveApp.getFileById(thisFileId);
+  
+  return thisFile.getParents().next();
+}
+
+function checkFile(folder,filename){
+  var file = folder.getFilesByName(filename);
+  return file.hasNext();
+}
+
+function genForm() {
+  genName();
+  
+  var title = name+" Signup";
+  if (checkFile(getFolder(),title)) return;
+  
+  var form = FormApp.create(title);
+  moveFiles(form.getId(),getFolder().getId());
+  
+  form.addTextItem()
+  .setTitle("Name")
+  .setRequired(true);
+  
+  form.addTextItem()
+  .setTitle("Email Address")
+  .setRequired(true);
+  
+  form.addMultipleChoiceItem()
+  .setTitle('I can take the tryout test on the following date.')
+  .setChoiceValues(['?','?'])
+  .setRequired(true)
+  .showOtherOption(true);
+  
+  form.addMultipleChoiceItem()
+  .setTitle('I am able to attend the contest on ----.')
+  .setChoiceValues(['Yes','No'])
+  .setRequired(true);
+  
+  form.addParagraphTextItem()
+  .setTitle('Any comments?');
+  
+  form.setDestination(FormApp.DestinationType.SPREADSHEET,SpreadsheetApp.getActiveSpreadsheet().getId());
+}
+
 function genName() {
   name = SpreadsheetApp.getActiveSpreadsheet().getName();
   if (name.length >= 8 && name.substring(name.length-8,name.length).toLowerCase() == " results")
@@ -13,7 +65,7 @@ function genName() {
 
 function onOpen() {
   ui.createAddonMenu()
-      .addItem('Initialize Sheet', 'init')
+      .addItem('Initialize', 'init')
       .addItem('Generate Results', 'RESULTS')
       .addItem('Email Results', 'EMAIL')
       .addToUi();
@@ -74,6 +126,7 @@ function input() {
 
 function init() {
   input();
+  genForm();
   
   // correct # of rows + columns
   if (sheet.getMaxColumns() >= numProblems+probCol) sheet.deleteColumns(numProblems+probCol,sheet.getMaxColumns()-(numProblems+probCol)+1); 
@@ -165,6 +218,11 @@ function RESULTS() {
 
 function EMAIL() {
   input();
+  
+  if (emailMode == 1) {
+     var response = ui.alert('Are you sure that you want to email results to all participants?', ui.ButtonSet.YES_NO);
+     if (response != ui.Button.YES) return;
+  }
   
   for (var i = nameRow-1; i < nameRow-1+DATA[0][1]; ++i) {
     var row = DATA[i], message = "Here is <b>"+row[0]+"'s</b> score report for the <b>" + name + "</b>.<br><br>";

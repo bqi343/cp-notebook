@@ -1,7 +1,3 @@
-/**
-* Sources: various
-*/
-
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
@@ -36,6 +32,7 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 const int MOD = 1000000007;
 const double PI = 4*atan(1);
 const ll INF = 1e18;
+const int MX = 100001;
 
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(0);

@@ -1,28 +1,28 @@
 /**
 * Description: offline subtree queries in O(Nlog^2N)
-* Verification: January Easy 2018 - Shubham & Tree 1
+* To verify: January Easy 2018 - Shubham & Tree 1
 */
 
 const int MX = 200001;
 
 struct HeavyLightSet {
-    int loc[MX], sub[MX], par[MX], val[MX];
+    int val[MX];
     vi child[MX];
     map<int,int> dat[MX];
     
     void comb(int a, int b) {
-        int A = loc[a], B = loc[b];
-        if (sz(dat[A]) < sz(dat[B])) swap(a,b), swap(A,B);
-        for (auto& x: dat[B]) dat[A][x.f] += x.s;
-        dat[B].clear(); loc[b] = A;
+        bool swa = 0;
+        if (sz(dat[a]) < sz(dat[b])) swap(a,b), swa = 1;
+        for (auto& x: dat[b]) dat[a][x.f] += x.s;
+        dat[b].clear();
+        if (swa) swap(dat[a],dat[b]);
     }
     
     void process(int ind) {
-        sub[ind] = 1; loc[ind] = ind; dat[ind][val[ind]] ++;
+        dat[ind][val[ind]] ++;
         for (int i: child[ind]) {
             process(i); 
             comb(i,ind);
-            sub[ind] += sub[i];
         }
         // now do stuff with values
     }

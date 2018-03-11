@@ -1,5 +1,5 @@
 /**
-* Description: Gaussian Elimination
+* Description: Uses gaussian elimination to solve a system of linear equations
 * Usage: https://open.kattis.com/problems/equationsolverplus
 */
 

@@ -7,11 +7,15 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef long double ld;
-typedef vector<int> vi;
+
 typedef pair<int, int> pi;
-typedef vector<pi> vpi;
 typedef pair<ll,ll> pl;
 typedef pair<double,double> pd;
+
+typedef vector<int> vi;
+typedef vector<ll> vl;
+typedef vector<pi> vpi;
+typedef vector<vl> mat;
 
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
@@ -40,4 +44,4 @@ int main() {
 }
 
 // read the question correctly (is y a vowel?)
-// look out for special cases (n=1?) and overflow (ll vs int?)
+// look out for SPECIAL CASES (n=1?) and overflow (ll vs int?)

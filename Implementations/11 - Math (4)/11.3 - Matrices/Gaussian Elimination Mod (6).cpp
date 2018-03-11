@@ -1,3 +1,8 @@
+/*
+* Description: Calculates determinant mod a prime via gaussian elimination
+* Usage: CF Stranger Trees
+*/
+
 typedef array<array<int,100>,100> mat;
 
 ll po (ll b, ll p) { return !p?1:po(b*b%MOD,p/2)*(p&1?b:1)%MOD; }

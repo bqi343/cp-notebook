@@ -26,6 +26,7 @@ If you have qualified for (J)MO:
    * General
      * [Past JMO](https://artofproblemsolving.com/community/c3420_usajmo)
      * [WOOT](https://artofproblemsolving.com/class/1464-woot)
+     * [Links](http://artofproblemsolving.com/wiki/index.php/Resources_for_mathematics_competitions#Bunch_of_General_links) (particularly bolded ones)
      * Art & Craft of Problem Solving
      * USAMO / IMO 1, 4
    * Geometry

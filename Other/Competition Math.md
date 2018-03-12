@@ -24,9 +24,9 @@ If you have qualified for (J)MO:
  * At this point, you should consistently score 140+ on AMC 10 and 9+ on AIME.
  * JMO Stuff
    * General
+     * [Past JMO](https://artofproblemsolving.com/community/c3420_usajmo)
+     * [WOOT](https://artofproblemsolving.com/class/1464-woot)
      * Art & Craft of Problem Solving
-     * WOOT
-     * Past JMO
      * USAMO / IMO 1, 4
    * Geometry
      * All types of bash
@@ -37,19 +37,18 @@ If you have qualified for (J)MO:
      * Also know
        * Projective
        * Inversion
-     * [EGMO](https://www.maa.org/press/ebooks/euclidean-geometry-in-mathematical-olympiads) is highly recommended
+     * [EGMO](https://www.maa.org/press/ebooks/euclidean-geometry-in-mathematical-olympiads) is really good!
      * [AoPS Olympiad Geo](https://artofproblemsolving.com/school/course/olympiad-geometry)
      * Awesomemath 106, 107 Geo
    * Algebra
-     * Factor
+     * Factor stuff
      * Functional equation = plug in stuff until it works
      * Awesomemath 105, 108 Alg
    * NT
      * mods
    * Combinatorics
      * be smart, try stuff
- * Add to this resources page!
- * Do USACO.
+     * competitive programming!
 
 ## Links
 

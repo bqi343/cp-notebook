@@ -1,6 +1,6 @@
 # Competition Math
  
-## Advice
+## Pre-Olympiad
 
 If you score <90 on AMC 10:
  * You should make sure that you are familiar with standard algebra concepts. This may not be as easy as you think! 
@@ -20,14 +20,24 @@ If you consistently score 120+ on AMC 10:
  * Do as many contests as you can (USAMTS, ZIML, etc.)
  * [Here](https://drive.google.com/drive/folders/0B95dMIY7fstOemlzdThlZjFCUnc?usp=sharing) are some AIME resources.
 
-If you have qualified for (J)MO:
+## Olympiad 
+
+(JMO only)
+
  * At this point, you should consistently score 140+ on AMC 10 and 9+ on AIME.
  * General
-   * Basically just do a lot of problems and hope for a favorable subject distribution.
-   * [Past JMO](https://artofproblemsolving.com/community/c3420_usajmo)
    * [WOOT](https://artofproblemsolving.com/class/1464-woot)
    * [Links](http://artofproblemsolving.com/wiki/index.php/Resources_for_mathematics_competitions#Bunch_of_General_links) (particularly bolded ones)
    * Art & Craft of Problem Solving
+ * Smart people
+   * [Evan Chen](http://web.evanchen.cc/FAQs/contest.html)
+     * [Blog](https://usamo.wordpress.com/) 
+   * [Yufei Zhao](http://yufeizhao.com/olympiad/)
+   * [Po-Shen Loh](http://www.math.cmu.edu/~lohp/olympiad.shtml)
+ * Problems
+   * Basically just do a bunch and hope for a favorable subject distribution.
+   * [Past JMO](https://artofproblemsolving.com/community/c3420_usajmo)
+   * [USAMTS 4/5](http://usamts.org/Problems/U_Problems.php)
    * USAMO / IMO 1, 4
  * Geometry
    * All types of bash
@@ -51,13 +61,8 @@ If you have qualified for (J)MO:
    * be smart, try stuff
    * competitive programming!
 
-## Links
 
-Olympiad:
- * [Evan Chen](http://web.evanchen.cc/FAQs/contest.html)
-   * [Blog](https://usamo.wordpress.com/) 
- * [Yufei Zhao](http://yufeizhao.com/olympiad/)
- * [Po-Shen Loh](http://www.math.cmu.edu/~lohp/olympiad.shtml)
+## More Links
  
 Useful:
  * [Expii](https://www.expii.com/)

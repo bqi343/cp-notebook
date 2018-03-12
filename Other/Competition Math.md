@@ -29,6 +29,7 @@ If you consistently score 120+ on AMC 10:
    * [WOOT](https://artofproblemsolving.com/class/1464-woot)
    * [Links](http://artofproblemsolving.com/wiki/index.php/Resources_for_mathematics_competitions#Bunch_of_General_links) (particularly bolded ones)
    * Art & Craft of Problem Solving
+   * [MOP Cutoffs](https://en.wikipedia.org/wiki/Mathematical_Olympiad_Summer_Program#Cutoff_scores)
  * Smart people
    * [Evan Chen](http://web.evanchen.cc/FAQs/contest.html)
      * [Blog](https://usamo.wordpress.com/) 

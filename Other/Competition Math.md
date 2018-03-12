@@ -21,9 +21,33 @@ If you consistently score 120+ on AMC 10:
  * [Here](https://drive.google.com/drive/folders/0B95dMIY7fstOemlzdThlZjFCUnc?usp=sharing) are some AIME resources.
 
 If you have qualified for (J)MO:
- * At this point, you should consistently score 140+ on AMC 10.
- * Win JMO because of the geometry.
-   * [EGMO](https://www.maa.org/press/ebooks/euclidean-geometry-in-mathematical-olympiads)
+ * At this point, you should consistently score 140+ on AMC 10 and 9+ on AIME.
+ * JMO Stuff
+   * General
+     * Art & Craft of Problem Solving
+     * WOOT
+     * Past JMO
+     * USAMO / IMO 1, 4
+   * Geometry
+     * All types of bash
+       * Complex
+       * Bary
+       * Cartesian
+       * Trig
+     * Also know
+       * Projective
+       * Inversion
+     * [EGMO](https://www.maa.org/press/ebooks/euclidean-geometry-in-mathematical-olympiads) is highly recommended
+     * [AoPS Olympiad Geo](https://artofproblemsolving.com/school/course/olympiad-geometry)
+     * Awesomemath 106, 107 Geo
+   * Algebra
+     * Factor
+     * Functional equation = plug in stuff until it works
+     * Awesomemath 105, 108 Alg
+   * NT
+     * mods
+   * Combinatorics
+     * be smart, try stuff
  * Add to this resources page!
  * Do USACO.
 

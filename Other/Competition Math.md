@@ -22,34 +22,34 @@ If you consistently score 120+ on AMC 10:
 
 If you have qualified for (J)MO:
  * At this point, you should consistently score 140+ on AMC 10 and 9+ on AIME.
- * JMO Stuff
-   * General
-     * [Past JMO](https://artofproblemsolving.com/community/c3420_usajmo)
-     * [WOOT](https://artofproblemsolving.com/class/1464-woot)
-     * [Links](http://artofproblemsolving.com/wiki/index.php/Resources_for_mathematics_competitions#Bunch_of_General_links) (particularly bolded ones)
-     * Art & Craft of Problem Solving
-     * USAMO / IMO 1, 4
-   * Geometry
-     * All types of bash
-       * Complex
-       * Bary
-       * Cartesian
-       * Trig
-     * Also know
-       * Projective
-       * Inversion
-     * [EGMO](https://www.maa.org/press/ebooks/euclidean-geometry-in-mathematical-olympiads) is really good!
-     * [AoPS Olympiad Geo](https://artofproblemsolving.com/school/course/olympiad-geometry)
-     * Awesomemath 106, 107 Geo
-   * Algebra
-     * Factor stuff
-     * Functional equation = plug in stuff until it works
-     * Awesomemath 105, 108 Alg
-   * NT
-     * mods
-   * Combinatorics
-     * be smart, try stuff
-     * competitive programming!
+ * General
+   * Basically just do a lot of problems and hope for a favorable subject distribution.
+   * [Past JMO](https://artofproblemsolving.com/community/c3420_usajmo)
+   * [WOOT](https://artofproblemsolving.com/class/1464-woot)
+   * [Links](http://artofproblemsolving.com/wiki/index.php/Resources_for_mathematics_competitions#Bunch_of_General_links) (particularly bolded ones)
+   * Art & Craft of Problem Solving
+   * USAMO / IMO 1, 4
+ * Geometry
+   * All types of bash
+     * Complex
+     * Bary
+     * Cartesian
+     * Trig
+   * Also know
+     * Projective
+     * Inversion
+   * [EGMO](https://www.maa.org/press/ebooks/euclidean-geometry-in-mathematical-olympiads) is really good!
+   * [AoPS Olympiad Geo](https://artofproblemsolving.com/school/course/olympiad-geometry)
+   * Awesomemath 106, 107 Geo
+ * Algebra
+   * Factor stuff
+   * Functional equation = plug in stuff until it works
+   * Awesomemath 105, 108 Alg
+ * NT
+   * mods
+ * Combinatorics
+   * be smart, try stuff
+   * competitive programming!
 
 ## Links
 

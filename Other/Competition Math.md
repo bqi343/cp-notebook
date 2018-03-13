@@ -57,10 +57,11 @@ If you consistently score 120+ on AMC 10:
    * Functional equation = plug in stuff until it works
    * Awesomemath 105, 108 Alg
  * NT
+   * [Binomial-Theorem Article](http://s3.amazonaws.com/aops-cdn.artofproblemsolving.com/resources/articles/olympiad-number-theory.pdf)
    * mods
  * Combinatorics
+   * [CP](https://github.com/bqi343/USACO)
    * be smart, try stuff
-   * competitive programming!
 
 
 ## More Links

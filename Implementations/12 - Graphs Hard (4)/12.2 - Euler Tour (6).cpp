@@ -3,50 +3,46 @@
 * Usage: https://open.kattis.com/problems/eulerianpath
 */
 
-vi circuit;
-multiset<int> adj[10000], adj1[10000];
-int N,M, out[10000], in[10000];
-
-void find_circuit(int x) { // directed graph, possible that resulting circuit is not valid
-    while (adj[x].size()) {
-        int j = *adj[x].begin(); adj[x].erase(adj[x].begin());
-        find_circuit(j);
-    }
-    circuit.pb(x);
-}
-
-int a,b,start; 
-
-void solve() {
-    F0R(i,N) {
-        adj[i].clear(), adj1[i].clear();
-        out[i] = in[i] = 0;
-    }
-    circuit.clear();
-    F0R(i,M) {
-        cin >> a >> b; 
-        adj[a].insert(b), adj1[a].insert(b);
-        out[a] ++, in[b] ++;
-    }
-    start = a;
-    F0R(i,N) if (out[i]-in[i] == 1) start = i;
+struct Euler {
+    vi circuit;
+    multiset<int> adj[MX], ADJ[MX];
+    int N,M, out[MX], in[MX];
     
-    find_circuit(start);
-    reverse(circuit.begin(),circuit.end());
-    
-    if (circuit.size() != M+1) {
-        cout << "Impossible\n";
-        return;
-    }
-    
-    F0R(i,M) {
-        if (adj1[circuit[i]].find(circuit[i+1]) == adj1[circuit[i]].end()) {
-            cout << "Impossible\n";
-            return;
+    void find_circuit(int x) { // directed graph, possible that resulting circuit is not valid
+        while (sz(adj[x])) {
+            int j = *adj[x].begin(); adj[x].erase(adj[x].begin());
+            find_circuit(j);
         }
-        int t = circuit[i];
-        adj1[t].erase(adj1[t].find(circuit[i+1]));
+        circuit.pb(x);
     }
-    F0R(i,M+1) cout << circuit[i] << " ";
-    cout << "\n";
-}
+    
+    int a,b,start; 
+    
+    vi solve() {
+        F0R(i,N) {
+            adj[i].clear(), ADJ[i].clear();
+            out[i] = in[i] = 0;
+        }
+        circuit.clear();
+        F0R(i,M) {
+            cin >> a >> b; // add edges
+            adj[a].insert(b), ADJ[a].insert(b);
+            out[a] ++, in[b] ++;
+        }
+        start = a;
+        F0R(i,N) if (out[i]-in[i] == 1) start = i;
+        
+        find_circuit(start);
+        reverse(all(circuit));
+        
+        if (sz(circuit) != M+1) return {};
+        
+        F0R(i,M) { // verify that circuit is valid
+            if (ADJ[circuit[i]].find(circuit[i+1]) == ADJ[circuit[i]].end()) return {};
+            int t = circuit[i];
+            ADJ[t].erase(ADJ[t].find(circuit[i+1]));
+        }
+        
+        return circuit;
+    }
+};

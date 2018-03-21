@@ -57,22 +57,25 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
       * [WCIPEG](http://wcipeg.com)
       * [Yandex](https://contest.yandex.ru/ioi/Info/)
       * [DMOJ](https://dmoj.ca/problems/?search=ioi)
-  * Monthly
-    * [USACO](http://www.usaco.org/)
+  * [Baltic OI](http://www.boi2017.org/)
+    * [Past BOI](https://cses.fi/boi/list/)
+  * National
+    * [USA](http://www.usaco.org/)
       * [Old Problems](http://tjsct.wikidot.com/usaco/)
-    * [Indonesia OI](https://competition.ia-toki.org/contests)
-    * [COCI](http://hsin.hr/coci/)
+    * [Indonesia](https://competition.ia-toki.org/contests)
+    * [Croatia](http://hsin.hr/coci/)
       * not full feedback
-  * Camp
-    * [Japan OI](http://cms.ioi-jp.org/)
+    * [Japan](http://cms.ioi-jp.org/)
       * Spring Camp Contests, Open Contest
-    * [Poland OI](https://szkopul.edu.pl/portal/)
-    * Romania OI
+    * [Poland](https://szkopul.edu.pl/portal/)
+    * Romania
       * see [CSA](https://csacademy.com/contests/)
-  * Other
-    * [Italy OI](https://training.olinfo.it/#/overview)
-    * [Baltic OI](http://www.boi2017.org/)
-      * [Past BOI](https://cses.fi/boi/list/)
+    * [Italy](https://training.olinfo.it/#/overview)
+    * China
+      * [WCIPEG](https://wcipeg.com/problems/cat%3Dnoi%2Cshow%3D50)
+    * Canada
+      * [WCIPEG](https://wcipeg.com/problems/cat%3Dccc%2Cshow%3D50)
+      * [DMOJ](https://dmoj.ca/problems/?category=24)
 
   
 ## Contest Tools

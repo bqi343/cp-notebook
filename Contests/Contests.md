@@ -50,23 +50,29 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
     
 ## Misc OI
 
-(only including those which are open to outside participation)
-
   * IOI
     * [List of 2017 IOI Participants](http://weaselcrow.com/pro/cf/ioi2017/)
+    * [IOI 2018 Syllabus](https://people.ksp.sk/~misof/ioi-syllabus/ioi-syllabus.pdf)
     * Problems
       * [WCIPEG](http://wcipeg.com)
       * [Yandex](https://contest.yandex.ru/ioi/Info/)
       * [DMOJ](https://dmoj.ca/problems/?search=ioi)
-    * [IOI 2018 Syllabus](https://people.ksp.sk/~misof/ioi-syllabus/ioi-syllabus.pdf)
-  * [USACO](http://www.usaco.org/)
-    * [Old Problems](http://tjsct.wikidot.com/usaco/)
-  * [Japan OI](http://cms.ioi-jp.org/)
-  * [Poland OI](https://szkopul.edu.pl/portal/)
-  * [Italy OI](https://training.olinfo.it/#/overview)
-  * [Indonesia OI](https://competition.ia-toki.org/contests)
-  * [Baltic OI](http://www.boi2017.org/)
-  * [COCI](http://hsin.hr/coci/)
+  * Monthly
+    * [USACO](http://www.usaco.org/)
+      * [Old Problems](http://tjsct.wikidot.com/usaco/)
+    * [Indonesia OI](https://competition.ia-toki.org/contests)
+    * [COCI](http://hsin.hr/coci/)
+      * not full feedback
+  * Camp
+    * [Japan OI](http://cms.ioi-jp.org/)
+      * Spring Camp Contests, Open Contest
+    * [Poland OI](https://szkopul.edu.pl/portal/)
+    * Romania OI
+      * see [CSA](https://csacademy.com/contests/)
+  * Other
+    * [Italy OI](https://training.olinfo.it/#/overview)
+    * [Baltic OI](http://www.boi2017.org/)
+      * [Past BOI](https://cses.fi/boi/list/)
 
   
 ## Contest Tools

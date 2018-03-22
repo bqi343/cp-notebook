@@ -57,25 +57,36 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
       * [WCIPEG](http://wcipeg.com)
       * [Yandex](https://contest.yandex.ru/ioi/Info/)
       * [DMOJ](https://dmoj.ca/problems/?search=ioi)
-  * [Baltic OI](http://www.boi2017.org/)
-    * [Past BOI](https://cses.fi/boi/list/)
-  * National
+  * Regional
+    * [Baltic OI](http://www.boi2017.org/)
+      * [Past BOI](https://cses.fi/boi/list/)
+    * [APIO](http://apio-olympiad.org/)
+    * Misc Europe Olympiad
+      * see [CSA](https://csacademy.com/contests/)
+    * [IOIT](http://ioit.altervista.org/2018-teams-and-contests-.html)
+    * [InfO(1) cup](http://info1cup.com/)
+  * National (open?)
     * [USA](http://www.usaco.org/)
+      * Dec - Mar
       * [Old Problems](http://tjsct.wikidot.com/usaco/)
     * [Indonesia](https://competition.ia-toki.org/contests)
+      * monthly
     * [Croatia](http://hsin.hr/coci/)
       * not full feedback
     * [Japan](http://cms.ioi-jp.org/)
       * Spring Camp Contests, Open Contest
+    * [Lithuania](http://online.lmio.lt/)
+    * [New Zealand](http://www.nzoi.org.nz/nzic/)
+  * Other
+    * [India](https://www.iarcs.org.in/inoi/)
     * [Poland](https://szkopul.edu.pl/portal/)
-    * Romania
-      * see [CSA](https://csacademy.com/contests/)
     * [Italy](https://training.olinfo.it/#/overview)
-    * China
-      * [WCIPEG](https://wcipeg.com/problems/cat%3Dnoi%2Cshow%3D50)
-    * Canada
+    * [Australia](https://orac.amt.edu.au/)
+    * [Canada](https://cemc.math.uwaterloo.ca/contests/computing.html)
       * [WCIPEG](https://wcipeg.com/problems/cat%3Dccc%2Cshow%3D50)
       * [DMOJ](https://dmoj.ca/problems/?category=24)
+    * China
+      * [WCIPEG](https://wcipeg.com/problems/cat%3Dnoi%2Cshow%3D50)
 
   
 ## Contest Tools

@@ -26,7 +26,7 @@ struct hsh {
     string S; 
     vector<pll> po, ipo, cum;
     pll base = mp(948392576,573928192);
-    
+    pll invbase = mp(499499562,829828935);
     ll modpow(ll b, ll p) {
         return !p?1:modpow(b*b%MOD,p/2)*(p&1?b:1)%MOD;
     }
@@ -41,7 +41,7 @@ struct hsh {
         po[0] = ipo[0] = {1,1};
         FOR(i,1,sz(S)) {
             po[i] = po[i-1]*base;
-            ipo[i] = {inv(po[i].f),inv(po[i].s)};
+            ipo[i] = ipo[i - 1]*invbase;
         }
         F0R(i,sz(S)) cum[i+1] = cum[i]+po[i]*(ll)(S[i]-'a'+1);
     }

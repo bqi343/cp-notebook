@@ -1,11 +1,10 @@
 /**
 * Sources: KACTL, https://pastebin.com/3Tnj5mRu
-* Verification: SPOJ polymul
+* Verification: SPOJ polymul, CSA manhattan
 */
 
-typedef complex<double> cd;
+typedef complex<ld> cd;
 typedef vector<cd> vcd;
-typedef vector<ll> vl;
 
 int get(int s) {
     return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
@@ -15,7 +14,7 @@ namespace FFT {
     vcd fft(vcd& a) { 
         int n = a.size(), x = get(n); 
         vcd res, RES(n), roots(n);
-        F0R(i,n) roots[i] = cd(cos(2*M_PI*i/n),sin(2*M_PI*i/n)); 
+        F0R(i,n) roots[i] = cd(cos(2*M_PIl*i/n),sin(2*M_PIl*i/n)); 
         
         res = a;
         FOR(i,1,x+1) {

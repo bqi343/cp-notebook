@@ -5,7 +5,6 @@
 */
 
 typedef vector<double> vd;
-typedef vector<ll> vl;
 
 int get(int s) {
     return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
@@ -26,7 +25,6 @@ namespace FWHT {
     
         return P;
     }
-
     
     vd fwht_rev(vd& a) {
         vd res = fwht(a);

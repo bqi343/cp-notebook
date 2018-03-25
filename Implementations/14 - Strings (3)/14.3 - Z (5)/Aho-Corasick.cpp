@@ -5,7 +5,7 @@
 
 template<int SZ> struct Aho {
     int link[SZ], dict[SZ], sz = 1, num = 0;
-    vector<pii> ind[SZ];
+    vpi ind[SZ];
     map<char,int> to[SZ];
     vi oc[SZ];
     queue<int> q;

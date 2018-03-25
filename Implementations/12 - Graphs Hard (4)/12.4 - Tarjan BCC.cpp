@@ -8,8 +8,8 @@ template<int SZ> struct BCC {
     int N, ti = 0;
     vi adj[SZ];
     int disc[SZ], low[SZ], comp[SZ], par[SZ];
-    vector<vector<pii>> fin;
-    vector<pii> st;
+    vector<vpi> fin;
+    vpi st;
     
     void addEdge(int u, int v) {
         adj[u].pb(v), adj[v].pb(u);

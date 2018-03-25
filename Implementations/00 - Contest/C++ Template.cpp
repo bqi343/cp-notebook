@@ -7,6 +7,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef long double ld;
+typedef complex<ld> cd;
 
 typedef pair<int, int> pi;
 typedef pair<ll,ll> pl;
@@ -15,7 +16,6 @@ typedef pair<double,double> pd;
 typedef vector<int> vi;
 typedef vector<ll> vl;
 typedef vector<pi> vpi;
-typedef vector<vl> mat;
 
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 

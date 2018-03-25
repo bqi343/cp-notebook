@@ -36,8 +36,7 @@ struct suffix_array {
         for (int stp = 1, cnt = 1; cnt < N; stp ++, cnt *= 2) {
             P.pb(vi(N));
             F0R(i,N) L[i] = {P[stp-1][i],i+cnt < N ? P[stp-1][i+cnt] : -1,i};
-            sort(all(L));
-            // bucket_sort();
+            sort(all(L)); // bucket_sort();
             F0R(i,N) {
                 if (i && mp(L[i][0],L[i][1]) == mp(L[i-1][0],L[i-1][1])) P[stp][L[i][2]] = P[stp][L[i-1][2]];
                 else P[stp][L[i][2]] = i;

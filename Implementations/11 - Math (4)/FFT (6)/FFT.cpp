@@ -3,7 +3,6 @@
 * Verification: SPOJ polymul, CSA manhattan
 */
 
-typedef complex<ld> cd;
 typedef vector<cd> vcd;
 
 int get(int s) {

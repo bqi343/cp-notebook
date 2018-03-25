@@ -3,8 +3,6 @@
 * Verification: http://codeforces.com/contest/632/submission/33953285
 */
 
-typedef vector<ll> vl;
-
 int get(int s) {
     return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
 }

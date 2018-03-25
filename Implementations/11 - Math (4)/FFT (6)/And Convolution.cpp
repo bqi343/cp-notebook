@@ -4,7 +4,6 @@
 */
 
 typedef vector<double> vd;
-typedef vector<ll> vl;
 
 int get(int s) {
     return s > 1 ? 32 - __builtin_clz(s - 1) : 0;

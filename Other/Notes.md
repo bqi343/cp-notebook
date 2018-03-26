@@ -1,22 +1,5 @@
 # Notes
 
-## How do you train for USACO Platinum?
-
-* Do as many contests as possible. 
-  * Make sure to upsolve after the contest ends!
-  * [Here](https://www.dropbox.com/s/7nziof63mxk2t5j/Contests.png?dl=0) is an example of the contests I consider doing.
-* Work through past problems.
-  * USACO Old Gold / Platinum
-  * [Codeforces Problemset](http://codeforces.com/problemset)
-  * [CSAcademy Archive](https://csacademy.com/contest/archive/)
-  * [HackerRank Dashboard](https://www.hackerrank.com/domains/algorithms/warmup)
-* Use the tags to learn new topics as necessary.
-  * see implementation / USACO categories
-  * [A2OJ](https://a2oj.com/)
-  * [Problem Topics (Morass)](http://codeforces.com/blog/entry/55274)
-
-
-
 ## C++11
 
 I recommend that you use C++11 over Java due to various reasons, such as

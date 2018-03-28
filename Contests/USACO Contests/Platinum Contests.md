@@ -121,9 +121,9 @@
 | 2018 Feb | [1](http://www.usaco.org/index.php?page=viewproblem&cpid=804) | slingshot | SegTree | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=805) | newbarn | Trees | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=806) | gymnast | Math | Done |
-| 2018 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=744) |  |  | |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=745) |  |  | |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=746) |  |  | |
+| 2018 Open | [1](http://www.usaco.org/index.php?page=viewproblem&cpid=828) | sort | BIT | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=745) | train | Sqrt | |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=746) | disrupt | Trees | Done |
 
 # USACO Camp
   * [What is it like to attend USACO Camp?](https://www.quora.com/What-is-it-like-to-attend-the-USACO-training-camp)

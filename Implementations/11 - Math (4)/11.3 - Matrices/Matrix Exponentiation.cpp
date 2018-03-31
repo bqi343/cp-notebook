@@ -3,51 +3,54 @@
 * Verification: https://dmoj.ca/problem/si17c1p5
 */
 
-template<int SZ> struct mat {
-    array<array<ll,SZ>,SZ> d;
+struct mat {
+    int** d;
+    int a, b;
     
-    mat() {
-        F0R(i,SZ) F0R(j,SZ) d[i][j] = 0;
+    mat(int _a, int _b) {
+        a = _a, b = _b;
+        d = new int*[a];
+        F0R(i,a) {
+            d[i] = new int[b];
+            F0R(j,b) d[i][j] = 0;
+        }
+    }
+    
+    mat (vector<vi> v) : mat(sz(v),sz(v[0])) {
+        F0R(i,a) F0R(j,b) d[i][j] = v[i][j];
     }
     
     mat operator+(const mat& m) {
-        mat<SZ> a;
-        F0R(i,SZ) F0R(j,SZ) a.d[i][j] = (d[i][j]+m.d[i][j]) % MOD;
-        return a;
+        mat r(a,b);
+        F0R(i,a) F0R(j,b) r.d[i][j] = (d[i][j]+m.d[i][j]) % MOD;
+        return r;
     }
     
     mat operator*(const mat& m) {
-        mat<SZ> a;
-        F0R(i,SZ) F0R(j,SZ) F0R(k,SZ) 
-            a.d[i][k] = (a.d[i][k]+d[i][j]*m.d[j][k]) % MOD;
-        return a;
+        mat r(a,m.b);
+        F0R(i,a) F0R(j,b) F0R(k,m.b) 
+            r.d[i][k] = (r.d[i][k]+(ll)d[i][j]*m.d[j][k]) % MOD;
+        return r;
     }
     
     mat operator^(ll p) {
-        mat<SZ> a, b(*this); 
-        F0R(i,SZ) a.d[i][i] = 1;
+        mat r(a,a), base(*this); 
+        F0R(i,a) r.d[i][i] = 1;
         
         while (p) {
-            if (p&1) a = a*b;
-            b = b*b;
+            if (p&1) r = r*base;
+            base = base*base;
             p /= 2;
         }
         
-        return a;
+        return r;
     }
     
     void print() {
-        F0R(i,SZ) {
-            F0R(j,SZ) cout << d[i][j] << " ";
+        F0R(i,a) {
+            F0R(j,b) cout << d[i][j] << " ";
             cout << "\n";
         }
         cout << "------------\n";
     }
 };
-
-/*
-mat<2> x; x.d[0][0] = 1, x.d[1][0] = 2, x.d[1][1] = 1, x.d[0][1] = 3;
-mat<2> y = x*x;
-mat<2> z = x^5;
-x.print(), y.print(), z.print();
-*/

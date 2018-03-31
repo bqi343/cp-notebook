@@ -3,35 +3,33 @@
 * Usage: CF Stranger Trees
 */
 
-typedef array<array<int,100>,100> mat;
-
 ll po (ll b, ll p) { return !p?1:po(b*b%MOD,p/2)*(p&1?b:1)%MOD; }
 ll inv (ll b) { return po(b,MOD-2); }
-    
-int SZ;
+
+int mul(ll a, ll b) { return a*b%MOD; }
+int sub(ll a, ll b) { return ((a-b)%MOD+MOD)%MOD; }
 
 void elim(mat& m, int a, int c) { // column, todo row
-    ll x = m[c][a];
-    FOR(i,a,SZ) {
-        m[c][i] = (m[c][i]-x*m[a][i])%MOD;
-        if (m[c][i] < 0) m[c][i] += MOD;
-    }
+    ll x = m.d[c][a];
+    FOR(i,a,m.a) m.d[c][i] = sub(m.d[c][i],x*m.d[a][i]);
 }
 
-ll det(mat m) {
+int det(mat m) {
     ll prod = 1;
-    F0R(i,SZ) {
+    F0R(i,m.a) {
         bool done = 0;
-        FOR(j,i,SZ) if (m[j][i] != 0) {
-            done = 1; if (j != i) swap(m[j],m[i]);
-            if ((j-i)&1) prod *= -1;
-            prod = prod*m[i][i]%MOD;
-            ll x = inv(m[i][i]);
-            FOR(k,i,SZ) m[i][k] = m[i][k]*x%MOD;
-            FOR(k,i+1,SZ) elim(m,i,k);
+        FOR(j,i,m.a) if (m.d[j][i] != 0) {
+            done = 1; swap(m.d[j],m.d[i]);
+            
+            if ((j-i)&1) prod = mul(prod,MOD-1);
+            prod = mul(prod,m.d[i][i]);
+            
+            ll x = inv(m.d[i][i]);
+            FOR(k,i,m.a) m.d[i][k] = mul(m.d[i][k],x);
+            FOR(k,i+1,m.a) elim(m,i,k);
             break;
         }
         if (!done) return 0;
     }
-    return (prod%MOD+MOD)%MOD;
+    return prod;
 }

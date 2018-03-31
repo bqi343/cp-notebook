@@ -1,8 +1,6 @@
 # Contests
 See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO Gold, you should start doing as many contests as possible.
 
-  * [CodeFights](https://codefights.com/)
-    * Marathons: 10 problems, 60 minutes
   * [USACO](http://www.usaco.org/)
     * Bronze, Silver, Gold, Platinum: 3 problems, 4 hrs
   * [Codeforces](http://codeforces.com/)
@@ -21,9 +19,11 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
     * 101 Hack: 5 problems, 2 hrs
   * [HackerEarth](http://hackerearth.com/)
     * Monthly "Easy"
+  * [Don Mills OJ](http://dmoj.ca/)
   * [Codechef](http://codechef.com/)
     * Lunchtime, Cookoff
-  * [Don Mills OJ](http://dmoj.ca/)
+  * ~~[CodeFights](https://codefights.com/)~~
+    * ~~Marathons: 10 problems, 60 minutes~~
 
 ## Annual Contests 
   * [BattleCode](https://www.battlecode.org): January

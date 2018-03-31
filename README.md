@@ -20,12 +20,21 @@ Check out the rest of this compilation! If you have done well in math contests, 
   * Make sure to upsolve after the contest ends!
   * [Here](https://www.dropbox.com/s/7nziof63mxk2t5j/Contests.png?dl=0) is an example of the contests I consider doing.
 * Work through past problems.
-  * USACO Old Gold / Platinum
-  * [USACO Training](http://train.usaco.org/usacogate)
-  * [CSES](https://cses.fi/problemset/) (goes along with CPH)
-  * [CSAcademy Archive](https://csacademy.com/contest/archive/) (yay short statements!)
-  * [Codeforces Problemset](http://codeforces.com/problemset)
-  * [HackerRank Dashboard](https://www.hackerrank.com/domains/algorithms/warmup)
+  * USACO 
+    * Old Gold / Platinum
+    * [Training](http://train.usaco.org/usacogate)
+      * warning: somewhat outdated!
+  * [CSES](https://cses.fi/problemset/)
+    * goes along with CPH
+    * nice for practicing fundamentals
+  * Contest Archives
+    * [POI](https://szkopul.edu.pl/portal/problemset_eng)
+    * [AtCoder](https://beta.atcoder.jp/contests/archive)
+    * [Codeforces](http://codeforces.com/problemset)
+    * [CSAcademy](https://csacademy.com/contest/archive/) 
+      * short statements, editorials
+      * solve statistics
+      * ability to view best solutions
 * Use the tags to learn new topics as necessary.
   * see implementation / USACO categories
   * [A2OJ](https://a2oj.com/)

@@ -15,7 +15,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -42,7 +42,7 @@ int main() {
 	F0R(i,M+1) FOR(j,i,M+1) is[i*i+j*j] = 1;
 	vi posi;
 	F0R(i,125001) if (is[i]) posi.pb(i);
-	vector<pii> ans;
+	vector<pi> ans;
 	F0R(i,posi.size()) FOR(j,i+1,posi.size()) {
 		if (posi[i]+(N-1)*(posi[j]-posi[i])>2*M*M) break;
 		bool x = 1;

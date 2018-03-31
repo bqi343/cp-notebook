@@ -14,7 +14,7 @@ LANG: C++11
 using namespace std;
  
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -31,11 +31,11 @@ typedef pair<int, int> pii;
 //ifstream cin ("rect1.in");
 //ofstream cout ("rect1.out");
 
-vector<pair<pair<pii,pii>,int>> x;
+vector<pair<pair<pi,pi>,int>> x;
 int ans[2501];
 
 void update(int llx, int urx, int lly, int ury, int c) {
-	vector<pair<pair<pii,pii>,int>> k;
+	vector<pair<pair<pi,pi>,int>> k;
 	k.pb({{{llx,urx},{lly,ury}},c});
 	
 	for (auto z: x) {

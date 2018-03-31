@@ -6,7 +6,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef set<int> si;
 typedef map<int,int> mii;
 
@@ -25,12 +25,12 @@ typedef map<int,int> mii;
 const int MOD = 1000000007;
 
 bool adj[200][200];
-pair<pii,int> cows[200];
+pair<pi,int> cows[200];
 
 ifstream cin ("moocast.in");
 ofstream cout ("moocast.out");
 
-int dist(pii a, pii b) {
+int dist(pi a, pi b) {
 	return (a.f-b.f)*(a.f-b.f)+(a.s-b.s)*(a.s-b.s);
 }
 

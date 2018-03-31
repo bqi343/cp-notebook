@@ -7,7 +7,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -25,7 +25,7 @@ typedef pair<int, int> pii;
 ifstream cin("art.in");
 ofstream cout ("art.out");
 
-pair<pii,pii> col[10];
+pair<pi,pi> col[10];
 int N,num,grid[10][10];
 bool posi[10];
 

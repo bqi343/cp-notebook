@@ -7,7 +7,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<ll, ll> pii;
+typedef pair<ll, ll> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -41,9 +41,9 @@ int main() {
 	int pre = 0;
 	FOR(i,1,N+1) {
 	    // modify the back
-	    pair<ll,pair<ll,pii>> a = {dp[i-1]+H[i],{H[i],{i-1,i-1}}};
+	    pair<ll,pair<ll,pi>> a = {dp[i-1]+H[i],{H[i],{i-1,i-1}}};
 	    while (t.size() > 0 && t.back().s.f <= a.s.f) {
-	        pair<int,pair<int,pii>> b = t.back(); t.pop_back();
+	        pair<int,pair<int,pi>> b = t.back(); t.pop_back();
 	        best.erase(best.find(b.f));
 	        a.s.s.f = b.s.s.f;
 	        a.f = dp[a.s.s.f]+H[i];

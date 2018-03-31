@@ -16,7 +16,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
  
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -39,10 +39,10 @@ int dist[101][101], N, nex=1;
 int dijkstra(int start, int end) {
 	int best[101];
 	FOR(i,1,nex) best[i] = MOD;
-	priority_queue<pii> todo;
+	priority_queue<pi> todo;
 	todo.push(mp(0,start));
 	while (todo.size()) {
-		pii top = todo.top(); todo.pop();
+		pi top = todo.top(); todo.pop();
 		if (best[top.s] != MOD) continue;
 		best[top.s] = -top.f;
 		if (top.s == end) return best[top.s];

@@ -15,7 +15,7 @@ using namespace std;
 
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -60,7 +60,7 @@ int main() {
     ofstream cout ("closing.out");
     cin >> N >> M; permute.resize(N);
     F0R(i,M) {
-        pii x; cin >> x.f >> x.s;
+        pi x; cin >> x.f >> x.s;
         adj[x.f].insert(x.s);
         adj[x.s].insert(x.f);
     }

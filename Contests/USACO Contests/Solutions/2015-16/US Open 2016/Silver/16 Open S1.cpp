@@ -5,7 +5,7 @@ using namespace std;
 #define ll long long
 #define mp make_pair
 #define pb push_back
-#define pii pair <int, int>
+#define pi pair <int, int>
 #define vi vector<int>
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -23,7 +23,7 @@ using namespace std;
  
 const int MOD = 1000000007;
 
-bool comp(pii a, pii b) {
+bool comp(pi a, pi b) {
 	if (a.s<b.s) return true;
 	else if (a.s == b.s) return a.f<b.f;
 	return false;
@@ -34,10 +34,10 @@ int main() {
 	ofstream cout ("reduce.out");
 	int N, ans = 2*MOD;
 	cin >> N;
-	vector<pii> x, y, pos;
+	vector<pi> x, y, pos;
 	
 	F0R(i,N) {
-		pii k;
+		pi k;
 		cin >> k.f >> k.s;
 		x.pb(k), y.pb(k);
 	}

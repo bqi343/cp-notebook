@@ -6,18 +6,18 @@
 const int MX = 1002;
 
 int n,m, cur[MX],ans[MX][MX];
-pii tmp[MX][MX];
+pi tmp[MX][MX];
 char g[MX][MX];
 
-pii operator+(pii a, pii b) {
+pi operator+(pi a, pi b) {
     return {a.f+b.f,a.s+b.s};
 }
 
-pii operator-(pii a, pii b) {
+pi operator-(pi a, pi b) {
     return {a.f-b.f,a.s-b.s};
 }
 
-void upd(int x, int l, int r, pii val) {
+void upd(int x, int l, int r, pi val) {
     tmp[x][l] = tmp[x][l] + val;
     tmp[x][r+1] = tmp[x][r+1] - val;
 }
@@ -31,13 +31,13 @@ void ins(int x, int l, int r) {
 }
 
 void solve(int x) {
-    vector<pii> v;
+    vector<pi> v;
     F0R(i,n) v.pb({cur[i]-x,i});
     sort(v.rbegin(),v.rend());
     
     set<int> bad;
     FOR(i,-1,n+1) bad.insert(i);
-    for (pii x: v) {
+    for (pi x: v) {
         auto it = bad.find(x.s);
         ins(x.f,x.s-*prev(it),*next(it)-x.s);
         bad.erase(it);

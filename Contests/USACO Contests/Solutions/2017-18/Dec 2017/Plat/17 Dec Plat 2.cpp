@@ -7,7 +7,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
@@ -32,15 +32,15 @@ int xdir[4] = {1,0,-1,0}, ydir[4] = {0,1,0,-1};
 char g[MX][MX];
 bool ok[MX][MX][4];
 int N,M,Q;
-pii A,B;
+pi A,B;
 
 queue<vi> todo;
 
-int hsh(pii x) {
+int hsh(pi x) {
     return M*x.f+x.s;
 }
 
-bool valid(pii x) {
+bool valid(pi x) {
     if (x.f < 0 || x.f >= N || x.s < 0 || x.s >= M) return 0;
     if (g[x.f][x.s] == '#') return 0;
     return 1;
@@ -59,7 +59,7 @@ void input() {
 
 bool visit[MX][MX];
 
-bool dfs(pii a, pii b, pii c) {
+bool dfs(pi a, pi b, pi c) {
     if (a == b) return 1;
     if (a == c || !valid(a) || visit[a.f][a.s]) return 0;
     
@@ -71,9 +71,9 @@ bool dfs(pii a, pii b, pii c) {
 int cor[MX][MX][4], nex = 1, ind = 1;
 bool used[MX][MX][4];
 int disc[MX][MX], lo[MX][MX];
-vector<pair<pii,pii>> cedge;
+vector<pair<pi,pi>> cedge;
 
-int getdir(pii a, pii b) {
+int getdir(pi a, pi b) {
     b.f -= a.f, b.s -= a.s;
     if (b == mp(1,0)) return 0;
     if (b == mp(0,1)) return 1;
@@ -81,12 +81,12 @@ int getdir(pii a, pii b) {
     return 3;
 }
 
-void gen(pii pre, pii cur) {
+void gen(pi pre, pi cur) {
     lo[cur.f][cur.s] = disc[cur.f][cur.s] = nex++;
     int child = 0;
     
     F0R(i,4) {
-        pii CUR = {cur.f+xdir[i], cur.s+ydir[i]};
+        pi CUR = {cur.f+xdir[i], cur.s+ydir[i]};
         if (!valid(CUR) || CUR == pre) continue;
         
         if (!used[cur.f][cur.s][i]) {
@@ -118,15 +118,15 @@ void gen(pii pre, pii cur) {
     }
 }
 
-bool existsnaive(pii a, pii b, pii c) {
+bool existsnaive(pi a, pi b, pi c) {
     if (!valid(b)) return 0;
     F0R(i,N) F0R(j,M) visit[i][j] = 0;
     return dfs(a,b,c);
 }
 
-bool existspath(pii cur, int d1, int d2) {
-    pii p1 = {cur.f+xdir[d1], cur.s+ydir[d1]};
-    pii p2 = {cur.f+xdir[d2], cur.s+ydir[d2]};
+bool existspath(pi cur, int d1, int d2) {
+    pi p1 = {cur.f+xdir[d1], cur.s+ydir[d1]};
+    pi p2 = {cur.f+xdir[d2], cur.s+ydir[d2]};
     
     if (!valid(p1) || !valid(p2)) return 0;
     return cor[cur.f][cur.s][d1] == cor[cur.f][cur.s][d2];
@@ -137,7 +137,7 @@ void process(vi x) {
         ok[x[0]][x[1]][i] = 1;
         todo.push({x[0],x[1],i});
     }
-    pii X = {x[0]-xdir[x[2]],x[1]-ydir[x[2]]};
+    pi X = {x[0]-xdir[x[2]],x[1]-ydir[x[2]]};
     if (valid(X) && !ok[X.f][X.s][x[2]]) {
         ok[X.f][X.s][x[2]] = 1;
         todo.push({X.f,X.s,x[2]});

@@ -15,7 +15,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -35,16 +35,16 @@ double PI = 4*atan(1);
 
 int N,M,mx,cow[100],cow1[100];
 vi ans;
-pii cur = {0,0}; // num, gang
+pi cur = {0,0}; // num, gang
 
 int solve() {
 	F0R(i,M) cow1[i] = cow[i];
-	pii cur1 = cur;
+	pi cur1 = cur;
 	while (1) {
 		int sum = 0;
 		F0R(i,M) sum += cow1[i];
 		if (sum == 0) break;
-		pii best = {0,-1};
+		pi best = {0,-1};
 		FOR(j,1,M) if ((j != cur1.s || cur1.f == 0) && cow1[j] > best.f) best = {cow1[j],j};
 		if (best.f == 0) best = {cow1[cur1.f],cur1.f};
 		if (best.f == 0) best = {cow1[0],0};
@@ -60,7 +60,7 @@ int solve() {
 void dfs() {
 	F0R(i,M) if (cow[i]>0) {
 		cow[i] --;
-		pii cur1 = cur;
+		pi cur1 = cur;
 		if (cur.f == 0) cur = {1,i};
 		else if (cur.s == i) cur.f ++;
 		else cur.f --;

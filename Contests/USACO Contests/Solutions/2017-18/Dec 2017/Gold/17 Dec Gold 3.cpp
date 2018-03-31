@@ -7,7 +7,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
@@ -30,7 +30,7 @@ const int MX = 100000;
 int N;
 ll M, F[MX], S[MX];
 int ans = MOD;
-deque<pii> d;
+deque<pi> d;
 
 int main() {
     freopen("haybalefeast.in","r",stdin);

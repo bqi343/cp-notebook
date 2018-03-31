@@ -15,7 +15,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -34,17 +34,17 @@ const int MOD = 1000000007;
 double PI = 4*atan(1);
 
 int N,M,ans=0;
-set<pii> stor[1<<20];
+set<pi> stor[1<<20];
 
-void modify(pii val, bool x) {
+void modify(pi val, bool x) {
 	for (int p = val.s-val.f+(1<<19);p > 0; p >>= 1) {
 		if (x) stor[p].insert(val);
 		else stor[p].erase(val);
 	}
 }
 
-pii query(int l, int r) {
-	pii ans = {MOD,MOD};
+pi query(int l, int r) {
+	pi ans = {MOD,MOD};
   	for (l += (1<<19), r += (1<<19); l < r; l >>= 1, r >>= 1) {
 	    if (l&1) {
 	    	if (stor[l].size()) ans = min(ans,*stor[l].begin());
@@ -67,7 +67,7 @@ int main() {
 		char t; cin >> t;
 		if (t == 'A') {
 			int p; cin >> p;
-			pii q = query(p-1,N);
+			pi q = query(p-1,N);
 			if (q.f == MOD) {
 				ans++;
 				continue;
@@ -76,7 +76,7 @@ int main() {
 			if (q.f+p <= q.s) modify({q.f+p,q.s},1); // correct
 		} else {
 			int a,b; cin >> a >> b; 
-			vector<pii> todo;
+			vector<pi> todo;
 			auto it = stor[1].lb({a,0}); // first coordinate at least a
 			if (it != stor[1].begin() && (*prev(it)).s >= a-1)  it = prev(it);
 			while (it != stor[1].end() && (*it).f <= b+1) {

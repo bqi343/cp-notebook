@@ -15,7 +15,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -31,7 +31,7 @@ typedef pair<int, int> pii;
 
 int N,T, cost[100][100], MOD = 1000000007;
 int best[100][100][3], xdir[4] = {1,0,-1,0}, ydir[4] = {0,1,0,-1};
-priority_queue<pair<pii,pii>> todo;
+priority_queue<pair<pi,pi>> todo;
 
 int main() {
 	ifstream cin ("visitfj.in");

@@ -15,7 +15,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -37,11 +37,11 @@ int main() {
 	//ifstream cin ("milk2.in");
 	//ofstream cout ("milk2.out");
 	int N; cin >> N;
-	vector<pii> k(N), k1;
+	vector<pi> k(N), k1;
 	F0R(i,N) cin >> k[i].f >> k[i].s;
 	sort(k.begin(),k.end());
 	F0R(i,N) {
-		pii x = k[i];
+		pi x = k[i];
 		while (i<N-1 && k[i+1].f <= x.s) i++, x.s = max(x.s,k[i].s);
 		k1.pb(x);
 	}

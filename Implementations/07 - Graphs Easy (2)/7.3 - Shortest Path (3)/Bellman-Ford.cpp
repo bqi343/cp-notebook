@@ -7,7 +7,7 @@
 const ll INF = 1e18;
 
 int n,m,q,s,bad[1000];
-vector<pair<pii,int>> edge;
+vector<pair<pi,int>> edge;
 ll dist[1000];
 
 void solve() {

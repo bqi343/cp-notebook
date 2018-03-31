@@ -16,7 +16,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -33,17 +33,17 @@ typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_upda
 const int MOD = 1000000007;
 double PI = 4*atan(1);
 
-pii king;
-vector<pii> knight;
+pi king;
+vector<pi> knight;
 int C,R, dist[26][30][26][30]; 
 int xdir[8] = {2,1,-1,-2,-2,-1,1,2}, ydir[8] = {1,2,2,1,-1,-2,-2,-1};
 
 void fill(int i, int j) {
-	queue<pii> todo;
+	queue<pi> todo;
 	todo.push(mp(i,j));
 	dist[i][j][i][j] = 0;
 	while (todo.size()) {
-		pii x = todo.front();
+		pi x = todo.front();
 		todo.pop();
 		F0R(z,8) {
 			int newf = x.f+xdir[z], news = x.s+ydir[z];

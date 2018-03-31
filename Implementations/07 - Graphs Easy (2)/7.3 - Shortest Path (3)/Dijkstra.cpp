@@ -5,17 +5,17 @@
 
 template<int SZ> struct Dijkstra {
     int dist[SZ];
-    vector<pii> adj[SZ];
-    priority_queue<pii,vector<pii>,greater<pii>> q;
+    vector<pi> adj[SZ];
+    priority_queue<pi,vector<pi>,greater<pi>> q;
     
     void gen() {
         fill_n(dist,SZ,MOD); dist[0] = 0; 
 	
     	q.push({0,0});
     	while (q.size()) {
-    		pii x = q.top(); q.pop();
+    		pi x = q.top(); q.pop();
     		if (dist[x.s] < x.f) continue;
-    		for (pii y: adj[x.s]) if (x.f+y.s < dist[y.f]) {
+    		for (pi y: adj[x.s]) if (x.f+y.s < dist[y.f]) {
     			dist[y.f] = x.f+y.s;
     			q.push({dist[y.f],y.f});
     		}

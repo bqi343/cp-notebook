@@ -13,7 +13,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef set<int> si;
 typedef map<int,int> mii;
 
@@ -36,7 +36,7 @@ double PI = 4*atan(1);
 // ofstream cout ("lasers.out");
 
 unordered_map<int,vi> x, y;
-vector<pii> places;
+vector<pi> places;
 
 int dp[100002][2];
 
@@ -54,13 +54,13 @@ int main() {
 	}
 	
 	memset(dp, -1, sizeof dp);
-	queue<pii> todo;
+	queue<pi> todo;
 	dp[0][0] = 0, dp[0][1] = 0;
 	todo.push(mp(0,0));
 	todo.push(mp(0,1));
 	
 	while (todo.size()) {
-		pii z = todo.front(); todo.pop();
+		pi z = todo.front(); todo.pop();
 		// cout << z.f << " " << z.s << " " << dp[z.f][z.s] << "\n";
 		if (z.f == places.size()-1) {
 			cout << dp[z.f][z.s]-1;

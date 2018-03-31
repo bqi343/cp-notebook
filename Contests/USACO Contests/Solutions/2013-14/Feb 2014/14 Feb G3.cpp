@@ -7,7 +7,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
@@ -26,10 +26,10 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 const int MOD = 1000000007;
 
 struct tnode {
-    pii val; // y, x
+    pi val; // y, x
     int pri, lazy;
     tnode *c[2];
-    tnode (pii v) {
+    tnode (pi v) {
         c[0] = c[1] = NULL;
         pri = rand(); // note that this is < (1<<15) on windows!
         val = v; lazy = 0;
@@ -91,7 +91,7 @@ tnode* rem(tnode* x) {
     }
 }
 
-tnode* ins(tnode* x, pii v) {
+tnode* ins(tnode* x, pi v) {
     auto a = split(x,v.f);
     tnode* z = new tnode(v);
     while (get(a.s) >= v.f-v.s) a.s = rem(a.s);
@@ -101,7 +101,7 @@ tnode* ins(tnode* x, pii v) {
 tnode *root;
 int N, S[200001], T[200001], ans;
 
-pii getlst(tnode* x) {
+pi getlst(tnode* x) {
     x->propogate();
     if (x->c[1]) return getlst(x->c[1]);
     return x->val;
@@ -110,7 +110,7 @@ pii getlst(tnode* x) {
 int process(int s, int t) {
     auto a = split(root,s);
     if (a.s) a.s->lazy ++;
-    pii tmp = getlst(a.f);
+    pi tmp = getlst(a.f);
     tmp.s += s+t-tmp.f;
     tmp.f = s;
     root = merge(a.f,a.s);

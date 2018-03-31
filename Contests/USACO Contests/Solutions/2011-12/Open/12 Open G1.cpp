@@ -7,7 +7,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -26,7 +26,7 @@ const int MOD = 1000000007;
 double PI = 4*atan(1);
 
 int N,M,bx,by;
-pii fence[10], rope[10000];
+pi fence[10], rope[10000];
 vi z;
 
 int get(double x) {
@@ -34,7 +34,7 @@ int get(double x) {
     return N;
 }
 
-double yint(pii a, pii b) {
+double yint(pi a, pi b) {
     return double(abs(a.f)*b.s+abs(b.f)*a.s)/abs(a.f-b.f);
 }
 

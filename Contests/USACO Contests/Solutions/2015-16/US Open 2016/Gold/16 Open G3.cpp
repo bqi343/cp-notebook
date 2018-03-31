@@ -6,7 +6,7 @@ using namespace std;
 #define ll long long
 #define mp make_pair
 #define pb push_back
-#define pii pair <int, int>
+#define pi pair <int, int>
 #define vi vector<int>
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -25,7 +25,7 @@ int main() {
 	ifstream cin ("248.in");
 	ofstream cout ("248.out");
 	int n, ans = 0;
-	vector<pii> sequence[60];
+	vector<pi> sequence[60];
 	cin >> n;
 	F0R(i,n) {
 		int x; cin >> x;

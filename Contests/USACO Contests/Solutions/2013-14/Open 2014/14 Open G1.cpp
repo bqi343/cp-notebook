@@ -7,7 +7,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -26,14 +26,14 @@ const int MOD = 1000000007;
 double PI = 4*atan(1);
 
 int N, K, ans, MB[100000][8], MF[100000][8], PS[100001][8];
-vector<pii> cows;
+vector<pi> cows;
 
 void init() {
     freopen("fairphoto.in","r",stdin);
     freopen("fairphoto.out","w",stdout);
     cin >> N >> K;
     F0R(i,N) {
-        pii x; cin >> x.f >> x.s; x.s--;
+        pi x; cin >> x.f >> x.s; x.s--;
         cows.pb(x);
     }
     sort(cows.begin(),cows.end());

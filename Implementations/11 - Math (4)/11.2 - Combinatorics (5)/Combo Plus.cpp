@@ -3,13 +3,11 @@
 * Verification: https://dmoj.ca/problem/tle17c4p5
 */
 
-typedef pair<ll,ll> pll;
-    
 template<int SZ> struct ComboExtended {
-    pll fac[SZ+1], ifac[SZ+1], mod;
+    pl fac[SZ+1], ifac[SZ+1], mod;
     ll MOD = 1;
     
-    void init(pll _mod) { // prime, power
+    void init(pl _mod) { // prime, power
         mod = _mod; F0R(i,mod.s) MOD *= mod.f;
         
         fac[0] = ifac[0] = {1,0};

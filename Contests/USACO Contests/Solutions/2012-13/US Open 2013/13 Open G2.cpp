@@ -7,7 +7,7 @@ using namespace std;
   
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
  
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -24,7 +24,7 @@ typedef pair<int, int> pii;
 int N, ad[100001], loc[100001];
 map<int,int> dist[100001], pos[100001], neg[100001];
 ll a1, a2;
-vector<pii> adj[100001];
+vector<pi> adj[100001];
 
 void init() {
     FOR(i,1,N+1) ad[i] = 0, loc[i] = i;
@@ -32,11 +32,11 @@ void init() {
 
 void comb(int x1, int y1) {
     int x = loc[x1], y = loc[y1];
-    for (pii a: dist[x]) 
+    for (pi a: dist[x]) 
         if (dist[y].find(-a.f-ad[x]-ad[y]) != dist[y].end())
             a1 += (ll)a.s*dist[y][-a.f-ad[x]-ad[y]];
             
-    for (pii a: dist[x]) dist[y][a.f+ad[x]-ad[y]] += a.s;
+    for (pi a: dist[x]) dist[y][a.f+ad[x]-ad[y]] += a.s;
     
     dist[x].clear();
     loc[x1] = y;
@@ -64,18 +64,18 @@ void comb1(int x1, int y1) {
         for (auto a: neg[loc[y1]]) cout << "NEG " << y1 << " " << a.f+ad[loc[y1]] << " " << a.s << "\n";
     }*/
     
-    for (pii a: pos[x]) 
+    for (pi a: pos[x]) 
         if (neg[y].find(-a.f-ad[x]-ad[y]) != neg[y].end())
             a2 += (ll)a.s*neg[y][-a.f-ad[x]-ad[y]];
     
-    for (pii a: neg[x]) {
+    for (pi a: neg[x]) {
         if (pos[y].find(-a.f-ad[x]-ad[y]) != pos[y].end())
             a2 += (ll)a.s*pos[y][-a.f-ad[x]-ad[y]];
         //if (x1 == 2 && y1 == 3) cout << "HI " << a.f << " " << a.s << "\n";
     }
     
-    for (pii a: pos[x]) pos[y][a.f+ad[x]-ad[y]] += a.s;
-    for (pii a: neg[x]) neg[y][a.f+ad[x]-ad[y]] += a.s;
+    for (pi a: pos[x]) pos[y][a.f+ad[x]-ad[y]] += a.s;
+    for (pi a: neg[x]) neg[y][a.f+ad[x]-ad[y]] += a.s;
     
     //if (x1 == 4 && y1 == 5) for (auto a: neg[loc[y1]]) cout << "NEGG " << y1 << " " << a.f+ad[loc[y1]] << " " << a.s << "\n";
     pos[x].clear();
@@ -84,29 +84,29 @@ void comb1(int x1, int y1) {
 }
 
 void dfs1(int par, int node) {
-    pii mx = {1,node};
+    pi mx = {1,node};
     dist[node][0] = 1;
     
-    for (pii a: adj[node]) if (a.f != par) {
+    for (pi a: adj[node]) if (a.f != par) {
         dfs1(node,a.f);
         ad[loc[a.f]] += a.s;
         mx = max(mx,{dist[loc[a.f]].size(),a.f});
     }
-    for (pii a: adj[node]) if (a.f != par && a.f != mx.s) comb(a.f,mx.s);
+    for (pi a: adj[node]) if (a.f != par && a.f != mx.s) comb(a.f,mx.s);
     if (node != mx.s) comb(node,mx.s);
 }
 
 void dfs2(int par, int node) {
-    pii mx = {0,node};
+    pi mx = {0,node};
     
-    for (pii a: adj[node]) if (a.f != par) {
+    for (pi a: adj[node]) if (a.f != par) {
         dfs2(node,a.f);
         ad[loc[a.f]] += a.s; 
         prep(a.f);
         mx = max(mx,{pos[loc[a.f]].size()+neg[loc[a.f]].size(),a.f});
     }
     
-    for (pii a: adj[node]) if (a.f != par && a.f != mx.s) {
+    for (pi a: adj[node]) if (a.f != par && a.f != mx.s) {
         comb1(a.f,mx.s);
         //if (node == 2) cout << "AAA " << neg[loc[5]].size() << "\n";
     }

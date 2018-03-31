@@ -7,7 +7,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
@@ -29,7 +29,7 @@ const int MX = 1<<15;
 
 int N,M, p[MX];
 set<int> cpath[MX], ppath[MX];
-vector<pii> tmp[MX];
+vector<pi> tmp[MX];
 map<int,int> val[MX];
 
 int SEG[2*MX], adp[1<<20], adp_index[1<<20], adp_start[1<<20];

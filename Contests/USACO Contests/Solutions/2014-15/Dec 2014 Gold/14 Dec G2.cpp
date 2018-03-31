@@ -15,7 +15,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -33,9 +33,9 @@ const int MOD = 1000000007;
 double PI = 4*atan(1);
 
 int N,Q, segsum[200000], segmax[200000];
-vector<pii> loc;
+vector<pi> loc;
 
-int dist(pii a, pii b) {
+int dist(pi a, pi b) {
 	b.f -= a.f, b.s -= a.s;
 	return abs(b.f) + abs(b.s);
 }

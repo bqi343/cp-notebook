@@ -6,7 +6,7 @@
 using namespace std;
  
 typedef vector<int> vi;
-typedef pair<int,int> pii;
+typedef pair<int,int> pi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -27,8 +27,8 @@ int N,M,K,Q, dist[200][200], co = 0, sum = 0;
 int f[200][20001], t[200][20001];
 vi h;
 unordered_map<int,int> hub;
-vector<pair<pii,int>> edge;
-vector<pii> from[20001], to[20001];
+vector<pair<pi,int>> edge;
+vector<pi> from[20001], to[20001];
 
 void init() {
 	cin >> N >> M >> K >> Q;

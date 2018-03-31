@@ -4,8 +4,6 @@
 * Verification: Dec 17 Plat 1
 */
 
-typedef pair<ll, ll> pll;
-
 template<class T> pair<T,T> operator+(const pair<T,T>& l, const pair<T,T>& r) {
     return {(l.f+r.f)%MOD,(l.s+r.s)%MOD};
 }
@@ -24,9 +22,9 @@ template<class T> pair<T,T> operator*(const pair<T,T>& l, const pair<T,T>& r) {
     
 struct hsh {
     string S; 
-    vector<pll> po, ipo, cum;
-    pll base = mp(948392576,573928192);
-    pll invbase = mp(499499562,829828935);
+    vector<pl> po, ipo, cum;
+    pl base = mp(948392576,573928192), invbase = mp(499499562,829828935);
+
     ll modpow(ll b, ll p) {
         return !p?1:modpow(b*b%MOD,p/2)*(p&1?b:1)%MOD;
     }
@@ -41,12 +39,12 @@ struct hsh {
         po[0] = ipo[0] = {1,1};
         FOR(i,1,sz(S)) {
             po[i] = po[i-1]*base;
-            ipo[i] = ipo[i - 1]*invbase;
+            ipo[i] = ipo[i-1]*invbase;
         }
         F0R(i,sz(S)) cum[i+1] = cum[i]+po[i]*(ll)(S[i]-'a'+1);
     }
     
-    pll get(int l, int r) {
+    pl get(int l, int r) {
         return ipo[l]*(cum[r+1]-cum[l]);
     }
 };

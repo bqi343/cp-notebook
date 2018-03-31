@@ -6,7 +6,7 @@
 using namespace __gnu_pbds;
 using namespace std;
 
-typedef pair<int,int> pii;
+typedef pair<int,int> pi;
 typedef long long ll;
 
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -14,7 +14,7 @@ typedef long long ll;
 #define s second
 
 int N,K;
-pii x[100001];
+pi x[100001];
 tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> s[100001];
 ll ans = 0;
 

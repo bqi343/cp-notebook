@@ -7,7 +7,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -26,11 +26,11 @@ const int MOD = 1000000007;
 double PI = 4*atan(1);
 
 int N, ans = 0;
-map<pair<pii,int>,int> c1, c2;
-vector<pii> cow;
+map<pair<pi,int>,int> c1, c2;
+vector<pi> cow;
 
-pair<pii,int> perp (pii a, pii b) {
-    pii slope = {b.f-a.f,b.s-a.s};
+pair<pi,int> perp (pi a, pi b) {
+    pi slope = {b.f-a.f,b.s-a.s};
     int g = __gcd(slope.f,slope.s);
     slope.f /= g, slope.s /= g;
     swap(slope.f,slope.s);
@@ -40,15 +40,15 @@ pair<pii,int> perp (pii a, pii b) {
     return {slope,slope.s*x.f*2-slope.f*x.s*2};
 }
 
-pair<pii,int> col (pii a, pii b) {
-    pii slope = {b.f-a.f,b.s-a.s};
+pair<pi,int> col (pi a, pi b) {
+    pi slope = {b.f-a.f,b.s-a.s};
     int g = __gcd(slope.f,slope.s);
     slope.f /= g, slope.s /= g;
     if (slope.f < 0 || (slope.f == 0 && slope.s < 0)) slope.f *= -1, slope.s *= -1;
     return {slope,slope.s*a.f*2-slope.f*a.s*2};
 }
 
-bool on(pair<pii,int> x, pii y) {
+bool on(pair<pi,int> x, pi y) {
     int tmp = 2*(x.f.s*y.f-x.f.f*y.s);
     if (tmp == x.s) return 1;
     return 0;

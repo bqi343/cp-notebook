@@ -1,7 +1,7 @@
 // https://open.kattis.com/problems/longincsubseq
 
 int n, pre[100000], a[100000];
-set<pair<ll,pii>> bes; // number, length, index
+set<pair<ll,pi>> bes; // number, length, index
 
 void solve() {
     bes.clear(); bes.insert({-1e18,{0,-1}});

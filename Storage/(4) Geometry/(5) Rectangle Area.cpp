@@ -4,7 +4,7 @@
 const ll INF = 1e18;
 
 template<int SZ> struct LazySegTree {
-    pii mn[2*SZ];
+    pi mn[2*SZ];
     int lazy[2*SZ]; // set SZ to a power of 2
     
     LazySegTree() {
@@ -19,7 +19,7 @@ template<int SZ> struct LazySegTree {
         lazy[ind] = 0;
     }
     
-    pii comb(pii a, pii b) {
+    pi comb(pi a, pi b) {
         if (a.f != b.f) return min(a,b);
         return {a.f,a.s+b.s};
     }
@@ -32,7 +32,7 @@ template<int SZ> struct LazySegTree {
         for (int i = SZ-1; i > 0; --i) pull(i);
     }
 
-    pii qmin(int lo, int hi, int ind = 1, int L = 0, int R = SZ-1) {
+    pi qmin(int lo, int hi, int ind = 1, int L = 0, int R = SZ-1) {
         push(ind,L,R);
         if (lo > R || L > hi) return {MOD,0};
         if (lo <= L && R <= hi) return mn[ind];

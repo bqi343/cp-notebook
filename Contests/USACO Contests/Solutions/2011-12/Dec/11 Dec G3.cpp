@@ -6,7 +6,7 @@
 using namespace std;
 
 typedef vector<int> vi;
-typedef pair<int,int> pii;
+typedef pair<int,int> pi;
 
 #define f first
 #define s second
@@ -65,7 +65,7 @@ class LazySegTree {
     	}
 };
 
-vector<vector<pii>> graph;
+vector<vector<pi>> graph;
 
 template <int V>
 class HeavyLight {
@@ -89,7 +89,7 @@ class HeavyLight {
         
         int dfs(int v) {
             int size = 1, maxSubtree = 0;
-            for (pii u : graph[v]) if (u.f != parent[v]) {
+            for (pi u : graph[v]) if (u.f != parent[v]) {
                 parent[u.f] = v;
                 depth[u.f] = depth[v] + 1;
                 int subtree = dfs(u.f);

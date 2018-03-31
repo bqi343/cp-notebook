@@ -16,7 +16,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -38,16 +38,16 @@ ifstream cin ("castle.in");
 ofstream cout ("castle.out");
 
 int ar[50][50], comp[50][50], sz[2501], num, mpos;
-pair<pii,int> cans;
+pair<pi,int> cans;
 
 int xdir[4] = {-1,0,1,0}, ydir[4] = {0,1,0,-1};
 char dir[4] = {'W','N','E','S'};
 
 void flood_fill(int i, int j) {
 	num++;
-	queue<pii> todo; todo.push(mp(i,j));
+	queue<pi> todo; todo.push(mp(i,j));
 	while (todo.size()) {
-		pii k = todo.front();
+		pi k = todo.front();
 		todo.pop();
 		if (comp[k.f][k.s]) continue;
 		comp[k.f][k.s] = num, sz[num]++;

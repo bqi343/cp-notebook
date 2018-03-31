@@ -9,8 +9,8 @@ const int MAXN = 100001;
 
 struct LCA {
     vi edges[MAXN];
-    RMQ<pii,2*MAXN> r;
-    vector<pii> tmp;
+    RMQ<pi,2*MAXN> r;
+    vector<pi> tmp;
     int depth[MAXN], pos[MAXN];
     
     int V, R;

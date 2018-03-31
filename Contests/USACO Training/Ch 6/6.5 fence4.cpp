@@ -13,7 +13,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef pair<double,double> pdd;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -29,17 +29,17 @@ typedef pair<double,double> pdd;
 const int MOD = 1000000007;
 double PI = 4*atan(1);
 
-vector<pii> points;
-vector<pair<pii,pii>> seg;
+vector<pi> points;
+vector<pair<pi,pi>> seg;
 vector<pdd> angles;
 int x,y,N;
 
-int signa(pii a, pii b, pii c) {
+int signa(pi a, pi b, pi c) {
 	c.f -= a.f, c.s -= a.s, b.f -= a.f, b.s -= a.s;
 	return (b.f*c.s-b.s*c.f);
 }
 
-bool intersect(pair<pii,pii> a, pair<pii,pii> b) {
+bool intersect(pair<pi,pi> a, pair<pi,pi> b) {
 	ll s1 = signa(a.f,a.s,b.f), s2 = signa(a.f,a.s,b.s); // what if the areas are zero?
 	if (s1*s2 > 0) return 0;
 	ll s3 = signa(b.f,b.s,a.f), s4 = signa(b.f,b.s,a.s);
@@ -56,12 +56,12 @@ bool intersect(pair<pii,pii> a, pair<pii,pii> b) {
 	return 1;
 }
 
-double dist(pii a, pii b) {
+double dist(pi a, pi b) {
 	b.f -= a.f, b.s -= a.s;
 	return sqrt(double(b.f)*b.f+b.s*b.s);
 }
 
-bool closer(pair<pii,pii> a, pair<pii,pii> b) { // 0 if first one, 1 if second one
+bool closer(pair<pi,pi> a, pair<pi,pi> b) { // 0 if first one, 1 if second one
 	if (intersect(mp(mp(x,y),b.f),a)) return 0;
 	if (intersect(mp(mp(x,y),b.s),a)) return 0;
 	if (intersect(mp(mp(x,y),a.f),b)) return 1;

@@ -8,7 +8,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -27,8 +27,8 @@ const int MOD = 1000000007;
 int N,M, lst = 0;
 int bad[200002], dp[200002];
 int mn[200002], mx[200002];
-set<pii> cur;
-vector<pii> ok, z;
+set<pi> cur;
+vector<pi> ok, z;
 
 void setbad(int x, int y) {
     bad[x] ++; bad[y+1] --;
@@ -44,9 +44,9 @@ void solve() {
 }
 
 void createbad() {
-    for (pii a: ok) {
+    for (pi a: ok) {
 	    while (cur.size() > 0 && cur.begin()->f < a.f) {
-	        pii x = *cur.begin();
+	        pi x = *cur.begin();
 	        z.pb({x.s,x.f});
 	        cur.erase(cur.begin());
 	    }
@@ -58,7 +58,7 @@ void createbad() {
 	    cur.insert({a.s,a.f});
 	}
 	while (cur.size() > 0) {
-	    pii x = *cur.begin();
+	    pi x = *cur.begin();
 	    z.pb({x.s,x.f});
 	    cur.erase(cur.begin());
 	}
@@ -68,7 +68,7 @@ void createbad() {
 
 void again() {
     int nex = 0;
-    set<pii> cur;
+    set<pi> cur;
     FOR(i,1,N+1) {
         while (cur.size() && cur.begin()->f < i) cur.erase(cur.begin());
         if (nex < z.size() && z[nex].f == i) {
@@ -80,7 +80,7 @@ void again() {
     }
 }
 
-bool comp (pii a, pii b) {
+bool comp (pi a, pi b) {
     if (a.f != b.f) return (a.f < b.f);
     return (a.s > b.s);
 }

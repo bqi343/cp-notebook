@@ -25,7 +25,7 @@ vi manacher(string s) {
 int main() {
     int T; cin >> T;
     F0R(i,T) {
-        pii bes = {0,0};
+        pi bes = {0,0};
         string s; cin >> s;
         vi t = manacher(s);
         for (int i: t) {

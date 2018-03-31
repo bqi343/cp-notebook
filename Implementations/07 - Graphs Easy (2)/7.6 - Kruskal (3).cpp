@@ -25,7 +25,7 @@ template<int SZ> struct DSU {
 };
 
 int ans = 0; // total weight of MST
-vector<pair<int,pii>> edge;
+vector<pair<int,pi>> edge;
 
 DSU<100> D;
 

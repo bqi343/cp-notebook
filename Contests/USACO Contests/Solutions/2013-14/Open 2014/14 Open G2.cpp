@@ -7,7 +7,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -27,7 +27,7 @@ double PI = 4*atan(1);
 
 int N,Bx,By,cx,cy;
 map<int,int> xval, yval;
-vector<pair<pii,char>> pairs;
+vector<pair<pi,char>> pairs;
 set<pair<int,char>> v[1<<17], h[1<<17];
 ll ans = 0;
 
@@ -79,10 +79,10 @@ class LazySegTree {
 		}
 };
 
-ll numintersection(vector<pair<int,pii>> ver, vector<pair<int,pii>> hor) {
+ll numintersection(vector<pair<int,pi>> ver, vector<pair<int,pi>> hor) {
 	LazySegTree<1<<17> x;
 	ll ans = 0;
-	vector<pair<int,pii>> query; // y, factor, x
+	vector<pair<int,pi>> query; // y, factor, x
 	for (auto a: ver) {
 		query.pb({a.s.f,{-1,a.f}});
 		query.pb({a.s.s-1,{1,a.f}});
@@ -105,8 +105,8 @@ ll numintersection(vector<pair<int,pii>> ver, vector<pair<int,pii>> hor) {
 }
 // intersection of lines with lazy segment tree
 
-pair<vector<pair<int,pii>>,vector<pair<int,pii>>> gen(vector<pii> x) {
-	pair<vector<pair<int,pii>>,vector<pair<int,pii>>> y;
+pair<vector<pair<int,pi>>,vector<pair<int,pi>>> gen(vector<pi> x) {
+	pair<vector<pair<int,pi>>,vector<pair<int,pi>>> y;
 	F0R(i,x.size()-1) {
 		if (x[i].f == x[i+1].f) y.f.pb({x[i].f,{min(x[i].s,x[i+1].s),max(x[i].s,x[i+1].s)}});
 		else y.s.pb({x[i].s,{min(x[i].f,x[i+1].f),max(x[i].f,x[i+1].f)}});
@@ -136,10 +136,10 @@ void init() {
 	Bx = xval[Bx], By = yval[By];
 }
 
-vector<pii> point;
+vector<pi> point;
 bool done[4];
 
-bool on (pii a, pii b, pii x) {
+bool on (pi a, pi b, pi x) {
 	if (a > b) swap(a,b);
 	if (x.f == a.f && x.f == b.f && a.s < x.s && x.s < b.s) return 1;
 	if (x.s == a.s && x.s == b.s && a.f < x.f && x.f < b.f) return 1;
@@ -232,15 +232,15 @@ void get(int x, int y, char dir) {
 void solve() {
 	point.clear();
 	get(xval[0],yval[0],'N');
-	vector<pii> z = point;
-	pair<vector<pair<int,pii>>,vector<pair<int,pii>>> z1 = gen(z);
+	vector<pi> z = point;
+	pair<vector<pair<int,pi>>,vector<pair<int,pi>>> z1 = gen(z);
 	
 	char dir[4] = {'E','N','W','S'};
 	F0R(i,4) if (!done[i]) {
 		point.clear();
 		get(Bx,By,dir[i]);
-		vector<pii> a = point;
-		pair<vector<pair<int,pii>>,vector<pair<int,pii>>> a1 = gen(a);
+		vector<pi> a = point;
+		pair<vector<pair<int,pi>>,vector<pair<int,pi>>> a1 = gen(a);
 		ans += numintersection(z1.f,a1.s);
 		ans += numintersection(z1.s,a1.f);
 	}

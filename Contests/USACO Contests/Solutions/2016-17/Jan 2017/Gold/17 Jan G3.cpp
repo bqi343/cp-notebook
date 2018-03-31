@@ -16,7 +16,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -34,13 +34,13 @@ typedef pair<int, int> pii;
 char grid[20][20];
 int dp[1600][1600], N;
 int xdir[4] ={1,0,-1,0}, ydir[4] = {0,1,0,-1};
-queue<pair<int,pii>> q;
+queue<pair<int,pi>> q;
 
-int pack(pair<int,pii> a) {
+int pack(pair<int,pi> a) {
 	return 400*a.f+20*a.s.f+a.s.s;
 }
 
-pair<int,pii> unpack(int cur) {
+pair<int,pi> unpack(int cur) {
 	int dir = cur / 400; cur %= 400;
 	int x = cur / 20;
 	return {dir,{cur/20,cur%20}};

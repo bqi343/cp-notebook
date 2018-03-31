@@ -7,7 +7,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
@@ -29,10 +29,10 @@ const int MOD = 1000000007;
 int N,D;
 vector<vi> b[2];
 ll ans[2][100000], fin[100000];
-queue<pii> q;
+queue<pi> q;
 set<int> todo[2];
 
-pii binsearch(int giver, int ind) {
+pi binsearch(int giver, int ind) {
     // 0: Bessie gave, Elsie received
     int lo = b[giver][ind][1]-D, hi = b[giver][ind][1];
     vi v1 = {lo,0,0}, v2 = {hi+1,0,0};
@@ -69,8 +69,8 @@ void solve() {
 	}
 	
 	while (sz(q)) {
-	    pii t = q.front(); q.pop();
-	    pii tmp = binsearch(t.f,t.s);
+	    pi t = q.front(); q.pop();
+	    pi tmp = binsearch(t.f,t.s);
 	    
 	    while (1) {
 	        auto it = todo[t.f^1].lb(tmp.f);

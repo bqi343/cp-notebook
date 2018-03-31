@@ -10,7 +10,7 @@
 using namespace std;
 
 #define mp make_pair
-#define pii pair <int, int>
+#define pi pair <int, int>
 
 #define F0R(i, a) for (int i=0; i<a; i++)
  
@@ -22,7 +22,7 @@ ofstream cout ("dream.out");
 
 int grid[1000][1000], xdir[4] = {0,1,0,-1}, ydir[4] = {1,0,-1,0},N,M,des;
 bool visit[10000000];
-queue<pii> q;
+queue<pi> q;
 
 int main() {
     cin >> N >> M;
@@ -31,7 +31,7 @@ int main() {
 	q.push(mp(0,0)), des = (M-1)*1000+N-1, visit[0] = 1;
 	while (!q.empty()) {
 		int o=0,d=0,xc=0,yc=0,x1,y1,z;
-		pii x = q.front();
+		pi x = q.front();
 		q.pop();
 		if (x.f == des || x.f == des+5000000) {cout << x.s;test = 1;break;}
 		o = x.f/5000000, x.f -= o*5000000;

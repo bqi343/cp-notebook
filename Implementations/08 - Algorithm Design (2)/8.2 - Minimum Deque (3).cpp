@@ -5,7 +5,7 @@
 
 struct MinDeque { 
     int lo = 0, hi = -1;
-    deque<pii> d;
+    deque<pi> d;
     
     void ins(int x) { // add to back
         while (sz(d) && d.back().f >= x) d.pop_back();

@@ -20,6 +20,14 @@ struct mat {
         F0R(i,a) F0R(j,b) d[i][j] = v[i][j];
     }
     
+    void print() {
+        F0R(i,a) {
+            F0R(j,b) cout << d[i][j] << " ";
+            cout << "\n";
+        }
+        cout << "------------\n";
+    }
+    
     mat operator+(const mat& m) {
         mat r(a,b);
         F0R(i,a) F0R(j,b) r.d[i][j] = (d[i][j]+m.d[i][j]) % MOD;
@@ -32,7 +40,7 @@ struct mat {
             r.d[i][k] = (r.d[i][k]+(ll)d[i][j]*m.d[j][k]) % MOD;
         return r;
     }
-    
+
     mat operator^(ll p) {
         mat r(a,a), base(*this); 
         F0R(i,a) r.d[i][i] = 1;
@@ -44,13 +52,5 @@ struct mat {
         }
         
         return r;
-    }
-    
-    void print() {
-        F0R(i,a) {
-            F0R(j,b) cout << d[i][j] << " ";
-            cout << "\n";
-        }
-        cout << "------------\n";
     }
 };

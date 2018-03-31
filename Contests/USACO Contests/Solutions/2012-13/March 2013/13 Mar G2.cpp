@@ -14,7 +14,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int,int> pii;
+typedef pair<int,int> pi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -31,10 +31,10 @@ typedef pair<int,int> pii;
 ifstream cin ("hillwalk.in");
 ofstream cout ("hillwalk.out");
 
-vector<pair<pii,pii>> hill;
+vector<pair<pi,pi>> hill;
 int chill, ind, N, ans=1;
 ll cx;
-vector<pair<pii,int>> change;
+vector<pair<pi,int>> change;
 
 double get(int a) {
 	return double((cx-hill[a].f.f)*hill[a].s.s+(hill[a].s.f-cx)*hill[a].f.s)/(hill[a].s.f-hill[a].f.f);

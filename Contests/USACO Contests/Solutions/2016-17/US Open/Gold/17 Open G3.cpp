@@ -10,7 +10,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -30,9 +30,9 @@ ifstream cin ("art2.in");
 ofstream cout ("art2.out");
 
 int N;
-pii oc[100001];
+pi oc[100001];
 vi cur, rec;
-vector<pair<pii,int>> todo;
+vector<pair<pi,int>> todo;
 
 int main() {
 	cin >> N; rec.resize(N); 

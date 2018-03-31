@@ -5,7 +5,7 @@
 */
 
 template<int SZ> struct mstree { 
-    Tree<pii> val[SZ+1]; // for offline queries use vector with binary search instead
+    Tree<pi> val[SZ+1]; // for offline queries use vector with binary search instead
     
     void upd(int x, int y, int t = 1) { // x-coordinate between 1 and SZ inclusive
         for (int X = x; X <= SZ; X += X&-X) {

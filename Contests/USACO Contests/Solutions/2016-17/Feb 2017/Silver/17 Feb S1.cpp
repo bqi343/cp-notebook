@@ -7,7 +7,7 @@
 using namespace std;
  
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 
 #define F0R(i, a) for (int i=0; i<a; i++)
  
@@ -19,7 +19,7 @@ int main() {
 	//ofstream cout ("helpcross.out");
 	int C,N; cin >> C >> N;
 	vi c(C);
-	vector<pii> n(N);
+	vector<pi> n(N);
 	F0R(i,C) cin >> c[i];
 	F0R(i,N) cin >> n[i].f >> n[i].s;
 	sort(c.begin(),c.end());

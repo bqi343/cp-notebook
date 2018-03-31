@@ -67,7 +67,7 @@ If you consistently score 120+ on AMC 10:
 ## More Links
  
 Useful:
- * [Expii](https://www.expii.com/)
+ * [Expii](https://www.expi.com/)
  * [Alcumus](https://artofproblemsolving.com/alcumus)
  * [Past Contests](https://artofproblemsolving.com/community/c3158_usa_contests)
  * [Handouts](https://artofproblemsolving.com/community/c5h1578191_handout_compilation)

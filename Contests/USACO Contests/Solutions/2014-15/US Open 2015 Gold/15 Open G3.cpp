@@ -15,7 +15,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -34,8 +34,8 @@ const int MOD = 1000000007;
 double PI = 4*atan(1);
 
 int N;
-vector<pii> bale;
-set<pii> bale1, bad;
+vector<pi> bale;
+set<pi> bale1, bad;
 
 void add(int st, int en) {
 	// check if smth else contains
@@ -57,7 +57,7 @@ int main() {
 	reverse(bale.begin(),bale.end());
 	
 	for (auto a: bale) { 
-		pii a1 = {a.s,a.f}; // pos, weight
+		pi a1 = {a.s,a.f}; // pos, weight
 		auto x = bale1.ub(a1);
 		if (x != bale1.end()) {
 			auto b = *x;

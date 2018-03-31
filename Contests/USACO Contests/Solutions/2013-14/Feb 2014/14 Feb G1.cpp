@@ -16,7 +16,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -38,14 +38,14 @@ ifstream cin ("rblock.in");
 ofstream cout ("rblock.out");
 
 int N,M, dist[251], least, ans;
-pii pre[251];
-set<pii> adj[251];
-vector<pair<pii,int>> path;
+pi pre[251];
+set<pi> adj[251];
+vector<pair<pi,int>> path;
 
 int shortest() {
 	dist[1] = 0;
 	FOR(i,1,N+1) dist[i] = MOD;
-	priority_queue<pii> todo; 
+	priority_queue<pi> todo; 
 	todo.push({0,1});
 	
 	while (todo.size()) {

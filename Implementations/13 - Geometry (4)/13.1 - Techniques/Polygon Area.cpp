@@ -3,7 +3,7 @@
 * Usage: https://open.kattis.com/problems/polygonarea
 */ 
 
-double area(vector<pii> v) {
+double area(vector<pi> v) {
     double x = 0;
     F0R(i,sz(v)) {
         int j = (i+1)%sz(v);

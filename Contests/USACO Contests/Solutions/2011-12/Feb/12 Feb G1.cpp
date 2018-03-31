@@ -7,7 +7,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -27,13 +27,13 @@ double PI = 4*atan(1);
 
 int N,K;
 ll M;
-vector<pii> cow;
-set<pii> cou, pri;
-pii p1, p2;
+vector<pi> cow;
+set<pi> cou, pri;
+pi p1, p2;
 ll c1, c2;
 int num = 0, ans = 0;
 
-bool comp(pii a, pii b) {
+bool comp(pi a, pi b) {
     return a.f-a.s > b.f-b.s;
 }
 
@@ -49,7 +49,7 @@ void init() {
 }
 
 void rem(int ind) {
-    pii tmp = {cow[ind].s,ind};
+    pi tmp = {cow[ind].s,ind};
     if (tmp <= p1) {
         c1 -= tmp.f;
         p1 = *next(cou.find(p1));
@@ -59,7 +59,7 @@ void rem(int ind) {
 }
 
 void ad(int ind) {
-    pii tmp = {cow[ind].f,ind};
+    pi tmp = {cow[ind].f,ind};
     if (tmp <= p2) c2 += tmp.f, num ++;
     pri.insert(tmp);
     while (c1+c2 > M) {
@@ -68,7 +68,7 @@ void ad(int ind) {
         num --;
     }
     while (c1+c2 < M && next(pri.find(p2)) != pri.end()) {
-        pii tmp = *next(pri.find(p2));
+        pi tmp = *next(pri.find(p2));
         if (c1+c2+tmp.f > M) break;
         num ++;
         c2 += tmp.f;

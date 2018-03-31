@@ -3,7 +3,7 @@
  
 using namespace std;
  
-typedef pair<int,int> pii;
+typedef pair<int,int> pi;
  
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -12,8 +12,8 @@ typedef pair<int,int> pii;
 #define s second
  
 int N,K,nex;
-pii x[100001];
-pair<int,pii> segbit[20000000];
+pi x[100001];
+pair<int,pi> segbit[20000000];
 long long ans = 0;
  
 int getnode(int in, int b) {

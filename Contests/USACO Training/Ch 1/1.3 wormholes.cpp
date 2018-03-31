@@ -6,7 +6,7 @@ using namespace std;
 #define ll long long
 #define mp make_pair
 #define pb push_back
-#define pii pair <int, int>
+#define pi pair <int, int>
 #define vi vector<int>
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)

@@ -34,7 +34,6 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 #define all(x) x.begin(), x.end()
 
 const int MOD = 1000000007;
-const double PI = 4*atan(1);
 const ll INF = 1e18;
 const int MX = 100001;
 

@@ -5,11 +5,11 @@
     * POI 9 Rhyme
 */
 
-typedef pair<ll,ll> pll;
+typedef pair<ll,ll> pl;
 
 struct CRT {
     ll n,m,a,b; 
-    map<ll,pii> M;
+    map<ll,pi> M;
     bool bad;
     
     ll inv(ll a, ll b) { // 0 < a < b, gcd(a,b) = 1
@@ -29,7 +29,7 @@ struct CRT {
     }
     
     void process(ll a, ll n) {
-        vector<pii> z;
+        vector<pi> z;
         for (int i = 2; i*i <= n; ++i) if (n % i == 0) {
             int co = 0;
             while (n % i == 0) n /= i, co++;
@@ -38,8 +38,8 @@ struct CRT {
         if (n != 1) z.pb({n,1});
         for (auto A: z) {
             if (M.count(A.f)) {
-                pii p1 = M[A.f];
-                pii p2 = {A.s,a%(ll)pow(A.f,A.s)};
+                pi p1 = M[A.f];
+                pi p2 = {A.s,a%(ll)pow(A.f,A.s)};
                 if (p1 > p2) swap(p1,p2);
                 if (p2.s%(ll)pow(A.f,p1.f) != p1.s) bad = 1;
                 M[A.f] = p2;
@@ -53,7 +53,7 @@ struct CRT {
         return z;
     }
     
-    pll solve(ll aa, ll nn, ll bb, ll mm) {
+    pl solve(ll aa, ll nn, ll bb, ll mm) {
         bad = 0, M.clear(); 
         a = aa, n = nn, b = bb, m = mm;
         process(a,n), process(b,m);

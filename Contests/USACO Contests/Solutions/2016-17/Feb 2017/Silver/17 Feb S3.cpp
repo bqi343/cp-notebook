@@ -3,7 +3,7 @@
 
 using namespace std;
 
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -30,7 +30,7 @@ int main() {
 	ans = K*(K-1)/2;
 	
 	F0R(i,R) {
-		pii a,b; cin >> a.f >> a.s >> b.f >> b.s;
+		pi a,b; cin >> a.f >> a.s >> b.f >> b.s;
 		a.f--,a.s--,b.f--,b.s--;
 		if (a>b) swap(a,b);
 		if (a.f == b.f) {
@@ -42,7 +42,7 @@ int main() {
 		}
 	}
 	F0R(i,K) {
-		pii a; cin >> a.f >> a.s;
+		pi a; cin >> a.f >> a.s;
 		a.f--,a.s--;
 		is[a.f][a.s] = 1;
 	}

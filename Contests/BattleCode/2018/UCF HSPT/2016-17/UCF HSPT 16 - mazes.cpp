@@ -7,7 +7,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
@@ -33,15 +33,15 @@ int r,c, ans;
 void solve() {
     ans = 0;
     F0R(i,r) F0R(j,c) dist[i][j] = MOD;
-    deque<pii> todo;
+    deque<pi> todo;
     F0R(i,r) F0R(j,c) if (g[i][j] == 'S') {
         dist[i][j] = 0;
         todo.push_front({i,j});
     }
     while (todo.size()) {
-        pii x = todo.front(); todo.pop_front();
+        pi x = todo.front(); todo.pop_front();
         F0R(i,4) {
-            pii nx = {x.f+xdir[i], x.s+ydir[i]};
+            pi nx = {x.f+xdir[i], x.s+ydir[i]};
             if (nx.f < 0 || nx.f >= r || nx.s < 0 || nx.s >= c) continue;
             
             if (g[nx.f][nx.s] != '#') {

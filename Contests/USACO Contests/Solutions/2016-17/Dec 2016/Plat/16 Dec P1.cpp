@@ -9,7 +9,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef set<int> si;
 typedef map<int,int> mii;
 
@@ -32,19 +32,19 @@ ifstream cin ("triangles.in");
 ofstream cout ("triangles.out");
 
 int N, rec[300][300];
-vector<pii> points;
+vector<pi> points;
 vi counts;
 
-ll area(pii x, pii y, pii z) {
+ll area(pi x, pi y, pi z) {
     return abs((ll)(y.f-x.f)*(z.s-x.s)-(ll)(y.s-x.s)*(z.f-x.f));
 }
 
-bool in(pii a, pii b, pii c, pii d) {
+bool in(pi a, pi b, pi c, pi d) {
     if(area(a,b,d)+area(a,c,d)+area(b,c,d)>area(a,b,c)) return 0;
     return 1;
 }
 
-bool comp(pii a, pii b) {
+bool comp(pi a, pi b) {
 	if (a.s <= 0 && b.s >= 0) return true;
 	if (a.s >= 0 && b.s <= 0) return false;
 	if (a.s > 0 || b.s > 0) {

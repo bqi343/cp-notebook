@@ -5,7 +5,7 @@ using namespace std;
   
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
  
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -26,9 +26,9 @@ int N, sub[40001], ans=0;
 char n[40001];
 bool done[40001];
 vi adj[40001];
-pii bes;
+pi bes;
 map<int,int> t[2];
-vector<pair<char,pii>> todo; // store depth, max depth
+vector<pair<char,pi>> todo; // store depth, max depth
 
 void dfs1(int p, int z) {
     sub[z] = 1;
@@ -63,7 +63,7 @@ void test(int x) {
     
     for (int i: adj[x]) if (!done[i]) {
         dfs3(x,i,0,0,0);
-        for (pair<char,pii> a: todo) 
+        for (pair<char,pi> a: todo) 
             if (a.f == '(') {
                 int z = a.s.f+(n[x] == '(' ? 1 : -1);
                 if (t[1].count(-z)) ans = max(ans,max(a.s.s,t[1][-z]));
@@ -72,7 +72,7 @@ void test(int x) {
                 if (t[0].count(-z)) ans = max(ans,max(a.s.s,t[0][-z]));
             }
             
-        for (pair<char,pii> a: todo) 
+        for (pair<char,pi> a: todo) 
             if (a.f == '(') t[0][a.s.f] = max(t[0][a.s.f],a.s.s);
             else t[1][a.s.f] = max(t[1][a.s.f],a.s.s);
             

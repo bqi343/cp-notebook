@@ -7,7 +7,7 @@
 
 using namespace std;
 
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef vector<int> vi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -24,7 +24,7 @@ char grid[20][20];
 int comp[20][20], temp=1;
 int x1, x2, y11, y2;
 int xdir[4] = {1,0,-1,0}, ydir[4] = {0,1,0,-1};
-vector<pair<pii,pii>> ans;
+vector<pair<pi,pi>> ans;
 
 void run(int i, int j) {
 	comp[i][j] = temp;

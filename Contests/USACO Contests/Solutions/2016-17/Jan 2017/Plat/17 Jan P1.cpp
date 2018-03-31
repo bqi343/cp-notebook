@@ -7,8 +7,8 @@
 using namespace __gnu_pbds; 
 using namespace std;
 
-typedef pair<int,int> pii;
-typedef tree<pii,null_type,less<pii>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
+typedef pair<int,int> pi;
+typedef tree<pi,null_type,less<pi>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i,a,b) for (int i=a; i<b; i++)
 

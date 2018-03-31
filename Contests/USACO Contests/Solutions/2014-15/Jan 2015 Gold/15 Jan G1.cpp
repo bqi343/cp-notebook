@@ -15,7 +15,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -33,7 +33,7 @@ typedef pair<int, int> pii;
 const int MOD = 1000000007;
 double PI = 4*atan(1);
 
-pii rec[1001][1001], ans = {0,0};
+pi rec[1001][1001], ans = {0,0};
 set<int> todo;
 
 int main() {

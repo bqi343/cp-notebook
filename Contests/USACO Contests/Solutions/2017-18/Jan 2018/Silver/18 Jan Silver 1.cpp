@@ -7,7 +7,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
@@ -31,7 +31,7 @@ int main() {
     // freopen("lifeguards.out","w",stdout);
     
 	int N; cin >> N;
-	vector<pii> v(N);
+	vector<pi> v(N);
 	F0R(i,N) cin >> v[i].f >> v[i].s;
 	sort(all(v)); v.pb({MOD,0});
 	

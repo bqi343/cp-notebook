@@ -7,7 +7,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
@@ -28,15 +28,15 @@ const int MOD = 1000000007;
 
 int dp[100001][101];
 int N, K;
-vector<pii> p, P;
+vector<pi> p, P;
 
-bool cmp (pii a, pii b) {
+bool cmp (pi a, pi b) {
     if (a.f != b.f) return a.f < b.f;
     return a.s > b.s;
 }
 
 struct maxDeque {
-    deque<pii> mx;
+    deque<pi> mx;
     deque<int> tmp;
     
     int l = 0,r = -1;

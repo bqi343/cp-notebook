@@ -11,26 +11,26 @@ using namespace std;
 #define mp make_pair
  
 typedef vector<string> mat;
-typedef pair<int,int> pii;
+typedef pair<int,int> pi;
 typedef vector<short> vi;
 typedef long long ll;
   
-const pii MOD = {975919579,975979579};
-pii M1[1000], M2[1000];
+const pi MOD = {975919579,975979579};
+pi M1[1000], M2[1000];
 int K,N,M;
 clock_t b;
 set<vi> ans;
  
-pii operator*(const pii& l, const int& r) {
+pi operator*(const pi& l, const int& r) {
     return mp(1LL*l.f*r % MOD.f,1LL*l.s*r % MOD.s);
 }
-pii operator*(const pii& l, const pii& r) {
+pi operator*(const pi& l, const pi& r) {
     return mp(1LL*l.f*r.f % MOD.f,1LL*l.s*r.s % MOD.s);
 }
-pii operator+(const pii& l, const pii& r) {
+pi operator+(const pi& l, const pi& r) {
     return mp((l.f+r.f)%MOD.f,(l.s+r.s)%MOD.s);
 }
-pii operator-(const pii& l, const pii& r) {
+pi operator-(const pi& l, const pi& r) {
     return mp((l.f-r.f+MOD.f)%MOD.f,(l.s-r.s+MOD.s)%MOD.s);
 }
 vi operator+(const vi& l, const vi& r) {
@@ -47,7 +47,7 @@ void print(mat& x) {
 }
  
 struct figure {
-    pii hsh, lef;
+    pi hsh, lef;
     vi cnt;
     vector<vi> sum_table;
     figure() {}
@@ -145,11 +145,11 @@ void init() {
     }
 }
  
-pii shift(int x, pii pos) {
+pi shift(int x, pi pos) {
     return fig[x].hsh*M1[pos.f]*M2[pos.s];
 }
  
-int get(pii pos, int x) {
+int get(pi pos, int x) {
     int N = fig[x].sum_table.size(), M = fig[x].sum_table[0].size();
     if (pos.s < 0) pos.f--, pos.s = M-1;
     else if (pos.s >= M) pos.s = M-1;
@@ -159,7 +159,7 @@ int get(pii pos, int x) {
     return fig[x].sum_table[pos.f][pos.s];
 }
  
-pii get_offset(int num, vi A, vector<pii> B) {
+pi get_offset(int num, vi A, vector<pi> B) {
     int lo = 0, hi = N*M-1;
     while (lo < hi) {
         int mid = (lo+hi)/2;
@@ -173,11 +173,11 @@ pii get_offset(int num, vi A, vector<pii> B) {
 }
  
 bool ok(vi a) {
-    pii p0 = get_offset(a[0],{},{});
+    pi p0 = get_offset(a[0],{},{});
     if (p0.f < 0 || p0.s < 0) return 0;
-    pii p1 = get_offset(a[1],{a[0]},{p0});
+    pi p1 = get_offset(a[1],{a[0]},{p0});
     if (p1.f < 0 || p1.s < 0) return 0;
-    pii p2 = get_offset(a[2],{a[0],a[1]},{p0,p1});
+    pi p2 = get_offset(a[2],{a[0],a[1]},{p0,p1});
     if (p2.f < 0 || p2.s < 0) return 0;
     return shift(a[0],p0)+shift(a[1],p1)+shift(a[2],p2) == target.hsh;
 }

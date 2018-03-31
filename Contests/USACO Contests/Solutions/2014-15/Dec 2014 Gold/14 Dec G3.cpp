@@ -15,7 +15,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -41,7 +41,7 @@ int main() {
 	ofstream cout ("cowjog.out");
 	cin >> N >> T;
 	F0R(i,N) {
-		pii cow; cin >> cow.f >> cow.s; // pos, speed
+		pi cow; cin >> cow.f >> cow.s; // pos, speed
 		ll en = cow.f+T*cow.s;
 		auto it = s.lb(en);
 		if (it != s.begin()) s.erase(prev(it));

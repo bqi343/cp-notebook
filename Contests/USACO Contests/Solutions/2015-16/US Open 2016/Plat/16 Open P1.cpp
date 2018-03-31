@@ -4,7 +4,7 @@ using namespace std;
 #define ll long long
 #define mp make_pair
 #define pb push_back
-#define pii pair <int, int>
+#define pi pair <int, int>
 #define vi vector<int>
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -21,7 +21,7 @@ using namespace std;
  
 const int MOD = 1000000007;
 
-void print(vector<pii> a) {
+void print(vector<pi> a) {
 	F0R(i,a.size()) {
 		cout << a[i].f << " " << a[i].s << "  ";
 	}
@@ -32,7 +32,7 @@ int main() {
 	// freopen("262144.in", "r", stdin);
   	// freopen("262144.out", "w", stdout);
 	int n, ans = 0;
-	vector<pii> seq[60];
+	vector<pi> seq[60];
 	scanf("%d",&n);
 	F0R(i,n) {
 		int x;

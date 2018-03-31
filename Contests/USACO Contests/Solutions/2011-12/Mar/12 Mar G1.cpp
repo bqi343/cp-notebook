@@ -7,7 +7,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<ll, ll> pii;
+typedef pair<ll, ll> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -37,15 +37,15 @@ void init() {
 	        prime[j].pb(i);
 }
 
-pii bad(int div, int hi) { // #, sum
+pi bad(int div, int hi) { // #, sum
     ll num = hi/div, R = div*num;
     ll sum = R*(num+1)/2 % B;
     return {num,sum};
 }
 
-pii bad(int div, int lo, int hi) {
-    pii b1 = bad(div,hi);
-    pii b2 = bad(div,lo-1);
+pi bad(int div, int lo, int hi) {
+    pi b1 = bad(div,hi);
+    pi b2 = bad(div,lo-1);
     return {b1.f-b2.f,(b1.s-b2.s+B)%B};
 }
 
@@ -54,7 +54,7 @@ void get(int ind, int lo, int hi) {
     F0R(i,1<<prime[ind].size()) {
         int num = 1, sum = 0;
         F0R(j,prime[ind].size()) if (i&(1<<j)) num *= prime[ind][j], sum++;
-        pii t = bad(num,lo,hi);
+        pi t = bad(num,lo,hi);
         if (sum % 2 == 0) tot = (tot+t.f*(N+1)-t.s+B) % B;
         else {
             tot = (tot-(t.f*(N+1)-t.s)) % B;

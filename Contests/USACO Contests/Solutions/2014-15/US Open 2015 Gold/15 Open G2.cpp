@@ -16,7 +16,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -48,7 +48,7 @@ int main() {
 	F0R(i,N) F0R(j,N) cin >> grid[i][j];
 	F0R(i,N-1) {
 		F0R(j,i+1) F0R(k,i+1) {
-			pii a = {j,i-j}, b = {N-1-k,N-1-i+k};
+			pi a = {j,i-j}, b = {N-1-k,N-1-i+k};
 			if (a.f>b.f || a.s>b.s) continue;
 			if (grid[a.f][a.s] == grid[b.f][b.s] && i>0) {
 				if (j) {

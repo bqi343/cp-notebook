@@ -23,7 +23,7 @@ int get_centroid(int x) {
     dfs(x);
     int sz = sub[x];
     while (1) {
-        pii mx = {0,0};
+        pi mx = {0,0};
         for (int i: adj[x]) if (!visit[i] && i != par[x]) mx = max(mx,{sub[i],i});
         if (mx.f*2 > sz) x = mx.s;
         else return x;

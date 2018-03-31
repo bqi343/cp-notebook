@@ -8,7 +8,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -27,20 +27,20 @@ const int MOD = 1000000007;
 
 int M, N, T, grid[500][500], query[500][500]; 
 ll ans;
-vector<pair<int,pair<pii,pii>>> edge;
-pii comp[500][500];
-vector<pii> mem[500][500];
+vector<pair<int,pair<pi,pi>>> edge;
+pi comp[500][500];
+vector<pi> mem[500][500];
 
 ifstream cin ("skilevel.in");
 ofstream cout ("skilevel.out");
 
-pii getpar(pii a) {
-	pii p = comp[a.f][a.s];
+pi getpar(pi a) {
+	pi p = comp[a.f][a.s];
 	if (comp[p.f][p.s] == p) return p;
 	return getpar(p);
 }
 
-void unite(int wei, pii a, pii b) {
+void unite(int wei, pi a, pi b) {
 	a = getpar(a), b = getpar(b);
 	if (a == b) return;
 	

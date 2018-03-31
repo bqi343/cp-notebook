@@ -10,7 +10,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef set<int> si;
 typedef map<int,int> mii;
 
@@ -32,12 +32,12 @@ double PI = 4*atan(1);
 // ifstream cin ("moocast.in");
 // ofstream cout ("moocast.out");
 
-pii points[1000];
+pi points[1000];
 int par[1000], N;
 
-vector<pair<int,pii>> x;
+vector<pair<int,pi>> x;
 
-int dist(pii a, pii b) {
+int dist(pi a, pi b) {
 	return (a.s-b.s)*(a.s-b.s)+(a.f-b.f)*(a.f-b.f);
 }
 

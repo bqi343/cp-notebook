@@ -11,7 +11,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef set<int> si;
 typedef map<int,int> mii;
 
@@ -34,11 +34,11 @@ double PI = 4*atan(1);
 // ofstream cout ("checklist.out");
 
 int H,G;
-vector<pii> H1, G1;
+vector<pi> H1, G1;
 
 ll dp[1001][1001][2];
 
-int dist(pii a, pii b) {
+int dist(pi a, pi b) {
 	return (a.s-b.s)*(a.s-b.s)+(a.f-b.f)*(a.f-b.f);
 }
 

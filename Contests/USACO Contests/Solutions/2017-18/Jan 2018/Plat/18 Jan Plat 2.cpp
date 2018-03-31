@@ -7,7 +7,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
@@ -28,11 +28,11 @@ const int MOD = 1000000007;
 const int MX = 70001;
 
 int N;
-set<pii> testChange[MX];
+set<pi> testChange[MX];
 vi adj[MX];
-map<pii,int> closeLeaf, dp;
+map<pi,int> closeLeaf, dp;
 
-int recalc(pii node, int num) {
+int recalc(pi node, int num) {
     if (num >= closeLeaf[node]) return 1;
     int x = 0;
     for (int i: adj[node.s]) if (i != node.f) x += dp[{node.s,i}];
@@ -53,7 +53,7 @@ void input() {
 }
 
 set<int> lef[MX];
-queue<pii> todo;
+queue<pi> todo;
 
 void genCloseLeaf() {
     FOR(i,1,N+1) for (int j: adj[i]) lef[i].insert(j);
@@ -78,12 +78,12 @@ void genCloseLeaf() {
     for (auto a: closeLeaf) if (a.s > 0) testChange[a.s-1].insert(a.f);
 }
 
-set<pii> done;
+set<pi> done;
 
 void calcVals() {
     FORd(i,1,N) {
-        vector<pair<pii,int>> change;
-        for (pii j: testChange[i]) {
+        vector<pair<pi,int>> change;
+        for (pi j: testChange[i]) {
             int DPJ = recalc(j,i);
             if (DPJ != dp[j]) change.pb({j,DPJ});
         }

@@ -5,7 +5,7 @@
 using namespace std;
  
 #define pb push_back
-#define pii pair <int, int>
+#define pi pair <int, int>
 #define vi vector<int>
 #define f first
 #define s second
@@ -14,7 +14,7 @@ using namespace std;
 
 int N,M = 999999, code[1000000], t[2][1 << 18],c1;
 vi ya;
-vector<pii> cows;
+vector<pi> cows;
 
 void insert(int ind, int low, int high, int y, int inc, bool z) {
 	if (low > y || high < y) return;
@@ -61,7 +61,7 @@ int main() {
 	ifstream cin ("balancing.in"); ofstream cout ("balancing.out");
 	ios_base::sync_with_stdio(0); cin >> N;
 	F0R(i,N) {
-		pii k; cin >> k.f >> k.s;
+		pi k; cin >> k.f >> k.s;
 		ya.pb(k.s), cows.pb(k);
 	}
 	sort(cows.begin(),cows.end()); sort(ya.begin(), ya.end());

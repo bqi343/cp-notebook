@@ -7,7 +7,7 @@
 using namespace std;
 
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -16,7 +16,7 @@ typedef pair<int, int> pii;
 #define pb push_back
 
 int ans = 1000000000,N,B;
-vector<pii> cow;
+vector<pi> cow;
 
 void test(int x, int y) {
 	int n1=0,n2=0,n3=0,n4=0;

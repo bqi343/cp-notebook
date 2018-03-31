@@ -7,7 +7,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<ll, ll> pll;
+typedef pair<ll, ll> pl;
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
@@ -27,28 +27,28 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 const int MOD = 1000000007;
 const int MX = 100000;
 
-pll base = {5839283,68294319};
+pl base = {5839283,68294319};
 
-pll operator+(const pll& l, const pll& r) {
+pl operator+(const pl& l, const pl& r) {
     return {(l.f+r.f)%MOD,(l.s+r.s)%MOD};
 };
 
-pll operator-(const pll& l, const pll& r) {
+pl operator-(const pl& l, const pl& r) {
     return {(l.f-r.f+MOD)%MOD,(l.s-r.s+MOD)%MOD};
 };
 
-pll operator*(const pll& l, const pll& r) {
+pl operator*(const pl& l, const pl& r) {
     return {l.f*r.f%MOD,l.s*r.s%MOD};
 }
 
-pll operator*(const ll& l, const pll& r) {
+pl operator*(const ll& l, const pl& r) {
     return {l*r.f%MOD,l*r.s%MOD};
 }
 
 struct hsh {
     int N;
     string S;
-    vector<pll> po, ipo, cum;
+    vector<pl> po, ipo, cum;
     
     ll modpow(ll b, ll p) { return !p?1:modpow(b*b%MOD,p/2)*(p&1?b:1)%MOD; }
     
@@ -66,7 +66,7 @@ struct hsh {
         F0R(i,N) cum[i+1] = cum[i]+(S[i]-'a'+1)*po[i];
     }
     
-    pll get(int l, int r) {
+    pl get(int l, int r) {
         return (cum[r+1]-cum[l])*ipo[l];
     }
 };
@@ -75,7 +75,7 @@ int N, ind[MX];
 hsh S[MX];
 ll ans[MX];
 
-int lcp(pll a, pll b) {
+int lcp(pl a, pl b) {
     if (a.f == -1) return 0;
     
     int lo = 0, hi = min(S[a.f].N-a.s,S[b.f].N-b.s); // how many characters match
@@ -88,15 +88,15 @@ int lcp(pll a, pll b) {
 }
 
 struct cmp {
-    bool operator()(const pll& a, const pll& b) const {
+    bool operator()(const pl& a, const pl& b) const {
         int t = lcp(a,b);
         if (S[a.f].S[a.s+t] != S[b.f].S[b.s+t]) return S[a.f].S[a.s+t] < S[b.f].S[b.s+t];
         return a.f < b.f;
     }
 };
 
-set<pll,cmp> cur, todo[MX];
-pll pre = {-1,-1};
+set<pl,cmp> cur, todo[MX];
+pl pre = {-1,-1};
 
 void init() {
     freopen("standingout.in","r",stdin);

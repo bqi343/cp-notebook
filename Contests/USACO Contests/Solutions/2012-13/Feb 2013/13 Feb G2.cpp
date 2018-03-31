@@ -15,7 +15,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -31,8 +31,8 @@ typedef pair<int, int> pii;
 #define ub upper_bound
 
 int N,M;
-pii rec[200001];
-vector<pii> c1, c2;
+pi rec[200001];
+vector<pi> c1, c2;
 vector<ll> temp;
 
 ifstream cin ("taxi.in");
@@ -42,7 +42,7 @@ void init() {
 	cin >> N >> M;  temp = {0,M};
 	
 	F0R(i,N) {
-		pii cow; cin >> cow.f >> cow.s;
+		pi cow; cin >> cow.f >> cow.s;
 		temp.pb(cow.f); temp.pb(cow.s);
 		if (cow.f<cow.s) c1.pb(cow);
 		else c2.pb({cow.s,cow.f});

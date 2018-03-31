@@ -15,7 +15,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -38,7 +38,7 @@ ofstream cout ("route.out");
 
 ll N,M,R, dplef[40000], dpri[40000], ans = 0;
 vi lef, ri;
-vector<pii> path;
+vector<pi> path;
 
 int main() {
 	cin >> N >> M >> R; lef.resize(N), ri.resize(M); path.resize(R);

@@ -4,7 +4,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -44,7 +44,7 @@ struct cmp {
     }
 };
 
-bool below(pii x, pii a1, pii a2) {
+bool below(pi x, pi a1, pi a2) {
     return (ll)x.s*(a2.f-a1.f) <= (ll)a1.s*(a2.f-x.f)+(ll)a2.s*(x.f-a1.f); 
 }
 
@@ -109,7 +109,7 @@ struct hull {
         getslope(tmp);
     }
     
-    pii get(double slope) {
+    pi get(double slope) {
         cow tmp(1,slope,0,0);
         auto it = cows.lb(tmp);
         return {it->x,it->y};
@@ -128,8 +128,8 @@ bool query(ll A, ll B, ll C) {
     if (B != 0) slope = (double)-A/B;
     else slope = 1e17;
     
-    pii a = top.get(slope);
-    pii b = bottom.get(slope);
+    pi a = top.get(slope);
+    pi b = bottom.get(slope);
     
     b.f *= -1, b.s *= -1;
     ll lo = a.f*A+a.s*B, hi = b.f*A+b.s*B;

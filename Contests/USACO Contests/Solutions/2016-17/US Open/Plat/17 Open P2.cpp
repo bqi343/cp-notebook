@@ -7,7 +7,7 @@
 
 using namespace std;
  
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef multiset<int> ms;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -22,14 +22,14 @@ ofstream cout ("grass.out");
 
 ms mins;
 bool ok = 1;
-vector<pair<int,pii>> edge;
+vector<pair<int,pi>> edge;
 int N,M,K,Q;
 
 struct {
     int par, parlen, color, comp;
     ms best;
     unordered_map<int,ms> child;
-    vector<pii> adj;
+    vector<pi> adj;
     
     int get() {
         if (best.size()) return *best.begin();
@@ -113,7 +113,7 @@ void dfs(int p, int cur) {
 void naive() {
     ms dist;
     
-    FOR(i,1,N+1) for (pii a: node[i].adj) 
+    FOR(i,1,N+1) for (pi a: node[i].adj) 
         if (i < a.f && node[i].color != node[a.f].color) 
             dist.insert(a.s);
             

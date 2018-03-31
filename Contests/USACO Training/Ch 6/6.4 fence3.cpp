@@ -15,7 +15,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef pair<double,double> pdd;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -31,14 +31,14 @@ typedef pair<double,double> pdd;
 const int MOD = 1000000007;
 double PI = 4*atan(1);
 
-vector<pair<pii,pii>> fence;
+vector<pair<pi,pi>> fence;
 pdd cur = mp(50,50);
 
 double getdist(pdd a, pdd b) {
 	return sqrt((a.f-b.f)*(a.f-b.f)+(a.s-b.s)*(a.s-b.s));
 }
 
-double eval(pdd p, pair<pii,pii> a) {
+double eval(pdd p, pair<pi,pi> a) {
 	if (a.f.f == a.s.f) { // vertical
 		if (a.f.s <= p.s && a.s.s >= p.s) return abs(a.f.f-p.f);
 	} else {

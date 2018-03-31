@@ -16,7 +16,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -51,7 +51,7 @@ void fill(int x, int y) {
 void getdist(int col) {
 	F0R(i,R) F0R(j,C) cur[i][j] = MOD;
 	
-	priority_queue<pair<int,pii>> todo;
+	priority_queue<pair<int,pi>> todo;
 	F0R(i,R) F0R(j,C) if (grid[i][j] == ('a'+col)) {
 		cur[i][j] = 0;
 		todo.push({0,{i,j}});

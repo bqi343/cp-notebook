@@ -11,10 +11,11 @@ int sub(ll a, ll b) { return ((a-b)%MOD+MOD)%MOD; }
 
 void elim(mat& m, int a, int c) { // column, todo row
     ll x = m.d[c][a];
-    FOR(i,a,m.a) m.d[c][i] = sub(m.d[c][i],x*m.d[a][i]);
+    FOR(i,a,m.b) m.d[c][i] = sub(m.d[c][i],x*m.d[a][i]);
 }
 
-int det(mat m) {
+int det(mat& x, bool b = 0) {
+    mat m = x;
     ll prod = 1;
     F0R(i,m.a) {
         bool done = 0;
@@ -25,11 +26,24 @@ int det(mat m) {
             prod = mul(prod,m.d[i][i]);
             
             ll x = inv(m.d[i][i]);
-            FOR(k,i,m.a) m.d[i][k] = mul(m.d[i][k],x);
-            FOR(k,i+1,m.a) elim(m,i,k);
+            FOR(k,i,m.b) m.d[i][k] = mul(m.d[i][k],x);
+            F0R(k,m.a) if (k != i) elim(m,i,k);
             break;
         }
         if (!done) return 0;
     }
+    if (b) x = m;
     return prod;
+}
+
+mat inv(mat m) {
+    mat x(m.a,2*m.a);
+    F0R(i,m.a) F0R(j,m.a) x.d[i][j] = m.d[i][j];
+    F0R(i,m.a) x.d[i][i+m.a] = 1;
+    
+    det(x,1);
+    
+    mat r(m.a,m.a);
+    F0R(i,m.a) F0R(j,m.a) r.d[i][j] = x.d[i][j+m.a];
+    return r;
 }

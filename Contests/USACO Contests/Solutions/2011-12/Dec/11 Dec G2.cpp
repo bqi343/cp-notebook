@@ -7,7 +7,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -28,7 +28,7 @@ double PI = 4*atan(1);
 int N,M;
 ll wei = 0;
 ll ans = 1;
-vector<pii> edge[1000001]; 
+vector<pi> edge[1000001]; 
 int par[40001];
 
 int getpar(int x) {
@@ -43,11 +43,11 @@ void unite(int a, int b, ll w) {
     par[b] = a;
 }
 
-vector<pii> cur;
+vector<pi> cur;
 
 void test(ll i) {
     cur.clear();
-    for (pii x: edge[i]) if (getpar(x.f) != getpar(x.s)) 
+    for (pi x: edge[i]) if (getpar(x.f) != getpar(x.s)) 
         cur.pb({min(getpar(x.f),getpar(x.s)),max(getpar(x.f),getpar(x.s))});
     if (cur.size() == 0) return;
     if (cur.size() == 1) {

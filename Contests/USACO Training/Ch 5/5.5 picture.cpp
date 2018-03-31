@@ -13,7 +13,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -32,10 +32,10 @@ const int MOD = 1000000007;
 
 int N, ans;
 map<int,int> cur;
-vector<pair<pii,pii>> rect;
+vector<pair<pi,pi>> rect;
 
 void solve() {
-    vector<pii> todo[20003];
+    vector<pi> todo[20003];
     for (auto a: rect) {
         todo[a.s.f+10001].pb({a.f.f,1});
         todo[a.s.f+10001].pb({a.f.s,-1});
@@ -43,12 +43,12 @@ void solve() {
         todo[a.s.s+10001].pb({a.f.s,1});
     }
     F0R(i,20003) {
-        for (pii a: todo[i]) {
+        for (pi a: todo[i]) {
             cur[a.f] += a.s;
             if (cur[a.f] == 0) cur.erase(a.f);
         }
         int z = 0;
-        for (pii a: cur) {
+        for (pi a: cur) {
             int z1 = z+a.s;
             if (z == 0 || z1 == 0) {
                 ans++;

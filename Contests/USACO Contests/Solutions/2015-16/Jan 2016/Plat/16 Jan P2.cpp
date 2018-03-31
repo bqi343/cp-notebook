@@ -6,7 +6,7 @@
 using namespace __gnu_pbds;
 using namespace std;
  
-typedef pair<int,int> pii;
+typedef pair<int,int> pi;
  
 #define F0R(i, a) for (int i=0; i<a; i++)
 #define f first
@@ -14,9 +14,9 @@ typedef pair<int,int> pii;
 #define pb push_back
  
 int N,T,nex=0;
-tree<pii,null_type,less<pii>,rb_tree_tag,tree_order_statistics_node_update> s[100001];
+tree<pi,null_type,less<pi>,rb_tree_tag,tree_order_statistics_node_update> s[100001];
 long long ans = 0;
-vector<pair<pii,pii>> vquery, hseg;
+vector<pair<pi,pi>> vquery, hseg;
 // x-coordinate, time, low y, high y
 // x-coordinate, insert/delete, time, y
 

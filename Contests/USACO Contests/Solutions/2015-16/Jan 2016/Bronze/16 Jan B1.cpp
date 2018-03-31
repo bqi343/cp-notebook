@@ -6,7 +6,7 @@
 using namespace std;
 
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -16,7 +16,7 @@ typedef pair<int, int> pii;
 int main() {
 	ifstream cin ("promote.in");
 	ofstream cout ("promote.out");
-	pii a,b,c,d;
+	pi a,b,c,d;
 	cin >> a.f >> a.s >> b.f >> b.s >> c.f >> c.s >> d.f >> d.s;
 	int a1,a2,a3;
 	a3 = d.s-d.f;

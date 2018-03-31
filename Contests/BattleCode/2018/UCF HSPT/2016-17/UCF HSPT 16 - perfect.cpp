@@ -7,7 +7,7 @@ using namespace __gnu_pbds;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
@@ -26,7 +26,7 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 const int MOD = 1000000007;
 
 int n;
-vector<pii> ok;
+vector<pi> ok;
 
 void solve() {
     ok.clear();
@@ -35,7 +35,7 @@ void solve() {
         ok.pb({i,(w-i*s)/(i+1)});
     }
     cout << ok.size() << "\n";
-    for (pii x: ok) cout << x.f << " " << x.s << "\n";
+    for (pi x: ok) cout << x.f << " " << x.s << "\n";
     cout << "\n";
 }
 

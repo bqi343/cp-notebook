@@ -15,7 +15,7 @@ using namespace std;
 
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -51,7 +51,7 @@ int main() {
     cin >> N >> M; 
     FOR(i,1,N+1) par[i] = i;
     F0R(i,M) {
-        pii x; cin >> x.f >> x.s;
+        pi x; cin >> x.f >> x.s;
         a1[x.f].pb(x.s);
         a1[x.s].pb(x.f);
     }

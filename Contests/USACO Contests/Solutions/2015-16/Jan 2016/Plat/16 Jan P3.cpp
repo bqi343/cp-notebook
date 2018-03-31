@@ -5,7 +5,7 @@
 using namespace std;
  
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 typedef long long ll;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -25,12 +25,12 @@ struct {
 } dp[200][200][200][2]; 
 
 int N, cum[400];
-pii nex[200][200];
+pi nex[200][200];
 vi x;
-vector<pii> point;
-map<ll,pii> fst;
+vector<pi> point;
+map<ll,pi> fst;
 
-int dist (pii a, pii b) {
+int dist (pi a, pi b) {
     return abs(a.f-b.f)+abs(a.s-b.s);
 }
 
@@ -48,7 +48,7 @@ ll hsh(vi z) {
     return cur;
 }
 
-int angle(pii a, pii b, pii c, int d) {
+int angle(pi a, pi b, pi c, int d) {
     if (d == 0) return 0;
     a.f -= b.f, a.s -= b.s;
     c.f -= b.f, c.s -= b.s;
@@ -92,12 +92,12 @@ void solve(int st, int lo, int hi, int d) {
     //cout << st << " " << lo << " " << hi << " " << d << " " << dp[st][lo][hi][d].val << "\n";
     if (lo != hi) {
         if (d == 0) {
-            pii t = nex[(lo+1)%N][hi];
+            pi t = nex[(lo+1)%N][hi];
             int st1 = (st-(lo+1)+t.f+N) % N;
             dp[st1][t.f][t.s][0].L = max(dp[st1][t.f][t.s][0].L,dp[st][lo][hi][d].val+getsum(lo,lo+1));
             dp[st1][t.f][t.s][1].L = max(dp[st1][t.f][t.s][1].L,dp[st][lo][hi][d].val+getsum(lo,hi));
         } else {
-            pii t = nex[lo][(hi+N-1)%N];
+            pi t = nex[lo][(hi+N-1)%N];
             int st1 = (st-lo+t.f+N) % N;
             dp[st1][t.f][t.s][0].R = max(dp[st1][t.f][t.s][0].R,dp[st][lo][hi][d].val+getsum(lo,hi));
             dp[st1][t.f][t.s][1].R = max(dp[st1][t.f][t.s][1].R,dp[st][lo][hi][d].val+getsum(hi+N-1,hi));

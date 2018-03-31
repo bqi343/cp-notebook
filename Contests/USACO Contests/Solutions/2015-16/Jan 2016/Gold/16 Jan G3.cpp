@@ -15,7 +15,7 @@ using namespace std;
  
 typedef long long ll;
 typedef vector<int> vi;
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 //typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
@@ -30,7 +30,7 @@ typedef pair<int, int> pii;
 #define lb lower_bound
 #define ub upper_bound
 
-pii points[200];
+pi points[200];
 int N, lengths[200], dis[200], angle[200], total = 0, ans=0;
 
 int dist(int a, int b) {
@@ -40,8 +40,8 @@ int dist(int a, int b) {
 
 bool is (int vert) {
 	int a = (vert+N-1)%N, b = vert%N, c = (vert+1)%N;
-	pii p1 = mp(points[a].f-points[b].f,points[a].s-points[b].s);
-	pii p2 = mp(points[c].f-points[b].f,points[c].s-points[b].s);
+	pi p1 = mp(points[a].f-points[b].f,points[a].s-points[b].s);
+	pi p2 = mp(points[c].f-points[b].f,points[c].s-points[b].s);
 	p1 = mp(-p1.s,p1.f); 
 	if ((ll)p1.f*p2.f<0 || (ll)p1.s*p2.s<0) return 1;
 	return 0;

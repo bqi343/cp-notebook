@@ -5,7 +5,7 @@
 
 using namespace std;
 
-typedef pair<int, int> pii;
+typedef pair<int, int> pi;
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -22,7 +22,7 @@ ofstream cout ("lazy.out");
 
 const int M = 1000000, SZ = 1<<22;
 int N,K, mx[SZ], lazy[SZ], ans = 0;
-vector<pair<int,pii>> p, p1;
+vector<pair<int,pi>> p, p1;
  
 void push(int ind, int low, int high) {
 	mx[ind] += lazy[ind];
@@ -49,7 +49,7 @@ void upd(int ind, int low, int high, int L, int R, int inc) {
 
 int solve() {
 	F0R(i,SZ) mx[i] = lazy[i] = 0;
-	vector<pair<pii,int>> temp;
+	vector<pair<pi,int>> temp;
 	F0R(i,p.size()) {
 		temp.pb({{p[i].s.f+p[i].s.s-K,1},i});
 		temp.pb({{p[i].s.f+p[i].s.s+K+1,-1},i});

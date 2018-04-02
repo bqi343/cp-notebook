@@ -1,7 +1,7 @@
 /**
 * Description: FWHT, similar to FFT
 * Source: CSA - FFT And Variations
-* Verification: https://www.hackerrank.com/challenges/xor-subsequence/problem
+* Verification: HackerRank XOR Subsequence
 */
 
 typedef vector<double> vd;

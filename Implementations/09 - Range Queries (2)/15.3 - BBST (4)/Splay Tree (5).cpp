@@ -1,6 +1,7 @@
 /*
 * Description: Based off treap code
-* Source: https://sites.google.com/site/kc97ble/container/splay-tree/splaytree-cpp-3
+* Source: https://sites.google.com/site/kc97ble
+*           /container/splay-tree/splaytree-cpp-3
 * Verification: http://www.spoj.com/problems/ORDERSET/
 */
 

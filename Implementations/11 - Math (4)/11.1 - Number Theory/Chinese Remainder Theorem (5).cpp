@@ -5,8 +5,6 @@
     * POI 9 Rhyme
 */
 
-typedef pair<ll,ll> pl;
-
 struct CRT {
     ll n,m,a,b; 
     map<ll,pi> M;

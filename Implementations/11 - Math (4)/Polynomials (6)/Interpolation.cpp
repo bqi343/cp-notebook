@@ -1,5 +1,3 @@
-typedef vector<ll> vl;
-
 namespace Poly {
     ll norm(ll x) { return (x%MOD+MOD)%MOD; }
 

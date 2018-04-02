@@ -122,7 +122,7 @@
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=805) | newbarn | Trees | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=806) | gymnast | Math | Done |
 | 2018 Open | [1](http://www.usaco.org/index.php?page=viewproblem&cpid=828) | sort | Range Queries | Done |
-| | [2](http://www.usaco.org/index.php?page=viewproblem&cpid=829) | train | Sqrt | |
+| | [2](http://www.usaco.org/index.php?page=viewproblem&cpid=829) | train | Sqrt | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem&cpid=830) | disrupt | Trees | Done |
 
 # USACO Camp

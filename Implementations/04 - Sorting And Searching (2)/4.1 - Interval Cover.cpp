@@ -4,7 +4,7 @@
 */
 
 double A,B,cur;
-vector<pair<pdd,int>> in;
+vector<pair<pd,int>> in;
 int N,nex;
 vi ans;
 

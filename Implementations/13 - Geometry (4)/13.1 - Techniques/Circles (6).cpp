@@ -3,7 +3,6 @@
 * Usage: https://codefights.com/tournaments/s8thqrnQL2YPK7XQt/L
 */
 
-typedef complex<double> cd;
 typedef pair<cd,double> circle;
 
 cd intersect(circle a, circle b, int x = 0) { 

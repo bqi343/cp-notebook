@@ -3,10 +3,6 @@
 * Usage: AMPPZ 2011 Cross Spider
 */
 
-typedef vector<ll> vl;
-
-typedef long double ld;
-
 int n;
 vector<vl> cur;
 

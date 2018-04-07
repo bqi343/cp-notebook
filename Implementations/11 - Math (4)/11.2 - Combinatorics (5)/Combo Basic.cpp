@@ -21,7 +21,7 @@ template<int SZ> struct Combo {
     ll inv (ll b) { return po(b,MOD-2); }
     
     ll comb(ll a, ll b) {
-        if (a < b) return 0;
+        if (a < b || b < 0 || a < 0) return 0;
         ll tmp = fac[a]*ifac[b] % MOD;
         tmp = tmp*ifac[a-b] % MOD;
         return tmp;

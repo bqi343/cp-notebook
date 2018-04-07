@@ -7,8 +7,6 @@
 
 ## Using GCC on Mac 
 
-If anyone can tell me how to enable g++-7 on mac that would be highly appreciated :(
-
   * [Installing GCC](http://www-scf.usc.edu/~csci104/20142/installation/gccmac.html)
   * [How to Enable C++17](https://stackoverflow.com/questions/39091173/how-to-enable-c17-on-mac)
 

@@ -30,7 +30,7 @@ template<int SZ> struct ComboExtended {
     }
 
     ll comb(ll a, ll b) {
-        if (a < b) return 0;
+        if (a < b || a < 0 || b < 0) return 0;
         ll tmp = (fac[a].f*ifac[b].f%MOD)*ifac[a-b].f % MOD;
         ll z = fac[a].s-fac[b].s-fac[a-b].s;
         if (z >= mod.s) return 0;

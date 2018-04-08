@@ -16,17 +16,8 @@ template<int SZ> struct ComboExtended {
             int I = i, z = 0;
             while (I % mod.f == 0) I /= mod.f, z++;
             fac[i].f = fac[i].f*I%MOD; fac[i].s += z;
-            ifac[i] = {inv(fac[i].f,MOD),fac[i].s};
+            ifac[i] = {NT::inv(fac[i].f,MOD),fac[i].s};
         }
-    }
-    
-    ll inv(ll a, ll b) { // 0 < a < b, gcd(a,b) = 1
-        a %= b;
-        if (a <= 1) return a;
-        ll i = inv(b%a,a);
-        ll tmp = -((b/a)*i+((b%a)*i)/a) % b;
-        while (tmp < 0) tmp += b;
-        return tmp;
     }
 
     ll comb(ll a, ll b) {

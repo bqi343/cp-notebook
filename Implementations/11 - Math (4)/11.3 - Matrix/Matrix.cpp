@@ -7,6 +7,8 @@ struct mat {
     int** d;
     int a, b;
     
+    mat() { a = b = 0; }
+
     mat(int _a, int _b) {
         a = _a, b = _b;
         d = new int*[a];

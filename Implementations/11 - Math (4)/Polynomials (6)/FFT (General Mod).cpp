@@ -3,10 +3,6 @@ Description: Allows multiplication of polynomials in general moduli.
 Verification: http://codeforces.com/contest/960/submission/37085144
 */
 
-int get(int s) {
-    return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
-}
-
 typedef complex<double> base;
 
 void fft(vector<base> &a, bool inv){

@@ -15,16 +15,8 @@ namespace CRT {
 
     pl solve(pl a, pl b) {
         pl cur = {0,1};
-        for (auto z: NT::fac(a.s)) {
-            ll A = 1, B = 1; 
-            while (a.s % z.f == 0) a.s /= z.f, A *= z.f;
-            while (b.s % z.f == 0) b.s /= z.f, B *= z.f;
-            if ((a.f-b.f)%min(A,B) != 0) return {-1,-1};
-            
-            if (A > B) cur = solveSimple(cur,{a.f%A,A});
-            else cur = solveSimple(cur,{b.f%B,B});
-        }
-        for (auto z: NT::fac(b.s)) {
+        auto v = NT::fac(a.s); v.insert(v.end(),all(NT::fac(b.s)));
+        for (auto z: v) {
             ll A = 1, B = 1; 
             while (a.s % z.f == 0) a.s /= z.f, A *= z.f;
             while (b.s % z.f == 0) b.s /= z.f, B *= z.f;

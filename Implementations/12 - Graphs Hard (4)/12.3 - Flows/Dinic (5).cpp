@@ -14,7 +14,7 @@ template<int SZ> struct Dinic {
     int level[SZ], start[SZ];
     vector<Edge> adj[SZ]; 
      
-    void addEdge(int u, int v, int C) {
+    void addEdge(int u, int v, ll C) {
         Edge a{v, 0, C, sz(adj[v])};
         Edge b{u, 0, 0, sz(adj[u])};
         adj[u].pb(a), adj[v].pb(b); 

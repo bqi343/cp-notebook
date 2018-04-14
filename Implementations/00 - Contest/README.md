@@ -9,6 +9,10 @@
 
   * [Installing GCC](http://www-scf.usc.edu/~csci104/20142/installation/gccmac.html)
   * [How to Enable C++17](https://stackoverflow.com/questions/39091173/how-to-enable-c17-on-mac)
+  
+```
+g++-7 -std=gnu++17 Solution.cpp -o Sol
+```
 
 ## IDE
 
@@ -34,4 +38,4 @@ The list only the ones I have actually used.
 ## Other
 
  * [Intro to Command Line](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
-
+ * [Run Python Script](https://stackoverflow.com/questions/7855996/cant-run-python-py-files-from-terminal-on-mac)

@@ -87,6 +87,8 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
       * [DMOJ](https://dmoj.ca/problems/?category=24)
     * China
       * [WCIPEG](https://wcipeg.com/problems/cat%3Dnoi%2Cshow%3D50)
+    * Misc
+      * [oj.uz](https://oj.uz/)
 
   
 ## Contest Tools

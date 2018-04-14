@@ -14,7 +14,7 @@ void elim(mat& m, int a, int c) { // column, todo row
     FOR(i,a,m.b) m.d[c][i] = sub(m.d[c][i],x*m.d[a][i]);
 }
 
-int det(mat& x, bool b = 0) {
+int det(mat& x, bool b = 0) { // determinant of 1000x1000 matrix in ~1s
     mat m = x;
     ll prod = 1;
     F0R(i,m.a) {
@@ -27,7 +27,12 @@ int det(mat& x, bool b = 0) {
             
             ll x = inv(m.d[i][i]);
             FOR(k,i,m.b) m.d[i][k] = mul(m.d[i][k],x);
-            F0R(k,m.a) if (k != i) elim(m,i,k);
+            
+            if (b) {
+                F0R(k,m.a) if (k != i) elim(m,i,k);
+            } else {
+                FOR(k,i+1,m.a) elim(m,i,k);   
+            }
             break;
         }
         if (!done) return 0;

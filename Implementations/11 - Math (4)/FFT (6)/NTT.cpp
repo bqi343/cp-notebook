@@ -64,8 +64,3 @@ namespace NTT {
         return a;
     }
 }
-
-int main() {
-    vl X = NTT::conv({1,2,3,4,5,6,7,8}, {1,2,3,4,5,6,7,8});
-    for (auto a: X) cout << a << "\n";
-}

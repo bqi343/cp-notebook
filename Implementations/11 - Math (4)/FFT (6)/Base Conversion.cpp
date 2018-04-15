@@ -3,8 +3,6 @@
 * Usage: 2017 VT HSPC - Alien Codebreaking
 */
 
-// NTT template
-
 struct Base {
     vl po10[21];
     const int base = 27;

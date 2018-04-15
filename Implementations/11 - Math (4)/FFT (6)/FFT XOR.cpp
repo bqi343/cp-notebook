@@ -6,11 +6,11 @@
 
 typedef vector<double> vd;
 
-int get(int s) {
-    return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
-}
-
 namespace FWHT {
+    int get(int s) {
+        return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
+    }
+
     vd fwht(vd P) {
         for (int len = 1; 2 * len <= sz(P); len <<= 1) {
             for (int i = 0; i < sz(P); i += 2 * len) {

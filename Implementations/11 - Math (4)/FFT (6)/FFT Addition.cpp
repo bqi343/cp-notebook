@@ -5,13 +5,13 @@
 
 typedef vector<cd> vcd;
 
-int get(int s) {
-    return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
-}
-
 namespace FFT {
+    int get(int s) {
+        return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
+    }
+
     vcd fft(vcd& a) { 
-        int n = a.size(), x = get(n); 
+        int n = sz(a), x = get(n); 
         vcd res, RES(n), roots(n);
         F0R(i,n) roots[i] = cd(cos(2*M_PIl*i/n),sin(2*M_PIl*i/n)); 
         
@@ -62,18 +62,5 @@ namespace FFT {
         vcd X = conv(A,B);
         vl x(sz(X)); F0R(i,sz(X)) x[i] = round(X[i].real());
         return x;
-    }
-}
-
-int main() {
-    int T; cin >> T;
-    F0R(i,T) {
-        int N; cin >> N;
-        vl a(N+1), b(N+1);
-        F0R(j,N+1) cin >> a[N-j];
-        F0R(j,N+1) cin >> b[N-j];
-        vl x = FFT::convll(a,b);
-        F0Rd(j,sz(x)) cout << x[j] << " ";
-        cout << "\n";
     }
 }

@@ -3,9 +3,6 @@
 * Verification: http://codeforces.com/contest/632/submission/33953285
 */
 
-int get(int s) {
-    return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
-}
 
 namespace NTT {
     const ll mod = (119 << 23) + 1, root = 3; // = 998244353
@@ -15,6 +12,10 @@ namespace NTT {
     ll modpow(ll b, ll p) { return !p?1:modpow(b*b%mod,p/2)*(p&1?b:1)%mod; }
     
     ll inv (ll b) { return modpow(b,mod-2); }
+    
+    int get(int s) {
+        return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
+    }
     
     vl ntt(vl& a) { 
         int n = a.size(), x = get(n); 

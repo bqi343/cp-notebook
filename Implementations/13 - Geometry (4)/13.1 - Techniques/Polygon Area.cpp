@@ -3,12 +3,12 @@
 * Usage: https://open.kattis.com/problems/polygonarea
 */ 
 
-double area(vpi v) {
-    ll x = 0;
+ld area(vector<cd> v) {
+    ld x = 0;
     F0R(i,sz(v)) {
         int j = (i+1)%sz(v);
-        x += (ll)v[i].f*v[j].s;
-        x -= (ll)v[j].f*v[i].s;
+        x += (ld)v[i].real()*v[j].imag();
+        x -= (ld)v[j].real()*v[i].imag();
     }
-    return abs(x)/2.0;
+    return abs(x)/2;
 }

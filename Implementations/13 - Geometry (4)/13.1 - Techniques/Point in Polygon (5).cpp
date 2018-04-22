@@ -19,29 +19,17 @@ double get(pi x, pi y, int z) {
     return double((z-x.s)*y.f+(y.s-z)*x.f)/(y.s-x.s);
 }
 
-void test(pi z) {
+string test(pi z) {
     int ans = 0;
     F0R(i,n) {
         pi x = p[i], y = p[(i+1)%n];
-        if (on(x,y,z)) {
-            cout << "on\n";
-            return;
-        }
+        if (on(x,y,z)) return "on";
         if (x.s > y.s) swap(x,y);
         if (x.s <= z.s && y.s > z.s) {
             double t = get(x,y,z.s);
             if (t > z.f) ans++;
         }
     }
-    if (ans % 2 == 1) cout << "in\n";
-    else cout << "out\n";
-}
-
-void solve() {
-    F0R(i,n) cin >> p[i].f >> p[i].s;
-    cin >> m;
-    F0R(i,m) {
-        pi z; cin >> z.f >> z.s;
-        test(z);
-    }
+    if (ans % 2 == 1) return "in";
+    return "out";
 }

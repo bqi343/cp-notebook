@@ -5,13 +5,11 @@
 * Dependency: Range Minimum Query
 */
 
-const int MAXN = 100001;
-
-struct LCA {
-    vi edges[MAXN];
-    RMQ<pi,2*MAXN> r;
-    vector<pi> tmp;
-    int depth[MAXN], pos[MAXN];
+template<int SZ> struct LCA {
+    vi edges[SZ];
+    RMQ<pi,2*SZ> r;
+    vpi tmp;
+    int depth[SZ], pos[SZ];
     
     int V, R;
     

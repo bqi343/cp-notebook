@@ -1,10 +1,11 @@
 /*
 * Bowyer-Watson O(n^2logn)
-* Untested
+* Verification: Panda Preserve
 */
 
 namespace Delaunay {
-    ld cross(cd b, cd c) { return (conj(b)*c).imag(); }
+    // stay with __int128 for better precision, if possible
+    ld cross(cd b, cd c) { return (conj(b)*c).imag(); } 
     ld cross(cd a, cd b, cd c) { return cross(b-a,c-a); }
     
     bool inCircle (cd a, cd b, cd c, cd d) {
@@ -14,9 +15,12 @@ namespace Delaunay {
         return x > 0;
     }
     
-    vector<array<int,3>> triangulate(vcd v) { // works with cyclic quads
-        v.pb(cd(-1e5,-1e5)); v.pb(cd(1e5,0)); v.pb(cd(0,1e5)); 
+    vector<array<int,3>> triangulate(vcd v) { 
+        // works with cyclic quads
+        // not when all points are collinear!
         // super-triangle, adjust as necessary
+
+        v.pb(cd(-1e5,-1e5)); v.pb(cd(1e5,0)); v.pb(cd(0,1e5)); 
         
         vector<array<int,3>> ret;
         ret.pb({sz(v)-3,sz(v)-2,sz(v)-1});
@@ -40,7 +44,7 @@ namespace Delaunay {
         return tmp;
     }
     
-    void print(vcd x) {
+    void print(vcd x) { // produces asymptote code
         cout << "[asy]\n";
         cout << "pair[] A = {";
         bool done = 0;

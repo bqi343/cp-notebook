@@ -3,13 +3,12 @@
 * Verification: Debug the Bugs
 */
 
-const int MAXN = 100001, MAXK = 17;
-
-struct LCA {
-    int V, R;
-    vi edges[MAXN];
-    int parK[MAXK][MAXN];
-    int depth[MAXN];
+template<int SZ> struct LCA {
+    const int MAXK = 32-__builtin_clz(SZ);
+    
+    int N, R = 1; // vertices from 1 to N, R = root
+    vi edges[SZ];
+    int parK[32-__builtin_clz(SZ)][SZ], depth[SZ];
     
     void addEdge(int u, int v) {
         edges[u].pb(v), edges[v].pb(u);
@@ -23,14 +22,14 @@ struct LCA {
     
     void construct() {
         dfs(R, 0);
-        FOR(k,1,MAXK) FOR(i,1,V+1)
+        FOR(k,1,MAXK) FOR(i,1,N+1)
             parK[k][i] = parK[k-1][parK[k-1][i]];
     }
     
     int lca(int u, int v){
         if (depth[u] < depth[v]) swap(u,v);
         
-        F0Rd(k,MAXK)  if (depth[u] >= depth[v]+(1<<k))  u = parK[k][u];
+        F0Rd(k,MAXK) if (depth[u] >= depth[v]+(1<<k))  u = parK[k][u];
         F0Rd(k,MAXK) if (parK[k][u] != parK[k][v]) u = parK[k][u], v = parK[k][v];
         
         if(u != v) u = parK[0][u], v = parK[0][v];

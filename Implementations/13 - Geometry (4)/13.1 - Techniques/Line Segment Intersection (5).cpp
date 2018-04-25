@@ -8,7 +8,7 @@ cd get(cd a, cd b, cd c, cd d) {
      /(abs(sgn(a,b,c))+abs(sgn(a,b,d)));
 }
 
-vector<cd> solve(cd A, cd B, cd C, cd D) {
+vcd solve(cd A, cd B, cd C, cd D) {
     if (A > B) swap(A,B);
     if (C > D) swap(C,D);
 

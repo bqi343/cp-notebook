@@ -4,25 +4,18 @@
 */
 
 namespace Delaunay {
-    ld cross(cd b, cd c) {
-        return (conj(b)*c).imag();
-    }
-
+    ld cross(cd b, cd c) { return (conj(b)*c).imag(); }
     ld cross(cd a, cd b, cd c) { return cross(b-a,c-a); }
-    
-    bool collinear(cd a, cd b, cd c) { return cross(a,b,c) == 0; }
-    
-    bool ccw (cd a, cd b, cd c) { return cross(a,b,c) > 0; }
     
     bool inCircle (cd a, cd b, cd c, cd d) {
         a -= d, b -= d, c -= d;
         ld x = norm(a)*cross(b,c)+norm(b)*cross(c,a)+norm(c)*cross(a,b);
-        if (!ccw(a,b,c)) x *= -1;
+        if (cross(a,b,c) < 0) x *= -1;
         return x > 0;
     }
     
-    vector<array<int,3>> triangulate(vcd v) {
-        v.pb(cd(-50,-50)); v.pb(cd(50,0)); v.pb(cd(0,50)); 
+    vector<array<int,3>> triangulate(vcd v) { // works with cyclic quads
+        v.pb(cd(-1e5,-1e5)); v.pb(cd(1e5,0)); v.pb(cd(0,1e5)); 
         // super-triangle, adjust as necessary
         
         vector<array<int,3>> ret;
@@ -40,10 +33,26 @@ namespace Delaunay {
                 array<int,3> x = {a.f.f,a.f.s,i}; sort(all(x));
                 tmp.pb(x);
             }
-            swap(ret,tmp);
+            ret = tmp;
         }
         vector<array<int,3>> tmp;
         for (auto a: ret) if (a[2] < sz(v)-3) tmp.pb(a);
         return tmp;
+    }
+    
+    void print(vcd x) {
+        cout << "[asy]\n";
+        cout << "pair[] A = {";
+        bool done = 0;
+        for (auto a: x) {
+            if (done) cout << ",";
+            cout << a; done = 1;
+        }
+        cout << "};\n";
+        
+        cout << "for (int i = 0; i < " << sz(x) << "; ++i) {\n\tdot(A[i]);\n}\n";
+        
+        for (auto b: triangulate(x)) cout << "draw(A[" << b[0] << "]--A[" << b[1] << "]--A[" << b[2] << "]--cycle);\n";
+        cout << "[/asy]\n";
     }
 };

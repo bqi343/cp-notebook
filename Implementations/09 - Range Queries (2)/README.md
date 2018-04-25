@@ -86,3 +86,6 @@
 
   * [Wavelet Tree](http://codeforces.com/blog/entry/52854)
   * [Segment Tree Beats](http://codeforces.com/blog/entry/57319)
+  * Sqrt Tree
+    * [Pt 1](http://codeforces.com/blog/entry/57046)
+    * [Pt 2](http://codeforces.com/blog/entry/59092)

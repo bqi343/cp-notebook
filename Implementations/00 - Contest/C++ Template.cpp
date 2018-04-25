@@ -11,11 +11,14 @@ typedef complex<ld> cd;
 
 typedef pair<int, int> pi;
 typedef pair<ll,ll> pl;
-typedef pair<double,double> pd;
+typedef pair<ld,ld> pd;
 
 typedef vector<int> vi;
+typedef vector<ld> vd;
 typedef vector<ll> vl;
 typedef vector<pi> vpi;
+typedef vector<pl> vpl;
+typedef vector<cd> vcd;
 
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
@@ -39,8 +42,8 @@ const int MX = 100001;
 
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(0);
-    
+
 }
 
-// read the question correctly (is y a vowel?)
+// read the question correctly (is y a vowel? what are the exact constraints?)
 // look out for SPECIAL CASES (n=1?) and overflow (ll vs int?)

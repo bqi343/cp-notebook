@@ -4,25 +4,19 @@
 */
 
 namespace Delaunay {
-    typedef vector<cd> vcd;
-    
-    double cross(cd b, cd c) {
+    ld cross(cd b, cd c) {
         return (conj(b)*c).imag();
     }
+
+    ld cross(cd a, cd b, cd c) { return cross(b-a,c-a); }
     
-    bool collinear(cd a, cd b, cd c) {
-        b -= a, c -= a;
-        return cross(b,c) == 0;
-    }
+    bool collinear(cd a, cd b, cd c) { return cross(a,b,c) == 0; }
     
-    bool ccw (cd a, cd b, cd c) {
-        b -= a, c -= a;
-        return cross(b,c) > 0;
-    }
+    bool ccw (cd a, cd b, cd c) { return cross(a,b,c) > 0; }
     
     bool inCircle (cd a, cd b, cd c, cd d) {
         a -= d, b -= d, c -= d;
-        double x = norm(a)*cross(b,c)+norm(b)*cross(c,a)+norm(c)*cross(a,b);
+        ld x = norm(a)*cross(b,c)+norm(b)*cross(c,a)+norm(c)*cross(a,b);
         if (!ccw(a,b,c)) x *= -1;
         return x > 0;
     }

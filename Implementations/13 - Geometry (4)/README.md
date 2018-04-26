@@ -15,6 +15,7 @@
       * [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/geometry-concepts-basic-concepts/)
       * [Point Class](http://codeforces.com/blog/entry/48122)
       * [Easy Geo w/ std::complex](http://codeforces.com/blog/entry/22175)
+      * [Geo Book](http://codeforces.com/blog/entry/59129)
       * CPH (29, Geometry)
     * Problems
       * [Arpa & Geo](http://codeforces.com/problemset/problem/851/B)

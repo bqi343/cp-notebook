@@ -15,7 +15,7 @@ template<int SZ> struct BCC {
         adj[u].pb(v), adj[v].pb(u);
     }
     
-    void BCCutil(int u) {
+    void BCCutil(int u, bool root = 0) {
         disc[u] = low[u] = ti++;
         int child = 0;
         
@@ -26,8 +26,8 @@ template<int SZ> struct BCC {
                 BCCutil(i);
                 low[u] = min(low[u],low[i]);
                 
-                if ((disc[u] == 0 && child > 1) || (disc[u] != 0 && disc[u] <= low[i])) { // articulation point!
-                    vector<pi> tmp;
+                if ((root && child > 1) || (!root && disc[u] <= low[i])) { // articulation point!
+                    vpi tmp;
                     while (st.back() != mp(u,i)) tmp.pb(st.back()), st.pop_back();
                     tmp.pb(st.back()), st.pop_back();
                     fin.pb(tmp);
@@ -42,7 +42,7 @@ template<int SZ> struct BCC {
     void bcc() {
         FOR(i,1,N+1) par[i] = disc[i] = low[i] = -1;
         FOR(i,1,N+1) if (disc[i] == -1) {
-            BCCutil(i);
+            BCCutil(i,1);
             if (sz(st)) fin.pb(st);
             st.clear();
         }

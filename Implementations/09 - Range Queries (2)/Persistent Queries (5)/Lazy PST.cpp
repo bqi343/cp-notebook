@@ -1,5 +1,5 @@
 /**
-* Source: http://codeforces.com/blog/entry/47108?#comment-315047
+* Source: CF (link no longer available)
 * Description: Node + lazy updates
 */
 
@@ -53,10 +53,8 @@ struct node {
             return;
         }
         int M = (L+R)/2;
-        c[0] = new node();
-        c[0]->build(arr,L,M);
-        c[1] = new node();
-        c[1]->build(arr,M+1,R);
+        c[0] = new node(); c[0]->build(arr,L,M);
+        c[1] = new node(); c[1]->build(arr,M+1,R);
         val = min(c[0]->val,c[1]->val);
     }
 };

@@ -1,124 +1,132 @@
 /**
-* Source: Dhruv Rohatgi
-* Usage: USACO Camp - The Applicant
+* Sources: Dhruv Rohatgi,
+*           https://sites.google.com/site/kc97ble
+*           /container/splay-tree/splaytree-cpp-3
+* Usage: SPOJ DYNACON1
 */
 
-template<int SZ> struct LCT {
-    int p[SZ], pp[SZ], c[SZ][2], sum[SZ];
-
-    LCT () {
-        FOR(i,1,SZ) sum[i] = 1;
-        memset(p,0,sizeof p);
-        memset(pp,0,sizeof pp);
-        memset(c,0,sizeof c);
-    }
-
-    int getDir(int x, int y) {
-        return c[x][0] == y ? 0 : 1;
-    }
-
-    void setLink(int x, int y, int d) {
-        c[x][d] = y, p[y] = x;
-    }
-
-    void rotate(int y, int d) {
-        int x = c[y][d], z = p[y];
-        setLink(y,c[x][d^1],d);
-        setLink(x,y,d^1);
-        setLink(z,x,getDir(z,y));
-        
-        sum[x] = sum[y];
-        sum[y] = sum[c[y][0]]+sum[c[y][1]]+1;
-        pp[x] = pp[y]; pp[y] = 0;
-    }
-
-    void splay(int x) {
-        while (p[x]) {
-            int y = p[x], z = p[y];
-            int dy = getDir(y,x), dz = getDir(z,y);
-            if (!z) rotate(y,dy);
-            else if (dy == dz) rotate(z,dz), rotate(y,dy);
-            else rotate(y,dy), rotate(z,dz);
-        }
-    }
-
-    void dis(int v, int d) { 
-        p[c[v][d]] = 0, pp[c[v][d]] = v;
-        sum[v] -= sum[c[v][d]];
-        c[v][d] = 0; 
-    }
-
-    void con(int v, int d) { 
-        c[pp[v]][d] = v;
-        sum[pp[v]] += sum[v];
-        p[v] = pp[v], pp[v] = 0;
-    }
-
-    void access(int v) { 
-        // v is brought to the root of auxiliary tree
-        // modify preferred paths
-        
-        splay(v);
-        dis(v,1);
-        
-        while (pp[v]) {
-            int w = pp[v]; splay(w);
-            dis(w,1), con(v,1);
-            splay(v);
-        }
-    }
-
-    int find_root(int v) {
-        access(v);
-        while (c[v][0]) v = c[v][0];
-        access(v);
-        return v;
-    }
-
-    int find_depth(int v) {
-        access(v);
-        return sum[c[v][0]];
-    }
-
-    void cut(int v) { 
-        // cut link between v and par[v]
-        access(v);
-        pp[c[v][0]] = p[c[v][0]] = 0; // fix
-        sum[v] -= sum[c[v][0]];
-        c[v][0] = 0;
-    }
-
-    void link(int v, int w) { 
-        // v, which is root of another tree, is now child of w
-        access(v), access(w);
-        pp[w] = v; con(w,0);
-    }
-
-    int anc(int v, int num) {
-        if (find_depth(v) < num) return 0;
-        access(v);
-        v = c[v][0];
-        
-        while (1) {
-            if (sum[c[v][1]] >= num) v = c[v][1];
-            else if (sum[c[v][1]]+1 == num) return v;
-            else num -= (sum[c[v][1]]+1), v = c[v][0];
-        }
+struct snode {
+    int id, sz;
+    bool flip;
+    snode *p, *pp, *c[2];
+    
+    snode (int id){ sz = 1, flip = 0; c[0] = c[1] = p = pp = NULL; }
+    snode (): snode(0) {}
+    
+    void inOrder(bool f = 0) {
+        if (c[0]) c[0]->inOrder();
+        cout << id << " ";
+        if (c[1]) c[1]->inOrder();
+        if (f) cout << "\n------------\n";
     }
     
-    void print(int x) {
-        FOR(i,1,x+1) cout << i << " " << find_root(i) << " " << find_depth(i) << " " << anc(i,2) << "\n";
-        cout << "\n";
+    void recalc() {
+        sz = 1+(c[0]?c[0]->sz:0)+(c[1]?c[1]->sz:0);
+    }
+    
+    void prop() {
+        if (!flip) return; 
+        swap(c[0],c[1]);
+        if (c[0]) c[0]->flip ^= 1;
+        if (c[1]) c[1]->flip ^= 1;
+        flip = 0;
     }
 };
 
-LCT<100001> L;
+snode* S[MX];
 
-int main() {
-    L.link(2,1); L.link(3,1); L.link(4,1); L.link(5,4);
-    L.link(10,4); L.link(7,6); L.link(8,7); L.link(9,8);
-    L.print(10);
-    
-    L.cut(4); L.link(4,8);
-    L.print(10);
+int getsz(snode* x) { return x?x->sz:0; }
+
+int getDir(snode* x, snode* y) { return x ? x->c[0] != y : -1; }
+
+///////////// SPLAY TREE OPERATIONS
+
+void setLink(snode* x, snode* y, int d) {
+    if (x) x->c[d] = y, x->recalc();
+    if (y) y->p = x;
 }
+
+void disLink(snode* x, snode* y, int d) {
+    if (x) x->c[d] = NULL, x->recalc();
+    if (y) y->p = NULL;
+}
+
+void rot(snode* x, int d) {
+    snode *y = x->c[d], *z = x->p;
+    setLink(x, y->c[d^1], d);
+    setLink(y, x, d^1);
+    setLink(z, y, getDir(z, x));
+    y->pp = x->pp; x->pp = NULL;
+}
+
+void pushDown(snode* x) {
+    if (!x) return;
+    if (x->p) pushDown(x->p);
+    x->prop();
+}
+
+void splay(snode* x) {
+    pushDown(x);
+    while (x && x->p) {
+        snode* y = x->p, *z = y->p;
+        int dy = getDir(y, x), dz = getDir(z, y);
+        if (!z) rot(y, dy);
+        else if (dy == dz) rot(z, dz), rot(y, dy);
+        else rot(y, dy), rot(z, dz);
+    }
+}
+
+///////////// LINK CUT TREE OPERATIONS
+
+void con(snode* x, int d) { 
+    setLink(x->pp,x,d); 
+    x->pp = NULL; 
+}
+
+void dis(snode* x, int d) { 
+    snode* y = x->c[d];
+    disLink(x,y,d); 
+    if (y) y->pp = x;
+}
+
+void access(snode* x) { // v is brought to the root of auxiliary tree
+    splay(x); dis(x,1);
+    while (x->pp) {
+        splay(x->pp);
+        dis(x->pp,1), con(x,1);
+        splay(x);
+    }
+}
+
+void link(snode* v, snode* w) { // v, which is root of another tree, is now child of w
+    access(v), access(w);
+    w->pp = v; con(w,0);
+}
+
+void cut(snode* x) { // cut link between v and par[v]
+    access(x); snode* y = x->c[0];
+    dis(x,0); y->pp = NULL;
+}
+
+///////////// QUERIES
+
+snode* find_root(snode* v) {
+    access(v); while (v->c[0]) v = v->c[0];
+    access(v); return v;
+}
+
+int find_depth(snode* v) { access(v); return getsz(v->c[0]); }
+
+snode* anc(snode* v, int num) {
+    if (find_depth(v) < num) return NULL;
+    access(v); v = v->c[0];
+    
+    while (1) {
+        int s = getsz(v->c[1]);
+        if (s >= num) v = v->c[1];
+        else if (s+1 == num) return v;
+        else num -= (s+1), v = v->c[0];
+    }
+}
+
+void make_root(snode* v) { access(v); v->flip = 1; }

@@ -8,8 +8,6 @@
 template<int SZ> struct LCT {
     // [splay tree template]
     
-    //////// LINK CUT TREE
-    
     snode* S[SZ];
     LCT () { F0R(i,SZ) S[i] = new snode(i); }
 
@@ -19,9 +17,7 @@ template<int SZ> struct LCT {
         if (y) y->p = NULL, y->pp = x;
     }
     
-    void con(snode* x, int d) { 
-        setLink(x->pp,x,d); x->pp = NULL; 
-    }
+    void con(snode* x, int d) { setLink(x->pp,x,d); x->pp = NULL; }
     
     snode* getExtreme(snode* x, int d) {
         prop(x);
@@ -31,7 +27,7 @@ template<int SZ> struct LCT {
     
     void setPref(snode* x) { splay(x->pp), dis(x->pp,1), con(x,1); splay(x); }
     
-    snode* access(snode* x) { // v is brought to the root of auxiliary tree
+    snode* access(snode* x) { // x is brought to the root of auxiliary tree
         dis(splay(x),1);
         while (x->pp) setPref(x);
         return x;
@@ -46,7 +42,7 @@ template<int SZ> struct LCT {
         con(w,0); 
     }
     
-    void cut(snode* x) { // cut link between v and par[v]
+    void cut(snode* x) { // cut link between x and its parent
         snode* y = access(x)->c[0];
         dis(x,0); y->pp = NULL;
     }

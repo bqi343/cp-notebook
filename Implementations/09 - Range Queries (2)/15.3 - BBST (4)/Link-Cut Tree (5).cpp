@@ -55,9 +55,7 @@ template<int SZ> struct LCT {
     
     int getDepth(snode* v) { access(v); return getNum(v->c[0]); }
     
-    int getXo(snode* v) { access(v); return v->val^(v->c[0]?v->c[0]->xo:0); }
-    
-    int findRoot(snode* v) { return getExtreme(access(v),0)->id; }
+    int getRoot(snode* v) { return getExtreme(access(v),0)->id; }
     
     int lca(snode* x, snode* y) {
         snode* root = getExtreme(access(y),0);

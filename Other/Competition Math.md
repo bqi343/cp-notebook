@@ -24,12 +24,12 @@ If you consistently score 120+ on AMC 10:
 
 (JMO only)
 
- * At this point, you should consistently score 140+ on AMC 10 and 9+ on AIME.
- * General
-   * [WOOT](https://artofproblemsolving.com/class/1464-woot)
-   * [Links](http://artofproblemsolving.com/wiki/index.php/Resources_for_mathematics_competitions#Bunch_of_General_links) (particularly bolded ones)
-   * Art & Craft of Problem Solving
+ * General Info
    * [MOP Cutoffs](https://en.wikipedia.org/wiki/Mathematical_Olympiad_Summer_Program#Cutoff_scores)
+   * [IMO Selection Process](http://web.evanchen.cc/FAQs/rules.html)
+   * [WOOT](https://artofproblemsolving.com/class/1464-woot)
+   * [Links](http://artofproblemsolving.com/wiki/index.php/Resources_for_mathematics_competitions#Bunch_of_General_links)   
+     * see bolded in particular
  * Smart people
    * [Evan Chen](http://web.evanchen.cc/FAQs/contest.html)
      * [Blog](https://usamo.wordpress.com/) 
@@ -39,7 +39,9 @@ If you consistently score 120+ on AMC 10:
    * Basically just do a bunch and hope for a favorable subject distribution.
    * [Past JMO](https://artofproblemsolving.com/community/c3420_usajmo)
    * [USAMTS 4/5](http://usamts.org/Problems/U_Problems.php)
-   * USAMO / IMO 1, 4
+   * Recent USAMO / IMO 1, 4
+   * Art & Craft of Problem Solving
+   * Problem Solving Strategies
  * Geometry
    * All types of bash
      * Complex

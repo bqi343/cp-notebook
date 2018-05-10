@@ -3,6 +3,7 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
 
   * [USACO](http://www.usaco.org/)
     * Bronze, Silver, Gold, Platinum: 3 problems, 4 hrs
+    * [Nice Article](https://www.usenix.org/legacy/bodinfo/bod/bodmarch10/future.pdf)
   * [Codeforces](http://codeforces.com/)
     * Div 2, Div 1: 5 problems, 2 hrs
   * [AtCoder](https://atcoder.jp/)

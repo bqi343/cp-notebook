@@ -15,7 +15,8 @@ namespace CRT {
 
     pl solve(pl a, pl b) {
         pl cur = {0,1};
-        auto v = NT::fac(a.s); v.insert(v.end(),all(NT::fac(b.s)));
+        auto v = NT::fac(a.s), V = NT::fac(b.s);
+        v.insert(v.end(),all(V));
         for (auto z: v) {
             ll A = 1, B = 1; 
             while (a.s % z.f == 0) a.s /= z.f, A *= z.f;

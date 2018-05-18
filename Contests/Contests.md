@@ -60,14 +60,14 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
       * [Yandex](https://contest.yandex.ru/ioi/Info/)
       * [DMOJ](https://dmoj.ca/problems/?search=ioi)
   * Regional
+    * [IOI List](http://www.ioinformatics.org/contest/regional.shtml)
     * [Baltic OI](http://www.boi2017.org/)
       * [Past BOI](https://cses.fi/boi/list/)
     * [APIO](http://apio-olympiad.org/)
-    * Misc Europe Olympiad
-      * see [CSA](https://csacademy.com/contests/)
     * [IOIT](http://ioit.altervista.org/2018-teams-and-contests-.html)
     * [InfO(1) cup](http://info1cup.com/)
   * National (open?)
+    * [IOI List](http://www.ioinformatics.org/contest/national.shtml)
     * [USA](http://www.usaco.org/)
       * Dec - Mar
       * [Old Problems](http://tjsct.wikidot.com/usaco/)
@@ -80,7 +80,6 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
     * [Lithuania](http://online.lmio.lt/)
     * [New Zealand](http://www.nzoi.org.nz/nzic/)
   * Other
-    * [India](https://www.iarcs.org.in/inoi/)
     * [Poland](https://szkopul.edu.pl/portal/)
     * [Italy](https://training.olinfo.it/#/overview)
     * [Australia](https://orac.amt.edu.au/)
@@ -90,6 +89,7 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
     * China
       * [WCIPEG](https://wcipeg.com/problems/cat%3Dnoi%2Cshow%3D50)
     * Misc
+      * [CS Academy](https://csacademy.com/contests/)
       * [oj.uz](https://oj.uz/)
 
   

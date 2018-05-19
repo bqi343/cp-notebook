@@ -2,25 +2,10 @@
 * Description: DP with Binary Search
 */
 
-vi bes = {0};
-int n;
+vi bes = {INT_MIN}; // last term of increasing sequence with i terms
 
-void ad(int x) {
-    int lo = 0, hi = sz(bes)-1;
-    while (lo < hi) {
-        int mid = (lo+hi+1)/2;
-        if (bes[mid] < x) lo = mid;
-        else hi = mid-1;
-    }
-    if (lo == sz(bes)-1) bes.pb(0);
-    bes[lo+1] = x;
-}
-
-int main() {
-    cin >> n;
-    F0R(i,n) {
-        int x; cin >> x;
-        ad(x);
-    }
-    cout << sz(bes)-1;
+void ad(int x) { // add terms of sequence one by one
+    int lo = lb(all(bes),x)-bes.begin();
+    if (lo == sz(bes)) bes.pb(0);
+    bes[lo] = x; // sz(bes)-1 is your current answer
 }

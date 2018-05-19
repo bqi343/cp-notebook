@@ -34,7 +34,7 @@ Primarily directed toward USAJMO.
      * Do a lot and hope for the best!
    * [Links](http://artofproblemsolving.com/wiki/index.php/Resources_for_mathematics_competitions#Bunch_of_General_links) (see bolded in particular)
  * General
-   * AoPS Intermediate Series
+   * [AoPS Intermediate Series](https://artofproblemsolving.com/store/list/aops-curriculum)
    * [WOOT](https://artofproblemsolving.com/class/1464-woot)
    * Art & Craft of Problem Solving
    * Problem Solving Strategies
@@ -48,25 +48,19 @@ Primarily directed toward USAJMO.
      * Projective
      * Inversion
    * [EGMO](https://www.maa.org/press/ebooks/euclidean-geometry-in-mathematical-olympiads) is really good!
-   * [AoPS Olympiad Geo](https://artofproblemsolving.com/school/course/olympiad-geometry)
+   * [AoPS Olympiad Geometry](https://artofproblemsolving.com/school/course/olympiad-geometry)
    * Awesomemath 106, 107 Geo
-   * AoPS Olympiad Geometry
  * Algebra
    * Factor stuff
    * Functional equation = plug in stuff until it works
    * Awesomemath 105, 108 Alg
  * NT
-   * AoPS Intermediate NT
+   * [AoPS Intermediate NT](https://artofproblemsolving.com/school/course/catalog/intermediate-numbertheory)
    * [Binomial-Theorem Article](http://s3.amazonaws.com/aops-cdn.artofproblemsolving.com/resources/articles/olympiad-number-theory.pdf)
    * Mostly mods and common sense?
  * Combinatorics
-   * [CP](https://github.com/bqi343/USACO)
+   * [Competitive Programming](https://github.com/bqi343/USACO)
    * be smart, try stuff
- * Smart people
-   * [Evan Chen](http://web.evanchen.cc/FAQs/contest.html)
-     * [Blog](https://usamo.wordpress.com/) 
-   * [Yufei Zhao](http://yufeizhao.com/olympiad/)
-   * [Po-Shen Loh](http://www.math.cmu.edu/~lohp/olympiad.shtml)
 
 
 ## More Links
@@ -77,6 +71,12 @@ Useful:
  * [Past Contests](https://artofproblemsolving.com/community/c3158_usa_contests)
  * [Handouts](https://artofproblemsolving.com/community/c5h1578191_handout_compilation)
  
+Smart people
+   * [Evan Chen](http://web.evanchen.cc/FAQs/contest.html)
+     * [Blog](https://usamo.wordpress.com/) 
+   * [Yufei Zhao](http://yufeizhao.com/olympiad/)
+   * [Po-Shen Loh](http://www.math.cmu.edu/~lohp/olympiad.shtml)
+   
 Interesting:
  * [Enjoy the Problems](https://artofproblemsolving.com/community/c5h1211223p6004200)
  * [BOGTRO](https://artofproblemsolving.com/community/c5h1264874p6581946)

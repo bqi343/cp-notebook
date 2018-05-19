@@ -16,7 +16,7 @@ g++-7 -std=gnu++17 Solution.cpp -o Sol
 
 ## IDE
 
-The list only the ones I have actually used.
+The list contains only the ones I have actually used.
 
 ### Actual
 

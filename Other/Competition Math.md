@@ -22,24 +22,20 @@ If you consistently score 120+ on AMC 10:
 
 ## Olympiad 
 
-(JMO only)
+Primarily directed toward USAJMO.
 
- * General Info
+ * Information
    * [MOP Cutoffs](https://en.wikipedia.org/wiki/Mathematical_Olympiad_Summer_Program#Cutoff_scores)
    * [IMO Selection Process](http://web.evanchen.cc/FAQs/rules.html)
+   * Problems
+     * [Past JMO](https://artofproblemsolving.com/community/c3420_usajmo)
+     * [USAMTS 4/5](http://usamts.org/Problems/U_Problems.php)
+     * Recent USAMO / IMO 1, 4
+     * Do a lot and hope for the best!
+   * [Links](http://artofproblemsolving.com/wiki/index.php/Resources_for_mathematics_competitions#Bunch_of_General_links) (see bolded in particular)
+ * General
+   * AoPS Intermediate Series
    * [WOOT](https://artofproblemsolving.com/class/1464-woot)
-   * [Links](http://artofproblemsolving.com/wiki/index.php/Resources_for_mathematics_competitions#Bunch_of_General_links)   
-     * see bolded in particular
- * Smart people
-   * [Evan Chen](http://web.evanchen.cc/FAQs/contest.html)
-     * [Blog](https://usamo.wordpress.com/) 
-   * [Yufei Zhao](http://yufeizhao.com/olympiad/)
-   * [Po-Shen Loh](http://www.math.cmu.edu/~lohp/olympiad.shtml)
- * Problems
-   * Basically just do a bunch and hope for a favorable subject distribution.
-   * [Past JMO](https://artofproblemsolving.com/community/c3420_usajmo)
-   * [USAMTS 4/5](http://usamts.org/Problems/U_Problems.php)
-   * Recent USAMO / IMO 1, 4
    * Art & Craft of Problem Solving
    * Problem Solving Strategies
  * Geometry
@@ -54,16 +50,23 @@ If you consistently score 120+ on AMC 10:
    * [EGMO](https://www.maa.org/press/ebooks/euclidean-geometry-in-mathematical-olympiads) is really good!
    * [AoPS Olympiad Geo](https://artofproblemsolving.com/school/course/olympiad-geometry)
    * Awesomemath 106, 107 Geo
+   * AoPS Olympiad Geometry
  * Algebra
    * Factor stuff
    * Functional equation = plug in stuff until it works
    * Awesomemath 105, 108 Alg
  * NT
+   * AoPS Intermediate NT
    * [Binomial-Theorem Article](http://s3.amazonaws.com/aops-cdn.artofproblemsolving.com/resources/articles/olympiad-number-theory.pdf)
-   * mods
+   * Mostly mods and common sense?
  * Combinatorics
    * [CP](https://github.com/bqi343/USACO)
    * be smart, try stuff
+ * Smart people
+   * [Evan Chen](http://web.evanchen.cc/FAQs/contest.html)
+     * [Blog](https://usamo.wordpress.com/) 
+   * [Yufei Zhao](http://yufeizhao.com/olympiad/)
+   * [Po-Shen Loh](http://www.math.cmu.edu/~lohp/olympiad.shtml)
 
 
 ## More Links

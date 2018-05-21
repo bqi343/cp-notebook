@@ -33,4 +33,12 @@ namespace NT {
         if (tmp < 0) tmp += b;
         return tmp;
     }
+ 
+    pl CRT(pl a, pl b) { // Chinese Remainder Theorem, Verified by Kattis generalchineseremainder
+        ll g = __gcd(a.s,b.s), l = a.s*b.s/g;
+        if ((b.f-a.f) % g != 0) return {-1,-1};
+        ll A = a.s/g, B = b.s/g;
+        ll mul = (b.f-a.f)/g*inv(A%B,B) % B;
+        return {((mul*a.s+a.f)%l+l)%l,l};
+    }
 };

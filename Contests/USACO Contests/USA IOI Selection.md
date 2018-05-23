@@ -6,7 +6,7 @@ USA IOI Selection
     * rest of 26 finalists are invited as "guernseys"
       * seniors are not eligible
   * Camp contests
- 	  * Contests 1, 2, 4, 5
+ 	  * Contests 1, 3, 4, 5
  		* 3 problems, 3 hours
- 	* Contests 3, 6
+ 	* Contests 2, 6
  		* 3-4 problems, 5 hours

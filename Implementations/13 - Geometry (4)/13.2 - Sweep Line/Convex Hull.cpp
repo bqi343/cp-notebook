@@ -9,7 +9,7 @@ ll cross(pi O, pi A, pi B) {
 }
 
 vpi convex_hull(vpi P) {
-    sort(all(P)); P.erase(all(P),P.end());
+    sort(all(P)); P.erase(unique(all(P)),P.end());
     if (P.size() == 1) return P;
     
     int n = P.size();

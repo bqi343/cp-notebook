@@ -14,3 +14,5 @@ USA IOI Selection
     * No prewritten code is allowed.
       * This was specified after I used my template in the first three contests. :(
     * Use a desktop IDE (ex. Geany, Codeblocks)
+
+Note: [Ubuntu Copy / Paste](https://howtoubuntu.org/how-to-cut-copy-and-paste-in-the-terminal-in-ubuntu)

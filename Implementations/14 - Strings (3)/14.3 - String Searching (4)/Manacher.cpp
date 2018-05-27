@@ -12,7 +12,7 @@ vi manacher(string s) {
     vi ans(s1.length()-1);
     int lo = 0, hi = 0; 
     FOR(i,1,s1.length()-1) {
-        ans[i] = min(hi-i,ans[hi-i+lo]);
+        if (i != 1) ans[i] = min(hi-i,ans[hi-i+lo]);
         while (s1[i-ans[i]-1] == s1[i+ans[i]+1]) ans[i] ++;
         if (i+ans[i] > hi) lo = i-ans[i], hi = i+ans[i];
     }
@@ -23,15 +23,6 @@ vi manacher(string s) {
 }
 
 int main() {
-    int T; cin >> T;
-    F0R(i,T) {
-        pii bes = {0,0};
-        string s; cin >> s;
-        vi t = manacher(s);
-        for (int i: t) {
-            if (i > bes.f) bes = {i,1};
-            else if (i == bes.f) bes.s++;
-        }
-        cout << bes.f << " " << bes.s << "\n";
-    }
+    vi v = manacher("abacaba");
+    for (int i: v) cout << i << " ";
 }

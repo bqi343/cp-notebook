@@ -40,7 +40,7 @@ template<int SZ> struct Aho {
         }
     }
     
-    void process(int pos, int cur) {
+    void process(int pos, int cur) { // process matches
         cur = dict[cur];
         while (cur) {
             for (auto a: ind[cur]) oc[a.f].pb(pos-a.s+1);
@@ -48,7 +48,7 @@ template<int SZ> struct Aho {
         }
     }
     
-    int nex(int pos, int cur, char c) {
+    int nex(int pos, int cur, char c) { // get position after adding character
         while (cur != -1 && !to[cur].count(c)) cur = link[cur];
         if (cur == -1) cur = 0;
         else cur = to[cur][c];

@@ -16,6 +16,7 @@ struct node {
         if (!lazy) return;
         F0R(i,2) if (c[i]) {
             c[i] = new node(*c[i]);
+            c[i]->val += lazy; // lazy value is included in value
             c[i]->lazy += lazy;
         }
         lazy = 0;
@@ -36,7 +37,7 @@ struct node {
             x->lazy += v, x->val += v;
             return x;
         }
-        push();
+        x->push();
         
         int M = (L+R)/2;
         x->c[0] = x->c[0]->upd(low,high,v,L,M);
@@ -60,7 +61,7 @@ struct node {
 };
 
 template<int SZ> struct pers {
-    node* loc[SZ+1]; // stores location of root after ith update
+    node* loc[MX]; // stores location of root after ith update
     int nex = 1;
     
     pers() { loc[0] = new node(); }
@@ -78,29 +79,29 @@ template<int SZ> struct pers {
 };
 
 pers<8> p;
+vi arr = {1,7,2,3,5,9,4,6};
+
+int query(int l, int r) {
+    int mn = MOD;
+    FOR(i,l,r+1) mn = min(mn,arr[i]);
+    return mn;
+}
+
+void upd(int l, int r, int k) { FOR(i,l,r+1) arr[i] += k; }
+
+int tmp[101][8][8];
 
 int main() {
-    vi arr = {1,7,2,3,5,9,4,6};
+    p = pers<8>();
     p.build(arr);
     
-    p.upd(1,2,2); // 1 9 4 3 5 9 4 6
-    
-    F0R(i,8) {
-        FOR(j,i,8) cout << p.query(1,i,j) << " ";
-        cout << "\n";
+    FOR(i,1,101) {
+        int l = rand() % 8, r = rand() % 8; if (l > r) swap(l,r);
+        int k = rand()%20-10;
+        p.upd(l,r,k);
+        upd(l,r,k);
+        F0R(j1,8) FOR(j2,j1,8) tmp[i][j1][j2] = query(j1,j2);
+        int z = rand() % i+1;
+        F0R(j1,8) FOR(j2,j1,8) assert(tmp[z][j1][j2] == p.query(z,j1,j2)); // verification
     }
-    cout << "\n";
-    
-    p.upd(4,7,5); // 1 9 4 3 10 14 9 11
-    F0R(i,8) {
-        FOR(j,i,8) cout << p.query(2,i,j) << " ";
-        cout << "\n";
-    }
-    cout << "\n";
-    
-    F0R(i,8) {
-        FOR(j,i,8) cout << p.query(1,i,j) << " ";
-        cout << "\n";
-    }
-    cout << "\n";
 }

@@ -46,4 +46,4 @@ int main() {
 }
 
 // read the question correctly (is y a vowel? what are the exact constraints?)
-// look out for SPECIAL CASES (n=1?) and overflow (ll vs int?)
+// look out for SPECIAL CASES (n=1?) and overflow (ll vs int?) and array bounds!

@@ -47,7 +47,7 @@ Primarily directed toward USAJMO.
    * Also know
      * Projective
      * Inversion
-   * [EGMO](https://www.maa.org/press/ebooks/euclidean-geometry-in-mathematical-olympiads) is really good!
+   * [EGMO](https://bookstore.ams.org/prb-27/) is really good!
    * [AoPS Olympiad Geometry](https://artofproblemsolving.com/school/course/olympiad-geometry)
    * Awesomemath 106, 107 Geo
  * Algebra

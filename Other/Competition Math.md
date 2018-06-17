@@ -2,23 +2,26 @@
  
 ## Pre-Olympiad
 
-If you score <90 on AMC 10:
- * You should make sure that you are familiar with standard algebra concepts. This may not be as easy as you think! 
- * At this stage, doing AMC 8 or MathCounts chapter contests may be helpful.
- * Use Alcumus extensively. Make sure you are familiar with the AoPS Introduction Series!
+If you have no prior contest experience or score <90 on AMC 10:
+ * Look up AMC if you don't know what it is. ;)
+ * You should make sure that you are familiar with standard prealgebra concepts. (This may not be as easy as you think!)
+ * Doing AMC 8 or MathCounts chapter contests is helpful.
+ * AoPS
+   * Use Alcumus extensively. 
+   * FTW! may or may not be helpful for improving speed and accuracy. 
+   * ["Stupid Mistakes"](http://artofproblemsolving.com/articles/stupid-mistakes)
+   * Introduction Series
  * [This](https://artofproblemsolving.com/community/c3h1217349p6066794) is an excellent article pertaining to MathCounts preparation. 
  
 If you consistently score 90+ on AMC 10:
- * You should familiarize yourself with everything in the AoPS Introduction Series (Algebra, NT, Combinatorics, Geo). Buy the books if they help (very useful!)
- * Master all of Alcumus.
- * Once you believe that you are familiar with all the material, do past tests! Note that AMC 12's before 2010 are comparable or possibly easier than current AMC 10's. Create a record of your results and review as necessary.
- * Work on improving both speed and accuracy. FTW! may or may not be helpful for this. See [this article](http://artofproblemsolving.com/articles/stupid-mistakes) for eliminating silly mistakes.
+ * Master all of Introduction Series / Alcumus.
+ * Once you believe that you are familiar with all the material, do past tests! Note that AMC 12's before 2010 are comparable or possibly easier than current AMC 10's. 
+ * Create a record of your results and review as necessary.
  
 If you consistently score 120+ on AMC 10:
  * Master all the topics in the intermediate series.
- * Do past AIME's! Follow the time limit, and don't look up solutions unless you are absolutely stuck.
+ * Do past AIME's! Follow the time limit, and don't look up solutions unless you are absolutely stuck. [Here](https://drive.google.com/drive/folders/0B95dMIY7fstOemlzdThlZjFCUnc?usp=sharing) are some additional AIME resources.
  * Do as many contests as you can (USAMTS, ZIML, etc.)
- * [Here](https://drive.google.com/drive/folders/0B95dMIY7fstOemlzdThlZjFCUnc?usp=sharing) are some AIME resources.
 
 ## Olympiad 
 

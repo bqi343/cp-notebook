@@ -5,7 +5,7 @@
  * Euler's theorem: a^{\phi(p)}\equiv 1 (mod p), gcd(a,p)=1
  * Verification: CF Power Tower
  */
- 
+
 namespace NT {
     vpi fac(int x) {
         vpi pri;
@@ -42,3 +42,8 @@ namespace NT {
         return {((mul*a.s+a.f)%l+l)%l,l};
     }
 };
+
+ll ad(ll a, ll b) { return (a+b)%MOD; }
+ll sub(ll a, ll b) { return (a-b+MOD)%MOD; }
+ll mul(ll a, ll b) { return a*b%MOD; }
+ll divi(ll a, ll b) { return a*NT::inv(b,MOD)%MOD; }

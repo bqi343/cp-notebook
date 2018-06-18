@@ -81,6 +81,7 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
     * [New Zealand](http://www.nzoi.org.nz/nzic/)
   * Other
     * [Poland](https://szkopul.edu.pl/portal/)
+      * [Solutions](https://www.oi.edu.pl/old/php/show.php?ac=e190000)
     * [Italy](https://training.olinfo.it/#/overview)
     * [Australia](https://orac.amt.edu.au/)
     * [Canada](https://cemc.math.uwaterloo.ca/contests/computing.html)

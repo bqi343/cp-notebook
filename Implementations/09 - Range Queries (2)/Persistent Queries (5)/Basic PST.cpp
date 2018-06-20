@@ -1,72 +1,54 @@
 /**
-* Description: persistent segtree node without lazy updates
-* Verification: Codeforces Problem 893F - Subtree Minimum Query
-* Implementation: http://codeforces.com/contest/893/submission/32652140
+* Description: persistent segtree without lazy updates
+* Verification: https://beta.atcoder.jp/contests/arc068/tasks/arc068_c
+* Sources: CF, Franklyn Wang
 */ 
 
-struct Node { 
-    int val = 0;
-    Node* c[2];
+template<int SZ> struct pseg {
+    static const int LIMIT = 10000000;
     
-    Node* copy() {
-        Node* x = new Node(); *x = *this;
-        return x;
-    }
+    int val[LIMIT], l[LIMIT], r[LIMIT], nex = 0;
     
-    int query(int low, int high, int L, int R) {  
-        if (low <= L && R <= high) return val;
-        if (R < low || high < L) return MOD;
+    int comb(int a, int b) { return a+b; }
+    void pull(int x) { val[x] = comb(val[l[x]],val[r[x]]); }
+    
+    int query(int cur, int lo, int hi, int L, int R) {  
+        if (lo <= L && R <= hi) return val[cur];
+        if (R < lo || hi < L) return 0;
         int M = (L+R)/2;
-        return min(c[0]->query(low,high,L,M),
-                   c[1]->query(low,high,M+1,R));
+        return comb(query(l[cur],lo,hi,L,M),query(r[cur],lo,hi,M+1,R));
     }
     
-    Node* upd(int ind, int v, int L, int R) {
-        if (R < ind || ind < L) return this;
-        Node* x = copy();
+    int upd(int cur, int ind, int v, int L, int R) {
+        if (R < ind || ind < L) return cur;
         
+        int x = nex++;
         if (ind <= L && R <= ind) {
-            x->val += v;
+            val[x] = val[cur]+v;
             return x;
         }
         
         int M = (L+R)/2;
-        x->c[0] = x->c[0]->upd(ind,v,L,M);
-        x->c[1] = x->c[1]->upd(ind,v,M+1,R);
-        x->val = min(x->c[0]->val,x->c[1]->val);
-        
-        return x;
+        l[x] = upd(l[cur],ind,v,L,M);
+        r[x] = upd(r[cur],ind,v,M+1,R);
+        pull(x); return x;
     }
     
-    void build(vi& arr, int L, int R) {
+    int build(vi& arr, int L, int R) {
+        int cur = nex++;
         if (L == R) {
-            if (L < (int)arr.size()) val = arr[L];
-            else val = 0;
-            return;
+            if (L < sz(arr)) val[cur] = arr[L];
+            return cur;
         }
+        
         int M = (L+R)/2;
-        c[0] = new Node();
-        c[0]->build(arr,L,M);
-        c[1] = new Node();
-        c[1]->build(arr,M+1,R);
-        val = min(c[0]->val,c[1]->val);
+        l[cur] = build(arr,L,M);
+        r[cur] = build(arr,M+1,R);
+        pull(cur); return cur;
     }
-};
-
-template<int SZ> struct pers {
-    Node* loc[SZ+1]; // stores location of root after ith update
-    int nex = 1;
     
-    pers() { loc[0] = new Node(); }
-    
-    void upd(int ind, int val) {
-        loc[nex] = loc[nex-1]->upd(ind,val,0,SZ-1);
-        nex++;
-    }
-    void build(vi& arr) { 
-        loc[0]->build(arr,0,SZ-1);
-    }
-    int query(int ti, int low, int high) { 
-        return loc[ti]->query(low,high,0,SZ-1);
-    }
+    vi loc;
+    void upd(int ind, int v) { loc.pb(upd(loc.back(),ind,v,0,SZ-1)); }
+    int query(int ti, int lo, int hi) { return query(loc[ti],lo,hi,0,SZ-1); }
+    void build(vi& arr) { loc.pb(build(arr,0,SZ-1)); }
 };

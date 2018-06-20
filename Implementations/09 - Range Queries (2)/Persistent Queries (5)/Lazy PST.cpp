@@ -1,6 +1,7 @@
 /**
 * Source: CF (link no longer available)
 * Description: Node + lazy updates
+* Should probably remove pointers like basic PST except too lazy
 */
 
 struct node { 

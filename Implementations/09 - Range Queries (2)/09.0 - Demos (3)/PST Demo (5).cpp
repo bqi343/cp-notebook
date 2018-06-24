@@ -1,8 +1,7 @@
-pseg<8> p;
-vi arr = {1,7,2,3,5,9,4,6};
+vl arr = {1,7,2,3,5,9,4,6};
 
-int query(int l, int r) {
-    int mn = MOD;
+ll query(int l, int r) {
+    ll mn = MOD;
     FOR(i,l,r+1) mn = min(mn,arr[i]);
     return mn;
 }
@@ -12,8 +11,14 @@ void upd(int l, int r, int k) { FOR(i,l,r+1) arr[i] += k; }
 int tmp[101][8][8];
 
 int main() {
-    p = pseg<8>();
+    pseg<ll,8> p = pseg<ll,8>();
     p.build(arr);
+    
+    /*p.upd(4,5,10LL*MOD);
+    cout << p.query(1,4,5) << "\n";
+    p.upd(4,4,10LL*MOD);
+    cout << p.query(2,4,5) << "\n";
+    cout << p.query(2,4,4) << "\n";*/
     
     FOR(i,1,101) {
         int l = rand() % 8, r = rand() % 8; if (l > r) swap(l,r);

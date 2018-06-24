@@ -3,18 +3,18 @@
 * Sources: CF, Franklyn Wang
 */ 
 
-template<int SZ> struct pseg {
+template<class T, int SZ> struct pseg {
     static const int LIMIT = 10000000;
-    int val[LIMIT], l[LIMIT], r[LIMIT], nex = 0;
-    int lazy[LIMIT];
+    int l[LIMIT], r[LIMIT], nex = 0;
+    T val[LIMIT], lazy[LIMIT];
     
     //// HELPER
     int copy(int cur) {
-        int x = nex ++;
+        int x = nex++;
         val[x] = val[cur], l[x] = l[cur], r[x] = r[cur], lazy[x] = lazy[cur];
         return x;
     }
-    int comb(int a, int b) { return min(a,b); }
+    T comb(T a, T b) { return min(a,b); }
     void pull(int x) { val[x] = comb(val[l[x]],val[r[x]]); }
     void push(int cur, int L, int R) {
         if (!lazy[cur]) return;
@@ -31,13 +31,13 @@ template<int SZ> struct pseg {
     }
 
     //// IMPORTANT
-    int query(int cur, int lo, int hi, int L, int R) {  
+    T query(int cur, int lo, int hi, int L, int R) {  
         if (lo <= L && R <= hi) return val[cur];
-        if (R < lo || hi < L) return MOD;
+        if (R < lo || hi < L) return INF;
         int M = (L+R)/2;
         return lazy[cur]+comb(query(l[cur],lo,hi,L,M),query(r[cur],lo,hi,M+1,R));
     }
-    int upd(int cur, int lo, int hi, int v, int L, int R) {
+    int upd(int cur, int lo, int hi, T v, int L, int R) {
         if (R < lo || hi < L) return cur;
         
         int x = copy(cur);
@@ -48,7 +48,7 @@ template<int SZ> struct pseg {
         l[x] = upd(l[x],lo,hi,v,L,M), r[x] = upd(r[x],lo,hi,v,M+1,R);
         pull(x); return x;
     }
-    int build(vi& arr, int L, int R) {
+    int build(vector<T>& arr, int L, int R) {
         int cur = nex++;
         if (L == R) {
             if (L < sz(arr)) val[cur] = arr[L];
@@ -62,7 +62,7 @@ template<int SZ> struct pseg {
     
     //// PUBLIC
     vi loc;
-    void upd(int lo, int hi, int v) { loc.pb(upd(loc.back(),lo,hi,v,0,SZ-1)); }
-    int query(int ti, int lo, int hi) { return query(loc[ti],lo,hi,0,SZ-1); }
-    void build(vi& arr) { loc.pb(build(arr,0,SZ-1)); }
+    void upd(int lo, int hi, T v) { loc.pb(upd(loc.back(),lo,hi,v,0,SZ-1)); }
+    T query(int ti, int lo, int hi) { return query(loc[ti],lo,hi,0,SZ-1); }
+    void build(vector<T>& arr) { loc.pb(build(arr,0,SZ-1)); }
 };

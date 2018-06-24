@@ -3,8 +3,6 @@
 * Verification: SPOJ Horrible
 */
 
-const ll INF = 1e18; // setting this to MOD can be disastrous :(
-
 template<class T, int SZ> struct LazySegTree {
     T sum[2*SZ], mn[2*SZ], lazy[2*SZ]; // set SZ to a power of 2
     

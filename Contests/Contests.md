@@ -10,7 +10,7 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
     * Beginner / Regular: 4 problems, 100 min 
     * Grand: 6 problems, 110 min
     * [Visualizer](https://kenkoooo.com/atcoder/)
-    * [Test Data](http://codeforces.com/blog/entry/46389)
+    * [Test Data](https://www.dropbox.com/sh/arnpe0ef5wds8cv/AAAk_SECQ2Nc6SVGii3rHX6Fa?dl=0)
   * [CS Academy](https://csacademy.com/)
     * Div 2: 5 problems, 2 hrs
     * Open: 7 problems, 2 hrs

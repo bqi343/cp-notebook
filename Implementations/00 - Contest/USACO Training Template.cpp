@@ -46,6 +46,8 @@ int main() {
     freopen(".out","w",stdout);
     
     // don't forget newline!
+    // no range based for loops :(
+    // use scanf, printf
 }
 
 

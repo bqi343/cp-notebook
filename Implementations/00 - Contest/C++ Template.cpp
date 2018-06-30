@@ -45,5 +45,9 @@ int main() {
 
 }
 
-// read the question correctly (is y a vowel? what are the exact constraints?)
-// look out for SPECIAL CASES (n=1?) and overflow (ll vs int?) and array bounds!
+/* Look for:
+* the exact constraints (multiple sets are too slow for n=10^6 :( ) 
+* special cases (n=1?)
+* overflow (ll vs int?)
+* array bounds
+*/

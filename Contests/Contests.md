@@ -23,8 +23,8 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * [HackerEarth](http://hackerearth.com/)
     * Monthly "Easy"
   * [Don Mills OJ](http://dmoj.ca/)
-  * [Codechef](http://codechef.com/)
-    * Lunchtime, Cookoff
+  * ~~[Codechef](http://codechef.com/)~~
+    * ~~Lunchtime, Cookoff~~
   * ~~[CodeFights](https://codefights.com/)~~
     * ~~Marathons: 10 problems, 60 minutes~~
 
@@ -35,8 +35,8 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * [Google Code Jam](https://code.google.com/codejam/): April
     * Kickstart: February - November
   * [IPSC](https://ipsc.ksp.sk/rules): July 
-  * [SnackDown](https://www.codechef.com/snackdown/2017/schedule): May
-  * ~~[Facebook Hacker Cup](https://www.facebook.com/hackercup/): January (indefinitely delayed 2018)~~
+  * [Facebook Hacker Cup](https://www.facebook.com/hackercup/): July
+  * ~~[SnackDown](https://www.codechef.com/snackdown/2017/schedule): May~~
   * ~~[Yandex Algorithm](https://contest.yandex.ru/contest-list/): April (bad times)~~
   
 ## Online HS

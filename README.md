@@ -18,7 +18,7 @@ Check out the rest of this compilation! If you have done well in math contests, 
 
 * Do as many contests as possible. 
   * Make sure to upsolve after the contest ends!
-  * [Here](https://www.dropbox.com/s/7nziof63mxk2t5j/Contests.png?dl=0) is an example of the contests I consider doing.
+  * [Here](https://drive.google.com/file/d/1sf_-NdFX8HFvpaHqltpI8fyVBXx5tjua/view?usp=sharing) is an example of the contests I consider doing.
 * Work through past problems.
   * USACO 
     * Old Gold / Platinum

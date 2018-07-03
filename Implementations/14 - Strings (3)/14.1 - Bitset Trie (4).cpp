@@ -4,10 +4,9 @@
 */
 
 template<int MX> struct tri {
-    const int MXBIT = 60;
+    static const int MXBIT = 60;
     int trie[MX][2], nex = 0; // easily changed to character
-    int sz[MX][2];
-    ll ans = 0;
+    int sz[MX];
     
     tri() {
         memset(trie,0,sizeof trie);
@@ -23,7 +22,8 @@ template<int MX> struct tri {
         }
     }
     
-    void test(ll x) {
+    ll test(ll x) {
+        if (sz[0] == 0) return -INF;
         int cur = 0;
         F0Rd(i,MXBIT) {
             int t = ((x&(1LL<<i))>>i) ^ 1;
@@ -31,6 +31,6 @@ template<int MX> struct tri {
             cur = trie[cur][t];
             if (t) x ^= (1LL<<i);
         }
-        ans = max(ans,x);
+        return x;
     }
 };

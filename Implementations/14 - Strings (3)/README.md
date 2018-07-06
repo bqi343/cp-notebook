@@ -6,6 +6,7 @@
   * Hashing
     * Tutorial
       * CPH (26, String Algorithms)
+      * [Anti-Hash Tests](http://codeforces.com/blog/entry/60442)
     * Types
       * sum of powers mod a large prime
       * xor hashing (ex. graph adjacency lists)

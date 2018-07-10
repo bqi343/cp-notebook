@@ -59,6 +59,7 @@
         * [A2OJ](https://a2oj.com/category?ID=650)
   * Treap
       * Notes
+        * [Quora](https://threads-iiith.quora.com/Treaps-One-Tree-to-Rule-em-all-Part-1)
         * [PPT](https://docs.google.com/presentation/d/14xgtdDWnIBwmJRAuIdZ8FvLZcX9uRxnNoGOGAQRDIvc/edit?usp=sharing)
         * CS Guide
       * Problems

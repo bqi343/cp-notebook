@@ -3,8 +3,6 @@
 * To verify: January Easy 2018 - Shubham & Tree 1
 */
 
-const int MX = 200001;
-
 struct HeavyLightSet {
     int val[MX];
     vi child[MX];
@@ -22,7 +20,7 @@ struct HeavyLightSet {
         dat[ind][val[ind]] ++;
         for (int i: child[ind]) {
             process(i); 
-            comb(i,ind);
+            comb(ind,i);
         }
         // now do stuff with values
     }

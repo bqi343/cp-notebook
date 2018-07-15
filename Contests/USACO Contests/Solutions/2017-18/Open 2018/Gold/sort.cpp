@@ -68,3 +68,23 @@ int main() {
 
 // read the question correctly (is y a vowel?)
 // look out for SPECIAL CASES (n=1?) and overflow (ll vs int?)
+
+/* Python simulator:
+N = 11 
+A = [0,1,1,1,0,0.5,1,1,0,0,0]
+
+for i in range(11):
+    print(A)
+    
+    for i in range(0,N-1):
+        if A[i+1] < A[i]:
+            A[i], A[i+1] = A[i+1], A[i]
+    
+    print(A)
+    for i in range(N-2,-1,-1):
+        if A[i+1] < A[i]:
+            A[i], A[i+1] = A[i+1], A[i]
+            
+    print(A)
+    print("-----")
+*/

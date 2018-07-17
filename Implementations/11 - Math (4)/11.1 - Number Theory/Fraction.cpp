@@ -1,6 +1,6 @@
 /**
 * Source: https://martin-thoma.com/fractions-in-cpp/
-* Usage: TopCoder MinimizeAbsoluteDifferenceDiv1 
+* Verification: TopCoder MinimizeAbsoluteDifferenceDiv1 
 */
 
 struct Fraction {

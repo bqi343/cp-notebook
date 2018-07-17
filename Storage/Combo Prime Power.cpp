@@ -1,9 +1,9 @@
 /**
-* Description: Extends combo to a power of a prime
+* Description: MOD is power of a prime
 * Verification: https://dmoj.ca/problem/tle17c4p5
 */
 
-template<int SZ> struct ComboExtended {
+template<int SZ> struct ComboPower {
     pl fac[SZ+1], ifac[SZ+1], mod;
     ll MOD = 1;
     

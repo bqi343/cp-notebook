@@ -1,7 +1,8 @@
 /**
-* Usage: https://open.kattis.com/problems/shortestpath3
-* Description: can be useful with linear programming
-* Constraints of the form x_i-x_j<k
+* Description: Shortest Path w/ negative edge weights 
+    * Can be useful with linear programming
+    * Constraints of the form x_i-x_j<k
+* Verification: https://open.kattis.com/problems/shortestpath3
 */
 
 const ll INF = 1e18;

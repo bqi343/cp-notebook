@@ -30,7 +30,7 @@ namespace FFT {
     
     vcd fft_rev(vcd& a) {
         vcd res = fft(a);
-        F0R(i,sz(res)) res[i] /= a.size();
+        F0R(i,sz(res)) res[i] /= sz(a);
         reverse(res.begin() + 1, res.end());
         return res;
     }

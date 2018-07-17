@@ -1,6 +1,5 @@
 /**
-* Source: own
-* Description: computes the minimum spanning tree in O(ElogE) time
+* Description: Disjoint Set Union
 * Verification: USACO superbull
 */
 
@@ -23,13 +22,3 @@ template<int SZ> struct DSU {
     	return 1;
     }
 };
-
-int ans = 0; // total weight of MST
-vector<pair<int,pi>> edge;
-
-DSU<100> D;
-
-void kruskal() {
-	sort(all(edge));
-	for (auto a: edge) if (D.unite(a.s.f,a.s.s)) ans += a.f; // edge is in MST	
-}

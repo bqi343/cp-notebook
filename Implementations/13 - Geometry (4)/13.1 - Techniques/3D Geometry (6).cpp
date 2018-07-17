@@ -1,6 +1,6 @@
 /**
 * Description: Basic 3D Geometry
-* Usage: AMPPZ 2011 Cross Spider
+* Verification: AMPPZ 2011 Cross Spider
 */
 
 int n;

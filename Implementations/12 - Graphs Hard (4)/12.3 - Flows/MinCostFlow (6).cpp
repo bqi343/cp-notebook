@@ -27,7 +27,7 @@ template<int SZ> struct mcf {
     bool spfa() {
         F0R(i,SZ) cost[i] = MOD, num[i] = 0;
         cost[SC] = 0, num[SC] = MOD;
-        priority_queue<pi,vector<pi>,greater<pi>> todo; todo.push({0,SC});
+        priority_queue<pi,vpi,greater<pi>> todo; todo.push({0,SC});
 
         while (todo.size()) {
             pi x = todo.top(); todo.pop();

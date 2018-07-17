@@ -1,47 +1,26 @@
 /**
-* Usage: https://open.kattis.com/problems/intervalcover
 * Description: Example of greedy algorithm
+* Verification: https://open.kattis.com/problems/intervalcover
+    * actually, you need to account for A=B and add epsilons but w/e
 */
 
-double A,B,cur;
-vector<pair<pd,int>> in;
-int N,nex;
-vi ans;
+double A,B; // interval to be covered, assuming A<B
+vector<pair<pd,int>> in; // intervals 
+int N; // # of intervals 
 
-void solve() {
-    nex = 0; ans.clear();
-    cin >> N; in.resize(N);
-    F0R(i,N) {
-        cin >> in[i].f.f >> in[i].f.s;
-        in[i].s = i;
-    }
+vi solve() {
+    pair<double,int> mx = {A,-1};
+    vi ans;
+    int nex = 0;
     
     sort(all(in));
-    pair<double,int> mx = {-DBL_MAX,-1};
-    
-    while (nex < in.size() && in[nex].f.f <= A) {
-        mx = max(mx,{in[nex].f.s,in[nex].s});
-        nex++;
-    }
-    if (nex == 0) {
-        cout << "impossible\n";
-        return;
-    }
-    ans.pb(mx.s);
-    
     while (mx.f < B) {
-        cur = mx.f;
-        while (nex < in.size() && in[nex].f.f <= cur) {
-            mx = max(mx,{in[nex].f.s,in[nex].s});
-            nex++;
-        }
-        if (mx.f == cur) {
-            cout << "impossible\n";
-            return;
-        }
+        double cur = mx.f;
+        while (nex < sz(in) && in[nex].f.f <= cur) 
+            mx = max(mx,{in[nex].f.s,in[nex].s}), nex++;
+        if (mx.f == cur) return {};
         ans.pb(mx.s);
     }
-    cout << ans.size() << "\n";
-    for (int i: ans) cout << i << " ";
-    cout << "\n";
+    
+    return ans;
 }

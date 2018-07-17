@@ -1,6 +1,6 @@
 /**
 * Source: http://codeforces.com/blog/entry/13959
-* Usage: https://oj.uz/problem/view/APIO14_palindrome
+* Verification: https://oj.uz/problem/view/APIO14_palindrome
 */
 
 template<int SZ> struct palTree {

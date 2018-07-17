@@ -1,6 +1,6 @@
 /**
 * Source: Own
-* Usage: CEOI 2004 Two Sawmills
+* Verification: CEOI 2004 Two Sawmills
 */
 
 void divi(int lo, int hi, int L, int R) {

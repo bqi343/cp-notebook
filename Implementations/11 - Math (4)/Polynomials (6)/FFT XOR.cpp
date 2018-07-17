@@ -28,7 +28,7 @@ namespace FWHT {
     
     vd fwht_rev(vd& a) {
         vd res = fwht(a);
-        F0R(i,sz(res)) res[i] /= a.size();
+        F0R(i,sz(res)) res[i] /= sz(a);
         return res;
     }
     

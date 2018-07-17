@@ -1,6 +1,6 @@
 /**
 * Source: own
-* Usage: https://open.kattis.com/problems/maxcolinear
+* Verification: https://open.kattis.com/problems/maxcolinear
 */
 
 int n, mx, ans;

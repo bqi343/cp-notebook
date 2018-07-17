@@ -38,7 +38,7 @@ namespace NTT {
     
     vl ntt_rev(vl& a) {
         vl res = ntt(a);
-        ll in = inv(a.size());
+        ll in = inv(sz(a));
         F0R(i,sz(res)) res[i] = res[i]*in % mod;
         reverse(res.begin() + 1, res.end());
         return res;

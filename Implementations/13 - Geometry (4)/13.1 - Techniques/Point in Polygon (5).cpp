@@ -1,6 +1,6 @@
 /**
 * Source: own
-* Usage: https://open.kattis.com/problems/pointinpolygon
+* Verification: https://open.kattis.com/problems/pointinpolygon
 */
 
 int n,m;

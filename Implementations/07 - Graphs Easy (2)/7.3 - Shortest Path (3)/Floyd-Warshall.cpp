@@ -1,8 +1,7 @@
 /**
-* Usage: https://open.kattis.com/problems/allpairspath
+* Description: All-Pairs Shortest Path
+* Verification: https://open.kattis.com/problems/allpairspath
 */
-
-const ll INF = 1e18;
 
 int n,m,q; // vertices, edges, queries
 ll dist[150][150], bad[150][150];

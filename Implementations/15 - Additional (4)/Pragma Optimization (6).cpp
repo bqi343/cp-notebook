@@ -8,13 +8,13 @@
 #pragma GCC optimize ("O3")
 #pragma GCC target ("sse4")
 
-int q, mx[100001], mn[100001];
+int q, mx[MX], mn[MX];
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);cout.tie(0);
     cin >> q;
-    F0R(i,100001) mx[i] = -MOD, mn[i] = MOD;
+    F0R(i,MX) mx[i] = -MOD, mn[i] = MOD;
     F0R(i,q) {
         int t,l,r,k; cin >> t >> l >> r;
         r -= l;

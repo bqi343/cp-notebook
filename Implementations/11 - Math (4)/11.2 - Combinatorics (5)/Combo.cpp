@@ -16,7 +16,6 @@ template<int SZ> struct Combo {
     	    fac[i] = mul(i,fac[i-1]), ifac[i] = inv(fac[i]);
     }
     
-    
     ll comb(ll a, ll b) {
         if (a < b || b < 0) return 0;
         return mul(mul(fac[a],ifac[b]),ifac[a-b]);

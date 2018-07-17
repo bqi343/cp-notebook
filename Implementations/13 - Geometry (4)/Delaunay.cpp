@@ -10,7 +10,8 @@ namespace Delaunay {
     
     bool inCircle (cd a, cd b, cd c, cd d) {
         a -= d, b -= d, c -= d;
-        ld x = norm(a)*cross(b,c)+norm(b)*cross(c,a)+norm(c)*cross(a,b);
+        ld x = norm(a)*cross(b,c)+norm(b)*cross(c,a)
+                +norm(c)*cross(a,b);
         if (cross(a,b,c) < 0) x *= -1;
         return x > 0;
     }
@@ -18,7 +19,7 @@ namespace Delaunay {
     vector<array<int,3>> triangulate(vcd v) { 
         // works with cyclic quads
         // not when all points are collinear!
-        // super-triangle, adjust as necessary
+        // creates super-triangle, adjusts as necessary
 
         v.pb(cd(-1e5,-1e5)); v.pb(cd(1e5,0)); v.pb(cd(0,1e5)); 
         

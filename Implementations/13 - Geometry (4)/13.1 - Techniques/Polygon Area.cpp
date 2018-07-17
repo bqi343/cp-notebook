@@ -1,6 +1,6 @@
 /**
 * Description: Shoelace Formula
-* Usage: https://open.kattis.com/problems/polygonarea
+* Verification: https://open.kattis.com/problems/polygonarea
 */ 
 
 ld area(vector<cd> v) {

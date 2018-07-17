@@ -2,7 +2,7 @@
 * Sources: Dhruv Rohatgi,
 *           https://sites.google.com/site/kc97ble
 *           /container/splay-tree/splaytree-cpp-3
-* Usage: SPOJ DYNACON1, DYNALCA
+* Verification: SPOJ DYNACON1, DYNALCA
 */
 
 template<int SZ> struct LCT {

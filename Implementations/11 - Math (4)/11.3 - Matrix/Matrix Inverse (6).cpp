@@ -1,6 +1,6 @@
 /*
 * Description: Calculates determinant mod a prime via gaussian elimination
-* Usage: CF Stranger Trees
+* Verification: CF Stranger Trees
 */
 
 ll po (ll b, ll p) { return !p?1:po(b*b%MOD,p/2)*(p&1?b:1)%MOD; }

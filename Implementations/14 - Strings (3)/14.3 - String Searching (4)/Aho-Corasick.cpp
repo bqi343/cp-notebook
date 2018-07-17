@@ -1,6 +1,6 @@
 /** 
  * Source: https://ideone.com/0cMjZJ
- * Usage: Kattis stringmultimatching
+ * Verification: Kattis stringmultimatching
 */
 
 template<int SZ> struct Aho {
@@ -57,12 +57,12 @@ template<int SZ> struct Aho {
     }
 };
 
-Aho<100001> A;
+Aho<MX> A;
 
 int n;
 
 void solve() {
-    A = Aho<100001>();
+    A = Aho<MX>();
     cin >> n;
     F0R(i,n) {
         string pat; getline(cin,pat); if (!i) getline(cin,pat);

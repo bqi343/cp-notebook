@@ -1,6 +1,6 @@
 /**
-* Description: Define your own comparator / hash function
 * Source: StackOverflow
+* Description: Define your own comparator / hash function
 */
 
 struct cmp {

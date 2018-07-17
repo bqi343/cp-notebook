@@ -1,6 +1,6 @@
 /**
 * Source: Own
-* Usage: https://codefights.com/tournaments/s8thqrnQL2YPK7XQt/L
+* Verification: https://codefights.com/tournaments/s8thqrnQL2YPK7XQt/L
 */
 
 typedef pair<cd,ld> circle;

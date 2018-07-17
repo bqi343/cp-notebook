@@ -1,9 +1,5 @@
-/**
-* Classic
-*/
-
-int n, visit[100001];
-vi adj[100001];
+int n, visit[MX];
+vi adj[MX];
 
 void dfs(int node) {
     if (visit[node]) return;
@@ -18,8 +14,7 @@ int main() {
 	cin >> n;
 	F0R(i,n-1) {
 	    int a,b; cin >> a >> b;
-	    adj[a].pb(b);
-	    adj[b].pb(a);
+	    adj[a].pb(b), adj[b].pb(a);
 	}
 	dfs(1);
 }

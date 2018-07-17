@@ -1,6 +1,6 @@
 /**
 * Source: Wikibooks
-* Usage: https://open.kattis.com/problems/convexhull
+* Verification: https://open.kattis.com/problems/convexhull
 */
 
 ll cross(pi O, pi A, pi B) {

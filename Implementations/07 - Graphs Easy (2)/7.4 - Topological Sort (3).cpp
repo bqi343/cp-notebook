@@ -2,9 +2,9 @@
 * Description: sorts vertices such that if there exists an edge x->y, then x goes before y
 */
 
-struct Topo {
-    int N, in[MX];
-    vi res, adj[MX];
+template<int SZ> struct Topo {
+    int N, in[SZ];
+    vi res, adj[SZ];
     
     void addEdge(int x, int y) {
     	adj[x].pb(y), in[y] ++;

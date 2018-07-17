@@ -12,7 +12,7 @@ template <int V> struct HeavyLight { // sum queries, sum updates
     LazySegTree<V> tree;
 
     void init() {
-        int n = graph.size();
+        int n = sz(graph)-1;
         FOR(i,1,n+1) heavy[i] = -1;
         parent[1] = -1, depth[1] = 0;
         dfs(1);

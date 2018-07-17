@@ -1,7 +1,7 @@
 /**
 * Source: GeeksForGeeks
 * Description: Nlog^2N, can be improved
-* Use: https://open.kattis.com/problems/closestpair2
+* Usage: https://open.kattis.com/problems/closestpair2
 */
 
 pair<double,pair<pd,pd>> MN = {INF,{{0,0},{0,0}}};
@@ -19,7 +19,7 @@ double dist(pd a, pd b) {
 
 pair<double,pair<pd,pd>> strip(vector<pd> v, double di) {
     pair<double,pair<pd,pd>> ans = MN;
-    F0R(i,v.size()) FOR(j,i+1,v.size()) {
+    F0R(i,sz(v)) FOR(j,i+1,sz(v)) {
         if (v[i].s+di <= v[j].s) break;
         ans = min(ans,{dist(v[i],v[j]),{v[i],v[j]}});
     }
@@ -47,7 +47,7 @@ int main() {
 	    if (n == 0) break;
 	    vector<pd> v(n);
 	    F0R(i,n) cin >> v[i].f >> v[i].s;
-	    sort(v.begin(),v.end());
+	    sort(all(v));
 	    auto a = bes(v);
 	    cout << a.s.f.f << " " << a.s.f.s << " " << a.s.s.f << " " << a.s.s.s << "\n";
 	}

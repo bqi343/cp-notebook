@@ -1,6 +1,6 @@
 /**
 * Description: NTT Application
-* Usage: 2017 VT HSPC - Alien Codebreaking
+* Verification: 2017 VT HSPC - Alien Codebreaking
 */
 
 struct Base {

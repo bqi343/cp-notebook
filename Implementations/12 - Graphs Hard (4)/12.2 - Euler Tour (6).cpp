@@ -1,6 +1,6 @@
 /**
 * Description: extra log factor
-* Usage: https://open.kattis.com/problems/eulerianpath
+* Verification: https://open.kattis.com/problems/eulerianpath
 */
 
 struct Euler {

@@ -1,4 +1,7 @@
-// https://open.kattis.com/problems/knapsack
+/**
+* Description: solves knapsack in pseudo-polynomial time
+* Verification: https://open.kattis.com/problems/knapsack
+*/
 
 double C;
 int n,v[2000],w[2000],dp[2001][2001];
@@ -13,8 +16,4 @@ void solve() {
     vi ans;
     int x = C;
     F0Rd(i,n) if (dp[i][x] != dp[i+1][x]) x -= w[i], ans.pb(i);
-    
-    cout << ans.size() << "\n";
-    for (int i: ans) cout << i << " ";
-    cout << "\n";
 }

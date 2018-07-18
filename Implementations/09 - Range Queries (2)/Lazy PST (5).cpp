@@ -1,5 +1,5 @@
 /**
-* Description: persistent segtree without lazy updates
+* Description: persistent segtree with lazy updates
 * Sources: CF, Franklyn Wang
 */ 
 

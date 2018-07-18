@@ -23,6 +23,7 @@ The list contains only the ones I have actually used.
  * [Sublime Text 3](https://www.sublimetext.com/)
    * [Build System](https://stackoverflow.com/questions/23789410/how-to-edit-sublime-text-build-settings)
    * [CF](http://codeforces.com/blog/entry/47152)
+   * [Test Cases](https://github.com/Jatana/FastOlympicCoding)
  * [Geany](https://www.geany.org/)
  * [Visual Studio Code](https://code.visualstudio.com/)
  * [XCode](https://developer.apple.com/xcode/)

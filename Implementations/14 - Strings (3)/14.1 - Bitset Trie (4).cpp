@@ -22,7 +22,7 @@ template<int MX> struct tri {
         }
     }
     
-    ll test(ll x) {
+    ll test(ll x) { // compute max xor
         if (sz[0] == 0) return -INF;
         int cur = 0;
         F0Rd(i,MXBIT) {

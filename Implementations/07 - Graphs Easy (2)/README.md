@@ -49,6 +49,7 @@
       * [Cornell](https://www.cs.cornell.edu/~wdtseng/icpc/notes/graph_part2.pdf)
       * CPH (13, Shortest Paths)
       * [CPC.8](https://github.com/SuprDewd/T-414-AFLV/tree/master/08_graphs_2)
+      * [Elegant Solutions](https://www.quora.com/What-are-some-competitive-programming-problems-with-really-elegant-solutions?page_size=20&redirected_qid=834081#!n=18)
     * Problem(s)
       * [EZDIJKST](http://www.spoj.com/problems/EZDIJKST/en/)
       * [ARBITRAG](http://www.spoj.com/problems/ARBITRAG/)

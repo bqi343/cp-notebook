@@ -18,10 +18,6 @@
         * CPH (9, Range Queries)
         * [Topcoder BIT](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/)
         * [CSAcademy BIT](https://csacademy.com/lesson/fenwick_trees)
-    * Indexed Set
-      * Tutorial
-        * [Codeforces](http://codeforces.com/blog/entry/11080)
-      * Often used in place of BIT
     * Range Minimum Query
       * Tutorial
         * [Wikipedia](https://en.wikipedia.org/wiki/Range_minimum_query)
@@ -66,6 +62,13 @@
         * [Strings](https://csacademy.com/contest/archive/task/strings/) [](181)
         * [Points & Distances](https://www.hackerearth.com/problem/algorithm/septembereasy-points-and-distances-d30d0e6b/description/) [](185)
         * [A2OJ](https://a2oj.com/category?ID=14)
+      * C++ STL
+        * Indexed Set
+          * [Codeforces Tutorial](http://codeforces.com/blog/entry/11080)
+          * Good to know for gold, as sometimes it can be used in place of BIT
+        * Rope
+          * [Codeforces Tutorial](https://codeforces.com/blog/entry/10355)
+      
 ## 5
 
   * Persistent Segment Tree

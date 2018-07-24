@@ -7,32 +7,33 @@ template<int SZ> struct LCA {
     const int MAXK = 32-__builtin_clz(SZ);
     
     int N, R = 1; // vertices from 1 to N, R = root
-    vi edges[SZ];
-    int parK[32-__builtin_clz(SZ)][SZ], depth[SZ];
+    vi adj[SZ];
+    int par[32-__builtin_clz(SZ)][SZ], depth[SZ];
     
     void addEdge(int u, int v) {
-        edges[u].pb(v), edges[v].pb(u);
+        adj[u].pb(v), adj[v].pb(u);
     }
     
     void dfs(int u, int prev){
-        parK[0][u] = prev;
+        par[0][u] = prev;
         depth[u] = depth[prev]+1;
-        for (int v: edges[u]) if (v != prev) dfs(v, u);
+        for (int v: adj[u]) if (v != prev) dfs(v, u);
     }
     
-    void construct() {
+    void init(int _N) {
+    	N = _N;
         dfs(R, 0);
         FOR(k,1,MAXK) FOR(i,1,N+1)
-            parK[k][i] = parK[k-1][parK[k-1][i]];
+            par[k][i] = par[k-1][par[k-1][i]];
     }
     
     int lca(int u, int v){
         if (depth[u] < depth[v]) swap(u,v);
         
-        F0Rd(k,MAXK) if (depth[u] >= depth[v]+(1<<k))  u = parK[k][u];
-        F0Rd(k,MAXK) if (parK[k][u] != parK[k][v]) u = parK[k][u], v = parK[k][v];
+        F0Rd(k,MAXK) if (depth[u] >= depth[v]+(1<<k))  u = par[k][u];
+        F0Rd(k,MAXK) if (par[k][u] != par[k][v]) u = par[k][u], v = par[k][v];
         
-        if(u != v) u = parK[0][u], v = parK[0][v];
+        if(u != v) u = par[0][u], v = par[0][v];
         return u;
     }
     

@@ -3,17 +3,17 @@
 * Description: Use for both LCA's
 */
 
-LCA L;
+LCA<MX> L;
 
-int Q;
+int N,Q;
 
 int main() {
-    cin >> L.V >> Q >> L.R;
-    F0R(i,L.V-1) {
+    cin >> N >> Q >> L.R;
+    F0R(i,N-1) {
         int u,v; cin >> u >> v;
         L.addEdge(u,v);
     }
-    L.construct();
+    L.init(N);
     
     F0R(i,Q) {
         int u,v; cin >> u >> v;

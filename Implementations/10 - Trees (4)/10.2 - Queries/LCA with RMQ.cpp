@@ -6,27 +6,28 @@
 */
 
 template<int SZ> struct LCA {
-    vi edges[SZ];
+    vi adj[SZ];
     RMQ<pi,2*SZ> r;
     vpi tmp;
     int depth[SZ], pos[SZ];
     
-    int V, R;
+    int N, R = 1;
     
     void addEdge(int u, int v) {
-        edges[u].pb(v), edges[v].pb(u);
+        adj[u].pb(v), adj[v].pb(u);
     }
     
     void dfs(int u, int prev){
         pos[u] = sz(tmp); depth[u] = depth[prev]+1;
         tmp.pb({depth[u],u});
-        for (int v: edges[u]) if (v != prev) {
+        for (int v: adj[u]) if (v != prev) {
             dfs(v, u);
             tmp.pb({depth[u],u});
         }
     }
     
-    void construct() {
+    void init(int _N) {
+    	N = _N;
         dfs(R, 0);
         r.build(tmp);
     }

@@ -65,7 +65,7 @@ function genName() {
 
 function onOpen() {
   ui.createAddonMenu()
-      .addItem('Initialize', 'init')
+      .addItem('Initialize Spreadsheet', 'init')
       .addItem('Generate Results', 'RESULTS')
       .addItem('Email Results', 'EMAIL')
       .addToUi();
@@ -111,11 +111,9 @@ function input() {
     sheet.getRange(3,2).setValue(8);
   }
   
-  emailMode = parseInt(sheet.getRange(4,2).getValue());
-  if (isNaN(emailMode)) {
-    emailMode = 0;
-    sheet.getRange(4,2).setValue(0);
-  }
+  emailMode = 0;
+  if (sheet.getRange(4,2).getValue() == "Active") emailMode = 1;
+  else emailMode = 0;
   
   yourEmail = sheet.getRange(5,2).getValue();
   
@@ -143,7 +141,12 @@ function init() {
   sheet.getRange(2,1).setValue("# of Problems");
   sheet.getRange(3,1).setValue("# of Winners");
   sheet.getRange(4,1).setValue("Email Mode");
+  
+  var rule = SpreadsheetApp.newDataValidation().requireValueInList(['Inactive', 'Active'], true).build();
+  sheet.getRange(4,2).setDataValidation(rule);
+  
   sheet.getRange(5,1).setValue("Your Email");
+  sheet.getRange(5,2).setValue("[Email]");
   
   for (var i = 1; i <= numProblems; ++i) sheet.getRange(nameRow-1,i+probCol-1).setValue(i);
   sheet.getRange(1,probCol-1,3,1).setValues([["Answer Key"],["%"],["Weight"]]);
@@ -169,6 +172,10 @@ function normalizeScore() {
     sheet.getRange(i+1,probCol-1).setValue(sheet.getRange(i+1,probCol-1).getValue()/totPoints*100); 
 }
 
+function genRGB(a) {
+  return Math.round(2*a*255/100);
+}
+
 function RESULTS() {
   init();
   
@@ -192,21 +199,31 @@ function RESULTS() {
     arr[0].push(100*ans/numParticipants);
   }
   sheet.getRange(2,probCol,1,numProblems).setValues(arr); 
+  for (var i = 0; i < numProblems; ++i) {
+    var v = genRGB(arr[0][i]);
+    if (v >= 255) sheet.getRange(2,probCol+i).setBackgroundRGB(2*255-v,255,2*255-v);
+    else sheet.getRange(2,probCol+i).setBackgroundRGB(255,v,v);
+  }
   
-  for (var i = 0; i < numProblems; ++i) arr[0][i] = getWeight(arr[0][i],0); // now generate weights
-
   for (var i = 0; i < numProblems; ++i) { 
+    arr[0][i] = getWeight(arr[0][i],0); // generate weights
     sheet.getRange(3,probCol+i).setValue(arr[0][i]); // set weights 
     totPoints += arr[0][i];
   }
   
+  var tot = [];
+  for (var i = 0; i < numParticipants; ++i) tot.push(0);
+  
   for (var j = 0; j < numProblems; ++j) {
     for (var i = nameRow-1; i < nameRow-1+numParticipants; i++) {
       if (DATA[i][j+probCol-1] == DATA[0][j+probCol-1]) {
-        sheet.getRange(i+1,probCol-1).setValue(sheet.getRange(i+1,probCol-1).getValue()+arr[0][j]);
+        tot[i-(nameRow-1)] += arr[0][j];
       } 
     }
   }
+  
+  for (var i = nameRow-1; i < nameRow-1+numParticipants; i++) 
+    sheet.getRange(i+1,probCol-1).setValue(tot[i-(nameRow-1)]);
   
   normalizeScore();
   

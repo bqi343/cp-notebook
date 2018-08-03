@@ -7,6 +7,9 @@
  */
 
 namespace NT {
+    // see https://github.com/kth-competitive-programming/kactl/blob/master/content/number-theory/factor.h
+    // to factor long longs
+    
     vpi fac(int x) {
         vpi pri;
         

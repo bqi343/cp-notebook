@@ -1,9 +1,9 @@
 var sheet, DATA;
 var numProblems, numWinners;
-var probCol = 6, nameRow = 8;
+var nameRow, probCol;
 var ui = SpreadsheetApp.getUi();
 var name = "";
-var totPoints = 0, numParticipants = 0, emailMode, yourEmail;
+var totPoints = 0, numParticipants = 0, emailMode, yourEmail, weightSystem;
 
 function moveFiles(sourceFileId, targetFolderId) {
   var file = DriveApp.getFileById(sourceFileId);
@@ -36,9 +36,10 @@ function genForm() {
   .setTitle("Name")
   .setRequired(true);
   
-  form.addTextItem()
+  var v = form.addTextItem()
   .setTitle("Email Address")
   .setRequired(true);
+  v.setValidation(FormApp.createTextValidation().setHelpText("Enter valid email.").requireTextIsEmail().build());
   
   form.addMultipleChoiceItem()
   .setTitle('I can take the tryout test on the following date.')
@@ -77,20 +78,17 @@ function Comp(a, b) {
    return a[1]-b[1];
 }
 
-function getWeight(percent, type) {
-  if (percent == 0) return 0;
-  switch (type) {
-    case 0:   
+function getWeight(prob, percent) {
+  switch(weightSystem) {
+    case "PUMaC":
+      if (percent == 0) return 0;
       return 1+Math.log(100/percent);
-    case 1:
-      if (percent <= 5.738) return 8;
-      if (percent <= 13.208) return 7;
-      if (percent <= 23.333) return 6;
-      if (percent <= 37.838) return 5;
-      if (percent <= 60.345) return 4;
-      return 3;
-    default:
+    case "ARML":
       return 1;
+    case "Original":
+      return 12075/32/(percent+175/4)-1/8; // https://docs.google.com/document/d/1Q1Rf3dI6QpXweCkAm4Yt1DOB9yKUOIW7bvxfqSEfUM8/edit
+    default:
+      return DATA[2][probCol-1+prob];
   }
 }
 
@@ -99,16 +97,16 @@ function input() {
   DATA = sheet.getDataRange().getValues();
   genName();
   
-  numProblems = parseInt(sheet.getRange(2,2).getValue());
+  numProblems = parseInt(sheet.getRange(3,2).getValue());
   if (isNaN(numProblems)) {
     numProblems = 12;
-    sheet.getRange(2,2).setValue(12);
+    sheet.getRange(3,2).setValue(12);
   }
   
-  win = parseInt(sheet.getRange(3,2).getValue());
+  win = parseInt(sheet.getRange(4,2).getValue());
   if (isNaN(win)) {
     win = 8;
-    sheet.getRange(3,2).setValue(8);
+    sheet.getRange(4,2).setValue(8);
   }
   
   emailMode = 0;
@@ -116,16 +114,9 @@ function input() {
   else emailMode = 0;
   
   yourEmail = sheet.getRange(5,2).getValue();
-  
-  numParticipants = 0;
-  for (var i = nameRow; i <= 100; ++i) if(sheet.getRange(i,1).getValue().length > 0) numParticipants ++; 
-  sheet.getRange(1,2).setValue(numParticipants);
 }
 
-function init() {
-  input();
-  genForm();
-  
+function format() {
   // correct # of rows + columns
   if (sheet.getMaxColumns() >= numProblems+probCol) sheet.deleteColumns(numProblems+probCol,sheet.getMaxColumns()-(numProblems+probCol)+1); 
   if (sheet.getMaxRows() >= 100) sheet.deleteRows(100,sheet.getMaxRows()-100+1); 
@@ -135,22 +126,6 @@ function init() {
   sheet.getRange(1,1,sheet.getMaxRows(),sheet.getMaxColumns()).setBackground("white");
   sheet.getRange(1,1,sheet.getMaxRows(),sheet.getMaxColumns()).setHorizontalAlignment("left");
   sheet.getRange(1,1,sheet.getMaxRows(),sheet.getMaxColumns()).setFontFamily("Times New Roman");
-  
-  // labels
-  sheet.getRange(1,1).setValue("# of Participants");
-  sheet.getRange(2,1).setValue("# of Problems");
-  sheet.getRange(3,1).setValue("# of Winners");
-  sheet.getRange(4,1).setValue("Email Mode");
-  
-  var rule = SpreadsheetApp.newDataValidation().requireValueInList(['Inactive', 'Active'], true).build();
-  sheet.getRange(4,2).setDataValidation(rule);
-  
-  sheet.getRange(5,1).setValue("Your Email");
-  sheet.getRange(5,2).setValue("[Email]");
-  for (var i = 1; i <= numProblems; ++i) sheet.getRange(nameRow-1,i+probCol-1).setValue(i);
-  sheet.getRange(1,probCol-1,3,1).setValues([["Answer Key"],["%"],["Weight"]]);
-  sheet.getRange(1,probCol-1,3,1).setFontStyle("italic");
-  sheet.getRange(nameRow-1,1,1,probCol-1).setValues([["Name","Email","Email Sent","School","Score"]]);
   
   // freezing
   sheet.setFrozenColumns(probCol-1);
@@ -163,7 +138,38 @@ function init() {
         sheet.autoResizeColumn(i);
         if (sheet.getColumnWidth(i) < 40) sheet.setColumnWidth(i,40);
       }
-  }
+  }  
+}
+
+var info = ["# of Participants","# of Problems","# of Winners","Scoring System","Email Mode","Your Email"];
+var col = ["Name","Email","Email Sent","School","Score"];
+
+function label() {
+  sheet.getRange(1,1).setFontWeight("bold");
+  sheet.getRange(1,1).setValue("Basic Information"); 
+  for (var i = 0; i < info.length; ++i) sheet.getRange(i+2,1).setValue(info[i]); 
+  sheet.getRange(5,2).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(['Given', 'ARML', 'PUMaC','Original'], true).build());
+  sheet.getRange(6,2).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(['Inactive', 'Active'], true).build());
+  sheet.getRange(7,2).setValue("[Email]");
+  
+  nameRow = info.length+4;
+  probCol = col.length+1;
+  
+  for (var i = 1; i <= numProblems; ++i) sheet.getRange(nameRow-1,i+probCol-1).setValue(i);
+  sheet.getRange(1,probCol-1,3,1).setValues([["Answer Key"],["%"],["Weight"]]);
+  sheet.getRange(1,probCol-1,3,1).setFontStyle("italic");
+  sheet.getRange(nameRow-1,1,1,probCol-1).setValues([col]);
+}
+
+function init() {
+  input();
+  genForm();
+  label();
+  format();
+  
+  numParticipants = 0;
+  for (var i = nameRow; i <= 100; ++i) if(sheet.getRange(i,1).getValue().length > 0) numParticipants ++; 
+  sheet.getRange(2,2).setValue(numParticipants);
 }
 
 function normalizeScore() {
@@ -204,8 +210,9 @@ function RESULTS() {
     else sheet.getRange(2,probCol+i).setBackgroundRGB(255,v,v);
   }
   
+  weightSystem = DATA[4][1];
   for (var i = 0; i < numProblems; ++i) { 
-    arr[0][i] = getWeight(arr[0][i],0); // generate weights
+    arr[0][i] = getWeight(i,arr[0][i]); // generate weights
     sheet.getRange(3,probCol+i).setValue(arr[0][i]); // set weights 
     totPoints += arr[0][i];
   }
@@ -223,8 +230,6 @@ function RESULTS() {
   
   for (var i = nameRow-1; i < nameRow-1+numParticipants; i++) 
     sheet.getRange(i+1,probCol-1).setValue(tot[i-(nameRow-1)]);
-  
-  normalizeScore();
   
   // sort participants by score
   var range = sheet.getRange(nameRow,1,numParticipants,numProblems+probCol-1);

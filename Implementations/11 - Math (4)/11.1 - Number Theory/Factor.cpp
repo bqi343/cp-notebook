@@ -1,6 +1,6 @@
 /**
 * Source: KACTL
-* Description: Factors integers up to 10^{18}
+* Description: Factors integers up to 2^{60}
 * Usage: https://www.spoj.com/problems/FACT0/
 */
 

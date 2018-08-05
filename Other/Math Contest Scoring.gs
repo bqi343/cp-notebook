@@ -161,14 +161,39 @@ function label() {
   sheet.getRange(nameRow-1,1,1,probCol-1).setValues([col]);
 }
 
+var contacts;
+
+function tri(x) {
+  x = x.toLowerCase();
+  if (x in contacts) return contacts[x];
+  return "";
+}
+
 function init() {
   input();
   genForm();
   label();
   format();
   
+  var res = ContactsApp.getContacts();
+  
+  for (var i = nameRow; i <= 100; ++i) 
+  contacts = {};
+  for (var i = 0; i < res.length; ++i) {
+    var v = res[i].getEmails();
+    for (var j = 0; j < v.length; ++j) {
+      contacts[res[i].getFullName().toLowerCase()] = v[j].getAddress().toLowerCase();
+    }
+  }
+  
   numParticipants = 0;
-  for (var i = nameRow; i <= 100; ++i) if(sheet.getRange(i,1).getValue().length > 0) numParticipants ++; 
+  for (var i = nameRow; i <= 100; ++i) 
+    if (sheet.getRange(i,1).getValue().length > 0) {
+      numParticipants ++; 
+      if (sheet.getRange(i,2).getValue().length == 0) 
+        sheet.getRange(i,2).setValue(tri(sheet.getRange(i,1).getValue()));
+    }
+  
   sheet.getRange(2,2).setValue(numParticipants);
 }
 

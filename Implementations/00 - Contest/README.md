@@ -21,9 +21,8 @@ The list contains only the ones I have actually used.
 ### Actual
 
  * [Sublime Text 3](https://www.sublimetext.com/)
-   * [Build System](https://stackoverflow.com/questions/23789410/how-to-edit-sublime-text-build-settings)
-   * [CF](http://codeforces.com/blog/entry/47152)
-   * [Test Cases](https://github.com/Jatana/FastOlympicCoding)
+   * [Editing Build Settings](https://stackoverflow.com/questions/23789410/how-to-edit-sublime-text-build-settings)
+   * [FastOlympicCoding Addon](https://github.com/Jatana/FastOlympicCoding)
  * [Geany](https://www.geany.org/)
  * [Visual Studio Code](https://code.visualstudio.com/)
  * [XCode](https://developer.apple.com/xcode/)
@@ -41,3 +40,4 @@ The list contains only the ones I have actually used.
 
  * [Intro to Command Line](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
  * [Run Python Script](https://stackoverflow.com/questions/7855996/cant-run-python-py-files-from-terminal-on-mac)
+ * [Command Line Shortcuts](https://jonsuh.com/blog/bash-command-line-shortcuts/)

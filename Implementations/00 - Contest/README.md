@@ -7,11 +7,13 @@
 
 ## Using GCC on Mac 
 
-  * [Installing GCC](http://www-scf.usc.edu/~csci104/20142/installation/gccmac.html)
-  * [How to Enable C++17](https://stackoverflow.com/questions/39091173/how-to-enable-c17-on-mac)
+ * [Installing GCC](http://www-scf.usc.edu/~csci104/20142/installation/gccmac.html)
+ * [How to Enable C++17](https://stackoverflow.com/questions/39091173/how-to-enable-c17-on-mac)
+ * [Intro to Command Line](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
+ * [Command Line Shortcuts](https://jonsuh.com/blog/bash-command-line-shortcuts/)
   
 ```
-g++-7 -std=gnu++17 Solution.cpp -o Sol
+alias G++="g++-7 -std=gnu++17 -O2 -Wall -Wl,-stack_size -Wl,0x1000000000"
 ```
 
 ## IDE
@@ -38,6 +40,4 @@ The list contains only the ones I have actually used.
 
 ## Other
 
- * [Intro to Command Line](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
  * [Run Python Script](https://stackoverflow.com/questions/7855996/cant-run-python-py-files-from-terminal-on-mac)
- * [Command Line Shortcuts](https://jonsuh.com/blog/bash-command-line-shortcuts/)

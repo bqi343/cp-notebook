@@ -4,6 +4,8 @@
 * Usage: https://www.spoj.com/problems/FACT0/
 */
 
+using namespace RPM;
+
 vl pr;
 
 template<int SZ> struct Sieve { // https://open.kattis.com/problems/primesieve
@@ -11,34 +13,15 @@ template<int SZ> struct Sieve { // https://open.kattis.com/problems/primesieve
     Sieve() {
         for (int i = 2; i*i <= SZ; ++i) if (!comp[i]) 
             for (int j = i*i; j <= SZ; j += i) comp[j] = 1;
-        FOR(i,2,SZ+1) if (isprime(i)) pr.pb(i);
+        FOR(i,2,SZ+1) if (!comp[i]) pr.pb(i);
     }
-    bool isprime(int x) {
+    bool isPrime(int x) {
         if (x == 1) return 0;
         return !comp[x];
     }
 };
 
-Sieve<1<<20> S;
-
-const int bits = 3; // if all numbers are less than 2^k, set bits = 63-k
-const ll po = 1<<bits;
-
-ll mod_mul(ll a, ll b, ll &c) { 
-    // return (__int128(a)*b) % c;
-    ll x = 0;
-	for (; b; b >>= bits, a = (a<<bits)%c) 
-		x = (x + (a * (b & (po-1))) % c) % c;
-	return x;
-}
-
-ll mod_pow(ll a, ll b, ll mod) {
-	if (b == 0) return 1;
-	ll res = mod_pow(a, b / 2, mod);
-	res = mod_mul(res, res, mod);
-	if (b & 1) return mod_mul(res, a, mod);
-	return res;
-}
+Sieve<1<<20> S; // should take care of all primes up to n^(1/3)
 
 bool prime(ll p) { // miller-rabin
 	if (p == 2) return true;
@@ -57,9 +40,7 @@ bool prime(ll p) { // miller-rabin
 	return true;
 }
 
-ll f(ll a, ll n, ll &has) {
-	return (mod_mul(a, a, n) + has) % n;
-}
+ll f(ll a, ll n, ll &has) { return (mod_mul(a, a, n) + has) % n; }
 
 vpl factor(ll d) {
 	vpl res;

@@ -4,6 +4,15 @@
 */
 
 namespace VecOp {
+    std::ostream& operator<<(std::ostream &strm, const vi& a) {
+        cout << "{";
+        F0R(i,sz(a)) {
+            if (i) cout << ", ";
+            cout << a[i];
+        }
+        cout << "}\n";
+        return strm;
+    }
     vi operator+(const vi& l, const vi& r) {
         vi res(max(sz(l),sz(r)));
         F0R(i,sz(l)) res[i] = l[i];
@@ -31,23 +40,14 @@ namespace VecOp {
     template<class T> T operator-=(T& l, const T& r) { return l = l-r; }
     template<class T> T operator*=(T& l, const T& r) { return l = l*r; }
     
-    vi rem(vi a, vi b) {
+    vi rem(vi a, vi b) { // assume leading coefficient of b is 1 
         while (sz(a) >= sz(b)) {
-            vi v(sz(a)-sz(b));  v.pb(a.back());
-            a -= b*v;
+            vi v = {a.back()}; v *= b;
+            v.insert(v.begin(),sz(a)-sz(b),0);
+            a -= v;
             while (sz(a) && a.back() == 0) a.pop_back();
         }
         return a;
-    }
-    
-    std::ostream& operator<<(std::ostream &strm, const vi& a) {
-        cout << "{";
-        F0R(i,sz(a)) {
-            if (i) cout << ", ";
-            cout << a[i];
-        }
-        cout << "}\n";
-        return strm;
     }
         
     vi interpolate(vpi v) {

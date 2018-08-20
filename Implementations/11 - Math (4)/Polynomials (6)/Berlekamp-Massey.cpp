@@ -4,6 +4,8 @@
 * Usage: http://codeforces.com/contest/506/problem/E
 */
 
+using namespace VecOp;
+
 struct BM {
     vector<vi> seq;
     vi x, fail, delta, des;

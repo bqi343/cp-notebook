@@ -3,7 +3,13 @@
     * use for NTT
 */
 
+using namespace ModOp; 
+
 namespace VecOp {
+    template<class T> T operator+=(T& l, const T& r) { return l = l+r; }
+    template<class T> T operator-=(T& l, const T& r) { return l = l-r; }
+    template<class T> T operator*=(T& l, const T& r) { return l = l*r; }
+
     std::ostream& operator<<(std::ostream &strm, const vi& a) {
         cout << "{";
         F0R(i,sz(a)) {
@@ -13,6 +19,7 @@ namespace VecOp {
         cout << "}\n";
         return strm;
     }
+
     vi operator+(const vi& l, const vi& r) {
         vi res(max(sz(l),sz(r)));
         F0R(i,sz(l)) res[i] = l[i];
@@ -32,15 +39,16 @@ namespace VecOp {
         return x;
     }
     vi operator*(const vi& l, const int& r) {
-        vi L = l;
-        for (int& i: L) MUL(i,r);
+        vi L = l; 
+        for (int& i: L) MUL(i,r); 
         return L;
     }
-    template<class T> T operator+=(T& l, const T& r) { return l = l+r; }
-    template<class T> T operator-=(T& l, const T& r) { return l = l-r; }
-    template<class T> T operator*=(T& l, const T& r) { return l = l*r; }
+    vi operator*(const int& l, const vi& r) { return r*l; }
+    vi operator*=(vi& l, const int& r) { return l = l*r; }
     
-    vi rem(vi a, vi b) { // assume leading coefficient of b is 1 
+    vi rem(vi a, vi b) { 
+        while (sz(b) && b.back() == 0) b.pop_back();
+        assert(sz(b)); b *= inv(b.back());
         while (sz(a) >= sz(b)) {
             int k = a.back();
             F0R(i,sz(b)) SUB(a[sz(a)-sz(b)+i],mul(k,b[i]));

@@ -6,6 +6,14 @@
 using namespace ModOp; 
 
 namespace PairOp {
+	istream& operator>>(istream& is, pi& p) {
+        is >> p.f >> p.s;
+        return is;
+    }
+	ostream& operator<<(ostream &strm, const pi& a) {
+	    strm << a.f << " " << a.s << " | ";
+	    return strm;
+	}
     template<class T> T operator+=(T& l, const T& r) { return l = l+r; }
     template<class T> T operator-=(T& l, const T& r) { return l = l-r; }
     template<class T> T operator*=(T& l, const T& r) { return l = l*r; }
@@ -16,9 +24,4 @@ namespace PairOp {
 	pi operator*(const pi& l, const int& r) { return l*pi(r,r); }
 	pi operator*(const int& r, const pi& l) { return l*r; }
 	pi operator*=(pi& l, const int& r) { return l = l*r; }
-
-	std::ostream& operator<<(std::ostream &strm, const pi& a) {
-	    strm << a.f << " " << a.s << " | ";
-	    return strm;
-	}
 }

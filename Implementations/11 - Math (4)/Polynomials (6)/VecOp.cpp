@@ -42,9 +42,8 @@ namespace VecOp {
     
     vi rem(vi a, vi b) { // assume leading coefficient of b is 1 
         while (sz(a) >= sz(b)) {
-            vi v = {a.back()}; v *= b;
-            v.insert(v.begin(),sz(a)-sz(b),0);
-            a -= v;
+            int k = a.back();
+            F0R(i,sz(b)) SUB(a[sz(a)-sz(b)+i],mul(k,b[i]));
             while (sz(a) && a.back() == 0) a.pop_back();
         }
         return a;

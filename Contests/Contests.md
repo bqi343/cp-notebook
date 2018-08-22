@@ -23,10 +23,10 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * [HackerEarth](http://hackerearth.com/)
     * Monthly "Easy"
   * [Don Mills OJ](http://dmoj.ca/)
-  * ~~[Codechef](http://codechef.com/)~~
-    * ~~Lunchtime, Cookoff~~
-  * ~~[CodeFights](https://codefights.com/)~~
-    * ~~Marathons: 10 problems, 60 minutes~~
+  * [Kattis](https://open.kattis.com/)
+    * random ICPC stuff
+  * [Codechef](http://codechef.com/)
+    * Lunchtime, Cookoff
 
 ## Annual Contests 
   * [BattleCode](https://www.battlecode.org): January

@@ -3,8 +3,6 @@
 * Source: CSA - FFT And Variations
 */
 
-typedef vector<double> vd;
-
 namespace andConv {
     int get(int s) {
         return s > 1 ? 32 - __builtin_clz(s - 1) : 0;

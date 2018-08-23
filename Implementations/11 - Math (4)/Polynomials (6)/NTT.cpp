@@ -1,8 +1,9 @@
 /**
 * Description: Use if you are working with non-negative integers
 * Usage: http://codeforces.com/contest/632/problem/E
-* Dependencies: vector, mod
 */
+
+using namespace VecOp;
 
 const int MOD = (119 << 23) + 1, root = 3; // = 998244353
 // For p < 2^30 there is also e.g. (5 << 25, 3), (7 << 26, 3),

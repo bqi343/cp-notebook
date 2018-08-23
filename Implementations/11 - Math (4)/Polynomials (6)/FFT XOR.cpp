@@ -4,8 +4,6 @@
 * Verification: HackerRank XOR Subsequence
 */
 
-typedef vector<double> vd;
-
 namespace FWHT {
     int get(int s) {
         return s > 1 ? 32 - __builtin_clz(s - 1) : 0;

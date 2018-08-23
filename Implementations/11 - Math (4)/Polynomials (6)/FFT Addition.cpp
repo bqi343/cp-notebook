@@ -3,8 +3,6 @@
 * Verification: SPOJ polymul, CSA manhattan
 */
 
-typedef vector<cd> vcd;
-
 namespace FFT {
     int get(int s) {
         return s > 1 ? 32 - __builtin_clz(s - 1) : 0;

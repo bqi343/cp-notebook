@@ -1,18 +1,14 @@
 /**
 * Source: own
 * Verification: https://codeforces.com/contest/342/problem/E
-* Description: supports the following operations on a tree
- * making node red
- * querying distance to closest red node
+* Description: can support tree path queries and updates
 */
 
 template<int SZ> struct centroidDecomp {
-    int N;
     bool done[SZ];
-    int sub[SZ], par[SZ], ans[SZ], cen[SZ];
-    vi dist[SZ], adj[SZ];
-    
-    // INITIALIZE
+    int sub[SZ], par[SZ], ans[SZ];
+    vi dist[SZ], adj[SZ], ANS[SZ];
+    pi cen[SZ];
     
     void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
     
@@ -25,11 +21,11 @@ template<int SZ> struct centroidDecomp {
         }
     }
     
-    void genDist(int par, int no, int t, int dis) {
-        dist[no].pb(dis);
+    void genDist(int par, int no) {
         for (int i: adj[no]) if (!done[i] && i != par) {
-            cen[i] = t;
-            genDist(no,i,t,dis+1);
+            cen[i] = cen[no]; 
+            dist[i].pb(dist[no].back()+1);
+            genDist(no,i);
         }
     }
     
@@ -44,28 +40,32 @@ template<int SZ> struct centroidDecomp {
         }
     }
     
-    void solve (int x) {
+    void solve (int x) { // call solve(1) to initialize
         x = getCentroid(x); done[x] = 1;
-        genDist(0,x,x,0);
+        dist[x].pb(0);
+        for (int i: adj[x]) if (!done[i]) {
+            cen[i] = {x,sz(ANS[x])}; 
+            dist[i].pb(1);
+            genDist(x,i);
+            ANS[x].pb(0);
+        }
         for (int i: adj[x]) if (!done[i]) solve(i);
     }
     
-    void init() {
-    	FOR(i,1,N+1) ans[i] = MOD;
-    	solve(1);
-    }
-    
-    // QUERY 
-    
     void upd(int v) {
-        for (int V = v, ind = sz(dist[v])-1; V; V = cen[V], ind --) 
-            ans[V] = min(ans[V],dist[v][ind]);
+        pi V = {v,-1};
+        for (int ind = sz(dist[v])-1; V.f; V = cen[V.f], ind --) {
+            ans[V.f] ++;
+            if (V.s != -1) ANS[V.f][V.s] ++;
+        }
     }
     
     int query(int v) {
-        int ret = MOD;
-        for (int V = v, ind = sz(dist[v])-1; V; V = cen[V], ind --) 
-            ret = min(ret,ans[V]+dist[v][ind]);
+        pi V = {v,-1}; int ret = 0;
+        for (int ind = sz(dist[v])-1; V.f; V = cen[V.f], ind --) {
+            ret += ans[V.f];
+            if (V.s != -1) ret -= ANS[V.f][V.s];
+        }
         return ret;
     }
 };

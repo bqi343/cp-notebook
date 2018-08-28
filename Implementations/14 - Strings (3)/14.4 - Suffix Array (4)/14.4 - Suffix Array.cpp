@@ -1,7 +1,6 @@
 /**
 * Source: SuprDewd CP Course
 * Task: https://open.kattis.com/problems/suffixsorting
-* KACTL version is slightly faster
 * Verification: USACO December 2017: Standing out from the herd: http://usaco.org/index.php?page=viewproblem2&cpid=768
 * Code to Verify: https://pastebin.com/y2Z9FYr6
 */
@@ -13,20 +12,18 @@ struct suffix_array {
     vi idx;
     string str;
     
-    /*void bucket(int ind) {
+    void bucket_sort(vector<array<int,3>>& v, int ind) {
         int mn = MOD, mx = -MOD;
+        for (auto a: v) mn = min(mn,a[ind]), mx = max(mx,a[ind]);
         
-        for (auto a: L) mn = min(mn,a[ind]), mx = max(mx,a[ind]);
-        vector<array<int,3>> tmp[mx-mn+1];
-        F0Rd(i,sz(L)) tmp[L[i][ind]-mn].pb(L[i]);
+        vi tmp(mx-mn+1), st(mx-mn+1);
+        F0R(i,sz(v)) tmp[L[i][ind]-mn] ++;
+        FOR(i,1,mx-mn+1) st[i] = st[i-1]+tmp[i-1];
         
-        int nex = 0;
-        F0R(i,mx-mn+1) for (auto a: tmp[i]) L[nex++] = a;
+        vector<array<int,3>> V(sz(v));
+        F0R(i,sz(v)) V[st[v[i][ind]-mn]++] = v[i];
+        v = V;
     }
-    
-    void bucket_sort() {
-        bucket(1), bucket(0);
-    }*/
     
     suffix_array(string _str) {
         str = _str; N = sz(str);
@@ -36,7 +33,7 @@ struct suffix_array {
         for (int stp = 1, cnt = 1; cnt < N; stp ++, cnt *= 2) {
             P.pb(vi(N));
             F0R(i,N) L[i] = {P[stp-1][i],i+cnt < N ? P[stp-1][i+cnt] : -1,i};
-            sort(all(L)); // bucket_sort();
+            bucket_sort(L,1); bucket_sort(L,0); // sort(all(L));
             F0R(i,N) {
                 if (i && mp(L[i][0],L[i][1]) == mp(L[i-1][0],L[i-1][1])) P[stp][L[i][2]] = P[stp][L[i-1][2]];
                 else P[stp][L[i][2]] = i;

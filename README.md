@@ -14,6 +14,8 @@ Attempt some USACO Bronze problems. Assuming you know how the input / output wor
 
 Check out the rest of this compilation! If you have done well in math contests, then it shouldn't be too hard to pick up competitive programming as well.
 
+[E869120 Tutorial](http://codeforces.com/blog/entry/53341)
+
 ## How do you train for USACO Platinum?
 
 * Do as many contests as possible. 

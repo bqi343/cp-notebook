@@ -1,15 +1,14 @@
 /**
- * Description: if you add one to dp[0][i]
-    * it adds one to dp[SZ][j] for all j s.t. (j&i) = j
+ * Description: if you add one to dp[i]
+    * it adds one to result[j] for all j such that j&i = j
  */
 
-const int SZ = 20;
-
-int dp[SZ+1][1<<SZ];
-
-void prop() {
-    F0R(i,SZ) F0R(j,1<<SZ) {
-        dp[i+1][j] += dp[i][j];
-        if (j&(1<<i)) dp[i+1][j^(1<<i)] += dp[i][j];
+vi sos (vi dp) {
+    int SZ = 31-__builtin_clz(sz(dp)); // sz(dp) = 1<<SZ
+    F0R(i,SZ) {
+        vi res = dp;
+        F0R(j,1<<SZ) if (j&(1<<i)) res[j^(1<<i)] += dp[j];
+        swap(res,dp);
     }
+    return dp;
 }

@@ -13,7 +13,7 @@
  * [Command Line Shortcuts](https://jonsuh.com/blog/bash-command-line-shortcuts/)
   
 ```
-alias G++="g++-7 -std=gnu++17 -O2 -Wall -Wl,-stack_size -Wl,0x1000000000"
+co() { g++-8 -std=c++17 -Ofast -Wall  -Wl,-stack_size -Wl,0x10000000 -o $1 $1.cpp }
 ```
 
 ## IDE

@@ -5,21 +5,20 @@
 */
 
 template<int SZ> struct BCC {
-    int N, ti = 0;
+    int N;
     vi adj[SZ];
-    int disc[SZ], low[SZ], comp[SZ], par[SZ];
     vector<vpi> fin;
+    
+    void addEdge(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
+    
+    int ti = 0, disc[SZ], low[SZ], comp[SZ], par[SZ];
     vpi st;
-    
-    void addEdge(int u, int v) {
-        adj[u].pb(v), adj[v].pb(u);
-    }
-    
+
     void BCCutil(int u, bool root = 0) {
         disc[u] = low[u] = ti++;
         int child = 0;
         
-        for (int i: adj[u]) if (i != par[u]) {
+        for (int i: adj[u]) if (i != par[u]) 
             if (disc[i] == -1) {
                 child ++; par[i] = u;
                 st.pb({u,i});
@@ -36,10 +35,10 @@ template<int SZ> struct BCC {
                 low[u] = min(low[u],disc[i]);
                 st.pb({u,i});
             }
-        }
     }
     
-    void bcc() {
+    void bcc(int _N) {
+        N = _N;
         FOR(i,1,N+1) par[i] = disc[i] = low[i] = -1;
         FOR(i,1,N+1) if (disc[i] == -1) {
             BCCutil(i,1);

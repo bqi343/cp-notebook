@@ -15,7 +15,7 @@ I recommend that you use C++11 over Java due to various reasons, such as
   * [Awesome List (Inishan)](http://codeforces.com/blog/entry/23054)
 
 ### Books
-  * [Competitive Programming Handbook (CPH)](https://cses.fi/book.pdf)
+  * [Competitive Programming Handbook (CPH)](https://cses.fi/book/)
     * also see Guide to Competitive Programming and problemset
   * [Competitive Programming Book (Steven, Felix)](http://www.comp.nus.edu.sg/~stevenha/myteaching/competitive_programming/cp1.pdf)
   * [Samuel Hsiang Guide](https://github.com/alwayswimmin/cs_guide)

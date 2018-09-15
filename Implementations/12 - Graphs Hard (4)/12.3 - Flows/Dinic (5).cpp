@@ -60,11 +60,7 @@ template<int SZ> struct Dinic {
     ll maxFlow(int s, int t) {
         if (s == t) return -1;
         ll total = 0;  
-      
-        while (bfs(s, t)) {
-            while (ll flow = sendFlow(s, INT_MAX, t)) total += flow;
-        }
-     
+        while (bfs(s, t))  while (ll flow = sendFlow(s, t, INT_MAX)) total += flow;
         return total;
     } 
 };

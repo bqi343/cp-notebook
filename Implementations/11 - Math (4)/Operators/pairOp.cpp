@@ -3,9 +3,9 @@
 	* use for hashing
 */
 
-using namespace ModOp; 
+using namespace modOp; 
 
-namespace PairOp {
+namespace pairOp {
 	istream& operator>>(istream& is, pi& p) {
         is >> p.f >> p.s;
         return is;

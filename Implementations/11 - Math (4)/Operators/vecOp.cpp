@@ -3,9 +3,9 @@
     * use for NTT
 */
 
-using namespace ModOp; 
+using namespace modOp; 
 
-namespace VecOp {
+namespace vecOp {
     template<class T> T operator+=(T& l, const T& r) { return l = l+r; }
     template<class T> T operator-=(T& l, const T& r) { return l = l-r; }
     template<class T> T operator*=(T& l, const T& r) { return l = l*r; }

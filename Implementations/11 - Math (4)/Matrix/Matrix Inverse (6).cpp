@@ -3,7 +3,7 @@
 * Verification: SPOJ MIFF
 */
 
-using namespace ModOp;
+using namespace modOp;
 
 namespace matInv {
     void elim(mat& m, int col, int a, int b) { // column, todo row
@@ -29,6 +29,19 @@ namespace matInv {
         }
         
         return prod;
+    }
+
+    ll numSpan(mat m) { // Kirchhoff's theorem
+        mat res(m.a-1,m.a-1);
+        F0R(i,m.a) FOR(j,i+1,m.a) {
+            if (i) {
+                AD(res.d[i-1][i-1],m.d[i][j]);
+                SUB(res.d[i-1][j-1],m.d[i][j]);
+                SUB(res.d[j-1][i-1],m.d[i][j]);
+            }
+            AD(res.d[j-1][j-1],m.d[i][j]);
+        }
+        return gauss(res);
     }
     
     mat inv(mat m) {

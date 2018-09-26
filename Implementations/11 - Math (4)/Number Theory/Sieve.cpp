@@ -3,12 +3,21 @@
 */
 
 template<int SZ> struct Sieve { 
-    bitset<SZ+1> comp;
+	bitset<SZ> comp;
 	vi pr;
+	// int sp[SZ];
 
-    Sieve() {
-        for (int i = 2; i*i <= SZ; ++i) if (!comp[i]) 
-            for (int j = i*i; j <= SZ; j += i) comp[j] = 1;
-        FOR(i,2,SZ+1) if (!comp[i]) pr.pb(i);
-    }
+	Sieve() {
+		for (int i = 2; i*i <= SZ; ++i) if (!comp[i]) 
+			for (int j = i*i; j <= SZ; j += i) comp[j] = 1;
+		FOR(i,2,SZ) if (!comp[i]) pr.pb(i);
+		
+		/*FOR(i,2,SZ) { // O(N) sieve
+			if (sp[i] == 0) { sp[i] = i; pr.pb(i); }
+			for (int p : pr) {
+				if (p > sp[i] || i*p >= SZ) break;
+				sp[i*p] = p;
+			}
+		}*/
+	}
 };

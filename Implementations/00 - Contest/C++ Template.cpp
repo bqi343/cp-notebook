@@ -1,9 +1,14 @@
+#pragma GCC optimize ("O3")
+#pragma GCC target ("sse4")
+
 #include <bits/stdc++.h>
 #include <ext/pb_ds/tree_policy.hpp>
 #include <ext/pb_ds/assoc_container.hpp>
+#include <ext/rope>
 
 using namespace std;
 using namespace __gnu_pbds;
+using namespace __gnu_cxx;
  
 typedef long long ll;
 typedef long double ld;
@@ -40,14 +45,25 @@ const int MOD = 1000000007;
 const ll INF = 1e18;
 const int MX = 100001;
 
-int main() {
-    ios_base::sync_with_stdio(0); cin.tie(0);
+void setIn(string s) { freopen(s.c_str(),"r",stdin); }
+void setOut(string s) { freopen(s.c_str(),"w",stdout); }
 
+void io(string s = "") {
+    ios_base::sync_with_stdio(0); cin.tie(0);
+    if (sz(s)) {
+        setIn(s+".in");
+        setOut(s+".out");
+    }
 }
 
-/* Look for:
-* the exact constraints (multiple sets are too slow for n=10^6 :( ) 
-* special cases (n=1?)
-* overflow (ll vs int?)
-* array bounds
+int main() {
+    io();
+ 
+}
+
+/* 
+* (Actually read this pls)
+    * Rlly bad errors: int overflow, array bounds
+    * Less bad errors: special cases (n=1?), set tle
+    * Common sense: do smth instead of nothing
 */

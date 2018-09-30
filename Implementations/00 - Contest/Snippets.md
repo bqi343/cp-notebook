@@ -1,13 +1,3 @@
-USACO:
-
-```
-int main() {
-    freopen(".in","r",stdin);
-    freopen(".out","w",stdout);
-    
-}
-```
-
 Topcoder:
 
 ```
@@ -19,7 +9,7 @@ class C {
 };
 
 int main() {
-    ios_base::sync_with_stdio(0); cin.tie(0);
+    io();
     C c; cout << c.m();
 }
 ```
@@ -32,26 +22,7 @@ void solve() {
 }
 
 int main() {
-    ios_base::sync_with_stdio(0); cin.tie(0);
-    int T; cin >> T;
-    FOR(i,1,T+1) {
-        cout << "Case #" << i << ": ";
-        solve();
-        cout << '\n';
-    }
-}
-```
-
-Facebook Hacker Cup:
-
-```
-void solve() {
-    
-}
-
-int main() {
-    // freopen("Input.txt","r",stdin);
-    // freopen("Output.txt","w",stdout);
+    io();
     int T; cin >> T;
     FOR(i,1,T+1) {
         cout << "Case #" << i << ": ";

@@ -14,19 +14,20 @@ int main() {
 }
 ```
 
-Google Code Jam:
+Google Kickstart
 
 ```
-void solve() {
+void solve(int case) {
     
+    cerr << "Solved #" << case << "\n";
 }
 
 int main() {
-    io();
+    io("A");
     int T; cin >> T;
     FOR(i,1,T+1) {
         cout << "Case #" << i << ": ";
-        solve();
+        solve(i);
         cout << '\n';
     }
 }

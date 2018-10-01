@@ -6,14 +6,6 @@
 using namespace modOp; 
 
 namespace pairOp {
-	istream& operator>>(istream& is, pi& p) {
-        is >> p.f >> p.s;
-        return is;
-    }
-	ostream& operator<<(ostream &strm, const pi& a) {
-	    strm << a.f << " " << a.s << " | ";
-	    return strm;
-	}
     template<class T> T operator+=(T& l, const T& r) { return l = l+r; }
     template<class T> T operator-=(T& l, const T& r) { return l = l-r; }
     template<class T> T operator*=(T& l, const T& r) { return l = l*r; }

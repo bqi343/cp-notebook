@@ -10,16 +10,6 @@ namespace vecOp {
     template<class T> T operator-=(T& l, const T& r) { return l = l-r; }
     template<class T> T operator*=(T& l, const T& r) { return l = l*r; }
 
-    std::ostream& operator<<(std::ostream &strm, const vi& a) {
-        cout << "{";
-        F0R(i,sz(a)) {
-            if (i) cout << ", ";
-            cout << a[i];
-        }
-        cout << "}\n";
-        return strm;
-    }
-
     vi operator+(const vi& l, const vi& r) {
         vi res(max(sz(l),sz(r)));
         F0R(i,sz(l)) res[i] = l[i];

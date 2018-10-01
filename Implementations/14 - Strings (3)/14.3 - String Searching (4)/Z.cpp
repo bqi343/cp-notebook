@@ -5,7 +5,7 @@
 */
 
 vi z(string s) {
-    int N = s.length(); s += '#';
+    int N = sz(s); s += '#';
     vi ans(N); ans[0] = N;
     while (s[1+ans[1]] == s[ans[1]]) ans[1] ++;
     
@@ -21,14 +21,14 @@ vi z(string s) {
 vi get(string a, string b) { // find prefixes of a in b
     string s = a+"@"+b; 
     vi t = z(s);
-    return vi(t.begin()+a.length()+1,t.end());
+    return vi(t.begin()+sz(a)+1,t.end());
 }
 
 int main() {
-	vi x = z("abcababcabcaba");
-	for (int i: x) cout << i << " ";
-	cout << "\n";
-	
-	x = get("abcab","uwetrabcerabcab");
-	for (int i: x) cout << i << " ";
+    vi x = z("abcababcabcaba");
+    for (int i: x) cout << i << " ";
+    cout << "\n";
+    
+    x = get("abcab","uwetrabcerabcab");
+    for (int i: x) cout << i << " ";
 }

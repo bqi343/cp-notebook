@@ -1,6 +1,7 @@
 /**
 * Description: Use if you are working with non-negative integers
 * Usage: http://codeforces.com/contest/632/problem/E
+* Faster? https://oj.uz/submission/66171
 */
 
 using namespace VecOp;

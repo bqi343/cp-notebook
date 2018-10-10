@@ -4,11 +4,7 @@
     * actually, you need to account for A=B and add epsilons but w/e
 */
 
-double A,B; // interval to be covered, assuming A<B
-vector<pair<pd,int>> in; // intervals 
-int N; // # of intervals 
-
-vi solve() {
+vi solve(double A, double B, vector<pair<pd,int>> in) { // cover [A,B] with intervals from in
     pair<double,int> mx = {A,-1};
     vi ans;
     int nex = 0;

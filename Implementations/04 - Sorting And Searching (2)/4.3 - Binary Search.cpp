@@ -4,7 +4,7 @@
 * https://open.kattis.com/problems/guess
 */
 
-int main() {
+void binarySearch() {
     int lo = 1, hi = 1000;
     while (1) {
         int mid = (lo+hi)/2;

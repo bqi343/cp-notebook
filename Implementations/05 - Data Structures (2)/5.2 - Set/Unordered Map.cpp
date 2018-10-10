@@ -5,8 +5,9 @@
     * normal unordered map gets TLE
 */
 
-namespace mapOp {
-    const int tmp = chrono::high_resolution_clock::now().time_since_epoch().count();
+namespace hashTable {
+    const int tmp = chrono::high_resolution_clock::now()
+                .time_since_epoch().count();
 
     template<class T> struct hsh {
         size_t operator()(const T& x) const { 

@@ -3,10 +3,6 @@
             blob/master/cpp/numbertheory/bigint.cpp
 */
 
-#include <bits/stdc++.h>
-
-using namespace std;
-
 // base and base_digits must be consistent
 constexpr int base = 1000000000;
 constexpr int base_digits = 9;

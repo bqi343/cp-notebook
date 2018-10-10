@@ -3,25 +3,6 @@
 * Verification: http://www.spoj.com/problems/MKTHNUM/
 */
 
-int N,Q, A[100000];
-map<int,int> m;
-vi revm;
-
-void input() {
-	cin >> N >> Q;
-	F0R(i,N) cin >> A[i];
-}
-
-void compress() {
-    F0R(i,N) m[A[i]] = 0;
-    int nex = 0;
-    for (auto& a: m) {
-        a.s = nex++;
-        revm.pb(a.f);
-    }
-    F0R(i,N) A[i] = m[A[i]];
-}
-
 template<int SZ> struct wavelet {
     vi mapl[2*SZ], mapr[2*SZ], val[2*SZ];
     
@@ -55,16 +36,3 @@ template<int SZ> struct wavelet {
                     getr(ind,rind),k-t,2*ind+1,M+1,R);
     }
 };
-
-wavelet<1<<17> w;
-
-int main() {
-    input();
-    compress();
-    w.build();
-    
-    F0R(i,Q) {
-        int l,r,k; cin >> l >> r >> k;
-        cout << revm[w.query(l-1,r-1,k)] << "\n";
-    }
-}

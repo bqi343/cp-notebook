@@ -2,6 +2,8 @@
 * Source: KACTL
 * Description: Factors integers up to 2^{60}
 * Usage: https://www.spoj.com/problems/FACT0/
+* https://codeforces.com/contest/1033/submission/44009089
+	* is probably faster 
 */
 
 using namespace RPM;

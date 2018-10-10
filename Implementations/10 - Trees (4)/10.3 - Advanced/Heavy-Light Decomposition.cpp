@@ -46,32 +46,13 @@ template <int V> struct HeavyLight { // sum queries, sum updates
         op(treePos[u]+1, treePos[v]); // assumes values are stored in edges, not vertices
     }
 
-    void modifyPath(int u, int v, int value) {
+    void modifyPath(int u, int v, int value) { // add one to vertices along path
         processPath(u, v, [this, &value](int l, int r) { tree.upd(l, r, value); });
     }
 
-    ll queryPath(int u, int v) {
+    ll queryPath(int u, int v) { // query sum of path
         ll res = 0;
         processPath(u, v, [this, &res](int l, int r) { res += tree.qsum(l, r); });
         return res;
     }
 };
-
-HeavyLight<1<<17> H;
-int N,M;
-
-int main() {
-	cin >> N >> M;
-	graph.resize(N+1);
-	F0R(i,N-1) {
-	    int a,b; cin >> a >> b;
-	    graph[a].pb(b), graph[b].pb(a);
-	}
-	H.init();
-	F0R(i,M) {
-	    char c; int A,B;
-	    cin >> c >> A >> B;
-	    if (c == 'P') H.modifyPath(A,B,1);
-	    else cout << H.queryPath(A,B) << "\n";
-	}
-}

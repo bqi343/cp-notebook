@@ -4,8 +4,6 @@
 * Alternative to lazy segment tree
 */
 
-// BIT template
-
 template<class T, int SZ> struct BITrange {
     BIT<T,SZ> bit[2]; // sums piecewise linear functions
     

@@ -23,12 +23,3 @@ vi get(string a, string b) { // find prefixes of a in b
     vi t = z(s);
     return vi(t.begin()+sz(a)+1,t.end());
 }
-
-int main() {
-    vi x = z("abcababcabcaba");
-    for (int i: x) cout << i << " ";
-    cout << "\n";
-    
-    x = get("abcab","uwetrabcerabcab");
-    for (int i: x) cout << i << " ";
-}

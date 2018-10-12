@@ -1,24 +1,29 @@
 /**
 * Description: faster than standard unordered map
-* Source: http://codeforces.com/blog/entry/60737
+* Source: http://codeforces.com/blog/entry/62393
 * Verification: http://codeforces.com/contest/966/problem/E 
     * normal unordered map gets TLE
 */
 
-namespace hashTable {
-    const int tmp = chrono::high_resolution_clock::now()
-                .time_since_epoch().count();
-
-    template<class T> struct hsh {
-        size_t operator()(const T& x) const { 
-            return hash<T>{}(x)^tmp; // avoid anti-hash tests?
-        }
-    };
-
-    template<class a, class b> using um = gp_hash_table<a,b,hsh<a>>;
-
-    template<class a, class b> b get(um<a,b>& u, a x) {
-        if (u.find(x) == u.end()) return 0;
-        return u[x];
+struct custom_hash {
+    static uint64_t splitmix64(uint64_t x) {
+        // http://xorshift.di.unimi.it/splitmix64.c
+        x += 0x9e3779b97f4a7c15;
+        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
+        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
+        return x ^ (x >> 31);
     }
+
+    size_t operator()(uint64_t x) const {
+        static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
+        return splitmix64(x + FIXED_RANDOM);
+    }
+};
+
+template<class T> using um = unordered_map<ll, T, custom_hash>;
+template<class T> using ht = gp_hash_table<ll, T, custom_hash>;
+
+template<class T> T get(ht<T>& u, ll x) {
+   if (u.find(x) == u.end()) return 0;
+   return u[x];
 }

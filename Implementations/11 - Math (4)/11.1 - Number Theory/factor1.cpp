@@ -39,3 +39,5 @@ namespace factor1 {
         return V;
     }
 }
+
+using namespace factor1;

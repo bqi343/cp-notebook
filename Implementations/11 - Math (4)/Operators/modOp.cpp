@@ -23,3 +23,5 @@ namespace modOp {
     int SUB(int& a, int b) { return a = sub(a,b); }
     int MUL(int& a, int b) { return a = mul(a,b); }
 }
+
+using namespace modOp;

@@ -17,3 +17,5 @@ namespace pairOp {
 	pi operator*(const int& r, const pi& l) { return l*r; }
 	pi operator*=(pi& l, const int& r) { return l = l*r; }
 }
+
+using namespace pairOp;

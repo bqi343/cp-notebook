@@ -6,7 +6,7 @@
 
 typedef unsigned long long ul;
 
-namespace RPM {
+namespace rpm {
     const int bits = 14; // if all numbers are less than 2^k, set bits = 64-k
     const ul po = (ul)1<<bits;
     
@@ -25,3 +25,5 @@ namespace RPM {
     	return res;
     }
 }
+
+using namespace rpm;

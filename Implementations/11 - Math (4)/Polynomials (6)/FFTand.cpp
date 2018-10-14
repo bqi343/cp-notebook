@@ -3,7 +3,7 @@
 * Source: CSA - FFT And Variations
 */
 
-namespace andConv {
+namespace FFTand {
     int get(int s) {
         return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
     }

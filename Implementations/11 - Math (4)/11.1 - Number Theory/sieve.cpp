@@ -2,12 +2,12 @@
 * Verification: https://open.kattis.com/problems/primesieve
 */
 
-template<int SZ> struct Sieve { 
+template<int SZ> struct sieve { 
 	bitset<SZ> comp;
 	vi pr;
 	// int sp[SZ];
 
-	Sieve() {
+	sieve() {
 		for (int i = 2; i*i <= SZ; ++i) if (!comp[i]) 
 			for (int j = i*i; j <= SZ; j += i) comp[j] = 1;
 		FOR(i,2,SZ) if (!comp[i]) pr.pb(i);

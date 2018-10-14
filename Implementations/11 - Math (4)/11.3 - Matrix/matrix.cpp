@@ -3,6 +3,8 @@
 * Verification: https://dmoj.ca/problem/si17c1p5
 */
 
+using namespace modOp;
+
 struct mat {
     int** d;
     int a, b;
@@ -32,14 +34,14 @@ struct mat {
     
     mat operator+(const mat& m) {
         mat r(a,b);
-        F0R(i,a) F0R(j,b) r.d[i][j] = (d[i][j]+m.d[i][j]) % MOD;
+        F0R(i,a) F0R(j,b) r.d[i][j] = ad(d[i][j],m.d[i][j]);
         return r;
     }
     
     mat operator*(const mat& m) {
         mat r(a,m.b);
         F0R(i,a) F0R(j,b) F0R(k,m.b) 
-            r.d[i][k] = (r.d[i][k]+(ll)d[i][j]*m.d[j][k]) % MOD;
+            AD(r.d[i][k],mul(d[i][j],m.d[j][k]));
         return r;
     }
 

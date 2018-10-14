@@ -6,7 +6,7 @@
 	* is probably faster 
 */
 
-using namespace RPM;
+using namespace rpm;
 
 namespace factor2 {
 	Sieve<1<<20> S = Sieve<1<<20>(); // should take care of all primes up to n^(1/3)

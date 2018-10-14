@@ -6,11 +6,11 @@
 
 using namespace VecOp;
 
-struct BM {
+struct linRec {
     vector<vi> seq;
     vi x, fail, delta, des;
     
-    BM (vi _x) {
+    linRec (vi _x) {
         x = _x; seq.pb({}); int best = 0;
         
         F0R(i,sz(x)) {

@@ -62,3 +62,5 @@ namespace vecOp {
         return ret;
     }
 }
+
+using namespace vecOp;

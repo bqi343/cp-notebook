@@ -1,0 +1,18 @@
+/**
+* Description: Chinese Remainder Theorem
+* Verification: Kattis generalchineseremainder
+*/
+
+using namespace modOp;
+
+namespace crt {
+	pl solve(pl a, pl b) {
+	    ll g = __gcd(a.s,b.s), l = a.s*b.s/g;
+	    if ((b.f-a.f) % g != 0) return {-1,-1};
+	    ll A = a.s/g, B = b.s/g;
+	    ll mul = (b.f-a.f)/g*inv(A%B,B) % B;
+	    return {((mul*a.s+a.f)%l+l)%l,l};
+	}
+}
+
+using namespace crt;

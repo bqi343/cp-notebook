@@ -3,7 +3,7 @@ Description: Allows multiplication of polynomials in general moduli.
 Verification: http://codeforces.com/contest/960/submission/37085144
 */
 
-namespace FFT {
+namespace FFTmod {
     int get(int s) {
         return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
     }
@@ -69,3 +69,5 @@ namespace FFT {
     	return ret;
     }
 }
+
+using namespace FFTmod;

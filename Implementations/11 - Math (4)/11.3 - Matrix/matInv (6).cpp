@@ -3,7 +3,7 @@
 * Verification: SPOJ MIFF
 */
 
-using namespace modOp;
+// struct mat
 
 namespace matInv {
     void elim(mat& m, int col, int a, int b) { // column, todo row

@@ -45,19 +45,7 @@ const int MOD = 1000000007;
 const ll INF = 1e18;
 const int MX = 100001;
 
-void setIn(string s) { freopen(s.c_str(),"r",stdin); }
-void setOut(string s) { freopen(s.c_str(),"w",stdout); }
-
-void io(string s = "") {
-    ios_base::sync_with_stdio(0); cin.tie(0);
-    if (sz(s)) {
-        setIn(s+".in");
-        setOut(s+".out");
-    }
-}
-
 int main() {
-    io();
  
 }
 

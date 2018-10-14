@@ -1,8 +1,12 @@
 /**
-* Description: Supports point update & range query, can be extended to range update
+* Description: 
+	* Supports point update & rectangle query
+	* can be extended to rectangle update
+	* can also use with unordered map
 * Verification: SPOJ matsum
-* Dependency: Binary indexed tree
 */
+
+// struct BIT
 
 template<class T, int SZ> struct BIT2D { 
     BIT<T,SZ> bit[SZ+1];
@@ -19,23 +23,3 @@ template<class T, int SZ> struct BIT2D {
             -query(X2,Y1-1)+query(X1-1,Y1-1);
     }
 };
-
-int main() {
-	int T; cin >> T;
-	F0R(i,T) {
-	    int N; cin >> N;
-	    BIT2D<ll,1024> B = BIT2D<ll,1024>();
-	    while (1) {
-	        string c; cin >> c;
-	        if (c == "SET") {
-	            int x, y,num; cin >> x >> y >> num;
-	            x++, y++;
-	            B.upd(x,y,num-B.query(x,x,y,y));
-	        } else if (c == "SUM") {
-	            int x1, y1, x2, y2; cin >> x1 >> y1 >> x2 >> y2;
-	            x1 ++, y1 ++, x2 ++, y2++;
-	            cout << B.query(x1,x2,y1,y2) << "\n";
-	        } else break;
-	    }
-	}
-}

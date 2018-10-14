@@ -32,13 +32,13 @@ namespace factor2 {
 
 	vpl factor2(ll d) {
 		vpl res;
-		
+
 		vi& pr = S.pr;
 		for (int i = 0; i < sz(pr) && pr[i]*pr[i] <= d; i++) if (d % pr[i] == 0) {
 		    int co = 0;
 			while (d % pr[i] == 0) d /= pr[i], co ++;
 			res.pb({pr[i],co});
-	    }
+		}
 			
 		if (d > 1) { // d is now a product of at most 2 primes.
 			if (prime(d)) res.pb({d,1});
@@ -57,7 +57,7 @@ namespace factor2 {
 				}
 			}
 		}
-		
+
 		return res;
 	}
 }

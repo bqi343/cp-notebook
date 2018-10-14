@@ -1,5 +1,6 @@
 /**
  * Description: https://en.m.wikipedia.org/wiki/Vizing%27s_theorem 
+ * Source: Own (not very optimized)
  * Usage: https://open.kattis.com/problems/gamescheduling
  */
  

@@ -3,7 +3,7 @@
 * Verification: http://www.spoj.com/problems/PT07Z/
 */
 
-struct treeDiameter {
+struct TreeDiameter {
     int n, dist[MX], pre[MX];
     vi adj[MX];
 

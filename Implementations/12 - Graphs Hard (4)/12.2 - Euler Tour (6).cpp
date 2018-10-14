@@ -1,5 +1,6 @@
 /**
-* Description: extra log factor
+* Description: extra log factor (remove this ...)
+* Source: USACO Training
 * Verification: https://open.kattis.com/problems/eulerianpath
 */
 

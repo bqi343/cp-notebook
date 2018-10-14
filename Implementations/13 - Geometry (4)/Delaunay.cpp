@@ -1,6 +1,7 @@
 /*
-* Bowyer-Watson O(n^2logn)
-* Verification: Panda Preserve
+* Description: Delaunay Triangulation w/ Bowyer-Watson O(n^2logn)
+* Source: Own
+* Verification: ICPC WF Panda Preserve
 */
 
 namespace Delaunay {

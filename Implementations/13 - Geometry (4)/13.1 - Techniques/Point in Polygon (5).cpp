@@ -1,10 +1,8 @@
 /**
+* Description: Tests whether a point is inside, on, or outside the perimeter of any polygon
 * Source: own
 * Verification: https://open.kattis.com/problems/pointinpolygon
 */
-
-int n,m;
-pi p[1000];
 
 int area(pi x, pi y, pi z) {
     return (y.f-x.f)*(z.s-x.s)-(y.s-x.s)*(z.f-x.f);
@@ -18,6 +16,8 @@ bool on(pi x, pi y, pi z) {
 double get(pi x, pi y, int z) {
     return double((z-x.s)*y.f+(y.s-z)*x.f)/(y.s-x.s);
 }
+
+vpi p;
 
 string test(pi z) {
     int ans = 0;

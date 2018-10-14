@@ -71,3 +71,5 @@ namespace treap {
         return merge(a.f,b.s);
     }
 }
+
+using namespace treap;

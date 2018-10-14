@@ -1,6 +1,7 @@
 /**
 * Description: Easy Geo
 * Source: http://codeforces.com/blog/entry/22175
+* Verification: ?
 */
 
 namespace ComplexOp {

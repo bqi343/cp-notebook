@@ -76,3 +76,5 @@ namespace splayTree {
         return splay(x);
     }
 }
+
+using namespace splayTree;

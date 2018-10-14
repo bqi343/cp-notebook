@@ -6,10 +6,9 @@
 
 using namespace pairOp;
 
-const int tmp = chrono::high_resolution_clock::now()
-            .time_since_epoch().count();
-
 struct hsh {
+    static const int tmp = chrono::high_resolution_clock::now()
+            .time_since_epoch().count();
     string S; 
     vpi pows, ipows, cum;
     pi base = mp(948392576,tmp%MOD), invbase; // probably want to randomize base

@@ -1,4 +1,5 @@
 /**
+* Description: Compute the maximum number of points which lie on the same line in O(n^2logn)
 * Source: own
 * Verification: https://open.kattis.com/problems/maxcolinear
 */

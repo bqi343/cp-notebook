@@ -4,7 +4,7 @@
 * Description: can support tree path queries and updates
 */
 
-template<int SZ> struct centroidDecomp {
+template<int SZ> struct CentroidDecomp {
     bool done[SZ];
     int sub[SZ], par[SZ], ans[SZ];
     vi dist[SZ], adj[SZ], ANS[SZ];

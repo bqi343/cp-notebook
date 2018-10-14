@@ -1,12 +1,14 @@
 /**
+* Description: Heavy Light Decomposition
 * Source: http://codeforces.com/blog/entry/22072
-* Dependency: Lazy SegTree
 * Verification: USACO Grass Planting
 */
 
+// struct LazySegTree
+
 vector<vi> graph;
 
-template <int V> struct HeavyLight { // sum queries, sum updates
+template <int V> struct HLD { // sum queries, sum updates
     int parent[V], heavy[V], depth[V];
     int root[V], treePos[V];
     LazySegTree<V> tree;

@@ -1,7 +1,8 @@
 /**
-* Source: Codeforces
 * Description: Answers queries offline in (N+Q)sqrt(N)
-* Also see Mo's on trees
+    * Also see Mo's on trees
+* Source: Codeforces
+* Verification: ?
 */
 
 int N, Q, A[MX], ans[MX], oc[MX];

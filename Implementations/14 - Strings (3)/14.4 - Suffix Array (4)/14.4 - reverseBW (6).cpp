@@ -1,8 +1,9 @@
 /**
+* Description: Reverse Burrows-Wheeler
 * Verification: https://cses.fi/problemset/task/1113/
 */
 
-string transform(string s) {
+string reverseBW(string s) {
 	vector<pair<char,int>> v;
 	int nex[sz(s)];
 

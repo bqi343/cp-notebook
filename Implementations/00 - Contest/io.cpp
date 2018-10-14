@@ -9,7 +9,9 @@ namespace io {
 
     template<template<typename...> class Ref, typename... Args>
     struct is_specialization<Ref<Args...>, Ref>: std::true_type {};
-    // https://stackoverflow.com/questions/16337610/how-to-know-if-a-type-is-a-specialization-of-stdvector
+    // https://stackoverflow.com/questions/16337610
+        // /how-to-know-if-a-type-is-
+        // a-specialization-of-stdvector
 
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
     void setOut(string s) { freopen(s.c_str(),"w",stdout); }

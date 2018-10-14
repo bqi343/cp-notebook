@@ -1,4 +1,5 @@
 /**
+* Description: Given set of lines, computes the greatest y-coordinate for any x
 * Source: KACTL
 * Verification: CSA Squared Ends
 */
@@ -34,7 +35,7 @@ struct LineContainer : multiset<Line> {
 		while ((y = x) != begin() && (--x)->p >= y->p) isect(x, erase(y));
 	}
 	
-	ll query(ll x) { // gives max value
+	ll query(ll x) { 
 		assert(!empty());
 		Q = 1; auto l = *lb({0,0,x}); Q = 0;
 		return l.k * x + l.m;

@@ -22,7 +22,4 @@ vi manacher(string s) {
     return ans;
 }
 
-int main() {
-    vi v = manacher("abacaba");
-    for (int i: v) cout << i << " ";
-}
+// vi v = manacher("abacaba"); cout << v;

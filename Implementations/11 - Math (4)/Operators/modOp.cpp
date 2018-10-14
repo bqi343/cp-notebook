@@ -3,10 +3,18 @@
 */
 
 namespace modOp {
-    ll po (ll b, ll p) { return !p?1:po(b*b%MOD,p/2)*(p&1?b:1)%MOD; }
-    ll inv (ll b) { return po(b,MOD-2); }
+    int ad(int a, int b, int mod = MOD) { return (a+b)%mod; }
+    int sub(int a, int b, int mod = MOD) { return (a-b+mod)%mod; }
+    int mul(int a, int b, int mod = MOD) { return (ll)a*b%mod; }
     
-    ll inv(ll a, ll b) { // 0 < a < b, gcd(a,b) = 1
+    int AD(int& a, int b, int mod = MOD) { return a = ad(a,b,mod); }
+    int SUB(int& a, int b, int mod = MOD) { return a = sub(a,b,mod); }
+    int MUL(int& a, int b, int mod = MOD) { return a = mul(a,b,mod); }
+    
+    int po (int b, int p, int mod = MOD) { return !p?1:mul(po(mul(b,b,mod),p/2,mod),p&1?b:1,mod); }
+    int inv (int b, int mod = MOD) { return po(b,mod-2,mod); }
+    
+    int invGeneral(ll a, ll b) { // 0 < a < b, gcd(a,b) = 1
         a %= b;
         if (a <= 1) return a;
         ll i = inv(b%a,a);
@@ -14,14 +22,6 @@ namespace modOp {
         if (tmp < 0) tmp += b;
         return tmp;
     }
-    
-    int ad(int a, int b) { return (a+b)%MOD; }
-    int sub(int a, int b) { return (a-b+MOD)%MOD; }
-    int mul(int a, int b) { return (ll)a*b%MOD; }
-    
-    int AD(int& a, int b) { return a = ad(a,b); }
-    int SUB(int& a, int b) { return a = sub(a,b); }
-    int MUL(int& a, int b) { return a = mul(a,b); }
 }
 
 using namespace modOp;

@@ -35,7 +35,7 @@ template<class T, int SZ> struct pseg {
         if (lo <= L && R <= hi) return val[cur];
         if (R < lo || hi < L) return INF;
         int M = (L+R)/2;
-        return lazy[cur]+comb(query(l[cur],lo,hi,L,M),query(r[cur],lo,hi,M+1,R));
+        return lazy[cur]+comb(query(l[cur],lo,hi,L,M), query(r[cur],lo,hi,M+1,R));
     }
     int upd(int cur, int lo, int hi, T v, int L, int R) {
         if (R < lo || hi < L) return cur;

@@ -3,14 +3,14 @@
  * Verification: Kattis stringmultimatching
 */
 
-template<int SZ> struct Aho {
+template<int SZ> struct AhoCorasick {
     int link[SZ], dict[SZ], sz = 1, num = 0;
     vpi ind[SZ];
     map<char,int> to[SZ];
     vi oc[SZ];
     queue<int> q;
     
-    Aho() {
+    AhoCorasick() {
         memset(link,0,sizeof link);
         memset(dict,0,sizeof dict);
     }
@@ -24,7 +24,7 @@ template<int SZ> struct Aho {
         dict[v] = v; ind[v].pb({++num,sz(s)});
     }
  
-    void push_links() {
+    void pushLinks() {
         link[0] = -1; q.push(0);
         while (sz(q)) {
             int v = q.front(); q.pop();
@@ -48,7 +48,9 @@ template<int SZ> struct Aho {
         }
     }
     
-    int nex(int pos, int cur, char c) { // get position after adding character
+    int nex(int pos, int cur, char c) { 
+        // get position after adding character
+        // speed up with memoization
         while (cur != -1 && !to[cur].count(c)) cur = link[cur];
         if (cur == -1) cur = 0;
         else cur = to[cur][c];
@@ -56,25 +58,3 @@ template<int SZ> struct Aho {
         return cur;
     }
 };
-
-Aho<MX> A;
-
-int n;
-
-void solve() {
-    A = Aho<MX>();
-    cin >> n;
-    F0R(i,n) {
-        string pat; getline(cin,pat); if (!i) getline(cin,pat);
-        A.add(pat);
-    }
-    A.push_links();
-    
-    string t; getline(cin,t);
-    int cur = 0;
-    F0R(i,sz(t)) cur = A.nex(i,cur,t[i]);
-    FOR(i,1,n+1) {
-        for (int j: A.oc[i]) cout << j << " ";
-        cout << "\n";
-    }
-}

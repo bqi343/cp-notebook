@@ -1,5 +1,7 @@
 /**
 * Description: Use when atan2 does not suffice
+* Source: Own
+* Verification: ?
 */
 
 int half(pi x) { return mp(x.s,x.f) > mp(0,0); }

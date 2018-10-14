@@ -5,7 +5,7 @@
 * Code to Verify: https://pastebin.com/y2Z9FYr6
 */
 
-struct suffix_array {
+struct suffixArray {
     int N;
     vi idx;
     string str;
@@ -15,7 +15,7 @@ struct suffix_array {
         for (int& i: v) i = lb(all(V),i)-V.begin()+1;
     }
     
-    vi a, A, A2, L, L2, cum;
+    vi a, A, L, cum;
     
     void initVar(string _str) {
         str = _str; N = sz(str);
@@ -31,6 +31,7 @@ struct suffix_array {
     	fill(all(cum),0); F0R(i,N) cum[get(i+x)] ++;
         int sum = 0; F0R(i,N+1) cum[i] = (sum += cum[i], sum-cum[i]);
         
+        vi L2(N);
         for (int i: L) L2[cum[get(i+x)]++] = i;
         swap(L,L2);
     }
@@ -39,6 +40,8 @@ struct suffix_array {
         initVar(_str);
         
         for (int cnt = 1; cnt < N; cnt <<= 1) { 
+            vi A2(N);
+
             sort_by(cnt), sort_by(0);
         
             F0R(i,N) {

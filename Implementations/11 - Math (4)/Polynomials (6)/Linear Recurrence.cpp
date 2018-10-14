@@ -1,7 +1,7 @@
 /**
 * Description: Berlekamp-Massey Algo
-* Tutorial: http://codeforces.com/blog/entry/61306
-* Usage: http://codeforces.com/contest/506/problem/E
+* Source: http://codeforces.com/blog/entry/61306
+* Verification: http://codeforces.com/contest/506/problem/E
 */
 
 using namespace VecOp;

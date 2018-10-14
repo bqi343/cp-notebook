@@ -1,6 +1,7 @@
 /**
 * Description: Treap alternative
-* Sources: see LCT
+* Source: see LCT
+* Verification: ~
 */
 
 namespace splayTree {

@@ -1,11 +1,13 @@
 /**
+* Description:
 * Sources: SuprDewd, KACTL, majk
-* Task: https://open.kattis.com/problems/suffixsorting
-* Verification: USACO December 2017: Standing out from the herd: http://usaco.org/index.php?page=viewproblem2&cpid=768
-* Code to Verify: https://pastebin.com/y2Z9FYr6
+* Verification: 
+    * http://usaco.org/index.php?page=viewproblem2&cpid=768
+        * https://pastebin.com/y2Z9FYr6
+    * https://open.kattis.com/problems/suffixsorting
 */
 
-struct suffixArray {
+struct SuffixArray {
     int N;
     vi idx;
     string str;
@@ -15,20 +17,12 @@ struct suffixArray {
         for (int& i: v) i = lb(all(V),i)-V.begin()+1;
     }
     
-    vi a, A, L, cum;
-    
-    void initVar(string _str) {
-        str = _str; N = sz(str);
-        a.resize(N);
-        A.resize(N); F0R(i,N) A[i] = str[i]; compress(A); A2.resize(N);
-        L.resize(N); F0R(i,N) L[i] = i; L2.resize(N);
-        cum.resize(N+1); 
-    }
+    vi A, L; // L stores order of suffixes
     
     int get(int x) { return x >= N ? 0 : A[x]; }
     
     void sort_by(int x) { // stable sort elements in a by b
-    	fill(all(cum),0); F0R(i,N) cum[get(i+x)] ++;
+        vi cum(N+1); F0R(i,N) cum[get(i+x)] ++;
         int sum = 0; F0R(i,N+1) cum[i] = (sum += cum[i], sum-cum[i]);
         
         vi L2(N);
@@ -37,13 +31,14 @@ struct suffixArray {
     }
     
     void init(string _str) {
-        initVar(_str);
+        str = _str; N = sz(str);
+        A.resize(N); F0R(i,N) A[i] = str[i]; compress(A); 
+        L.resize(N); F0R(i,N) L[i] = i;
         
         for (int cnt = 1; cnt < N; cnt <<= 1) { 
-            vi A2(N);
-
             sort_by(cnt), sort_by(0);
         
+            vi A2(N);
             F0R(i,N) {
                 if (i == 0) A2[L[i]] = 1;
                 else A2[L[i]] = A2[L[i-1]]+
@@ -52,20 +47,18 @@ struct suffixArray {
             
             swap(A,A2);
         }
-        
-        F0R(i,N) a[A[i]-1] = i;
     }
     
-	vi lcp() { // KACTL
-		int n = sz(str), h = 0;
-		vi inv(n), res(n);
-		F0R(i,N) inv[a[i]] = i;
-		F0R(i,N) if (inv[i]) {
-			int p0 = a[inv[i] - 1];
-			while (max(i,p0)+h < N && str[i+h] == str[p0+h]) h++;
-			res[inv[i]] = h;
-			if (h) h--;
-		}
-		return res;
-	}
+    vi lcp() { // KACTL
+        int n = sz(str), h = 0;
+        vi inv(n), res(n);
+        F0R(i,N) inv[L[i]] = i;
+        F0R(i,N) if (inv[i]) {
+            int p0 = L[inv[i] - 1];
+            while (max(i,p0)+h < N && str[i+h] == str[p0+h]) h++;
+            res[inv[i]] = h;
+            if (h) h--;
+        }
+        return res;
+    }
 };

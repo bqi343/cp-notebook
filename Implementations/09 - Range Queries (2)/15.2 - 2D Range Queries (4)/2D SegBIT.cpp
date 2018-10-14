@@ -1,9 +1,12 @@
 /**
+* Description: Binary Indexed Tree of Segment Trees
 * Source: USACO Mowing the Field
-* Dependency: Sparse SegTree
+* Verification: ~
 */
 
 const int SZ = 1<<17;
+
+// struct Node 
 
 template<class T> struct SegBit {
     node<T> seg[SZ+1];

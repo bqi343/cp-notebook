@@ -1,5 +1,7 @@
 /**
-* Description: Basic operations with modular arithmetic
+* Description: operations with modular arithmetic
+* Source: Own
+* Verification: ?
 */
 
 namespace modOp {
@@ -17,7 +19,7 @@ namespace modOp {
     int invGeneral(ll a, ll b) { // 0 < a < b, gcd(a,b) = 1
         a %= b;
         if (a <= 1) return a;
-        ll i = inv(b%a,a);
+        ll i = invGeneral(b%a,a);
         ll tmp = -((b/a)*i+((b%a)*i)/a) % b;
         if (tmp < 0) tmp += b;
         return tmp;

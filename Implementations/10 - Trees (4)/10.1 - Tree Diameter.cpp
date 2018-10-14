@@ -1,5 +1,6 @@
 /**
-* Might not be obvious why this works!
+* Description: Calculates longest path in tree
+* Source: Own
 * Verification: http://www.spoj.com/problems/PT07Z/
 */
 

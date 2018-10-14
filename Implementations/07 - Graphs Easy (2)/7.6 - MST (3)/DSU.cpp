@@ -1,5 +1,6 @@
 /**
 * Description: Disjoint Set Union
+* Source: CSAcademy
 * Verification: USACO superbull
 */
 

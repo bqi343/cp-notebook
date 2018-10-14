@@ -1,6 +1,7 @@
 /**
 * Description: more convenient functions for input / output
-  * experimentation with C++11 features
+* Source: Own
+* Verification: http://codeforces.com/contest/1045/problem/D
 */
 
 namespace io {

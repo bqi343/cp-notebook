@@ -1,4 +1,9 @@
-int n, visit[MX];
+/**
+* Description: print nodes of graph in depth-first order
+* Source: Own
+*/
+
+bool visit[MX];
 vi adj[MX];
 
 void dfs(int node) {
@@ -7,14 +12,4 @@ void dfs(int node) {
     for (int i: adj[node]) dfs(i);
     cout << node << "\n";
 	// do stuff
-
-}
-
-int main() {
-	cin >> n;
-	F0R(i,n-1) {
-	    int a,b; cin >> a >> b;
-	    adj[a].pb(b), adj[b].pb(a);
-	}
-	dfs(1);
 }

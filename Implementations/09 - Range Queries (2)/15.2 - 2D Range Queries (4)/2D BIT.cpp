@@ -3,6 +3,7 @@
 	* Supports point update & rectangle query
 	* can be extended to rectangle update
 	* can also use with unordered map
+* Source: Own?
 * Verification: SPOJ matsum
 */
 

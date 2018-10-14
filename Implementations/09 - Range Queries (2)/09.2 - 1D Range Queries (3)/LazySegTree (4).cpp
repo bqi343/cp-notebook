@@ -1,5 +1,6 @@
 /**
 * Description: 1D range update, range query
+* Source: USACO Counting Haybales
 * Verification: SPOJ Horrible
 */
 

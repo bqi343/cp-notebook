@@ -1,4 +1,5 @@
 /**
+* Description: maintains tree of palindromes
 * Source: http://codeforces.com/blog/entry/13959
 * Verification: https://oj.uz/problem/view/APIO14_palindrome
 */
@@ -16,17 +17,17 @@ template<int SZ> struct palTree {
         sz = 2;
     }
      
-    int get_link(int v) {
-        while(s[n-len[v]-2] != s[n-1]) v = link[v];
+    int getLink(int v) {
+        while (s[n-len[v]-2] != s[n-1]) v = link[v];
         return v;
     }
      
-    void add_letter(int c) {
+    void addChar(int c) {
         s[n++] = c;
-        last = get_link(last);
+        last = getLink(last);
         if (!to[last][c]) {
             len[sz] = len[last]+2;
-            link[sz] = to[get_link(link[last])][c];
+            link[sz] = to[getLink(link[last])][c];
             to[last][c] = sz++;
         }
         last = to[last][c];

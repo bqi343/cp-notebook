@@ -1,5 +1,6 @@
 /**
 * Description: Example of greedy algorithm
+* Source: Own
 * Verification: https://open.kattis.com/problems/intervalcover
     * actually, you need to account for A=B and add epsilons but w/e
 */

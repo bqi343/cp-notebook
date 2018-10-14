@@ -1,7 +1,8 @@
 /**
+* Description: Faster Flow, Bipartite Matching
 * Source: GeeksForGeeks
 * Verification: Problem Fashion (RMI 2017 Day 1)
-* capode: https://pastebin.com/VJxTvEg1
+    * https://pastebin.com/VJxTvEg1
 */
  
 template<int SZ> struct Dinic {

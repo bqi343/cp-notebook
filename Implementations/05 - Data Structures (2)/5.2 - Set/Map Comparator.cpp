@@ -1,5 +1,7 @@
 /**
+* Description: Custom comparator for map / set
 * Source: StackOverflow
+* Verification: ?
 */
 
 struct cmp {

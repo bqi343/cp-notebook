@@ -1,6 +1,8 @@
 /**
 * Description: modular arithmetic with vectors
     * use for NTT
+* Source: Own
+* Verification: ?
 */
 
 using namespace modOp; 

@@ -1,9 +1,7 @@
-
-/** Notes: 
-* number of operations needed s.t. 
-*                phi(phi(...phi(n)...))=1 
-* is O(log n).
-* Euler's theorem: a^{\phi(p)}\equiv 1 (mod p), gcd(a,p)=1
+/** 
+* Description: Calculates smallest P such that x^P equiv 1 (mod p)
+* Source: Own
+* Verification: ?
 */
 
 using namespace RPM;

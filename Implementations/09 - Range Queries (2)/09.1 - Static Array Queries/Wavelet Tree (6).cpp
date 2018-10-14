@@ -1,5 +1,7 @@
 /**
 * Description: Segment tree on values instead of indices
+* Source: http://rachitiitr.blogspot.com/2017/06
+    /wavelet-trees-wavelet-trees-editorial.html
 * Verification: http://www.spoj.com/problems/MKTHNUM/
 */
 

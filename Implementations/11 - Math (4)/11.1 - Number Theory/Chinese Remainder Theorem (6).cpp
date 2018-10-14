@@ -1,5 +1,6 @@
 /**
 * Description: Chinese Remainder Theorem
+* Source: Own
 * Verification: Kattis generalchineseremainder
 */
 

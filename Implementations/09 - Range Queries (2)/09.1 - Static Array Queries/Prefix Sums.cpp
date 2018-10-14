@@ -1,5 +1,6 @@
 /**
  * Description: Calculates rectangle sums in constant time
+ * Source: Own
  * Verification: POI 16 Ticket Inspector
  */
 

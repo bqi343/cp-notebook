@@ -1,6 +1,8 @@
 /**
 * Description: modular arithmetic with pairs
 	* use for hashing
+* Source: Own
+* Verification: see hashing
 */
 
 using namespace modOp; 

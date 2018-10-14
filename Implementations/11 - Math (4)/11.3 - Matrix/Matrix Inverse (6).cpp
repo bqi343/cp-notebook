@@ -1,5 +1,6 @@
 /*
 * Description: Calculates determinant mod a prime via gaussian elimination
+* Source: Own?
 * Verification: SPOJ MIFF
 */
 

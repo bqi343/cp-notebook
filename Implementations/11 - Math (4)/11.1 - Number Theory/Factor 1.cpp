@@ -1,12 +1,14 @@
 /**
 * Description: factors N in O(sqrtN) time
+* Source: Own
+* Verification: ?
 */
 
 namespace factor1 {
     vpl factor(ll x) { // x <= 10^{14} is fine
         vpl pri;
         
-        for (int i = 2; i*i <= x; ++i) if (x % i == 0) {
+        for (ll i = 2; i*i <= x; ++i) if (x % i == 0) {
             int t = 0;
             while (x % i == 0) x /= i, t ++;
             pri.pb({i,t});
@@ -16,6 +18,11 @@ namespace factor1 {
         return pri;
     }
 
+    /* Note: 
+    * number of operations needed s.t. 
+    *                phi(phi(...phi(n)...))=1 
+    * is O(log n).
+    * Euler's theorem: a^{\phi(p)}\equiv 1 (mod p), gcd(a,p)=1*/
     ll phi(ll x) {
         for (auto a: factor(x)) x /= a.f, x *= a.f-1; 
         return x;

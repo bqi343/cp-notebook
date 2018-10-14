@@ -1,7 +1,8 @@
 /**
 * Description: Supports 1D range minimum query in constant time.
-* Verification: Problem Tournament from IOI 2012: http://wcipeg.com/problem/ioi1223
-* Source code: https://pastebin.com/ChpniVZL
+* Source: Own
+* Verification: http://wcipeg.com/problem/ioi1223
+    * https://pastebin.com/ChpniVZL
 */
 
 template<class T, int SZ> struct RMQ {

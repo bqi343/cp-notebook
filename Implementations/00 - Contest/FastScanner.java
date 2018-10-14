@@ -1,5 +1,7 @@
 /**
+* Description: Faster input / output for java
 * Source: Matt Fontaine
+* Verification: ?
 */
 
 class FastScanner {

@@ -1,4 +1,5 @@
 /**
+* Description: calculates least common ancestor in tree with binary jumping
 * Source: USACO Camp
 * Verification: Debug the Bugs
 */

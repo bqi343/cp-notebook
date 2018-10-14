@@ -1,5 +1,6 @@
 /**
 * Description: computes the minimum spanning tree in O(ElogE) time
+* Source: Own
 * Verification: USACO superbull
 */
 

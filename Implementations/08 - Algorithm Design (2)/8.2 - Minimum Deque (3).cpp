@@ -1,4 +1,6 @@
 /**
+* Description: maintains minimum of deque while adding 
+    elements to back or deleting elements from front
 * Source: own
 * Verification: Jan 18 Lifeguards
 */

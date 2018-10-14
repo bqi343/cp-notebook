@@ -2,6 +2,7 @@
 * Description: Russian Peasant Multiplication
     * multiply two 64-bit integers mod another if 128-bit is not available
 * Source: KACTL
+* Verification: ?
 */
 
 typedef unsigned long long ul;

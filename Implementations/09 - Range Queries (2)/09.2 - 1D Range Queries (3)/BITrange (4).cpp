@@ -1,8 +1,11 @@
 /**
+* Description: 1D range update, range sum query
+	* Alternative to lazy segment tree
 * Source: GeeksForGeeks?
-* Description: 1D range update, range query
-* Alternative to lazy segment tree
+* Verification: ?
 */
+
+// struct BIT
 
 template<class T, int SZ> struct BITrange {
     BIT<T,SZ> bit[2]; // sums piecewise linear functions

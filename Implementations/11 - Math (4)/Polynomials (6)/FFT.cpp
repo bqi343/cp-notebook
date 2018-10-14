@@ -1,5 +1,6 @@
 /**
-* Sources: KACTL, https://pastebin.com/3Tnj5mRu
+* Description:
+* Source: KACTL, https://pastebin.com/3Tnj5mRu
 * Verification: SPOJ polymul, CSA manhattan
 */
 

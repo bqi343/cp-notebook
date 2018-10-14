@@ -1,6 +1,7 @@
 /**
 * Description: Similar to FWHT
 * Source: CSA - FFT And Variations
+* Verification: ?
 */
 
 namespace FFTand {

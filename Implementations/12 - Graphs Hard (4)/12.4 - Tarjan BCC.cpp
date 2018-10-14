@@ -1,7 +1,8 @@
 /**
+* Description: 
 * Source: GeeksForGeeks (corrected)
 * Verification: USACO December 2017, Push a Box
-* Code: https://pastebin.com/yUWuzTH8
+    * https://pastebin.com/yUWuzTH8
 */
 
 template<int SZ> struct BCC {

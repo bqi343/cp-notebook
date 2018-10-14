@@ -1,5 +1,6 @@
 /**
 * Description: 1D range sum query with point update
+* Source: TopCoder
 * Verification: SPOJ Fenwick
 */
 

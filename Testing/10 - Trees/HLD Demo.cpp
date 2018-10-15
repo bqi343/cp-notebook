@@ -1,5 +1,3 @@
-
-
 HeavyLight<1<<17> H;
 int N,M;
 

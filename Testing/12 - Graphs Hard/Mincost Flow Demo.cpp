@@ -1,5 +1,3 @@
-
-
 mcf<100> m;
 
 int main() {

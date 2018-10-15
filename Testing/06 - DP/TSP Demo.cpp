@@ -1,5 +1,3 @@
-
-
 int main() {
 	int T; cin >> T;
 	F0R(i,T) {

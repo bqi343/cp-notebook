@@ -22,10 +22,3 @@ int main() {
         cout << "\n";
     }
 }
-
-/* 
-* (Actually read this pls)
-    * Rlly bad errors: int overflow, array bounds
-    * Less bad errors: special cases (n=1?), set tle
-    * Common sense: do smth instead of nothing
-*/

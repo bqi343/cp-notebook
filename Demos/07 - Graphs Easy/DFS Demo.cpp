@@ -1,5 +1,4 @@
 
-
 int main() {
 	cin >> n;
 	F0R(i,n-1) {

@@ -19,3 +19,4 @@
     * [DCJ Practice 2015 C](https://code.google.com/codejam/contest/4264486/dashboard#s=p2)
   * Pragma Optimization
     * [Solution to CF Nagini](http://codeforces.com/contest/855/submission/32935414)
+    * Also see "Welcome home, Chtholly"

@@ -7,20 +7,42 @@
 
 ## Using GCC on Mac 
 
- * [Installing GCC](http://www-scf.usc.edu/~csci104/20142/installation/gccmac.html)
- * [How to Enable C++17](https://stackoverflow.com/questions/39091173/how-to-enable-c17-on-mac)
- * [Intro to Command Line](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
- * [Command Line Shortcuts](https://jonsuh.com/blog/bash-command-line-shortcuts/)
-  
+Install the latest version of gcc.
+
 ```
-co() { g++-8 -std=c++17 -Ofast -Wall  -Wl,-stack_size -Wl,0x10000000 -o $1 $1.cpp }
+brew install gcc
+brew install gedit
 ```
 
+Open your bash profile. 
+
+```
+gedit ~/.bash_profile
+```
+
+Add the following functions.
+
+```
+co() { 
+	g++-8 -std=c++17 -Ofast -Wall -Wl,-stack_size -Wl,0x10000000 -o $1 $1.cpp
+}
+run() {
+	co $1 && ./$1
+}
+```
+
+Now you can easily run C++ from the command line!
+
+## Command Line  
+
+ * [Intro to Command Line](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
+ * [Command Line Shortcuts](https://jonsuh.com/blog/bash-command-line-shortcuts/)
+ 
 ## IDE
 
 The list contains only the ones I have actually used.
 
-### Actual
+### Download
 
  * [Sublime Text 3](https://www.sublimetext.com/)
    * [Editing Build Settings](https://stackoverflow.com/questions/23789410/how-to-edit-sublime-text-build-settings)

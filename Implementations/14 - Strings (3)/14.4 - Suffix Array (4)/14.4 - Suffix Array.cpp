@@ -11,13 +11,14 @@ struct SuffixArray {
     int N;
     vi idx;
     string str;
+    // RMQ<int,MX> R; 
     
     void compress(vi& v) {
         vi V = v; sort(all(V)); V.erase(unique(all(V)),V.end());
         for (int& i: v) i = lb(all(V),i)-V.begin()+1;
     }
     
-    vi A, L; // L stores order of suffixes
+    vi A, L; // A stores lexicographic value, L stores suffixes in order
     
     int get(int x) { return x >= N ? 0 : A[x]; }
     
@@ -47,11 +48,13 @@ struct SuffixArray {
             
             swap(A,A2);
         }
+        
+        // vi v = lcpArray(); R.build(v);
     }
     
-    vi lcp() { // KACTL
-        int n = sz(str), h = 0;
-        vi inv(n), res(n);
+    vi lcpArray() { // KACTL
+        int h = 0;
+        vi inv(N), res(N);
         F0R(i,N) inv[L[i]] = i;
         F0R(i,N) if (inv[i]) {
             int p0 = L[inv[i] - 1];
@@ -61,4 +64,12 @@ struct SuffixArray {
         }
         return res;
     }
+    
+    /*int lcp(int a, int b) {
+        int t0 = A[a], t1 = A[b];
+        if (t0 > t1) swap(t0,t1);
+        return R.query(t0,t1-1);
+    }*/
 };
+
+SuffixArray S; // S.init("bcabcb");

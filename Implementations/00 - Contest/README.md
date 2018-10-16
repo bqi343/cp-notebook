@@ -1,65 +1,8 @@
-# C++
+# Template Notes
 
-## Reference
+- The header files will not compile with clang; use gcc instead.
+- If you don't know what the following line does, see Range Queries --> README --> C++ STL for more information.
 
- * [cplusplus](http://www.cplusplus.com/reference/)
- * [cppreference](http://en.cppreference.com/w/)
-
-## Using GCC on Mac 
-
-Install the latest version of gcc.
-
+```cpp
+template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 ```
-brew install gcc
-brew install gedit
-```
-
-Open your bash profile. 
-
-```
-gedit ~/.bash_profile
-```
-
-Add the following functions.
-
-```
-co() { 
-	g++-8 -std=c++17 -Ofast -Wall -Wl,-stack_size -Wl,0x10000000 -o $1 $1.cpp
-}
-run() {
-	co $1 && ./$1
-}
-```
-
-Now you can easily run C++ from the command line!
-
-## Command Line  
-
- * [Intro to Command Line](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
- * [Command Line Shortcuts](https://jonsuh.com/blog/bash-command-line-shortcuts/)
- 
-## IDE
-
-The list contains only the ones I have actually used.
-
-### Download
-
- * [Sublime Text 3](https://www.sublimetext.com/)
-   * [Editing Build Settings](https://stackoverflow.com/questions/23789410/how-to-edit-sublime-text-build-settings)
-   * [FastOlympicCoding Addon](https://github.com/Jatana/FastOlympicCoding)
- * [Geany](https://www.geany.org/)
- * [Visual Studio Code](https://code.visualstudio.com/)
- * [XCode](https://developer.apple.com/xcode/)
-   * Mac
- * [Codeblocks](http://www.codeblocks.org/)
-   * bad on mac :(
-
-### Online
-
- * [Cloud9](https://c9.io/)
- * [CSA](https://csacademy.com/workspace/)
- * [Ideone](http://ideone.com/)
-
-## Other
-
- * [Run Python Script](https://stackoverflow.com/questions/7855996/cant-run-python-py-files-from-terminal-on-mac)

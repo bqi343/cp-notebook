@@ -1,7 +1,9 @@
 /**
  * Description: Simplex Algorithm for linear programming
     * maximize cˆT x subject to Ax <= b, x >= 0; (oops I should try to understand all the code)
- * Usage: https://open.kattis.com/contests/fvfhq4/problems/goatropes
+ * Usage: 
+ 	* https://open.kattis.com/contests/fvfhq4/problems/goatropes
+ 	* http://codeforces.com/contest/375/problem/E
  * Source: KACTL, Stanford
  */
  
@@ -57,7 +59,7 @@ struct LPSolver {
 
 	T solve(vd &x) {
 		int r = 0;
-    	FOR(i,1,m) if (D[i][n+1] < D[r][n+1]) r = i;
+    		FOR(i,1,m) if (D[i][n+1] < D[r][n+1]) r = i;
 		if (D[r][n+1] < -eps) {
 			pivot(r, n);
 			if (!simplex(2) || D[m+1][n+1] < -eps) return -inf;
@@ -72,3 +74,13 @@ struct LPSolver {
 		return ok ? D[m][n+1] : inf;
 	}
 };
+
+/*vvd A; vd B,C;
+int co = 0; // # extra variables
+
+void addIneq(vd a, double b) { // a*x <= b
+    F0R(i,co) a.pb(0);
+    a.pb(1); co ++;
+    for (auto& z: A) z.pb(0);
+    A.pb(a); B.pb(b); C.pb(0);
+}*/

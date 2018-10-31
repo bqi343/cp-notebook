@@ -66,6 +66,7 @@ struct SuffixArray {
     }
     
     /*int lcp(int a, int b) {
+        if (a == b) return N-a;
         int t0 = A[a], t1 = A[b];
         if (t0 > t1) swap(t0,t1);
         return R.query(t0,t1-1);

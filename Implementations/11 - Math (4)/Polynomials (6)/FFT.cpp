@@ -4,38 +4,42 @@
 * Verification: SPOJ polymul, CSA manhattan
 */
 
-namespace FFT {
-    int get(int s) {
-        return s > 1 ? 32 - __builtin_clz(s - 1) : 0;
-    }
+typedef complex<double> cd;
 
-    vcd fft(vcd& a) { 
-        int n = sz(a), x = get(n); 
-        vcd res, RES(n), roots(n);
-        F0R(i,n) roots[i] = cd(cos(2*M_PIl*i/n),sin(2*M_PIl*i/n)); 
+namespace FFT {
+    int get(int s) { return s > 1 ? 32 - __builtin_clz(s - 1) : 0; }
+
+    void fft(vcd& a) { 
+        int N = sz(a), j = 0;
         
-        res = a;
-        FOR(i,1,x+1) {
-            int inc = n>>i;
-            F0R(j,inc) for (int k = 0; k < n; k += inc)  {
-                int t = 2*k%n+j;
-                RES[k+j] = res[t]+roots[k]*res[t+inc];
-            }
-            swap(res,RES);
+        FOR(i,1,N) {
+            int k;
+            for (k = N >> 1; j >= k; k >>= 1) j -= k;
+            j += k; if (i < j) swap(a[i],a[j]);
         }
         
-        return res;
+        vl roots(N);
+        roots[0] = 1, roots[1] = po(root,(MOD-1)/N);
+        FOR(i,2,N) roots[i] = mul(roots[i-1],roots[1]);
+        
+        for (int i = 2; i <= N; i *= 2) {
+            int i2 = i/2;
+            for (j = 0; j < N; j += i) {
+                for (int k = 0; k < i2; k++) {
+                    auto z = mul(a[i2+j+k],roots[N/i*k]); 
+                    a[i2+j+k] = sub(a[j+k],z); AD(a[j+k],z);
+                }
+            }
+        }
+    } 
+    
+    void fft_rev(vcd& a) {
+        fft(a); trav(x,a) x /= sz(a);
+        reverse(beg(a)+1, en(a));
     }
     
-    vcd fft_rev(vcd& a) {
-        vcd res = fft(a);
-        F0R(i,sz(res)) res[i] /= sz(a);
-        reverse(res.begin() + 1, res.end());
-        return res;
-    }
-    
-    vcd brute(vcd& a, vcd& b) {
-        vcd c(sz(a)+sz(b)-1);
+    template<class T> T brute(const T& a, const T& b) {
+        T c(sz(a)+sz(b)-1);
         F0R(i,sz(a)) F0R(j,sz(b)) c[i+j] += a[i]*b[j];
         return c;
     }
@@ -44,22 +48,17 @@ namespace FFT {
         int s = sz(a)+sz(b)-1, L = get(s), n = 1<<L;
         if (s <= 0) return {};
         if (s <= 200) return brute(a,b);
-        
-        a.resize(n); a = fft(a);
-        b.resize(n); b = fft(b);
-        
+        a.resz(n), fft(a); b.resz(n), fft(b);
         F0R(i,n) a[i] *= b[i];
-        a = fft_rev(a);
-        
-        a.resize(s);
-        return a;
+        fft_rev(a); a.resz(s); return a;
     }
     
-    vl convll(vl a, vl b) {
-        vcd A(sz(a)); F0R(i,sz(a)) A[i] = a[i];
-        vcd B(sz(b)); F0R(i,sz(b)) B[i] = b[i];
-        vcd X = conv(A,B);
+    vl conv(const vl& a, const vl& b) { 
+    	// 0.7s for sz(a)=sz(b)=1<<18
+        vcd X = conv(vcd(all(a)),vcd(all(b)));
         vl x(sz(X)); F0R(i,sz(X)) x[i] = round(X[i].real());
         return x;
     }
 }
+
+using namespace FFT;

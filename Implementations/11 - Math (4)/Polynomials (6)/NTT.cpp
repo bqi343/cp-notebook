@@ -29,16 +29,14 @@ namespace NTT {
         
         for (int i = 2; i <= N; i *= 2) {
             int i2 = i/2;
-            for (j = 0; j < N; j += i) {
-                for (int k = 0; k < i2; k++) {
-                    auto z = mul(a[i2+j+k],roots[N/i*k]); 
-                    a[i2+j+k] = sub(a[j+k],z); AD(a[j+k],z);
-                }
+            for (j = 0; j < N; j += i) F0R(k,i2) {
+                auto z = mul(a[i2+j+k],roots[N/i*k]); 
+                a[i2+j+k] = sub(a[j+k],z); AD(a[j+k],z);
             }
         }
     } 
     
-    vi ntt_rev(vi& a) {
+    void ntt_rev(vi& a) {
         ll in = inv(sz(a));
         ntt(a); trav(x,a) MUL(x,in);
         reverse(beg(a)+1, en(a));
@@ -51,14 +49,13 @@ namespace NTT {
     }
     
     vi conv(vi a, vi b) { 
-        // 0.1s for sz(a)=sz(b)=1<<18, 0.2s for slower version
         int s = sz(a)+sz(b)-1, L = get(s), n = 1<<L;
         if (s <= 0) return {};
         if (s <= 200) return brute(a,b);
         a.resz(n), ntt(a); b.resz(n), ntt(b);
         F0R(i,n) MUL(a[i],b[i]);
         ntt_rev(a); a.resz(s); return a;
-    }
+    } // 0.25s when sz(a)=sz(b)=1<<19
 }
 
 using namespace NTT;

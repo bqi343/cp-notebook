@@ -1,17 +1,17 @@
 /**
 * Source: own
 * Description: Pairs reduce frequency of collision
-* Verification: Dec 17 Plat 1
+* Verification: Dec 17 Plat 1, CF Check Transcription
 */
 
 using namespace pairOp;
 
+const int tmp = (chrono::high_resolution_clock::now().time_since_epoch().count()%(MOD-1)+(MOD-1))%(MOD-1)+1;
+
 struct hsh {
-    static const int tmp = chrono::high_resolution_clock::now()
-            .time_since_epoch().count();
     string S; 
     vpi pows, ipows, cum;
-    pi base = mp(948392576,tmp%MOD), invbase; // probably want to randomize base
+    pi base = mp(948392576,tmp), invbase; // probably want to randomize base
     
     hsh() {}
     hsh(string s) { gen(s); }

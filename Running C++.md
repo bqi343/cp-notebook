@@ -2,13 +2,7 @@
 
 ## Command Line (Mac)
 
-Install the latest version of gcc with homebrew.
-
-```
-brew install gcc
-```
-
-Open your bash profile with a text editor such as gedit (you might need to install this with homebrew as well). 
+Follow the instructions [here](https://wiki.helsinki.fi/display/HUGG/GNU+compiler+install+on+Mac+OS+X?fbclid=IwAR3bnM6A_kTgXD2p5nOfVbxRRQ4nHMj89jllNy1-zdtfXfcq1czbSoXiWgE). Note that step 4 might give errors but the install should still work. Open your bash profile with a text editor such as gedit (you might need to install this with homebrew). 
 
 ```
 gedit ~/.bash_profile
@@ -29,6 +23,12 @@ Now you can easily run C++ from the command line by calling run.
 
 ```
 run [prog name]
+```
+
+For OS X Mojave, it seems that you need to add the following line to your bash profile.
+
+```
+export CPLUS_INCLUDE_PATH="/usr/local/include/c++/8.1.0/:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include:$CPLUS_INCLUDE_PATH"
 ```
 
 ## IDE 
@@ -59,7 +59,6 @@ run [prog name]
 
 * [cplusplus](http://www.cplusplus.com/reference/)
 * [cppreference](http://en.cppreference.com/w/)
-
 
 ### Other
 

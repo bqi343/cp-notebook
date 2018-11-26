@@ -72,6 +72,7 @@
       * [CF Tutorial Pt 2](http://codeforces.com/blog/entry/48798)
       * [CSAcademy](https://csacademy.com/blog/fast-fourier-transform-and-variations-of-it/)
       * [adamant](http://codeforces.com/blog/entry/55572)
+      * [CP-Algorithms](https://cp-algorithms.com/algebra/fft.html)
     * Problems
       * Base Conversion
       * Bitwise XOR, And, Or

@@ -12,6 +12,7 @@ namespace vecOp {
     template<class T> T operator-=(T& l, const T& r) { return l = l-r; }
     template<class T> T operator*=(T& l, const T& r) { return l = l*r; }
 
+    vi rev(vi v) { reverse(all(v)); return v; }
     vi operator+(const vi& l, const vi& r) {
         vi res(max(sz(l),sz(r)));
         F0R(i,sz(l)) res[i] = l[i];

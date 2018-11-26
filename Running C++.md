@@ -2,7 +2,16 @@
 
 ## Command Line (Mac)
 
-Follow the instructions [here](https://wiki.helsinki.fi/display/HUGG/GNU+compiler+install+on+Mac+OS+X?fbclid=IwAR3bnM6A_kTgXD2p5nOfVbxRRQ4nHMj89jllNy1-zdtfXfcq1czbSoXiWgE). Note that step 4 might give errors but the install should still work. Open your bash profile with a text editor such as gedit (you might need to install this with homebrew). 
+Follow the instructions [here](https://wiki.helsinki.fi/display/HUGG/GNU+compiler+install+on+Mac+OS+X?fbclid=IwAR3bnM6A_kTgXD2p5nOfVbxRRQ4nHMj89jllNy1-zdtfXfcq1czbSoXiWgE). Step 4 might give errors but it should still install.
+
+The following command should also work.
+```
+brew install gcc
+```
+
+## Shortcuts
+
+Open your bash profile with a text editor such as gedit (you might need to install this with homebrew). 
 
 ```
 gedit ~/.bash_profile
@@ -23,6 +32,22 @@ Now you can easily run C++ from the command line by calling run.
 
 ```
 run [prog name]
+```
+
+## Troubleshooting
+
+Make sure you have installed XCode command line tools.
+
+```
+xcode-select --install
+xcode-select --version
+softwareupdate --list
+```
+
+Also check that you're using GCC, not clang.
+
+```
+gcc --version
 ```
 
 For OS X Mojave, it seems that you need to add the following line to your bash profile.

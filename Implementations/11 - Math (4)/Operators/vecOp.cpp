@@ -32,8 +32,9 @@ namespace vecOp {
         return x;
     }
     vi operator*(const vi& l, const int& r) {
+        int R = (r%MOD+MOD)%MOD;
         vi L = l; 
-        for (int& i: L) MUL(i,r); 
+        for (int& i: L) MUL(i,R); 
         return L;
     }
     vi operator*(const int& l, const vi& r) { return r*l; }

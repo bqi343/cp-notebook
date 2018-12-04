@@ -30,10 +30,10 @@ namespace treap {
         return x;
     }
     
-    void trav(pt x, vi& v) {
+    void tour(pt x, vi& v) {
         if (!x) return;
         prop(x);
-        trav(x->c[0],v); v.pb(x->val); trav(x->c[1],v);
+        tour(x->c[0],v); v.pb(x->val); tour(x->c[1],v);
     }
     
     pt recalc(pt x) {

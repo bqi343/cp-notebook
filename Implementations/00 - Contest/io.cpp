@@ -32,6 +32,7 @@ namespace io {
     
     template<class T1, class T2> void re(pair<T1,T2>& p) { re(p.f,p.s); }
     template<class T> void re(vector<T>& a) { F0R(i,sz(a)) re(a[i]); }
+    template<class T, size_t SZ> void re(array<T,SZ>& a) { F0R(i,SZ) re(a[i]); }
     
     // OUTPUT 
     

@@ -5,6 +5,7 @@
     * http://usaco.org/index.php?page=viewproblem2&cpid=768
         * https://pastebin.com/y2Z9FYr6
     * https://open.kattis.com/problems/suffixsorting
+    * https://codeforces.com/contest/1090/problem/J
 */
 
 struct SuffixArray {
@@ -33,8 +34,8 @@ struct SuffixArray {
     
     void init(string _str) {
         str = _str; N = sz(str);
-        A.resize(N); F0R(i,N) A[i] = str[i]; compress(A); 
-        L.resize(N); F0R(i,N) L[i] = i;
+        A.resz(N); F0R(i,N) A[i] = str[i]; compress(A); 
+        L.resz(N); F0R(i,N) L[i] = i;
         
         for (int cnt = 1; cnt < N; cnt <<= 1) { 
             sort_by(cnt), sort_by(0);
@@ -66,6 +67,7 @@ struct SuffixArray {
     }
     
     /*int lcp(int a, int b) {
+        if (max(a,b) >= N) return 0;
         if (a == b) return N-a;
         int t0 = A[a], t1 = A[b];
         if (t0 > t1) swap(t0,t1);

@@ -1,10 +1,13 @@
 /**
 * Description: persistent segtree with lazy updates
 * Sources: CF, Franklyn Wang
+* Verification: https://codeforces.com/contest/1090/problem/G
+    * Note: This implementation assumes that lazy[cur] is included in val[cur] before propagating cur. 
+    * If lazy[cur] is not included in val[cur], you must propagate children before pulling.
 */ 
 
 template<class T, int SZ> struct pseg {
-    static const int LIMIT = 10000000;
+    static const int LIMIT = 10000000; // adjust
     int l[LIMIT], r[LIMIT], nex = 0;
     T val[LIMIT], lazy[LIMIT];
     
@@ -15,8 +18,8 @@ template<class T, int SZ> struct pseg {
         return x;
     }
     T comb(T a, T b) { return min(a,b); }
-    void pull(int x) { val[x] = comb(val[l[x]],val[r[x]]); }
-    void push(int cur, int L, int R) {
+    void pull(int x) { val[x] = comb(val[l[x]],val[r[x]]); } 
+    void push(int cur, int L, int R) { 
         if (!lazy[cur]) return;
         if (L != R) {
             l[cur] = copy(l[cur]);

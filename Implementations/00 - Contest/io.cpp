@@ -24,12 +24,17 @@ namespace io {
     // INPUT 
     
     template<class T> void re(T& x) { cin >> x; }
-    template<class Arg, class... Args> void re(Arg& first, Args&... rest) { re(first); re(rest...); }
-    
+    template<class Arg, class... Args> void re(Arg& first, Args&... rest);
     void re(double& x) { string t; re(t); x = stod(t); }
     void re(ld& x) { string t; re(t); x = stold(t); }
-    void re(cd& x) { ld a,b; re(a,b); x = cd(a,b); }
     
+    template<class T> void re(complex<T>& x);
+    template<class T1, class T2> void re(pair<T1,T2>& p);
+    template<class T> void re(vector<T>& a);
+    template<class T, size_t SZ> void re(array<T,SZ>& a);
+    
+    template<class Arg, class... Args> void re(Arg& first, Args&... rest) { re(first); re(rest...); }
+    template<class T> void re(complex<T>& x) { T a,b; re(a,b); x = cd(a,b); }
     template<class T1, class T2> void re(pair<T1,T2>& p) { re(p.f,p.s); }
     template<class T> void re(vector<T>& a) { F0R(i,sz(a)) re(a[i]); }
     template<class T, size_t SZ> void re(array<T,SZ>& a) { F0R(i,SZ) re(a[i]); }
@@ -51,11 +56,11 @@ namespace io {
         os << '}';
         return os;
     }
-    template<class T, size_t SZ> ostream& operator<<(ostream& os, const array<T,SZ>& a) {
-        return printArray(os,a,SZ);
-    }
     template<class T> ostream& operator<<(ostream& os, const vector<T>& a) {
         return printArray(os,a,sz(a));
+    }
+    template<class T, size_t SZ> ostream& operator<<(ostream& os, const array<T,SZ>& a) {
+        return printArray(os,a,SZ);
     }
     
     template<class T> void pr(const T& x) { cout << x << '\n'; }

@@ -53,3 +53,9 @@
 | 2018 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=837) | sort | Range Queries, Binary Search | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=838) | milkorder | Graphs, Binary Search | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=839) | talent | DP | Done |
+
+| Contest         | # | Name      | Topic            | Result                 |
+| --------------- | - | --------- | ---------------- | ---------------------- |
+| 2018 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | dining | Shortest Path  | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | cowpatibility | Math | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | teamwork | DP | Done |

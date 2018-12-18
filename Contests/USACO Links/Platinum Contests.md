@@ -2,6 +2,29 @@
 
 | Contest         | #  | Name | Topic            | Result                 |
 | ------------- | - | - | ---------------| ---------------------- |
+| 2010 Oct | 1 | mkmoney | DP | DP | Done |
+| | 2 | soda | Sorting | Done |
+| 2010 Nov | 1 | cowpic | Range Queries | Done |
+| | 2 | feed | DP | |
+| | 3 | vacation | DP | |
+| 2010 Dec | 1 | exercise | Binary Search | Done |
+| | 2 | bigmac | Shortest Path |  |
+| | 3 | letter | Suffix Automaton | Done |
+| [2011 Jan](http://tjsct.wikidot.com/usaco-jan11-gold) | 1 | bottleneck | Convex Hull | Done |
+| | 2 | cowngress | DFS | |
+| | 3 | roadplane | Shortest Path | |
+| [2011 Feb](http://tjsct.wikidot.com/usaco-feb11-gold) | 1 | cowlpha | DP |  |
+| | 2 | lostcows | BFS | Done |
+| | 3 | protest | Range Queries |  |
+| [2011 Mar](http://tjsct.wikidot.com/usaco-mar11-gold) | brownie | Binary Search | |
+| | 2 | gdisc | Graphs, Ad Hoc | Done |
+| | 3 | tdec | Trees | |
+| [2011 Open](http://tjsct.wikidot.com/usaco-open11) | 1 | mowlawn | Deque | |
+| | 2 | oddd | DSU | |
+| | 3 | solder | DP + LineContainer | Done |
+
+| Contest         | #  | Name | Topic            | Result                 |
+| ------------- | - | - | ---------------| ---------------------- |
 | 2011 Nov | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=91) | median | Range Queries | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=92) | bsudoku | DFS | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=93) | steeple | Flows | Done |
@@ -82,7 +105,7 @@
 
 | Contest         | #  | Name | Topic            | Result                 |
 | ------------- | - | - | ---------------| ---------------------- |
-| 2015 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=576) | maxflow | Trees | Done |
+| 2015 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=576) | maxflow | LCA | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=577) | cardgame | SegTree | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=578) | haybales | SegTree | Done |
 | 2016 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=600) | fortmoo | Cumulative Sum | Done |
@@ -116,7 +139,7 @@
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=769) | pushabox | DP | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=770) | greedy | Binary Search | Done |
 | 2018 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=792) | lifeguards | DP, Deque | Done |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=793) | atlarge | Trees | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=793) | atlarge | LCA | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=794) | sprinklers | Cumulative Sum | Done |
 | 2018 Feb | [1](http://www.usaco.org/index.php?page=viewproblem&cpid=804) | slingshot | Range Queries | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=805) | newbarn | Trees | Done |
@@ -125,6 +148,14 @@
 | | [2](http://www.usaco.org/index.php?page=viewproblem&cpid=829) | train | Sqrt | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem&cpid=830) | disrupt | Trees | Done |
 
+| Contest         | #  | Name | Topic            | Result                 |
+| ------------- | - | - | ---------------| ---------------------- |
+| 2018 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | balance | Convex Hull | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | itout | DP | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | gathering | LCA | Done |
+
+
 # USACO Camp
-  * [What is it like to attend USACO Camp?](https://www.quora.com/What-is-it-like-to-attend-the-USACO-training-camp)
-  * [How do I get into USACO Camp?](https://www.quora.com/How-do-I-get-into-the-USACO-training-camp)
+* [What is it like to attend USACO Camp?](https://www.quora.com/What-is-it-like-to-attend-the-USACO-training-camp)
+* [How do I get into USACO Camp?](https://www.quora.com/How-do-I-get-into-the-USACO-training-camp)
+

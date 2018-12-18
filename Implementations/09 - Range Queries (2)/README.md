@@ -84,7 +84,9 @@
       * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
     * Problems
       * [DYNACON1](http://www.spoj.com/problems/DYNACON1/) [](140)
+      * [DYNALCA](https://www.spoj.com/problems/DYNALCA/)
       * [Tree Rotations 2](https://szkopul.edu.pl/problemset/problem/b0BM0al2crQBt6zovEtJfOc6/site/?key=statement) [](193)
+      * [Tree or not Tree](https://codeforces.com/contest/117/problem/E)
       
 ## 6
 

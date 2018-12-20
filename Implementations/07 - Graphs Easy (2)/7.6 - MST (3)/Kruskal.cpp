@@ -4,10 +4,10 @@
 * Verification: USACO superbull
 */
 
-ll kruskal(vector<array<int,3>> edge) {
+template<class T> T kruskal(vector<pair<T,pi>> edge) {
     DSU<MX> D; 
     sort(all(edge)); 
-    ll ans = 0;
-    for (auto a: edge) if (D.unite(a[1],a[2])) ans += a[0]; // edge is in MST   
+    T ans = 0;
+    for (auto a: edge) if (D.unite(a.s.f,a.s.s)) ans += a.f; // edge is in MST   
     return ans;
 }

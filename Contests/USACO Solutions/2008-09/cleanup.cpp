@@ -1,8 +1,64 @@
-/**
-* Description: more convenient functions for input / output
-* Source: Misc
-* Verification: http://codeforces.com/contest/1045/problem/D
-*/
+/*
+ ID: bqi3431
+ PROG: cleanup
+ LANG: C++11
+ */
+
+#pragma GCC optimize ("O3")
+#pragma GCC target ("sse4")
+
+#include <bits/stdc++.h>
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/rope>
+
+using namespace std;
+using namespace __gnu_pbds;
+using namespace __gnu_cxx;
+ 
+typedef long long ll;
+typedef long double ld;
+typedef complex<ld> cd;
+
+typedef pair<int, int> pi;
+typedef pair<ll,ll> pl;
+typedef pair<ld,ld> pd;
+
+typedef vector<int> vi;
+typedef vector<ld> vd;
+typedef vector<ll> vl;
+typedef vector<pi> vpi;
+typedef vector<pl> vpl;
+typedef vector<cd> vcd;
+
+template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
+
+#define FOR(i, a, b) for (int i = (a); i < (b); i++)
+#define F0R(i, a) for (int i = 0; i < (a); i++)
+#define FORd(i,a,b) for (int i = (b)-1; i >= (a); i--)
+#define F0Rd(i,a) for (int i = (a)-1; i >= 0; i--)
+#define trav(a, x) for (auto& a : x)
+
+#define mp make_pair
+#define pb push_back
+#define f first
+#define s second
+#define lb lower_bound
+#define ub upper_bound
+
+#define sz(x) (int)x.size()
+#define beg(x) x.begin()
+#define en(x) x.end()
+#define all(x) beg(x), en(x)
+#define resz resize
+
+const int MOD = 1000000007;
+const ll INF = 1e18;
+const int MX = 40001;
+const ld PI = 4*atan((ld)1);
+
+template<class T> void ckmin(T &a, T b) { a = min(a, b); }
+template<class T> void ckmax(T &a, T b) { a = max(a, b); }
 
 namespace io {
     // TYPE ID (StackOverflow)
@@ -56,17 +112,11 @@ namespace io {
         os << '}';
         return os;
     }
-    template<class T, size_t SZ> ostream& operator<<(ostream& os, const array<T,SZ>& a) {
-        return printArray(os,a,SZ);
-    }
     template<class T> ostream& operator<<(ostream& os, const vector<T>& a) {
         return printArray(os,a,sz(a));
     }
-    template<class T> ostream& operator<<(ostream& os, const set<T>& a) {
-        os << vector<T>(all(a)); return os;
-    }
-    template<class T1, class T2> ostream& operator<<(ostream& os, const map<T1,T2>& a) {
-        os << vector<pair<T1,T2>>(all(a)); return os;
+    template<class T, size_t SZ> ostream& operator<<(ostream& os, const array<T,SZ>& a) {
+        return printArray(os,a,SZ);
     }
     
     template<class T> void pr(const T& x) { cout << x << '\n'; }
@@ -76,3 +126,32 @@ namespace io {
 }
 
 using namespace io;
+
+int N,M,dp[MX],pos[MX];
+
+set<int> s;
+
+int main() {
+    // you should actually read the stuff at the bottom
+    setIO("cleanup"); 
+    re(N,M);
+    s.insert(0);
+    FOR(i,1,N+1) {
+        int x; re(x);
+        if (pos[x] != 0) s.erase(pos[x]);
+        pos[x] = i; s.insert(pos[x]);
+        int cur = 0;
+        dp[i] = MOD;
+        for (auto it = s.rbegin(); it != s.rend() && cur*cur <= N; ++it, ++cur) {
+            ckmin(dp[i],dp[*it]+cur*cur);
+        }
+    }
+    pr(dp[N]);
+    // you should actually read the stuff at the bottom
+}
+
+/* stuff you should look for
+    * int overflow, array bounds
+    * special cases (n=1?), set tle
+    * do smth instead of nothing and stay organized
+*/

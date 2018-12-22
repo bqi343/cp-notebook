@@ -48,7 +48,7 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 
 const int MOD = 1000000007;
 const ll INF = 1e18;
-const int MX = 100001;
+const int MX = 50001;
 const ld PI = 4*atan((ld)1);
 
 template<class T> void ckmin(T &a, T b) { a = min(a, b); }
@@ -121,153 +121,90 @@ namespace io {
 
 using namespace io;
 
-int N,M, dir[MX];
+uint64_t comb(uint64_t h, uint64_t k) { // https://www.boost.org/doc/libs/1_68_0/boost/container_hash/hash.hpp
+    const uint64_t m = UINT64_C(0xc6a4a7935bd1e995);
+    const int r = 47;
 
-void finish() {
-    FOR(i,1,N+1) pr(0);
-    exit(0);
+    k *= m;
+    k ^= k >> r;
+    k *= m;
+
+    h ^= k;
+    h *= m;
+
+    // Completely arbitrary number, to prevent 0's
+    // from hashing to 0.
+    h += 0xe6546b64;
+    return h;
 }
 
-template<int SZ> struct Topo {
-    int N, in[SZ], ok[SZ];
-    vi res, adj[SZ];
-    
-    void addEdge(int x, int y) {
-        adj[x].pb(y), in[y] ++;
-    }
-    
-    void sort() {
-        queue<int> todo;
-        FOR(i,1,N+1) if (in[i] == 0) {
-            ok[i] = 1;
-            todo.push(i);
-        }
-        while (sz(todo)) {
-            int x = todo.front(); todo.pop();
-            res.pb(x);
-            for (int i: adj[x]) {
-                in[i] --;
-                if (!in[i]) todo.push(i);
-            }
-        }
-        if (sz(res) == N) {
-            FOR(i,1,N+1) pr(ok[i]);
-        } else {
-            finish();
-        }
-    }
-};
-
-template<int SZ> struct LCA {
-    const int MAXK = 32-__builtin_clz(SZ);
-    
-    int N, R = 1; // vertices from 1 to N, R = root
-    vi adj[SZ];
-    int par[32-__builtin_clz(SZ)][SZ], depth[SZ];
-    
-    void addEdge(int u, int v) {
-        adj[u].pb(v), adj[v].pb(u);
-    }
-    
-    void dfs(int u, int prev){
-        par[0][u] = prev;
-        depth[u] = depth[prev]+1;
-        for (int v: adj[u]) if (v != prev) dfs(v, u);
-    }
-    
-    void init(int _N) {
-        N = _N;
-        dfs(R, 0);
-        FOR(k,1,MAXK) FOR(i,1,N+1)
-            par[k][i] = par[k-1][par[k-1][i]];
-    }
-    
-    int lca(int u, int v){
-        if (depth[u] < depth[v]) swap(u,v);
-        
-        F0Rd(k,MAXK) if (depth[u] >= depth[v]+(1<<k))  u = par[k][u];
-        F0Rd(k,MAXK) if (par[k][u] != par[k][v]) u = par[k][u], v = par[k][v];
-        
-        if(u != v) u = par[0][u], v = par[0][v];
-        return u;
-    }
-    
-    int dist(int u, int v) {
-        return depth[u]+depth[v]-2*depth[lca(u,v)];
-    }
-    
-    bool isAnc(int a, int b) {
-        F0Rd(i,MAXK) if (depth[b]-depth[a] >= (1<<i)) b = par[i][b];
-        return a == b;
-    }
-    
-    int getAnc(int a, int b) {
-        F0Rd(i,MAXK) if (depth[b]-depth[a]-1 >= (1<<i)) b = par[i][b];
-        return b;
-    }
-};
-
-LCA<MX> L;
-Topo<MX> T;
-
-void setDir(int x, int y) {
-    if (dir[x] && dir[x] != y) finish();
-    dir[x] = y;
+uint64_t hsh(vi x) {
+    uint64_t s = 0;
+    trav(y,x) s = comb(s,y);
+    return s;
 }
 
-void dfs0(int x) {
-    for (int y: L.adj[x]) if (y != L.par[0][x]) {
-        dfs0(y);
-        if (x != 1 && dir[y] == -1) setDir(x,-1);
+/*struct hsh {
+    uint64_t comb(uint64_t h, uint64_t k) const { // https://www.boost.org/doc/libs/1_68_0/boost/container_hash/hash.hpp
+        const uint64_t m = UINT64_C(0xc6a4a7935bd1e995);
+        const int r = 47;
+
+        k *= m;
+        k ^= k >> r;
+        k *= m;
+
+        h ^= k;
+        h *= m;
+
+        // Completely arbitrary number, to prevent 0's
+        // from hashing to 0.
+        h += 0xe6546b64;
+        return h;
     }
+
+    uint64_t operator()(vi x) const {
+        uint64_t s = 0;
+        trav(y,x) s = comb(s,y);
+        return s;
+    }
+};*/
+
+int n;
+ll ans;
+gp_hash_table<uint64_t,int> m;
+vi a[MX];
+
+void search0(vi& x, int ind, uint64_t h) {
+    if (ind == 5) {
+        m[h] ++;
+        return;
+    }
+    search0(x,ind+1,h);
+    search0(x,ind+1,comb(h,x[ind]));
 }
 
-void dfs1(int x) {
-    int co = 0;
-    if (dir[x] == 1) co ++;
-    for (int y: L.adj[x]) if (y != L.par[0][x]) {
-        if (dir[y] == -1) co ++;
+void search1(vi& x, int ind, uint64_t h, int par) {
+    if (ind == 5) {
+        ans += par*m[h];
+        return;
     }
-    for (int y: L.adj[x]) if (y != L.par[0][x]) {
-        if (dir[y] == -1) co --;
-        if (co) setDir(y,1);
-        if (dir[y] == -1) co ++;
-    }
-    for (int y: L.adj[x]) if (y != L.par[0][x]) dfs1(y);
-}
-
-void genEdge() {
-    dfs0(1);
-    dfs1(1);
-    FOR(i,2,N+1) {
-        if (dir[i] == -1) {
-            T.addEdge(i,L.par[0][i]);
-        } else if (dir[i] == 1) {
-            T.addEdge(L.par[0][i],i);
-        }
-    }
+    search1(x,ind+1,h,par);
+    search1(x,ind+1,comb(h,x[ind]),-par);
 }
 
 int main() {
     // you should actually read the stuff at the bottom
-    setIO("gathering"); 
-    re(N,M);
-    F0R(i,N-1) {
-        int a,b; re(a,b);
-        L.addEdge(a,b);
+    setIO("cowpatibility"); 
+    re(n);
+    F0R(i,n) {
+        a[i].resz(5); re(a[i]);
+        sort(all(a[i]));
+        search0(a[i],0,0);
     }
-    L.init(N);
-    F0R(i,M) {
-        int a,b; re(a,b); // if you root the tree at b, then every node in the subtree corresponding to a is bad
-        if (L.isAnc(a,b)) { // a is ancestor of b
-            int B = L.getAnc(a,b); 
-            setDir(B,-1);
-        } else {
-            setDir(a,1);
-        }
-        T.addEdge(b,a);
+    F0R(i,n) {
+        search1(a[i],0,0,1);
     }
-    genEdge(); T.N = N; T.sort();
+    pr(ans/2);
     
     // you should actually read the stuff at the bottom
 }

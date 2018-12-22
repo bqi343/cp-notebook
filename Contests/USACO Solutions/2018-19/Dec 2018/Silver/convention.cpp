@@ -121,159 +121,33 @@ namespace io {
 
 using namespace io;
 
-int N,M, dir[MX];
+int N,M,C;
+vi v;
 
-void finish() {
-    FOR(i,1,N+1) pr(0);
-    exit(0);
-}
-
-template<int SZ> struct Topo {
-    int N, in[SZ], ok[SZ];
-    vi res, adj[SZ];
-    
-    void addEdge(int x, int y) {
-        adj[x].pb(y), in[y] ++;
-    }
-    
-    void sort() {
-        queue<int> todo;
-        FOR(i,1,N+1) if (in[i] == 0) {
-            ok[i] = 1;
-            todo.push(i);
+bool ok (int mid) { // can we fit all N cows into M buses given that each bus has at most C and max dif <= mid
+    int need = 0;
+    for (int i = 0; i < N; ) {
+        // add cows until bus has C cows or difference in times > mid 
+        int j = i;
+        for (; j < N; ++j) {
+            if (j-i+1 > C) break;
+            if (v[j]-v[i] > mid) break;
         }
-        while (sz(todo)) {
-            int x = todo.front(); todo.pop();
-            res.pb(x);
-            for (int i: adj[x]) {
-                in[i] --;
-                if (!in[i]) todo.push(i);
-            }
-        }
-        if (sz(res) == N) {
-            FOR(i,1,N+1) pr(ok[i]);
-        } else {
-            finish();
-        }
+        i = j; need ++;
     }
-};
-
-template<int SZ> struct LCA {
-    const int MAXK = 32-__builtin_clz(SZ);
-    
-    int N, R = 1; // vertices from 1 to N, R = root
-    vi adj[SZ];
-    int par[32-__builtin_clz(SZ)][SZ], depth[SZ];
-    
-    void addEdge(int u, int v) {
-        adj[u].pb(v), adj[v].pb(u);
-    }
-    
-    void dfs(int u, int prev){
-        par[0][u] = prev;
-        depth[u] = depth[prev]+1;
-        for (int v: adj[u]) if (v != prev) dfs(v, u);
-    }
-    
-    void init(int _N) {
-        N = _N;
-        dfs(R, 0);
-        FOR(k,1,MAXK) FOR(i,1,N+1)
-            par[k][i] = par[k-1][par[k-1][i]];
-    }
-    
-    int lca(int u, int v){
-        if (depth[u] < depth[v]) swap(u,v);
-        
-        F0Rd(k,MAXK) if (depth[u] >= depth[v]+(1<<k))  u = par[k][u];
-        F0Rd(k,MAXK) if (par[k][u] != par[k][v]) u = par[k][u], v = par[k][v];
-        
-        if(u != v) u = par[0][u], v = par[0][v];
-        return u;
-    }
-    
-    int dist(int u, int v) {
-        return depth[u]+depth[v]-2*depth[lca(u,v)];
-    }
-    
-    bool isAnc(int a, int b) {
-        F0Rd(i,MAXK) if (depth[b]-depth[a] >= (1<<i)) b = par[i][b];
-        return a == b;
-    }
-    
-    int getAnc(int a, int b) {
-        F0Rd(i,MAXK) if (depth[b]-depth[a]-1 >= (1<<i)) b = par[i][b];
-        return b;
-    }
-};
-
-LCA<MX> L;
-Topo<MX> T;
-
-void setDir(int x, int y) {
-    if (dir[x] && dir[x] != y) finish();
-    dir[x] = y;
-}
-
-void dfs0(int x) {
-    for (int y: L.adj[x]) if (y != L.par[0][x]) {
-        dfs0(y);
-        if (x != 1 && dir[y] == -1) setDir(x,-1);
-    }
-}
-
-void dfs1(int x) {
-    int co = 0;
-    if (dir[x] == 1) co ++;
-    for (int y: L.adj[x]) if (y != L.par[0][x]) {
-        if (dir[y] == -1) co ++;
-    }
-    for (int y: L.adj[x]) if (y != L.par[0][x]) {
-        if (dir[y] == -1) co --;
-        if (co) setDir(y,1);
-        if (dir[y] == -1) co ++;
-    }
-    for (int y: L.adj[x]) if (y != L.par[0][x]) dfs1(y);
-}
-
-void genEdge() {
-    dfs0(1);
-    dfs1(1);
-    FOR(i,2,N+1) {
-        if (dir[i] == -1) {
-            T.addEdge(i,L.par[0][i]);
-        } else if (dir[i] == 1) {
-            T.addEdge(L.par[0][i],i);
-        }
-    }
+    return need <= M;
 }
 
 int main() {
     // you should actually read the stuff at the bottom
-    setIO("gathering"); 
-    re(N,M);
-    F0R(i,N-1) {
-        int a,b; re(a,b);
-        L.addEdge(a,b);
+    setIO("convention"); 
+    re(N,M,C); v.resz(N); re(v); sort(all(v));
+    int lo = 0, hi = 1000000000;
+    while (lo < hi) { 
+        int mid = (lo+hi)/2; // test if answer <= mid
+        if (ok(mid)) hi = mid;
+        else lo = mid+1;
     }
-    L.init(N);
-    F0R(i,M) {
-        int a,b; re(a,b); // if you root the tree at b, then every node in the subtree corresponding to a is bad
-        if (L.isAnc(a,b)) { // a is ancestor of b
-            int B = L.getAnc(a,b); 
-            setDir(B,-1);
-        } else {
-            setDir(a,1);
-        }
-        T.addEdge(b,a);
-    }
-    genEdge(); T.N = N; T.sort();
-    
+    pr(lo);
     // you should actually read the stuff at the bottom
 }
-
-/* stuff you should look for
-    * int overflow, array bounds
-    * special cases (n=1?), set tle
-    * do smth instead of nothing and stay organized
-*/

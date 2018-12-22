@@ -121,154 +121,61 @@ namespace io {
 
 using namespace io;
 
-int N,M, dir[MX];
+int N,K, numComp;
+char gr[10][100]; // column and then row 
+int comp[10][100], sz[1001];
+bool done = 0;
 
-void finish() {
-    FOR(i,1,N+1) pr(0);
-    exit(0);
+int xd[4] = {0,1,0,-1};
+int yd[4] = {1,0,-1,0};
+
+bool valid(int a, int b) {
+    return 0 <= a && a < 10 && 0 <= b && b < 100;
 }
 
-template<int SZ> struct Topo {
-    int N, in[SZ], ok[SZ];
-    vi res, adj[SZ];
-    
-    void addEdge(int x, int y) {
-        adj[x].pb(y), in[y] ++;
-    }
-    
-    void sort() {
-        queue<int> todo;
-        FOR(i,1,N+1) if (in[i] == 0) {
-            ok[i] = 1;
-            todo.push(i);
-        }
-        while (sz(todo)) {
-            int x = todo.front(); todo.pop();
-            res.pb(x);
-            for (int i: adj[x]) {
-                in[i] --;
-                if (!in[i]) todo.push(i);
-            }
-        }
-        if (sz(res) == N) {
-            FOR(i,1,N+1) pr(ok[i]);
-        } else {
-            finish();
-        }
-    }
-};
-
-template<int SZ> struct LCA {
-    const int MAXK = 32-__builtin_clz(SZ);
-    
-    int N, R = 1; // vertices from 1 to N, R = root
-    vi adj[SZ];
-    int par[32-__builtin_clz(SZ)][SZ], depth[SZ];
-    
-    void addEdge(int u, int v) {
-        adj[u].pb(v), adj[v].pb(u);
-    }
-    
-    void dfs(int u, int prev){
-        par[0][u] = prev;
-        depth[u] = depth[prev]+1;
-        for (int v: adj[u]) if (v != prev) dfs(v, u);
-    }
-    
-    void init(int _N) {
-        N = _N;
-        dfs(R, 0);
-        FOR(k,1,MAXK) FOR(i,1,N+1)
-            par[k][i] = par[k-1][par[k-1][i]];
-    }
-    
-    int lca(int u, int v){
-        if (depth[u] < depth[v]) swap(u,v);
-        
-        F0Rd(k,MAXK) if (depth[u] >= depth[v]+(1<<k))  u = par[k][u];
-        F0Rd(k,MAXK) if (par[k][u] != par[k][v]) u = par[k][u], v = par[k][v];
-        
-        if(u != v) u = par[0][u], v = par[0][v];
-        return u;
-    }
-    
-    int dist(int u, int v) {
-        return depth[u]+depth[v]-2*depth[lca(u,v)];
-    }
-    
-    bool isAnc(int a, int b) {
-        F0Rd(i,MAXK) if (depth[b]-depth[a] >= (1<<i)) b = par[i][b];
-        return a == b;
-    }
-    
-    int getAnc(int a, int b) {
-        F0Rd(i,MAXK) if (depth[b]-depth[a]-1 >= (1<<i)) b = par[i][b];
-        return b;
-    }
-};
-
-LCA<MX> L;
-Topo<MX> T;
-
-void setDir(int x, int y) {
-    if (dir[x] && dir[x] != y) finish();
-    dir[x] = y;
-}
-
-void dfs0(int x) {
-    for (int y: L.adj[x]) if (y != L.par[0][x]) {
-        dfs0(y);
-        if (x != 1 && dir[y] == -1) setDir(x,-1);
+void flood_fill(int a, int b) {
+    comp[a][b] = numComp; sz[comp[a][b]] ++;
+    F0R(i,4) {
+        int A = a+xd[i], B = b+yd[i]; // (A,B) adjacent to (a,b)
+        if (!valid(A,B) || gr[A][B] != gr[a][b] || comp[A][B]) continue;
+        flood_fill(A,B);
     }
 }
 
-void dfs1(int x) {
-    int co = 0;
-    if (dir[x] == 1) co ++;
-    for (int y: L.adj[x]) if (y != L.par[0][x]) {
-        if (dir[y] == -1) co ++;
+void sim() {
+    F0R(i,10) F0R(j,100) comp[i][j] = 0;
+    F0R(i,1001) sz[i] = 0;
+    numComp = 0;
+    F0R(i,10) F0R(j,100) if (comp[i][j] == 0 && gr[i][j] != '0') {
+        numComp ++;
+        flood_fill(i,j);
     }
-    for (int y: L.adj[x]) if (y != L.par[0][x]) {
-        if (dir[y] == -1) co --;
-        if (co) setDir(y,1);
-        if (dir[y] == -1) co ++;
+    done = 1;
+    
+    F0R(i,10) F0R(j,100) if (comp[i][j] && sz[comp[i][j]] >= K) {
+        done = 0;
+        gr[i][j] = '0';
     }
-    for (int y: L.adj[x]) if (y != L.par[0][x]) dfs1(y);
-}
-
-void genEdge() {
-    dfs0(1);
-    dfs1(1);
-    FOR(i,2,N+1) {
-        if (dir[i] == -1) {
-            T.addEdge(i,L.par[0][i]);
-        } else if (dir[i] == 1) {
-            T.addEdge(L.par[0][i],i);
-        }
+    
+    F0R(i,10) {
+        vector<char> v;
+        F0R(j,100) if (gr[i][j] != '0') v.pb(gr[i][j]);
+        F0R(j,100) gr[i][j] = '0';
+        F0R(j,sz(v)) gr[i][j] = v[j];
     }
 }
 
 int main() {
     // you should actually read the stuff at the bottom
-    setIO("gathering"); 
-    re(N,M);
-    F0R(i,N-1) {
-        int a,b; re(a,b);
-        L.addEdge(a,b);
+    setIO("mooyomooyo"); 
+    re(N,K);
+    F0R(i,10) F0R(j,100) gr[i][j] = '0';
+    F0Rd(i,N) F0R(j,10) re(gr[j][i]);
+    while (!done) sim();
+    F0Rd(i,N) {
+        F0R(j,10) cout << gr[j][i];
+        cout << "\n";
     }
-    L.init(N);
-    F0R(i,M) {
-        int a,b; re(a,b); // if you root the tree at b, then every node in the subtree corresponding to a is bad
-        if (L.isAnc(a,b)) { // a is ancestor of b
-            int B = L.getAnc(a,b); 
-            setDir(B,-1);
-        } else {
-            setDir(a,1);
-        }
-        T.addEdge(b,a);
-    }
-    genEdge(); T.N = N; T.sort();
-    
     // you should actually read the stuff at the bottom
 }
 

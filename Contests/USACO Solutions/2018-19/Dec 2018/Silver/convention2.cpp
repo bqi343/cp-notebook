@@ -121,159 +121,42 @@ namespace io {
 
 using namespace io;
 
-int N,M, dir[MX];
+// priority_queue<array<int,3>,vector<array<int,3>>,less<array<int,3>>> ev; 
+priority_queue<array<int,3>,vector<array<int,3>>,greater<array<int,3>>> ev, waiting;
 
-void finish() {
-    FOR(i,1,N+1) pr(0);
-    exit(0);
-}
+bool bad = 0;
+int N, ans;
 
-template<int SZ> struct Topo {
-    int N, in[SZ], ok[SZ];
-    vi res, adj[SZ];
-    
-    void addEdge(int x, int y) {
-        adj[x].pb(y), in[y] ++;
-    }
-    
-    void sort() {
-        queue<int> todo;
-        FOR(i,1,N+1) if (in[i] == 0) {
-            ok[i] = 1;
-            todo.push(i);
-        }
-        while (sz(todo)) {
-            int x = todo.front(); todo.pop();
-            res.pb(x);
-            for (int i: adj[x]) {
-                in[i] --;
-                if (!in[i]) todo.push(i);
-            }
-        }
-        if (sz(res) == N) {
-            FOR(i,1,N+1) pr(ok[i]);
-        } else {
-            finish();
-        }
-    }
-};
-
-template<int SZ> struct LCA {
-    const int MAXK = 32-__builtin_clz(SZ);
-    
-    int N, R = 1; // vertices from 1 to N, R = root
-    vi adj[SZ];
-    int par[32-__builtin_clz(SZ)][SZ], depth[SZ];
-    
-    void addEdge(int u, int v) {
-        adj[u].pb(v), adj[v].pb(u);
-    }
-    
-    void dfs(int u, int prev){
-        par[0][u] = prev;
-        depth[u] = depth[prev]+1;
-        for (int v: adj[u]) if (v != prev) dfs(v, u);
-    }
-    
-    void init(int _N) {
-        N = _N;
-        dfs(R, 0);
-        FOR(k,1,MAXK) FOR(i,1,N+1)
-            par[k][i] = par[k-1][par[k-1][i]];
-    }
-    
-    int lca(int u, int v){
-        if (depth[u] < depth[v]) swap(u,v);
-        
-        F0Rd(k,MAXK) if (depth[u] >= depth[v]+(1<<k))  u = par[k][u];
-        F0Rd(k,MAXK) if (par[k][u] != par[k][v]) u = par[k][u], v = par[k][v];
-        
-        if(u != v) u = par[0][u], v = par[0][v];
-        return u;
-    }
-    
-    int dist(int u, int v) {
-        return depth[u]+depth[v]-2*depth[lca(u,v)];
-    }
-    
-    bool isAnc(int a, int b) {
-        F0Rd(i,MAXK) if (depth[b]-depth[a] >= (1<<i)) b = par[i][b];
-        return a == b;
-    }
-    
-    int getAnc(int a, int b) {
-        F0Rd(i,MAXK) if (depth[b]-depth[a]-1 >= (1<<i)) b = par[i][b];
-        return b;
-    }
-};
-
-LCA<MX> L;
-Topo<MX> T;
-
-void setDir(int x, int y) {
-    if (dir[x] && dir[x] != y) finish();
-    dir[x] = y;
-}
-
-void dfs0(int x) {
-    for (int y: L.adj[x]) if (y != L.par[0][x]) {
-        dfs0(y);
-        if (x != 1 && dir[y] == -1) setDir(x,-1);
-    }
-}
-
-void dfs1(int x) {
-    int co = 0;
-    if (dir[x] == 1) co ++;
-    for (int y: L.adj[x]) if (y != L.par[0][x]) {
-        if (dir[y] == -1) co ++;
-    }
-    for (int y: L.adj[x]) if (y != L.par[0][x]) {
-        if (dir[y] == -1) co --;
-        if (co) setDir(y,1);
-        if (dir[y] == -1) co ++;
-    }
-    for (int y: L.adj[x]) if (y != L.par[0][x]) dfs1(y);
-}
-
-void genEdge() {
-    dfs0(1);
-    dfs1(1);
-    FOR(i,2,N+1) {
-        if (dir[i] == -1) {
-            T.addEdge(i,L.par[0][i]);
-        } else if (dir[i] == 1) {
-            T.addEdge(L.par[0][i],i);
-        }
+void process(int ti) {
+    if (bad == 0 && sz(waiting)) {
+        auto a = waiting.top(); waiting.pop();
+        bad = 1;
+        ckmax(ans,ti-a[2]); // a[2]: time cow entered the queue
+        // ans = max(ans,ti-a[2]);
+        ev.push({ti+a[1],MOD,MOD}); // a[1] is time cow takes to eat 
     }
 }
 
 int main() {
     // you should actually read the stuff at the bottom
-    setIO("gathering"); 
-    re(N,M);
-    F0R(i,N-1) {
-        int a,b; re(a,b);
-        L.addEdge(a,b);
+    setIO("convention2"); 
+    re(N);
+    F0R(i,N) {
+        int a,t; re(a,t); // start time, time in the pasture 
+        ev.push({a,i,t});
     }
-    L.init(N);
-    F0R(i,M) {
-        int a,b; re(a,b); // if you root the tree at b, then every node in the subtree corresponding to a is bad
-        if (L.isAnc(a,b)) { // a is ancestor of b
-            int B = L.getAnc(a,b); 
-            setDir(B,-1);
+    while (sz(ev)) {
+        auto x = ev.top(); ev.pop(); // pr(x);
+        if (x[1] == MOD) { // 10^9+7
+            // cow finished 
+            bad = 0; // no cow in pasture rn
         } else {
-            setDir(a,1);
+            // cow came in
+            waiting.push({x[1],x[2],x[0]}); // index, eating time, and the start time 
         }
-        T.addEdge(b,a);
+        process(x[0]);
     }
-    genEdge(); T.N = N; T.sort();
+    pr(ans);
     
     // you should actually read the stuff at the bottom
 }
-
-/* stuff you should look for
-    * int overflow, array bounds
-    * special cases (n=1?), set tle
-    * do smth instead of nothing and stay organized
-*/

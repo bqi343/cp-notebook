@@ -47,6 +47,6 @@
 
 | Contest         | # | Name      | Topic            | Result                 |
 | --------------- | - | --------- | ---------------- | ---------------------- |
-| 2018 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | convention | Binary Search  | Done |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | convention2 | Priority Queue | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | mooyomooyo | Flood Fill | Done |
+| 2018 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=858) | convention | Binary Search  | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=859) | convention2 | Priority Queue | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=860) | mooyomooyo | Flood Fill | Done |

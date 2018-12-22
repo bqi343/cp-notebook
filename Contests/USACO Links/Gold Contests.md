@@ -56,6 +56,6 @@
 
 | Contest         | # | Name      | Topic            | Result                 |
 | --------------- | - | --------- | ---------------- | ---------------------- |
-| 2018 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | dining | Shortest Path  | Done |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | cowpatibility | Math | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | teamwork | DP | Done |
+| 2018 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=861) | dining | Shortest Path | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=862) | cowpatibility | Hashing / Math / Bitset | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=863) | teamwork | DP | Done |

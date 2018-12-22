@@ -47,9 +47,9 @@
 
 | Contest         | #  | Name | Topic            | Result                 |
 | ------------- | - | - | --------------- | ---------------------- |
-| 2018 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | balance | Convex Hull | Done |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | itout | DP | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=?) | gathering | LCA | Done |
+| 2018 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=864) | balance | Convex Hull | Done |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=865) | itout | DP | Done |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=866) | gathering | LCA | Done |
 
 
 # USACO Camp

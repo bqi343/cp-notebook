@@ -1,6 +1,6 @@
 /**
 * Description:
-* Sources: SuprDewd, KACTL, majk
+* Sources: SuprDewd, KACTL, majk, ekzhang
 * Verification: 
     * http://usaco.org/index.php?page=viewproblem2&cpid=768
         * https://pastebin.com/y2Z9FYr6
@@ -8,71 +8,59 @@
     * https://codeforces.com/contest/1090/problem/J
 */
 
-struct SuffixArray {
-    int N;
-    vi idx;
-    string str;
-    // RMQ<int,MX> R; 
+struct LCP {
+    string S; int N;
+    vi sa, inv, lcp;
+    RMQ<int,MX> R; 
     
-    void compress(vi& v) {
-        vi V = v; sort(all(V)); V.erase(unique(all(V)),V.end());
-        for (int& i: v) i = lb(all(V),i)-V.begin()+1;
-    }
-    
-    vi A, L; // A stores lexicographic value, L stores suffixes in order
-    
-    int get(int x) { return x >= N ? 0 : A[x]; }
-    
-    void sort_by(int x) { // stable sort elements in a by b
-        vi cum(N+1); F0R(i,N) cum[get(i+x)] ++;
-        int sum = 0; F0R(i,N+1) cum[i] = (sum += cum[i], sum-cum[i]);
-        
-        vi L2(N);
-        for (int i: L) L2[cum[get(i+x)]++] = i;
-        swap(L,L2);
-    }
-    
-    void init(string _str) {
-        str = _str; N = sz(str);
-        A.resz(N); F0R(i,N) A[i] = str[i]; compress(A); 
-        L.resz(N); F0R(i,N) L[i] = i;
-        
-        for (int cnt = 1; cnt < N; cnt <<= 1) { 
-            sort_by(cnt), sort_by(0);
-        
-            vi A2(N);
-            F0R(i,N) {
-                if (i == 0) A2[L[i]] = 1;
-                else A2[L[i]] = A2[L[i-1]]+
-                    (mp(get(L[i]),get(L[i]+cnt)) != mp(get(L[i-1]),get(L[i-1]+cnt)));
-            }
-            
-            swap(A,A2);
+    void suffixArray() { // http://ekzlib.herokuapp.com
+        sa.resz(N);
+        vi classes(N);
+        F0R(i,N) {
+            sa[i] = N - 1 - i;
+            classes[i] = S[i];
         }
-        
-        // vi v = lcpArray(); R.build(v);
+        stable_sort(all(sa), [this](int i, int j) { return S[i] < S[j]; });
+        for (int len = 1; len < N; len *= 2) {
+            vi c(classes);
+            F0R(i,N) {
+            	bool same = i && sa[i - 1] + len < N
+            	              && c[sa[i]] == c[sa[i - 1]]
+            	              && c[sa[i] + len / 2] == c[sa[i - 1] + len / 2];
+            	classes[sa[i]] = same ? classes[sa[i - 1]] : i;
+            }
+            vi cnt(N), s(sa);
+            F0R(i,N) cnt[i] = i;
+            F0R(i,N) {
+                int s1 = s[i] - len;
+                if (s1 >= 0) sa[cnt[classes[s1]]++] = s1; // order pairs w/ same first element by second element
+            }
+        }
     }
     
-    vi lcpArray() { // KACTL
+    void lcpArray() { // KACTL
         int h = 0;
-        vi inv(N), res(N);
-        F0R(i,N) inv[L[i]] = i;
+        inv.resz(N), lcp.resz(N);
+        F0R(i,N) inv[sa[i]] = i;
         F0R(i,N) if (inv[i]) {
-            int p0 = L[inv[i] - 1];
-            while (max(i,p0)+h < N && str[i+h] == str[p0+h]) h++;
-            res[inv[i]] = h;
+            int p0 = sa[inv[i] - 1];
+            while (max(i,p0)+h < N && S[i+h] == S[p0+h]) h++;
+            lcp[inv[i]] = h; // lcp of suffixes starting at p0 and i
             if (h) h--;
         }
-        return res;
     }
     
-    /*int lcp(int a, int b) {
+    void init(string _S) {
+        S = _S; N = sz(S);
+        suffixArray(); lcpArray();
+        R.build(lcp);
+    }
+    
+    int getLCP(int a, int b) {
         if (max(a,b) >= N) return 0;
         if (a == b) return N-a;
-        int t0 = A[a], t1 = A[b];
+        int t0 = inv[a], t1 = inv[b];
         if (t0 > t1) swap(t0,t1);
-        return R.query(t0,t1-1);
-    }*/
+        return R.query(t0+1,t1);
+    }
 };
-
-SuffixArray S; // S.init("bcabcb");

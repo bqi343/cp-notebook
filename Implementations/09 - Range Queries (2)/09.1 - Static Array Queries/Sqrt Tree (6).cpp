@@ -1,10 +1,11 @@
 /**
  * Description: constructs in O(nloglogn) and queries a range in O(1)
+    * O(nlogn) construction almost always suffices
  * Source: https://cp-algorithms.com/data_structures/sqrt-tree.html
  * Verification: ?
  */ 
  
-template<int SZ> struct sqrtTree {
+template<int SZ> struct SqrtTree {
     int n, precomp[32-__builtin_clz(SZ)];
     vi suf[SZ], pre[SZ], block[SZ], a;
     vi levels;

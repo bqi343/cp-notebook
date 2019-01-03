@@ -7,7 +7,7 @@
 using namespace modOp;
 using namespace factor1;
 
-template<int SZ> struct combo {
+template<int SZ> struct Combo {
     int MOD, fac[SZ+1], ifac[SZ+1];
     vpl factors;
     vi cnt[SZ+1];

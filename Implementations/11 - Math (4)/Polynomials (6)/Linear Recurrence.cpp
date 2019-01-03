@@ -4,7 +4,7 @@
 * Verification: http://codeforces.com/contest/506/problem/E
 */
 
-using namespace VecOp;
+using namespace vecOp;
 
 struct linRec {
     vector<vi> seq;

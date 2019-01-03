@@ -4,7 +4,7 @@
  * Verification: https://www.codechef.com/problems/SEGPROD
  */ 
  
-template<class T, int SZ> struct rangeQuery {
+template<class T, int SZ> struct RangeQuery {
     int n;
     T stor[SZ][32-__builtin_clz(SZ)], id = 1;
     vector<T> a;
@@ -27,6 +27,6 @@ template<class T, int SZ> struct rangeQuery {
     T query(int l, int r) {
         if (l == r) return a[l];
         int t = 31-__builtin_clz(r^l);
-        return mul(stor[l][t],stor[r][t]);
+        return comb(stor[l][t],stor[r][t]);
     }
 };

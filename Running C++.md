@@ -96,3 +96,4 @@ export CPLUS_INCLUDE_PATH="/usr/local/include/c++/8.1.0/:/Applications/Xcode.app
  * [Intro to Command Line](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
  * [Command Line Shortcuts](https://jonsuh.com/blog/bash-command-line-shortcuts/)
  * [Run Python Script](https://stackoverflow.com/questions/7855996/cant-run-python-py-files-from-terminal-on-mac)
+ * [Competitive C++ Style Guide](https://codeforces.com/blog/entry/64218)

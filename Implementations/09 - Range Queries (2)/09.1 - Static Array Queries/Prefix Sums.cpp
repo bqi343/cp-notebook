@@ -4,9 +4,9 @@
  * Verification: POI 16 Ticket Inspector
  */
 
-template<class T, int SZ> struct sums {
+template<class T, int SZ> struct PrefixSums {
     T sum[SZ][SZ];
-    sums () { memset(sum,0,sizeof sum); }
+    PrefixSums () { memset(sum,0,sizeof sum); }
     void init() {
         FOR(i,1,SZ) FOR(j,1,SZ) 
             sum[i][j] += sum[i][j-1]

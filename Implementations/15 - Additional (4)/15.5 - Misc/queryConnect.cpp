@@ -4,8 +4,6 @@
 * Verification: https://oj.uz/problem/view/COCI18_pictionary
 */
 
-// struct DSU 
-
 template<int SZ> struct queryConnect {
     int n,q; // vertices, edges, # queries
     vpi ed; // edges

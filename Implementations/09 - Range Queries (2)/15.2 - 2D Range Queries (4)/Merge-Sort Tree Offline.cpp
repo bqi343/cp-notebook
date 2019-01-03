@@ -5,7 +5,7 @@
  * Verification: https://codeforces.com/contest/1093/problem/E
  */
 
-template<class T> struct BIT {
+template<class T> struct BIT { // offline build
     vector<T> bit, vals;
     
     void build() {

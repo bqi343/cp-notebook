@@ -4,14 +4,12 @@
 * Verification: USACO Grass Planting
 */
 
-// struct LazySegTree
-
 vector<vi> graph;
 
-template <int V> struct HLD { // sum queries, sum updates
-    int parent[V], heavy[V], depth[V];
-    int root[V], treePos[V];
-    LazySegTree<V> tree;
+template<int SZ> struct HLD { // sum queries, sum updates
+    int parent[SZ], heavy[SZ], depth[SZ];
+    int root[SZ], treePos[SZ];
+    LazySegTree<int,SZ> tree;
 
     void init() {
         int n = sz(graph)-1;

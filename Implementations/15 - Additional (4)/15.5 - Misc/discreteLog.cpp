@@ -7,7 +7,7 @@
 
 using namespace modOp;
 
-struct discreteLog {
+struct DiscreteLog {
     int mod, root, block;
     vi invy;
 	unordered_map<int,int> u;

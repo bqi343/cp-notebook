@@ -4,9 +4,9 @@
 * Verification: http://www.spoj.com/problems/PT07Z/
 */
 
-struct TreeDiameter {
-    int n, dist[MX], pre[MX];
-    vi adj[MX];
+template<int SZ> struct TreeDiameter {
+    int n, dist[SZ], pre[SZ];
+    vi adj[SZ];
 
     void addEdge(int a, int b) {
         adj[a].pb(b), adj[b].pb(a);

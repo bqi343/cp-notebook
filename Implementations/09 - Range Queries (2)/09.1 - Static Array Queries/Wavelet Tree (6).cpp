@@ -5,22 +5,20 @@
 * Verification: http://www.spoj.com/problems/MKTHNUM/
 */
 
-template<int SZ> struct wavelet {
+template<int SZ> struct Wavelet {
     vi mapl[2*SZ], mapr[2*SZ], val[2*SZ];
     
     void build(int ind = 1, int L = 0, int R = SZ-1) { // build a wavelet tree
         if (ind == 1) { F0R(i,N) val[ind].pb(i); }
-        
-        if (L < R) {
-            int M = (L+R)/2;
-            for (int i: val[ind]) {
-                val[2*ind+(A[i] > M)].pb(i);
-                mapl[ind].pb(sz(val[2*ind])-1);
-                mapr[ind].pb(sz(val[2*ind+1])-1);
-            }
-            build(2*ind,L,M);
-            build(2*ind+1,M+1,R);
+        if (L == R) return;
+        int M = (L+R)/2;
+        for (int i: val[ind]) {
+            val[2*ind+(A[i] > M)].pb(i);
+            mapl[ind].pb(sz(val[2*ind])-1);
+            mapr[ind].pb(sz(val[2*ind+1])-1);
         }
+        build(2*ind,L,M);
+        build(2*ind+1,M+1,R);
     }
     
     int getl(int ind, int x) { return x < 0 ? -1 : mapl[ind][x]; }

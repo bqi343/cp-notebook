@@ -3,7 +3,7 @@
 * To verify: January Easy 2018 - Shubham & Tree 1
 */
 
-struct HeavyLightSet {
+struct SmallToLarge {
     int val[MX];
     vi child[MX];
     map<int,int> dat[MX];

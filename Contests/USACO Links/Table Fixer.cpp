@@ -129,12 +129,12 @@ using namespace io;
 
 int cnum = 0, num = 6;
 string cur, tmp;
-vi len = {MOD,11,65,15,40,5};
+vi len = {MOD,11,65,15,35,8};
 
 void fix(int cnum) {
     if (cnum == 0) cout << "\n";
     else {
-        if (cur.find("Done") != string::npos) cur = "";
+        // if (cur.find("Done") != string::npos) cur = "";
         if (sz(cur) && cur.back() == '-') {
             while (sz(cur) < len[cnum]) cur += "-";
         }

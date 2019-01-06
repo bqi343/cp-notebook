@@ -1,5 +1,7 @@
 # Old Gold
 
+[Test Data / Solutions](http://contest.usaco.org/TESTDATA/)
+
 | Contest         | #  | Name | Topic            | Result                 |
 | ------------- | - | - | --------------- | ---------------------- |
 | [2007 Oct](http://tjsct.wikidot.com/usaco-oct07-gold) | 1 | money | Knapsack | |

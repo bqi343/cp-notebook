@@ -50,6 +50,9 @@
 | 2018 Dec  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=864)  | balance       | Convex Hull                       | Done   |
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=865)  | itout         | DP                                | Done   |
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=866)  | gathering     | LCA                               | Done   |
+| 2019 Jan  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=900)  | redistricting | Min Deque                         | Done   |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=901)  | exercise      | LCA                               | Done   |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=902)  | tracking2     | DP                                | Done   |
 
 
 # USACO Camp

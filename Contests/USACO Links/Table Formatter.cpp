@@ -9,7 +9,7 @@
 using namespace std;
 using namespace __gnu_pbds;
 using namespace __gnu_cxx;
- 
+
 typedef long long ll;
 typedef long double ld;
 typedef complex<ld> cd;
@@ -56,41 +56,41 @@ template<class T> void ckmax(T &a, T b) { a = max(a, b); }
 
 namespace io {
     // TYPE ID (StackOverflow)
-    
+
     template<class T> struct like_array : is_array<T>{};
     template<class T, size_t N> struct like_array<array<T,N>> : true_type{};
     template<class T> struct like_array<vector<T>> : true_type{};
     template<class T> bool is_like_array(const T& a) { return like_array<T>::value; }
 
-    // I/O 
-    
+    // I/O
+
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
     void setOut(string s) { freopen(s.c_str(),"w",stdout); }
     void setIO(string s = "") {
         ios_base::sync_with_stdio(0); cin.tie(0);
         if (sz(s)) { setIn(s+".in"), setOut(s+".out"); }
     }
-    
-    // INPUT 
-    
+
+    // INPUT
+
     template<class T> void re(T& x) { cin >> x; }
     template<class Arg, class... Args> void re(Arg& first, Args&... rest);
     void re(double& x) { string t; re(t); x = stod(t); }
     void re(ld& x) { string t; re(t); x = stold(t); }
-    
+
     template<class T> void re(complex<T>& x);
     template<class T1, class T2> void re(pair<T1,T2>& p);
     template<class T> void re(vector<T>& a);
     template<class T, size_t SZ> void re(array<T,SZ>& a);
-    
+
     template<class Arg, class... Args> void re(Arg& first, Args&... rest) { re(first); re(rest...); }
     template<class T> void re(complex<T>& x) { T a,b; re(a,b); x = cd(a,b); }
     template<class T1, class T2> void re(pair<T1,T2>& p) { re(p.f,p.s); }
     template<class T> void re(vector<T>& a) { F0R(i,sz(a)) re(a[i]); }
     template<class T, size_t SZ> void re(array<T,SZ>& a) { F0R(i,SZ) re(a[i]); }
-    
-    // OUTPUT 
-    
+
+    // OUTPUT
+
     template<class T1, class T2> ostream& operator<<(ostream& os, const pair<T1,T2>& a) {
         os << '{' << a.f << ", " << a.s << '}'; return os;
     }
@@ -118,44 +118,96 @@ namespace io {
     template<class T1, class T2> ostream& operator<<(ostream& os, const map<T1,T2>& a) {
         os << vector<pair<T1,T2>>(all(a)); return os;
     }
-    
+
     template<class T> void pr(const T& x) { cout << x << '\n'; }
-    template<class Arg, class... Args> void pr(const Arg& first, const Args&... rest) { 
-        cout << first << ' '; pr(rest...); 
+    template<class Arg, class... Args> void pr(const Arg& first, const Args&... rest) {
+        cout << first << ' '; pr(rest...);
     }
 }
 
 using namespace io;
 
-int cnum = 0, num = 6;
-string cur, tmp;
-vi len = {MOD,11,65,15,35,8};
+string tmp;
+vector<string> input;
+map<string,int> tag;
 
-void fix(int cnum) {
-    if (cnum == 0) cout << "\n";
-    else {
-        // if (cur.find("Done") != string::npos) cur = "";
-        if (sz(cur) && cur.back() == '-') {
-            while (sz(cur) < len[cnum]) cur += "-";
+int cnum = 0;
+vi len(6);
+
+string fix(string cur) {
+    while (sz(cur) && cur.back() == ' ') cur.pop_back();
+    while (sz(cur) >= 2 && cur[sz(cur)-1] == '-' && cur[sz(cur)-2] == '-') cur.pop_back();
+    return cur;
+}
+
+void normalize() {
+    trav(x,input)
+        if (sz(x) && x[0] == '|') {
+            string cur;
+            int ind = 0;
+            for (char c: x) {
+                if (c == '|') {
+                    cur = fix(cur);
+                    if (ind > 0) {
+                        while (sz(cur) < len[ind]) {
+                            if (cur.back() == '-') cur += '-';
+                            else cur += ' ';
+                        }
+                        cur += ' ';
+                    }
+                    cout << cur << c;
+                    cur = ""; ind ++;
+                } else cur += c;
+            }
+            cout << "\n";
+        } else {
+            pr(x);
         }
-        while (sz(cur) >= len[cnum]) cur.pop_back(); 
-        while (sz(cur) < len[cnum]) cur += " ";
+}
+
+void genTag(string cur) {
+    cur += "/";
+    string z;
+    trav(c,cur) {
+        if (c == '/') {
+            while (sz(z) && z.front() == ' ') z.erase(z.begin());
+            while (sz(z) && z.back() == ' ') z.erase(prev(z.end()));
+            if (!sz(z) || z[0] == '-' || z == "Topic") continue;
+            tag[z] ++; z = "";
+        } else z += c;
+    }
+}
+
+void printTags() {
+    vector<pair<int,string>> tags;
+    trav(x,tag) tags.pb({x.s,x.f});
+    sort(tags.rbegin(),tags.rend());
+    trav(x,tags) pr(x);
+}
+
+void readTable() {
+    while (getline(cin,tmp)) input.pb(tmp);
+    trav(x,input) if (sz(x) && x[0] == '|') {
+        string cur;
+        int ind = 0;
+        for (char c: x) {
+            if (c == '|') {
+                cur = fix(cur);
+                ckmax(len[ind],sz(cur));
+                cur += ' ';
+                // pr(ind,cur);
+                if (ind == 4) genTag(cur);
+                cur = "";
+                ind ++;
+            } else cur += c;
+        }
     }
 }
 
 int main() {
-    // you should actually read the stuff at the bottom
-    setIO(); 
-    while (cin >> tmp) {
-        if (tmp == "|") {
-            fix(cnum);
-            cout << cur << tmp; cur = "";
-            cnum = (cnum+1)%6;
-        } else {
-            cur += " "+tmp;
-        }
-    }
-    // you should actually read the stuff at the bottom
+    readTable();
+    normalize();
+    printTags();
 }
 
 /* stuff you should look for

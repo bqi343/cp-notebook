@@ -14,7 +14,7 @@
 | | 3 | bclgold | Suffix Array | Done |
 | [2007 Special](http://tjsct.wikidot.com/usaco-chn07) | 1 | sumsums | Implementation | |
 | | 2 | baabo | DP |  |
-| | 3 | treasure | Hashing |  |
+| | 3 | treasure | Hashing | Done |
 | [2008 Jan](http://tjsct.wikidot.com/usaco-jan08-gold) | 1 | bales | Binary Search / Set | Done |
 | | 2 | alake | DFS | Done |
 | | 3 | tower | Tree / DP | |

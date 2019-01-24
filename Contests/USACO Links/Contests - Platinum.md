@@ -54,9 +54,3 @@
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=901)  | exercise      | LCA                               | Done   |
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=902)  | tracking2     | DP                                | Done   |
 
-
-# USACO Camp
-* [What is it like to attend USACO Camp?](https://www.quora.com/What-is-it-like-to-attend-the-USACO-training-camp)
-* [How do I get into USACO Camp?](https://www.quora.com/How-do-I-get-into-the-USACO-training-camp)
-
-

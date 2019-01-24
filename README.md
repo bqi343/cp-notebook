@@ -1,10 +1,14 @@
 # README
 
-*Comments or suggestions should go to bqi343@gmail.com.*
-
 ## Introduction
 
 In competitive programming contests, one must solve well-defined problems by writing computer programs under specified limits or constraints. Typically, the most popular language is C++, followed by Java and Python. 
+
+## Contributing
+
+Contributions or feedback are much appreciated. Please email me at *bqi343@gmail.com* or submit a pull request. 
+
+I am no longer maintaining most of the pages which correspond to levels below USACO Platinum. It would be especially helpful if someone could update the tables for USACO Silver / Gold.
 
 ## Getting Started
 
@@ -45,7 +49,3 @@ Check out the rest of this compilation! If you have done well in math contests, 
 ## Why did I create this?
 
 Obviously, there are many resources which already exist. However, most of them were either too long, or lacking in some aspect. Furthermore, none of them focused specifically on USACO contests. Therefore, I decided to create a personal collection which I could easily refer to during CodeForces contests or ahead of USACO contests.
-
-## Contributing
-
-If you want to add something useful or correct an error, please email me at bqi343@gmail.com. It would be highly appreciated!

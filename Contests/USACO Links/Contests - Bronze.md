@@ -1,6 +1,6 @@
 # Bronze
 
-# Introduction
+## Introduction
 
 All questions about the format of USACO contests should be answered by the USACO website. You may want to explore the [USACO Training Pages](http://train.usaco.org/), although the problems are fairly outdated and the difficulty curve is pretty steep if you're just starting. Bronze contests usually just involve "algorithmic thinking." :D Thus, this should not be very hard to pass
 
@@ -25,7 +25,7 @@ Please refer to the [competitive programming handbook (CPH)](https://cses.fi/boo
         * [CSA 38 B](https://csacademy.com/contest/round-38/task/attack-and-speed/)
 
 
-# Contests 
+## Contests 
 
 Currently useless.
 

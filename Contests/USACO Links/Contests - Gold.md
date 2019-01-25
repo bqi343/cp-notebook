@@ -59,3 +59,6 @@
 | 2018 Dec  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=861) | dining        | Shortest Path                    | Done   |
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=862) | cowpatibility | Hashing / PIE / Bitset           | Done   |
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=863) | teamwork      | DP                               | Done   |
+| 2019 Jan  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=897) | poetry        | DP / Math		                    | Done   |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=898) | sleepy				 | Range Queries				            | Done   |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=899) | Shortcut      | Shortest path 								    | Done   |

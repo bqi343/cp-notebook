@@ -4,7 +4,7 @@
 * Verification: ?
 */
 
-using namespace RPM;
+using namespace rpm;
 using namespace factor1;
 
 ll order(ll x, ll p) {

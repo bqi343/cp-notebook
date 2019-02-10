@@ -132,7 +132,7 @@ vector<string> input;
 map<string,int> tag;
 
 int cnum = 0;
-vi len(6);
+vi len(7); // 7 includes percent column
 
 string fix(string cur) {
     while (sz(cur) && cur.back() == ' ') cur.pop_back();
@@ -207,7 +207,7 @@ void readTable() {
 int main() {
     readTable();
     normalize();
-    printTags();
+    // printTags();
 }
 
 /* stuff you should look for

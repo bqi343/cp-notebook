@@ -64,7 +64,7 @@ These problems are all submittable through the current USACO website. Percentage
 | Contest   | #                                                              | Name          | Topic                      | Result | %    |
 | --------- | -------------------------------------------------------------- | ------------- | -------------------------- | ------ | ---- |
 | 2015 Dec  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=576) | maxflow       | LCA                        | Done   | 44   |
-|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=577) | cardgame      | 1DRQ                       | Done   | 30   |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=577) | cardgame      | 1DRQ / Greedy / Set        | Done   | 30   |
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=578) | haybales      | 1DRQ                       | Done   | 67   |
 | 2016 Jan  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=600) | fortmoo       | Prefix Sums / Two Pointers | Done   | 89   |
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=601) | mowing        | 2DRQ                       | Done   | 11   |

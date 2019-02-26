@@ -50,9 +50,9 @@ namespace output {
     template<class T> void pr(const set<T>& x) { prContain(x); }
     template<class T1, class T2> void pr(const map<T1,T2>& x) { prContain(x); }
     
-    template<class Arg> void ps(const Arg& first) { pr(first,"\n"); } // print w/ spaces
+    void ps() { pr("\n"); } 
     template<class Arg, class... Args> void ps(const Arg& first, const Args&... rest) { 
-        pr(first," "); ps(rest...); 
+        pr(first," "); ps(rest...); // print w/ spaces
     }
 }
 

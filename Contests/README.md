@@ -1,5 +1,6 @@
 # Contests
-See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO Gold, you should start doing as many contests as possible.
+
+See [clist.by](http://clist.by/) for an extensive list. Most of the contests which I do are a subset of those shown in "Programming Contests.png".
 
   * [USACO](http://www.usaco.org/)
     * Bronze, Silver, Gold, Platinum: 3 problems, 4 hrs
@@ -7,7 +8,7 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * [Codeforces](http://codeforces.com/)
     * Div 2, Div 1: 5 problems, 2 hrs
   * [AtCoder](https://atcoder.jp/)
-    * Beginner / Regular: 4 problems, 100 min 
+    * Beginner / Regular: 4 problems, 100 min
     * Grand: 6 problems, 110 min
     * [Visualizer](https://kenkoooo.com/atcoder/)
     * [Test Data](https://www.dropbox.com/sh/arnpe0ef5wds8cv/AAAk_SECQ2Nc6SVGii3rHX6Fa?dl=0)
@@ -28,17 +29,17 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
   * [Codechef](http://codechef.com/)
     * Lunchtime, Cookoff
 
-## Annual Contests 
+## Annual Contests
   * [BattleCode](https://www.battlecode.org): January
   * [Russian Code Cup](http://www.russiancodecup.ru/en/): March
   * [Bubble Cup](http://bubblecup.org/): April
   * [Google Code Jam](https://code.google.com/codejam/): April
     * Kickstart: February - November
-  * [IPSC](https://ipsc.ksp.sk/rules): July 
+  * [IPSC](https://ipsc.ksp.sk/rules): July
   * [Facebook Hacker Cup](https://www.facebook.com/hackercup/): July
   * ~~[SnackDown](https://www.codechef.com/snackdown/2017/schedule): May~~
   * ~~[Yandex Algorithm](https://contest.yandex.ru/contest-list/): April (bad times)~~
-  
+
 ## Online HS
 
  * [VT HSPC](https://icpc.cs.vt.edu/#/hscontest2017)
@@ -50,7 +51,7 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
     * Online
     * 4 hours
     * December
-    
+
 ## Misc OI
 
   * IOI
@@ -94,7 +95,7 @@ See [clist.by](http://clist.by/) for a very extensive list! Once you reach USACO
       * [CS Academy](https://csacademy.com/contests/)
       * [oj.uz](https://oj.uz/)
 
-  
+
 ## Contest Tools
 
 Mostly for CodeForces, some more useful than others.
@@ -106,7 +107,7 @@ Mostly for CodeForces, some more useful than others.
   * [CF Achievements](http://cfa.yuldashev.net/)
   * [CF Predictor](https://chrome.google.com/webstore/detail/cf-predictor/ocfloejijfhhkkdmheodbaanephbnfhn)
   * [CF Enhancer](https://chrome.google.com/webstore/detail/codeforces-enhancer/ocmandagmgmkcplckgnfgaokpgkfenmp)
-  
+
 ## Very Rough Codeforces to USACO
   * 1200+: Silver
   * 1400+: Gold

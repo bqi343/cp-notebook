@@ -2,42 +2,43 @@
 
 ## Introduction
 
-In competitive programming contests, one must solve well-defined problems by writing computer programs under specified limits or constraints. Typically, the most popular language is C++, followed by Java and Python. 
+In competitive programming contests, one must solve well-defined problems by writing computer programs under specified constraints ([Wikipedia](https://en.wikipedia.org/wiki/Competitive_programming)). Typically, the most popular language is C++, followed by Java and Python.
 
 ## Contributing
 
-Contributions or feedback are much appreciated. Please email me at *bqi343@gmail.com* or submit a pull request. 
+Contributions or feedback are much appreciated. Please email me at *bqi343@gmail.com* or submit a pull request.
 
 I am no longer maintaining most of the pages which correspond to levels below USACO Platinum. It would be especially helpful if someone could update the tables for USACO Silver / Gold.
 
 ## Getting Started
 
-Start learning C++ simply by searching up a tutorial [such as this](https://www.google.com/url?q=http%3A%2F%2Fwww.cplusplus.com%2Fdoc%2Ftutorial%2F&sa=D). No prior experience is needed! If you know some other language such as Java or Python, I recommend you switch to C++ ASAP. [Codefights](https://codefights.com/) is a good way to practice syntax. [This link](https://www.quora.com/What-is-a-good-schedule-to-follow-for-becoming-better-at-competitive-programming-for-beginners) is helpful.
+I recommend that you use C++, even if you already know some other language such as Java or Python (see notes). A solid foundation in math (ex. AIME qualification) can help greatly.
 
-Attempt some USACO Bronze problems. Assuming you know how the input / output works, you should soon be able to advance to silver. After that, you can start doing past USACO silver problems as well as the USACO training pages. Also, start doing contests! [AtCoder Beginner Contests](http://atcoder.jp/) are recommended.
+ * [C++ Tutorial](https://www.google.com/url?q=http%3A%2F%2Fwww.cplusplus.com%2Fdoc%2Ftutorial%2F&sa=D).
+ * [CodeFights](https://codefights.com/)
+   * good way to practice syntax
+ * [Schedule for Beginners](https://www.quora.com/What-is-a-good-schedule-to-follow-for-becoming-better-at-competitive-programming-for-beginners)
+ * [E869120 Tutorial](http://codeforces.com/blog/entry/53341)
 
-Check out the rest of this compilation! If you have done well in math contests, then it shouldn't be too hard to pick up competitive programming as well.
-
-[E869120 Tutorial](http://codeforces.com/blog/entry/53341)
+Assuming you know how C++ input/output works, you should soon be able to advance from USACO Bronze. After that, you can start doing past USACO Silver problems as well as the USACO training pages. Also, participate in other contests such as [AtCoder Beginner.](http://atcoder.jp/)
 
 ## How do you train for USACO Platinum?
 
-* Do as many contests as possible. 
-  * Make sure to upsolve after the contest ends!
-  * [Here](https://drive.google.com/file/d/1sf_-NdFX8HFvpaHqltpI8fyVBXx5tjua/view?usp=sharing) is an example of the contests I consider doing.
+* Do as many (high-quality) contests as possible.
+  * Make sure to upsolve after the contest ends! ([wiktionary](https://en.wiktionary.org/wiki/upsolve))
 * Work through past problems.
-  * USACO 
+  * USACO
     * Old Gold / Platinum
     * [Training](http://train.usaco.org/usacogate)
-      * warning: somewhat outdated!
+      * warning: somewhat outdated
   * [CSES](https://cses.fi/problemset/)
     * goes along with CPH
-    * nice for practicing fundamentals
+    * good for practicing fundamentals
   * Contest Archives
     * [POI](https://szkopul.edu.pl/portal/problemset_eng)
     * [AtCoder](https://beta.atcoder.jp/contests/archive)
-    * [Codeforces](http://codeforces.com/problemset)
-    * [CSAcademy](https://csacademy.com/contest/archive/) 
+    * [CodeForces](http://codeforces.com/problemset)
+    * [CSAcademy](https://csacademy.com/contest/archive/)
       * short statements, editorials
       * solve statistics
       * ability to view best solutions
@@ -45,7 +46,3 @@ Check out the rest of this compilation! If you have done well in math contests, 
   * see implementation / USACO categories
   * [A2OJ](https://a2oj.com/)
   * [Problem Topics (Morass)](http://codeforces.com/blog/entry/55274)
-
-## Why did I create this?
-
-Obviously, there are many resources which already exist. However, most of them were either too long, or lacking in some aspect. Furthermore, none of them focused specifically on USACO contests. Therefore, I decided to create a personal collection which I could easily refer to during CodeForces contests or ahead of USACO contests.

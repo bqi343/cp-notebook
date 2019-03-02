@@ -62,3 +62,6 @@
 | 2019 Jan  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=897) | poetry        | DP / Math		                    |        |
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=898) | sleepy				 | 1DRQ                             |        |
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=899) | shortcut      | Shortest Path                    |        |
+| 2019 Feb  | [1](usaco.org)                                                 | cowland       | LCA        	                    |        |
+|           | [2](usaco.org)                                                 | dishes 			 | Binary Search                    |        |
+|           | [3](usaco.org)                                                 | paintbarn     | Geometry / Line Sweep            |        |

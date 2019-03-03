@@ -114,6 +114,6 @@ These problems are all submittable through the current USACO website. Percentage
 | 2019 Jan  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=900) | redistricting | DP / Deque                               | Done   | 40   |
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=901) | exercise      | LCA / PIE                                | Done   | 5    |
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=902) | tracking2     | DP                                       | Done   | 13   |
-| 2019 Feb  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=912) | cowdate       | Two Pointers / Prefix Sums               | Done   | ?    |
-|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=913) | mooriokart    | Tree / Knapsack                          | Done   | ?    |
-|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=914) | mowing        | DP / Convexity / Binary Search / SegTree | Done   | ?    |
+| 2019 Feb  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=912) | cowdate       | Two Pointers / Prefix Sums               | Done   | 42   |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=913) | mooriokart    | Tree / Knapsack                          | Done   | 17   |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=914) | mowing        | DP / Convexity / Binary Search / SegTree | Done   | 3    |

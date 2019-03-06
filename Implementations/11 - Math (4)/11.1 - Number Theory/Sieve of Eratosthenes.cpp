@@ -1,8 +1,8 @@
 /**
-* Description: Tests primality up to n in O(nlog(logn)) 
-* Source: KACTL?
-* Verification: https://open.kattis.com/problems/primesieve
-*/
+ * Description: Tests primality up to n in O(nlog(logn)) 
+ * Source: KACTL 
+ * Verification: https://open.kattis.com/problems/primesieve
+ */
 
 template<int SZ> struct Sieve { 
 	bitset<SZ> comp;

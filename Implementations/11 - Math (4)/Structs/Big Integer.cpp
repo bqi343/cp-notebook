@@ -1,7 +1,9 @@
 /**
-* Source: https://github.com/indy256/codelibrary/
+ * Description: ?
+ * Source: https://github.com/indy256/codelibrary/
             blob/master/cpp/numbertheory/bigint.cpp
-*/
+ * Verification: ?
+ */
 
 namespace bigint {
     // base and base_digits must be consistent

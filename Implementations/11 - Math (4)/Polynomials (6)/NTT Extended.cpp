@@ -1,8 +1,8 @@
 /**
-* Description: Evaluate degree n polynomial at n points in O(nlog^2n) time
-* Source: CF, http://people.csail.mit.edu/madhu/ST12/scribe/lect06.pdf
-* Verification: https://codeforces.com/contest/438/problem/E
-*/
+ * Description: Evaluate degree n polynomial at n points in O(nlog^2n) time
+ * Source: CF, http://people.csail.mit.edu/madhu/ST12/scribe/lect06.pdf
+ * Verification: ? https://codeforces.com/contest/438/problem/E
+ */
 
 using namespace vecOp;
 using namespace NTT;

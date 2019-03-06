@@ -1,10 +1,10 @@
 /**
-* Description: For each pair of points, calculates the first time when they are connected
-* Source: Own
-* Verification: https://oj.uz/problem/view/COCI18_pictionary
-*/
+ * Description: For each pair of points, calculates the first time when they are connected
+ * Source: Own
+ * Verification: https://oj.uz/problem/view/COCI18_pictionary
+ */
 
-template<int SZ> struct connectQuery {
+template<int SZ> struct ConnectQuery {
     int n,q; // vertices, edges, # queries
     vpi ed; // edges
  

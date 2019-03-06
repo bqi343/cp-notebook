@@ -1,8 +1,8 @@
 /**
-* Description: Chinese Remainder Theorem
-* Source: Own
-* Verification: Kattis generalchineseremainder
-*/
+ * Description: Chinese Remainder Theorem
+ * Source: Own
+ * Verification: ? Kattis generalchineseremainder
+ */
 
 using namespace modOp;
 

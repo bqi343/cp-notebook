@@ -17,7 +17,7 @@ template<int SZ> struct BellmanFord {
         return dist[x];
     }
 
-    void gen(int s) {
+    void init(int s) {
         F0R(i,n) dist[i] = INF, bad[i] = 0;
         dist[s] = 0;
 

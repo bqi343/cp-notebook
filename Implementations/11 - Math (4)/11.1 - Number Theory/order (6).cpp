@@ -1,8 +1,8 @@
 /** 
-* Description: Calculates smallest P such that x^P equiv 1 (mod p)
-* Source: Own
-* Verification: ?
-*/
+ * Description: Calculates smallest P such that x^P equiv 1 (mod p)
+ * Source: Own
+ * Verification: ?
+ */
 
 using namespace rpm;
 using namespace factor1;

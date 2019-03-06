@@ -3,7 +3,7 @@
     * Finds all (x,y) such that s.substr(x,y-1) == s.substr(x+y,y-1)
     * https://cp-algorithms.com/string/main_lorentz.html
  * Source: own
- * Usage: http://codeforces.com/contest/1043/problem/G
+ * Verification: http://codeforces.com/contest/1043/problem/G
  */
  
 template<int SZ> struct stringRepeat {

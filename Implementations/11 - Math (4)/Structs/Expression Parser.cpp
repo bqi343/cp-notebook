@@ -1,7 +1,8 @@
 /**
-* Description: Evaluates mod expression with parentheses, or returns -1 if it is invalid
-* Usage: IPSC 2018 I1 :((((
-*/
+ * Description: Evaluates mod expression with parentheses, or returns -1 if it is invalid
+ * Source: Own
+ * Verification: IPSC 2018 I1 
+ */
 
 namespace exprParse {
     string expr;

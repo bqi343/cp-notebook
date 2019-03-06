@@ -1,8 +1,8 @@
 /**
-* Description: multiply two polynomials
-* Source: https://cp-algorithms.com/algebra/fft.html
-* Verification: SPOJ polymul, CSA manhattan, CF Perfect Encoding
-*/
+ * Description: multiply two polynomials
+ * Source: https://cp-algorithms.com/algebra/fft.html
+ * Verification: ? SPOJ polymul, CSA manhattan, CF Perfect Encoding
+ */
 
 typedef complex<double> cd;
 

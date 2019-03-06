@@ -1,10 +1,10 @@
 /**
-* Description: O(N+M) euler tour for both directed and undirected graphs
-* Source: USACO Training
-* Verification: 
+ * Description: O(N+M) euler tour for both directed and undirected graphs
+ * Source: USACO Training
+ * Verification: 
     * directed: https://open.kattis.com/problems/eulerianpath
     * undirected: USACO Training 3.3, Riding the Fences
-*/
+ */
 
 struct Euler {
     vpi adj[MX], circuit;

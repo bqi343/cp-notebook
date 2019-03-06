@@ -1,7 +1,8 @@
 /**
-* Description: shortest path!
-* Works with negative edge weights (aka SPFA?)
-*/
+ * Description: shortest path
+ * Source: ?
+ * Verification: ?
+ */
 
 template<class T> using pqg = priority_queue<T,vector<T>,greater<T>>;
 
@@ -19,7 +20,7 @@ template<int SZ> struct Dijkstra {
         adj[A].pb({B,C}), adj[B].pb({A,C});
     }
     
-    void gen(int st) {
+    void init(int st) {
         fill_n(dist,SZ,INF); 
         q = pqg<pl>(); q.push({dist[st] = 0,st});
     	while (sz(q)) {

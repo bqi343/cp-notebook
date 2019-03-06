@@ -1,8 +1,8 @@
 /**
-* Description: extends Combo to all natural numbers
-* Source: Own
-* Verification: https://dmoj.ca/problem/tle17c4p5
-*/
+ * Description: extends Combo to all natural numbers
+ * Source: Own
+ * Verification: ? https://dmoj.ca/problem/tle17c4p5
+ */
 
 using namespace modOp;
 using namespace factor1;

@@ -4,7 +4,7 @@
 * Verification: https://oj.uz/problem/view/COCI18_pictionary
 */
 
-template<int SZ> struct queryConnect {
+template<int SZ> struct connectQuery {
     int n,q; // vertices, edges, # queries
     vpi ed; // edges
  

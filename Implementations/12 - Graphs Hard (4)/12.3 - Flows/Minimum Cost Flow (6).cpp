@@ -1,8 +1,8 @@
 /**
-* Description: 
-* Source: GeeksForGeeks
-* Verification: CodeForces?
-*/
+ * Description: ?
+ * Source: GeeksForGeeks
+ * Verification: CodeForces?
+ */
 
 struct Edge {
     int v, flow, C, rev, cost;
@@ -21,9 +21,7 @@ template<int SZ> struct mcf {
     }
 
     void reweight() {
-    	F0R(i,SZ) {
-    	    for (auto& p: adj[i]) p.cost += cost[i]-cost[p.v];
-    	}
+    	F0R(i,SZ) trav(p,adj[i]) p.cost += cost[i]-cost[p.v];
     }
     
     bool spfa() {
@@ -31,7 +29,7 @@ template<int SZ> struct mcf {
         cost[SC] = 0, num[SC] = MOD;
         priority_queue<pi,vpi,greater<pi>> todo; todo.push({0,SC});
 
-        while (todo.size()) {
+        while (sz(todo)) {
             pi x = todo.top(); todo.pop();
             if (x.f > cost[x.s]) continue;
             for (auto a: adj[x.s]) if (x.f+a.cost < cost[a.v] && a.flow < a.C) {
@@ -55,7 +53,7 @@ template<int SZ> struct mcf {
         }
     }
     
-    pi mincostflow(int sc, int snc) {
+    pl mincostflow(int sc, int snc) {
         SC = sc, SNC = snc;
         flo = ans = ccost = 0;
         

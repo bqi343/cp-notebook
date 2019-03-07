@@ -1,9 +1,10 @@
 /**
-* Description: Euler Tour LCA w/ O(1) query
-* Source: own
-* Verification: Debug the Bugs
-* Dependency: Range Minimum Query
-*/
+ * Description: Euler Tour LCA w/ O(1) query
+ * Source: own
+ * Verification: Debug the Bugs
+ */
+
+// dependency: RMQ
 
 template<int SZ> struct LCA {
     vi adj[SZ];

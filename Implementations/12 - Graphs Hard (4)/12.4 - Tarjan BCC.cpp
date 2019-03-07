@@ -1,9 +1,9 @@
 /**
-* Description: 
-* Source: GeeksForGeeks (corrected)
-* Verification: USACO December 2017, Push a Box
+ * Description: Computes biconnected components
+ * Source: GeeksForGeeks (corrected)
+ * Verification: USACO December 2017, Push a Box
     * https://pastebin.com/yUWuzTH8
-*/
+ */
 
 template<int SZ> struct BCC {
     int N;

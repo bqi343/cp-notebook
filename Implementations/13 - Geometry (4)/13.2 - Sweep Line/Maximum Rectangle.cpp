@@ -1,8 +1,8 @@
 /**
-* Description: Computes size of max rectangle in grid w/ obstacles
-* Source: Own
-* Verification: https://cses.fi/problemset/task/1147/
-*/
+ * Description: Computes size of max rectangle in grid w/ obstacles
+ * Source: Own
+ * Verification: https://cses.fi/problemset/task/1147/
+ */
 
 int n,m,cur[1000];
 char g[1000][1000];

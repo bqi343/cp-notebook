@@ -1,10 +1,10 @@
 /**
-* Description: persistent segtree with lazy updates
-* Sources: CF, Franklyn Wang
-* Verification: https://codeforces.com/contest/1090/problem/G
+ * Description: persistent segtree with lazy updates
+ * Source: CF, Franklyn Wang
+ * Verification: https://codeforces.com/contest/1090/problem/G
     * Note: This implementation assumes that lazy[cur] is included in val[cur] before propagating cur. 
     * If lazy[cur] is not included in val[cur], you must propagate children before pulling.
-*/ 
+ */ 
 
 template<class T, int SZ> struct pseg {
     static const int LIMIT = 10000000; // adjust
@@ -33,7 +33,7 @@ template<class T, int SZ> struct pseg {
         lazy[cur] = 0;
     }
 
-    //// IMPORTANT
+    //// MAIN FUNCTIONS
     T query(int cur, int lo, int hi, int L, int R) {  
         if (lo <= L && R <= hi) return val[cur];
         if (R < lo || hi < L) return INF;

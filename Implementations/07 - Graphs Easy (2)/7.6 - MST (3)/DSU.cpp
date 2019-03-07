@@ -1,8 +1,8 @@
 /**
-* Description: Disjoint Set Union
-* Source: CSAcademy
-* Verification: USACO superbull
-*/
+ * Description: Disjoint Set Union
+ * Source: CSAcademy
+ * Verification: USACO superbull
+ */
 
 template<int SZ> struct DSU {
     int par[SZ], sz[SZ];
@@ -27,9 +27,8 @@ template<int SZ> struct DSU {
 // computes the minimum spanning tree in O(ElogE) time
 
 template<class T> T kruskal(vector<pair<T,pi>> edge) { 
-    DSU<MX> D; 
     sort(all(edge)); 
-    T ans = 0;
-    for (auto a: edge) if (D.unite(a.s.f,a.s.s)) ans += a.f; // edge is in MST   
+    T ans = 0; DSU<MX> D;
+    trav(a,edge) if (D.unite(a.s.f,a.s.s)) ans += a.f; // edge is in MST   
     return ans;
 }

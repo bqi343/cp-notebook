@@ -1,8 +1,8 @@
 /**
-* Source: Wikipedia
-* Description: generates SCC in topological order
-* Verification: POI 8 peaceful commission
-*/ 
+ * Source: Wikipedia
+ * Description: generates SCC in topological order
+ * Verification: POI 8 peaceful commission
+ */ 
 
 template<int SZ> struct scc {
     vi adj[SZ], radj[SZ], todo, allComp;

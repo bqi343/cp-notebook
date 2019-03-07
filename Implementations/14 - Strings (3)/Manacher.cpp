@@ -1,8 +1,8 @@
 /**
-* Source: http://codeforces.com/blog/entry/12143
-* Description: Calculates length of largest palindrome centered at each character of string
-* Verification: http://www.spoj.com/problems/MSUBSTR/
-*/
+ * Source: http://codeforces.com/blog/entry/12143
+ * Description: Calculates length of largest palindrome centered at each character of string
+ * Verification: http://www.spoj.com/problems/MSUBSTR/
+ */
 
 vi manacher(string s) {
     string s1 = "@";

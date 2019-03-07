@@ -1,8 +1,8 @@
 /**
-* Description: Similar to 2D segtree, less memory
-* For more complex queries use a customized treap
-* Verification: http://codeforces.com/contest/785/submission/33953058
-*/
+ * Description: Similar to 2D segtree, less memory
+ * For more complex queries use a customized treap
+ * Verification: http://codeforces.com/contest/785/submission/33953058
+ */
 
 template<int SZ> struct mstree { 
     Tree<pi> val[SZ+1]; // for offline queries use vector with binary search instead

@@ -1,8 +1,8 @@
 /**
-* Description: 1D range update, range query
-* Source: USACO Counting Haybales
-* Verification: SPOJ Horrible
-*/
+ * Description: 1D range update, range query
+ * Source: USACO Counting Haybales
+ * Verification: SPOJ Horrible
+ */
 
 template<class T, int SZ> struct LazySegTree {
     T sum[2*SZ], mn[2*SZ], lazy[2*SZ]; // set SZ to a power of 2

@@ -1,8 +1,8 @@
 /**
-* Description: factors N in O(sqrtN) time
-* Source: Own
-* Verification: ?
-*/
+ * Description: factors N in O(sqrtN) time
+ * Source: Own
+ * Verification: ?
+ */
 
 namespace factor1 {
     vpl factor(ll x) { // x <= 10^{14} is fine

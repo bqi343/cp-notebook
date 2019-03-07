@@ -1,9 +1,9 @@
 /**
-* Description: Answers queries offline in (N+Q)sqrt(N)
+ * Description: Answers queries offline in (N+Q)sqrt(N)
     * Also see Mo's on trees
-* Source: Codeforces
-* Verification: ?
-*/
+ * Source: Codeforces
+ * Verification: ?
+ */
 
 int N, A[MX];
 int ans[MX], oc[MX], BLOCK;

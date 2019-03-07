@@ -1,7 +1,7 @@
 /**
  * Source: own
  * Description: Pairs reduce frequency of collision
- * Verification: ?Dec 17 Plat 1, CF Check Transcription
+ * Verification: ? Dec 17 Plat 1, CF Check Transcription
  */
 
 using namespace pairOp;

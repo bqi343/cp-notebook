@@ -1,8 +1,8 @@
 /**
-* Description: https://www-m9.ma.tum.de/graph-algorithms/matchings-blossom-algorithm/index_en.html
-* Source: https://github.com/koosaga/DeobureoMinkyuParty
-* Verification: https://codeforces.com/contest/1089/problem/B
-*/
+ * Description: https://www-m9.ma.tum.de/graph-algorithms/matchings-blossom-algorithm/index_en.html
+ * Source: https://github.com/koosaga/DeobureoMinkyuParty
+ * Verification: https://codeforces.com/contest/1089/problem/B
+ */
 
 template<int SZ> struct match {
     int vis[SZ], par[SZ], orig[SZ], match[SZ], aux[SZ], t, N; // 1-based index

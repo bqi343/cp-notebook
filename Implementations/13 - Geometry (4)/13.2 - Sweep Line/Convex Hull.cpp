@@ -1,8 +1,8 @@
 /**
-* Description: Top-bottom convex hull
-* Source: Wikibooks
-* Verification: https://open.kattis.com/problems/convexhull
-*/
+ * Description: Top-bottom convex hull
+ * Source: Wikibooks
+ * Verification: https://open.kattis.com/problems/convexhull
+ */
 
 typedef pl P;
 

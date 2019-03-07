@@ -1,6 +1,6 @@
 /**
 * Description:
-* Sources: SuprDewd, KACTL, majk, ekzhang
+* Source: SuprDewd, KACTL, majk, ekzhang
 * Verification: 
     * http://usaco.org/index.php?page=viewproblem2&cpid=768
         * https://pastebin.com/y2Z9FYr6

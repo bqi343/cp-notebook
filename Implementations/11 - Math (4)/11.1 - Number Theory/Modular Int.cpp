@@ -38,7 +38,9 @@ struct mi {
         for (; p; p /= 2, b *= b) if (p&1) ans *= b;
         return ans;
     }
-    friend mi inv(const mi& b) { return exp(b,b.mod-2); }
+    friend mi inv(const mi& b) { 
+        return {invGeneral(b.val,b.mod),b.mod}; // return exp(b,b.mod-2) if prime
+    }
     mi& operator/=(int b) { return *this *= inv(mi(b,mod)); }
     
     friend mi operator+(mi a, const mi& b) { return a += b; }

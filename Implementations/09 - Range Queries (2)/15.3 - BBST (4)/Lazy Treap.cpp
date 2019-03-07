@@ -1,8 +1,8 @@
-/*
-* Source: https://cp-algorithms.com/data_structures/treap.html + others
-* Description: Easiest BBST
-* Verification: http://www.spoj.com/problems/ORDERSET/
-*/
+/**
+ * Source: https://cp-algorithms.com/data_structures/treap.html + others
+ * Description: Easiest BBST
+ * Verification: http://www.spoj.com/problems/ORDERSET/
+ */
 
 namespace treap {
     typedef struct tnode* pt;

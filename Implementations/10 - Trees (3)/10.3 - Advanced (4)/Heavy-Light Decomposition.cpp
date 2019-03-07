@@ -1,8 +1,8 @@
 /**
-* Description: Heavy Light Decomposition
-* Source: http://codeforces.com/blog/entry/22072
-* Verification: USACO Grass Planting
-*/
+ * Description: Heavy Light Decomposition
+ * Source: http://codeforces.com/blog/entry/22072
+ * Verification: USACO Grass Planting
+ */
 
 vector<vi> graph;
 

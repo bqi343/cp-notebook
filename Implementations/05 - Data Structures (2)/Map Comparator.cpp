@@ -1,8 +1,8 @@
 /**
-* Description: Custom comparator for map / set
-* Source: StackOverflow
-* Verification: ?
-*/
+ * Description: custom comparator for map / set
+ * Source: StackOverflow
+ * Verification: ?
+ */
 
 struct cmp {
     bool operator()(const int& l, const int& r) const {

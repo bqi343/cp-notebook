@@ -1,9 +1,12 @@
 /**
-* Source: USACO Mowing the Field
-* Dependency: Sparse SegTree
-*/
+ * Description: ?
+ * Source: USACO Mowing the Field
+ * Verification: ? ~
+ */
 
 const int SZ = 1<<17;
+
+// dependency: sparse segment tree
 
 template<class T> struct Node {
     node<T> seg;

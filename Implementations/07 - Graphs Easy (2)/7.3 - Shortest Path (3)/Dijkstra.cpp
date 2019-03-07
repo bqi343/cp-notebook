@@ -1,6 +1,6 @@
 /**
  * Description: shortest path
- * Source: ?
+ * Source: own
  * Verification: ?
  */
 
@@ -24,9 +24,8 @@ template<int SZ> struct Dijkstra {
         fill_n(dist,SZ,INF); 
         q = pqg<pl>(); q.push({dist[st] = 0,st});
     	while (sz(q)) {
-    		auto x = poll(q);
-    		if (dist[x.s] < x.f) continue;
-    		for (auto y: adj[x.s]) if (x.f+y.s < dist[y.f]) 
+    		auto x = poll(q); if (dist[x.s] < x.f) continue;
+    		trav(y,adj[x.s]) if (x.f+y.s < dist[y.f]) 
     			q.push({dist[y.f] = x.f+y.s,y.f});
     	}
     }

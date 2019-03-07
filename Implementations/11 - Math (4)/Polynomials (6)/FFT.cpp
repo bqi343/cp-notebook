@@ -4,7 +4,7 @@
  * Verification: ? SPOJ polymul, CSA manhattan, CF Perfect Encoding
  */
 
-typedef complex<double> cd;
+// dependency: Vector Operators
 
 namespace FFT {
     int get(int s) { return s > 1 ? 32 - __builtin_clz(s - 1) : 0; }
@@ -37,7 +37,7 @@ namespace FFT {
     vcd conv(vcd a, vcd b) {
         int s = sz(a)+sz(b)-1, L = get(s), n = 1<<L;
         if (s <= 0) return {};
-        if (s <= 200) return brute(a,b);
+        return a*b;
         
         roots.resz(n); ld ang = 2*PI/n;
         F0R(i,n) roots[i] = cd(cos(ang*i),sin(ang*i)); // is there a way to do this more quickly?

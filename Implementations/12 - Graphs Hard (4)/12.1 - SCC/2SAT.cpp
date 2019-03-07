@@ -1,11 +1,10 @@
 /*
-* Description: Solves 2SAT
-* Source: ?
-* Verification: https://www.spoj.com/problems/BUGLIFE/
-* Also useful: at most one
-    http://codeforces.com/contest/1007
-    /submission/40284510
-*/
+ * Description: Solves 2SAT
+ * Source: ?
+ * Verification: https://www.spoj.com/problems/BUGLIFE/
+ * Also useful: at most one
+    http://codeforces.com/contest/1007/submission/40284510
+ */
 
 // struct scc
 

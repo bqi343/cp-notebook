@@ -32,7 +32,7 @@ namespace splayTree {
         if (x->c[1]) x->c[1]->flip ^= 1;
         x->flip = 0;
     }
-    void propAnc(ps x) { // propagate ancestors
+    void propAnc(ps x) { // propagate all ancestors
         if (!x) return;
         if (x->p) propAnc(x->p);
         prop(x);

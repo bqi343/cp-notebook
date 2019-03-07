@@ -1,8 +1,8 @@
 /**
-* Description: Calculates longest path in tree
-* Source: Own
-* Verification: http://www.spoj.com/problems/PT07Z/
-*/
+ * Description: Calculates longest path in tree
+ * Source: own
+ * Verification: http://www.spoj.com/problems/PT07Z/
+ */
 
 template<int SZ> struct TreeDiameter {
     int n, dist[SZ], pre[SZ];
@@ -28,7 +28,7 @@ template<int SZ> struct TreeDiameter {
 
     int diameterLength() {
         genDist(1);
-        int bes = 0; FOR(i,1,n+1) if (dist[i] > dist[bes]) bes = i;
+        int bes = 0; FOR(i,1,n+1) if (dist[i] > dist[bes]) bes = i; // bes is now one endpoint of a diameter
         genDist(bes); FOR(i,1,n+1) if (dist[i] > dist[bes]) bes = i;
         return dist[bes];
     }

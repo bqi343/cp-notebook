@@ -1,8 +1,8 @@
 /**
-* Source: own
-* Verification: https://codeforces.com/contest/342/problem/E
-* Description: can support tree path queries and updates
-*/
+ * Source: own
+ * Verification: https://codeforces.com/contest/342/problem/E
+ * Description: can support tree path queries and updates
+ */
 
 template<int SZ> struct CentroidDecomp {
     bool done[SZ];
@@ -40,7 +40,7 @@ template<int SZ> struct CentroidDecomp {
         }
     }
     
-    void solve (int x) { // call solve(1) to initialize
+    void init(int x) { // call init(1) to generate
         x = getCentroid(x); done[x] = 1;
         dist[x].pb(0);
         for (int i: adj[x]) if (!done[i]) {
@@ -49,7 +49,7 @@ template<int SZ> struct CentroidDecomp {
             genDist(x,i);
             ANS[x].pb(0);
         }
-        for (int i: adj[x]) if (!done[i]) solve(i);
+        for (int i: adj[x]) if (!done[i]) init(i);
     }
     
     void upd(int v) {

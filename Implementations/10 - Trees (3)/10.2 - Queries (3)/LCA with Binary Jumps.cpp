@@ -1,8 +1,8 @@
 /**
-* Description: calculates least common ancestor in tree with binary jumping
-* Source: USACO Camp
-* Verification: Debug the Bugs
-*/
+ * Description: calculates least common ancestor in tree with binary jumping
+ * Source: USACO Camp
+ * Verification: Debug the Bugs
+ */
 
 template<int SZ> struct LCA {
     const int MAXK = 32-__builtin_clz(SZ);

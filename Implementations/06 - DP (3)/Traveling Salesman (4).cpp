@@ -1,7 +1,8 @@
 /**
-* Description: Bitset DP example
-* Solves TSP for small N
-*/
+ * Description: example of bitmask DP, solves TSP in O(N^2*2^N)
+ * Source: own
+ * Verification: ?
+ */
 
 const int MX = 15;
 
@@ -13,10 +14,9 @@ int solve() {
     dp[0][1] = 0;
     F0R(j,1<<N) F0R(i,N) if (j&(1<<i)) 
         F0R(k,N) if (!(j&(1<<k))) 
-            dp[k][j^(1<<k)] = min(dp[k][j^(1<<k)],
-                                dp[i][j]+dist[i][k]);
+            ckmin(dp[k][j^(1<<k)], dp[i][j]+dist[i][k]);
         
     int ans = MOD;
-    FOR(j,1,N) ans = min(ans,dp[j][(1<<N)-1]+dist[j][0]);
+    FOR(j,1,N) ckmin(ans,dp[j][(1<<N)-1]+dist[j][0]);
     return ans;
 }

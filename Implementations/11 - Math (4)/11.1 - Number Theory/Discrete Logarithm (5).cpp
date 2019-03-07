@@ -6,7 +6,7 @@
  * Verification: ?
  */
 
-// dependency: mi
+// dependency: Modular Int
 
 struct DiscreteLog {
 	int mod, root, block;

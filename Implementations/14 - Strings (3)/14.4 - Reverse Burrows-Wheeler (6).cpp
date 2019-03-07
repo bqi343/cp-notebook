@@ -1,7 +1,8 @@
 /**
-* Description: Reverse Burrows-Wheeler
-* Verification: https://cses.fi/problemset/task/1113/
-*/
+ * Description: Reverse Burrows-Wheeler
+ * Source: ?
+ * Verification: https://cses.fi/problemset/task/1113/
+ */
 
 string reverseBW(string s) {
 	vector<pair<char,int>> v;

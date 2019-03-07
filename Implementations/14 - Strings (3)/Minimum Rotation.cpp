@@ -1,8 +1,8 @@
 /**
-* Description: Calculates min rotation of string in O(N)
-* Source: KACTL
-* Verification: ?
-*/
+ * Description: Calculates min rotation of string in O(N)
+ * Source: KACTL
+ * Verification: ?
+ */
 
 int minRotation(string s) {
 	int a = 0, N = sz(s); s += s;

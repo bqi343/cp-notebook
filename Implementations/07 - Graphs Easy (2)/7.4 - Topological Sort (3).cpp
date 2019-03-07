@@ -1,6 +1,8 @@
 /**
-* Description: sorts vertices such that if there exists an edge x->y, then x goes before y
-*/
+ * Description: sorts vertices such that if there exists an edge x->y, then x goes before y
+ * Source: ?
+ * Verification: ?
+ */
 
 template<int SZ> struct Topo {
     int N, in[SZ];
@@ -16,7 +18,7 @@ template<int SZ> struct Topo {
         while (sz(todo)) {
             int x = todo.front(); todo.pop();
             res.pb(x);
-            for (int i: adj[x]) {
+            trav(i,adj[x]) {
                 in[i] --;
                 if (!in[i]) todo.push(i);
             }

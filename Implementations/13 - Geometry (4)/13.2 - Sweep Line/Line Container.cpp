@@ -1,8 +1,8 @@
 /**
-* Description: Given set of lines, computes the greatest y-coordinate for any x
-* Source: KACTL
-* Verification: CSA Squared Ends
-*/
+ * Description: Given set of lines, computes the greatest y-coordinate for any x
+ * Source: KACTL
+ * Verification: CSA Squared Ends
+ */
 
 bool Q;
 struct Line {

@@ -5,7 +5,7 @@
  */
  
 vector<string> duval(string const& s) {
-    int n = s.size();
+    int n = sz(s);
     vector<string> factorization;
     for (int i = 0; i < n; ) {
         int j = i + 1, k = i;

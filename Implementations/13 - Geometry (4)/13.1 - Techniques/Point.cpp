@@ -1,8 +1,8 @@
 /**
-* Description: Easy Geo
-* Source: http://codeforces.com/blog/entry/22175, KACTL
-* Verification: various
-*/
+ * Description: Easy Geo
+ * Source: http://codeforces.com/blog/entry/22175, KACTL
+ * Verification: various
+ */
 
 typedef pd P;
 

@@ -1,9 +1,9 @@
 /**
-* Description: Faster Flow, Bipartite Matching
-* Source: GeeksForGeeks
-* Verification: Problem Fashion (RMI 2017 Day 1)
+ * Description: Faster Flow, Bipartite Matching
+ * Source: GeeksForGeeks
+ * Verification: RMI 2017 Day 1 Fashion 
     * https://pastebin.com/VJxTvEg1
-*/
+ */
  
 template<int SZ> struct Dinic {
     struct Edge {

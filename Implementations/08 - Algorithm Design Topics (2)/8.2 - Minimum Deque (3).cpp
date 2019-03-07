@@ -1,9 +1,9 @@
 /**
-* Description: maintains minimum of deque while adding 
+ * Description: maintains minimum of deque while adding 
     elements to back or deleting elements from front
-* Source: own
-* Verification: Jan 18 Lifeguards
-*/
+ * Source: own
+ * Verification: USACO Jan 18 Lifeguards
+ */
 
 template<class T> struct MinDeque { 
     int lo = 0, hi = -1;

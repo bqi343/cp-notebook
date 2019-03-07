@@ -1,9 +1,9 @@
 /**
-* Description: faster than standard unordered map
-* Source: http://codeforces.com/blog/entry/62393
-* Verification: http://codeforces.com/contest/966/problem/E 
+ * Description: faster than standard unordered map
+ * Source: http://codeforces.com/blog/entry/62393
+ * Verification: http://codeforces.com/contest/966/problem/E 
     * normal unordered map gets TLE
-*/
+ */
 
 struct custom_hash {
     static uint64_t splitmix64(uint64_t x) {

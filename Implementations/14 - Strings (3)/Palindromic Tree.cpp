@@ -1,8 +1,8 @@
 /**
-* Description: maintains tree of palindromes
-* Source: http://codeforces.com/blog/entry/13959
-* Verification: https://oj.uz/problem/view/APIO14_palindrome
-*/
+ * Description: maintains tree of palindromes
+ * Source: http://codeforces.com/blog/entry/13959
+ * Verification: https://oj.uz/problem/view/APIO14_palindrome
+ */
 
 template<int SZ> struct palTree {
     static const int sigma = 26;

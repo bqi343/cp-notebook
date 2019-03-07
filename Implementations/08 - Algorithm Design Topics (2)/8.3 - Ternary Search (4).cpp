@@ -1,7 +1,7 @@
 /**
-* Description: use on functions which are strictly decreasing then strictly increasing
-* Source: Own
-*/
+ * Description: solve for min on functions which are strictly decreasing then strictly increasing
+ * Source: own
+ */
 
 double eval(double x) { 
     return (x-5)*(x-5);

@@ -4,7 +4,7 @@
  * Verification: ? http://codeforces.com/contest/632/problem/E
  */
 
-// dependency: mi
+// dependency: Modular Int, Vector Operators
 
 const int MOD = (119 << 23) + 1, root = 3; // = 998244353
 // For p < 2^30 there is also e.g. (5 << 25, 3), (7 << 26, 3),
@@ -32,16 +32,10 @@ namespace NTT {
                 }
     }
     
-    vmi brute(const vmi& a, const vmi& b) {
-        vmi c(sz(a)+sz(b)-1);
-        F0R(i,sz(a)) F0R(j,sz(b)) c[i+j] += a[i]*b[j];
-        return c;
-    }
-    
     vmi conv(vmi a, vmi b) {
         int s = sz(a)+sz(b)-1, L = size(s), n = 1<<L;
         if (s <= 0) return {};
-        if (s <= 200) return brute(a,b);
+        if (s <= 200) return a*b;
         
         roots.resz(n); int r = exp(root,(MOD-1)/n);
         roots[0] = 1; FOR(i,1,n) roots[i] = roots[i-1]*r;

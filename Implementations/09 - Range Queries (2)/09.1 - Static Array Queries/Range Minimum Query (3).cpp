@@ -1,6 +1,6 @@
 /**
-* Description: Supports 1D range minimum query in constant time.
-* Source: Own
+* Description: supports 1D range minimum query in constant time
+* Source: own
 * Verification: http://wcipeg.com/problem/ioi1223
     * https://pastebin.com/ChpniVZL
 */

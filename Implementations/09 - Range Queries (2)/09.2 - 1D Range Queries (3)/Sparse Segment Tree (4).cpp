@@ -1,8 +1,8 @@
 /**
-* Description: Does not allocate storage for nodes with no data
-* Source: Own
-* Verification: USACO Mowing the Field?
-*/ 
+ * Description: Does not allocate storage for nodes with no data
+ * Source: USACO Mowing the Field
+ * Verification: ~
+ */ 
 
 const int SZ = 1<<20;
 

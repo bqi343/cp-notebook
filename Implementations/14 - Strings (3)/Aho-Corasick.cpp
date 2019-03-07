@@ -1,7 +1,8 @@
 /** 
+ * Description: ?
  * Source: https://ideone.com/0cMjZJ
  * Verification: Kattis stringmultimatching
-*/
+ */
 
 template<int SZ> struct AhoCorasick {
     int link[SZ], dict[SZ], sz = 1, num = 0;

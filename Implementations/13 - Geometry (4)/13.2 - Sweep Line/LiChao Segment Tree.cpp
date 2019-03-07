@@ -1,8 +1,8 @@
 /**
-* Description: LiChao Segment Tree
-* Source: atatomir, misc
-* Verification: CSA Squared Ends
-*/
+ * Description: LiChao Segment Tree
+ * Source: atatomir, misc
+ * Verification: CSA Squared Ends
+ */
 
 struct Line {
 	ll k,m;

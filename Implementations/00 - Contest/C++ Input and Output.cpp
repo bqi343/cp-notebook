@@ -1,6 +1,6 @@
 /**
  * Description: convenient functions for input / output
- * Source: https://codeforces.com/blog/entry/65311, misc others
+ * Source: https://codeforces.com/blog/entry/65311, others
  * Verification: http://codeforces.com/contest/1045/problem/D
  */
 

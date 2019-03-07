@@ -1,8 +1,8 @@
 /**
-* Description: O(NlogN) line sweep to find two closest points
-* Source: Own
-* Verification: https://open.kattis.com/problems/closestpair2
-*/
+ * Description: O(NlogN) line sweep to find two closest points
+ * Source: Own
+ * Verification: https://open.kattis.com/problems/closestpair2
+ */
 
 using namespace point;
 

@@ -4,7 +4,7 @@
  * Verification: ? Kattis generalchineseremainder
  */
 
-using namespace modOp;
+// dependency: Modular Int
 
 pl solve(pl a, pl b) {
     ll g = __gcd(a.s,b.s), l = a.s*b.s/g;

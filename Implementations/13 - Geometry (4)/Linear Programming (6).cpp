@@ -81,6 +81,6 @@ int co = 0; // # extra variables
 void addIneq(vd a, double b) { // a*x <= b
     F0R(i,co) a.pb(0);
     a.pb(1); co ++;
-    for (auto& z: A) z.pb(0);
+    trav(z,A) z.pb(0);
     A.pb(a); B.pb(b); C.pb(0);
 }*/

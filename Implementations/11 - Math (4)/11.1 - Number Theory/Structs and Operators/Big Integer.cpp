@@ -1,8 +1,8 @@
 /**
- * Description: ?
+ * Description: Big Integer
  * Source: https://github.com/indy256/codelibrary/
             blob/master/cpp/numbertheory/bigint.cpp
- * Verification: ?
+ * Verification: https://oj.uz/problem/view/IOI11_parrots
  */
 
 namespace bigint {

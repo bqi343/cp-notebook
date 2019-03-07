@@ -1,8 +1,8 @@
 /**
-* Description: Berlekamp-Massey Algo
-* Source: http://codeforces.com/blog/entry/61306
-* Verification: http://codeforces.com/contest/506/problem/E
-*/
+ * Description: Berlekamp-Massey Algo
+ * Source: http://codeforces.com/blog/entry/61306
+ * Verification: http://codeforces.com/contest/506/problem/E
+ */
 
 using namespace vecOp;
 

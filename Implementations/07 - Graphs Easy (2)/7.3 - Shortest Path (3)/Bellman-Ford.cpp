@@ -1,9 +1,9 @@
 /**
- * Description: Shortest Path w/ negative edge weights 
+ * Description: Shortest Path w/ negative edge weights
     * Can be useful with linear programming
     * Constraints of the form x_i-x_j<k
  * Source: Own
- * Verification: ? https://open.kattis.com/problems/shortestpath3
+ * Verification: https://open.kattis.com/problems/shortestpath3
  */
 
 template<int SZ> struct BellmanFord {
@@ -21,13 +21,12 @@ template<int SZ> struct BellmanFord {
         F0R(i,n) dist[i] = INF, bad[i] = 0;
         dist[s] = 0;
 
-        F0R(i,n) trav(a,edge) 
-            if (dist[a.f.f] < INF) dist[a.f.s] = min(dist[a.f.s], dist[a.f.f]+a.s);
+        F0R(i,n) trav(a,edge) if (dist[a.f.f] < INF)
+            dist[a.f.s] = min(dist[a.f.s], dist[a.f.f]+a.s);
 
-        trav(a,edge) if (dist[a.f.f] < INF) 
+        trav(a,edge) if (dist[a.f.f] < INF)
             if (dist[a.f.s] > dist[a.f.f]+a.s) bad[a.f.s] = 1;
 
-        F0R(i,n) trav(a,edge) 
-            if (bad[a.f.f]) bad[a.f.s] = 1;
+        F0R(i,n) trav(a,edge) if (bad[a.f.f]) bad[a.f.s] = 1;
     }
 };

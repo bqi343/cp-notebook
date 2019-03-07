@@ -7,9 +7,9 @@
 // dependency: Modular Int
 
 pl solve(pl a, pl b) {
-    ll g = __gcd(a.s,b.s), l = a.s*b.s/g;
+    auto g = __gcd(a.s,b.s), l = a.s*b.s/g;
     if ((b.f-a.f) % g != 0) return {-1,-1};
-    ll A = a.s/g, B = b.s/g;
-    ll mul = (b.f-a.f)/g*invGeneral(A%B,B) % B;
+    auto A = a.s/g, B = b.s/g;
+    auto mul = (b.f-a.f)/g*invGeneral(A,B) % B;
     return {((mul*a.s+a.f)%l+l)%l,l};
 }

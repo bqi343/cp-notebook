@@ -1,7 +1,7 @@
 /**
-* Description: DP eliminates overcounting
-* Verification: ? https://cses.fi/problemset/task/1149/
-*/
+ * Description: DP eliminates overcounting
+ * Verification: ? https://cses.fi/problemset/task/1149/
+ */
 
 mi distinct(string S) {
     vmi tot(26); mi ans = 1;

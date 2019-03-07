@@ -1,32 +1,33 @@
 /**
- * Description: find k such that root^k%mod=x
- 	* mod is prime, root is primitive
- 	* meet in the middle: O(sqrt(mod))
+ * Description: find least integer p such that r^p=x(mod m)
+ 	* meet in the middle: O(sqrt(mod)) per query
  * Source: Own
- * Verification: ?
+ * Verification: https://www.hackerrank.com/contests/infinitum11/challenges/discrete-logarithm/problem
  */
 
-// dependency: Modular Int
+// Dependency: Modular Int
 
 struct DiscreteLog {
 	int mod, root, block;
-	vmi invy;
 	unordered_map<int,int> u;
+	mi cur;
 
-	int query(int x) {
+	int query(mi x) { 
 		F0R(i,block) {
-			int X = invy[i]*x;
-			if (u.count(X)) return i*block+u[X];
+			if (u.count((int)x)) return i*block+u[(int)x];
+			x *= cur;
 		}
 		return -1;
 	}
 
-	void init(int m, int r) : mod(m), root(r) {
-		u.clear(); block = sqrt(mod)+1;
-
-		mi cur(1,mod); F0R(i,block) u[cur] = i, cur *= root;
-		cur = inv(cur,mod);
-
-		invy.resz(block); invy[0] = 1; FOR(i,1,block) invy[i] = cur*invy[i-1];
+	void init(int m, int r) { // gcd(m,r) = 1
+		mod = m; root = r; block = sqrt(mod)+1;
+		u.clear(); 
+		cur = mi(1,mod);
+		F0R(i,block) {
+			if (!u.count((int)cur)) u[(int)cur] = i;
+			cur *= root;
+		}
+		cur = 1/cur;
 	} 
 };

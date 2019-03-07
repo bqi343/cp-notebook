@@ -1,7 +1,7 @@
 /**
  * Description: 2D matrix operations
  * Source: KACTL
- * Verification: ? https://dmoj.ca/problem/si17c1p5, SPOJ MIFF
+ * Verification: https://dmoj.ca/problem/si17c1p5, SPOJ MIFF
  */
 
 template<class T> struct Mat {
@@ -9,16 +9,13 @@ template<class T> struct Mat {
     int a, b;
     
     Mat() { a = b = 0; }
-
-    Mat(int _a, int _b) {
-        a = _a, b = _b;
+    Mat(int _a, int _b) : a(_a), b(_b) {
         d = new T*[a];
         F0R(i,a) {
             d[i] = new T[b];
             F0R(j,b) d[i][j] = 0;
         }
     }
-    
     Mat (const vector<vector<T>>& v) : Mat(sz(v),sz(v[0])) {
         F0R(i,a) F0R(j,b) d[i][j] = v[i][j];
     }
@@ -27,6 +24,9 @@ template<class T> struct Mat {
         auto ret = vector<vector<T>>(a,vector<T>(b));
         F0R(i,a) F0R(j,b) ret[i][j] = d[i][j];
         return ret;
+    }
+    friend void pr(const Mat& m) {
+        Mat M(m); pr(vector<vector<T>>(M));
     }
     
     Mat operator+(const Mat& m) {
@@ -45,11 +45,10 @@ template<class T> struct Mat {
         return r;
     }
 
-    friend Mat exp(const Mat& m, ll p) {
-        assert(a == b);
-        Mat r(a,a), base(*this); 
-        F0R(i,a) r.d[i][i] = 1;
-        for (; p; p /= 2, base *= base) if (p&1) r *= base;
+    friend Mat exp(Mat m, ll p) {
+        Mat r(m.a,m.a); assert(m.a == m.b);
+        F0R(i,m.a) r.d[i][i] = 1;
+        for (; p; p /= 2, m *= m) if (p&1) r *= m;
         return r;
     }
 };

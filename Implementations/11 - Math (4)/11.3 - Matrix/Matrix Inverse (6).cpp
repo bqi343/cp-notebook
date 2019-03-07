@@ -1,29 +1,25 @@
 /*
- * Description: calculates determinant mod a prime via gaussian elimination
-    * only slight adjustments needed to use doubles
+ * Description: calculates determinant via gaussian elimination
  * Source: various
  * Verification: SPOJ MIFF
  */
-
 
 namespace matInv {
     template<class T> void elim(Mat<T>& m, int col, int a, int b) { // eliminate row a from row b
         auto x = m.d[b][col];
         FOR(i,col,m.b) m.d[b][i] -= x*m.d[a][i];
     }
-
     template<class T> T gauss(Mat<T>& m) { // determinant of 1000x1000 Matrix in ~1s
         T prod = 1; int nex = 0;
 
         F0R(i,m.a) {
             int row = -1;
-            FOR(j,nex,m.a) if (m.d[j][i] != 0) { row = j; break; }
+            FOR(j,nex,m.a) if (m.d[j][i] != 0) { row = j; break; } // for ld use EPS
             if (row == -1) { prod = 0; continue; }
             if (row != nex) prod *= -1, swap(m.d[row],m.d[nex]);
 
             prod *= m.d[nex][i];
-            auto x = inv(m.d[nex][i]);
-            FOR(k,i,m.b) m.d[nex][k] *= x;
+            auto x = 1/m.d[nex][i]; FOR(k,i,m.b) m.d[nex][k] *= x;
 
             F0R(k,m.a) if (k != nex) elim(m,i,nex,k);
             nex ++;
@@ -32,15 +28,15 @@ namespace matInv {
         return prod;
     }
 
-    int numSpan(Mat<int> m) { // Kirchhoff's theorem
-        Mat<int> res(m.a-1,m.a-1);
+    mi numSpan(Mat<mi> m) { // Kirchhoff's theorem
+        Mat<mi> res(m.a-1,m.a-1);
         F0R(i,m.a) FOR(j,i+1,m.a) {
             if (i) {
-                AD(res.d[i-1][i-1],m.d[i][j]);
-                SUB(res.d[i-1][j-1],m.d[i][j]);
-                SUB(res.d[j-1][i-1],m.d[i][j]);
+                res.d[i-1][i-1] += m.d[i][j];
+                res.d[i-1][j-1] -= m.d[i][j];
+                res.d[j-1][i-1] -= m.d[i][j];
             }
-            AD(res.d[j-1][j-1],m.d[i][j]);
+            res.d[j-1][j-1] += m.d[i][j];
         }
         return gauss(res);
     }

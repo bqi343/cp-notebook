@@ -40,6 +40,28 @@ namespace point {
         ld x = cross(a,b,c), y = cross(a,b,d);
         return (d*x-c*y)/(x-y);
     }
+    // computes the intersection of line segments AB, CD
+    // verification: https://open.kattis.com/problems/segmentintersection
+    vP segIntersect(P a, P b, P c, P d) {
+        if (a > b) swap(a,b);
+        if (c > d) swap(c,d);
+    
+        auto a1 = cross(a,b,c), a2 = cross(a,b,d);
+        if (a1 > a2) swap(a1,a2);
+        if (!(a1 <= 0 && a2 >= 0)) return {};
+    
+        if (a1 == 0 && a2 == 0) {
+            if (cross(a,c,d) != 0) return {};
+            auto x1 = max(a,c), x2 = min(b,d);
+            if (x1 > x2) return {};
+            if (x1 == x2) return {x1};
+            return {x1,x2};
+        }
+        
+        auto z = extension(a,b,c,d);
+        if (a <= z && z <= b) return {z};
+        return {};
+    }
     
     // sorts points according to atan2
     // verification: ?

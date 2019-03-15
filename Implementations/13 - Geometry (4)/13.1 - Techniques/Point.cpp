@@ -9,6 +9,11 @@ typedef pd P;
 namespace point {
     typedef vector<P> vP;
 
+    P cis(ld ang) {
+        cd c = exp(ang*cd(0,1));
+        return P(c.real(),c.imag());
+    }
+    
     ld norm(P x) { return x.f*x.f+x.s*x.s; }
     ld abs(P x) { return sqrt(norm(x)); }
     ld angle(P x) { return atan2(x.s,x.f); }
@@ -23,10 +28,7 @@ namespace point {
     P operator*(const P& l, const P& r) { return P(l.f*r.f-l.s*r.s,l.s*r.f+l.f*r.s); }
     P operator/(const P& l, const P& r) { return l*conj(r)/norm(r); }
     
-    template<class T> T operator += (T& l, const T& r) { return l = l+r; }
-    template<class T> T operator -= (T& l, const T& r) { return l = l-r; }
-    template<class T> T operator *= (T& l, const T& r) { return l = l*r; }
-    template<class T> T operator /= (T& l, const T& r) { return l = l/r; }
+    P dir(P x) { return x/abs(x); }
     
     ld dot(P a, P b) { return (conj(a)*b).f; }
     ld cross(P a, P b) { return (conj(a)*b).s; }

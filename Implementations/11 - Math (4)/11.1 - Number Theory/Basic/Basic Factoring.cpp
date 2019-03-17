@@ -43,7 +43,7 @@ namespace basicFactor {
 
     template<class T> vector<T> getDivi(T x) {
         auto v = factor(x);
-        vector<T> V; tour(v,V,0,1); sort(all(V));
+        vector<T> V; tour(v,V,0,(T)1); sort(all(V));
         return V;
     }
 }

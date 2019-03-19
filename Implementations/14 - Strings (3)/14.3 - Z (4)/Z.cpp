@@ -18,9 +18,9 @@ vi z(string s) {
 }
 
 vi getPrefix(string a, string b) { // find prefixes of a in b
-    string s = a+"@"+b; 
-    vi t = z(s);
-    return vi(t.begin()+sz(a)+1,t.end());
+    vi t = z(a+b), T(sz(b));
+    F0R(i,sz(T)) T[i] = min(t[i+sz(a)],sz(a));
+    return T;
 }
 
 // pr(z("abcababcabcaba"),getPrefix("abcab","uwetrabcerabcab"));

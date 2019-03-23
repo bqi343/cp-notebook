@@ -1,66 +1,66 @@
 /**
  * Description: ?
  * Source: GeeksForGeeks
- * Verification: CodeForces?
+ * Verification: https://codeforces.com/contest/164/problem/C
  */
 
-struct Edge {
-    int v, flow, C, rev, cost;
-};
+template<class T> using pqg = priority_queue<T,vector<T>,greater<T>>;
 
-template<int SZ> struct mcf {
-    pi pre[SZ];
-    int cost[SZ], num[SZ], SC, SNC;
-    ll flo, ans, ccost;
+template<class T> T poll(pqg<T>& x) {
+    T y = x.top(); x.pop();
+    return y;
+}
+
+template<int SZ> struct mcf { // assume no negative cycles
+    struct Edge { int v, rev; ll flow, cap, cost; };
+
     vector<Edge> adj[SZ];
 
-    void addEdge(int u, int v, int C, int cost) {
-        Edge a{v, 0, C, sz(adj[v]), cost};
-        Edge b{u, 0, 0, sz(adj[u]), -cost};
+    void addEdge(int u, int v, ll cap, ll cost) {
+        Edge a{v, sz(adj[v]), 0, cap, cost}, b{u, sz(adj[u]), 0, 0, -cost};
         adj[u].pb(a), adj[v].pb(b);
     }
 
-    void reweight() {
-    	F0R(i,SZ) trav(p,adj[i]) p.cost += cost[i]-cost[p.v];
+    int ST, EN;
+    pi pre[SZ]; // previous vertex, edge label on path
+    pl cost[SZ]; // tot cost of path, amount of flow
+    ll totFlow, totCost, curCost;
+
+    void reweight() { // ensures all non-negative edge weights
+    	F0R(i,SZ) trav(p,adj[i]) p.cost += cost[i].f-cost[p.v].f;
     }
-    
-    bool spfa() {
-        F0R(i,SZ) cost[i] = MOD, num[i] = 0;
-        cost[SC] = 0, num[SC] = MOD;
-        priority_queue<pi,vpi,greater<pi>> todo; todo.push({0,SC});
+
+    bool spfa() { // reweighting will ensure that there will be negative weights only during the first time you run this
+        F0R(i,SZ) cost[i] = {INF,0};
+        cost[ST] = {0,INF};
+        pqg<pair<ll,int>> todo; todo.push({0,ST});
 
         while (sz(todo)) {
-            pi x = todo.top(); todo.pop();
-            if (x.f > cost[x.s]) continue;
-            for (auto a: adj[x.s]) if (x.f+a.cost < cost[a.v] && a.flow < a.C) {
+            auto x = poll(todo); if (x.f > cost[x.s].f) continue;
+            trav(a,adj[x.s]) if (x.f+a.cost < cost[a.v].f && a.flow < a.cap) {
                 pre[a.v] = {x.s,a.rev};
-                cost[a.v] = x.f+a.cost;
-                num[a.v] = min(a.C-a.flow,num[x.s]);
-                todo.push({cost[a.v],a.v});
+                cost[a.v] = {x.f+a.cost, min(a.cap-a.flow,cost[x.s].s)};
+                todo.push({cost[a.v].f,a.v});
             }
         }
-        
-        ccost += cost[SNC];
-        return num[SNC] > 0;
+
+        curCost += cost[EN].f; return cost[EN].s;
     }
 
     void backtrack() {
-        flo += num[SNC], ans += (ll)num[SNC]*ccost;
-        for (int x = SNC; x != SC; x = pre[x].f) {
-            adj[x][pre[x].s].flow -= num[SNC];
-            int t = adj[x][pre[x].s].rev;
-            adj[pre[x].f][t].flow += num[SNC];
+        auto f = cost[EN].s; totFlow += f, totCost += curCost*f;
+        for (int x = EN; x != ST; x = pre[x].f) {
+            adj[x][pre[x].s].flow -= f;
+            adj[pre[x].f][adj[x][pre[x].s].rev].flow += f;
         }
     }
-    
-    pl mincostflow(int sc, int snc) {
-        SC = sc, SNC = snc;
-        flo = ans = ccost = 0;
-        
+
+    pl minCostFlow(int _ST, int _EN) {
+        ST = _ST, EN = _EN; totFlow = totCost = curCost = 0;
         spfa();
         while (1) {
             reweight();
-            if (!spfa()) return {flo,ans};
+            if (!spfa()) return {totFlow, totCost};
             backtrack();
         }
     }

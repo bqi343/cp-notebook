@@ -4,11 +4,14 @@
 
 In competitive programming contests, one must solve well-defined problems by writing computer programs under specified constraints ([Wikipedia](https://en.wikipedia.org/wiki/Competitive_programming)). Typically, the most popular language is C++, followed by Java and Python.
 
-## Contributing
+## Notes
 
-Contributions or feedback are much appreciated. Please email me at *bqi343@gmail.com* or submit a pull request.
+I am currently not updating the following pages:
 
-I am no longer maintaining most of the pages which correspond to levels below USACO Platinum. It would be especially helpful if someone could update the tables for USACO Silver / Gold.
+ * README's for most implementations
+ * tables and solutions for non-platinum USACO contests
+
+If you would like to contribute or provide feedback, please email me at *bqi343@gmail.com* or submit a pull request.
 
 ## Getting Started
 

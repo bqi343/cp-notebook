@@ -1,20 +1,21 @@
 /**
- * Description: Disjoint Set Union
+ * Description: ?
  * Source: CSAcademy
  * Verification: USACO superbull
  */
 
 template<int SZ> struct DSU {
     int par[SZ], sz[SZ];
+
     DSU() {
         F0R(i,SZ) par[i] = i, sz[i] = 1;
     }
-    
+
     int get(int x) { // path compression
     	if (par[x] != x) par[x] = get(par[x]);
     	return par[x];
     }
-    
+
     bool unite(int x, int y) { // union-by-rank
     	x = get(x), y = get(y);
     	if (x == y) return 0;
@@ -26,9 +27,9 @@ template<int SZ> struct DSU {
 
 // computes the minimum spanning tree in O(ElogE) time
 
-template<class T> T kruskal(vector<pair<T,pi>> edge) { 
-    sort(all(edge)); 
+template<class T> T kruskal(vector<pair<T,pi>> edge) {
+    sort(all(edge));
     T ans = 0; DSU<MX> D;
-    trav(a,edge) if (D.unite(a.s.f,a.s.s)) ans += a.f; // edge is in MST   
+    trav(a,edge) if (D.unite(a.s.f,a.s.s)) ans += a.f; // edge is in MST
     return ans;
 }

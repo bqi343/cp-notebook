@@ -1,10 +1,10 @@
 /**
  * Description: Chinese Remainder Theorem
  * Source: Own
- * Verification: ? Kattis generalchineseremainder
+ * Verification: Kattis generalchineseremainder
+ * Dependency: Modular Int
  */
 
-// dependency: Modular Int
 
 pl solve(pl a, pl b) {
     auto g = __gcd(a.s,b.s), l = a.s*b.s/g;

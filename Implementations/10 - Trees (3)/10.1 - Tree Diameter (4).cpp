@@ -13,17 +13,15 @@ template<int SZ> struct TreeDiameter {
     }
 
     void dfs(int cur) {
-        for (int i: adj[cur]) if (i != pre[cur]) {
-            pre[i] = cur;
-            dist[i] = dist[cur]+1;
+        trav(i,adj[cur]) if (i != pre[cur]) {
+            pre[i] = cur; dist[i] = dist[cur]+1;
             dfs(i);
         }
     }
 
     void genDist(int cur) {
         memset(dist,0,sizeof dist);
-        pre[cur] = -1;
-        dfs(cur);
+        pre[cur] = -1; dfs(cur);
     }
 
     int diameterLength() {
@@ -36,7 +34,7 @@ template<int SZ> struct TreeDiameter {
     vi genCenter() {
         int t = diameterLength();
         int bes = 0; FOR(i,1,n+1) if (dist[i] > dist[bes]) bes = i;
-        
+
         F0R(i,t/2) bes = pre[bes];
         if (t&1) return {bes,pre[bes]};
         return {bes};

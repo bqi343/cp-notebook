@@ -1,17 +1,15 @@
 /**
  * Description: extends Combo to all natural numbers
  * Source: Own
- * Verification: ? https://dmoj.ca/problem/tle17c4p5
+ * Verification: https://dmoj.ca/problem/tle17c4p5
+ * Dependency: Modular Int
  */
 
-// dependency: Modular Int
 using namespace basicFactor;
 
 template<int SZ> struct Combo {
-    int MOD;
-    mi fac[SZ+1], ifac[SZ+1];
-    vpi factors;
-    vi cnt[SZ+1];
+    int MOD; vpi factors;
+    mi fac[SZ], ifac[SZ]; vi cnt[SZ];
 
     void init(int _MOD) {
         MOD = _MOD;

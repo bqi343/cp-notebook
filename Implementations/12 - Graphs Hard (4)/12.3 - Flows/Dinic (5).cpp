@@ -1,67 +1,63 @@
 /**
  * Description: Faster Flow, Bipartite Matching
+    * https://codeforces.com/blog/entry/66006 has faster implementations
  * Source: GeeksForGeeks
- * Verification: RMI 2017 Day 1 Fashion 
+ * Verification: RMI 2017 Day 1 Fashion
     * https://pastebin.com/VJxTvEg1
  */
- 
+
 template<int SZ> struct Dinic {
-    struct Edge {
-        int v;
-        ll flow, cap;
-        int rev;
-    };
- 
-    vector<Edge> adj[SZ]; 
-     
+    struct Edge { int v, rev; ll flow, cap; };
+
+    vector<Edge> adj[SZ];
+
     void addEdge(int u, int v, ll cap) {
-        Edge a{v, 0, cap, sz(adj[v])};
-        Edge b{u, 0, 0, sz(adj[u])};
-        adj[u].pb(a), adj[v].pb(b); 
-    } 
-     
-    int level[SZ], st[SZ];
-    
-    bool bfs(int s, int t) {
-        F0R(i,SZ) level[i] = -1, st[i] = 0;
-        level[s] = 0;  
-      
-        queue<int> q; q.push(s);
+        Edge a{v, sz(adj[v]), 0, cap}, b{u, sz(adj[u]), 0, 0};
+        adj[u].pb(a), adj[v].pb(b);
+    }
+
+    int ST, EN, level[SZ], ind[SZ];
+
+    bool bfs() { // level = shortest distance from source
+        // after computing flow, edges {u,v} such that level[u] \neq -1, level[v] = -1 are part of min cut
+        F0R(i,SZ) level[i] = -1, ind[i] = 0;
+        level[ST] = 0;
+
+        queue<int> q; q.push(ST);
         while (sz(q)) {
             int u = q.front(); q.pop();
-            for (auto e: adj[u]) 
-                if (level[e.v] < 0 && e.flow < e.cap) {
-                    level[e.v] = level[u] + 1;
-                    q.push(e.v);
-                }
-        }
-     
-        return level[t] >= 0;
-    }
-      
-    ll sendFlow(int s, int t, ll flow) {
-        if (s == t) return flow;
-      
-        for (  ; st[s] < sz(adj[s]); st[s] ++) {
-            Edge &e = adj[s][st[s]]; 
-                                          
-            if (level[e.v] != level[s]+1 || e.flow == e.cap) continue;
-            ll temp_flow = sendFlow(e.v, t, min(flow, e.cap - e.flow));
-
-            if (temp_flow > 0) {
-                e.flow += temp_flow;
-                adj[e.v][e.rev].flow -= temp_flow;
-                return temp_flow;
+            trav(e,adj[u]) if (level[e.v] < 0 && e.flow < e.cap) {
+                level[e.v] = level[u] + 1;
+                q.push(e.v);
             }
         }
-      
+
+        return level[EN] >= 0;
+    }
+
+    ll sendFlow(int s, ll flow) {
+        if (s == EN) return flow;
+
+        for (  ; ind[s] < sz(adj[s]); ind[s] ++) {
+            Edge& e = adj[s][ind[s]];
+
+            if (level[e.v] != level[s]+1 || e.flow == e.cap) continue;
+            ll f = sendFlow(e.v, min(flow, e.cap - e.flow));
+
+            if (f) { // saturate at least one edge
+                e.flow += f; adj[e.v][e.rev].flow -= f;
+                return f;
+            }
+        }
+
         return 0;
     }
-     
-    ll maxFlow(int s, int t) {
-        if (s == t) return -1;
-        ll total = 0;  
-        while (bfs(s, t))  while (ll flow = sendFlow(s, t, INT_MAX)) total += flow;
-        return total;
-    } 
+
+    ll maxFlow(int _ST, int _EN) {
+        ST = _ST, EN = _EN;
+        if (ST == EN) return -1;
+        ll tot = 0;
+        while (bfs()) while (auto flow = sendFlow(ST, LLONG_MAX)) tot += flow;
+        return tot;
+    }
 };

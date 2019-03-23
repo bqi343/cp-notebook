@@ -9,49 +9,48 @@ template<int SZ> struct CentroidDecomp {
     int sub[SZ], par[SZ], ans[SZ];
     vi dist[SZ], adj[SZ], ANS[SZ];
     pi cen[SZ];
-    
+
     void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
-    
+
     void dfs (int no) {
         sub[no] = 1;
-        for (int i: adj[no]) if (!done[i] && i != par[no]) {
+        trav(i,adj[no]) if (!done[i] && i != par[no]) {
             par[i] = no;
             dfs(i);
             sub[no] += sub[i];
         }
     }
-    
+
     void genDist(int par, int no) {
-        for (int i: adj[no]) if (!done[i] && i != par) {
-            cen[i] = cen[no]; 
+        trav(i,adj[no]) if (!done[i] && i != par) {
+            cen[i] = cen[no];
             dist[i].pb(dist[no].back()+1);
             genDist(no,i);
         }
     }
-    
+
     int getCentroid(int x) {
         par[x] = 0; dfs(x);
         int sz = sub[x];
         while (1) {
             pi mx = {0,0};
-            for (int i: adj[x]) if (!done[i] && i != par[x]) mx = max(mx,{sub[i],i});
+            trav(i,adj[x]) if (!done[i] && i != par[x]) mx = max(mx,{sub[i],i});
             if (mx.f*2 > sz) x = mx.s;
             else return x;
         }
     }
-    
-    void init(int x) { // call init(1) to generate
+
+    void init(int x) { // call init(1) to start
         x = getCentroid(x); done[x] = 1;
         dist[x].pb(0);
-        for (int i: adj[x]) if (!done[i]) {
-            cen[i] = {x,sz(ANS[x])}; 
-            dist[i].pb(1);
-            genDist(x,i);
+        trav(i,adj[x]) if (!done[i]) {
+            cen[i] = {x,sz(ANS[x])};
+            dist[i].pb(1); genDist(x,i);
             ANS[x].pb(0);
         }
-        for (int i: adj[x]) if (!done[i]) init(i);
+        trav(i,adj[x]) if (!done[i]) init(i);
     }
-    
+
     void upd(int v) {
         pi V = {v,-1};
         for (int ind = sz(dist[v])-1; V.f; V = cen[V.f], ind --) {
@@ -59,7 +58,7 @@ template<int SZ> struct CentroidDecomp {
             if (V.s != -1) ANS[V.f][V.s] ++;
         }
     }
-    
+
     int query(int v) {
         pi V = {v,-1}; int ret = 0;
         for (int ind = sz(dist[v])-1; V.f; V = cen[V.f], ind --) {

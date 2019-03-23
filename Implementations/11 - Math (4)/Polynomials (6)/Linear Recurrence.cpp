@@ -1,5 +1,6 @@
 /**
  * Description: Berlekamp-Massey Algo
+    * Note: you may need to add a lot of terms to get the correct formula
  * Source: http://codeforces.com/blog/entry/61306
  * Verification: http://codeforces.com/contest/506/problem/E
  */
@@ -23,7 +24,7 @@ struct linRec {
 
             auto k = -delta[i]/delta[fail[best]];
             vmi cur(i-fail[best]-1); cur.pb(-k);
-            for (auto a: seq[best]) cur.pb(a*k);
+            trav(a, seq[best]) cur.pb(a*k);
 
             cur += seq.back();
             if (i-fail[best]+sz(seq[best]) >= sz(seq.back())) best = sz(seq)-1;

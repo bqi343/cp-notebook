@@ -18,7 +18,7 @@ template<int SZ> struct Combo {
         cnt[0] = vi(sz(factors));
         fac[0] = ifac[0] = mi(1,MOD);
 
-        FOR(i,1,SZ+1) {
+        FOR(i,1,SZ) {
             cnt[i] = cnt[i-1];
             int I = i;
             F0R(j,sz(factors)) while (I % factors[j].f == 0)

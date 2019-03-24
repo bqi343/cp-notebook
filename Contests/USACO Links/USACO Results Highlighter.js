@@ -1,7 +1,7 @@
 javascript: void function() { // originally posted by eygmath on USACO discord?
-  	var co = [0,0,0];
+  	var co = [0,0,0], points = [0,0,0], totPoints = [0,0,0], perfect = [0,0,0];
     var tot = 0;
-    function e(e, a, n) { 
+    function e(e, a, n) {
         if (void 0 == e) return !1;
         e = e.substring(7, 11);
         for (var i = 0; i < n.length; i++)
@@ -25,18 +25,31 @@ javascript: void function() { // originally posted by eygmath on USACO discord?
     }
 
     function i(e, a, n, o) {
-      	var bad = 0;
-        for (var i = a; a + n > i; i++) 
-            if ("*" != e[i].innerHTML) 
-              	bad ++;
-     	if (bad > 2) return;
-        co[o] ++;
+      	var good = 0, bad = 0;
         for (var i = a; a + n > i; i++) {
-          if (bad > 0) e[i].style["background-color"] = "#ffff00"
-          else e[i].style["background-color"] = "#39ff14"
+            if (" " == e[i].innerHTML) {
+
+            } else if ("*" == e[i].innerHTML) {
+                good ++;
+            } else bad ++;
+        }
+
+        points[o] += good;
+        totPoints[o] = Math.max(totPoints[o],good+bad);
+        if (bad == 0 && good > 0) perfect[o] ++;
+
+        if (bad <= 2 && good > 0) {
+            co[o] ++;
+            for (var i = a; a + n > i; i++) {
+              if (bad > 0) e[i].style["background-color"] = "#ffff00"
+              else e[i].style["background-color"] = "#39ff14"
+            }
         }
     }
 
+    function nor(p) {
+        return Math.round(10000*p)/100;
+    }
     function r(e) {
         for (var a = [], n = 10; n < e[0].childNodes.length; n++) e[0].childNodes[n].hasAttribute("colspan") && a.push(e[0].childNodes[n].getAttribute("colspan") - 1);
         console.log(a);
@@ -213,5 +226,6 @@ javascript: void function() { // originally posted by eygmath on USACO discord?
             ["2019", "Stan Zhang", "2018"],
             ["2019", "Adam Zheng", "2018"]
         ], l = document.getElementsByTagName("tbody"), h = 1; h < l.length - 1; h++) a(l[h].childNodes, o, "#ffff00"), r(l[h].childNodes), n(l[h].childNodes)
-    console.log(" TOTAL: "+tot+" PERCENT: "+Math.round(100*co[0]/tot)+" "+Math.round(100*co[1]/tot)+" "+Math.round(100*co[2]/tot));
+    // console.log(" TOTAL: "+tot+" PERCENT: "+Math.round(100*co[0]/tot)+" "+Math.round(100*co[1]/tot)+" "+Math.round(100*co[2]/tot));
+    console.log("TOTAL: "+tot+", PERFECT: "+perfect[0]+" "+perfect[1]+" "+perfect[2]+", PERCENT: "+nor(points[0]/totPoints[0]/tot)+" "+nor(points[1]/totPoints[1]/tot)+" "+nor(points[2]/totPoints[2]/tot));
 }();

@@ -16,7 +16,7 @@ template<int SZ> struct Sieve {
 		
 		/*FOR(i,2,SZ) { // O(N) sieve
 			if (sp[i] == 0) { sp[i] = i; pr.pb(i); }
-			for (int p : pr) {
+			trav(p,pr) {
 				if (p > sp[i] || i*p >= SZ) break;
 				sp[i*p] = p;
 			}

@@ -2,8 +2,6 @@
 
 These problems are all submittable through the current USACO website. Percentages signify the portion of US pre-college participants which passed at least n-2 out of n test cases. Asterisks denote contests where complete results were not available.
 
-[This list](https://oichecklist.herokuapp.com/view/my/) is quite useful (and now contains all the USACO problems below)!
-
 | Contest   | #                                                              | Name          | Topic                                    | Result | %    |
 | --------- | -------------------------------------------------------------- | ------------- | ---------------------------------------- | ------ | ---- |
 | 2012 Nov  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=193) | bbreeds       | DP                                       | Done   | 54   |

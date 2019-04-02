@@ -38,13 +38,14 @@ Assuming you know how C++ input/output works, you should soon be able to advance
     * goes along with CPH
     * good for practicing fundamentals
   * Contest Archives
-    * [POI](https://szkopul.edu.pl/portal/problemset_eng)
-    * [AtCoder](https://beta.atcoder.jp/contests/archive)
-    * [CodeForces](http://codeforces.com/problemset)
+    * [OI Checklist](https://oichecklist.herokuapp.com/view/my/) (now includes USACO!)
     * [CSAcademy](https://csacademy.com/contest/archive/)
       * short statements, editorials
       * solve statistics
       * ability to view best solutions
+    * [AtCoder](https://beta.atcoder.jp/contests/archive)
+      * nice math
+    * [CodeForces](http://codeforces.com/problemset)
 * Use the tags to learn new topics as necessary.
   * see implementation / USACO categories
   * [A2OJ](https://a2oj.com/)

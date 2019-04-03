@@ -1,6 +1,6 @@
 # Contests
 
-See [clist.by](http://clist.by/) for an extensive list. Most of the contests which I do are a subset of those shown in "Programming Contests.png".
+See [clist.by](http://clist.by/) for an extensive list. Most of the contests which I do are a subset of those shown in "Programming Contests.png". A link to my google calendar is available [here.](https://calendar.google.com/calendar?cid=Y2s5ZjdmZDBkNjdmOGFxZ2oxbDVrMHJ1OGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 
   * [USACO](http://www.usaco.org/)
     * Bronze, Silver, Gold, Platinum: 3 problems, 4 hrs
@@ -96,20 +96,22 @@ See [clist.by](http://clist.by/) for an extensive list. Most of the contests whi
       * [oj.uz](https://oj.uz/)
 
 
-## Contest Tools
+## Codeforces
 
-Mostly for CodeForces, some more useful than others.
+### Tools
 
   * [Code Drills](http://code-drills.com/)
-  * [DataBread](http://databread.in/board.php)
   * [Stopstalk](https://www.stopstalk.com)
   * [CF Visualizer](http://cfviz.netlify.com/compare.html)
   * [CF Achievements](http://cfa.yuldashev.net/)
   * [CF Predictor](https://chrome.google.com/webstore/detail/cf-predictor/ocfloejijfhhkkdmheodbaanephbnfhn)
   * [CF Enhancer](https://chrome.google.com/webstore/detail/codeforces-enhancer/ocmandagmgmkcplckgnfgaokpgkfenmp)
 
-## Very Rough Codeforces to USACO
+### Rating to USACO
+
   * 1200+: Silver
   * 1400+: Gold
   * 1600+: Platinum
-  * 1800+: Training Camp
+  * 1900+: Training Camp
+
+Please let me know if these are outdated.

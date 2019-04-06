@@ -4,10 +4,14 @@
  * Verification: 
     * SPOJ polymul, CSA manhattan, CF Perfect Encoding
     * http://codeforces.com/contest/632/problem/E
+ * Dependency: Modular Int
  */
 
-// Dependency: Modular Int
 using namespace vecOp;
+
+const ll mod = (119 << 23) + 1, root = 3; // = 998244353
+// NTT: For p < 2^30 there is also e.g. (5 << 25, 3), (7 << 26, 3),
+// (479 << 21, 3) and (483 << 21, 5). The last two are > 10^9.
 
 namespace FFT {
     int size(int s) { return s > 1 ? 32 - __builtin_clz(s - 1) : 0; }

@@ -4,9 +4,8 @@
  * Verification: various
  */
 
-typedef pd P;
-
 namespace point {
+    typedef pd P;
     typedef vector<P> vP;
 
     P cis(ld ang) {

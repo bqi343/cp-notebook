@@ -117,3 +117,6 @@ These problems are all submittable through the current USACO website. Percentage
 | 2019 Feb  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=924) | cowdate       | Two Pointers / Prefix Sums               | Done   | 42   |
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=925) | mooriokart    | Tree / Knapsack                          | Done   | 17   |
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=926) | mowing        | DP / Convexity / Binary Search / SegTree | Done   | 3    |
+| 2019 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=948) | treeboxes     | LCA                                      | Done   | ?    |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=949) | escape        | DP / DSU                                 | Done   | ?    |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=950) | valleys       | DSU                                      | Done   | ?    |

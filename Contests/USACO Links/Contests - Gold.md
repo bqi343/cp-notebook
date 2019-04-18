@@ -64,4 +64,6 @@
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=899) | shortcut      | Shortest Path                    |        |
 | 2019 Feb  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=921) | cowland       | LCA / 1DRQ                       | Done   |
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=922) | dishes 		 | Map                              | Done   |
-|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=923) | paintbarn     | DP / Line Sweep                  | Done   |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=923) | paintbarn     | DP / Line Sweep                  | Done   | 2019 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=945) | snakes        | DP                               | Done   |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=946) | walk     		 | MST / Math                       | Done   |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=947) | balance       | Two Pointers / Math              | Done   |

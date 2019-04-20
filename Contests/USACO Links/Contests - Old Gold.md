@@ -41,7 +41,7 @@ These problems are submittable through the extended USACO training pages rather 
 | [2008 Dec](http://tjsct.wikidot.com/usaco-dec08-gold)   | 1 | treat      | DFS                   |        |
 |                                                         | 2 | sec        | Trie                  |        |
 |                                                         | 3 | winchk     | Eulerian Path         |        |
-|                                                         | 4 | fence      | DP                    | Done   |
+|                                                         | 4 | fence      | Geometry, DP          | Done   |
 | [2009 Bonus](http://tjsct.wikidot.com/usaco-hol09-gold) | 1 | cattleb    | Sorting               |        |
 |                                                         | 2 | delay      | DP                    |        |
 |                                                         | 3 | holpaint   | Set                   |        |

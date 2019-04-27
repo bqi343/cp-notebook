@@ -1,13 +1,13 @@
-# Notes
+# Resources
 
-## C++11
+## Why Use C++?
 
-I recommend that you use C++11 over Java due to various reasons, such as
-  * better speed (especially important in codeforces)
+There are many reasons to use C++11 over Java, such as
+  * better speed (especially important in CodeForces & CSAcademy)
   * typically shorter / simpler
   * miscellaneous shortcuts such as #define, typedef, auto
   * good STL
- 
+
 ## Resources
 
 ### Lists
@@ -42,7 +42,7 @@ I recommend that you use C++11 over Java due to various reasons, such as
   * [Virginia Tech](https://icpc.cs.vt.edu/#/)
   * [Carnegie-Mellon](https://contest.cs.cmu.edu/295/f17/)
   * [ICPCGate](https://icpcgate.org/contest/index.php)
-  
+
 ### Other
   * [USACO Topics](https://www.quora.com/What-topics-algorithms-should-be-mastered-to-pass-each-of-the-four-divisions-of-USACO)
   * [VPlanet](https://vplanetcoding.com/)

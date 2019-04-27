@@ -30,7 +30,7 @@ template<int SZ> struct Combo {
     
     void init(int _MOD) {
         MOD = _MOD; factors = factor(MOD);
-        factors = {{MOD,1}}; 
+        // factors = {{MOD,1}}; 
         genInv();
         
         cnt[0] = vi(sz(factors));

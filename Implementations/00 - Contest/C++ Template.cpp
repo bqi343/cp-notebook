@@ -54,14 +54,8 @@ const ld PI = 4*atan((ld)1);
 template<class T> void ckmin(T &a, T b) { a = min(a, b); }
 template<class T> void ckmax(T &a, T b) { a = max(a, b); }
 
-template<class A, class B> A& operator+=(A& l, const B& r) { return l = l+r; }
-template<class A, class B> A& operator-=(A& l, const B& r) { return l = l-r; }
-template<class A, class B> A& operator*=(A& l, const B& r) { return l = l*r; }
-template<class A, class B> A& operator/=(A& l, const B& r) { return l = l/r; }
-
 int main() {
     // you should actually read the stuff at the bottom
-    setIO(); 
     
     // you should actually read the stuff at the bottom
 }

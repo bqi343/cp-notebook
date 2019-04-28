@@ -1,33 +1,34 @@
 /**
- * Description: modular arithmetic with vectors
-    * use for NTT
- * Source: Own
- * Verification: see FFT
+ * Description: modular arithmetic with pairs
+ 	* use for hashing
+ * Source: Own (is there a better way to do this?)
+ * Verification: see hashing
  */
 
 namespace vecOp {
     template<class T> vector<T> rev(vector<T> v) { reverse(all(v)); return v; }
     template<class T> vector<T> shift(vector<T> v, int x) { v.insert(v.begin(),x,0); return v; }
     
-    template<class T> vector<T> operator+(vector<T> l, const vector<T>& r) {
-        l.resz(max(sz(l),sz(r))); F0R(i,sz(r)) l[i] += r[i];
-        return l;
+    template<class T> vector<T>& operator+=(vector<T>& l, const vector<T>& r) {
+        l.resz(max(sz(l),sz(r))); F0R(i,sz(r)) l[i] += r[i]; return l;
     }
-    template<class T> vector<T> operator-(vector<T> l, const vector<T>& r) {
-        l.resz(max(sz(l),sz(r))); F0R(i,sz(r)) l[i] -= r[i];
-        return l;
+    template<class T> vector<T>& operator-=(vector<T>& l, const vector<T>& r) {
+        l.resz(max(sz(l),sz(r))); F0R(i,sz(r)) l[i] -= r[i]; return l;
     }
+    template<class T> vector<T>& operator*=(vector<T>& l, const T& r) { trav(t,l) t *= r;  }
+    template<class T> vector<T>& operator/=(vector<T>& l, const T& r) { trav(t,l) t /= r;  }
+
+    template<class T> vector<T> operator+(vector<T> l, const vector<T>& r) { return l += r; }
+    template<class T> vector<T> operator-(vector<T> l, const vector<T>& r) { return l -= r; }
+    template<class T> vector<T> operator*(vector<T> l, const T& r) { return l *= r;  }
+    template<class T> vector<T> operator/(vector<T> l, const T& r) { return l /= r;  }
+
     template<class T> vector<T> operator*(const vector<T>& l, const vector<T>& r) {
         if (min(sz(l),sz(r)) == 0) return {};
         vector<T> x(sz(l)+sz(r)-1); F0R(i,sz(l)) F0R(j,sz(r)) x[i+j] += l[i]*r[j];
         return x;
     }
-    template<class T> vector<T> operator*(const vector<T>& l, const T& r) { return l*vector<T>(1,r);  }
-    template<class T> vector<T> operator*(const T& r, const vector<T>& l) { return l*r; }
-    template<class T> vector<T> operator/(vector<T> l, const T& r) { 
-        F0R(i,sz(l)) l[i] /= r; 
-        return l;
-    }
+    template<class T> vector<T>& operator*=(vector<T>& l, const vector<T>& r) { return l = l*r; }
     
     template<class T> vector<T> rem(vector<T> a,vector<T> b) { 
         while (sz(b) && b.back() == 0) b.pop_back();
@@ -52,3 +53,5 @@ namespace vecOp {
         return ret;
     }
 }
+
+using namespace vecOp;

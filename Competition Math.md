@@ -1,32 +1,46 @@
 # Competition Math
- 
-## Pre-Olympiad
 
-If you have no prior contest experience or score <90 on AMC 10:
- * Look up AMC if you don't know what it is. ;)
+## FAQ
+
+> Will this advice get me from x to y within z time?
+
+No guarantees.
+
+> What if I can't do a problem?
+
+Er ... you have several options:
+ * Leave it for a while and do something else if you actually want to solve it on your own. 
+ * Look at (part of) the solution.
+ * Get a hint from someone else. 
+ 
+I'm impatient, so usually I go with the second option. 
+
+## Level 0: no prior contest experience / <90 on AMC 10
+ * Of course, look up AMC if you don't know what it is. 
  * You should make sure that you are familiar with standard prealgebra concepts. (This may not be as easy as you think!)
  * Doing AMC 8 or MathCounts chapter contests is helpful.
  * AoPS
    * Use Alcumus extensively. 
-   * FTW! may or may not be helpful for improving speed and accuracy. 
+   * FTW! may be helpful for improving speed and accuracy. 
    * ["Stupid Mistakes"](http://artofproblemsolving.com/articles/stupid-mistakes)
    * Introduction Series
  * [This](https://artofproblemsolving.com/community/c3h1217349p6066794) is an excellent article pertaining to MathCounts preparation. 
  
-If you consistently score 90+ on AMC 10:
+## Level 1: 90+ on AMC 10
  * Master all of Introduction Series / Alcumus.
  * Once you believe that you are familiar with all the material, do past tests! Note that AMC 12's before 2010 are comparable or possibly easier than current AMC 10's. 
  * Create a record of your results and review as necessary.
  
-If you consistently score 120+ on AMC 10:
- * Master all the topics in the intermediate series.
- * Do past AIME's! Follow the time limit, and don't look up solutions unless you are absolutely stuck. [Here](https://drive.google.com/drive/folders/0B95dMIY7fstOemlzdThlZjFCUnc?usp=sharing) are some additional AIME resources.
- * Do as many contests as you can (USAMTS, ZIML, etc.)
+## Level 2: 120+ on AMC 10
+ * Master all the topics in the intermediate series. (Also, Alcumus is now available for Intermediate Algebra!)
+ * Do past AMC 12's. Although you've probably seen most of the problems if you've practiced with the AMC 10's, it's worth knowing how to do the final five.
+ * Do past AIME's. Follow the time limit, and don't look up solutions unless you are absolutely stuck. 
+ * Do as many (nontrivial) contests as you can (USAMTS, OMO, ZIML?, etc.)
+   * [AIME Links](https://drive.google.com/drive/folders/0B95dMIY7fstOemlzdThlZjFCUnc?usp=sharing)
+   * [Mandelbrot](http://www.mandelbrot.org/): All past problems are now available.
+   * [PHS TST Past Problems](https://sites.google.com/view/phsmathteam/tst): Most recent problems are by me; let me know what you think of them.
 
-## Olympiad 
-
-Primarily directed toward USAJMO.
-
+## Level 3: USAJMO (and beyond?)
  * Information
    * [MOP Cutoffs](https://en.wikipedia.org/wiki/Mathematical_Olympiad_Summer_Program#Cutoff_scores)
    * [IMO Selection Process](http://web.evanchen.cc/FAQs/rules.html)
@@ -50,7 +64,7 @@ Primarily directed toward USAJMO.
    * Also know
      * Projective
      * Inversion
-   * [EGMO](https://bookstore.ams.org/prb-27/) is really good!
+   * [EGMO](https://bookstore.ams.org/prb-27/) is very good
    * [AoPS Olympiad Geometry](https://artofproblemsolving.com/school/course/olympiad-geometry)
    * Awesomemath 106, 107 Geo
  * Algebra

@@ -74,6 +74,7 @@ See [clist.by](http://clist.by/) for an extensive list. Most of the contests whi
 
 > Hello, Which online judge should I practice more to do well in **IOI** ?
 > the closest OJ for IOI style?
+> Do you have any magic problems sets to suggest?
 
   * The [OI Checklist](https://oichecklist.herokuapp.com/view/my/) provides convenient links to problems from
     * IOI

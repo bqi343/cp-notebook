@@ -11,7 +11,7 @@ I am currently not updating the following pages:
  * README's for most implementations
  * tables and solutions for non-platinum USACO contests
 
-If you would like to contribute or provide feedback, please email me at *bqi343@gmail.com* or submit a pull request.
+If you would like to contribute, provide feedback, or encourage me to update something, please email me at *bqi343@gmail.com* or submit a pull request. If you have a question, it may be answered by another file in this folder.
 
 ## Getting Started
 
@@ -28,24 +28,8 @@ Assuming you know how C++ input/output works, you should soon be able to advance
 ## How do you train for USACO Platinum?
 
 * Do as many (high-quality) contests as possible.
-  * Make sure to upsolve after the contest ends! ([wiktionary](https://en.wiktionary.org/wiki/upsolve))
-* Work through past problems.
-  * USACO
-    * Old Gold / Platinum
-    * [Training](http://train.usaco.org/usacogate)
-      * warning: somewhat outdated
-  * [CSES](https://cses.fi/problemset/)
-    * goes along with CPH
-    * good for practicing fundamentals
-  * Contest Archives
-    * [OI Checklist](https://oichecklist.herokuapp.com/view/my/) (now includes USACO!)
-    * [CSAcademy](https://csacademy.com/contest/archive/)
-      * short statements, editorials
-      * solve statistics
-      * ability to view best solutions
-    * [AtCoder](https://beta.atcoder.jp/contests/archive)
-      * nice math
-    * [CodeForces](http://codeforces.com/problemset)
+  * Make sure to [upsolve](https://en.wiktionary.org/wiki/upsolve) after the contest ends!
+* Work through past problems. See Contests -> README:Problems.
 * Use the tags to learn new topics as necessary.
   * see implementation / USACO categories
   * [A2OJ](https://a2oj.com/)

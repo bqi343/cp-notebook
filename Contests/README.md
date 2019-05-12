@@ -1,5 +1,7 @@
 # Contests
 
+## Contest Sites
+
 See [clist.by](http://clist.by/) for an extensive list. Most of the contests which I do are a subset of those shown in "Programming Contests.png". A link to my google calendar is available [here.](https://calendar.google.com/calendar?cid=Y2s5ZjdmZDBkNjdmOGFxZ2oxbDVrMHJ1OGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 
   * [USACO](http://www.usaco.org/)
@@ -52,49 +54,59 @@ See [clist.by](http://clist.by/) for an extensive list. Most of the contests whi
     * 4 hours
     * December
 
-## Misc OI
+## Problemsets
 
+  * [USACO Training](http://train.usaco.org/usacogate)
+    * warning: somewhat outdated in the sense that it lacks common topics such as segment tree
+  * [CSES](https://cses.fi/problemset/)
+    * goes along with Competitive Programmer's Handbook
+    * good for practicing fundamentals
+  * [CSAcademy](https://csacademy.com/contest/archive/)
+    * short statements, editorials
+    * solve statistics
+    * ability to view best solutions
+  * [AtCoder](https://beta.atcoder.jp/contests/archive)
+    * nice math
+  * [CodeForces](http://codeforces.com/problemset)
+    * problem quality of the two
+
+## (Inter)national Informatics Olympiads
+
+> Hello, Which online judge should I practice more to do well in **IOI** ?
+> the closest OJ for IOI style?
+
+  * The [OI Checklist](https://oichecklist.herokuapp.com/view/my/) provides convenient links to problems from
+    * IOI
+    * [Baltic OI](http://www.boi2017.org/)
+    * [APIO](http://apio-olympiad.org/)
+    * [USA](http://www.usaco.org/)
+      * Old Gold / Platinum
+      * [Old Problems](http://tjsct.wikidot.com/usaco/)
+    * [Poland](https://szkopul.edu.pl/portal/)
+      * [Solutions](https://www.oi.edu.pl/old/php/show.php?ac=e190000)
+    * [Japan](http://cms.ioi-jp.org/)
+      * Spring Camp Contests, Open Contest
   * IOI
     * [List of 2017 IOI Participants](http://weaselcrow.com/pro/cf/ioi2017/)
     * [IOI 2018 Syllabus](https://people.ksp.sk/~misof/ioi-syllabus/ioi-syllabus.pdf)
-    * Problems
-      * [WCIPEG](http://wcipeg.com)
-      * [Yandex](https://contest.yandex.ru/ioi/Info/)
-      * [DMOJ](https://dmoj.ca/problems/?search=ioi)
-  * Regional
-    * [IOI List](http://www.ioinformatics.org/contest/regional.shtml)
-    * [Baltic OI](http://www.boi2017.org/)
-      * [Past BOI](https://cses.fi/boi/list/)
-    * [APIO](http://apio-olympiad.org/)
-    * [IOIT](http://ioit.altervista.org/2018-teams-and-contests-.html)
-    * [InfO(1) cup](http://info1cup.com/)
-  * National (open?)
-    * [IOI List](http://www.ioinformatics.org/contest/national.shtml)
-    * [USA](http://www.usaco.org/)
-      * Dec - Mar
-      * [Old Problems](http://tjsct.wikidot.com/usaco/)
+    * [IOI List (Regional)](http://www.ioinformatics.org/contest/regional.shtml)
+    * [IOI List (National)](http://www.ioinformatics.org/contest/national.shtml)
+  * Other Olympiads
+    * China
+      * [WCIPEG](https://wcipeg.com/problems/cat%3Dnoi%2Cshow%3D50)
     * [Indonesia](https://competition.ia-toki.org/contests)
       * monthly
     * [Croatia](http://hsin.hr/coci/)
       * not full feedback
-    * [Japan](http://cms.ioi-jp.org/)
-      * Spring Camp Contests, Open Contest
     * [Lithuania](http://online.lmio.lt/)
-    * [New Zealand](http://www.nzoi.org.nz/nzic/)
-  * Other
-    * [Poland](https://szkopul.edu.pl/portal/)
-      * [Solutions](https://www.oi.edu.pl/old/php/show.php?ac=e190000)
     * [Italy](https://training.olinfo.it/#/overview)
+      * [IOIT](http://ioit.altervista.org/2018-teams-and-contests-.html)
     * [Australia](https://orac.amt.edu.au/)
     * [Canada](https://cemc.math.uwaterloo.ca/contests/computing.html)
       * [WCIPEG](https://wcipeg.com/problems/cat%3Dccc%2Cshow%3D50)
       * [DMOJ](https://dmoj.ca/problems/?category=24)
-    * China
-      * [WCIPEG](https://wcipeg.com/problems/cat%3Dnoi%2Cshow%3D50)
-    * Misc
-      * [CS Academy](https://csacademy.com/contests/)
-      * [oj.uz](https://oj.uz/)
-
+    * [New Zealand](http://www.nzoi.org.nz/)
+    * [InfO(1) cup](http://info1cup.com/)
 
 ## Codeforces
 

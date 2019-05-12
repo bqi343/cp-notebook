@@ -8,33 +8,33 @@ No guarantees.
 
 > What if I can't do a problem?
 
-Er ... you have several options:
- * Leave it for a while and do something else if you actually want to solve it on your own. 
- * Look at (part of) the solution.
- * Get a hint from someone else. 
- 
-I'm impatient, so usually I go with the second option. 
+If you're still coming up with new ideas keep thinking. Otherwise, you have several options:
+ * Look at [part of] the solution. View tags [if CF].
+ * Leave it for a while and do something else if you actually want to solve it on your own.
+ * Get a hint from someone else.
+
+I'm impatient, so usually I go with the second option.
 
 ## Level 0: no prior contest experience / <90 on AMC 10
- * Of course, look up AMC if you don't know what it is. 
+ * Of course, look up AMC if you don't know what it is.
  * You should make sure that you are familiar with standard prealgebra concepts. (This may not be as easy as you think!)
  * Doing AMC 8 or MathCounts chapter contests is helpful.
  * AoPS
-   * Use Alcumus extensively. 
-   * FTW! may be helpful for improving speed and accuracy. 
+   * Use Alcumus extensively.
+   * FTW! may be helpful for improving speed and accuracy.
    * ["Stupid Mistakes"](http://artofproblemsolving.com/articles/stupid-mistakes)
    * Introduction Series
- * [This](https://artofproblemsolving.com/community/c3h1217349p6066794) is an excellent article pertaining to MathCounts preparation. 
- 
+ * [This](https://artofproblemsolving.com/community/c3h1217349p6066794) is an excellent article pertaining to MathCounts preparation.
+
 ## Level 1: 90+ on AMC 10
  * Master all of Introduction Series / Alcumus.
- * Once you believe that you are familiar with all the material, do past tests! Note that AMC 12's before 2010 are comparable or possibly easier than current AMC 10's. 
+ * Once you believe that you are familiar with all the material, do past tests! Note that AMC 12's before 2010 are comparable or possibly easier than current AMC 10's.
  * Create a record of your results and review as necessary.
- 
+
 ## Level 2: 120+ on AMC 10
  * Master all the topics in the intermediate series. (Also, Alcumus is now available for Intermediate Algebra!)
  * Do past AMC 12's. Although you've probably seen most of the problems if you've practiced with the AMC 10's, it's worth knowing how to do the final five.
- * Do past AIME's. Follow the time limit, and don't look up solutions unless you are absolutely stuck. 
+ * Do past AIME's. Follow the time limit, and don't look up solutions unless you are absolutely stuck.
  * Do as many (nontrivial) contests as you can (USAMTS, OMO, ZIML?, etc.)
    * [AIME Links](https://drive.google.com/drive/folders/0B95dMIY7fstOemlzdThlZjFCUnc?usp=sharing)
    * [Mandelbrot](http://www.mandelbrot.org/): All past problems are now available.
@@ -81,19 +81,19 @@ I'm impatient, so usually I go with the second option.
 
 
 ## More Links
- 
+
 Useful:
  * [Expii](https://www.expi.com/)
  * [Alcumus](https://artofproblemsolving.com/alcumus)
  * [Past Contests](https://artofproblemsolving.com/community/c3158_usa_contests)
  * [Handouts](https://artofproblemsolving.com/community/c5h1578191_handout_compilation)
- 
+
 Smart people
    * [Evan Chen](http://web.evanchen.cc/FAQs/contest.html)
-     * [Blog](https://usamo.wordpress.com/) 
+     * [Blog](https://usamo.wordpress.com/)
    * [Yufei Zhao](http://yufeizhao.com/olympiad/)
    * [Po-Shen Loh](http://www.math.cmu.edu/~lohp/olympiad.shtml)
-   
+
 Interesting:
  * [Enjoy the Problems](https://artofproblemsolving.com/community/c5h1211223p6004200)
  * [BOGTRO](https://artofproblemsolving.com/community/c5h1264874p6581946)

@@ -4,14 +4,13 @@
  * Verification: https://open.kattis.com/problems/convexhull
  */
 
-typedef pl P;
+// typedef pl P;
 
 using namespace point;
 
 vP convex_hull(vP P) {
     sort(all(P)); P.erase(unique(all(P)),P.end());
-    int n = sz(P);
-    if (n == 1) return P;
+    int n = sz(P); if (n <= 1) return P;
     
     vP bot = {P[0]};
     FOR(i,1,n) {
@@ -27,6 +26,5 @@ vP convex_hull(vP P) {
     }
     up.pop_back();
     
-    bot.insert(bot.end(),all(up));
-    return bot;
+    bot.insert(bot.end(),all(up)); return bot;
 }

@@ -1,5 +1,5 @@
 /**
- * Description: O(NlogN) line sweep to find two closest points
+ * Description: O(NlogN) line sweep to find two closest points out of N
  * Source: Own
  * Verification: https://open.kattis.com/problems/closestpair2
  */

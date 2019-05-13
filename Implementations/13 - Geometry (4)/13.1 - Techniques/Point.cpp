@@ -8,7 +8,7 @@ namespace point {
     typedef pd P;
     typedef vector<P> vP;
 
-    P cis(ld ang) {
+    P dir(ld ang) {
         cd c = exp(ang*cd(0,1));
         return P(c.real(),c.imag());
     }
@@ -23,11 +23,17 @@ namespace point {
     P operator*(const P& l, const ld& r) { return P(l.f*r,l.s*r); }
     P operator*(const ld& l, const P& r) { return r*l; }
     P operator/(const P& l, const ld& r) { return P(l.f/r,l.s/r); }
-    
     P operator*(const P& l, const P& r) { return P(l.f*r.f-l.s*r.s,l.s*r.f+l.f*r.s); }
     P operator/(const P& l, const P& r) { return l*conj(r)/norm(r); }
     
-    P dir(P x) { return x/abs(x); }
+    P& operator+=(P& l, const P& r) { return l = l+r; }
+    P& operator-=(P& l, const P& r) { return l = l-r; }
+    P& operator*=(P& l, const ld& r) { return l = l*r; }
+    P& operator/=(P& l, const ld& r) { return l = l/r; }
+    P& operator*=(P& l, const P& r) { return l = l*r; }
+    P& operator/=(P& l, const P& r) { return l = l/r; }
+    
+    P unit(P x) { return x/abs(x); }
     
     ld dot(P a, P b) { return (conj(a)*b).f; }
     ld cross(P a, P b) { return (conj(a)*b).s; }
@@ -75,20 +81,26 @@ namespace point {
     
     // computes the center of mass of a polygon with constant mass per unit area
     // verification: kattis polygonarea, VT HSPC 2018 Holiday Stars
-    P centroid(vP v) { 
-        P cen(0,0); ld area = 0;
+    ld area(const vP& v) {
+        ld area = 0;
         F0R(i,sz(v)) {
-            int j = (i+1)%sz(v);
-            ld a = cross(v[i],v[j]);
+            int j = (i+1)%sz(v); ld a = cross(v[i],v[j]);
+            area += a;
+        }
+        return std::abs(area)/2;
+    }
+    P centroid(const vP& v) { 
+        P cen(0,0); ld area = 0; // 2*signed area
+        F0R(i,sz(v)) {
+            int j = (i+1)%sz(v); ld a = cross(v[i],v[j]);
             cen += a*(v[i]+v[j]); area += a;
         }
-        area /= (ld)2; // positive if ccw
-        return cen/area/(ld)6;
+        return cen/area/(ld)3;
     }
-
+    
     // tests whether a point is inside, on, or outside the perimeter of any polygon
     // verification: https://open.kattis.com/problems/pointinpolygon
-    string inPoly(vP p, P z) {
+    string inPoly(const vP& p, P z) {
         int n = sz(p), ans = 0;
         F0R(i,n) {
             P x = p[i], y = p[(i+1)%n];

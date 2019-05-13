@@ -1,11 +1,11 @@
 /*
- * Description: Delaunay Triangulation w/ Bowyer-Watson O(n^2logn)
+ * Description: Delaunay Triangulation w/ Bowyer-Watson in O(n^2logn)
  * Source: Own
  * Verification: ICPC WF 2018 Panda Preserve
  */
 
 namespace Delaunay {
-    // stay with __int128 for better precision, if possible
+    // use __int128 for better precision, if possible
     ld cross(cd b, cd c) { return (conj(b)*c).imag(); }
     ld cross(cd a, cd b, cd c) { return cross(b-a,c-a); }
 
@@ -22,7 +22,7 @@ namespace Delaunay {
         // not when all points are collinear!
         // creates super-triangle, adjusts as necessary
 
-        v.pb(cd(-1e5,-1e5)); v.pb(cd(1e5,0)); v.pb(cd(0,1e5));
+        v.pb(cd(-1e5,-1e5)); v.pb(cd(1e5,0)); v.pb(cd(0,1e5)); // might not be sufficiently large
 
         vector<array<int,3>> ret;
         ret.pb({sz(v)-3,sz(v)-2,sz(v)-1});

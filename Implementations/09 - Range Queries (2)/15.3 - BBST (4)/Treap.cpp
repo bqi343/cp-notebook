@@ -36,7 +36,7 @@ namespace treap {
         tour(x->c[0],v); v.pb(x->val); tour(x->c[1],v);
     }
     
-    pt recalc(pt x) {
+    pt calc(pt x) {
         assert(!x->flip);
         prop(x->c[0]), prop(x->c[1]);
         x->sz = 1+getsz(x->c[0])+getsz(x->c[1]);
@@ -49,22 +49,22 @@ namespace treap {
         prop(t);
         if (t->val >= v) {
             auto p = split(t->c[0], v); t->c[0] = p.s;
-            return {p.f, recalc(t)};
+            return {p.f, calc(t)};
         } else {
             auto p = split(t->c[1], v); t->c[1] = p.f;
-            return {recalc(t), p.s};
+            return {calc(t), p.s};
         }
     }
     
-    pair<pt,pt> splitsz(pt t, int sz) {
+    pair<pt,pt> splitsz(pt t, int sz) { // leftmost sz nodes go to left
         if (!t) return {t,t};
         prop(t);
         if (getsz(t->c[0]) >= sz) {
             auto p = splitsz(t->c[0], sz); t->c[0] = p.s;
-            return {p.f, recalc(t)};
+            return {p.f, calc(t)};
         } else {
             auto p = splitsz(t->c[1], sz-getsz(t->c[0])-1); t->c[1] = p.f;
-            return {recalc(t), p.s};
+            return {calc(t), p.s};
         }
     }
         
@@ -74,7 +74,7 @@ namespace treap {
         pt t;
         if (l->pri > r->pri) l->c[1] = merge(l->c[1],r), t = l;
         else r->c[0] = merge(l,r->c[0]), t = r;
-        return recalc(t);
+        return calc(t);
     }
     
     pt ins(pt x, int v) { // insert v

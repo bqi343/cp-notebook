@@ -2,7 +2,7 @@
  * Sources: Dhruv Rohatgi, Eric Zhang,
  *           https://sites.google.com/site/kc97ble
  *           /container/splay-tree/splaytree-cpp-3
- * Verification: SPOJ DYNACON1, DYNALCA, Balanced Tokens
+ * Verification: Balanced Tokens, Dynamic Tree Test (Easy)
  */
 
 typedef struct snode* sn;

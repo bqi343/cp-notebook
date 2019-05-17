@@ -39,7 +39,7 @@ struct snode {
     int dir() {
         if (!p) return -2;
         F0R(i,2) if (p->c[i] == this) return i;
-        return -1;
+        return -1; // p is path-parent pointer, not in current splay tree
     }
     bool isRoot() { return dir() < 0; }
     
@@ -57,8 +57,7 @@ struct snode {
     void splay() {
         while (!isRoot() && !p->isRoot()) {
             p->p->prop(), p->prop(), prop();
-            if (dir() == p->dir()) p->rot();
-            else rot();
+            dir() == p->dir() ? p->rot() : rot();
             rot();
         }
         if (!isRoot()) p->prop(), prop(), rot();
@@ -66,26 +65,23 @@ struct snode {
     }
 
     //////// LINK CUT TREE BASE OPERATIONS
-    void access() { // bring this to top of tree, left subtree of this is now path to root
+    void access() { // bring this to top of tree
         for (sn v = this, pre = NULL; v; v = v->p) {
             v->splay(); v->c[1] = pre; v->calc();
             pre = v;
         }
-        splay(); assert(!c[1]);
+        splay(); assert(!c[1]); // left subtree of this is now path to root, right subtree is empty
     }
     void makeRoot() { access(); flip ^= 1; }
-    void set(int v) { splay(); val = v; calc(); } // change val
+    void set(int v) { splay(); val = v; calc(); } // change value in node
     
     //////// LINK CUT TREE QUERIES
-    friend bool connected(sn x, sn y) {
-        if (x == y) return 1;
-        x->access(); y->access(); return x->p;
+    friend sn lca(sn x, sn y) {
+        if (x == y) return x;
+        x->access(), y->access(); if (!x->p) return NULL; // access at y did not affect x, so they must not be connected
+        x->splay(); return x->p ? x->p : x;
     }
-    friend sn lca(sn a, sn b) {
-        if (a == b) return a;
-        if (!connected(a,b)) return NULL;
-        a->splay(); return a->p ? a->p : a;
-    }
+    friend bool connected(sn x, sn y) { return lca(x,y); }
     friend int balanced(sn x, sn y) { 
         x->makeRoot(); y->access(); 
         return y->sum-2*y->mn;
@@ -93,12 +89,12 @@ struct snode {
     
     //////// LINK CUT TREE MODIFICATIONS
     friend bool link(sn x, sn y) { // make y parent of x
-        if (connected(x,y)) return 0;
-        x->makeRoot(); x->p = y; return 1;
+        if (connected(x,y)) return 0; // don't induce cycle
+        x->makeRoot(); x->p = y; return 1; // success!
     }
     friend bool cut(sn x, sn y) {
         x->makeRoot(); y->access(); 
-        if (y->c[0] != x || x->c[0] || x->c[1]) return 0;
-        x->p = y->c[0] = NULL; y->calc(); return 1; // I think calc is redundant as it will be called elsewhere anyways
+        if (y->c[0] != x || x->c[0] || x->c[1]) return 0; // splay tree with y should not contain anything else besides x
+        x->p = y->c[0] = NULL; y->calc(); return 1; // calc is redundant as it will be called elsewhere anyways?
     }
 };

@@ -48,14 +48,13 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 
 const int MOD = 1000000007;
 const ll INF = 1e18;
-const int MX = 100001;
+const int MX = 200005;
 const ld PI = 4*atan((ld)1);
 
 template<class T> void ckmin(T &a, T b) { a = min(a, b); }
 template<class T> void ckmax(T &a, T b) { a = max(a, b); }
 
 int main() {
-    // you should actually read the stuff at the bottom
     
     // you should actually read the stuff at the bottom
 }

@@ -42,7 +42,7 @@ namespace output {
     }
     template<class T> void prContain(const T& x) {
         pr("{");
-        bool fst = 1; trav(a,x) pr(!fst?", ":"",a), fst = 0; 
+        bool fst = 1; for (const auto& a: x) pr(!fst?", ":"",a), fst = 0; // const needed for vector<bool>
         pr("}");
     }
     template<class T, size_t SZ> void pr(const array<T,SZ>& x) { prContain(x); }
@@ -50,7 +50,10 @@ namespace output {
     template<class T> void pr(const set<T>& x) { prContain(x); }
     template<class T1, class T2> void pr(const map<T1,T2>& x) { prContain(x); }
     
-    void ps() { pr("\n"); } 
+    void ps() { pr("\n"); }
+    template<class Arg> void ps(const Arg& first) { 
+        pr(first); ps(); // no space at end of line
+    }
     template<class Arg, class... Args> void ps(const Arg& first, const Args&... rest) { 
         pr(first," "); ps(rest...); // print w/ spaces
     }

@@ -23,6 +23,7 @@ Balanced Binary Search Trees
 
   * Splay Tree
     * Notes
+      * [Paper](https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf)
       * [Splay Tree Presentation](https://web.stanford.edu/class/archive/cs/cs166/cs166.1146/lectures/08/Slides08.pdf)
   * Link Cut Tree
     * Notes
@@ -41,10 +42,5 @@ Balanced Binary Search Trees
       * Other
         * [Balanced Tokens (Eric Zhang)](https://www.hackerrank.com/contests/pwshpc-online-round/challenges/pwsh-tokens/problem)
         * [Dynamic Tree Test (Easy)](https://dmoj.ca/problem/ds6)
-
-# 6
-
-  * Beyond??
-    * [Dynamic Tree Test](https://dmoj.ca/problem/ds5)
-      * Requires operations on subtrees in addition to those from the easy version
-   	  * [CF](https://codeforces.com/blog/entry/60000?locale=en)
+        * [Dynamic Tree Test](https://dmoj.ca/problem/ds5)
+          * Requires operations on subtrees in addition to those from the easy version

@@ -1,58 +1,61 @@
 /**
  * Description: Heavy Light Decomposition
- * Source: http://codeforces.com/blog/entry/22072
- * Verification: USACO Grass Planting
+ * Source: http://codeforces.com/blog/entry/22072, https://codeforces.com/blog/entry/53170
+ * Verification: USACO Grass Planting, https://www.hackerrank.com/challenges/subtrees-and-paths
  */
 
-vector<vi> graph;
+template<int SZ, bool VALUES_IN_EDGES> struct HLD { 
+    int N; vi adj[SZ];
+    int par[SZ], sz[SZ], depth[SZ];
+    int root[SZ], pos[SZ];
+    LazySegTree<ll,SZ> tree;
 
-template<int SZ> struct HLD { // sum queries, sum updates
-    int parent[SZ], heavy[SZ], depth[SZ];
-    int root[SZ], treePos[SZ];
-    LazySegTree<int,SZ> tree;
-
-    void init() {
-        int n = sz(graph)-1;
-        FOR(i,1,n+1) heavy[i] = -1;
-        parent[1] = -1, depth[1] = 0;
-        dfs(1);
-        for (int i = 1, currentPos = 0; i <= n; ++i)
-		if (parent[i] == -1 || heavy[parent[i]] != i)
-			for (int j = i; j != -1; j = heavy[j]) {
-				root[j] = i;
-				treePos[j] = currentPos++;
-			}
+    void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
+    
+    void dfs_sz(int v = 1) {
+        if (par[v]) adj[v].erase(find(all(adj[v]),par[v]));
+        sz[v] = 1;
+        trav(u,adj[v]) {
+            par[u] = v; depth[u] = depth[v]+1;
+            dfs_sz(u); sz[v] += sz[u];
+            if (sz[u] > sz[adj[v][0]]) swap(u, adj[v][0]);
+        }
     }
     
-    int dfs(int v) {
-        int size = 1, maxSubtree = 0;
-        for (auto u : graph[v]) if (u != parent[v]) {
-            parent[u] = v;
-            depth[u] = depth[v] + 1;
-            int subtree = dfs(u);
-            if (subtree > maxSubtree) heavy[v] = u, maxSubtree = subtree;
-            size += subtree;
+    int t = 0;
+    void dfs_hld(int v = 1) {
+        pos[v] = t++;
+        trav(u,adj[v]) {
+            root[u] = (u == adj[v][0] ? root[v] : u);
+            dfs_hld(u);
         }
-        return size;
+    }
+    
+    void init(int _N) {
+        N = _N; par[1] = depth[1] = 0; root[1] = 1; 
+        dfs_sz(); dfs_hld();
     }
 
     template <class BinaryOperation>
     void processPath(int u, int v, BinaryOperation op) {
-        for (; root[u] != root[v]; v = parent[root[v]]) {
+        for (; root[u] != root[v]; v = par[root[v]]) {
             if (depth[root[u]] > depth[root[v]]) swap(u, v);
-            op(treePos[root[v]], treePos[v]);
+            op(pos[root[v]], pos[v]);
         }
         if (depth[u] > depth[v]) swap(u, v);
-        op(treePos[u]+1, treePos[v]); // assumes values are stored in edges, not vertices
+        op(pos[u]+VALUES_IN_EDGES, pos[v]); 
     }
 
-    void modifyPath(int u, int v, int value) { // add one to vertices along path
-        processPath(u, v, [this, &value](int l, int r) { tree.upd(l, r, value); });
+    void modifyPath(int u, int v, int val) { // add val to vertices/edges along path
+        processPath(u, v, [this, &val](int l, int r) { tree.upd(l, r, val); });
+    }
+    
+    void modifySubtree(int v, int val) { // add val to vertices/edges in subtree
+        tree.upd(pos[v]+VALUES_IN_EDGES,pos[v]+sz[v]-1,val);
     }
 
     ll queryPath(int u, int v) { // query sum of path
-        ll res = 0;
-        processPath(u, v, [this, &res](int l, int r) { res += tree.qsum(l, r); });
+        ll res = 0; processPath(u, v, [this, &res](int l, int r) { res += tree.qsum(l, r); });
         return res;
     }
 };

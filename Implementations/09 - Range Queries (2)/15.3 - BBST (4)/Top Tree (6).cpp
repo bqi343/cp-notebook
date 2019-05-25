@@ -152,7 +152,7 @@ struct snode {
         return c[3]->splayRight();
     }
 
-    friend sn join(sn a, sn b) {
+    friend sn join(sn a, sn b) { // join "path-parent" trees
         if (!a) return b;
         a->splay(); a = a->splayRight();
         setLink(a,b,3); a->calc(); return a;
@@ -165,8 +165,8 @@ struct snode {
             it ++;
             v->splay(); auto c = v->c[1];
             if (c) assert(!c->c[2] && !c->c[3]);
-            if (pre) pre->prop();
-            if (pre) {
+            if (pre) pre->prop(); // we want to set pre as the preferred child instead
+            if (pre) { // swap pre, c and then update
                 assert(v->c[4] == pre);
                 auto a = pre->c[2], b = pre->c[3];
                 if (a) a->p = NULL;
@@ -197,7 +197,7 @@ struct snode {
     //////// LINK CUT TREE MODIFICATIONS
     friend bool link(sn x, sn y) { // make y parent of x
         if (connected(x,y)) exit(2);
-        x->makeRoot(); setLink(y,join(x,y->c[4]),4); y->calc();
+        x->makeRoot(); setLink(y,join(x,y->c[4]),4); y->calc(); // y goes in the "pp-tree" of x
         return 1;
     }
     friend bool cut(sn x, sn y) {

@@ -117,7 +117,7 @@ namespace point {
         return {a+res,abs(res)};
     }
      
-    pair<P, double> mec(vP ps) {
+    pair<P, double> mec(vP ps) { // minimum enclosing circle, ex. USACO Camp 2019 Contest 2 #4
         shuffle(all(ps), mt19937(time(0)));
         P o = ps[0]; double r = 0, EPS = 1 + 1e-8;
         F0R(i,sz(ps)) if (abs(o-ps[i]) > r*EPS) {

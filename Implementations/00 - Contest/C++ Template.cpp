@@ -46,7 +46,7 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 #define all(x) beg(x), en(x)
 #define resz resize
 
-const int MOD = 1000000007;
+const int MOD = 1000000007; // 998244353
 const ll INF = 1e18;
 const int MX = 200005;
 const ld PI = 4*atan((ld)1);

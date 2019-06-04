@@ -30,20 +30,27 @@ template<class T> struct Mat {
     }
     
     Mat operator+(const Mat& m) {
+        assert(a == m.a && b == m.b);
         Mat r(a,b);
         F0R(i,a) F0R(j,b) r.d[i][j] = d[i][j]+m.d[i][j];
         return r;
     }
     Mat operator-(const Mat& m) {
+        assert(a == m.a && b == m.b);
         Mat r(a,b);
         F0R(i,a) F0R(j,b) r.d[i][j] = d[i][j]-m.d[i][j];
         return r;
     }
     Mat operator*(const Mat& m) {
+        assert(b == m.a);
         Mat r(a,m.b);
         F0R(i,a) F0R(j,b) F0R(k,m.b) r.d[i][k] += d[i][j]*m.d[j][k];
         return r;
     }
+    
+    Mat& operator+=(const Mat& m) { return *this = (*this)+m; }
+    Mat& operator-=(const Mat& m) { return *this = (*this)-m; }
+    Mat& operator*=(const Mat& m) { return *this = (*this)*m; }
 
     friend Mat exp(Mat m, ll p) {
         Mat r(m.a,m.a); assert(m.a == m.b);

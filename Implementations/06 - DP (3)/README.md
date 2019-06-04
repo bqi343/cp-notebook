@@ -1,5 +1,5 @@
 # 6 - Dynamic Programming
-      
+
 ## 3
   * Intro (8/24 gold)
     * Tutorials
@@ -11,9 +11,10 @@
       * DP with Trees
       * Knapsack
       * Longest Increasing Subsequence
-      * Longest Common Subsequeence
+      * Longest Common Subsequence
       * Distinct Subsequences
-    * Problems 
+    * Problems
+      * **[AtCoder DP Contest](https://atcoder.jp/contests/dp/tasks)**
       * [Interleaving Parentheses](https://community.topcoder.com/stat?c=problem_statement&pm=14635&rd=16933)
       * [K-Ordered LCS](https://www.hackerearth.com/problem/algorithm/mancunian-and-k-ordered-lcs-e6a4b8c6/) [](51)
       * [Round Subset](http://codeforces.com/contest/837/problem/D) [](59)
@@ -35,7 +36,7 @@
     * Problems
       * [Two Sawmills](https://szkopul.edu.pl/problemset/problem/ovRIpLFK3IhyFPjnVXeZtGxH/site/?key=statement)
       * [Minimization Problem](http://codeforces.com/contest/868/problem/F)
- 
+
 ## 6
   * Digit DP
     * Tutorial

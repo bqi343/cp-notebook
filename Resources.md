@@ -1,6 +1,6 @@
 # Resources
 
-> well i wanna ask you i covered up almost all the basics topics now i wanna move to advanced level like graph theory or some could u please share some study materials with me 
+> well i wanna ask you i covered up almost all the basics topics now i wanna move to advanced level like graph theory or some could u please share some study materials with me
 
 ## Why Use C++?
 
@@ -18,7 +18,9 @@ There are many reasons to use C++11 over Java, such as
 
 ### Books
   * [Competitive Programming Handbook (CPH)](https://cses.fi/book/)
-    * also see Guide to Competitive Programming and problemset
+    * also see "Guide to Competitive Programming"
+    * [Problemset](https://cses.fi/problemset/)
+      * good for practicing fundamentals
   * [Competitive Programming Book (Steven, Felix)](http://www.comp.nus.edu.sg/~stevenha/myteaching/competitive_programming/cp1.pdf)
   * [Samuel Hsiang Guide](https://github.com/alwayswimmin/cs_guide)
   * [Principles of Algorithmic Problem Solving](http://www.csc.kth.se/~jsannemo/slask/main.pdf)
@@ -33,9 +35,9 @@ There are many reasons to use C++11 over Java, such as
   * [E-maxx](https://e-maxx-eng.appspot.com/)
   * [Topcoder Tutorials](http://www.topcoder.com/community/data-science/data-science-tutorials/)
   * [Coding Library (radoslav11)](https://github.com/radoslav11/Coding-Library?files=1)
+  * [List of CF Tutorials](http://codeforces.com/blog/entry/57282)
   * [CSAcademy](https://csacademy.com/lessons/)
   * [TJSCT](https://activities.tjhsst.edu/sct/)
-  * [List of CF Tutorials](http://codeforces.com/blog/entry/57282)
   * [ekzlib](http://ekzlib.herokuapp.com)
 
 ### ACM-ICPC

@@ -14,9 +14,6 @@ See [clist.by](http://clist.by/) for an extensive list. Most of the contests whi
     * Grand: 6 problems, 110 min
     * [Visualizer](https://kenkoooo.com/atcoder/)
     * [Test Data](https://www.dropbox.com/sh/arnpe0ef5wds8cv/AAAk_SECQ2Nc6SVGii3rHX6Fa?dl=0)
-  * [CS Academy](https://csacademy.com/)
-    * Div 2: 5 problems, 2 hrs
-    * Open: 7 problems, 2 hrs
   * [Topcoder](https://www.topcoder.com/my-dashboard/)
     * Div 2, Div 1
     * 75 min coding, 15 min challenge
@@ -30,6 +27,9 @@ See [clist.by](http://clist.by/) for an extensive list. Most of the contests whi
     * random ICPC stuff
   * [Codechef](http://codechef.com/)
     * Lunchtime, Cookoff
+  * ~~[CS Academy](https://csacademy.com/)~~
+    * Div 2: 5 problems, 2 hrs
+    * Open: 7 problems, 2 hrs
 
 ## Annual Contests
   * [BattleCode](https://www.battlecode.org): January
@@ -56,19 +56,19 @@ See [clist.by](http://clist.by/) for an extensive list. Most of the contests whi
 
 ## Problemsets
 
-  * [USACO Training](http://train.usaco.org/usacogate)
-    * warning: somewhat outdated in the sense that it lacks common topics such as segment tree
-  * [CSES](https://cses.fi/problemset/)
-    * goes along with Competitive Programmer's Handbook
-    * good for practicing fundamentals
   * [CSAcademy](https://csacademy.com/contest/archive/)
     * short statements, editorials
     * solve statistics
     * ability to view best solutions
   * [AtCoder](https://beta.atcoder.jp/contests/archive)
     * nice math
+    * [problem list](https://kenkoooo.com/atcoder/)
+  * [USACO Training](http://train.usaco.org/usacogate)
+    * not particularly beginner-friendly, but still helpful
+    * somewhat outdated in the sense that it lacks common topics such as segment tree
+    * if you're unsure about whether it will be useful, you might as well try it and see where you get stuck :P
   * [CodeForces](http://codeforces.com/problemset)
-    * problem quality of the two
+    * difficulty ratings
 
 ## (Inter)national Informatics Olympiads
 

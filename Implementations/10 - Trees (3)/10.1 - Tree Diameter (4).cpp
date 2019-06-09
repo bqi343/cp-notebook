@@ -5,38 +5,40 @@
  */
 
 template<int SZ> struct TreeDiameter {
-    int n, dist[SZ], pre[SZ];
+    struct Edge { 
+        int a,b,w; 
+        int other(int x) { return a+b-x; }
+    };
+    vector<Edge> ed;
     vi adj[SZ];
-
-    void addEdge(int a, int b) {
-        adj[a].pb(b), adj[b].pb(a);
+    void addEdge(int a, int b) { // can adjust to allow diameter w/ weights
+        adj[a].pb(sz(ed)), adj[b].pb(sz(ed));
+        ed.pb({a,b,1});
     }
 
-    void dfs(int cur) {
-        trav(i,adj[cur]) if (i != pre[cur]) {
-            pre[i] = cur; dist[i] = dist[cur]+1;
-            dfs(i);
+    int par[SZ];
+    ll dist[SZ];
+    void dfs(int x) {
+        trav(i,adj[x]) {
+            int y = ed[i].other(x);
+            if (y != par[x]) {
+                par[y] = x; dist[y] = dist[x]+ed[i].w;
+                dfs(y);
+            }
         }
     }
-
-    void genDist(int cur) {
-        memset(dist,0,sizeof dist);
-        pre[cur] = -1; dfs(cur);
+    void genDist(int x) {
+        par[x] = -1; dist[x] = 0; dfs(x);
     }
 
-    int diameterLength() {
-        genDist(1);
+    int n; vi center; int dia;
+    void init(int _n) {
+        n = _n; genDist(1);
         int bes = 0; FOR(i,1,n+1) if (dist[i] > dist[bes]) bes = i; // bes is now one endpoint of a diameter
         genDist(bes); FOR(i,1,n+1) if (dist[i] > dist[bes]) bes = i;
-        return dist[bes];
-    }
-
-    vi genCenter() {
-        int t = diameterLength();
-        int bes = 0; FOR(i,1,n+1) if (dist[i] > dist[bes]) bes = i;
-
-        F0R(i,t/2) bes = pre[bes];
-        if (t&1) return {bes,pre[bes]};
-        return {bes};
+        dia = dist[bes];
+        F0R(i,dia/2) bes = par[bes];
+        if (dia&1) center = {bes,par[bes]};
+        else center = {bes};
     }
 };

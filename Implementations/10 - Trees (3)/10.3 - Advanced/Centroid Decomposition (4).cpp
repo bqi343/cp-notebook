@@ -1,70 +1,79 @@
 /**
  * Source: own
- * Verification: https://codeforces.com/contest/342/problem/E
+ * Verification: 
+    * Triway Cup 2019 G
+    * https://codeforces.com/contest/342/problem/E
  * Description: can support tree path queries and updates
  */
 
-template<int SZ> struct CentroidDecomp {
+template<int SZ> struct CD {
+    struct Edge { 
+        int a,b,w; 
+        int other(int x) { return a+b-x; }
+    };
+    vector<Edge> ed;
+    vi adj[SZ];
+    
     bool done[SZ];
-    int sub[SZ], par[SZ], ans[SZ];
-    vi dist[SZ], adj[SZ], ANS[SZ];
+    int sub[SZ], par[SZ];
+    vl dist[SZ];
     pi cen[SZ];
 
-    void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
+    void addEdge(int a, int b, int w = 1) { 
+        adj[a].pb(sz(ed)), adj[b].pb(sz(ed));
+        ed.pb({a,b,w});
+    }
 
-    void dfs (int no) {
-        sub[no] = 1;
-        trav(i,adj[no]) if (!done[i] && i != par[no]) {
-            par[i] = no;
-            dfs(i);
-            sub[no] += sub[i];
+    void dfs (int x) {
+        sub[x] = 1;
+        trav(i,adj[x]) {
+            int y = ed[i].other(x);
+            if (!done[y] && y != par[x]) {
+                par[y] = x; dfs(y);
+                sub[x] += sub[y];
+            }
         }
     }
 
-    void genDist(int par, int no) {
-        trav(i,adj[no]) if (!done[i] && i != par) {
-            cen[i] = cen[no];
-            dist[i].pb(dist[no].back()+1);
-            genDist(no,i);
+    void genDist(int p, int x) {
+        trav(i,adj[x]) {
+            int y = ed[i].other(x);
+            if (!done[y] && y != p) {
+                cen[y] = cen[x]; dist[y].pb(dist[x].back()+ed[i].w);
+                genDist(x,y);
+            }
         }
     }
 
-    int getCentroid(int x) {
-        par[x] = 0; dfs(x);
-        int sz = sub[x];
-        while (1) {
+    int centroid(int x) {
+        par[x] = -1;  dfs(x); 
+        for (int sz = sub[x];;) {
             pi mx = {0,0};
-            trav(i,adj[x]) if (!done[i] && i != par[x]) mx = max(mx,{sub[i],i});
-            if (mx.f*2 > sz) x = mx.s;
-            else return x;
+            trav(i,adj[x]) {
+                int y = ed[i].other(x);
+                if (!done[y] && y != par[x]) ckmax(mx,{sub[y],y});
+            }
+            if (mx.f*2 <= sz) return x; 
+            x = mx.s;
         }
     }
 
-    void init(int x) { // call init(1) to start
-        x = getCentroid(x); done[x] = 1;
-        dist[x].pb(0);
-        trav(i,adj[x]) if (!done[i]) {
-            cen[i] = {x,sz(ANS[x])};
-            dist[i].pb(1); genDist(x,i);
-            ANS[x].pb(0);
+    void gen(int x, bool fst = 0) { // call init(1) to start
+        done[x = centroid(x)] = 1; dist[x].pb(0); // exit(0);
+        if (fst) cen[x].f = -1;
+        int co = 0;
+        trav(i,adj[x]) {
+            int y = ed[i].other(x);
+            if (!done[y]) {
+                cen[y] = {x,co++}; dist[y].pb(ed[i].w);
+                genDist(x,y);
+            }
         }
-        trav(i,adj[x]) if (!done[i]) init(i);
-    }
-
-    void upd(int v) {
-        pi V = {v,-1};
-        for (int ind = sz(dist[v])-1; V.f; V = cen[V.f], ind --) {
-            ans[V.f] ++;
-            if (V.s != -1) ANS[V.f][V.s] ++;
+        trav(i,adj[x]) {
+            int y = ed[i].other(x);
+            if (!done[y]) gen(y);
         }
     }
-
-    int query(int v) {
-        pi V = {v,-1}; int ret = 0;
-        for (int ind = sz(dist[v])-1; V.f; V = cen[V.f], ind --) {
-            ret += ans[V.f];
-            if (V.s != -1) ret -= ANS[V.f][V.s];
-        }
-        return ret;
-    }
+    
+    void init() { gen(0,1); }
 };

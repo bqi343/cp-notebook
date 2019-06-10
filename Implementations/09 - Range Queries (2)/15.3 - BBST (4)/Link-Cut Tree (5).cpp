@@ -88,11 +88,11 @@ struct snode {
     }
     
     //////// LINK CUT TREE MODIFICATIONS
-    friend bool link(sn x, sn y) { // make y parent of x
+    friend bool link(sn x, sn y) { // make x parent of y
         if (connected(x,y)) return 0; // don't induce cycle
-        x->makeRoot(); x->p = y; return 1; // success!
+        y->makeRoot(); y->p = x; return 1; // success!
     }
-    friend bool cut(sn x, sn y) {
+    friend bool cut(sn x, sn y) { // x is originally parent of y
         x->makeRoot(); y->access(); 
         if (y->c[0] != x || x->c[0] || x->c[1]) return 0; // splay tree with y should not contain anything else besides x
         x->p = y->c[0] = NULL; y->calc(); return 1; // calc is redundant as it will be called elsewhere anyways?

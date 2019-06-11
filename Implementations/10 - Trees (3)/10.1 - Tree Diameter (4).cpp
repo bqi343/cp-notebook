@@ -1,44 +1,35 @@
 /**
  * Description: Calculates longest path in tree
  * Source: own
- * Verification: http://www.spoj.com/problems/PT07Z/
+ * Verification: 
+   * http://www.spoj.com/problems/PT07Z/
+   * https://codeforces.com/contest/1182/problem/D
  */
 
 template<int SZ> struct TreeDiameter {
-    struct Edge { 
-        int a,b,w; 
-        int other(int x) { return a+b-x; }
-    };
-    vector<Edge> ed;
+    int n; 
     vi adj[SZ];
-    void addEdge(int a, int b) { // can adjust to allow diameter w/ weights
-        adj[a].pb(sz(ed)), adj[b].pb(sz(ed));
-        ed.pb({a,b,1});
-    }
+    void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
 
-    int par[SZ];
-    ll dist[SZ];
+    int par[SZ], dist[SZ];
     void dfs(int x) {
-        trav(i,adj[x]) {
-            int y = ed[i].other(x);
-            if (y != par[x]) {
-                par[y] = x; dist[y] = dist[x]+ed[i].w;
-                dfs(y);
-            }
+        trav(y,adj[x]) if (y != par[x]) {
+            par[y] = x; dist[y] = dist[x]+1;
+            dfs(y);
         }
     }
-    void genDist(int x) {
-        par[x] = -1; dist[x] = 0; dfs(x);
-    }
+    void genDist(int x) { par[x] = -1; dist[x] = 0; dfs(x); }
 
-    int n; vi center; int dia;
+    int diaLength;
+    vi center, dia = {1,1}; 
     void init(int _n) {
-        n = _n; genDist(1);
-        int bes = 0; FOR(i,1,n+1) if (dist[i] > dist[bes]) bes = i; // bes is now one endpoint of a diameter
-        genDist(bes); FOR(i,1,n+1) if (dist[i] > dist[bes]) bes = i;
-        dia = dist[bes];
-        F0R(i,dia/2) bes = par[bes];
-        if (dia&1) center = {bes,par[bes]};
-        else center = {bes};
+        n = _n; 
+        genDist(1); FOR(i,1,n+1) if (dist[i] > dist[dia[0]]) dia[0] = i; // find one endpoint of a diameter
+        genDist(dia[0]); FOR(i,1,n+1) if (dist[i] > dist[dia[1]]) dia[1] = i;
+        diaLength = dist[dia[1]];
+        
+        int cen = dia[1]; F0R(i,diaLength/2) cen = par[cen];
+        if (diaLength&1) center = {cen,par[cen]};
+        else center = {cen};
     }
 };

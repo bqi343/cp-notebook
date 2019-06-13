@@ -1,8 +1,17 @@
 /**
  * Description: Compute MST of points where edges are manhattan distances 
- * Source: https://open.kattis.com/problems/gridmst
- * Verification: https://open.kattis.com/problems/gridmst, CSA 84 The Sprawl
+ * Source: ?
+ * Verification: 
+    * https://open.kattis.com/problems/gridmst
+    * CSA 84 The Sprawl
+    * TC 760 ComponentsForever
+ * Dependency: DSU
  */
+
+int N;
+vector<array<int,3>> cur;
+vector<pair<ll,pi>> ed;
+vi ind;
 
 struct {
     map<int,pi> m;
@@ -36,7 +45,8 @@ void solve() {
 }
 
 ll mst(vpi v) {
-    N = sz(v); cur.resz(N); F0R(i,N) ind.pb(i);
+    N = sz(v); cur.resz(N); ed.clear(); 
+    ind.clear(); F0R(i,N) ind.pb(i);
     sort(all(ind),[&v](int a, int b) { return v[a] < v[b]; });
     F0R(i,N-1) if (v[ind[i]] == v[ind[i+1]]) ed.pb({0,{ind[i],ind[i+1]}});
     

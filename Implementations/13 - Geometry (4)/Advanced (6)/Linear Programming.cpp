@@ -31,14 +31,14 @@ struct LPSolver {
 			N[n] = -1; D[m+1][n] = 1;
 		}
 
-    void print() {
-        ps("D");
-        trav(t,D) ps(t);
-        ps();
-        ps("B",B); 
-        ps("N",N);
-        ps();
-    }
+	void print() {
+		ps("D");
+		trav(t,D) ps(t);
+		ps();
+		ps("B",B); 
+		ps("N",N);
+		ps();
+	}
     
 	void pivot(int r, int s) { // row, column
 		T *a = D[r].data(), inv = 1/a[s]; // eliminate col s from consideration

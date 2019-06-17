@@ -22,7 +22,8 @@ template<int SZ> struct scc {
         trav(w,radj[v]) if (comp[w] == -1) dfs2(w,val);
     }
 
-    void genSCC() { // fills allComp
+    void genSCC(int _N) { // fills allComp
+        N = _N;
         F0R(i,N) comp[i] = -1, visit[i] = 0;
         F0R(i,N) if (!visit[i]) dfs(i);
         reverse(all(todo)); // toposort

@@ -4,15 +4,15 @@
  * Verification: https://open.kattis.com/problems/quantumsuperposition
  */
 
-template<int SZ> struct Topo {
+template<int SZ> struct TopoSort {
     int N, in[SZ];
     vi res, adj[SZ];
 
     void addEdge(int x, int y) {
-    	adj[x].pb(y), in[y] ++;
+        adj[x].pb(y), in[y] ++;
     }
 
-    void sort(int _N) {
+    bool sort(int _N) {
         N = _N; queue<int> todo;
         FOR(i,1,N+1) if (in[i] == 0) todo.push(i);
         while (sz(todo)) {
@@ -23,5 +23,6 @@ template<int SZ> struct Topo {
                 if (!in[i]) todo.push(i);
             }
         }
+        return sz(res) == N;
     }
 };

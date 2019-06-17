@@ -4,11 +4,11 @@
  * Verification: January Easy 2018 - Shubham and Subarray Xor
  */
 
-template<int MX, int MXBIT> struct trie {
+template<int MX, int MXBIT> struct Trie {
     int nex[MX][2], sz[MX], num = 0; // num is last node in trie
     // change 2 to 26 for lowercase letters
 
-    trie() {
+    Trie() {
         memset(nex,0,sizeof nex);
         memset(sz,0,sizeof sz);
     }

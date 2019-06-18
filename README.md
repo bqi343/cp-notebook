@@ -17,19 +17,15 @@ If you would like to contribute, provide feedback, or encourage me to update som
 
 I recommend that you use C++, even if you already know some other language such as Java or Python (see "resources"). A solid foundation in math (ex. AIME qualification) can help greatly.
 
- * [C++ Tutorial](https://www.google.com/url?q=http%3A%2F%2Fwww.cplusplus.com%2Fdoc%2Ftutorial%2F&sa=D)
- * [CodeFights](https://codefights.com/)
-   * good way to practice syntax
- * [Schedule for Beginners](https://www.quora.com/What-is-a-good-schedule-to-follow-for-becoming-better-at-competitive-programming-for-beginners)
- * [E869120 Tutorial](http://codeforces.com/blog/entry/53341)
+  * [C++ Tutorial](https://www.google.com/url?q=http%3A%2F%2Fwww.cplusplus.com%2Fdoc%2Ftutorial%2F&sa=D)
+  * [CodeSignal](https://codesignal.com/)
+    * good way to practice syntax
+  * [AtCoder](http://atcoder.jp/)
+    * beginner contests are good
 
-Assuming you know how C++ input/output works, you should soon be able to advance from USACO Bronze. Easier contests such as [AtCoder Beginner](http://atcoder.jp/) and CodeForces Div. 3 may be helpful. 
+The following links may also be helpful.
 
-## General Tips
-
- * Do as many (high-quality) contests as possible.
-   * Make sure to [upsolve](https://en.wiktionary.org/wiki/upsolve) after the contest ends!
- * Work through past problems (see "Resources.md" and the README in "Contests.")
- * Use the tags to learn new topics as necessary.
-   * [A2OJ](https://a2oj.com/)
-   * [Problem Topics (Morass)](http://codeforces.com/blog/entry/55274)
+  * [IOI: Getting Started](https://ioinformatics.org/page/getting-started/14)
+  * [Philippines OI: Prepare](https://noi.ph/prepare/)
+  * [Schedule for Beginners](https://www.quora.com/What-is-a-good-schedule-to-follow-for-becoming-better-at-competitive-programming-for-beginners)
+  * [E869120 Tutorial](http://codeforces.com/blog/entry/53341)

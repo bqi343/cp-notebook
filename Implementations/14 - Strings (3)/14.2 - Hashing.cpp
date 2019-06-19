@@ -1,10 +1,10 @@
 /**
- * Source: own
  * Description: Pairs reduce frequency of collision
+ * Source: own
  * Verification: Dec 17 Plat 1, CF Check Transcription
+ * Dependency: Modular Int
  */
 
-// Dependency: Modular Int
 using namespace pairOp;
 
 const int tmp = chrono::high_resolution_clock::now().time_since_epoch().count()%(MOD-1);

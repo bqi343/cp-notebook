@@ -17,7 +17,7 @@ template<int SZ> struct Dijkstra {
     pqg<pl> q;
 
     void addEdge(int A, int B, int C) {
-        adj[A].pb({B,C}); // adj[B].pb({A,C});
+        adj[A].pb({B,C}); // adj[B].pb({A,C}); if undirected
     }
 
     void init(int st) {

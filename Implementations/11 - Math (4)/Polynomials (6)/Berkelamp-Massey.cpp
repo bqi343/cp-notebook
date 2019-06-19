@@ -1,13 +1,15 @@
 /**
- * Description: Berlekamp-Massey Algo
-    * Note: you may need to add a lot of terms to get the correct formula
- * Source: http://codeforces.com/blog/entry/61306
+ * Description: Berlekamp-Massey Algorithm
+    * https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm
+    * Note: you may need to add a lot of terms, as the shortest recurrence might not be the correct one ...
+ * Source: 
+    * http://codeforces.com/blog/entry/61306
  * Verification: http://codeforces.com/contest/506/problem/E
  */
 
 using namespace vecOp;
 
-struct linRec {
+struct LinRec {
     vector<vmi> seq;
     vmi x, delta, des;
     vi fail;

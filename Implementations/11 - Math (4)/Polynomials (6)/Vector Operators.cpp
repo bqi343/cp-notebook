@@ -1,8 +1,8 @@
 /**
- * Description: modular arithmetic with pairs
- 	* use for hashing
- * Source: Own (is there a better way to do this?)
- * Verification: see hashing
+ * Description: modular arithmetic with vectors
+    * use for NTT
+ * Source: Own
+ * Verification: see FFT
  */
 
 namespace vecOp {

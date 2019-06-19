@@ -17,25 +17,16 @@ struct bigint {
     // sign == -1 <==> value < 0
     int sign;
 
-    bigint() : sign(1) {
-    }
-
-    bigint(long long v) {
-        *this = v;
-    }
+    bigint() : sign(1) {}
+    bigint(long long v) { *this = v; }
 
     bigint &operator=(long long v) {
-        sign = v < 0 ? -1 : 1;
-        v *= sign;
-        z.clear();
-        for (; v > 0; v = v / base)
-            z.push_back((int) (v % base));
+        sign = v < 0 ? -1 : 1; v *= sign;
+        z.clear(); for (; v > 0; v = v / base) z.push_back((int) (v % base));
         return *this;
     }
 
-    bigint(const string &s) {
-        read(s);
-    }
+    bigint(const string &s) { read(s); }
 
     bigint &operator+=(const bigint &other) {
         if (sign == other.sign) {
@@ -53,9 +44,7 @@ struct bigint {
         return *this;
     }
 
-    friend bigint operator+(bigint a, const bigint &b) {
-        return a += b;
-    }
+    friend bigint operator+(bigint a, const bigint &b) { return a += b; }
 
     bigint &operator-=(const bigint &other) {
         if (sign == other.sign) {
@@ -77,15 +66,10 @@ struct bigint {
         return *this;
     }
 
-    friend bigint
-
-    operator-(bigint a, const bigint &b) {
-        return a -= b;
-    }
+    friend bigint operator-(bigint a, const bigint &b) { return a -= b; }
 
     bigint &operator*=(int v) {
-        if (v < 0)
-            sign = -sign, v = -v;
+        if (v < 0) sign = -sign, v = -v;
         for (int i = 0, carry = 0; i < z.size() || carry; ++i) {
             if (i == z.size())
                 z.push_back(0);
@@ -97,9 +81,7 @@ struct bigint {
         return *this;
     }
 
-    bigint operator*(int v) const {
-        return bigint(*this) *= v;
-    }
+    bigint operator*(int v) const { return bigint(*this) *= v; }
 
     friend pair<bigint, bigint> divmod(const bigint &a1, const bigint &b1) {
         int norm = base / (b1.z.back() + 1);
@@ -170,17 +152,12 @@ struct bigint {
         return res / norm;
     }
 
-    bigint operator/(const bigint &v) const {
-        return divmod(*this, v).first;
-    }
+    bigint operator/(const bigint &v) const { return divmod(*this, v).first; }
 
-    bigint operator%(const bigint &v) const {
-        return divmod(*this, v).second;
-    }
+    bigint operator%(const bigint &v) const { return divmod(*this, v).second; }
 
     bigint &operator/=(int v) {
-        if (v < 0)
-            sign = -sign, v = -v;
+        if (v < 0) sign = -sign, v = -v;
         for (int i = (int) z.size() - 1, rem = 0; i >= 0; --i) {
             long long cur = z[i] + rem * (long long) base;
             z[i] = (int) (cur / v);
@@ -190,28 +167,18 @@ struct bigint {
         return *this;
     }
 
-    bigint operator/(int v) const {
-        return bigint(*this) /= v;
-    }
+    bigint operator/(int v) const { return bigint(*this) /= v; }
 
     int operator%(int v) const {
-        if (v < 0)
-            v = -v;
+        if (v < 0) v = -v;
         int m = 0;
         for (int i = (int) z.size() - 1; i >= 0; --i)
             m = (int) ((z[i] + m * (long long) base) % v);
         return m * sign;
     }
 
-    bigint &operator*=(const bigint &v) {
-        *this = *this * v;
-        return *this;
-    }
-
-    bigint &operator/=(const bigint &v) {
-        *this = *this / v;
-        return *this;
-    }
+    bigint &operator*=(const bigint &v) { return *this = *this * v; }
+    bigint &operator/=(const bigint &v) { return *this = *this / v; }
 
     bool operator<(const bigint &v) const {
         if (sign != v.sign)
@@ -224,40 +191,23 @@ struct bigint {
         return false;
     }
 
-    bool operator>(const bigint &v) const {
-        return v < *this;
-    }
+    bool operator>(const bigint &v) const { return v < *this; }
+    bool operator<=(const bigint &v) const { return !(v < *this); }
+    bool operator>=(const bigint &v) const { return !(*this < v); }
 
-    bool operator<=(const bigint &v) const {
-        return !(v < *this);
-    }
+    bool operator==(const bigint &v) const { return !(*this < v) && !(v < *this); }
 
-    bool operator>=(const bigint &v) const {
-        return !(*this < v);
-    }
-
-    bool operator==(const bigint &v) const {
-        return !(*this < v) && !(v < *this);
-    }
-
-    bool operator!=(const bigint &v) const {
-        return *this < v || v < *this;
-    }
+    bool operator!=(const bigint &v) const { return *this < v || v < *this; }
 
     void trim() {
-        while (!z.empty() && z.back() == 0)
-            z.pop_back();
-        if (z.empty())
-            sign = 1;
+        while (!z.empty() && z.back() == 0) z.pop_back();
+        if (z.empty()) sign = 1;
     }
 
-    bool isZero() const {
-        return z.empty();
-    }
+    bool isZero() const { return z.empty(); }
 
     friend bigint operator-(bigint v) {
-        if (!v.z.empty())
-            v.sign = -v.sign;
+        if (!v.z.empty()) v.sign = -v.sign;
         return v;
     }
 
@@ -299,8 +249,7 @@ struct bigint {
     }
 
     friend istream &operator>>(istream &stream, bigint &v) {
-        string s;
-        stream >> s;
+        string s; stream >> s;
         v.read(s);
         return stream;
     }

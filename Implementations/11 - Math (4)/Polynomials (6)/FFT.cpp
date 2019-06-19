@@ -14,7 +14,7 @@ const int MOD = (119 << 23) + 1, root = 3; // = 998244353
 // (479 << 21, 3) and (483 << 21, 5). The last two are > 10^9.
 
 namespace FFT {
-    int size(int s) { return s > 1 ? 32 - __builtin_clz(s - 1) : 0; }
+    int size(int s) { return s > 1 ? 32-__builtin_clz(s-1) : 0; }
 
     template<class T> void fft(vector<T>& a, vector<T>& roots) {
         int n = sz(a);

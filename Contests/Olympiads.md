@@ -15,9 +15,9 @@ See [here](https://ioinformatics.org/page/members/7) for additional links. The [
       * somewhat outdated in the sense that it lacks common topics such as segment tree
       * if you're unsure about whether it will be useful, you might as well try it and see where you get stuck :P
     * [article :o](https://www.usenix.org/legacy/bodinfo/bod/bodmarch10/future.pdf)
-  * [Japan](http://cms.ioi-jp.org/)
-    * Spring Camp Contests, Open Contest
-    * Link doesn't seem to be working?
+  * [Japan](https://www.ioi-jp.org/)
+    * [Open Contests](https://contests.ioi-jp.org/)
+    * see [oj.uz](https://oj.uz/problems/source/45)
   * [Poland](https://szkopul.edu.pl/portal/)
     * [Solutions (in Polish)](https://www.oi.edu.pl/l/40/)
   * [Canada](https://cemc.math.uwaterloo.ca/contests/computing.html)

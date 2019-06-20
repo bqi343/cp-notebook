@@ -73,7 +73,7 @@ struct snode {
         splay(); assert(!c[1]); // left subtree of this is now path to root, right subtree is empty
     }
     void makeRoot() { access(); flip ^= 1; }
-    void set(int v) { splay(); val = v; calc(); } // change value in node
+    void set(int v) { splay(); val = v; calc(); } // change value in node, splay suffices instead of access because it doesn't affect values in nodes above it
     
     //////// LINK CUT TREE QUERIES
     friend sn lca(sn x, sn y) {

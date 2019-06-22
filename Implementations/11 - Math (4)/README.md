@@ -2,8 +2,6 @@
 
 [CPC.9](https://github.com/SuprDewd/T-414-AFLV/tree/master/09_mathematics)
 
-  * [Fraction Class](https://martin-thoma.com/fractions-in-cpp/)
-
 ### 4
 
   * Eratosthenes' Sieve
@@ -15,7 +13,7 @@
     * Problems
       * [Currencies](https://www.hackerrank.com/contests/gs-codesprint/challenges/currencies) [](107)
       * [A2OJ](https://a2oj.com/category?ID=32)
-      
+
 ### 5
 
   * Modular Arithmetic
@@ -32,16 +30,20 @@
       * [String Mark](http://codeforces.com/contest/895/problem/D) [](108)
 
 ### 6
+
   *Some problems sourced from [here.](http://codeforces.com/blog/entry/54526?#comment-385354)*
 
   * Game Theory
     * Tutorial
-     * [HackerRank](https://www.hackerrank.com/topics/game-theory-and-grundy-numbers)
+      * [HackerRank](https://www.hackerrank.com/topics/game-theory-and-grundy-numbers)
       * [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/algorithm-games/)
+      * Books (thanks mnbvmar!)
+        * "On Numbers and Games" - Conway
+        * "Winning Ways for Your Mathematical Plays" (Berlekamp, Conway, Guy)
     * Topics
-       * Nim
-       * Grundy Numbers
-       * Sprague-Grundy Theorem
+      * Nim
+      * Grundy Numbers
+      * Sprague-Grundy Theorem
     * Problem(s)
       * [Division Game](https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2959)
       * [Game of Stones](http://codeforces.com/problemset/problem/768/E) [](59)
@@ -53,7 +55,7 @@
       * Tutorial
         * [Wikipedia](https://en.wikipedia.org/wiki/Gaussian_elimination)
       * Problems
-        * Linear Equation Solver
+        * [Linear Equation Solver](https://open.kattis.com/problems/equationsolver)
         * [Xor Cycle](https://csacademy.com/contest/archive/task/xor_cycle/statement/) [](78)
         * [A2OJ](https://a2oj.com/category?ID=59)
     * Kirchhoff's Theorem
@@ -62,25 +64,29 @@
       * Problems
         * [Hierarchies Count](https://codefights.com/interview-practice/task/TJ7hGeey6JYNFjBBg)
         * [Stranger Trees](http://codeforces.com/contest/917/problem/D)
-  * Karatsuba
-    * [Wikipedia](https://en.wikipedia.org/wiki/Karatsuba_algorithm)
-    * [Implementation](http://codeforces.com/contest/623/submission/15807539)
-    * Typically not needed due to FFT / NTT.
-  * FFT / NTT
-    * Tutorial
-      * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)
-      * [CF Tutorial Pt 2](http://codeforces.com/blog/entry/48798)
-      * [CSAcademy](https://csacademy.com/blog/fast-fourier-transform-and-variations-of-it/)
-      * [adamant](http://codeforces.com/blog/entry/55572)
-      * [CP-Algorithms](https://cp-algorithms.com/algebra/fft.html)
-    * Problems
-      * Base Conversion
-      * Bitwise XOR, And, Or
-      * [K-Inversions](https://open.kattis.com/problems/kinversions)
-      * [Big Integer](https://dmoj.ca/problem/bts17p8)
-      * [Matchings](https://open.kattis.com/contests/acpc17open/problems/matchings)
-      * [Counting Triplets](https://toph.co/p/counting-triplets)
-      * [A2OJ](https://a2oj.com/category?ID=42)
+  * Polynomials
+      * Karatsuba
+        * [Wikipedia](https://en.wikipedia.org/wiki/Karatsuba_algorithm)
+        * [Implementation](http://codeforces.com/contest/623/submission/15807539)
+        * Typically not needed due to FFT / NTT.
+      * FFT / NTT
+        * Tutorial
+          * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)
+          * [CF Tutorial Pt 2](http://codeforces.com/blog/entry/48798)
+          * [CSAcademy](https://csacademy.com/blog/fast-fourier-transform-and-variations-of-it/)
+          * [adamant](http://codeforces.com/blog/entry/55572)
+          * [CP-Algorithms](https://cp-algorithms.com/algebra/fft.html)
+        * Problems
+          * Base Conversion
+          * Bitwise XOR, And, Or
+          * [K-Inversions](https://open.kattis.com/problems/kinversions)
+          * [Big Integer](https://dmoj.ca/problem/bts17p8)
+          * [Matchings](https://open.kattis.com/contests/acpc17open/problems/matchings)
+          * [Counting Triplets](https://toph.co/p/counting-triplets)
+          * [A2OJ](https://a2oj.com/category?ID=42)
   * Big Integer
-    * [Implementation](https://github.com/indy256/codelibrary/blob/master/cpp/bigint.cpp)
 
+### Interesting Task(s)
+
+  * [Power Towers](https://open.kattis.com/problems/towers)
+    * [Solution](https://petr-mitrichev.blogspot.com/2019/06/power-towers-solution.html)

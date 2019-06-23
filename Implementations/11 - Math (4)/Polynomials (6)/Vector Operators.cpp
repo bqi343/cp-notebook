@@ -15,8 +15,8 @@ namespace vecOp {
     template<class T> vector<T>& operator-=(vector<T>& l, const vector<T>& r) {
         l.resz(max(sz(l),sz(r))); F0R(i,sz(r)) l[i] -= r[i]; return l;
     }
-    template<class T> vector<T>& operator*=(vector<T>& l, const T& r) { trav(t,l) t *= r;  }
-    template<class T> vector<T>& operator/=(vector<T>& l, const T& r) { trav(t,l) t /= r;  }
+    template<class T> vector<T>& operator*=(vector<T>& l, const T& r) { trav(t,l) t *= r; return l;  }
+    template<class T> vector<T>& operator/=(vector<T>& l, const T& r) { trav(t,l) t /= r; return l; }
 
     template<class T> vector<T> operator+(vector<T> l, const vector<T>& r) { return l += r; }
     template<class T> vector<T> operator-(vector<T> l, const vector<T>& r) { return l -= r; }

@@ -10,20 +10,20 @@ template<int SZ, bool directed> struct Euler {
     int N, M;
     vpi adj[SZ], circuit;
     int out[SZ], in[SZ], deg[SZ];
-    bool used[SZ], bad;
+    bool bad;
+    vector<bool> used;
 
     void clr() {
-        F0R(i,N) adj[i].clear();
-        circuit.clear();
-        F0R(i,N) out[i] = in[i] = deg[i] = 0;
-        F0R(i,M) used[i] = 0;
+        FOR(i,1,N+1) adj[i].clear();
+        circuit.clear(); used.clear();
+        FOR(i,1,N+1) out[i] = in[i] = deg[i] = 0;
         N = M = bad = 0;
     }
 
     void dfs(int pre, int cur) {
         while (sz(adj[cur])) {
             pi x = adj[cur].back(); adj[cur].pop_back();
-            if (used[x.s]) continue;
+            if (used[x.s]) continue; // edge is already part of tour
             used[x.s] = 1; dfs(cur,x.f);
         }
         if (sz(circuit) && circuit.back().f != cur) bad = 1;
@@ -38,21 +38,20 @@ template<int SZ, bool directed> struct Euler {
             adj[a].pb({b,M}), adj[b].pb({a,M});
             deg[a] ++, deg[b] ++;
         }
-        M ++;
+        used.pb(0); M ++;
     }
 
-    vi solve(int _N) {
-        N = _N; // edges only involve vertices from 0 to N-1
-
-        int start = 0; F0R(i,N) if (deg[i] || in[i] || out[i]) start = i;
-        if (directed) {
-            F0R(i,N) if (out[i]-in[i] == 1) start = i;
-        } else {
-            F0R(i,N) if (deg[i]&1) start = i;
+    vi solve(int _N) { // vertices are 1-indexed
+        int start = 1; FOR(i,1,N+1) if (deg[i] || in[i] || out[i]) start = i;
+        FOR(i,1,N+1)  {
+            if (directed) {
+                if (out[i]-in[i] == 1) start = i;
+            } else {
+                if (deg[i]&1) start = i;
+            }
         }
         dfs(-1,start);
-
-        if (sz(circuit) != M+1 || bad) return {}; // return empty if no sol
+        if (sz(circuit) != M+1 || bad) return {}; // no sol
         vi ans; F0Rd(i,sz(circuit)) ans.pb(circuit[i].s);
         return ans;
     }

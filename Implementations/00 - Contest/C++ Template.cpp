@@ -41,10 +41,8 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 #define ub upper_bound
 
 #define sz(x) (int)x.size()
-#define beg(x) x.begin()
-#define en(x) x.end()
-#define all(x) beg(x), en(x)
-#define resz resize
+#define all(x) begin(x), end(x)
+#define rsz resize
 
 const int MOD = 1000000007; // 998244353
 const ll INF = 1e18;

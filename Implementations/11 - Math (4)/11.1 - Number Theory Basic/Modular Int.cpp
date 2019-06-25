@@ -34,8 +34,10 @@ template<class T> struct modular {
         modular ans = 1; for (; p; p /= 2, a *= a) if (p&1) ans *= a;
         return ans;
     }
-    friend modular inv(const modular& a) { return invGeneral(a.val,MOD); } 
-    // inv is equivalent to return exp(b,b.mod-2) if prime
+    friend modular inv(const modular& a) { 
+        auto i = invGeneral(a.val,MOD); assert(i != -1);
+        return i;
+    } // equivalent to return exp(b,MOD-2) if MOD is prime
     modular& operator/=(const modular& m) { return (*this) *= inv(m); }
     
     friend modular operator+(modular a, const modular& b) { return a += b; }

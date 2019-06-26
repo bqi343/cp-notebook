@@ -4,13 +4,15 @@
 
 ## 2
 
+[Java Arrays.sort() Killer](https://codeforces.com/blog/entry/4827)
+
   * Complete Search
     * Tutorial
       * CPH (5, Complete Search)
     * Problems
       * [Maximum Clique Problem](https://en.wikipedia.org/wiki/Clique_problem)
       * [Cracker Barrel Game](https://open.kattis.com/problems/crackerbarrel)
-      * [Coloring Graphs](https://open.kattis.com/problems/coloring) 
+      * [Coloring Graphs](https://open.kattis.com/problems/coloring)
   * Greedy Algorithms
     * Tutorial
       * CPH (6, Greedy Algorithms)
@@ -34,7 +36,7 @@
       * [Level Generation](http://codeforces.com/problemset/problem/818/F) [](54)
       * [Packmen](http://codeforces.com/contest/847/problem/E) [](57)
       * [Office Keys](http://codeforces.com/problemset/problem/830/A) [](60)
-      
+
 ## 6
   * Parallel Binary Search
     * Tutorial

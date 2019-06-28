@@ -18,13 +18,11 @@ namespace FFT {
 
     template<class T> void fft(vector<T>& a, vector<T>& roots) {
         int n = sz(a);
-        
-        for (int i = 1, j = 0; i < n; i++) {
+        for (int i = 1, j = 0; i < n; i++) { // sort by reverse bit representation
             int bit = n >> 1;
             for (; j & bit; bit >>= 1) j ^= bit;
             j ^= bit; if (i < j) swap(a[i], a[j]);
         }
-        
         for (int len = 2; len <= n; len <<= 1) 
             for (int i = 0; i < n; i += len) 
                 F0R(j,len/2) {
@@ -48,12 +46,12 @@ namespace FFT {
         int s = sz(a)+sz(b)-1, n = 1<<size(s);
         vector<T> roots(n); genRoots(roots);
         
-        a.resz(n), fft(a,roots); b.resz(n), fft(b,roots);
+        a.rsz(n), fft(a,roots); b.rsz(n), fft(b,roots);
         F0R(i,n) a[i] *= b[i];
-        reverse(beg(roots)+1,en(roots)); fft(a,roots); 
+        reverse(begin(roots)+1,end(roots)); fft(a,roots); 
         
         T in = T(1)/T(n); trav(x,a) x *= in;
-        a.resz(s); return a;
+        a.rsz(s); return a;
     } 
     vl conv(const vl& a, const vl& b) { 
         if (small(a,b)) return a*b;
@@ -66,34 +64,33 @@ namespace FFT {
         int s = sz(a)+sz(b)-1, n = 1<<size(s);
         
         vcd v1(n), v2(n), r1(n), r2(n);
-        F0R(i,sz(a)) v1[i] = cd(a[i] >> 15, a[i] & 32767); // v1(x)=a0(x)+i*a1(x)
-        F0R(i,sz(b)) v2[i] = cd(b[i] >> 15, b[i] & 32767); // v2(x)=b0(x)+i*b1(x)
+        F0R(i,sz(a)) v1[i] = cd(a[i]>>15, a[i]&32767); // v1(x)=a0(x)+i*a1(x)
+        F0R(i,sz(b)) v2[i] = cd(b[i]>>15, b[i]&32767); // v2(x)=b0(x)+i*b1(x)
         
         vcd roots(n); genRoots(roots);
         fft(v1,roots), fft(v2,roots);
         F0R(i,n) {
-            int j = (i ? (n - i) : i);
-            cd ans1 = (v1[i] + conj(v1[j])) * cd(0.5, 0); // a0(x)
-            cd ans2 = (v1[i] - conj(v1[j])) * cd(0, -0.5); // a1(x)
-            cd ans3 = (v2[i] + conj(v2[j])) * cd(0.5, 0); // b0(x)
-            cd ans4 = (v2[i] - conj(v2[j])) * cd(0, -0.5); // b1(x)
-            r1[i] = (ans1 * ans3) + (ans1 * ans4) * cd(0, 1); // a0(x)*v2(x)
-            r2[i] = (ans2 * ans3) + (ans2 * ans4) * cd(0, 1); // a1(x)*v2(x)
+            int j = (i ? (n-i) : i);
+            cd ans1 = (v1[i]+conj(v1[j]))*cd(0.5, 0); // a0(x)
+            cd ans2 = (v1[i]-conj(v1[j]))*cd(0, -0.5); // a1(x)
+            cd ans3 = (v2[i]+conj(v2[j]))*cd(0.5, 0); // b0(x)
+            cd ans4 = (v2[i]-conj(v2[j]))*cd(0, -0.5); // b1(x)
+            r1[i] = (ans1*ans3)+(ans1*ans4)*cd(0, 1); // a0(x)*v2(x)
+            r2[i] = (ans2*ans3)+(ans2*ans4)*cd(0, 1); // a1(x)*v2(x)
         }
-        reverse(beg(roots)+1,en(roots));
+        reverse(begin(roots)+1,end(roots));
         fft(r1,roots), fft(r2,roots); F0R(i,n) r1[i] /= n, r2[i] /= n;
         
         vl ret(n);
         F0R(i,n) {
             ll av = (ll)round(r1[i].real()); // a0*b0
-            ll bv = (ll)round(r1[i].imag()) + (ll)round(r2[i].real()); // a0*b1+a1*b0
+            ll bv = (ll)round(r1[i].imag())+(ll)round(r2[i].real()); // a0*b1+a1*b0
             ll cv = (ll)round(r2[i].imag()); // a1*b1
             av %= mod, bv %= mod, cv %= mod;
-            ret[i] = (av << 30) + (bv << 15) + cv;
+            ret[i] = (av<<30)+(bv<<15)+cv;
             ret[i] = (ret[i]%mod+mod)%mod;
         }
-        
-        ret.resz(s); return ret;
+        ret.rsz(s); return ret;
     } // ~0.8s when sz(a)=sz(b)=1<<19
 }
 

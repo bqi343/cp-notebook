@@ -27,16 +27,24 @@ class C {
 };
 
 int main() {
+    setIO();
     C c; ps(c.m());
 }
 ```
 
-Google Kickstart
+Google Kickstart / Facebook Hacker Cup
 
 ```
-void solve(int caseNum) {
+int N;
 
-    cerr << "Solved #" << caseNum << "\n";
+void inp(vi& v) { // common way to reduce amount of input
+    v.rsz(1); ll A,B,C; re(v,A,B,C);
+    while (sz(v) < N) v.pb((A*v.back()+B)%C+1);
+}
+
+void solve(int caseNum) {
+    cerr << "Doing #" << caseNum << "\n";
+    
 }
 
 int main() {
@@ -45,7 +53,6 @@ int main() {
     FOR(i,1,T+1) {
         pr("Case #",i,": ");
         solve(i);
-        ps();
     }
 }
 ```

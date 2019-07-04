@@ -7,20 +7,31 @@
  * Dependency: Modular Int
  */
 
-using namespace vecOp;
-
 const int MOD = (119 << 23) + 1, root = 3; // = 998244353
 // NTT: For p < 2^30 there is also e.g. (5 << 25, 3), (7 << 26, 3),
 // (479 << 21, 3) and (483 << 21, 5). The last two are > 10^9.
 
+using namespace vecOp;
+
 namespace FFT {
     constexpr int size(int s) { return s > 1 ? 32-__builtin_clz(s-1) : 0; }
+    // if vectors are small then multiply directly
+    template<class T> bool small(const vector<T>& a, const vector<T>& b) { return (ll)sz(a)*sz(b) <= 500000; } 
 
+    void genRoots(vmi& roots) { // primitive n-th roots of unity
+        int n = sz(roots); mi r = exp(mi(root),(MOD-1)/n);
+        roots[0] = 1; FOR(i,1,n) roots[i] = roots[i-1]*r;
+    }
+    void genRoots(vcd& roots) { // change cd to complex<double> instead?
+        int n = sz(roots); ld ang = 2*PI/n;
+        F0R(i,n) roots[i] = cd(cos(ang*i),sin(ang*i)); // is there a way to do this more quickly?
+    }
+    
     template<class T> void fft(vector<T>& a, vector<T>& roots) {
         int n = sz(a);
         for (int i = 1, j = 0; i < n; i++) { // sort by reverse bit representation
             int bit = n >> 1;
-            for (; j & bit; bit >>= 1) j ^= bit;
+            for (; j&bit; bit >>= 1) j ^= bit;
             j ^= bit; if (i < j) swap(a[i], a[j]);
         }
         for (int len = 2; len <= n; len <<= 1) 
@@ -30,17 +41,7 @@ namespace FFT {
                     a[i+j] = u+v, a[i+j+len/2] = u-v;
                 }
     }
-    
-    void genRoots(vmi& roots) {
-        int n = sz(roots); mi r = exp(mi(root),(MOD-1)/n);
-        roots[0] = 1; FOR(i,1,n) roots[i] = roots[i-1]*r;
-    }
-    void genRoots(vcd& roots) {
-        int n = sz(roots); ld ang = 2*PI/n;
-        F0R(i,n) roots[i] = cd(cos(ang*i),sin(ang*i)); // is there a way to do this more quickly?
-    }
-    
-    template<class T> bool small(const vector<T>& a, const vector<T>& b) { return (ll)sz(a)*sz(b) <= 500000; } // should just multiply directly
+
     template<class T> vector<T> conv(vector<T> a, vector<T> b) {
         if (small(a,b)) return a*b;
         int s = sz(a)+sz(b)-1, n = 1<<size(s);
@@ -48,7 +49,7 @@ namespace FFT {
         
         a.rsz(n), fft(a,roots); b.rsz(n), fft(b,roots);
         F0R(i,n) a[i] *= b[i];
-        reverse(begin(roots)+1,end(roots)); fft(a,roots); 
+        reverse(begin(roots)+1,end(roots)); fft(a,roots); // inverse FFT
         
         T in = T(1)/T(n); trav(x,a) x *= in;
         a.rsz(s); return a;

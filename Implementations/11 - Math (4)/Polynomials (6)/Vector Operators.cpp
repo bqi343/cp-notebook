@@ -10,10 +10,10 @@ namespace vecOp {
     template<class T> vector<T> shift(vector<T> v, int x) { v.insert(v.begin(),x,0); return v; }
     
     template<class T> vector<T>& operator+=(vector<T>& l, const vector<T>& r) {
-        l.resz(max(sz(l),sz(r))); F0R(i,sz(r)) l[i] += r[i]; return l;
+        l.rsz(max(sz(l),sz(r))); F0R(i,sz(r)) l[i] += r[i]; return l;
     }
     template<class T> vector<T>& operator-=(vector<T>& l, const vector<T>& r) {
-        l.resz(max(sz(l),sz(r))); F0R(i,sz(r)) l[i] -= r[i]; return l;
+        l.rsz(max(sz(l),sz(r))); F0R(i,sz(r)) l[i] -= r[i]; return l;
     }
     template<class T> vector<T>& operator*=(vector<T>& l, const T& r) { trav(t,l) t *= r; return l;  }
     template<class T> vector<T>& operator/=(vector<T>& l, const T& r) { trav(t,l) t /= r; return l; }

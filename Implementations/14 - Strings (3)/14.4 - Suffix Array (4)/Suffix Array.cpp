@@ -10,11 +10,15 @@
 
 struct LCP {
     string S; int N;
-    vi sa, inv, lcp;
-    RMQ<int,MX> R; 
+    void init(string _S) {
+        S = _S; N = sz(S);
+        suffixArray(); lcpArray();
+        // R.build(lcp);
+    }
     
+    vi sa;
     void suffixArray() { // http://ekzlib.herokuapp.com
-        sa.resz(N); vi classes(N);
+        sa.rsz(N); vi classes(N);
         F0R(i,N) sa[i] = N-1-i, classes[i] = S[i];
         stable_sort(all(sa), [this](int i, int j) { return S[i] < S[j]; });
         for (int len = 1; len < N; len *= 2) { 
@@ -33,9 +37,10 @@ struct LCP {
         }
     }
     
+    vi inv, lcp;
     void lcpArray() { // KACTL
         int h = 0;
-        inv.resz(N), lcp.resz(N); F0R(i,N) inv[sa[i]] = i; // pos -> suffix rank
+        inv.rsz(N), lcp = vi(N,-1); F0R(i,N) inv[sa[i]] = i; // pos -> suffix rank
         F0R(i,N) if (inv[i]) {
             int pre = sa[inv[i]-1];
             while (max(i,pre)+h < N && S[i+h] == S[pre+h]) h++;
@@ -44,17 +49,13 @@ struct LCP {
         }
     }
     
-    void init(string _S) {
-        S = _S; N = sz(S);
-        suffixArray(); lcpArray();
-        R.build(lcp);
-    }
-    
+    /*
+    RMQ<int,MX> R; 
     int getLCP(int a, int b) {
         if (max(a,b) >= N) return 0;
         if (a == b) return N-a;
         int t0 = inv[a], t1 = inv[b];
         if (t0 > t1) swap(t0,t1);
         return R.query(t0+1,t1);
-    }
+    }*/
 };

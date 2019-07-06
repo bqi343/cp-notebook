@@ -9,10 +9,11 @@ typedef struct snode* sn;
 
 struct snode {
     //////// VARIABLES
+    sn p, c[2]; // parent, children
     int val; // value in node 
     int sum, mn, mx; // sum of values in subtree, min and max prefix sum 
-    sn p, c[2]; // parent, children
     bool flip = 0; 
+    // int vir = 0; stores sum of virtual children
     
     snode(int v) {
         p = c[0] = c[1] = NULL;
@@ -23,7 +24,6 @@ struct snode {
     friend int getMn(sn x) { return x?x->mn:0; }
     friend int getMx(sn x) { return x?x->mx:0; }
     
-    //////// SPLAY TREE OPERATIONS
     void prop() {
         if (!flip) return;
         swap(c[0],c[1]); tie(mn,mx) = mp(sum-mx,sum-mn);
@@ -32,10 +32,12 @@ struct snode {
     }
     void calc() { 
         F0R(i,2) if (c[i]) c[i]->prop();
-        int s0 = getSum(c[0]), s1 = getSum(c[1]); sum = s0+val+s1;
+        int s0 = getSum(c[0]), s1 = getSum(c[1]); sum = s0+val+s1; // +vir
         mn = min(getMn(c[0]),s0+val+getMn(c[1]));
         mx = max(getMx(c[0]),s0+val+getMx(c[1]));
     }
+    
+    //////// SPLAY TREE OPERATIONS
     int dir() {
         if (!p) return -2;
         F0R(i,2) if (p->c[i] == this) return i;
@@ -67,8 +69,12 @@ struct snode {
     //////// LINK CUT TREE BASE OPERATIONS
     void access() { // bring this to top of tree
         for (sn v = this, pre = NULL; v; v = v->p) {
-            v->splay(); v->c[1] = pre; v->calc();
+            v->splay(); 
+            // if (pre) v->vir -= pre->sz;
+            // if (v->c[1]) v->vir += v->c[1]->sz;
+            v->c[1] = pre; v->calc();
             pre = v;
+            // v->sz should remain the same if using vir
         }
         splay(); assert(!c[1]); // left subtree of this is now path to root, right subtree is empty
     }
@@ -90,7 +96,9 @@ struct snode {
     //////// LINK CUT TREE MODIFICATIONS
     friend bool link(sn x, sn y) { // make x parent of y
         if (connected(x,y)) return 0; // don't induce cycle
-        y->makeRoot(); y->p = x; return 1; // success!
+        y->makeRoot(); y->p = x; 
+        // x->access(); x->sz += y->sz; x->vir += y->sz;
+        return 1; // success!
     }
     friend bool cut(sn x, sn y) { // x is originally parent of y
         x->makeRoot(); y->access(); 

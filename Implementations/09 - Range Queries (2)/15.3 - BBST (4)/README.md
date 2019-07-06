@@ -40,6 +40,8 @@ Balanced Binary Search Trees
         * [Tree or not Tree](https://codeforces.com/contest/117/problem/E)
           * tree + one edge
         * [Old Driver Tree](https://codeforces.com/contest/1172/problem/E)
+        * [Pastoral Oddities](https://codeforces.com/contest/603/problem/E)
+          * path + subtree queries
       * USACO Camp
         * [The Applicant](https://probgate.org/viewproblem.php?pid=578)
           * tree + one edge

@@ -4,47 +4,48 @@
  * Verification: various
  */
 
-namespace point {
-    typedef pd P;
+typedef ld T;
+
+namespace Point {
+    typedef pair<T,T> P;
     typedef vector<P> vP;
 
-    P dir(ld ang) {
+    P dir(T ang) {
         cd c = exp(ang*cd(0,1));
         return P(c.real(),c.imag());
     }
     
-    ld norm(P x) { return x.f*x.f+x.s*x.s; }
-    ld abs(P x) { return sqrt(norm(x)); }
-    ld angle(P x) { return atan2(x.s,x.f); }
+    T norm(P x) { return x.f*x.f+x.s*x.s; }
+    T abs(P x) { return sqrt(norm(x)); }
+    T angle(P x) { return atan2(x.s,x.f); }
     P conj(P x) { return P(x.f,-x.s); }
     
     P operator+(const P& l, const P& r) { return P(l.f+r.f,l.s+r.s); }
     P operator-(const P& l, const P& r) { return P(l.f-r.f,l.s-r.s); }
-    P operator*(const P& l, const ld& r) { return P(l.f*r,l.s*r); }
-    P operator*(const ld& l, const P& r) { return r*l; }
-    P operator/(const P& l, const ld& r) { return P(l.f/r,l.s/r); }
+    P operator*(const P& l, const T& r) { return P(l.f*r,l.s*r); }
+    P operator*(const T& l, const P& r) { return r*l; }
+    P operator/(const P& l, const T& r) { return P(l.f/r,l.s/r); }
     P operator*(const P& l, const P& r) { return P(l.f*r.f-l.s*r.s,l.s*r.f+l.f*r.s); }
     P operator/(const P& l, const P& r) { return l*conj(r)/norm(r); }
     
     P& operator+=(P& l, const P& r) { return l = l+r; }
     P& operator-=(P& l, const P& r) { return l = l-r; }
-    P& operator*=(P& l, const ld& r) { return l = l*r; }
-    P& operator/=(P& l, const ld& r) { return l = l/r; }
+    P& operator*=(P& l, const T& r) { return l = l*r; }
+    P& operator/=(P& l, const T& r) { return l = l/r; }
     P& operator*=(P& l, const P& r) { return l = l*r; }
     P& operator/=(P& l, const P& r) { return l = l/r; }
     
     P unit(P x) { return x/abs(x); }
+    T dot(P a, P b) { return (conj(a)*b).f; }
+    T cross(P a, P b) { return (conj(a)*b).s; }
+    T cross(P p, P a, P b) { return cross(a-p,b-p); }
+    T dist(P p, P a, P b) { return std::abs(cross(p,a,b))/abs(a-b); }
     
-    ld dot(P a, P b) { return (conj(a)*b).f; }
-    ld cross(P a, P b) { return (conj(a)*b).s; }
-    ld cross(P p, P a, P b) { return cross(a-p,b-p); }
-    ld dist(P p, P a, P b) { return std::abs(cross(p,a,b))/abs(a-b); }
-    
-    P rotate(P a, ld b) { return a*P(cos(b),sin(b)); }
+    P rotate(P a, T b) { return a*P(cos(b),sin(b)); }
     P reflect(P p, P a, P b) { return a+conj((p-a)/(b-a))*(b-a); }
-    P foot(P p, P a, P b) { return (p+reflect(p,a,b))/(ld)2; }
+    P foot(P p, P a, P b) { return (p+reflect(p,a,b))/(T)2; }
     P extension(P a, P b, P c, P d) {
-        ld x = cross(a,b,c), y = cross(a,b,d);
+        T x = cross(a,b,c), y = cross(a,b,d);
         return (d*x-c*y)/(x-y);
     }
     // computes the intersection of line segments AB, CD
@@ -81,21 +82,21 @@ namespace point {
     
     // computes the center of mass of a polygon with constant mass per unit area
     // verification: kattis polygonarea, VT HSPC 2018 Holiday Stars
-    ld area(const vP& v) {
-        ld area = 0;
+    T area(const vP& v) {
+        T area = 0;
         F0R(i,sz(v)) {
-            int j = (i+1)%sz(v); ld a = cross(v[i],v[j]);
+            int j = (i+1)%sz(v); T a = cross(v[i],v[j]);
             area += a;
         }
         return std::abs(area)/2;
     }
     P centroid(const vP& v) { 
-        P cen(0,0); ld area = 0; // 2*signed area
+        P cen(0,0); T area = 0; // 2*signed area
         F0R(i,sz(v)) {
-            int j = (i+1)%sz(v); ld a = cross(v[i],v[j]);
+            int j = (i+1)%sz(v); T a = cross(v[i],v[j]);
             cen += a*(v[i]+v[j]); area += a;
         }
-        return cen/area/(ld)3;
+        return cen/area/(T)3;
     }
     
     // tests whether a point is inside, on, or outside the perimeter of any polygon
@@ -111,7 +112,7 @@ namespace point {
         return ans ? "in" : "out";
     }
 
-    pair<P,double> ccCenter(P a, P b, P c) {
+    pair<P,double> ccCenter(P a, P b, P c) { // circumcenter
         b -= a; c -= a;
         P res = b*c*(conj(c)-conj(b))/(b*conj(c)-conj(b)*c);
         return {a+res,abs(res)};
@@ -132,4 +133,4 @@ namespace point {
     }
 };
 
-using namespace point;
+using namespace Point;

@@ -20,7 +20,8 @@ namespace vecOp {
 
     template<class T> vector<T> operator+(vector<T> l, const vector<T>& r) { return l += r; }
     template<class T> vector<T> operator-(vector<T> l, const vector<T>& r) { return l -= r; }
-    template<class T> vector<T> operator*(vector<T> l, const T& r) { return l *= r;  }
+    template<class T> vector<T> operator*(vector<T> l, const T& r) { return l *= r; }
+    template<class T> vector<T> operator*(const T& r, const vector<T>& l) { return l*r; }
     template<class T> vector<T> operator/(vector<T> l, const T& r) { return l /= r;  }
 
     template<class T> vector<T> operator*(const vector<T>& l, const vector<T>& r) {

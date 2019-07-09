@@ -18,10 +18,11 @@ template<class T> struct modular {
     T val; 
     explicit operator T() const { return val; }
     modular() { val = 0; }
-    template<class U> modular(const U& v) {
+    modular(const ll& v) { 
         val = (-MOD <= v && v <= MOD) ? v : v % MOD;
         if (val < 0) val += MOD;
     }
+    
     friend ostream& operator<<(ostream& os, const modular& a) { return os << a.val; }
     friend bool operator==(const modular& a, const modular& b) { return a.val == b.val; }
     friend bool operator!=(const modular& a, const modular& b) { return !(a == b); }
@@ -30,7 +31,7 @@ template<class T> struct modular {
     modular& operator+=(const modular& m) { if ((val += m.val) >= MOD) val -= MOD; return *this; }
     modular& operator-=(const modular& m) { if ((val -= m.val) < 0) val += MOD; return *this; }
     modular& operator*=(const modular& m) { val = (ll)val*m.val%MOD; return *this; }
-    friend modular exp(modular a, ll p) {
+    friend modular pow(modular a, ll p) {
         modular ans = 1; for (; p; p /= 2, a *= a) if (p&1) ans *= a;
         return ans;
     }

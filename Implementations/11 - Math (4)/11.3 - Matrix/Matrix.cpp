@@ -9,7 +9,7 @@ template<class T> struct Mat {
     vector<vector<T>> d;
     Mat(int _r, int _c) : r(_r), c(_c) { d.assign(r,vector<T>(c)); }
     Mat() : Mat(0,0) {} 
-    Mat (const vector<vector<T>>& _d) : r(sz(_d)), c(sz(_d[0])) { d = _d; }
+    Mat(const vector<vector<T>>& _d) : r(sz(_d)), c(sz(_d[0])) { d = _d; }
     friend void pr(const Mat& m) { pr(m.d); }
     
     Mat& operator+=(const Mat& m) {
@@ -32,7 +32,7 @@ template<class T> struct Mat {
     Mat operator-(const Mat& m) { return Mat(*this)-=m; }
     Mat& operator*=(const Mat& m) { return *this = (*this)*m; }
 
-    friend Mat exp(Mat m, ll p) {
+    friend Mat pow(Mat m, ll p) {
         assert(m.r == m.c);
         Mat r(m.r,m.c);
         F0R(i,m.r) r.d[i][i] = 1;

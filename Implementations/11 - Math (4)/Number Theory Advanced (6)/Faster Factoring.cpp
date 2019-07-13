@@ -10,7 +10,7 @@
 
 using namespace rpm;
 
-namespace factor {
+namespace factorAdv {
 	Sieve<1<<20> S = Sieve<1<<20>(); // should take care of all primes up to n^(1/3)
 
 	bool millerRabin(ll p) { // test primality
@@ -61,3 +61,5 @@ namespace factor {
 		return res;
 	}
 }
+
+using namespace factorAdv;

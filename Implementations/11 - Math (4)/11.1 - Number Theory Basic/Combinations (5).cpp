@@ -44,7 +44,7 @@ template<int SZ> struct Combo {
         auto tmp = fac[a]*ifac[b]*ifac[a-b];
         F0R(i,sz(factors)) {
             int t = cnt[a][i]-cnt[a-b][i]-cnt[b][i];
-            tmp *= exp(mi(factors[i].f),t);
+            tmp *= pow(mi(factors[i].f),t);
         }
         return tmp;
     }

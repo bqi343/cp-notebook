@@ -4,7 +4,7 @@
  * Verification: https://csacademy.com/contest/ceoi-2018-day-2/task/toys-big/
  */
 
-namespace basicFactor {
+namespace factorBasic {
     template<class T> vector<pair<T,int>> factor(T x) { // x <= 10^{14} is fine
         vector<pair<T,int>> pri;
 
@@ -48,4 +48,4 @@ namespace basicFactor {
     }
 }
 
-using namespace basicFactor;
+using namespace factorBasic;

@@ -41,7 +41,9 @@
       * [Bridges](https://csacademy.com/contest/archive/task/building-bridges/)
       * [Fence Orthogonality](https://open.kattis.com/problems/fenceortho)
       * [A2OJ](https://a2oj.com/category?ID=22)
-  
+
 ## 6
-  * KD Tree?
-  * Delaunay Triangulation?
+  * [KD Tree](https://github.com/kth-competitive-programming/kactl/blob/master/content/geometry/kdTree.h)
+  * [Delaunay Triangulation](https://cp-algorithms.com/geometry/delaunay.html)
+    * [KACTL](https://github.com/kth-competitive-programming/kactl/blob/master/content/geometry/FastDelaunay.h)
+    * [CCO 2008 Landing](https://dmoj.ca/problem/cco08p6)

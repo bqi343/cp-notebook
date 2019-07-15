@@ -26,6 +26,7 @@ template<class T> struct modular {
     friend ostream& operator<<(ostream& os, const modular& a) { return os << a.val; }
     friend bool operator==(const modular& a, const modular& b) { return a.val == b.val; }
     friend bool operator!=(const modular& a, const modular& b) { return !(a == b); }
+    friend bool operator<(const modular& a, const modular& b) { return a.val < b.val; }
 
     modular operator-() const { return modular(-val); }
     modular& operator+=(const modular& m) { if ((val += m.val) >= MOD) val -= MOD; return *this; }

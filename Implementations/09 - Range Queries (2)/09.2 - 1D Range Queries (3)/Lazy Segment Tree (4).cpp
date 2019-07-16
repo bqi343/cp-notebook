@@ -26,7 +26,7 @@ template<class T, int SZ> struct LazySegTree {
     }
     
     void build() {
-        F0Rd(i,SZ) pull(i);
+        FORd(i,1,SZ) pull(i);
     }
     
     T qsum(int lo, int hi, int ind = 1, int L = 0, int R = SZ-1) {

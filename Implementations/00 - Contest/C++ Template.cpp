@@ -52,6 +52,8 @@ const ld PI = 4*atan((ld)1);
 template<class T> void ckmin(T &a, T b) { a = min(a, b); }
 template<class T> void ckmax(T &a, T b) { a = max(a, b); }
 
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+
 int main() {
     
     // you should actually read the stuff at the bottom

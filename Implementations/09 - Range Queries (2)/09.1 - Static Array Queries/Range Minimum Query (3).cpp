@@ -14,7 +14,7 @@ template<class T, int SZ> struct RMQ {
     int comb(int a, int b) { return v[a] == v[b] ? min(a,b) : (v[a] < v[b] ? a : b); } // index of minimum
     
     void init(const vector<T>& _v) {
-        v = _v; F0R(i,SZ) stor[i][0] = i; 
+        v = _v; F0R(i,sz(v)) stor[i][0] = i; 
         FOR(j,1,level(sz(v))+1) F0R(i,sz(v)-(1<<(j-1))) 
             stor[i][j] = comb(stor[i][j-1],stor[i+(1<<(j-1))][j-1]);
     }

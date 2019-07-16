@@ -8,12 +8,12 @@
     * https://codeforces.com/contest/1090/problem/J
 */
 
-struct LCP {
+template<int SZ> struct LCP {
     string S; int N;
     void init(string _S) {
         S = _S; N = sz(S);
         suffixArray(); lcpArray();
-        // R.build(lcp);
+        // R.init(lcp);
     }
     
     vi sa;
@@ -39,23 +39,23 @@ struct LCP {
     
     vi inv, lcp;
     void lcpArray() { // KACTL
+        inv.rsz(N); F0R(i,N) inv[sa[i]] = i; // pos -> suffix rank
+        lcp = vi(N-1);
         int h = 0;
-        inv.rsz(N), lcp = vi(N,-1); F0R(i,N) inv[sa[i]] = i; // pos -> suffix rank
         F0R(i,N) if (inv[i]) {
             int pre = sa[inv[i]-1];
             while (max(i,pre)+h < N && S[i+h] == S[pre+h]) h++;
-            lcp[inv[i]] = h; // lcp of suffixes starting at p0 and i
+            lcp[inv[i]-1] = h; // lcp of suffixes starting at pre and i
             if (h) h--; // if we cut off first chars of two strings with lcp h, then remaining portions still have lcp h-1 
         }
     }
     
-    /*
-    RMQ<int,MX> R; 
+    /*RMQ<int,SZ> R; 
     int getLCP(int a, int b) {
         if (max(a,b) >= N) return 0;
         if (a == b) return N-a;
         int t0 = inv[a], t1 = inv[b];
         if (t0 > t1) swap(t0,t1);
-        return R.query(t0+1,t1);
+        return R.query(t0,t1-1);
     }*/
 };

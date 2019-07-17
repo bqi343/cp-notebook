@@ -46,3 +46,8 @@
   * [DP Problems](http://codeforces.com/blog/entry/325)
   * [More Optimizations](http://codeforces.com/blog/entry/8219)
   * SOS DP
+  * Convex / Priority Queue
+    * [Buy Low Sell High](https://codeforces.com/contest/866/problem/D)
+    * [Stock Trading](https://probgate.org/viewproblem.php?pid=531&cid=81)
+    * [Wall](https://atcoder.jp/contests/kupc2016/tasks/kupc2016_h)
+    * [April Fools' Problem](https://codeforces.com/contest/802/problem/O)

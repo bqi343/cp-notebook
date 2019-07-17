@@ -19,7 +19,7 @@ namespace FFT {
     template<class T> bool small(const vector<T>& a, const vector<T>& b) { return (ll)sz(a)*sz(b) <= 500000; } 
 
     void genRoots(vmi& roots) { // primitive n-th roots of unity
-        int n = sz(roots); mi r = exp(mi(root),(MOD-1)/n);
+        int n = sz(roots); mi r = pow(mi(root),(MOD-1)/n);
         roots[0] = 1; FOR(i,1,n) roots[i] = roots[i-1]*r;
     }
     void genRoots(vcd& roots) { // change cd to complex<double> instead?

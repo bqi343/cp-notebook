@@ -6,7 +6,7 @@
 
 // typedef pl P;
 
-using namespace point;
+using namespace Point;
 
 vP convex_hull(vP P) {
     sort(all(P)); P.erase(unique(all(P)),P.end());

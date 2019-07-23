@@ -1,4 +1,5 @@
 # Olympiads
+
 > Hello, Which online judge should I practice more to do well in **IOI** ?
 > the closest OJ for IOI style?
 > Do you have any magic problems sets to suggest?
@@ -8,8 +9,10 @@
 See [here](https://ioinformatics.org/page/members/7) for additional links. The [OI Checklist](https://oichecklist.herokuapp.com/view/my/) is not working. :(
 
   * [USA](http://www.usaco.org/)
-    * Old Gold / Platinum
-    * [Very Old Gold](http://tjsct.wikidot.com/usaco/)
+    * Format
+      * Bronze, Silver, Gold, Platinum Divisions
+      * 3 problems, 4 hrs
+    * [Very Old Gold Probs](http://tjsct.wikidot.com/usaco/)
     * [USACO Training](http://train.usaco.org/usacogate)
       * not particularly beginner-friendly, but still helpful
       * somewhat outdated in the sense that it lacks common topics such as segment tree
@@ -53,3 +56,12 @@ See [here](https://ioinformatics.org/page/members/7) for additional links. The [
   * [APIO](http://apio-olympiad.org/)
   * [IOIT](http://ioit.altervista.org/2018-teams-and-contests-.html)
   * [InfO(1) cup](http://info1cup.com/)
+
+### Approximate CF Rating to USACO
+
+  * 1200+: Silver
+  * 1400+: Gold
+  * 1600+: Platinum
+  * 1900+: Training Camp
+
+Please let me know if these are ~~outdated~~ blatantly wrong.

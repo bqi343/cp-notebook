@@ -29,12 +29,12 @@ struct frac {
     friend frac operator/(const frac& l, const int& r) { return l/frac(r,1); }
     friend frac operator/(const int& l, const frac& r) { return frac(l,1)/r; }
 
-    friend frac operator+=(frac& l, const frac& r) { return l = l+r; }
-    friend frac operator-=(frac& l, const frac& r) { return l = l-r; }
-    template<class T> friend frac operator*=(frac& l, const T& r) { return l = l*r; }
-    template<class T> friend frac operator/=(frac& l, const T& r) { return l = l/r; }
+    friend frac& operator+=(frac& l, const frac& r) { return l = l+r; }
+    friend frac& operator-=(frac& l, const frac& r) { return l = l-r; }
+    template<class T> friend frac& operator*=(frac& l, const T& r) { return l = l*r; }
+    template<class T> friend frac& operator/=(frac& l, const T& r) { return l = l/r; }
 
-    friend ostream& operator<<(ostream &strm, const frac &a) {
+    friend ostream& operator<<(ostream& strm, const frac& a) {
         strm << a.n;
         if (a.d != 1) strm << "/" << a.d;
         return strm;

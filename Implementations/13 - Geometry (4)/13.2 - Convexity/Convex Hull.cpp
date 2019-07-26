@@ -4,7 +4,7 @@
  * Verification: https://open.kattis.com/problems/convexhull
  */
 
-// typedef pl P;
+// typedef ll T;
 
 using namespace Point;
 

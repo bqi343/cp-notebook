@@ -11,7 +11,7 @@ namespace Point {
     typedef vector<P> vP;
 
     P dir(T ang) {
-        cd c = exp(ang*complex<T>(0,1));
+        auto c = exp(ang*complex<T>(0,1));
         return P(c.real(),c.imag());
     }
     

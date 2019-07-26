@@ -1,5 +1,5 @@
 /**
- * Description: O(N+M) euler tour for both directed and undirected graphs
+ * Description: O(N+M) Euler Path for both directed and undirected graphs
  * Source: USACO Training
  * Verification:
     * directed: https://open.kattis.com/problems/eulerianpath
@@ -13,7 +13,7 @@ template<int SZ, bool directed> struct Euler {
     bool bad;
     vector<bool> used;
 
-    void clr() {
+    void clear() {
         FOR(i,1,N+1) adj[i].clear();
         circuit.clear(); used.clear();
         FOR(i,1,N+1) out[i] = in[i] = deg[i] = 0;
@@ -23,7 +23,7 @@ template<int SZ, bool directed> struct Euler {
     void dfs(int pre, int cur) {
         while (sz(adj[cur])) {
             pi x = adj[cur].back(); adj[cur].pop_back();
-            if (used[x.s]) continue; // edge is already part of tour
+            if (used[x.s]) continue; // edge is already part of path
             used[x.s] = 1; dfs(cur,x.f);
         }
         if (sz(circuit) && circuit.back().f != cur) bad = 1;
@@ -42,6 +42,7 @@ template<int SZ, bool directed> struct Euler {
     }
 
     vi solve(int _N) { // vertices are 1-indexed
+        N = _N;
         int start = 1; FOR(i,1,N+1) if (deg[i] || in[i] || out[i]) start = i;
         FOR(i,1,N+1)  {
             if (directed) {

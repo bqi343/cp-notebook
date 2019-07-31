@@ -1,6 +1,8 @@
 /**
  * Description: convenient functions for input / output
- * Source: https://codeforces.com/blog/entry/65311, others
+ * Source: 
+    * https://codeforces.com/blog/entry/65311
+    * https://codeforces.com/blog/entry/68809
  * Verification: http://codeforces.com/contest/1045/problem/D
  */
 
@@ -13,8 +15,8 @@ namespace input {
     template<class T> void re(T& x) { cin >> x; }
     void re(double& x) { string t; re(t); x = stod(t); }
     void re(ld& x) { string t; re(t); x = stold(t); }
-    template<class Arg, class... Args> void re(Arg& first, Args&... rest) { 
-        re(first); re(rest...); 
+    template<class T, class... Ts> void re(T& t, Ts&... ts) { 
+        re(t); re(ts...); 
     }
 
     template<class T> void re(complex<T>& x) { T a,b; re(a,b); x = cd(a,b); }
@@ -26,37 +28,45 @@ namespace input {
 using namespace input;
 
 namespace output {
+    void pr(int x) { cout << x; }
+    void pr(long x) { cout << x; }
+    void pr(ll x) { cout << x; }
+    void pr(unsigned x) { cout << x; }
+    void pr(unsigned long x) { cout << x; }
+    void pr(unsigned long long x) { cout << x; }
+    void pr(float x) { cout << x; }
+    void pr(double x) { cout << x; }
+    void pr(ld x) { cout << x; }
+    void pr(char x) { cout << x; }
+    void pr(const char* x) { cout << x; }
+    void pr(const string& x) { cout << x; }
+    void pr(bool x) { pr(x ? "true" : "false"); }
+    
     template<class T1, class T2> void pr(const pair<T1,T2>& x);
-    template<class T, size_t SZ> void pr(const array<T,SZ>& x);
-    template<class T> void pr(const vector<T>& x);
-    template<class T> void pr(const set<T>& x);
-    template<class T1, class T2> void pr(const map<T1,T2>& x);
-
-    template<class T> void pr(const T& x) { cout << x; }
-    template<class Arg, class... Args> void pr(const Arg& first, const Args&... rest) { 
-        pr(first); pr(rest...); 
+    template<class T> void pr(const T& x);
+    
+    template<class T, class... Ts> void pr(const T& t, const Ts&... ts) { 
+        pr(t); pr(ts...); 
     }
-
     template<class T1, class T2> void pr(const pair<T1,T2>& x) { 
         pr("{",x.f,", ",x.s,"}"); 
     }
-    template<class T> void prContain(const T& x) {
-        pr("{");
-        bool fst = 1; for (const auto& a: x) pr(!fst?", ":"",a), fst = 0; // const needed for vector<bool>
+    template<class T> void pr(const T& x) { 
+        pr("{"); // const iterator needed for vector<bool>
+        bool fst = 1; for (const auto& a: x) pr(!fst?", ":"",a), fst = 0; 
         pr("}");
     }
-    template<class T, size_t SZ> void pr(const array<T,SZ>& x) { prContain(x); }
-    template<class T> void pr(const vector<T>& x) { prContain(x); }
-    template<class T> void pr(const set<T>& x) { prContain(x); }
-    template<class T1, class T2> void pr(const map<T1,T2>& x) { prContain(x); }
     
-    void ps() { pr("\n"); }
-    template<class Arg> void ps(const Arg& first) { 
-        pr(first); ps(); // no space at end of line
+    void ps() { pr("\n"); } // print w/ spaces
+    template<class T, class... Ts> void ps(const T& t, const Ts&... ts) { 
+        pr(t); if (sizeof...(ts)) pr(" "); ps(ts...); 
     }
-    template<class Arg, class... Args> void ps(const Arg& first, const Args&... rest) { 
-        pr(first," "); ps(rest...); // print w/ spaces
+    
+    void pc() { pr("]\n"); } // debug w/ commas
+    template<class T, class... Ts> void pc(const T& t, const Ts&... ts) { 
+        pr(t); if (sizeof...(ts)) pr(", "); pc(ts...); 
     }
+    #define dbg(x...) pr("[",#x,"] = ["), pc(x);
 }
 
 using namespace output;

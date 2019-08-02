@@ -23,7 +23,10 @@ template<class T> struct modular {
         if (val < 0) val += MOD;
     }
     
-    friend ostream& operator<<(ostream& os, const modular& a) { return os << a.val; }
+    // friend ostream& operator<<(ostream& os, const modular& a) { return os << a.val; }
+    friend void pr(const modular& a) { pr(a.val); }
+    friend void re(modular& a) { ll x; re(x); a = modular(x); }
+   
     friend bool operator==(const modular& a, const modular& b) { return a.val == b.val; }
     friend bool operator!=(const modular& a, const modular& b) { return !(a == b); }
     friend bool operator<(const modular& a, const modular& b) { return a.val < b.val; }

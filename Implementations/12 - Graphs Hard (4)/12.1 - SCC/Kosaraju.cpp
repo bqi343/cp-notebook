@@ -4,7 +4,7 @@
  * Verification: POI 8 peaceful commission
  */
 
-template<int SZ> struct scc {
+template<int SZ> struct SCC {
     int N, comp[SZ];
     vi adj[SZ], radj[SZ], todo, allComp;
     bitset<SZ> visit;
@@ -22,7 +22,7 @@ template<int SZ> struct scc {
         trav(w,radj[v]) if (comp[w] == -1) dfs2(w,val);
     }
 
-    void genSCC(int _N) { // fills allComp
+    void init(int _N) { // fills allComp
         N = _N;
         F0R(i,N) comp[i] = -1, visit[i] = 0;
         F0R(i,N) if (!visit[i]) dfs(i);

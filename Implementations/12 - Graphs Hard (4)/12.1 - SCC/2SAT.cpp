@@ -7,8 +7,8 @@
  * Dependency: SCC
  */
 
-template<int SZ> struct twosat {
-    scc<2*SZ> S;
+template<int SZ> struct TwoSat {
+    SCC<2*SZ> S;
     int N;
 
     void OR(int x, int y) { S.addEdge(x^1,y); S.addEdge(y^1,x); }
@@ -18,7 +18,7 @@ template<int SZ> struct twosat {
     bitset<SZ> ans;
 
     bool solve(int _N) {
-        N = _N; S.genSCC(2*N);
+        N = _N; S.init(2*N);
         for (int i = 0; i < 2*N; i += 2) if (S.comp[i] == S.comp[i^1]) return 0;
         reverse(all(S.allComp));
         trav(i,S.allComp) if (tmp[i] == 0) tmp[i] = 1, tmp[S.comp[i^1]] = -1;

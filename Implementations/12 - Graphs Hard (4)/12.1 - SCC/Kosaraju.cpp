@@ -26,7 +26,7 @@ template<int SZ> struct SCC {
         N = _N;
         F0R(i,N) comp[i] = -1, visit[i] = 0;
         F0R(i,N) if (!visit[i]) dfs(i);
-        reverse(all(todo)); // toposort
+        reverse(all(todo)); // now todo stores vertices in order of topological sort
         trav(i,todo) if (comp[i] == -1) dfs2(i,i), allComp.pb(i);
     }
 };

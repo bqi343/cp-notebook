@@ -22,11 +22,11 @@ template<int SZ> struct BCC {
         trav(i,adj[u]) if (i != par[u])
             if (disc[i] == -1) {
                 child ++; par[i] = u; st.pb({u,i});
-                BCCutil(i); ckmin(low[u],low[i]);
+                bcc(i); ckmin(low[u],low[i]);
 
                 // disc[u] < low[i] -> bridge
                 if ((root && child > 1) || (!root && disc[u] <= low[i])) { 
-                    // articulation point, don't mark root as articulation point if only one child
+                    // u is articulation point, unless u is root and has only one child
                     vpi tmp;
                     while (st.back() != mp(u,i)) tmp.pb(st.back()), st.pop_back();
                     tmp.pb(st.back()), st.pop_back();
@@ -43,7 +43,7 @@ template<int SZ> struct BCC {
         FOR(i,1,N+1) par[i] = disc[i] = low[i] = -1;
         FOR(i,1,N+1) if (disc[i] == -1) {
             bcc(i,1);
-            if (sz(st)) fin.pb(st);
+            if (sz(st)) fin.pb(st); // stack might still have a BCC corresponding to root
             st.clear();
         }
     }

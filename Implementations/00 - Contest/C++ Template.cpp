@@ -25,7 +25,7 @@ typedef vector<pi> vpi;
 typedef vector<pl> vpl;
 typedef vector<cd> vcd;
 
-template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
+template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 #define FOR(i, a, b) for (int i = (a); i < (b); i++)
 #define F0R(i, a) for (int i = 0; i < (a); i++)

@@ -12,7 +12,7 @@ template<int SZ> struct Dinic {
     vector<Edge> adj[SZ];
 
     void addEdge(int u, int v, ll cap) {
-        assert(cap >= 0); // don't do smth dumb
+        assert(cap >= 0); // don't try smth dumb
         Edge a{v, sz(adj[v]), 0, cap}, b{u, sz(adj[u]), 0, 0};
         adj[u].pb(a), adj[v].pb(b);
     }
@@ -22,13 +22,11 @@ template<int SZ> struct Dinic {
     bool bfs() { // level = shortest distance from source
         // after computing flow, edges {u,v} such that level[u] \neq -1, level[v] = -1 are part of min cut
         F0R(i,SZ) level[i] = -1, ind[i] = 0;
-        level[ST] = 0; 
-        queue<int> q; q.push(ST);
+        queue<int> q; level[ST] = 0; q.push(ST);
         while (sz(q)) {
             int u = q.front(); q.pop();
             trav(e,adj[u]) if (level[e.v] < 0 && e.flow < e.cap) {
-                level[e.v] = level[u] + 1;
-                q.push(e.v);
+                level[e.v] = level[u]+1; q.push(e.v);
             }
         }
         return level[EN] >= 0;
@@ -39,7 +37,7 @@ template<int SZ> struct Dinic {
         for (  ; ind[s] < sz(adj[s]); ind[s] ++) {
             Edge& e = adj[s][ind[s]];
             if (level[e.v] != level[s]+1 || e.flow == e.cap) continue;
-            ll f = sendFlow(e.v, min(flow, e.cap-e.flow));
+            auto f = sendFlow(e.v, min(flow, e.cap-e.flow));
             if (f) { // saturated at least one edge
                 e.flow += f; adj[e.v][e.rev].flow -= f;
                 return f;

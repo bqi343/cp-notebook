@@ -14,7 +14,6 @@ template<class T> T poll(pqg<T>& x) {
 template<int SZ> struct Dijkstra {
     ll dist[SZ];
     vpi adj[SZ];
-    pqg<pl> q;
 
     void addEdge(int A, int B, int C) {
         adj[A].pb({B,C}); // adj[B].pb({A,C}); if undirected
@@ -22,7 +21,7 @@ template<int SZ> struct Dijkstra {
 
     void init(int st) {
         fill_n(dist,SZ,INF);
-        q = pqg<pl>(); q.push({dist[st] = 0,st});
+        pqg<pl> q; q.push({dist[st] = 0,st});
     	while (sz(q)) {
     		auto x = poll(q); if (dist[x.s] < x.f) continue;
     		trav(y,adj[x.s]) if (x.f+y.s < dist[y.f])

@@ -1,7 +1,7 @@
 /**
  * Description: Compute max flow between every pair of vertices of undirected graph
- * Verification: CF Pumping?
  * Source: Own
+ * Verification: https://codeforces.com/problemset/problem/343/E
  */
 
 template<int SZ> struct GomoryHu {

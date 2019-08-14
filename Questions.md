@@ -58,7 +58,7 @@ Unfortunately, I usually submit without reading it.
 
 > What do you think about virtual contests?
 
-I don't do virtual contests.
+I don’t believe that I have ever finished a virtual contest while strictly adhering to the time limit. It’s not as fun as a real contest. :(
 
 > Can you describe in one sentence how to be good at competitive programming?
 
@@ -72,7 +72,7 @@ Mostly just looking stuff up along the way.
 
 I use https://csacademy.com/ LOL. If that doesn't work I use Ideone or sublime text w/ command line. At IOI I used Geany.
 
-[Why the downvotes?](https://codeforces.com/blog/entry/63065?#comment-469907)
+[Why the downvotes? :(](https://codeforces.com/blog/entry/63065?#comment-469907)
 
 > Do you use a debugger?
 

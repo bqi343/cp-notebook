@@ -4,9 +4,10 @@
  * Verification: 
 	* Kattis stringmultimatching
 	* https://codeforces.com/contest/710/problem/F
+	* https://codeforces.com/contest/1207/problem/G
  */
 
-template<int SZ> struct AhoCorasick {
+template<int SZ> struct AhoCorasick { // arbitrary alphabet
 	int sz = 1, link[SZ]; 
 	map<char,int> to[SZ];
 
@@ -20,7 +21,6 @@ template<int SZ> struct AhoCorasick {
 	}
 
 	int nex(int j, char c) { // state after adding character
-		// if alphabet size is limited, speed up with memoization 
 		while (j != -1 && !to[j].count(c)) j = link[j];
 		return j == -1 ? 0 : to[j][c]; 
 	}
@@ -39,10 +39,14 @@ template<int SZ> struct AhoCorasick {
 	}
 };
 
-template<int SZ> struct AhoCorasick {
+template<int SZ> struct AhoCorasick { // fixed alphabet
 	int sz = 1, link[SZ]; 
 	array<int,26> to[SZ];
 
+	AhoCorasick() {
+		F0R(i,SZ) to[i] = array<int,26>();
+	}
+    
 	int add(string s) { // add word
 		int v = 0;
 		trav(C,s) {
@@ -59,7 +63,7 @@ template<int SZ> struct AhoCorasick {
 		while (sz(q)) {
 			int v = q.front(); q.pop();
 			F0R(c,26) if (to[v][c]) {
-			    int u = to[v][c];
+				int u = to[v][c];
 				link[u] = link[v] == -1 ? 0 : to[link[v]][c];
 				q.push(u); 
 			}

@@ -44,6 +44,7 @@
 
 ## 6
   * [KD Tree](https://github.com/kth-competitive-programming/kactl/blob/master/content/geometry/kdTree.h)
-  * [Delaunay Triangulation](https://cp-algorithms.com/geometry/delaunay.html)
+  * Delaunay Triangulation
+    * [CP-Algo Tutorial + Implementation](https://cp-algorithms.com/geometry/delaunay.html)
     * [KACTL](https://github.com/kth-competitive-programming/kactl/blob/master/content/geometry/FastDelaunay.h)
     * [CCO 2008 Landing](https://dmoj.ca/problem/cco08p6)

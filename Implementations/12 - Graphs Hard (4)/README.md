@@ -35,3 +35,7 @@
       * [Proving Equivalences](https://open.kattis.com/problems/equivalences) [](78)
       * [Festival](https://szkopul.edu.pl/problemset/problem/p9uJo01RR9ouMLLAYroFuQ-7/site/?key=statement) [](173)
         * [Linear Programming Trick](https://www.cs.rit.edu/~spr/COURSES/ALG/MIT/lec18.pdf)
+
+## 6
+  * Advanced Stuff
+    * [DeobureoMinkyuParty ICPC Notebook](https://github.com/koosaga/DeobureoMinkyuParty/blob/master/teamnote.pdf)

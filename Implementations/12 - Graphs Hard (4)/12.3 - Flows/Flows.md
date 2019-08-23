@@ -20,6 +20,7 @@
 	* Hopcroft-Karp Bipartite Matching
 	* Dinic's Algorithm
 	* Push-Relabel
+    * [Fast Flow Implementation - Chilli](https://codeforces.com/blog/entry/66006)
   * Minimum Cost Flow
 	* Tutorial
 	  * [TopCoder](https://www.topcoder.com/community/data-science/data-science-tutorials/minimum-cost-flow-part-two-algorithms/)

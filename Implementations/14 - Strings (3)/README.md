@@ -1,6 +1,7 @@
 # Strings
 
 [CPC.11](https://github.com/SuprDewd/T-414-AFLV/tree/master/11_strings)
+[CP-Algorithms String Processing](https://cp-algorithms.com/)
 
 ## 3
   * Hashing

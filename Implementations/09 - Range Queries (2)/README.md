@@ -41,7 +41,8 @@
         * [Codeforces Tutorial](http://codeforces.com/blog/entry/18051)
         * Special: Minimum Query w/ Number of Minimums
       * BIT with range modification
-        * [GeeksForGeeks](http://www.geeksforgeeks.org/binary-indexed-tree-range-updates-point-queries/)
+        * [GeeksForGeeks Range-Update Point-Query](http://www.geeksforgeeks.org/binary-indexed-tree-range-updates-point-queries/)
+        * [GFG Range-Update Range-Query](https://www.geeksforgeeks.org/binary-indexed-tree-range-update-range-queries/)
       * Problems
         * [A2OJ](https://a2oj.com/category?ID=25)
     * 2D

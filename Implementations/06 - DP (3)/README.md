@@ -43,12 +43,13 @@
       * [Digit DP](http://codeforces.com/blog/entry/53960)
     * Problem(s)
       * [A2OJ](https://a2oj.com/category?ID=315)
-  * [DP Problems](http://codeforces.com/blog/entry/325)
-  * [More Optimizations](http://codeforces.com/blog/entry/8219)
   * SOS DP
-  * Convex / Priority Queue
+  * [Slope Trick (zscoder)](http://codeforces.com/blog/entry/47821)
     * [Buy Low Sell High](https://codeforces.com/contest/866/problem/D)
     * [Wall](https://atcoder.jp/contests/kupc2016/tasks/kupc2016_h)
     * [Potatoes](https://oj.uz/problem/view/LMIO19_bulves)
     * [Stock Trading](https://probgate.org/viewproblem.php?pid=531&cid=81)
     * [April Fools' Problem](https://codeforces.com/contest/802/problem/O)
+  * Misc
+    * [DP Problems](http://codeforces.com/blog/entry/325)
+    * [More Optimizations](http://codeforces.com/blog/entry/8219)

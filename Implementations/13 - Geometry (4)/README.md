@@ -33,8 +33,7 @@
         * [Wikipedia](https://en.wikipedia.org/wiki/Convex_hull_algorithms)
         * Andrew's Monotone Chain (I prefer)
         * Graham Scan
-      * Slope Trick
-        * [zscoder](http://codeforces.com/blog/entry/47821)
+      * Additional
         * [Lichao Segment Tree](http://codeforces.com/blog/entry/51275?#comment-351510)
         * LineContainer
     * Problem(s)

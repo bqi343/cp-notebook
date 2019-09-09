@@ -1,19 +1,21 @@
 /**
- * Description: Given set of lines, computes the greatest y-coordinate for any x
+ * Description: Given set of lines, computes greatest y-coordinate for any x
  * Source: KACTL
+   * https://codeforces.com/blog/entry/63823?#comment-477568
  * Verification: 
-   * CSA Squared Ends
+   * CSA Squared Ends not working :(
+   * https://codeforces.com/contest/1083/problem/E
    * https://atcoder.jp/contests/arc066/tasks/arc066_d
  */
 
-bool Q;
 struct Line {
 	mutable ll k, m, p; // slope, y-intercept, last optimal x
 	ll eval (ll x) { return k*x+m; }
-	bool operator<(const Line& o) const { return Q ? p < o.p : k < o.k; }
+	bool operator<(const Line& o) const { return k < o.k; }
+	bool operator<(ll x) const { return p < x; }
 };
 
-struct LC : multiset<Line> { 
+struct LC : multiset<Line,less<>> { 
 	// for doubles, use inf = 1/.0, div(a,b) = a/b
 	const ll inf = LLONG_MAX;
 	ll div(ll a, ll b) { return a/b-((a^b) < 0 && a%b); } // floored division
@@ -33,10 +35,10 @@ struct LC : multiset<Line> {
 		while ((y = x) != begin() && (--x)->p >= y->p) isect(x, erase(y));
 	}
 	
-	ll query(ll x) { 
+	ll query(ll x) {
 		assert(!empty());
-		Q = 1; auto l = *lb({0,0,x}); Q = 0;
-		return l.eval(x);
+		auto l = *lower_bound(x);
+		return l.k * x + l.m;
 	}
 };
 

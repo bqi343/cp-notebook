@@ -75,7 +75,8 @@ namespace io {
     void setIn(string s) { freopen(s.c_str(),"r",stdin); }
     void setOut(string s) { freopen(s.c_str(),"w",stdout); }
     void setIO(string s = "") {
-        ios_base::sync_with_stdio(0); cin.tie(0); // fast I/O
+        cin.sync_with_stdio(0); cin.tie(0); // fast I/O
+        cin.exceptions(cin.failbit); // ex. throws exception when you try to read letter into int
         if (sz(s)) { setIn(s+".in"), setOut(s+".out"); } // for USACO
     }
 }

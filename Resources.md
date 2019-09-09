@@ -48,10 +48,11 @@ There are many reasons to use C++11 over Java, such as
 
   * [ICPC World Finals (Kattis)](https://icpc.kattis.com/problems)
   * [Stanford](http://web.stanford.edu/class/cs97si/)
-  * [KACTL](https://github.com/kth-competitive-programming/kactl)
   * [Virginia Tech](https://icpc.cs.vt.edu/#/)
   * [Carnegie-Mellon](https://contest.cs.cmu.edu/295/f17/)
   * [ICPCGate](https://icpcgate.org/contest/index.php)
+  * [KACTL](https://github.com/kth-competitive-programming/kactl)
+    * [MIT ICPC Book (based off above)](https://github.com/ecnerwala/icpc-book)
 
 ### Other
 

@@ -39,16 +39,23 @@ namespace vecOp {
     }
     template<class T> vector<T>& operator*=(vector<T>& l, const vector<T>& r) { return l = l*r; }
     
-    template<class T> pair<vector<T>,vector<T>> qr(vector<T> a, const vector<T>& b) { // quotient and remainder
-        assert(sz(b) && b.back() == 1);
+    template<class T> pair<vector<T>,vector<T>> qr(vector<T> a, vector<T> b) { // quotient and remainder
+        auto B = b.back(); assert(sz(b) && B != 0);
+        B = 1/B; trav(t,b) t *= B;
+        
         remLead(a); vector<T> q(max(sz(a)-sz(b)+1,0));
         while (sz(a) >= sz(b)) {
             q[sz(a)-sz(b)] = a.back();
             a -= a.back()*shift(b,sz(a)-sz(b));
             remLead(a);
         }
+        
+        trav(t,q) t *= B;
         return {q,a};
     }
+    template<class T> vector<T> quo(const vector<T>& a, const vector<T>& b) { return qr(a,b).f; }
+    template<class T> vector<T> rem(const vector<T>& a, const vector<T>& b) { return qr(a,b).s; }
+    
     template<class T> vector<T> interpolate(vector<pair<T,T>> v) {
         vector<T> ret, prod = {1};
         F0R(i,sz(v)) {

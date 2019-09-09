@@ -1,57 +1,47 @@
 /**
  * Description: Berlekamp-Massey Algorithm
     * https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm
-    * Note: you may need to add a lot of terms, as the shortest recurrence might not be the correct one ...
+    * Note: always exists recurrence of length ~N for any sequence of size 2N (so you should input more than 2N terms)
  * Source: 
     * http://codeforces.com/blog/entry/61306
+    * MIT ICPC notebook
  * Verification: http://codeforces.com/contest/506/problem/E
  */
 
 using namespace vecOp;
 
 struct LinRec {
-    vector<vmi> seq;
-    vmi x, delta, des;
-    vi fail;
-
-    void init(vmi _x) {
-        x = _x; seq.pb({}); int best = 0;
-
-        F0R(i,sz(x)) {
-            delta.pb(-x[i]);
-            F0R(j,sz(seq.back())) delta[i] += x[i-j-1]*seq.back()[j];
-            if (delta[i] == 0) continue;
-
-            fail.pb(i); if (sz(seq) == 1) { seq.pb(vmi(i+1)); continue; }
-
-            auto k = -delta[i]/delta[fail[best]];
-            vmi cur(i-fail[best]-1); cur.pb(-k);
-            trav(a, seq[best]) cur.pb(a*k);
-
-            cur += seq.back();
-            if (i-fail[best]+sz(seq[best]) >= sz(seq.back())) best = sz(seq)-1;
-                // take fail vector with smallest size
-
-            seq.pb(cur);
+    vmi x; // original sequence
+    vmi C, rC;
+    
+    void init(const vmi& _x) {
+        x = _x; int n = sz(x), m = 0;
+        vmi B; B = C = {1}; // B is fail vector
+    
+        mi b = 1; // B gives 0,0,0,...,b
+        F0R(i,n) {
+            m ++;
+            mi d = x[i]; FOR(j,1,sz(C)) d += C[j]*x[i-j];
+            if (d == 0) continue; // recurrence still works
+            auto _B = C; C.rsz(max(sz(C),m+sz(B)));
+            mi coef = d/b; FOR(j,m,m+sz(B)) C[j] -= coef*B[j-m]; // recurrence that gives 0,0,0,...,d
+            if (sz(_B) < m+sz(B)) { B = _B; b = d; m = 0; }
         }
-
-        F0Rd(i,sz(seq.back())) des.pb(-seq.back()[i]);
-        des.pb(1);
+    
+        rC = C; reverse(all(rC)); // polynomial for getPo
+        C.erase(begin(C)); trav(t,C) t *= -1; // x[i]=sum_{j=0}^{sz(C)-1}C[j]*x[i-j-1]
     }
-
+    
     vmi getPo(int n) {
         if (n == 0) return {1};
-        vmi x = getPo(n/2); x = rem(x*x,des);
-        if (n&1) {
-            vmi v = {0,1};
-            x = rem(x*v,des);
-        }
+        vmi x = getPo(n/2); x = rem(x*x,rC);
+        if (n&1) { vmi v = {0,1}; x = rem(x*v,rC); }
         return x;
     }
 
-    int get(int n) {
+    mi get(int n) {
         vmi t = getPo(n);
-        mi ANS = 0; F0R(i,sz(t)) ANS += t[i]*x[i];
-        return (int)ANS;
+        mi ans = 0; F0R(i,sz(t)) ans += t[i]*x[i];
+        return ans;
     }
 };

@@ -8,23 +8,21 @@
 
 using namespace Point;
 
-vP convex_hull(vP P) {
-    sort(all(P)); P.erase(unique(all(P)),P.end());
-    int n = sz(P); if (n <= 1) return P;
-    
-    vP bot = {P[0]};
-    FOR(i,1,n) {
-        while (sz(bot) > 1 && cross(bot[sz(bot)-2], bot.back(), P[i]) <= 0) bot.pop_back();
-        bot.pb(P[i]);
+pair<vi,vi> ulHull(const vP& P) {
+    vi p(sz(P)), u, l;
+    iota(all(p), 0);
+    sort(all(p), [&P](int a, int b) { return P[a] < P[b]; });
+    trav(i,p) {
+        #define ADDP(C, cmp) while (sz(C) > 1 && cross(\
+            P[C[sz(C)-2]],P[C.back()],P[i]) cmp 0) C.pop_back(); C.pb(i);
+        ADDP(u, >=); ADDP(l, <=);
     }
-    bot.pop_back();
-    
-    vP up = {P[n-1]};
-    F0Rd(i,n-1) {
-        while (sz(up) > 1 && cross(up[sz(up)-2], up.back(), P[i]) <= 0) up.pop_back();
-        up.pb(P[i]);
-    }
-    up.pop_back();
-    
-    bot.insert(bot.end(),all(up)); return bot;
+    return {u,l};
+}
+
+vi convexHull(const vP& P) {
+    vi u,l; tie(u,l) = ulHull(P);
+    if (sz(l) <= 1) return l;
+    if (P[l[0]] == P[l[1]]) return {0};
+    l.insert(end(l),rbegin(u)+1,rend(u)-1); return l;
 }

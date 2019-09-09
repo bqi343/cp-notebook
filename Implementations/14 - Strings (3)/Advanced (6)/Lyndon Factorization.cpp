@@ -12,7 +12,7 @@ vector<string> duval(const string& s) {
             if (s[k] < s[j]) k = i;
             else k ++;
         }
-        for (; i <= k; i += j-k) factors.pb(s.substr(i, j - k));
+        for (; i <= k; i += j-k) factors.pb(s.substr(i, j-k));
     }
     return factors;
 }

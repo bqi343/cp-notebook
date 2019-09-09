@@ -8,6 +8,16 @@
 namespace vecOp {
     template<class T> vector<T> rev(vector<T> v) { reverse(all(v)); return v; }
     template<class T> vector<T> shift(vector<T> v, int x) { v.insert(v.begin(),x,0); return v; }
+    template<class T> vector<T> integ(const vector<T>& v)  {
+        vector<T> res(sz(v)+1);
+        F0R(i,sz(v)) res[i+1] = v[i]/(i+1);
+        return res;
+    }
+    template<class T> vector<T> dif(const vector<T>& v)  {
+        if (!sz(v)) return v;
+        vector<T> res(sz(v)-1); FOR(i,1,sz(v)) res[i-1] = i*v[i];
+        return res;
+    }
     template<class T> vector<T>& remLead(vector<T>& v) { 
         while (sz(v) && v.back() == 0) v.pop_back();
         return v;

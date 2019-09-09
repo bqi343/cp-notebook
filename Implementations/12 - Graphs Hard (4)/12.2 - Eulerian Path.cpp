@@ -1,59 +1,40 @@
 /**
  * Description: O(N+M) Euler Path for both directed and undirected graphs
- * Source: USACO Training
+ * Source: 
+    * USACO Training
+    * MIT ICPC Notebook
  * Verification:
     * directed: https://open.kattis.com/problems/eulerianpath
     * undirected: USACO Training 3.3, Riding the Fences
  */
 
 template<int SZ, bool directed> struct Euler {
-    int N, M;
-    vpi adj[SZ], circuit;
-    int out[SZ], in[SZ], deg[SZ];
-    bool bad;
+    int N, M = 0;
+    vpi adj[SZ];
+    vpi::iterator its[SZ];
     vector<bool> used;
 
-    void clear() {
-        FOR(i,1,N+1) adj[i].clear();
-        circuit.clear(); used.clear();
-        FOR(i,1,N+1) out[i] = in[i] = deg[i] = 0;
-        N = M = bad = 0;
-    }
-
-    void dfs(int pre, int cur) {
-        while (sz(adj[cur])) {
-            pi x = adj[cur].back(); adj[cur].pop_back();
-            if (used[x.s]) continue; // edge is already part of path
-            used[x.s] = 1; dfs(cur,x.f);
-        }
-        if (sz(circuit) && circuit.back().f != cur) bad = 1;
-        circuit.pb({pre,cur}); // generate circuit in reverse order
-    }
-
     void addEdge(int a, int b) {
-        if (directed) {
-            adj[a].pb({b,M});
-            out[a] ++, in[b] ++;
-        } else {
-            adj[a].pb({b,M}), adj[b].pb({a,M});
-            deg[a] ++, deg[b] ++;
-        }
+        if (directed) adj[a].pb({b,M});
+        else adj[a].pb({b,M}), adj[b].pb({a,M});
         used.pb(0); M ++;
     }
 
-    vi solve(int _N) { // vertices are 1-indexed
-        N = _N;
-        int start = 1; FOR(i,1,N+1) if (deg[i] || in[i] || out[i]) start = i;
-        FOR(i,1,N+1)  {
-            if (directed) {
-                if (out[i]-in[i] == 1) start = i;
-            } else {
-                if (deg[i]&1) start = i;
-            }
+    vpi solve(int _N, int src = 1) {
+        N = _N; 
+        FOR(i,1,N+1) its[i] = begin(adj[i]);
+        vector<pair<pi,int>> ret, s = {{{src,-1},-1}};
+        while (sz(s)) {
+            int x = s.back().f.f;
+            auto& it = its[x], end = adj[x].end();
+            while (it != end && used[it->s]) it ++;
+            if (it == end) { 
+                if (sz(ret) && ret.back().f.s != s.back().f.f) return {}; // path isn't valid
+                ret.pb(s.back()), s.pop_back(); 
+            } else { s.pb({{it->f,x},it->s}); used[it->s] = 1; }
         }
-        dfs(-1,start);
-        if (sz(circuit) != M+1 || bad) return {}; // no sol
-        vi ans; F0Rd(i,sz(circuit)) ans.pb(circuit[i].s);
-        return ans;
+        if (sz(ret) != M+1) return {};
+        vpi ans; trav(t,ret) ans.pb({t.f.f,t.s});
+        reverse(all(ans)); return ans;
     }
 };

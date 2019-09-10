@@ -7,44 +7,40 @@
 
 template<int SZ> struct BCC {
     int N;
-    vi adj[SZ];
-    vector<vpi> fin;
+    vpi adj[SZ], ed;
 
-    void addEdge(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
+    void addEdge(int u, int v) { 
+        adj[u].pb({v,sz(ed)}), 
+        adj[v].pb({u,sz(ed)}); 
+        ed.pb({u,v});
+    }
 
-    int ti = 0, disc[SZ], low[SZ], comp[SZ], par[SZ];
-    vpi st;
+    int ti = 0, disc[SZ];
+    vi st; vector<vi> fin;
 
-    void bcc(int u, bool root = 0) {
-        disc[u] = low[u] = ti++;
+    int bcc(int u, int p = -1) { // return lowest disc
+        disc[u] = ++ti; int low = disc[u];
         int child = 0;
-
-        trav(i,adj[u]) if (i != par[u])
-            if (disc[i] == -1) {
-                child ++; par[i] = u; st.pb({u,i});
-                bcc(i); ckmin(low[u],low[i]);
-
-                // disc[u] < low[i] -> bridge
-                if ((root && child > 1) || (!root && disc[u] <= low[i])) { 
-                    // u is articulation point, unless u is root and has only one child
-                    vpi tmp;
-                    while (st.back() != mp(u,i)) tmp.pb(st.back()), st.pop_back();
+        trav(i,adj[u]) if (i.s != p)
+            if (!disc[i.f]) {
+                child ++; st.pb(i.s);
+                int LOW = bcc(i.f,i.s); ckmin(low,LOW);
+                // disc[u] < LOW -> bridge
+                if (disc[u] <= LOW) { 
+                    // if (p != -1 || child > 1) -> u is articulation point
+                    vi tmp; while (st.back() != i.s) tmp.pb(st.back()), st.pop_back();
                     tmp.pb(st.back()), st.pop_back();
                     fin.pb(tmp); 
                 }
-            } else if (disc[i] < disc[u]) {
-                ckmin(low[u],disc[i]);
-                st.pb({u,i});
+            } else if (disc[i.f] < disc[u]) {
+                ckmin(low,disc[i.f]);
+                st.pb(i.s);
             }
+        return low;
     }
 
     void init(int _N) {
-        N = _N;
-        FOR(i,1,N+1) par[i] = disc[i] = low[i] = -1;
-        FOR(i,1,N+1) if (disc[i] == -1) {
-            bcc(i,1);
-            if (sz(st)) fin.pb(st); // stack might still have a BCC corresponding to root
-            st.clear();
-        }
+        N = _N; FOR(i,1,N+1) disc[i] = 0;
+        FOR(i,1,N+1) if (!disc[i]) bcc(i); // st should be empty after each iteration
     }
 };

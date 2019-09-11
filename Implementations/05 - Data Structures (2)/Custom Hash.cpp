@@ -22,10 +22,9 @@ struct custom_hash {
     }
 };
 
-template<class T> using um = unordered_map<ll, T, custom_hash>;
-template<class T> using ht = gp_hash_table<ll, T, custom_hash>;
+template<class K, class V> using um = unordered_map<K, V, custom_hash>;
+template<class K, class V> using ht = gp_hash_table<K, V, custom_hash>;
 
-template<class T> T get(ht<T>& u, ll x) {
-   if (u.find(x) == u.end()) return 0;
-   return u[x];
+template<class K, class V> V get(ht<K,V>& u, K x) {
+    return u.find(x) == end(u) ? 0 : u[x];
 }

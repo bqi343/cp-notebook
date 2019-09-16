@@ -9,8 +9,7 @@
 using namespace Point;
 
 pair<vi,vi> ulHull(const vP& P) {
-    vi p(sz(P)), u, l;
-    iota(all(p), 0);
+    vi p(sz(P)), u, l; iota(all(p), 0);
     sort(all(p), [&P](int a, int b) { return P[a] < P[b]; });
     trav(i,p) {
         #define ADDP(C, cmp) while (sz(C) > 1 && cross(\

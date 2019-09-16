@@ -10,6 +10,7 @@ using namespace std;
 using namespace __gnu_pbds;
 using namespace __gnu_cxx;
  
+typedef string str;
 typedef long long ll;
 typedef long double ld;
 typedef complex<ld> cd;

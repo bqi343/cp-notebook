@@ -112,15 +112,15 @@ namespace Point {
         return ans ? "in" : "out";
     }
 
-    pair<P,double> ccCenter(P a, P b, P c) { // circumcenter
+    pair<P,T> ccCenter(P a, P b, P c) { // circumcenter
         b -= a; c -= a;
         P res = b*c*(conj(c)-conj(b))/(b*conj(c)-conj(b)*c);
         return {a+res,abs(res)};
     }
      
-    pair<P, double> mec(vP ps) { // minimum enclosing circle, ex. USACO Camp 2019 Contest 2 #4
+    pair<P, T> mec(vP ps) { // minimum enclosing circle, ex. USACO Camp 2019 Contest 2 #4
         shuffle(all(ps), mt19937(time(0)));
-        P o = ps[0]; double r = 0, EPS = 1 + 1e-8;
+        P o = ps[0]; T r = 0, EPS = 1 + 1e-8;
         F0R(i,sz(ps)) if (abs(o-ps[i]) > r*EPS) {
             o = ps[i], r = 0;
             F0R(j,i) if (abs(o-ps[j]) > r*EPS) {

@@ -16,17 +16,17 @@ template<int MX, int MXBIT> struct Trie {
     void ins(ll x, int a = 1) { // insert or delete
         int cur = 0; sz[cur] += a;
         F0Rd(i,MXBIT) {
-            int t = (x&(1LL<<i))>>i;
+            int t = (x>>i)&1;
             if (!nex[cur][t]) nex[cur][t] = ++num;
             sz[cur = nex[cur][t]] += a;
         }
     }
 
     ll test(ll x) { // compute max xor
-        if (sz[0] == 0) return -INF; // no elements in trie
+        if (!sz[0]) return -INF; // no elements in trie
         int cur = 0;
         F0Rd(i,MXBIT) {
-            int t = ((x&(1LL<<i))>>i) ^ 1;
+            int t = ((x>>i)&1)^1;
             if (!nex[cur][t] || !sz[nex[cur][t]]) t ^= 1;
             cur = nex[cur][t]; if (t) x ^= 1LL<<i;
         }

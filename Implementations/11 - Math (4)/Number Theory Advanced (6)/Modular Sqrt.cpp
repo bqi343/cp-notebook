@@ -4,15 +4,15 @@
  * Verification: https://www.spoj.com/problems/CRYPTO1
  */
 
-ll modsqrt(mi a) { // change modular int to accept long longs
-    mi p = exp(a,(MOD-1)/2); if (p != 1) return p == 0 ? 0 : -1;
-    ll s = MOD-1, e = 0; while (s % 2 == 0) s /= 2, e ++;
-    mi n = 1; while (exp(n,(MOD-1)/2) == 1) n = (ll)(n)+1; // find non-square residue
+template<class T> T sqrt(modular<T> a) { 
+    auto p = pow(a,(MOD-1)/2); if (p != 1) return p == 0 ? 0 : -1; // check if zero or does not have sqrt
+    T s = MOD-1, e = 0; while (s % 2 == 0) s /= 2, e ++;
+    modular<T> n = 1; while (pow(n,(MOD-1)/2) == 1) n = (T)(n)+1; // find non-square residue
 
-    mi x = exp(a,(s+1)/2), b = exp(a,s), g = exp(n,s);
+    auto x = pow(a,(s+1)/2), b = pow(a,s), g = pow(n,s);
     int r = e;
     while (1) {
-        mi B = b; int m = 0; while (B != 1) B *= B, m ++;
+        auto B = b; int m = 0; while (B != 1) B *= B, m ++;
         if (m == 0) break;
         F0R(i,r-m-1) g *= g;
         x *= g; g *= g; b *= g; r = m;
@@ -29,5 +29,5 @@ ll modsqrt(mi a) { // change modular int to accept long longs
          * m decreases by at least one each iteration
          */
     }
-    return min((ll)x,MOD-(ll)x);
+    return min((T)x,MOD-(T)x);
 }

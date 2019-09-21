@@ -1,6 +1,7 @@
 /**
  * Description: misc operations with circles
  * Source: Own
+ 	* also see http://mathworld.wolfram.com/Circle-CircleIntersection.html
  * Verification: USACO Laser Cows, https://codefights.com/tournaments/s8thqrnQL2YPK7XQt/L
  */
 

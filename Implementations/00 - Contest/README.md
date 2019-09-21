@@ -16,7 +16,9 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 
 # Snippets
 
-TopCoder (testing from web arena is inconvenient):
+TopCoder:
+
+[New Java Applet](https://codeforces.com/blog/entry/64597) (use ctrl-c instead of command-c on mac ...)
 
 ```
 class C {
@@ -44,7 +46,7 @@ void inp(vi& v) { // common way to reduce amount of input
 
 void solve(int caseNum) {
     cerr << "Doing #" << caseNum << "\n";
-    
+
 }
 
 int main() {

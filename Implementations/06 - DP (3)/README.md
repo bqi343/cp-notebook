@@ -48,6 +48,7 @@
     * [Buy Low Sell High](https://codeforces.com/contest/866/problem/D)
     * [Wall](https://atcoder.jp/contests/kupc2016/tasks/kupc2016_h)
     * [Potatoes](https://oj.uz/problem/view/LMIO19_bulves)
+    * [Moving Walkways](https://codeforces.com/contest/1209/problem/H)
     * [Stock Trading](https://probgate.org/viewproblem.php?pid=531&cid=81)
     * [April Fools' Problem](https://codeforces.com/contest/802/problem/O)
   * Misc

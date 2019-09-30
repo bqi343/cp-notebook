@@ -11,6 +11,7 @@ using namespace __gnu_pbds;
 using namespace __gnu_cxx;
  
 typedef string str;
+typedef double d;
 typedef long long ll;
 typedef long double ld;
 typedef complex<ld> cd;
@@ -28,11 +29,11 @@ typedef vector<cd> vcd;
 
 template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
-#define FOR(i, a, b) for (int i = (a); i < (b); i++)
-#define F0R(i, a) for (int i = 0; i < (a); i++)
-#define FORd(i,a,b) for (int i = (b)-1; i >= (a); i--)
-#define F0Rd(i,a) for (int i = (a)-1; i >= 0; i--)
-#define trav(a, x) for (auto& a : x)
+#define FOR(i,a,b) for (int i = (a); i < (b); i++)
+#define F0R(i,a) FOR(i,0,a)
+#define ROF(i,a,b) for (int i = (b)-1; i >= (a); i--)
+#define R0F(i,a) ROF(i,0,a)
+#define trav(a,x) for (auto& a : x)
 
 #define mp make_pair
 #define pb push_back
@@ -50,8 +51,8 @@ const ll INF = 1e18;
 const int MX = 200005;
 const ld PI = 4*atan((ld)1);
 
-template<class T> void ckmin(T &a, T b) { a = min(a, b); }
-template<class T> void ckmax(T &a, T b) { a = max(a, b); }
+template<class T> bool ckmin(T& a, const T& b) { return a > b ? a = b, 1 : 0; }
+template<class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 

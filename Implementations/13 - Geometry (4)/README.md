@@ -52,3 +52,4 @@
     * Problems
       * [CCO 2008 Landing](https://dmoj.ca/problem/cco08p6)
       * [Panda Preserve](https://icpc.kattis.com/problems/pandapreserve)
+  * [Geometry Special Contest](https://codeforces.com/gym/101793)

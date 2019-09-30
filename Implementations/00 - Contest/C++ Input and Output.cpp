@@ -41,6 +41,7 @@ namespace output {
     void pr(const char* x) { cout << x; }
     void pr(const string& x) { cout << x; }
     void pr(bool x) { pr(x ? "true" : "false"); }
+    template<class T> void pr(const complex<T>& x) { cout << x; }
     
     template<class T1, class T2> void pr(const pair<T1,T2>& x);
     template<class T> void pr(const T& x);

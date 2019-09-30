@@ -26,6 +26,10 @@ I tried to add everything I could think of.
 
 I hope the links in implementations will suffice.
 
+> Hey, could you help me get started with competitive programming. I looked at your guide, but some resources were quite difficult.
+
+Look at the resources again; I think that CPH is definitely okay for beginners.
+
 > I have covered the basic concepts of topics like Number Theory, Greedy Algorithm, Dynamic Programming, Graph Theory, but I am unable to do contest questions C and D, will you please help me
 
 > I am facing problems at DP problems. I am currently thinking that first I learn all DS like(fft, persistance etc) and after that start practicing. or sholud I start practice and learn DS whenever it required ? I fill that to solve DIV-1 C,D problems advanced DS is must am I right ?
@@ -172,9 +176,15 @@ no
 
 the former
 
+> When did you start
+
+the summer after 8th grade
+
 > Did you study in USACO camps or by yourself
 
-mostly the latter
+> Are you like entirely self taught, or did you have any tutoring.
+
+mostly self, haven't had any tutors
 
 > what is your view on mathematics for CP? Is it highly required for one to be really good at discrete math to advance to the next level?
 
@@ -187,6 +197,10 @@ Other than doing past IOI tasks, I didn't do anything specifically for IOI ...
 > it will be very helpfull if u write a blog for trick open close interval dp .there are some questions having 3 dimension using concepts of open close interval . i m not albe to get them
 
 what even is that lol
+
+> Pls which calendar do u use to structure ur coding schedule.
+
+google
 
 > hi
 

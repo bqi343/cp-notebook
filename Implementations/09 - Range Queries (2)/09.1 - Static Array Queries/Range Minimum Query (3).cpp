@@ -15,7 +15,7 @@ template<class T, int SZ> struct RMQ {
     
     void init(const vector<T>& _v) {
         v = _v; F0R(i,sz(v)) stor[i][0] = i; 
-        FOR(j,1,level(sz(v))+1) F0R(i,sz(v)-(1<<(j-1))) 
+        FOR(j,1,level(sz(v))+1) F0R(i,sz(v)-(1<<j)+1) 
             stor[i][j] = comb(stor[i][j-1],stor[i+(1<<(j-1))][j-1]);
     }
     

@@ -5,6 +5,7 @@
  */
 
 typedef ld T;
+template <class T> int sgn(T x) { return (x > 0) - (x < 0); }
 
 namespace Point {
     typedef pair<T,T> P;
@@ -39,45 +40,39 @@ namespace Point {
     T dot(P a, P b) { return (conj(a)*b).f; }
     T cross(P a, P b) { return (conj(a)*b).s; }
     T cross(P p, P a, P b) { return cross(a-p,b-p); }
-    T dist(P p, P a, P b) { return std::abs(cross(p,a,b))/abs(a-b); }
-    
     P rotate(P a, T b) { return a*P(cos(b),sin(b)); }
+    
+    T dist(P p, P a, P b) { return std::abs(cross(p,a,b))/abs(a-b); }
     P reflect(P p, P a, P b) { return a+conj((p-a)/(b-a))*(b-a); }
     P foot(P p, P a, P b) { return (p+reflect(p,a,b))/(T)2; }
-    P extension(P a, P b, P c, P d) {
+    bool onSeg(P p, P a, P b) { 
+        return cross(a,b,p) == 0 && dot(p-a,p-b) <= 0;
+    }
+
+    // computes the intersection of line segments AB, CD
+    // verification: https://open.kattis.com/problems/segmentintersection
+    P extension(P a, P b, P c, P d) { // computes the intersection of lines AB, CD
         T x = cross(a,b,c), y = cross(a,b,d);
         return (d*x-c*y)/(x-y);
     }
-    // computes the intersection of line segments AB, CD
-    // verification: https://open.kattis.com/problems/segmentintersection
-    vP segIntersect(P a, P b, P c, P d) {
-        if (a > b) swap(a,b);
-        if (c > d) swap(c,d);
-    
-        auto a1 = cross(a,b,c), a2 = cross(a,b,d);
-        if (a1 > a2) swap(a1,a2);
-        if (!(a1 <= 0 && a2 >= 0)) return {};
-    
-        if (a1 == 0 && a2 == 0) {
-            if (cross(a,c,d) != 0) return {};
-            auto x1 = max(a,c), x2 = min(b,d);
-            if (x1 > x2) return {};
-            if (x1 == x2) return {x1};
-            return {x1,x2};
-        }
-        
-        auto z = extension(a,b,c,d);
-        if (a <= z && z <= b) return {z};
-        return {};
+    vP segIntersect(P a, P b, P c, P d) { 
+        T x = cross(a,b,c), y = cross(a,b,d); 
+        T X = cross(c,d,a), Y = cross(c,d,b); 
+        if (sgn(x)*sgn(y) < 0 && sgn(X)*sgn(Y) < 0) return {(d*x-c*y)/(x-y)};
+        set<P> s;
+        if (onSeg(a,c,d)) s.insert(a);
+        if (onSeg(b,c,d)) s.insert(b);
+        if (onSeg(c,a,b)) s.insert(c);
+        if (onSeg(d,a,b)) s.insert(d);
+        return {all(s)};
     }
     
     // sorts points according to atan2
     // verification: ?
     template<class T> int half(pair<T,T> x) { return mp(x.s,x.f) > mp((T)0,(T)0); }
-    bool cmp(P a, P b) { 
+    bool angleCmp(P a, P b) { 
         int A = half(a), B = half(b);
-        if (A != B) return A < B;
-        return cross(a,b) > 0;
+        return A == B ? cross(a,b) > 0 : A < B;
     }
     
     // computes the center of mass of a polygon with constant mass per unit area
@@ -105,20 +100,21 @@ namespace Point {
         int n = sz(p), ans = 0;
         F0R(i,n) {
             P x = p[i], y = p[(i+1)%n];
-            if (cross(x,y,z) == 0 && min(x,y) <= z && z <= max(x,y)) return "on";
+            if (onSeg(z,x,y)) return "on";
             if (x.s > y.s) swap(x,y);
             if (x.s <= z.s && y.s > z.s && cross(z,x,y) > 0) ans ^= 1;
         }
         return ans ? "in" : "out";
     }
 
-    pair<P,T> ccCenter(P a, P b, P c) { // circumcenter
+    // computes minimum enclosing circle
+    // verification: USACO Camp 2019 Contest 2 #4
+    pair<P,T> ccCenter(P a, P b, P c) { // circumcenter, radius
         b -= a; c -= a;
         P res = b*c*(conj(c)-conj(b))/(b*conj(c)-conj(b)*c);
         return {a+res,abs(res)};
     }
-     
-    pair<P, T> mec(vP ps) { // minimum enclosing circle, ex. USACO Camp 2019 Contest 2 #4
+    pair<P, T> mec(vP ps) {
         shuffle(all(ps), mt19937(time(0)));
         P o = ps[0]; T r = 0, EPS = 1 + 1e-8;
         F0R(i,sz(ps)) if (abs(o-ps[i]) > r*EPS) {

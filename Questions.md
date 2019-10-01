@@ -4,6 +4,10 @@ You might want to read [this](https://codeforces.com/blog/entry/47516) too.
 
 ## General
 
+> Hey, could you help me get started with competitive programming.
+
+> Please suggest me some steps how I can get better in competitive programming.
+
 > Please suggest me a step by step process so that I can master DS and ALGO on my own and be great at coding.
 
 > I've been doing Programming since almost 2 years, And I didn't see a much progress. I sometimes struggle with Div2 C in contest time. I have solved almost 400 problems from different OJs like spoj, codechef or cf. I generally got fear from higher difficulty problems.
@@ -18,73 +22,11 @@ You might want to read [this](https://codeforces.com/blog/entry/47516) too.
 
 I hope this link helps you. (If not, please let me know!)
 
-> does this contains all the things or full training materials
-
-I tried to add everything I could think of.
-
-> i think whenever i am learning some new topic i m not able to solve good questions on that topic so thats what holding me back.
-
-I hope the links in implementations will suffice.
-
-> Hey, could you help me get started with competitive programming. I looked at your guide, but some resources were quite difficult.
-
-Look at the resources again; I think that CPH is definitely okay for beginners.
-
-> I have covered the basic concepts of topics like Number Theory, Greedy Algorithm, Dynamic Programming, Graph Theory, but I am unable to do contest questions C and D, will you please help me
-
-> I am facing problems at DP problems. I am currently thinking that first I learn all DS like(fft, persistance etc) and after that start practicing. or sholud I start practice and learn DS whenever it required ? I fill that to solve DIV-1 C,D problems advanced DS is must am I right ?
-
-Hm, a fair amount of C and D questions are hard precisely because they don't really fall into any of these categories.
-
-> Where did you learn programming :D ?
-
-> which platform do you have use mostly ?
-
-> What's the online judge that you used to practice your programming skills?
-
-CodeForces, as I'm usually able to do the contests which occur on weekends.
-
-> I want to know if you followed a certain training routine to make such a progress.
-
-I don't really have a specific training routine? Sometimes I make spreadsheets to serve as checklists though.
-
-> How to practice problems when I don't understand tutorial. It really bothers me. Do you have any suggestions?
-
-Try asking someone in your CF friends list who has solved it (if possible).
-
-> What is your competitive programming story?
-
-[Old Post](http://codeforces.com/blog/entry/49514?#comment-335196)
-
-> I really like the way you put reminder below your code, it's really useful.
-
-Unfortunately, I usually submit without reading it.
-
-> What do you think about virtual contests?
-
-I don’t believe that I have ever finished a virtual contest while strictly adhering to the time limit. It’s not as fun as a real contest. :(
-
-> Can you describe in one sentence how to be good at competitive programming?
-
-Keep doing interesting problems (and stay organized??) idk
-
-> Did you learn algorithms and then practiced them accordingly or you randomly started solving questions and then looked up at the algorithms which you didn't know or some other way(like following a book, etc.)?
-
-Mostly just looking stuff up along the way.
-
-> could you please tell me which IDE do you use on your MAC?
-
-I use https://csacademy.com/ LOL. If that doesn't work I use Ideone or sublime text w/ command line. At IOI I used Geany.
-
-[Why the downvotes? :(](https://codeforces.com/blog/entry/63065?#comment-469907)
-
-> Do you use a debugger?
-
-No, I can't figure out how to get GDB to work on Mac and print statements generally suffice.
+> bro could u please tell me only one more thing where u learned matheatics ?
 
 > After how much time thinking on a problem should I look at the editorial?
 
-> bro could u please tell me only one more thing where u learned matheatics ?
+> How to practice problems when I don't understand tutorial. It really bothers me. Do you have any suggestions?
 
 See "Competition Math."
 
@@ -96,7 +38,51 @@ See "Contests."
 
 See "Resources."
 
-## Questions about Problems
+> does this contains all the things or full training materials
+
+I tried to add everything I could think of.
+
+> I looked at your guide, but some resources were quite difficult.
+
+Look at the resources again; I think that CPH and USACO Bronze are definitely okay for beginners.
+
+> Where did you learn programming :D ?
+
+> which platform do you have use mostly ?
+
+> What's the online judge that you used to practice your programming skills?
+
+CodeForces, as I'm usually able to do the contests which occur on weekends.
+
+> Did you learn algorithms and then practiced them accordingly or you randomly started solving questions and then looked up at the algorithms which you didn't know or some other way(like following a book, etc.)?
+
+Mostly just looking stuff up along the way.
+
+> Can you describe in one sentence how to be good at competitive programming?
+
+> What are the ways that you practice makes you so perfect about programming?
+
+Keep doing interesting problems (and stay organized??) idk
+
+## Topics
+
+> i think whenever i am learning some new topic i m not able to solve good questions on that topic so thats what holding me back.
+
+I hope the links in implementations will suffice.
+
+> I have covered the basic concepts of topics like Number Theory, Greedy Algorithm, Dynamic Programming, Graph Theory, but I am unable to do contest questions C and D, will you please help me
+
+> I am facing problems at DP problems. I am currently thinking that first I learn all DS like(fft, persistance etc) and after that start practicing. or sholud I start practice and learn DS whenever it required ? I fill that to solve DIV-1 C,D problems advanced DS is must am I right ?
+
+Well, a fair amount of C and D questions are hard precisely because they don't really fall into any of these categories.
+
+> i m always interested in this but i m not able to understand whether i m doin wrong by taking hard topics and not able to solve questions on them  or am i doing wrong on solving too easy ones ,
+
+Idk, there are plenty of hard questions involving easy topics.
+
+> what is your view on mathematics for CP? Is it highly required for one to be really good at discrete math to advance to the next level?
+
+It's required in the sense that you need to know it to solve a lot of problems, but this applies to other topics as well ...
 
 > I am stuck on a CSES task, know as "Hotels", I saw your name in the top 5 fastest solutions. Can you give me some hint on how to solve it, just a little will be okay too.
 
@@ -106,29 +92,63 @@ See "Resources."
 
 > hi dude, can you help me please?, I realy stuck at this problem, could you give me a hint?, I think it is a graph problem
 
-If you give me a link to the problem and I find it sufficiently interesting, then I might provide a solution (assuming there isn't a decent tutorial already).
+If you give me a link to the problem and I find it sufficiently interesting, then I might provide a solution assuming there isn't a decent tutorial already (or not, if I don't check my messages).
+
+## Personal?
+
+> When did you start
+
+> What is your competitive programming story?
+
+Started the summer after 8th grade, see this [old post.](http://codeforces.com/blog/entry/49514?#comment-335196)
+
+> I want to know if you followed a certain training routine to make such a progress.
+
+I don't really have a specific training routine? Sometimes I make spreadsheets to serve as checklists though.
+
+> I really like the way you put reminder below your code, it's really useful.
+
+Unfortunately, I usually submit without reading it.
+
+> What do you think about virtual contests?
+
+I don’t believe that I have ever finished a virtual contest while strictly adhering to the time limit. It’s not as fun as a real contest. :(
+
+> could you please tell me which IDE do you use on your MAC?
+
+I use https://csacademy.com/ LOL (looks like queue times are rlly bad now tho). If that doesn't work I use Ideone or sublime text w/ command line. At IOI I used Geany.
+
+[Why the downvotes? :(](https://codeforces.com/blog/entry/63065?#comment-469907)
+
+> Do you use a debugger?
+
+No, I can't figure out how to get GDB to work on Mac and print statements generally suffice.
+
+> did you do it on your own or did you have a coach !
+
+> Did you study in USACO camps or by yourself
+
+> Are you like entirely self taught, or did you have any tutoring.
+
+mostly self, haven't had any tutors
+
+> What was your strategy considering you were preparing for IOI.
+
+Other than doing past IOI tasks, I didn't do anything specifically for IOI.
+
+## Bad
 
 > https://www.codechef.com/JULY18A/problems/GEARS This is the problem, I am trying to solve.
 
 > hey friend, please please send me the code for C small only. please i beg you.i need job badly .please. only c small.please please Please friend. i am not getting job Save my life only c small .Please. i beg you
 
-Don't ask me to solve tasks from active contests.
+don't ask me to solve tasks from active contests ...
 
-> i m always interested in this but i m not able to understand whether i m doin wrong by taking hard topics and not able to solve questions on them  or am i doing wrong on solving too easy ones ,
-
-Idk, there are plenty of hard questions involving easy topics.
-
-## Bad
+> can i become red coder in just a year ? if i work hard like 6-7 hours in a day ?
 
 > what you think i mean what helped you most to become red
 
 > I'm just curious if there anything in particular that you would say helped you improve from purple to red?
-
-> How much time you spend almost daily ?
-
-> What are the ways that you practice makes you so perfect about programming?
-
-> can i become red coder in just a year ? if i work hard like 6-7 hours in a day ?
 
 > How you become Red in CF in 2 year !
 
@@ -139,6 +159,8 @@ idk
 > How much time it takes almost ? [to become red]
 
 2 year !
+
+> How much time you spend almost daily ?
 
 > How many hours you practice daily?
 
@@ -172,35 +194,17 @@ yes
 
 no
 
-> did you do it on your own or did you have a coach !
-
-the former
-
-> When did you start
-
-the summer after 8th grade
-
-> Did you study in USACO camps or by yourself
-
-> Are you like entirely self taught, or did you have any tutoring.
-
-mostly self, haven't had any tutors
-
-> what is your view on mathematics for CP? Is it highly required for one to be really good at discrete math to advance to the next level?
-
-It's required in the sense that you need to know it to solve a lot of problems, but this applies to other topics as well ...
-
-> What was your strategy considering you were preparing for IOI.
-
-Other than doing past IOI tasks, I didn't do anything specifically for IOI ...
-
 > it will be very helpfull if u write a blog for trick open close interval dp .there are some questions having 3 dimension using concepts of open close interval . i m not albe to get them
 
 what even is that lol
 
+> why don't u defeat umnik and tourist
+
+I'm not as good ...
+
 > Pls which calendar do u use to structure ur coding schedule.
 
-google
+google?
 
 > hi
 

@@ -2,32 +2,26 @@
 #pragma GCC target ("sse4")
 
 #include <bits/stdc++.h>
-#include <ext/pb_ds/tree_policy.hpp>
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/rope>
 
 using namespace std;
-using namespace __gnu_pbds;
-using namespace __gnu_cxx;
  
-typedef string str;
-typedef double d;
+typedef double db;
 typedef long long ll;
 typedef long double ld;
-typedef complex<ld> cd;
+typedef string str;
 
 typedef pair<int, int> pi;
 typedef pair<ll,ll> pl;
 typedef pair<ld,ld> pd;
+typedef complex<ld> cd;
 
 typedef vector<int> vi;
-typedef vector<ld> vd;
 typedef vector<ll> vl;
+typedef vector<ld> vd;
+typedef vector<str> vs;
 typedef vector<pi> vpi;
 typedef vector<pl> vpl;
 typedef vector<cd> vcd;
-
-template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 #define FOR(i,a,b) for (int i = (a); i < (b); i++)
 #define F0R(i,a) FOR(i,0,a)
@@ -37,6 +31,7 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_or
 
 #define mp make_pair
 #define pb push_back
+#define eb emplace_back
 #define f first
 #define s second
 #define lb lower_bound
@@ -44,17 +39,31 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_or
 
 #define sz(x) (int)x.size()
 #define all(x) begin(x), end(x)
+#define rall(x) rbegin(x), rend(x)
 #define rsz resize
+#define ins insert
 
-const int MOD = 1000000007; // 998244353
+const int MOD = 1e9+7; // 998244353 = (119<<23)+1
 const ll INF = 1e18;
-const int MX = 200005;
+const int MX = 2e5+5;
 const ld PI = 4*atan((ld)1);
 
 template<class T> bool ckmin(T& a, const T& b) { return a > b ? a = b, 1 : 0; }
 template<class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/rope>
+
+using namespace __gnu_pbds;
+using namespace __gnu_cxx;
+
+template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+#define ook order_of_key
+#define fbo find_by_order
 
 int main() {
     

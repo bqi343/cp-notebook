@@ -54,6 +54,12 @@ There are many reasons to use C++11 over Java, such as
   * [KACTL](https://github.com/kth-competitive-programming/kactl)
     * [MIT ICPC Book (based off above)](https://github.com/ecnerwala/icpc-book)
 
+## Visualizers
+
+  * [2D Geo Visualizer](https://codeforces.com/blog/entry/70330)
+  * [CSA Graph Editor (+ Geo Visualizer + Diff Tool)](https://csacademy.com/app/graph_editor/)
+  * [Desmos Grapher](https://www.desmos.com/calculator)
+
 ### Other
 
   * [VPlanet](https://vplanetcoding.com/)

@@ -30,18 +30,17 @@ namespace treap {
         return x;
     }
     
-    void tour(pt x, vi& v) {
-        if (!x) return;
-        prop(x);
-        tour(x->c[0],v); v.pb(x->val); tour(x->c[1],v);
-    }
-    
     pt calc(pt x) {
         assert(!x->flip);
         prop(x->c[0]), prop(x->c[1]);
         x->sz = 1+getsz(x->c[0])+getsz(x->c[1]);
         x->sum = x->val+getsum(x->c[0])+getsum(x->c[1]);
         return x;
+    }
+    void tour(pt x, vi& v) {
+        if (!x) return;
+        prop(x);
+        tour(x->c[0],v); v.pb(x->val); tour(x->c[1],v);
     }
     
     pair<pt,pt> split(pt t, int v) { // >= v goes to the right
@@ -55,7 +54,6 @@ namespace treap {
             return {calc(t), p.s};
         }
     }
-    
     pair<pt,pt> splitsz(pt t, int sz) { // leftmost sz nodes go to left
         if (!t) return {t,t};
         prop(t);
@@ -76,12 +74,10 @@ namespace treap {
         else r->c[0] = merge(l,r->c[0]), t = r;
         return calc(t);
     }
-    
     pt ins(pt x, int v) { // insert v
         auto a = split(x,v), b = split(a.s,v+1);
         return merge(a.f,merge(new tnode(v),b.s));
     }
-    
     pt del(pt x, int v) { // delete v
         auto a = split(x,v), b = split(a.s,v+1);
         return merge(a.f,b.s);

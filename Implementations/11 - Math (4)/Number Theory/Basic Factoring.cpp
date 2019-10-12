@@ -26,7 +26,7 @@ namespace factorBasic {
      */
 
     ll phi(ll x) {
-        trav(a,factor(x)) x /= a.f, x *= a.f-1;
+        trav(a,factor(x)) x -= x/a.f;
         return x;
     }
 

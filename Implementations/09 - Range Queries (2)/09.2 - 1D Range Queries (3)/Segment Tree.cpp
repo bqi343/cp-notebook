@@ -12,7 +12,7 @@ template<class T, int SZ> struct Seg { // SZ doesn't have to be power of 2
     Seg() { memset(seg,0,sizeof seg); }
 
     void pull(int p) { seg[p] = comb(seg[2*p],seg[2*p+1]); }
-    void build() { FORd(i,1,SZ) pull(i); }
+    void build() { ROF(i,1,SZ) pull(i); }
     
     void upd(int p, T value) {  // set value at position p
         seg[p += SZ] = value;

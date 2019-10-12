@@ -13,7 +13,7 @@ template <class T, int ...Ns> struct BIT {
 };
 
 template <class T, int N, int... Ns> struct BIT<T, N, Ns...> {
-    BIT<T,Ns...> bit[N + 1];
+    BIT<T,Ns...> bit[N+1];
     template<typename... Args> void upd(int pos, Args... args) {
         for (; pos <= N; pos += (pos&-pos)) bit[pos].upd(args...);
     }

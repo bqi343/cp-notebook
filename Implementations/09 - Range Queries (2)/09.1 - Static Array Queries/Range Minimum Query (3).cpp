@@ -20,8 +20,8 @@ template<class T, int SZ> struct RMQ {
     }
     
     int index(int l, int r) { // get index of min element
-        int x = level(r-l+1);
-        return comb(stor[l][x],stor[r-(1<<x)+1][x]);
+        int d = level(r-l+1);
+        return comb(stor[l][d],stor[r-(1<<d)+1][d]);
     }
     T query(int l, int r) { return v[index(l,r)]; }
 };

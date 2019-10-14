@@ -1,0 +1,14 @@
+Explanation:
+$$\sum_{i=0}^{to-1}\left\lfloor \frac{ki+c}{m}\right\rfloor=\sum_{x=1}^{to}\left\lfloor \frac{k(to-x)+c}{m}\right\rfloor$$
+This is equal the number of lattice points $(x,y)$ such that $x,y>0$ and
+$$y\le \left\lfloor \frac{k(to-x)+c}{m}\right\rfloor\implies my+kx\le k\cdot to+c.$$
+If we swap $x,y$ then the sum is equal to
+\begin{align*}
+\sum_{y=1}^{to2}\left\lfloor \frac{k\cdot to+c-my}{k}\right\rfloor&=\sum_{y=1}^{to2}\left\lfloor \frac{k\cdot to+c-my}{k}\right\rfloor\\
+&=\sum_{y=1}^{to2}to+\left\lfloor \frac{c-my}{k}\right\rfloor\\
+&=to\cdot to2-\sum_{y=1}^{to2}\left\lceil \frac{my-c}{k}\right\rceil\\
+&=to\cdot to2-\sum_{y=1}^{to2}\left\lfloor \frac{my-c+k-1}{k}\right\rfloor\\
+&=to\cdot to2-\sum_{y=0}^{to2-1}\left\lfloor \frac{my+m-c+k-1}{k}\right\rfloor\\
+&=(to-1)\cdot to2-\sum_{y=0}^{to2-1}\left\lfloor \frac{my+m-c-1}{k}\right\rfloor
+\end{align*}
+as desired.

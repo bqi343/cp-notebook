@@ -36,3 +36,5 @@
 \end{document}
 
 % rename cpp -> h: find . -name "*.cpp" -exec bash -c 'mv "$1" "${1%.cpp}".h' - '{}' \;
+
+% find . -name '*.h' ! -type d -exec bash -c 'unexpand -t 4 "$0" > /tmp/e && mv /tmp/e "$0"' {} \;

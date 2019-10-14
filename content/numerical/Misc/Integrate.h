@@ -1,7 +1,7 @@
 /**
  * Description: ?
  * Source: KACTL
- 	* https://en.wikipedia.org/wiki/Simpson%27s_rule
+	* https://en.wikipedia.org/wiki/Simpson%27s_rule
  * Verification: https://codeforces.com/gym/101793/problem/C
  */
 

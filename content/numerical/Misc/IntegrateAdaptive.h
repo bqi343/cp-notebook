@@ -1,7 +1,7 @@
 /**
  * Description: ?
  * Source: KACTL
- 	* https://en.wikipedia.org/wiki/Adaptive_Simpson%27s_method
+	* https://en.wikipedia.org/wiki/Adaptive_Simpson%27s_method
  * Verification: ?
  */
 

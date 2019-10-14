@@ -4,12 +4,12 @@
  */
 
 string inPoly(const vP& p, P z) {
-    int n = sz(p), ans = 0;
-    F0R(i,n) {
-        P x = p[i], y = p[(i+1)%n];
-        if (onSeg(z,x,y)) return "on";
-        if (x.s > y.s) swap(x,y);
-        if (x.s <= z.s && y.s > z.s && cross(z,x,y) > 0) ans ^= 1;
-    }
-    return ans ? "in" : "out";
+	int n = sz(p), ans = 0;
+	F0R(i,n) {
+		P x = p[i], y = p[(i+1)%n];
+		if (onSeg(z,x,y)) return "on";
+		if (x.s > y.s) swap(x,y);
+		if (x.s <= z.s && y.s > z.s && cross(z,x,y) > 0) ans ^= 1;
+	}
+	return ans ? "in" : "out";
 }

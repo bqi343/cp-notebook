@@ -101,8 +101,8 @@
 \contentsline {subsection}{\texttt {Area.h}\hspace {0.2em}}{14}{section.7.2}
 \contentsline {subsection}{\texttt {InPoly.h}\hspace {0.2em}}{14}{lstnumber.7.4.16}
 \contentsline {subsection}{\texttt {ConvexHull (13.2).h}\hspace {0.2em}}{14}{lstnumber.7.5.10}
-\contentsline {section}{\numberline {7.3}Circles}{15}{section.7.3}
-\contentsline {subsection}{\texttt {Circles.h}\hspace {0.2em}}{15}{section.7.3}
+\contentsline {section}{\numberline {7.3}Circles}{14}{section.7.3}
+\contentsline {subsection}{\texttt {Circles.h}\hspace {0.2em}}{14}{section.7.3}
 \contentsline {subsection}{\texttt {Circumcenter.h}\hspace {0.2em}}{15}{lstnumber.7.7.52}
 \contentsline {subsection}{\texttt {MinEnclosingCircle.h}\hspace {0.2em}}{15}{lstnumber.7.8.5}
 \contentsline {section}{\numberline {7.4}Misc}{15}{section.7.4}
@@ -118,7 +118,7 @@
 \contentsline {subsection}{\texttt {KMP.h}\hspace {0.2em}}{16}{section.8.1}
 \contentsline {subsection}{\texttt {Z (14.3).h}\hspace {0.2em}}{16}{lstnumber.8.1.15}
 \contentsline {subsection}{\texttt {Manacher.h}\hspace {0.2em}}{16}{lstnumber.8.2.19}
-\contentsline {subsection}{\texttt {MinRotation.h}\hspace {0.2em}}{17}{lstnumber.8.3.18}
+\contentsline {subsection}{\texttt {MinRotation.h}\hspace {0.2em}}{16}{lstnumber.8.3.18}
 \contentsline {subsection}{\texttt {LyndonFactorization.h}\hspace {0.2em}}{17}{lstnumber.8.4.8}
 \contentsline {section}{\numberline {8.2}Suffix Structures}{17}{section.8.2}
 \contentsline {subsection}{\texttt {ACfixed.h}\hspace {0.2em}}{17}{section.8.2}

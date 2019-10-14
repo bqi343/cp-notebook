@@ -1,6 +1,6 @@
 /**
  * Description: find least integer p such that r^p=x(mod m)
- 	* meet in the middle: O(sqrt(mod)) per query
+	* meet in the middle: O(sqrt(mod)) per query
  * Source: Own
  * Verification: https://www.hackerrank.com/contests/infinitum11/challenges/discrete-logarithm/problem
  * Dependency: Modular Int

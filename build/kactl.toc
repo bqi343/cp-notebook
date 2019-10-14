@@ -21,7 +21,7 @@
 \contentsline {chapter}{\numberline {7}Geometry}{14}{chapter.7}
 \contentsline {section}{\numberline {7.1}Primitives}{14}{section.7.1}
 \contentsline {section}{\numberline {7.2}Polygons}{14}{section.7.2}
-\contentsline {section}{\numberline {7.3}Circles}{15}{section.7.3}
+\contentsline {section}{\numberline {7.3}Circles}{14}{section.7.3}
 \contentsline {section}{\numberline {7.4}Misc}{15}{section.7.4}
 \contentsline {section}{\numberline {7.5}3D}{16}{section.7.5}
 \contentsline {chapter}{\numberline {8}Strings}{16}{chapter.8}

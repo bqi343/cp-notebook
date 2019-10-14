@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 OCT 2019 14:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 OCT 2019 14:48
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1370,17 +1370,17 @@ runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Matching/H
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-)
-runsystem(python2 content/tex/preprocessor.py --print-header "Hungarian.h|Hungarian.h" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [11])
+))
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Matching/UnweightedMatch.h" -o build/kactl.tmp )...executed.
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-))
+)
+runsystem(python2 content/tex/preprocessor.py --print-header "Hungarian.h|UnweightedMatch.h" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [11])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Misc/MaximalCliques.h" -o build/kactl.tmp )...executed.
@@ -1465,16 +1465,16 @@ runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/Polygons
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ))
-runsystem(python2 content/tex/preprocessor.py --print-header "ConvexHull (13.2).h|ConvexHull (13.2).h" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [14]
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/Circles/Circles.h" -o build/kactl.tmp )...executed.
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-))
+)
+runsystem(python2 content/tex/preprocessor.py --print-header "Circles.h|Circles.h" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [14])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/Circles/Circumcenter.h" -o build/kactl.tmp )...executed.
@@ -1502,10 +1502,10 @@ runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/Misc/Del
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-)
+))
 runsystem(python2 content/tex/preprocessor.py --print-header "|DelaunayFast.h" -o build/header2.tmp)...executed.
 
- (./build/header2.tmp) [15])
+ (./build/header2.tmp) [15]
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/3D/Hull3D.h" -o build/kactl.tmp )...executed.
@@ -1542,9 +1542,6 @@ runsystem(python2 content/tex/preprocessor.py -i "content/strings (14)/Lightweig
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ))
-runsystem(python2 content/tex/preprocessor.py --print-header "Manacher.h|Manacher.h" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [16]
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/strings (14)/Lightweight/MinRotation.h" -o build/kactl.tmp )...executed.
@@ -1558,7 +1555,10 @@ runsystem(python2 content/tex/preprocessor.py -i "content/strings (14)/Lightweig
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-))
+)
+runsystem(python2 content/tex/preprocessor.py --print-header "MinRotation.h|LyndonFactorization.h" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [16])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/strings (14)/Suffix Structures/ACfixed.h" -o build/kactl.tmp )...executed.
@@ -1628,13 +1628,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
 Here is how much of TeX's memory you used:
  15985 strings out of 492995
  233750 string characters out of 6132704
- 1164921 words of memory out of 5000000
+ 1198921 words of memory out of 5000000
  15903 multiletter control sequences out of 15000+600000
  10937 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,60p,501b,2513s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,60p,473b,2507s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb>
-Output written on build//kactl.pdf (19 pages, 381156 bytes).
+Output written on build//kactl.pdf (19 pages, 380937 bytes).
 PDF statistics:
  3880 PDF objects out of 4296 (max. 8388607)
  3802 compressed objects within 39 object streams

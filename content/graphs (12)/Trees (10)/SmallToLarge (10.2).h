@@ -5,24 +5,24 @@
  */
 
 struct SmallToLarge {
-    int val[MX];
-    vi child[MX];
-    map<int,int> dat[MX];
-    
-    void comb(int a, int b) {
-        bool swa = 0;
-        if (sz(dat[a]) < sz(dat[b])) swap(a,b), swa = 1; // swapping doesn't seem to work for indexed set
-        trav(x,dat[b]) dat[a][x.f] += x.s;
-        dat[b].clear();
-        if (swa) swap(dat[a],dat[b]);
-    }
-    
-    void process(int ind) {
-        dat[ind][val[ind]] ++;
-        trav(i,child[ind]) {
-            process(i); 
-            comb(ind,i);
-        }
-        // now do stuff with values
-    }
+	int val[MX];
+	vi child[MX];
+	map<int,int> dat[MX];
+	
+	void comb(int a, int b) {
+		bool swa = 0;
+		if (sz(dat[a]) < sz(dat[b])) swap(a,b), swa = 1; // swapping doesn't seem to work for indexed set
+		trav(x,dat[b]) dat[a][x.f] += x.s;
+		dat[b].clear();
+		if (swa) swap(dat[a],dat[b]);
+	}
+	
+	void process(int ind) {
+		dat[ind][val[ind]] ++;
+		trav(i,child[ind]) {
+			process(i); 
+			comb(ind,i);
+		}
+		// now do stuff with values
+	}
 };

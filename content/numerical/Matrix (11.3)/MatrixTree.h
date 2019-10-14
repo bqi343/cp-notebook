@@ -1,6 +1,6 @@
 /**
  * Description: Kirchhoff's Matrix Tree Theorem: 
- 	* given adjacency matrix, calculates \# of spanning trees
+	* given adjacency matrix, calculates \# of spanning trees
  * Source: various
  * Verification: SPOJ MIFF (matrix inverse modulo prime)
  */

@@ -1,11 +1,11 @@
 /**
  * Description: Simplex Algorithm for linear programming
-    * maximize cˆT x subject to Ax <= b, x >= 0
+	* maximize cˆT x subject to Ax <= b, x >= 0
 	* https://www.utdallas.edu/~scniu/OPRE-6201/documents/LP06-Simplex-Tableau.pdf
 	* http://www.columbia.edu/~cs2035/courses/ieor3608.F05/bigm1.pdf
  * Usage: 
- 	* https://open.kattis.com/contests/fvfhq4/problems/goatropes
- 	* http://codeforces.com/contest/375/problem/E
+	* https://open.kattis.com/contests/fvfhq4/problems/goatropes
+	* http://codeforces.com/contest/375/problem/E
 	* USACO Training cowwars
  * Source: KACTL, Stanford
 	* https://cs.stanford.edu/group/acm/SLPC/notebook.pdf
@@ -39,7 +39,7 @@ struct LPSolver {
 		ps("N",N);
 		ps();
 	}
-    
+	
 	void pivot(int r, int s) { // row, column
 		T *a = D[r].data(), inv = 1/a[s]; // eliminate col s from consideration
 		F0R(i,m+2) if (i != r && abs(D[i][s]) > eps) {
@@ -58,10 +58,10 @@ struct LPSolver {
 			int s = -1; F0R(j,n+1) if (N[j] != -phase) ltj(D[x]); // find most negative col
 			if (D[x][s] >= -eps) return true; // have best solution
 			int r = -1;
-		    F0R(i,m) {
+			F0R(i,m) {
 				if (D[i][s] <= eps) continue;
 				if (r == -1 || mp(D[i][n+1] / D[i][s], B[i])
-				             < mp(D[r][n+1] / D[r][s], B[r])) r = i; // find smallest positive ratio
+							 < mp(D[r][n+1] / D[r][s], B[r])) r = i; // find smallest positive ratio
 			}
 			if (r == -1) return false; // unbounded
 			pivot(r, s);

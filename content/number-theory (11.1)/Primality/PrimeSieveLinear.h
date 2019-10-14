@@ -17,4 +17,3 @@ template<int SZ> struct Sieve {
 		}
 	} 
 };
-	

@@ -1,9 +1,9 @@
 /**
  * Description: Factors integers up to $2^{60}$
  * Source: KACTL
- 	* https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test
+	* https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test
 	* https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm
- 	* https://codeforces.com/contest/1033/submission/44009089 is faster
+	* https://codeforces.com/contest/1033/submission/44009089 is faster
  * Verification: https://www.spoj.com/problems/FACT0/
  */
 
@@ -33,7 +33,7 @@ vpl pollardsRho(ll d) {
 	vpl res;
 	auto& pr = S.pr;
 	for (int i = 0; i < sz(pr) && pr[i]*pr[i] <= d; i++) if (d % pr[i] == 0) {
-	    int co = 0; while (d % pr[i] == 0) d /= pr[i], co ++;
+		int co = 0; while (d % pr[i] == 0) d /= pr[i], co ++;
 		res.pb({pr[i],co});
 	}
 	if (d > 1) { // d is now a product of at most 2 primes.
@@ -46,9 +46,9 @@ vpl pollardsRho(ll d) {
 				y = f(f(y, d, has), d, has);
 			} // should cycle in ~sqrt(smallest nontrivial divisor) turns 
 			if (c != d) {
-			    d /= c; if (d > c) swap(d,c);
-			    if (c == d) res.pb({c,2});
-			    else res.pb({c,1}), res.pb({d,1});
+				d /= c; if (d > c) swap(d,c);
+				if (c == d) res.pb({c,2});
+				else res.pb({c,1}), res.pb({d,1});
 				break;
 			}
 		}

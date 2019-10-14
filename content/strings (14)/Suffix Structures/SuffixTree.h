@@ -18,12 +18,12 @@ struct SuffixTree {
 		}
 		if (q==-1 || c==toi(a[q])) q++; else {
 			l[m+1]=i;  p[m+1]=m;  l[m]=l[v];  r[m]=q;
-			p[m]=p[v];  t[m][c]=m+1;  t[m][toi(a[q])]=v;
-			l[v]=q;  p[v]=m;  t[p[m]][toi(a[l[m]])]=m;
-			v=s[p[m]];  q=l[m];
-			while (q<r[m]) { v=t[v][toi(a[q])];  q+=r[v]-l[v]; }
+			p[m]=p[v];	t[m][c]=m+1;  t[m][toi(a[q])]=v;
+			l[v]=q;	 p[v]=m;  t[p[m]][toi(a[l[m]])]=m;
+			v=s[p[m]];	q=l[m];
+			while (q<r[m]) { v=t[v][toi(a[q])];	 q+=r[v]-l[v]; }
 			if (q==r[m])  s[m]=v;  else s[m]=m+2;
-			q=r[v]-(q-r[m]);  m+=2;  goto suff;
+			q=r[v]-(q-r[m]);  m+=2;	 goto suff;
 		}
 	}
 

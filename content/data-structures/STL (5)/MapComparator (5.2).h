@@ -4,9 +4,9 @@
  */
 
 struct cmp {
-    bool operator()(const int& l, const int& r) const {
-        return l > r;
-    }
+	bool operator()(const int& l, const int& r) const {
+		return l > r;
+	}
 };
 
 set<int,cmp> s; // F0R(i,10) s.insert(rand()); trav(i,s) ps(i);

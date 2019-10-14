@@ -1,5 +1,6 @@
 /**
- * Description: see Zlobober's post in Russian version of 
+ * Description: Schreier-Sims 
+ 	* see Zlobober's post in Russian version of 
  	* https://codeforces.com/blog/entry/21335
  * Source: MIT NULL
  * Verification: GP of Ekateinburg - H

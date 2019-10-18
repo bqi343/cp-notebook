@@ -14,17 +14,17 @@
 \contentsline {chapter}{\numberline {6}Graphs}{8}{chapter.6}
 \contentsline {section}{\numberline {6.1}Fundamentals}{8}{section.6.1}
 \contentsline {section}{\numberline {6.2}Trees}{8}{section.6.2}
-\contentsline {section}{\numberline {6.3}DFS Algorithms}{10}{section.6.3}
+\contentsline {section}{\numberline {6.3}DFS Algorithms}{9}{section.6.3}
 \contentsline {section}{\numberline {6.4}Flows}{10}{section.6.4}
 \contentsline {section}{\numberline {6.5}Matching}{11}{section.6.5}
 \contentsline {section}{\numberline {6.6}Misc}{12}{section.6.6}
-\contentsline {chapter}{\numberline {7}Geometry}{14}{chapter.7}
-\contentsline {section}{\numberline {7.1}Primitives}{14}{section.7.1}
+\contentsline {chapter}{\numberline {7}Geometry}{13}{chapter.7}
+\contentsline {section}{\numberline {7.1}Primitives}{13}{section.7.1}
 \contentsline {section}{\numberline {7.2}Polygons}{14}{section.7.2}
 \contentsline {section}{\numberline {7.3}Circles}{14}{section.7.3}
 \contentsline {section}{\numberline {7.4}Misc}{15}{section.7.4}
-\contentsline {section}{\numberline {7.5}3D}{16}{section.7.5}
+\contentsline {section}{\numberline {7.5}3D}{15}{section.7.5}
 \contentsline {chapter}{\numberline {8}Strings}{16}{chapter.8}
 \contentsline {section}{\numberline {8.1}Lightweight}{16}{section.8.1}
-\contentsline {section}{\numberline {8.2}Suffix Structures}{17}{section.8.2}
+\contentsline {section}{\numberline {8.2}Suffix Structures}{16}{section.8.2}
 \contentsfinish 

@@ -1,5 +1,5 @@
 /**
- * Description: Solves 2SAT
+ * Description: ?
  * Source: KACTL
  * Verification: https://codeforces.com/contest/1007/problem/D
  */

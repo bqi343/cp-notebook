@@ -1,5 +1,6 @@
 /**
  * Description: Compute MST of points where edges are manhattan distances 
+ * Time: O(N\log N)
  * Source: Rezwan Arefin
  * Verification: 
 	* https://open.kattis.com/problems/gridmst
@@ -16,14 +17,12 @@ vi ind;
 
 struct {
 	map<int,pi> m;
-	
 	void upd(int a, pi b) { 
 		auto it = m.lb(a);
 		if (it != m.end() && it->s <= b) return;
 		m[a] = b; it = m.find(a);
 		while (it != m.begin() && prev(it)->s >= b) m.erase(prev(it));
 	}
-	
 	pi query(int y) { // for all a > y find min possible value of b 
 		auto it = m.ub(y);
 		if (it == m.end()) return {2*MOD,2*MOD};

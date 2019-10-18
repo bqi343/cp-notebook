@@ -1,5 +1,6 @@
 /**
  * Description: minimum rotation of string
+ * Time: O(N)
  * Source: KACTL
  * Verification: https://cses.fi/problemset/task/1110/
  */

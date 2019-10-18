@@ -2,6 +2,7 @@
  * Description: Schreier-Sims,
 	* count number of permutations in group 
 	* and test whether permutation is a member of group
+ * Time: ?
  * Source: MIT NULL
 	* see Zlobober's post in Russian version 
 	* of https://codeforces.com/blog/entry/21335

@@ -1,20 +1,18 @@
 /**
  * Description: calculates least common ancestor in tree with binary jumping
+ * Time: O(N\log N)
  * Source: USACO Camp
  * Verification: Debug the Bugs
  */
 
 template<int SZ> struct LCA {
 	static const int BITS = 32-__builtin_clz(SZ);
-
 	int N, R = 1; // vertices from 1 to N, R = root
 	vi adj[SZ];
 	int par[BITS][SZ], depth[SZ];
 
 	// INITIALIZE
-
 	void addEdge(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
-
 	void dfs(int u, int prev){
 		par[0][u] = prev;
 		depth[u] = depth[prev]+1;
@@ -26,7 +24,6 @@ template<int SZ> struct LCA {
 	}
 
 	// QUERY
-
 	int getPar(int a, int b) {
 		R0F(k,BITS) if (b&(1<<k)) a = par[k][a];
 		return a;

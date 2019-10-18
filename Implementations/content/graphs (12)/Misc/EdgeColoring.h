@@ -1,6 +1,7 @@
 /**
  * Description: Vizing's Theorem: If max degree in simple undirected
 	* graph is d, then it can be edge colored with d+1 colors
+ * Time: ?
  * Source: 
 	* own (not optimized)
 	* see https://en.m.wikipedia.org/wiki/Vizing%27s_theorem 

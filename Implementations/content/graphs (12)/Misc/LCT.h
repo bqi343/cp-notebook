@@ -1,6 +1,6 @@
 /**
- * Description: Link-Cut Tree
-	* use vir for subtree size queries
+ * Description: Link-Cut Tree, use vir for subtree size queries
+ * Time: O(\log N)
  * Source: Dhruv Rohatgi, Eric Zhang,
 	* https://sites.google.com/site/kc97ble/container/splay-tree/splaytree-cpp-3
  * Verification: Balanced Tokens, Dynamic Tree Test (Easy)

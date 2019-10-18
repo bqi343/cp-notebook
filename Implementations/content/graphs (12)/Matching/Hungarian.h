@@ -1,6 +1,7 @@
 /**
  * Description: finds min cost to complete n jobs w/ m workers 
 	* each worker is assigned to at most one job (n <= m)
+ * Time: ?
  * Source: https://github.com/mpfeifer1/Kattis/blob/master/cordonbleu.cpp
  * Verification: https://www.spoj.com/problems/BABY/
 	* also see https://codeforces.com/blog/entry/63701

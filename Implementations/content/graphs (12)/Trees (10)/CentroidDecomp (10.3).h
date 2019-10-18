@@ -1,9 +1,10 @@
 /**
  * Description: can support tree path queries and updates
+ * Time: $O(N\log N)$
  * Source: own
  * Verification: 
-	* Triway Cup 2019 G
 	* https://codeforces.com/contest/342/problem/E
+	* Triway Cup 2019 G
  */
 
 template<int SZ> struct CD {

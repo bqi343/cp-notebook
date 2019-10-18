@@ -1,12 +1,13 @@
 /**
  * Source: http://codeforces.com/blog/entry/3107
+ * Time: O(N)
  * Description: similar to KMP
  * Verification: POI 12 Template, https://codeforces.com/contest/1137/problem/B
  */
 
 vi z(string s) {
 	int N = sz(s); s += '#';
-	vi ans(N); ans[0] = N; if (N == 1) return ans;
+	vi ans(N); ans[0] = N; 
 	int L = 1, R = 0;
 	FOR(i,1,N) {
 		if (i <= R) ans[i] = min(R-i+1,ans[i-L]);

@@ -1,6 +1,6 @@
 /**
  * Description: computes the minimum directed spanning tree
- * Time: O(E\log E)
+ * Time: O(M\log M)
  * Source: KACTL
  * Verification: ?
  */

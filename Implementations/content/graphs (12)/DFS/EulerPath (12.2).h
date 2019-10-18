@@ -1,5 +1,6 @@
 /**
- * Description: $O(N+M)$ Euler Path for both directed and undirected graphs
+ * Description: Eulerian Path for both directed and undirected graphs
+ * Time: $O(N+M)$ 
  * Source: 
 	* USACO Training
 	* MIT ICPC Notebook

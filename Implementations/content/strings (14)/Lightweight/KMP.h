@@ -1,5 +1,6 @@
 /**
  * Source: KACTL
+ * Time: O(N)
  * Description: f[i] equals the length of the longest proper suffix of the i-th prefix of s
 	* that is a prefix of s
  * Verification: https://open.kattis.com/problems/stringmatching

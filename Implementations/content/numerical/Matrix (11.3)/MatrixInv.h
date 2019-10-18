@@ -1,5 +1,6 @@
 /**
  * Description: calculates determinant via gaussian elimination
+ * Time: O(N^3)
  * Source: various
  * Verification: SPOJ MIFF (matrix inverse modulo prime)
  */

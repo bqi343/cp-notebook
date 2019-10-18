@@ -1,5 +1,6 @@
 /**
  * Description: 1D point update, range query
+ * Time: O(\log N)
  * Source: 
 	* http://codeforces.com/blog/entry/18051
 	* KACTL

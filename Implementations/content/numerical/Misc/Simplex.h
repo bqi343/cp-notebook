@@ -1,14 +1,15 @@
 /**
- * Description: Simplex Algorithm for linear programming
-	* maximize cˆT x subject to Ax <= b, x >= 0
+ * Description: Simplex algorithm for linear programming,
+	* maximize $c^Tx$ subject to $Ax \le b, x \ge 0$
+ * Time: ?
+ * Source: KACTL, Stanford
+	* https://cs.stanford.edu/group/acm/SLPC/notebook.pdf
 	* https://www.utdallas.edu/~scniu/OPRE-6201/documents/LP06-Simplex-Tableau.pdf
 	* http://www.columbia.edu/~cs2035/courses/ieor3608.F05/bigm1.pdf
- * Usage: 
+ * Verification:
 	* https://open.kattis.com/contests/fvfhq4/problems/goatropes
 	* http://codeforces.com/contest/375/problem/E
 	* USACO Training cowwars
- * Source: KACTL, Stanford
-	* https://cs.stanford.edu/group/acm/SLPC/notebook.pdf
  */
  
 typedef double T;

@@ -1,5 +1,6 @@
 /**
- * Description: find sqrt of integer via a prime
+ * Description: find sqrt of integer mod a prime
+ * Time: ?
  * Source: http://www.math.vt.edu/people/brown/class_homepages/shanks_tonelli.pdf
  * Verification: https://www.spoj.com/problems/CRYPTO1
  */

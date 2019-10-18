@@ -1,5 +1,6 @@
 /**
  * Description: multiply two polynomials
+ * Time: O(N\log N)
  * Source: KACTL, https://cp-algorithms.com/algebra/fft.html
  * Verification: 
 	* SPOJ polymul, CSA manhattan, CF Perfect Encoding

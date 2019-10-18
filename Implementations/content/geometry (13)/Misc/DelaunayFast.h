@@ -4,9 +4,9 @@
  * Verification: CCO 2008 P6 Landing
  */
 
-typedef ll T;
+#include "Point.h"
 
-using namespace Point;
+typedef ll T;
 
 typedef struct Quad* Q;
 typedef __int128_t lll; // (can be ll if coords are < 2e4)
@@ -20,10 +20,12 @@ struct Quad {
 	Q next() { return r()->prev(); }
 };
 
-bool circ(P p, P a, P b, P c) { // is p in the circumcircle?
+// test if p is in the circumcircle
+bool circ(P p, P a, P b, P c) { 
+	ll ar = cross(a,b,c); assert(ar); if (ar < 0) swap(a,b);
 	lll p2 = norm(p), A = norm(a)-p2,
 		B = norm(b)-p2, C = norm(c)-p2;
-	return cross(p,a,b)*C + cross(p,b,c)*A + cross(p,c,a)*B > 0;
+	return cross(p,a,b)*C+cross(p,b,c)*A+cross(p,c,a)*B > 0;
 }
 
 Q makeEdge(P orig, P dest) {

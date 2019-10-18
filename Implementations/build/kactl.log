@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 OCT 2019 14:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  17 OCT 2019 21:30
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -909,42 +909,60 @@ LaTeX Info: Redefining \nameref on input line 11.
 
 runsystem(rm -f build/header.tmp)...executed.
 
- <mit.png, id=36, 289.08pt x 152.57pt>
+ <mit.png, id=4, 289.08pt x 152.57pt>
 File: mit.png Graphic file (type png)
  <use mit.png>
 Package pdftex.def Info: mit.png used on input line 12.
 (pdftex.def)             Requested size: 227.62204pt x 120.13321pt.
  [1
 
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <content/tex/mit.png>] (build//kactl.toc
-LaTeX Font Info:    Try loading font information for U+msa on input line 1.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 1.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <content/tex/mit.png>] (build//kactl.toc)
 \tf@toc=\write5
 \openout5 = `kactl.toc'.
 
  (./content/contest/chapter.tex
 Chapter 1.
+LaTeX Font Info:    Try loading font information for U+msa on input line 1.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 1.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 \c@ttl@toc@chapters=\count143
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/contest/template.cpp" -o build/kactl.tmp -l rawcpp)...executed.
 
-(./build/kactl.tmp
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 3.
+ (./build/kactl.tmp
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 4.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
 LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <7> not available
-(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 46.
+(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 47.
 )
+runsystem(rm -f build/kactl.tmp)...executed.
+
+runsystem(python2 content/tex/preprocessor.py -i "content/contest/.bashrc" -o build/kactl.tmp -l sh)...executed.
+
+ (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+))
+runsystem(rm -f build/kactl.tmp)...executed.
+
+runsystem(python2 content/tex/preprocessor.py -i "content/contest/.vimrc" -o build/kactl.tmp -l raw)...executed.
+
+ (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+))
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/contest/hash.sh" -o build/kactl.tmp -l raw)...executed.
@@ -980,13 +998,13 @@ runsystem(python2 content/tex/preprocessor.py -i "content/data-structures/STL (5
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+))pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 }
-       [1
+l.7 	\kactlimport{STL (5)/Rope.h}
+                                  [1
 
-])
+]
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/data-structures/STL (5)/Rope.h" -o build/kactl.tmp )...executed.
@@ -1024,39 +1042,39 @@ File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ))
 runsystem(rm -f build/kactl.tmp)...executed.
 
-runsystem(python2 content/tex/preprocessor.py -i "content/data-structures/1D Range Queries (9.2)/Lazy Persistent SegTree (15.2).h" -o build/kactl.tmp )...executed.
+runsystem(python2 content/tex/preprocessor.py -i "content/data-structures/1D Range Queries (9.2)/PersSegTree (15.2).h" -o build/kactl.tmp )...executed.
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
-runsystem(python2 content/tex/preprocessor.py --print-header "Lazy Persistent SegTree (15.2).h|Lazy Persistent SegTree (15.2).h" -o build/header2.tmp)...executed.
+runsystem(python2 content/tex/preprocessor.py --print-header "PersSegTree (15.2).h|PersSegTree (15.2).h" -o build/header2.tmp)...executed.
 
  (./build/header2.tmp) [2])
+runsystem(rm -f build/kactl.tmp)...executed.
+
+runsystem(python2 content/tex/preprocessor.py -i "content/data-structures/1D Range Queries (9.2)/SegTreeBeats.h" -o build/kactl.tmp )...executed.
+
+ (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+))
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/data-structures/1D Range Queries (9.2)/Treap (15.3).h" -o build/kactl.tmp )...executed.
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-))
-runsystem(rm -f build/kactl.tmp)...executed.
-
-runsystem(python2 content/tex/preprocessor.py -i "content/data-structures/1D Range Queries (9.2)/SegTree Beats.h" -o build/kactl.tmp )...executed.
-
- (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ))) (./content/number-theory (11.1)/chapter.tex
 Chapter 3.
-runsystem(python2 content/tex/preprocessor.py --print-header "|SegTree Beats.h" -o build/header2.tmp)...executed.
-
-(./build/header2.tmp) [3]
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/number-theory (11.1)/Modular Arithmetic/Modular.h" -o build/kactl.tmp )...executed.
 
- (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
+(./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-))
+)
+runsystem(python2 content/tex/preprocessor.py --print-header "|Modular.h" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [3])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/number-theory (11.1)/Modular Arithmetic/ModInv.h" -o build/kactl.tmp )...executed.
@@ -1233,17 +1251,7 @@ runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/numerical/Misc/Simplex.h" -o build/kactl.tmp )...executed.
 
- (./build/kactl.tmp
-Underfull \hbox (badness 10000) in paragraph at lines 10--10
-\OT1/cmr/m/n/7 6201/documents/LP06-Simplex-Tableau.pdf
- []
-
-
-Overfull \hbox (7.29866pt too wide) in paragraph at lines 10--10
-\OT1/cmr/bx/n/7 Usage: \OT1/pcr/m/n/7 https://open.kattis.com/contests/fvfhq4/problems/goatropes 
- []
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
+ (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
 runsystem(python2 content/tex/preprocessor.py --print-header "Simplex.h|Simplex.h" -o build/header2.tmp)...executed.
@@ -1266,31 +1274,17 @@ File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ))
 runsystem(rm -f build/kactl.tmp)...executed.
 
-runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Trees (10)/TreeDiameter (10.1).h" -o build/kactl.tmp )...executed.
-
- (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-)
-runsystem(python2 content/tex/preprocessor.py --print-header "TreeDiameter (10.1).h|TreeDiameter (10.1).h" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [8])
-runsystem(rm -f build/kactl.tmp)...executed.
-
 runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Trees (10)/LCAjumps (10.2).h" -o build/kactl.tmp )...executed.
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-))
+)
+runsystem(python2 content/tex/preprocessor.py --print-header "LCAjumps (10.2).h|LCAjumps (10.2).h" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [8])
 runsystem(rm -f build/kactl.tmp)...executed.
 
-runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Trees (10)/LCArmq (10.2).h" -o build/kactl.tmp )...executed.
-
- (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-))
-runsystem(rm -f build/kactl.tmp)...executed.
-
-runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Trees (10)/HLD (10.3).h" -o build/kactl.tmp )...executed.
+runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Trees (10)/CentroidDecomp (10.3).h" -o build/kactl.tmp )...executed.
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
@@ -1308,17 +1302,17 @@ runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/DFS/SCC (1
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-)
-runsystem(python2 content/tex/preprocessor.py --print-header "HLD (10.3).h|SCC (12.1).h" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [9])
+))
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/DFS/2SAT (12.1).h" -o build/kactl.tmp )...executed.
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-))
+)
+runsystem(python2 content/tex/preprocessor.py --print-header "2SAT (12.1).h|2SAT (12.1).h" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [9])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/DFS/EulerPath (12.2).h" -o build/kactl.tmp )...executed.
@@ -1339,10 +1333,7 @@ runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Flows (12.
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-)
-runsystem(python2 content/tex/preprocessor.py --print-header "Dinic.h|Dinic.h" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [10])
+))
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Flows (12.3)/MCMF.h" -o build/kactl.tmp )...executed.
@@ -1350,6 +1341,9 @@ runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Flows (12.
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ))
+runsystem(python2 content/tex/preprocessor.py --print-header "MCMF.h|MCMF.h" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [10]
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Flows (12.3)/GomoryHu.h" -o build/kactl.tmp )...executed.
@@ -1378,7 +1372,7 @@ runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Matching/U
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
-runsystem(python2 content/tex/preprocessor.py --print-header "Hungarian.h|UnweightedMatch.h" -o build/header2.tmp)...executed.
+runsystem(python2 content/tex/preprocessor.py --print-header "UnweightedMatch.h|UnweightedMatch.h" -o build/header2.tmp)...executed.
 
  (./build/header2.tmp) [11])
 runsystem(rm -f build/kactl.tmp)...executed.
@@ -1394,10 +1388,7 @@ runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Misc/LCT.h
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-)
-runsystem(python2 content/tex/preprocessor.py --print-header "|LCT.h" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [12])
+))
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Misc/DirectedMST.h" -o build/kactl.tmp )...executed.
@@ -1405,6 +1396,9 @@ runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Misc/Direc
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ))
+runsystem(python2 content/tex/preprocessor.py --print-header "DirectedMST.h|DirectedMST.h" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [12]
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Misc/DominatorTree.h" -o build/kactl.tmp )...executed.
@@ -1418,10 +1412,7 @@ runsystem(python2 content/tex/preprocessor.py -i "content/graphs (12)/Misc/EdgeC
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-)
-runsystem(python2 content/tex/preprocessor.py --print-header "|EdgeColoring.h" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [13])) (./content/geometry (13)/chapter.tex
+))) (./content/geometry (13)/chapter.tex
 Chapter 7.
 runsystem(rm -f build/kactl.tmp)...executed.
 
@@ -1429,7 +1420,10 @@ runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/Primitiv
 
 (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-))
+)
+runsystem(python2 content/tex/preprocessor.py --print-header "Point.h|Point.h" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [13])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/Primitives/AngleCmp.h" -o build/kactl.tmp )...executed.
@@ -1471,10 +1465,7 @@ runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/Circles/
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-)
-runsystem(python2 content/tex/preprocessor.py --print-header "Circles.h|Circles.h" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [14])
+))
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/Circles/Circumcenter.h" -o build/kactl.tmp )...executed.
@@ -1488,7 +1479,10 @@ runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/Circles/
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-))
+)
+runsystem(python2 content/tex/preprocessor.py --print-header "Circumcenter.h|MinEnclosingCircle.h" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [14])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/Misc/ClosestPair (13.2).h" -o build/kactl.tmp )...executed.
@@ -1503,23 +1497,23 @@ runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/Misc/Del
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ))
-runsystem(python2 content/tex/preprocessor.py --print-header "|DelaunayFast.h" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [15]
-runsystem(rm -f build/kactl.tmp)...executed.
-
-runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/3D/Hull3D.h" -o build/kactl.tmp )...executed.
-
- (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-))
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/3D/Point3D.h" -o build/kactl.tmp )...executed.
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-))) (./content/strings (14)/chapter.tex
+))
+runsystem(rm -f build/kactl.tmp)...executed.
+
+runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/3D/Hull3D.h" -o build/kactl.tmp )...executed.
+
+ (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+)
+runsystem(python2 content/tex/preprocessor.py --print-header "Hull3D.h|Hull3D.h" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [15])) (./content/strings (14)/chapter.tex
 Chapter 8.
 runsystem(rm -f build/kactl.tmp)...executed.
 
@@ -1555,17 +1549,17 @@ runsystem(python2 content/tex/preprocessor.py -i "content/strings (14)/Lightweig
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-)
-runsystem(python2 content/tex/preprocessor.py --print-header "MinRotation.h|LyndonFactorization.h" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [16])
+))
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/strings (14)/Suffix Structures/ACfixed.h" -o build/kactl.tmp )...executed.
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-))
+)
+runsystem(python2 content/tex/preprocessor.py --print-header "ACfixed.h|ACfixed.h" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [16])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/strings (14)/Suffix Structures/PalTree.h" -o build/kactl.tmp )...executed.
@@ -1593,17 +1587,17 @@ runsystem(python2 content/tex/preprocessor.py -i "content/strings (14)/Suffix St
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-)
-runsystem(python2 content/tex/preprocessor.py --print-header "SuffixAutomaton.h|SuffixAutomaton.h" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [17])
+))
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/strings (14)/Suffix Structures/SuffixTree.h" -o build/kactl.tmp )...executed.
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-)))
+)
+runsystem(python2 content/tex/preprocessor.py --print-header "SuffixTree.h|SuffixTree.h" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [17]))
 runsystem(python2 content/tex/preprocessor.py --print-header "|SuffixTree.h" -o build/header2.tmp)...executed.
 
  (./build/header2.tmp) [18] Excluding 'comment' comment.
@@ -1616,28 +1610,28 @@ runsystem(rm -f build/header2.tmp)...executed.
 
 runsystem(rm -f build/kactl.tmp)...executed.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 36.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 38.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 38.
  (build//kactl.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 38.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 38.
 Package rerunfilecheck Info: File `kactl.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 38.
  ) 
 Here is how much of TeX's memory you used:
- 15985 strings out of 492995
- 233750 string characters out of 6132704
- 1198921 words of memory out of 5000000
- 15903 multiletter control sequences out of 15000+600000
+ 16029 strings out of 492995
+ 233847 string characters out of 6132704
+ 1149791 words of memory out of 5000000
+ 16006 multiletter control sequences out of 15000+600000
  10937 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,60p,473b,2507s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,60p,465b,2507s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb>
-Output written on build//kactl.pdf (19 pages, 380937 bytes).
+Output written on build//kactl.pdf (19 pages, 376772 bytes).
 PDF statistics:
- 3880 PDF objects out of 4296 (max. 8388607)
- 3802 compressed objects within 39 object streams
- 3059 named destinations out of 3580 (max. 500000)
- 70 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3770 PDF objects out of 4296 (max. 8388607)
+ 3694 compressed objects within 37 object streams
+ 2996 named destinations out of 3580 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

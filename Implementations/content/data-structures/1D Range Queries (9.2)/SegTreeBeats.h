@@ -1,6 +1,7 @@
 /**
  * Description: Interval min modifications
- * Source: CF tutorial?
+ * Time: ?
+ * Source: CF tutorial
  * Verification: http://acm.hdu.edu.cn/showproblem.php?pid=5306
  */
 

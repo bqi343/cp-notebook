@@ -1,5 +1,6 @@
 /**
  * Description: ?
+ * Time: $O(N\alpha(N))$
  * Source: CSAcademy, KACTL
  * Verification: USACO superbull
  */

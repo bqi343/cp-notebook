@@ -1,5 +1,6 @@
 /**
  * Source: http://codeforces.com/blog/entry/12143
+ * Time: O(N)
  * Description: Calculates length of largest palindrome centered at each character of string
  * Verification: http://www.spoj.com/problems/MSUBSTR/
  */

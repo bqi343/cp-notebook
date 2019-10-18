@@ -1,6 +1,7 @@
 /**
  * Description: Berlekamp-Massey: computes linear recurrence of 
  * order n for sequence of 2n terms
+ * Time: ?
  * Source: 
 	* https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm
 	* http://codeforces.com/blog/entry/61306

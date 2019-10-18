@@ -1,5 +1,6 @@
 /**
  * Description: Factors integers up to $2^{60}$
+ * Time: ?
  * Source: KACTL
 	* https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test
 	* https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm

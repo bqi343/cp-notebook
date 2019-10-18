@@ -1,3 +1,6 @@
-alias c='g++ -Wall -Wconversion -Wfatal-errors -g -std=c++14 \
-	-fsanitize=undefined,address'
-xmodmap -e 'clear lock' -e 'keycode 66=less greater' #caps = <>
+co() {
+    g++ -std=c++11 -O2 -Wall -Wl,-stack_size -Wl,0x10000000 -o $1 $1.cc
+}
+run() {
+    co $1 && ./$1
+}

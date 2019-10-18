@@ -1,5 +1,6 @@
 /**
  * Description: Heavy Light Decomposition
+ * Time: $O(\log^2 N)$ per path operations
  * Source: http://codeforces.com/blog/entry/22072, https://codeforces.com/blog/entry/53170
  * Verification: USACO Grass Planting, https://www.hackerrank.com/challenges/subtrees-and-paths
  */

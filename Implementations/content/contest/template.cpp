@@ -2,9 +2,9 @@
 
 using namespace std;
  
-typedef double db;
 typedef long long ll;
 typedef long double ld;
+typedef double db;
 typedef string str;
 
 typedef pair<int, int> pi;

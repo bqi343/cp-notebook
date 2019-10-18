@@ -1,5 +1,6 @@
 /**
  * Description: for each prefix, stores link to max length suffix which is also a prefix
+ * Time: O(N\sum)
  * Source: https://ideone.com/0cMjZJ
 	* https://codeforces.com/contest/710/problem/F
 	* https://codeforces.com/contest/1207/problem/G

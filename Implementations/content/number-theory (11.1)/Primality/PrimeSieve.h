@@ -1,5 +1,6 @@
 /**
- * Description: Tests primality up to n in O(nlog(logn)) 
+ * Description: tests primality up to n
+ * Time: O(N\log\log N)
  * Source: KACTL 
  * Verification: https://open.kattis.com/problems/primesieve
  */

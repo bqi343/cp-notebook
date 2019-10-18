@@ -1,5 +1,6 @@
 /**
-* Description:
+* Description: ?
+* Time: O(N\log N)
 * Source: SuprDewd, KACTL, majk, ekzhang
 * Verification: 
 	* http://usaco.org/index.php?page=viewproblem2&cpid=768

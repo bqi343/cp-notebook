@@ -1,11 +1,11 @@
 /**
  * Description: multiply two polynomials
+ * Time: $O(N^{\log_2 3})$
  * Source: kevinsogo 
 	* https://www.hackerrank.com/contests/noi-ph-2019/challenges/yet-another-packing-problem/editorial
 	* also see http://codeforces.com/contest/623/submission/15807539
 	* https://en.wikipedia.org/wiki/Karatsuba\_algorithm
- * Verification: 
-	* https://open.kattis.com/problems/polymul2
+ * Verification: https://open.kattis.com/problems/polymul2
  */
 
 int size(int s) { return s > 1 ? 32-__builtin_clz(s-1) : 0; }

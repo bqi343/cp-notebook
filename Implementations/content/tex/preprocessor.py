@@ -49,6 +49,7 @@ def ordoescape(input, esc=True):
 
 def addref(caption, outstream):
     caption = pathescape(caption).strip()
+    print(r"\kactlref{%s}" % caption)
     print(r"\kactlref{%s}" % caption, file=outstream)
     with open('header.tmp', 'a') as f:
         f.write(caption + "\n")
@@ -67,6 +68,16 @@ def find_start_comment(source, start=None):
             first = (i, i + len(s), e)
 
     return first
+
+def formCap(caption):
+    if caption[0] == '.':
+        return caption
+    res = caption[caption.rfind('/')+1:]
+    ext = res[res.rfind('.'):]
+    title = res[:res.rfind('.')]
+    if title[-1] == ')':
+        title = title[:title.rfind('(')]
+    return title.strip()+ext
 
 def processwithcomments(caption, instream, outstream, listingslang):
     knowncommands = ['Author', 'Date', 'Description', 'Source', 'Time', 'Memory', 'License', 'Status', 'Usage', 'Verification']
@@ -155,6 +166,7 @@ def processwithcomments(caption, instream, outstream, listingslang):
         hsh = ''
     # Produce output
     out = []
+    out.append(formCap(caption))
     if warning:
         out.append(r"\kactlwarning{%s: %s}" % (caption, warning))
     if error:
@@ -185,6 +197,7 @@ def processraw(caption, instream, outstream, listingslang = 'raw'):
     try:
         source = instream.read().strip()
         addref(caption, outstream)
+        print(formCap(caption), file=outstream)
         print(r"\rightcaption{%d lines}" % len(source.split("\n")), file=outstream)
         print(r"\begin{lstlisting}[language=%s,caption={%s}]" % (listingslang, pathescape(caption)), file=outstream)
         print(source, file=outstream)
@@ -219,7 +232,15 @@ def print_header(data, outstream):
     ind = lines.index(until) + 1
     header_length = len("".join(lines[:ind]))
     def adjust(name):
-        return name if name.startswith('.') else name.split('.')[0]
+        #if name.startswith('.'): return name
+        ind = name.rfind('.')
+        if ind > 0:
+            name = name[0:ind]
+        if name[-1] == ')':
+            ind = name.rfind('(')
+            name = name[0:ind]
+        return name.strip()
+        #return name else name.split('.')[0]
     output = r"\enspace{}".join(map(adjust, lines[:ind]))
     font_size = 10
     if header_length > 150:

@@ -1,5 +1,6 @@
 /**
  * Description: palindromic tree
+ * Time: O(N)
  * Source: http://codeforces.com/blog/entry/13959
  * Verification: https://oj.uz/problem/view/APIO14_palindrome
  */

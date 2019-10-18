@@ -1,5 +1,6 @@
 /**
  * Description: Suffix Automaton
+ * Time: O(N\log \sum)
  * Source: https://cp-algorithms.com/string/suffix-automaton.html
  * Verification: 
 	* https://www.spoj.com/problems/SUBLEX/

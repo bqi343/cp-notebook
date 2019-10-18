@@ -1,5 +1,6 @@
 /**
  * Description: Top-bottom convex hull
+ * Time: O(N\log N)
  * Source: Wikibooks, KACTL
  * Verification:
 	* https://open.kattis.com/problems/convexhull
@@ -27,7 +28,6 @@ vi hullInd(const vP& P) {
 	if (P[l[0]] == P[l[1]]) return {0};
 	l.insert(end(l),rbegin(u)+1,rend(u)-1); return l;
 }
-
 vP hull(const vP& P) {
 	vi v = hullInd(P);
 	vP res; trav(t,v) res.pb(P[t]);

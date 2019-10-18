@@ -103,7 +103,7 @@
 \contentsline {section}{\numberline {7.4}Flows}{12}{section.7.4}
 \contentsline {subsection}{\texttt {Dinic.h}\hspace {0.2em}}{12}{section.7.4}
 \contentsline {subsection}{\texttt {MCMF.h}\hspace {0.2em}}{12}{lstnumber.7.10.47}
-\contentsline {subsection}{\texttt {GomoryHu.h}\hspace {0.2em}}{13}{lstnumber.7.11.56}
+\contentsline {subsection}{\texttt {GomoryHu.h}\hspace {0.2em}}{13}{lstnumber.7.11.55}
 \contentsline {section}{\numberline {7.5}Matching}{13}{section.7.5}
 \contentsline {subsection}{\texttt {DFSmatch.h}\hspace {0.2em}}{13}{section.7.5}
 \contentsline {subsection}{\texttt {Hungarian.h}\hspace {0.2em}}{13}{lstnumber.7.13.26}
@@ -154,7 +154,7 @@
 \contentsline {subsection}{\texttt {SuffixArray (14.4).h}\hspace {0.2em}}{19}{lstnumber.9.7.25}
 \contentsline {subsection}{\texttt {ReverseBW (14.4).h}\hspace {0.2em}}{19}{lstnumber.9.8.51}
 \contentsline {subsection}{\texttt {SuffixAutomaton.h}\hspace {0.2em}}{19}{lstnumber.9.9.8}
-\contentsline {subsection}{\texttt {SuffixTree.h}\hspace {0.2em}}{20}{lstnumber.9.10.72}
+\contentsline {subsection}{\texttt {SuffixTree.h}\hspace {0.2em}}{20}{lstnumber.9.10.73}
 \contentsline {section}{\numberline {9.3}Misc}{20}{section.9.3}
 \contentsline {subsection}{\texttt {TandemRepeats.h}\hspace {0.2em}}{20}{section.9.3}
 \contentsfinish 

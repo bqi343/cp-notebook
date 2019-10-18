@@ -48,6 +48,7 @@ struct SuffixAutomaton {
 		FOR(v,1,sz(st)) st[st[v].link].invLink.pb(v);
 	}
 	
+	// APPLICATIONS
 	void getAllOccur(vi& oc, int v) {
 		if (!st[v].isClone) oc.pb(st[v].firstPos);
 		trav(u,st[v].invLink) getAllOccur(oc,u);

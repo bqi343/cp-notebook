@@ -1,6 +1,6 @@
 /**
  * Description: Min-Cost Max Flow, no negative cycles allowed
- * Time: ?
+ * Time: O(NM^2\log M)
  * Source: GeeksForGeeks
  * Verification: https://codeforces.com/contest/164/problem/C
  */
@@ -24,14 +24,14 @@ template<int SZ> struct mcmf {
 	pi pre[SZ]; // previous vertex, edge label on path
 	pl cost[SZ]; // tot cost of path, amount of flow
 	ll totFlow, totCost, curCost;
-	void reweight() { // ensures all non-negative edge weights
+	void reweight() { 
+		// ensures all non-negative edge weights, destroys original
 		F0R(i,N) trav(p,adj[i]) p.cost += cost[i].f-cost[p.to].f;
 	}
 	bool spfa() { // reweighting will ensure that there will be negative weights only during the first time you run this
 		F0R(i,N) cost[i] = {INF,0};
 		cost[s] = {0,INF};
 		pqg<pair<ll,int>> todo({{0,s}});
-
 		while (sz(todo)) {
 			auto x = poll(todo); if (x.f > cost[x.s].f) continue;
 			trav(a,adj[x.s]) if (x.f+a.cost < cost[a.to].f && a.f < a.c) {
@@ -40,7 +40,6 @@ template<int SZ> struct mcmf {
 				todo.push({cost[a.to].f,a.to});
 			}
 		}
-
 		curCost += cost[t].f; return cost[t].s;
 	}
 	void backtrack() {

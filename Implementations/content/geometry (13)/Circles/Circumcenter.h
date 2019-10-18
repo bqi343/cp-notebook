@@ -1,5 +1,5 @@
 /**
- * Description: returns {circumcenter,circumradius}
+ * Description: returns \{circumcenter,circumradius\}
  * Source: EGMO
  * Verification: see MEC
  */

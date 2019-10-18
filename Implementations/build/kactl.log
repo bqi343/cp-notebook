@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  17 OCT 2019 23:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  18 OCT 2019 10:51
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1520,7 +1520,14 @@ runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/geometry (13)/Circles/Circumcenter.h" -o build/kactl.tmp )...executed.
 
- (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
+ (./build/kactl.tmp
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <7> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ))
 runsystem(rm -f build/kactl.tmp)...executed.
@@ -1597,16 +1604,16 @@ runsystem(python2 content/tex/preprocessor.py -i "content/strings (14)/Lightweig
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ))
-runsystem(python2 content/tex/preprocessor.py --print-header "LyndonFactorization.h|LyndonFactorization.h" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [18]
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/strings (14)/Suffix Structures/ACfixed.h" -o build/kactl.tmp )...executed.
 
  (./build/kactl.tmp (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-))
+)
+runsystem(python2 content/tex/preprocessor.py --print-header "LyndonFactorization.h|ACfixed.h" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [18])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/strings (14)/Suffix Structures/PalTree.h" -o build/kactl.tmp )...executed.
@@ -1650,7 +1657,7 @@ runsystem(rm -f build/kactl.tmp)...executed.
 runsystem(python2 content/tex/preprocessor.py -i "content/strings (14)/Misc/TandemRepeats.h" -o build/kactl.tmp )...executed.
 
  (./build/kactl.tmp
-Underfull \hbox (badness 5578) in paragraph at lines 7--7
+Underfull \hbox (badness 5578) in paragraph at lines 8--8
 \OT1/cmr/bx/n/7 Description: \OT1/cmr/m/n/7 Main-Lorentz al-go-rithm, finds all $(\OML/cmm/m/it/7 x; y\OT1/cmr/m/n/7 )$ such that
  []
 
@@ -1679,18 +1686,18 @@ Package rerunfilecheck Info: File `kactl.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 38.
  ) 
 Here is how much of TeX's memory you used:
- 16159 strings out of 492995
- 236478 string characters out of 6132704
- 1152741 words of memory out of 5000000
- 16035 multiletter control sequences out of 15000+600000
+ 16172 strings out of 492995
+ 236871 string characters out of 6132704
+ 1149741 words of memory out of 5000000
+ 16034 multiletter control sequences out of 15000+600000
  11283 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,12n,60p,518b,2523s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb>
-Output written on build//kactl.pdf (21 pages, 688966 bytes).
+Output written on build//kactl.pdf (21 pages, 689534 bytes).
 PDF statistics:
- 4084 PDF objects out of 4296 (max. 8388607)
- 3947 compressed objects within 40 object streams
- 3065 named destinations out of 3580 (max. 500000)
+ 4097 PDF objects out of 4296 (max. 8388607)
+ 3960 compressed objects within 40 object streams
+ 3076 named destinations out of 3580 (max. 500000)
  83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

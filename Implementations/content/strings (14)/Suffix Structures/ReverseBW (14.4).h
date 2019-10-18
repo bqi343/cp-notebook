@@ -3,6 +3,7 @@
 	 * sorts the rotations of the string in increasing order, 
 	 * and constructs a new string that contains the last character 
 	 * of each rotation. This function reverses the transform.
+ * Time: O(N\log N)
  * Source: ?
  * Verification: https://cses.fi/problemset/task/1113/
  */

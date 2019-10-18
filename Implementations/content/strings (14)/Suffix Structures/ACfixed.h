@@ -12,7 +12,7 @@ struct ACfixed { // fixed alphabet
 		int link;
 	};
 	vector<node> d;
-	ACfixed() { d.emplace_back(); }
+	ACfixed() { d.eb(); }
 
 	int add(string s) { // add word
 		int v = 0;
@@ -20,7 +20,7 @@ struct ACfixed { // fixed alphabet
 			int c = C-'a';
 			if (!d[v].to[c]) {
 				d[v].to[c] = sz(d);
-				d.emplace_back();
+				d.eb();
 			}
 			v = d[v].to[c];
 		}

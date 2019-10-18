@@ -14,13 +14,13 @@
 	% \maketitle{``One Last Time'' Edition}{\today}
 	\begin{multicols*}{3}
 	% \pagestyle{fancy}
+	\thispagestyle{fancy}
 	% Table of contents, without subsections:
 	\setcounter{tocdepth}{0}
-	
-	\thispagestyle{fancy}
 	\tableofcontents
 
 	\kactlchapter{contest}
+	\kactlchapter{math}
 	\kactlchapter{data-structures}
 	\kactlchapter{number-theory (11.1)}
 	\kactlchapter{combinatorial (11.2)}
@@ -37,6 +37,11 @@
 	\end{comment}
 \end{document}
 
-% rename cpp -> h: find . -name "*.cpp" -exec bash -c 'mv "$1" "${1%.cpp}".h' - '{}' \;
+% terminal commands:
 
-% find . -name '*.h' ! -type d -exec bash -c 'unexpand -t 4 "$0" > /tmp/e && mv /tmp/e "$0"' {} \;
+% rename cpp -> h: 
+	% find . -name "*.cpp" -exec bash -c 'mv "$1" "${1%.cpp}".h' - '{}' \;
+% replace spaces with tabs
+	% find . -name '*.h' ! -type d -exec bash -c 'unexpand -t 4 "$0" > /tmp/e && mv /tmp/e "$0"' {} \;
+% find F0Rd
+	% grep -r 'F0Rd' .

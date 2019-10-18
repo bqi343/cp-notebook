@@ -5,6 +5,8 @@
  * Verification: SPOJ MIFF (matrix inverse modulo prime)
  */
 
+#include "MatrixInv.h"
+
 mi numSpan(Mat<mi> m) { 
 	int n = m.r;
 	Mat<mi> res(n-1,n-1);

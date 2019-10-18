@@ -1,5 +1,5 @@
 /**
- * Description: Suffix Automaton
+ * Description: constructs minimal DFA that recognizes all suffixes of a string
  * Time: O(N\log \sum)
  * Source: https://cp-algorithms.com/string/suffix-automaton.html
  * Verification: 

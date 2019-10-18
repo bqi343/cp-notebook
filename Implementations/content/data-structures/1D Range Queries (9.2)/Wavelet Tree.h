@@ -7,7 +7,6 @@
 
 template<int SZ> struct Wavelet {
 	vi mapl[2*SZ], mapr[2*SZ], val[2*SZ];
-
 	void build(int ind = 1, int L = 0, int R = SZ-1) { // build a wavelet tree
 		if (ind == 1) { F0R(i,N) val[ind].pb(i); }
 		if (L == R) return;
@@ -22,10 +21,8 @@ template<int SZ> struct Wavelet {
 	}
 
 	int getl(int ind, int x) { return x < 0 ? -1 : mapl[ind][x]; }
-
 	int getr(int ind, int x) { return x < 0 ? -1 : mapr[ind][x]; }
-
-	int query(int lind, int rind, int k, int ind = 1, int L = 0, int R = SZ-1) { // how many <= mid with index <= r
+	int query(int lind, int rind, int k, int ind = 1, int L = 0, int R = SZ-1) { // get k-th largest number in interval
 		if (L == R) return L;
 
 		int M = (L+R)/2;

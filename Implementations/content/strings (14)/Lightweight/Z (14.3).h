@@ -1,7 +1,8 @@
 /**
  * Source: http://codeforces.com/blog/entry/3107
  * Time: O(N)
- * Description: similar to KMP
+ * Description: for each index $i$, computes the the maximum $len$ such that
+ 	* \texttt{s.substr(0,len) == s.substr(i,len)}
  * Verification: POI 12 Template, https://codeforces.com/contest/1137/problem/B
  */
 

@@ -1,5 +1,5 @@
 /**
- * Description: multiply two polynomials with arbitrary MOD
+ * Description: multiply two polynomials with arbitrary $MOD$
 	* ensures precision by splitting in half
  * Source: KACTL, https://cp-algorithms.com/algebra/fft.html
  * Verification: see FFT

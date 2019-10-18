@@ -1,6 +1,6 @@
 /**
- * Description: Kosaraju's Algorithm
-	* does DFS two times to generate SCC in topological order
+ * Description: Kosaraju's Algorithm:
+	* DFS two times to generate SCCs in topological order
  * Time: $O(N+M)$
  * Source: Wikipedia
  * Verification: POI 8 peaceful commission

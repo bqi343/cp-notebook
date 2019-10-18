@@ -1,6 +1,6 @@
 /**
  * Description: Vizing's Theorem: If max degree in simple undirected
-	* graph is d, then it can be edge colored with d+1 colors
+	* graph is $d$, then it can be edge colored with $d+1$ colors
  * Time: ?
  * Source: 
 	* own (not optimized)
@@ -32,7 +32,7 @@ template<int SZ> struct EdgeColor {
 	}
 	
 	void shiftPath(int x, vi p) {
-		F0Rd(i,sz(p)) setEdge(x,p[i],notAdj[p[i]]);
+		R0F(i,sz(p)) setEdge(x,p[i],notAdj[p[i]]);
 	}
 	
 	vi getPath(int st, int c0, int c1) {

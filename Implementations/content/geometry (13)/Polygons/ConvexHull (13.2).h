@@ -4,12 +4,11 @@
  * Source: Wikibooks, KACTL
  * Verification:
 	* https://open.kattis.com/problems/convexhull
-	* https://open.kattis.com/problems/roberthood
  */
 
-// typedef ll T;
+#include "Point.h"
 
-using namespace Point;
+// typedef ll T;
 
 pair<vi,vi> ulHull(const vP& P) {
 	vi p(sz(P)), u, l; iota(all(p), 0);
@@ -32,15 +31,4 @@ vP hull(const vP& P) {
 	vi v = hullInd(P);
 	vP res; trav(t,v) res.pb(P[t]);
 	return res;
-}
-
-ld diameter(vP P) { // rotating calipers
-	P = hull(P);
-	int n = sz(P), ind = 1; ld ans = 0;
-	F0R(i,n) 
-		for (int j = (i+1)%n;;ind = (ind+1)%n) {
-			ckmax(ans,abs(P[i]-P[ind]));
-			if (cross(P[j]-P[i],P[(ind+1)%n]-P[ind]) <= 0) break;
-		}
-	return ans;
 }

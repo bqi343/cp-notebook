@@ -1,6 +1,9 @@
 /**
- * Description: max size of independent set in both graphic + colorful matroids
- * Time: ?
+ * Description: computes a set of maximum size which is independent 
+ 	* in both graphic and colorful matroids, aka a spanning forest where
+ 	* no two edges are of the same color
+ * Time: $O(GI^{1.5})$ calls to oracles, where $G$ is the size of the ground set 
+ 	* and $I$ is the size of the independent set
  * Source: https://codeforces.com/blog/entry/69287
  * Verification: https://www.spoj.com/problems/COIN/
  */

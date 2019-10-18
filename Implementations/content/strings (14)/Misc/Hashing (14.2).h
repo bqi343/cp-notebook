@@ -6,8 +6,9 @@
  * Verification: 
 	* USACO Dec 17 Plat 1
 	* CF Check Transcription
- * Dependency: modular int
  */
+
+#include "Modular.h"
 
 namespace pairOp {
 	template<class A, class B> pair<A,B> operator+(const pair<A,B>& l, const pair<A,B>& r) { return {l.f+r.f,l.s+r.s}; }

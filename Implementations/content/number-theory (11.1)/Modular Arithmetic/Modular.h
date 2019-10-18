@@ -1,5 +1,5 @@
 /**
- * Description: operations with modular arithmetic
+ * Description: modular arithmetic operations 
  * Source: 
 	* KACTL
 	* https://codeforces.com/blog/entry/63903

@@ -41,13 +41,10 @@ namespace Point {
 	T cross(P a, P b) { return (conj(a)*b).s; }
 	T cross(P p, P a, P b) { return cross(a-p,b-p); }
 	P rotate(P a, T b) { return a*P(cos(b),sin(b)); }
-	
-	T dist(P p, P a, P b) { return std::abs(cross(p,a,b))/abs(a-b); }
+
 	P reflect(P p, P a, P b) { return a+conj((p-a)/(b-a))*(b-a); }
 	P foot(P p, P a, P b) { return (p+reflect(p,a,b))/(T)2; }
-	bool onSeg(P p, P a, P b) { 
-		return cross(a,b,p) == 0 && dot(p-a,p-b) <= 0;
-	}
+	bool onSeg(P p, P a, P b) { return cross(a,b,p) == 0 && dot(p-a,p-b) <= 0; }
 };
 
 using namespace Point;

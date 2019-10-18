@@ -1,6 +1,7 @@
 /**
- * Description: palindromic tree
- * Time: O(N)
+ * Description: palindromic tree, computes number of occurrences 
+ 	* of each palindrome within string
+ * Time: O(N\sum)
  * Source: http://codeforces.com/blog/entry/13959
  * Verification: https://oj.uz/problem/view/APIO14_palindrome
  */
@@ -25,9 +26,8 @@ template<int SZ> struct PalTree {
 		}
 		last = to[last][c]; oc[last] ++;
 	}
-	void init() { // number of occurrences of each palindrome
+	void numOc() { 
 		vpi v; FOR(i,2,sz) v.pb({len[i],i});
-		sort(all(v)); reverse(all(v));
-		trav(a,v) oc[link[a.s]] += oc[a.s];
+		sort(rall(v)); trav(a,v) oc[link[a.s]] += oc[a.s];
 	}
 };

@@ -1,5 +1,6 @@
 /**
  * Description: computes minimum enclosing circle
+ * Time: expected $O(N)$
  * Source: KACTL
  * Verification: USACO Camp 2019 Contest 2 #4
  */

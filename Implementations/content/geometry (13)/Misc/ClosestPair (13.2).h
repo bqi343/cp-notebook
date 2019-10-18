@@ -1,5 +1,6 @@
 /**
- * Description: $O(N\log N)$ line sweep to find two closest points out of N
+ * Description: line sweep to find two closest points 
+ * Time: O(N\log N)
  * Source: Own
  * Verification: https://open.kattis.com/problems/closestpair2
  */

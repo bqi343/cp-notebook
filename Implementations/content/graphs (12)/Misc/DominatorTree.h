@@ -1,5 +1,5 @@
 /**
- * Description: a dominates b iff every path from 1 to b passes through a
+ * Description: $a$ dominates $b$ iff every path from $1$ to $b$ passes through $a$
  * Time: ?
  * Source: https://tanujkhattar.wordpress.com/2016/01/11/dominator-tree-of-a-directed-graph/
  * Verification: https://codeforces.com/gym/100513/problem/L
@@ -36,7 +36,7 @@ template<int SZ> struct Dominator {
 	
 	void init() {
 		dfs(root);
-		FORd(i,1,co+1) {
+		ROF(i,1,co+1) {
 			trav(j,radj[i]) ckmin(sdom[i],sdom[get(j)]);
 			if (i > 1) sdomChild[sdom[i]].pb(i);
 			trav(j,sdomChild[i]) {

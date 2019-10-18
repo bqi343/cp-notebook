@@ -5,6 +5,8 @@
  * Verification: SPOJ MIFF (matrix inverse modulo prime)
  */
 
+#include "Matrix.h"
+
 template<class T> T gauss(Mat<T>& m) { // determinant of 1000x1000 Matrix in ~1s
 	int n = m.r;
 	T prod = 1; int nex = 0;

@@ -1,5 +1,6 @@
 /**
  * Description: Delaunay Triangulation, concyclic points are OK (but not all collinear)
+ * Time: O(N\log N)
  * Source: KACTL
  * Verification: CCO 2008 P6 Landing
  */

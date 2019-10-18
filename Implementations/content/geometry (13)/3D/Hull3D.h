@@ -5,7 +5,7 @@
  * Verification: https://open.kattis.com/problems/starsinacan
  */
 
-using namespace Point3D;
+#include "Point3D.h"
 
 struct ED {
 	void ins(int x) { (a == -1 ? a : b) = x; }

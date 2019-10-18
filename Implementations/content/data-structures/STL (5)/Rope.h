@@ -1,7 +1,7 @@
 /**
- * Description: insert element at n-th position,
+ * Description: insert element at $n$-th position,
 	* cut a substring and re-insert somewhere else
- * Time: O(\log N) per operation?
+ * Time: O(\log N) per operation? not well tested
  * Source: https://codeforces.com/blog/entry/10355
  * Verification: CEOI 2018 Day 2 Triangles
  */

@@ -1,5 +1,5 @@
 /**
- * Description: Easiest BBST
+ * Description: easy BBST, use split and merge to implement insert and delete
  * Time: O(\log N)
  * Source: https://cp-algorithms.com/data_structures/treap.html + others
  * Verification: http://www.spoj.com/problems/ORDERSET/

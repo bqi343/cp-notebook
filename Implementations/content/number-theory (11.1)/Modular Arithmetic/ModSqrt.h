@@ -5,6 +5,8 @@
  * Verification: https://www.spoj.com/problems/CRYPTO1
  */
 
+#include "Modular.h"
+
 template<class T> T sqrt(modular<T> a) { 
 	auto p = pow(a,(MOD-1)/2); if (p != 1) return p == 0 ? 0 : -1; // check if zero or does not have sqrt
 	T s = MOD-1, e = 0; while (s % 2 == 0) s /= 2, e ++;

@@ -1,6 +1,6 @@
 /**
- * Description: persistent segtree with lazy updates, assumes that lazy[cur] is 
- * included in val[cur] before propagating cur
+ * Description: persistent segtree with lazy updates, assumes that \texttt{lazy[cur]} is 
+ * included in \texttt{val[cur]} before propagating \texttt{cur}
  * Source: CF, Franklyn Wang
  * Verification: https://codeforces.com/contest/1090/problem/G
  */ 

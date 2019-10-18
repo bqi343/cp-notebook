@@ -1,7 +1,6 @@
 /**
- * Description: A set (not multiset!) with support for finding the n'th
+ * Description: A set (not multiset!) with support for finding the $n$'th
  * element, and finding the index of an element.
- * To get a map, change \texttt{null\_type}.
  * Time: O(\log N)
  * Source: KACTL
  * Verification: many
@@ -13,6 +12,7 @@ using namespace __gnu_pbds;
 
 template <class T> using Tree = tree<T, null_type, less<T>, 
 	rb_tree_tag, tree_order_statistics_node_update>; 
+// to get a map, change null_type
 
 #define ook order_of_key
 #define fbo find_by_order

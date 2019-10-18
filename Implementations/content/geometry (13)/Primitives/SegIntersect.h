@@ -4,10 +4,8 @@
  * Verification: https://open.kattis.com/problems/segmentintersection
  */
 
-P extension(P a, P b, P c, P d) { // computes the intersection of lines AB, CD
-	T x = cross(a,b,c), y = cross(a,b,d);
-	return (d*x-c*y)/(x-y);
-}
+#include "Point.h"
+
 vP segIntersect(P a, P b, P c, P d) { 
 	T x = cross(a,b,c), y = cross(a,b,d); 
 	T X = cross(c,d,a), Y = cross(c,d,b); 

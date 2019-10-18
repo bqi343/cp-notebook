@@ -5,6 +5,8 @@
  * Verification: https://codeforces.com/problemset/problem/343/E
  */
 
+#include "Dinic.h"
+
 template<int SZ> struct GomoryHu {
 	int N;
 	vector<pair<pi,int>> ed;

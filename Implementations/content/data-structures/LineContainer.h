@@ -1,5 +1,5 @@
 /**
- * Description: Given set of lines, computes greatest y-coordinate for any x
+ * Description: Given set of lines, computes greatest $y$-coordinate for any $x$
  * Time: O(\log N)
  * Source: KACTL
    * https://codeforces.com/blog/entry/63823?#comment-477568

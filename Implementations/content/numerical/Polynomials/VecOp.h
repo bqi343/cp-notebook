@@ -1,6 +1,5 @@
 /**
- * Description: modular arithmetic with vectors
-	* use for NTT
+ * Description: arithmetic + misc polynomial operations with vectors
  * Source: Own
  * Verification: see FFT
  */

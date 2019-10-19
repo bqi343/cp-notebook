@@ -18,12 +18,3 @@ struct DSU {
 		return 1;
 	}
 };
-
-// computes the minimum spanning tree in O(ElogE) time
-
-template<class T> T kruskal(int n, vector<pair<T,pi>> edge) {
-	sort(all(edge));
-	T ans = 0; DSU D; D.init(n);
-	trav(a,edge) if (D.unite(a.s.f,a.s.s)) ans += a.f; // edge is in MST
-	return ans;
-}

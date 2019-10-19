@@ -36,7 +36,7 @@ struct LC : multiset<Line,less<>> {
 	}
 	ll query(ll x) {
 		assert(!empty());
-		auto l = *lower_bound(x);
-		return l.k * x + l.m;
+		auto l = *lb(x);
+		return l.k*x+l.m;
 	}
 };

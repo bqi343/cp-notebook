@@ -1,5 +1,5 @@
 /**
- * Description: Compute MST of points where edges are manhattan distances 
+ * Description: Compute minimum spanning tree of points where edges are manhattan distances 
  * Time: O(N\log N)
  * Source: Rezwan Arefin
  * Verification: 
@@ -8,7 +8,7 @@
 	* TC 760 ComponentsForever
  */
 
-#include "DSU.h"
+#include "MST.h"
 
 int N;
 vector<array<int,3>> cur;
@@ -49,7 +49,6 @@ ll mst(vpi v) {
 	ind.clear(); F0R(i,N) ind.pb(i);
 	sort(all(ind),[&v](int a, int b) { return v[a] < v[b]; });
 	F0R(i,N-1) if (v[ind[i]] == v[ind[i+1]]) ed.pb({0,{ind[i],ind[i+1]}});
-	
 	F0R(i,2) { // it's probably ok to consider just two quadrants?
 		F0R(i,N) {
 			auto a = v[i];
@@ -69,6 +68,5 @@ ll mst(vpi v) {
 		solve();
 		trav(a,v) a = {a.s,-a.f}; // rotate 90 degrees, repeat
 	}
-	
 	return kruskal(ed);
 }

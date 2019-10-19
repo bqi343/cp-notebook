@@ -31,20 +31,20 @@
 \contentsline {chapter}{\numberline {6}Numerical}{8}{chapter.6}
 \contentsline {section}{\numberline {6.1}Matrix}{8}{section.6.1}
 \contentsline {section}{\numberline {6.2}Polynomials}{8}{section.6.2}
-\contentsline {section}{\numberline {6.3}Misc}{9}{section.6.3}
-\contentsline {chapter}{\numberline {7}Graphs}{10}{chapter.7}
-\contentsline {section}{\numberline {7.1}Fundamentals}{10}{section.7.1}
+\contentsline {section}{\numberline {6.3}Misc}{10}{section.6.3}
+\contentsline {chapter}{\numberline {7}Graphs}{11}{chapter.7}
+\contentsline {section}{\numberline {7.1}Fundamentals}{11}{section.7.1}
 \contentsline {section}{\numberline {7.2}Trees}{11}{section.7.2}
-\contentsline {section}{\numberline {7.3}DFS Algorithms}{11}{section.7.3}
-\contentsline {section}{\numberline {7.4}Flows}{12}{section.7.4}
+\contentsline {section}{\numberline {7.3}DFS Algorithms}{12}{section.7.3}
+\contentsline {section}{\numberline {7.4}Flows}{13}{section.7.4}
 \contentsline {section}{\numberline {7.5}Matching}{13}{section.7.5}
 \contentsline {section}{\numberline {7.6}Misc}{14}{section.7.6}
-\contentsline {chapter}{\numberline {8}Geometry}{15}{chapter.8}
-\contentsline {section}{\numberline {8.1}Primitives}{15}{section.8.1}
+\contentsline {chapter}{\numberline {8}Geometry}{16}{chapter.8}
+\contentsline {section}{\numberline {8.1}Primitives}{16}{section.8.1}
 \contentsline {section}{\numberline {8.2}Polygons}{16}{section.8.2}
-\contentsline {section}{\numberline {8.3}Circles}{16}{section.8.3}
+\contentsline {section}{\numberline {8.3}Circles}{17}{section.8.3}
 \contentsline {section}{\numberline {8.4}Misc}{17}{section.8.4}
-\contentsline {section}{\numberline {8.5}3D}{17}{section.8.5}
+\contentsline {section}{\numberline {8.5}3D}{18}{section.8.5}
 \contentsline {chapter}{\numberline {9}Strings}{18}{chapter.9}
 \contentsline {section}{\numberline {9.1}Lightweight}{18}{section.9.1}
 \contentsline {section}{\numberline {9.2}Suffix Structures}{19}{section.9.2}

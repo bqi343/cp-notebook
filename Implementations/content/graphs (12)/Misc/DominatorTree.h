@@ -1,6 +1,6 @@
 /**
  * Description: $a$ dominates $b$ iff every path from $1$ to $b$ passes through $a$
- * Time: ?
+ * Time: O(M\log N)
  * Source: https://tanujkhattar.wordpress.com/2016/01/11/dominator-tree-of-a-directed-graph/
  * Verification: https://codeforces.com/gym/100513/problem/L
  */
@@ -33,7 +33,6 @@ template<int SZ> struct Dominator {
 			radj[label[y]].pb(label[x]);
 		}
 	}
-	
 	void init() {
 		dfs(root);
 		ROF(i,1,co+1) {

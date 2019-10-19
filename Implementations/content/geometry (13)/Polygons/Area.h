@@ -1,6 +1,7 @@
 /**
  * Description: computes area + the center of mass of 
- * a polygon with constant mass per unit area
+ 	* a polygon with constant mass per unit area
+ * Time: O(N)
  * Source: http://codeforces.com/blog/entry/22175, KACTL
  * Verification: kattis polygonarea, VT HSPC 2018 Holiday Stars
  */

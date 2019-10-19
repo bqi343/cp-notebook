@@ -34,7 +34,7 @@
 \contentsline {section}{\numberline {6.3}Misc}{9}{section.6.3}
 \contentsline {chapter}{\numberline {7}Graphs}{10}{chapter.7}
 \contentsline {section}{\numberline {7.1}Fundamentals}{10}{section.7.1}
-\contentsline {section}{\numberline {7.2}Trees}{10}{section.7.2}
+\contentsline {section}{\numberline {7.2}Trees}{11}{section.7.2}
 \contentsline {section}{\numberline {7.3}DFS Algorithms}{11}{section.7.3}
 \contentsline {section}{\numberline {7.4}Flows}{12}{section.7.4}
 \contentsline {section}{\numberline {7.5}Matching}{13}{section.7.5}

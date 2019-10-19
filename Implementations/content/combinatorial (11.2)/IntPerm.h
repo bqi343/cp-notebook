@@ -1,8 +1,8 @@
 /**
- * Description: convert permutation of $\{0,1,...,n-1\}$ to integer in $[0,n!)$
+ * Description: convert permutation of $\{0,1,...,N-1\}$ to integer in $[0,N!)$
  * Source: http://antoinecomeau.blogspot.com/2014/07/mapping-between-permutations-and.html
  * Verification: ?
- * Time: O(n)
+ * Time: O(N)
  * Usage: assert(encode(decode(5,37)) == 37);
  */
 

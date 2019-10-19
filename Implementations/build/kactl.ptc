@@ -74,25 +74,26 @@
 \contentsline {subsection}{\texttt {MatrixInv.h}\hspace {0.2em}}{8}{lstnumber.6.1.36}
 \contentsline {subsection}{\texttt {MatrixTree.h}\hspace {0.2em}}{8}{lstnumber.6.2.31}
 \contentsline {section}{\numberline {6.2}Polynomials}{8}{section.6.2}
-\contentsline {subsection}{\texttt {Karatsuba.h}\hspace {0.2em}}{8}{section.6.2}
-\contentsline {subsection}{\texttt {FFT.h}\hspace {0.2em}}{8}{lstnumber.6.4.26}
-\contentsline {subsection}{\texttt {FFTmod.h}\hspace {0.2em}}{9}{lstnumber.6.5.40}
-\contentsline {subsection}{\texttt {PolyInv.h}\hspace {0.2em}}{9}{lstnumber.6.6.27}
-\contentsline {subsection}{\texttt {PolyDiv.h}\hspace {0.2em}}{9}{lstnumber.6.7.11}
-\contentsline {subsection}{\texttt {PolySqrt.h}\hspace {0.2em}}{9}{lstnumber.6.8.7}
+\contentsline {subsection}{\texttt {PolyRoots.h}\hspace {0.2em}}{8}{section.6.2}
+\contentsline {subsection}{\texttt {Karatsuba.h}\hspace {0.2em}}{8}{lstnumber.6.4.19}
+\contentsline {subsection}{\texttt {FFT.h}\hspace {0.2em}}{9}{lstnumber.6.5.26}
+\contentsline {subsection}{\texttt {FFTmod.h}\hspace {0.2em}}{9}{lstnumber.6.6.40}
+\contentsline {subsection}{\texttt {PolyInv.h}\hspace {0.2em}}{9}{lstnumber.6.7.27}
+\contentsline {subsection}{\texttt {PolyDiv.h}\hspace {0.2em}}{9}{lstnumber.6.8.11}
+\contentsline {subsection}{\texttt {PolySqrt.h}\hspace {0.2em}}{9}{lstnumber.6.9.7}
 \contentsline {section}{\numberline {6.3}Misc}{9}{section.6.3}
 \contentsline {subsection}{\texttt {LinRec.h}\hspace {0.2em}}{9}{section.6.3}
-\contentsline {subsection}{\texttt {Integrate.h}\hspace {0.2em}}{9}{lstnumber.6.10.35}
-\contentsline {subsection}{\texttt {IntegrateAdaptive.h}\hspace {0.2em}}{9}{lstnumber.6.11.8}
-\contentsline {subsection}{\texttt {Simplex.h}\hspace {0.2em}}{9}{lstnumber.6.12.19}
+\contentsline {subsection}{\texttt {Integrate.h}\hspace {0.2em}}{9}{lstnumber.6.11.35}
+\contentsline {subsection}{\texttt {IntegrateAdaptive.h}\hspace {0.2em}}{10}{lstnumber.6.12.8}
+\contentsline {subsection}{\texttt {Simplex.h}\hspace {0.2em}}{10}{lstnumber.6.13.19}
 \contentsline {chapter}{\numberline {7}Graphs}{10}{chapter.7}
 \ttl@stoptoc {chapters@6}
 \ttl@starttoc {chapters@7}
 \contentsline {section}{\numberline {7.1}Fundamentals}{10}{section.7.1}
 \contentsline {subsection}{\texttt {DSU (7.6).h}\hspace {0.2em}}{10}{section.7.1}
 \contentsline {subsection}{\texttt {ManhattanMST.h}\hspace {0.2em}}{10}{lstnumber.7.1.22}
-\contentsline {section}{\numberline {7.2}Trees}{10}{section.7.2}
-\contentsline {subsection}{\texttt {LCAjumps (10.2).h}\hspace {0.2em}}{10}{section.7.2}
+\contentsline {section}{\numberline {7.2}Trees}{11}{section.7.2}
+\contentsline {subsection}{\texttt {LCAjumps (10.2).h}\hspace {0.2em}}{11}{section.7.2}
 \contentsline {subsection}{\texttt {CentroidDecomp (10.3).h}\hspace {0.2em}}{11}{lstnumber.7.3.33}
 \contentsline {subsection}{\texttt {HLD (10.3).h}\hspace {0.2em}}{11}{lstnumber.7.4.45}
 \contentsline {section}{\numberline {7.3}DFS Algorithms}{11}{section.7.3}
@@ -112,8 +113,8 @@
 \contentsline {subsection}{\texttt {MaximalCliques.h}\hspace {0.2em}}{14}{section.7.6}
 \contentsline {subsection}{\texttt {LCT.h}\hspace {0.2em}}{14}{lstnumber.7.16.19}
 \contentsline {subsection}{\texttt {DirectedMST.h}\hspace {0.2em}}{14}{lstnumber.7.17.96}
-\contentsline {subsection}{\texttt {DominatorTree.h}\hspace {0.2em}}{15}{lstnumber.7.18.47}
-\contentsline {subsection}{\texttt {EdgeColoring.h}\hspace {0.2em}}{15}{lstnumber.7.19.47}
+\contentsline {subsection}{\texttt {DominatorTree.h}\hspace {0.2em}}{15}{lstnumber.7.18.64}
+\contentsline {subsection}{\texttt {EdgeColor.h}\hspace {0.2em}}{15}{lstnumber.7.19.46}
 \contentsline {chapter}{\numberline {8}Geometry}{15}{chapter.8}
 \ttl@stoptoc {chapters@7}
 \ttl@starttoc {chapters@8}

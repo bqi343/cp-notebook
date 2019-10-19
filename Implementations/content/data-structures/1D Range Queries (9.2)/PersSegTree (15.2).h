@@ -1,6 +1,7 @@
 /**
  * Description: persistent segtree with lazy updates, assumes that \texttt{lazy[cur]} is 
- * included in \texttt{val[cur]} before propagating \texttt{cur}
+ 	* included in \texttt{val[cur]} before propagating \texttt{cur}
+ * Time: O(\log N)
  * Source: CF, Franklyn Wang
  * Verification: https://codeforces.com/contest/1090/problem/G
  */ 

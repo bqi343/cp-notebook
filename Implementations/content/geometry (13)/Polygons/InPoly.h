@@ -1,5 +1,6 @@
 /** 
  * Description: tests whether a point is inside, on, or outside the perimeter of any polygon
+ * Time: O(N)
  * Verification: https://open.kattis.com/problems/pointinpolygon
  */
 

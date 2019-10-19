@@ -1,9 +1,15 @@
 /**
- * Description: computes the minimum directed spanning tree
+ * Description: computes minimum weight directed spanning tree, 
+ 	* edge from $inv[i]\to i$ for all $i\neq r$
  * Time: O(M\log M)
  * Source: KACTL
- * Verification: ?
+ 	* https://courses.cs.washington.edu/courses/cse490u/17wi/slides/CLE.pdf
+ * Verification: 
+ 	* https://open.kattis.com/problems/fastestspeedrun
+ 	* https://codeforces.com/problemset/problem/240/E
  */
+
+#include "DSUrb.h"
 
 struct Edge { int a, b; ll w; };
 struct Node { /// lazy skew heap node
@@ -27,28 +33,45 @@ Node *merge(Node *a, Node *b) {
 }
 void pop(Node*& a) { a->prop(); a = merge(a->l, a->r); }
 
-ll dmst(int n, int r, vector<Edge>& g) {
-	DSU dsu; dsu.init(n);
-	vector<Node*> heap(n);
-	trav(e, g) heap[e.b] = merge(heap[e.b], new Node{e});
-	ll res = 0;
-	vi seen(n, -1), path(n); seen[r] = r;
+pair<ll,vi> dmst(int n, int r, const vector<Edge>& g) {
+	DSUrb dsu; dsu.init(n); // DSU with rollback if need to return edges
+	vector<Node*> heap(n); // store edges entering each vertex in increasing order of weight
+	trav(e,g) heap[e.b] = merge(heap[e.b], new Node{e});
+	ll res = 0; vi seen(n,-1); seen[r] = r; 
+	vpi in(n,{-1,-1});
+	vector<pair<int,vector<Edge>>> cycs;
 	F0R(s,n) {
-		int u = s, qi = 0, w;
+		int u = s, w;
+		vector<pair<int,Edge>> path; 
 		while (seen[u] < 0) {
-			path[qi++] = u, seen[u] = s;
-			if (!heap[u]) return -1;
-			Edge e = heap[u]->top();
+			if (!heap[u]) return {-1,{}};
+			seen[u] = s;
+			Edge e = heap[u]->top(); path.pb({u,e}); 
 			heap[u]->delta -= e.w, pop(heap[u]);
-			res += e.w, u = dsu.get(e.a);
-			if (seen[u] == s) {
-				Node* cyc = 0;
-				do cyc = merge(cyc, heap[w = path[--qi]]);
-				while (dsu.unite(u, w));
-				u = dsu.get(u);
-				heap[u] = cyc, seen[u] = -1;
+			res += e.w, u = dsu.get(e.a); 
+			if (seen[u] == s) { // compress verts in cycle
+				Node* cyc = 0; cycs.pb({u,{}});
+				do {
+					cyc = merge(cyc, heap[w = path.back().f]);
+					cycs.back().s.pb(path.back().s);
+					path.pop_back(); 
+				} while (dsu.unite(u, w));
+				u = dsu.get(u); heap[u] = cyc, seen[u] = -1;
 			}
 		}
+		trav(t,path) in[dsu.get(t.s.b)] = {t.s.a,t.s.b}; // found path from root
 	}
-	return res;
+	while (sz(cycs)) { // expand cycs to restore sol
+		auto c = cycs.back(); cycs.pop_back();
+		pi inEdge = in[c.f];
+		trav(t,c.s) dsu.rollback();
+		trav(t,c.s) in[dsu.get(t.b)] = {t.a,t.b};
+		in[dsu.get(inEdge.s)] = inEdge;
+	}
+	vi inv; 
+	F0R(i,n) { 
+		assert(i == r ? in[i].s == -1 : in[i].s == i);
+		inv.pb(in[i].f); 
+	} 
+	return {res,inv};
 }

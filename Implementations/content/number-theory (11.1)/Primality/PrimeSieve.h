@@ -13,7 +13,6 @@ template<int SZ> struct Sieve {
 		for (int i = 4; i < SZ; i += 2) isprime[i] = 0;
 		for (int i = 3; i*i < SZ; i += 2) if (isprime[i])
 			for (int j = i*i; j < SZ; j += i*2) isprime[j] = 0;
-		vi pr;
 		FOR(i,2,SZ) if (isprime[i]) pr.pb(i);
 	}
 };

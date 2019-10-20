@@ -12,9 +12,10 @@ template<class T> T poll(pqg<T>& x) {
 }
 
 template<int SZ> struct mcmf { 
-	struct Edge { int to, rev; ll f, c, cost; };
+	typedef ll F; typedef ll C;
+	struct Edge { int to, rev; F flow, cap; C cost; int id; };
 	vector<Edge> adj[SZ];
-	void addEdge(int u, int v, ll cap, ll cost) {
+	void addEdge(int u, int v, F cap, C cost) {
 		assert(cap >= 0);
 		Edge a{v, sz(adj[v]), 0, cap, cost}, b{u, sz(adj[u]), 0, 0, -cost};
 		adj[u].pb(a), adj[v].pb(b);
@@ -22,35 +23,35 @@ template<int SZ> struct mcmf {
 
 	int N, s, t;
 	pi pre[SZ]; // previous vertex, edge label on path
-	pl cost[SZ]; // tot cost of path, amount of flow
-	ll totFlow, totCost, curCost;
+	pair<C,F> cost[SZ]; // tot cost of path, amount of flow
+	C totCost, curCost; F totFlow; 
 	void reweight() { 
-		// ensures all non-negative edge weights, destroys original
+		// ensures all non-negative edge weights? destroys original
 		F0R(i,N) trav(p,adj[i]) p.cost += cost[i].f-cost[p.to].f;
 	}
 	bool spfa() { // reweighting will ensure that there will be negative weights only during the first time you run this
-		F0R(i,N) cost[i] = {INF,0};
-		cost[s] = {0,INF};
-		pqg<pair<ll,int>> todo({{0,s}});
+		F0R(i,N) cost[i] = {INF,0}; cost[s] = {0,INF};
+		pqg<pair<ll,int>> todo; todo.push({0,s});
 		while (sz(todo)) {
 			auto x = poll(todo); if (x.f > cost[x.s].f) continue;
-			trav(a,adj[x.s]) if (x.f+a.cost < cost[a.to].f && a.f < a.c) {
+			trav(a,adj[x.s]) if (x.f+a.cost < cost[a.to].f && a.flow < a.cap) { 
+				// if costs are doubles, add some EPS to ensure that 
+				// you do not traverse some 0-weight cycle repeatedly
 				pre[a.to] = {x.s,a.rev};
-				cost[a.to] = {x.f+a.cost, min(a.c-a.f,cost[x.s].s)};
+				cost[a.to] = {x.f+a.cost,min(a.cap-a.flow,cost[x.s].s)};
 				todo.push({cost[a.to].f,a.to});
 			}
 		}
 		curCost += cost[t].f; return cost[t].s;
 	}
 	void backtrack() {
-		auto f = cost[t].s; totFlow += f, totCost += curCost*f;
+		F df = cost[t].s; totFlow += df, totCost += curCost*df;
 		for (int x = t; x != s; x = pre[x].f) {
-			adj[x][pre[x].s].f -= f;
-			adj[pre[x].f][adj[x][pre[x].s].rev].f += f;
+			adj[x][pre[x].s].flow -= df;
+			adj[pre[x].f][adj[x][pre[x].s].rev].flow += df;
 		}
 	}
-
-	pl calc(int _N, int _s, int _t) {
+	pair<F,C> calc(int _N, int _s, int _t) {
 		N = _N; s = _s, t = _t; totFlow = totCost = curCost = 0;
 		spfa();
 		while (1) {

@@ -8,7 +8,7 @@
 
 template<int SZ> struct Dinic {
 	typedef ll F; // flow type
-	struct Edge { int to, rev; F f, c; };
+	struct Edge { int to, rev; F flow, cap; };
 	
 	int N,s,t;
 	vector<Edge> adj[SZ];
@@ -26,21 +26,19 @@ template<int SZ> struct Dinic {
 		queue<int> q({s}); level[s] = 0; 
 		while (sz(q)) {
 			int u = q.front(); q.pop();
-			trav(e,adj[u]) if (level[e.to] < 0 && e.f < e.c) {
-				level[e.to] = level[u]+1; q.push(e.to);
-			}
+			trav(e,adj[u]) if (level[e.to] < 0 && e.flow < e.cap) 
+				q.push(e.to), level[e.to] = level[u]+1;
 		}
 		return level[t] >= 0;
 	}
-
 	F sendFlow(int v, F flow) {
 		if (v == t) return flow;
 		for (; cur[v] != end(adj[v]); cur[v]++) {
 			Edge& e = *cur[v];
-			if (level[e.to] != level[v]+1 || e.f == e.c) continue;
-			auto df = sendFlow(e.to,min(flow,e.c-e.f));
+			if (level[e.to] != level[v]+1 || e.flow == e.cap) continue;
+			auto df = sendFlow(e.to,min(flow,e.cap-e.flow));
 			if (df) { // saturated at least one edge
-				e.f += df; adj[e.to][e.rev].f -= df;
+				e.flow += df; adj[e.to][e.rev].flow -= df;
 				return df;
 			}
 		}
@@ -49,7 +47,7 @@ template<int SZ> struct Dinic {
 	F maxFlow(int _N, int _s, int _t) {
 		N = _N, s = _s, t = _t; if (s == t) return -1;
 		F tot = 0;
-		while (bfs()) while (auto flow = sendFlow(s,numeric_limits<F>::max())) tot += flow;
+		while (bfs()) while (auto df = sendFlow(s,numeric_limits<F>::max())) tot += df;
 		return tot;
 	}
 };

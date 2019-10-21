@@ -25,11 +25,12 @@ template<int SZ> struct mcmf {
 	pi pre[SZ]; // previous vertex, edge label on path
 	pair<C,F> cost[SZ]; // tot cost of path, amount of flow
 	C totCost, curCost; F totFlow; 
-	void reweight() { 
-		// ensures all non-negative edge weights? destroys original
+	void reweight() { // makes all edge costs non-negative
+		// all edges on shortest path become 0
 		F0R(i,N) trav(p,adj[i]) p.cost += cost[i].f-cost[p.to].f;
 	}
-	bool spfa() { // reweighting will ensure that there will be negative weights only during the first time you run this
+	bool spfa() { // reweight ensures that there will be negative weights 
+		// only during the first time you run this
 		F0R(i,N) cost[i] = {INF,0}; cost[s] = {0,INF};
 		pqg<pair<ll,int>> todo; todo.push({0,s});
 		while (sz(todo)) {
@@ -53,11 +54,7 @@ template<int SZ> struct mcmf {
 	}
 	pair<F,C> calc(int _N, int _s, int _t) {
 		N = _N; s = _s, t = _t; totFlow = totCost = curCost = 0;
-		spfa();
-		while (1) {
-			reweight();
-			if (!spfa()) return {totFlow, totCost};
-			backtrack();
-		}
+		while (spfa()) reweight(), backtrack();
+		return {totFlow, totCost};
 	}
 };

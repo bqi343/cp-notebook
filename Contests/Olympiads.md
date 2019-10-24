@@ -14,9 +14,10 @@ See [here](https://ioinformatics.org/page/members/7) for additional links. The [
       * 3 problems, 4 hrs
     * [Very Old Gold Probs](http://tjsct.wikidot.com/usaco/)
     * [USACO Training](http://train.usaco.org/usacogate)
-      * not particularly beginner-friendly, but still helpful
-      * somewhat outdated in the sense that it lacks common topics such as segment tree
+      * not particularly beginner-friendly but still helpful
+      * somewhat outdated in the sense that it lacks topics which are now quite common (ex. segment tree)
       * if you're unsure about whether it will be useful, you might as well try it and see where you get stuck :P
+      * personally, I did the first five chapters in one summer (though I had to look up some hints ...)
     * [article :o](https://www.usenix.org/legacy/bodinfo/bod/bodmarch10/future.pdf)
   * [Japan](https://www.ioi-jp.org/)
     * [Open Contests](https://contests.ioi-jp.org/)

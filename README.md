@@ -15,7 +15,7 @@ If you would like to contribute, provide feedback, or encourage me to update som
 
 ## Getting Started
 
-I recommend that you use C++, even if you already know some other language such as Java or Python (see "resources"). A solid foundation in math (ex. AIME qualification) can help greatly.
+I recommend that you use C++, even if you already know some other language such as Java or Python. A solid foundation in math (ex. AIME qualification) can help greatly.
 
   * [C++ Tutorial](https://www.google.com/url?q=http%3A%2F%2Fwww.cplusplus.com%2Fdoc%2Ftutorial%2F&sa=D)
   * [CodeSignal](https://codesignal.com/)
@@ -23,7 +23,7 @@ I recommend that you use C++, even if you already know some other language such 
   * [AtCoder](http://atcoder.jp/)
     * beginner contests are good
 
-The following links may also be helpful.
+The following links are good. Also see the material in the "Helpful" folder.
 
   * [IOI: Getting Started](https://ioinformatics.org/page/getting-started/14)
   * [Philippines OI: Prepare](https://noi.ph/prepare/)

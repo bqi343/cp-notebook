@@ -21,8 +21,8 @@ There are many reasons to use C++11 over Java, such as
 
 ### Books
 
-  * [Competitive Programmer's Handbook (CPH)](https://cses.fi/)
-    * The problemset (now at 200 problems) is quite good!
+  * [Competitive Programmer's Handbook (CPH)](https://cses.fi/book/book.pdf)
+    * The [problemset](https://cses.fi/problemset/) (now at 200 problems) is quite good!
   * [Competitive Programming Book (Steven, Felix)](http://www.comp.nus.edu.sg/~stevenha/myteaching/competitive_programming/cp1.pdf)
   * [Samuel Hsiang Guide](https://github.com/alwayswimmin/cs_guide)
   * [Principles of Algorithmic Problem Solving](http://www.csc.kth.se/~jsannemo/slask/main.pdf)

@@ -18,7 +18,7 @@ fast: | build
 	$(LATEXCMD) content/tex/kactl.tex </dev/null
 	cp build/kactl.pdf kactl.pdf
 
-kactl: test-session.pdf | build
+kactl: build
 	$(LATEXCMD) content/tex/kactl.tex && $(LATEXCMD) content/tex/kactl.tex
 	cp build/kactl.pdf kactl.pdf
 

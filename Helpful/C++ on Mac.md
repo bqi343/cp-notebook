@@ -1,20 +1,26 @@
-# C++ 
+# C++
 
 ## Command Line (Mac)
 
-Follow the instructions [here](https://wiki.helsinki.fi/display/HUGG/GNU+compiler+install+on+Mac+OS+X?fbclid=IwAR3bnM6A_kTgXD2p5nOfVbxRRQ4nHMj89jllNy1-zdtfXfcq1czbSoXiWgE). Step 4 might give errors but it should still install. After this, running the following command should display gcc.
-
-```
-gcc --version
-```
-
-The following command should also work.
+### Option 1
 
 ```
 brew install gcc
 ```
 
-In this case, the g++ command will still default to clang, but you can substitute g++-8 instead.
+Then you should be able to compile with g++-#, where # is the version number (currently 9).
+
+### Option 2
+
+Follow the instructions [here](https://wiki.helsinki.fi/display/HUGG/GNU+compiler+install+on+Mac+OS+X?fbclid=IwAR3bnM6A_kTgXD2p5nOfVbxRRQ4nHMj89jllNy1-zdtfXfcq1czbSoXiWgE). Step 4 will give errors but it should still install.
+
+Running the following command should not display clang.
+
+```
+gcc --version
+```
+
+Then you should be able to compile with g++.
 
 ## Shortcuts
 
@@ -28,7 +34,7 @@ gedit ~/.bash_profile
 Add the following functions.
 
 ```
-co() { 
+co() {
     g++ -std=c++17 -Ofast -Wall -Wl,-stack_size -Wl,0x10000000 -o $1 $1.cpp
 }
 run() {
@@ -53,7 +59,9 @@ softwareupdate --list
 softwareupdate -i -a
 ```
 
-For OS X Mojave, navigate to your bash profile
+### OS X Mojave
+
+Navigate to your bash profile
 ```
 gedit ~/.bash_profile
 ```
@@ -62,20 +70,26 @@ and add the following line:
 export CPLUS_INCLUDE_PATH="/usr/local/include/c++/8.1.0/:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include:$CPLUS_INCLUDE_PATH"
 ```
 
-## IDE 
+### OS X Catalina
+
+Whoops I can't figure out how to use g++ successfully D:
+Maybe the following links are helpful?
+
+ * [StackOverflow](https://stackoverflow.com/questions/58278260/cant-compile-a-c-program-on-a-mac-after-upgrading-to-catalina-10-15)
+ * [SolarianProgrammer](https://solarianprogrammer.com/2019/10/12/compiling-gcc-macos/)
+
+## Tools
 
 ### Online
 
-* [CSAcademy](https://csacademy.com/workspace/)
-	* I use this the most.
-* [Ideone](http://ideone.com/)
-* [Cloud9](https://c9.io/)
+ * [CSAcademy](https://csacademy.com/workspace/)
+	 * I used this a lot until the queue time limits got rlly annoying
+ * [Ideone](http://ideone.com/)
+   * seems okay if you use an ad blocker
+   * sometimes randomly erases your code when you first create it (so get in the habit of copying your code before creating it :P)
 
-### Local
+### Local IDEs
 
- * [Sublime Text 3](https://www.sublimetext.com/)
-   * [Editing Build Settings](https://stackoverflow.com/questions/23789410/how-to-edit-sublime-text-build-settings)
-   * [FastOlympicCoding Addon](https://github.com/Jatana/FastOlympicCoding)
  * [Geany](https://www.geany.org/)
  * [Visual Studio Code](https://code.visualstudio.com/)
  * [XCode](https://developer.apple.com/xcode/)
@@ -83,6 +97,12 @@ export CPLUS_INCLUDE_PATH="/usr/local/include/c++/8.1.0/:/Applications/Xcode.app
  * [Codeblocks](http://www.codeblocks.org/)
    * bad on mac :(
 
+### Text Editors
+
+ * [Sublime Text 3](https://www.sublimetext.com/)
+   * [Editing Build Settings](https://stackoverflow.com/questions/23789410/how-to-edit-sublime-text-build-settings)
+   * [FastOlympicCoding Addon](https://github.com/Jatana/FastOlympicCoding)
+ * [Atom](https://atom.io/)
 
 ## Useful Links
 

@@ -70,7 +70,7 @@ def find_start_comment(source, start=None):
     return first
 
 def formCap(caption):
-    if caption[0] == '.':
+    if caption[0] == '.' and caption[1] != '.':
         return caption
     res = caption[caption.rfind('/')+1:]
     ext = res[res.rfind('.'):]
@@ -208,7 +208,12 @@ def processraw(caption, instream, outstream, listingslang = 'raw'):
 def parse_include(line):
     line = line.strip()
     if line.startswith("#include"):
-        return line[8:].strip()
+        res = line[8:].strip()
+        #print("HA",res)
+        if res[0] == "\"":
+            #print("OK",res[1:len(res)-1])
+            res = "\""+formCap(res[1:len(res)-1])+"\""
+        return res
     return None
 
 def getlang(input):

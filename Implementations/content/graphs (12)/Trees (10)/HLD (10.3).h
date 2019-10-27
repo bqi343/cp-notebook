@@ -1,6 +1,6 @@
 /**
  * Description: Heavy-Light Decomposition
- * Time: any path can be split into $O(\log N)$ parts
+ * Time: any tree path is split into $O(\log N)$ parts
  * Source: http://codeforces.com/blog/entry/22072, https://codeforces.com/blog/entry/53170
  * Verification: USACO Grass Planting, https://www.hackerrank.com/challenges/subtrees-and-paths
  */

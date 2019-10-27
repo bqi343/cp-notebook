@@ -36,15 +36,15 @@
 \contentsline {subsection}{\texttt {CustomHash.h}\hspace {0.2em}}{3}{lstnumber.3.1.8}
 \contentsline {subsection}{\texttt {OrderStatisticTree.h}\hspace {0.2em}}{3}{lstnumber.3.2.23}
 \contentsline {subsection}{\texttt {Rope.h}\hspace {0.2em}}{4}{lstnumber.3.3.18}
-\contentsline {subsection}{\texttt {LineContainer.h}\hspace {0.2em}}{4}{lstnumber.3.4.13}
+\contentsline {subsection}{\texttt {LineContainer.h}\hspace {0.2em}}{4}{lstnumber.3.4.19}
 \contentsline {section}{\numberline {3.2}1D Range Queries}{4}{section.3.2}
 \contentsline {subsection}{\texttt {RMQ (9.1).h}\hspace {0.2em}}{4}{section.3.2}
 \contentsline {subsection}{\texttt {BIT (9.2).h}\hspace {0.2em}}{4}{lstnumber.3.6.25}
 \contentsline {subsection}{\texttt {BITrange.h}\hspace {0.2em}}{4}{lstnumber.3.7.19}
-\contentsline {subsection}{\texttt {SegTree (9.2).h}\hspace {0.2em}}{4}{lstnumber.3.8.11}
+\contentsline {subsection}{\texttt {SegTree (9.2).h}\hspace {0.2em}}{4}{lstnumber.3.8.13}
 \contentsline {subsection}{\texttt {SegTreeBeats.h}\hspace {0.2em}}{4}{lstnumber.3.9.21}
 \contentsline {subsection}{\texttt {PersSegTree (15.2).h}\hspace {0.2em}}{5}{lstnumber.3.10.65}
-\contentsline {subsection}{\texttt {Treap (15.3).h}\hspace {0.2em}}{5}{lstnumber.3.11.60}
+\contentsline {subsection}{\texttt {Treap (15.3).h}\hspace {0.2em}}{5}{lstnumber.3.11.59}
 \contentsline {chapter}{\numberline {4}Number Theory}{5}{chapter.4}
 \ttl@stoptoc {chapters@3}
 \ttl@starttoc {chapters@4}
@@ -65,7 +65,7 @@
 \ttl@starttoc {chapters@5}
 \contentsline {section}{\texttt {IntPerm.h}\hspace {0.2em}}{7}{chapter.5}
 \contentsline {section}{\texttt {MatroidIntersect.h}\hspace {0.2em}}{7}{lstnumber.5.1.20}
-\contentsline {section}{\texttt {PermGroup.h}\hspace {0.2em}}{7}{lstnumber.5.2.108}
+\contentsline {section}{\texttt {PermGroup.h}\hspace {0.2em}}{7}{lstnumber.5.2.107}
 \contentsline {chapter}{\numberline {6}Numerical}{8}{chapter.6}
 \ttl@stoptoc {chapters@5}
 \ttl@starttoc {chapters@6}
@@ -78,15 +78,15 @@
 \contentsline {subsection}{\texttt {PolyRoots.h}\hspace {0.2em}}{9}{lstnumber.6.4.73}
 \contentsline {subsection}{\texttt {Karatsuba.h}\hspace {0.2em}}{9}{lstnumber.6.5.19}
 \contentsline {subsection}{\texttt {FFT.h}\hspace {0.2em}}{9}{lstnumber.6.6.26}
-\contentsline {subsection}{\texttt {FFTmod.h}\hspace {0.2em}}{9}{lstnumber.6.7.40}
-\contentsline {subsection}{\texttt {PolyInv.h}\hspace {0.2em}}{9}{lstnumber.6.8.27}
+\contentsline {subsection}{\texttt {FFTmod.h}\hspace {0.2em}}{9}{lstnumber.6.7.42}
+\contentsline {subsection}{\texttt {PolyInv.h}\hspace {0.2em}}{9}{lstnumber.6.8.31}
 \contentsline {subsection}{\texttt {PolyDiv.h}\hspace {0.2em}}{10}{lstnumber.6.9.11}
 \contentsline {subsection}{\texttt {PolySqrt.h}\hspace {0.2em}}{10}{lstnumber.6.10.7}
 \contentsline {section}{\numberline {6.3}Misc}{10}{section.6.3}
 \contentsline {subsection}{\texttt {LinRec.h}\hspace {0.2em}}{10}{section.6.3}
-\contentsline {subsection}{\texttt {Integrate.h}\hspace {0.2em}}{10}{lstnumber.6.12.35}
-\contentsline {subsection}{\texttt {IntegrateAdaptive.h}\hspace {0.2em}}{10}{lstnumber.6.13.8}
-\contentsline {subsection}{\texttt {Simplex.h}\hspace {0.2em}}{10}{lstnumber.6.14.19}
+\contentsline {subsection}{\texttt {Integrate.h}\hspace {0.2em}}{10}{lstnumber.6.12.33}
+\contentsline {subsection}{\texttt {IntegrateAdaptive.h}\hspace {0.2em}}{10}{lstnumber.6.13.7}
+\contentsline {subsection}{\texttt {Simplex.h}\hspace {0.2em}}{10}{lstnumber.6.14.16}
 \contentsline {chapter}{\numberline {7}Graphs}{11}{chapter.7}
 \ttl@stoptoc {chapters@6}
 \ttl@starttoc {chapters@7}
@@ -108,8 +108,8 @@
 \contentsline {subsection}{\texttt {GomoryHu.h}\hspace {0.2em}}{13}{lstnumber.7.11.53}
 \contentsline {section}{\numberline {7.5}Matching}{13}{section.7.5}
 \contentsline {subsection}{\texttt {DFSmatch.h}\hspace {0.2em}}{13}{section.7.5}
-\contentsline {subsection}{\texttt {Hungarian.h}\hspace {0.2em}}{14}{lstnumber.7.13.26}
-\contentsline {subsection}{\texttt {UnweightedMatch.h}\hspace {0.2em}}{14}{lstnumber.7.14.28}
+\contentsline {subsection}{\texttt {Hungarian.h}\hspace {0.2em}}{14}{lstnumber.7.13.25}
+\contentsline {subsection}{\texttt {UnweightedMatch.h}\hspace {0.2em}}{14}{lstnumber.7.14.34}
 \contentsline {section}{\numberline {7.6}Misc}{14}{section.7.6}
 \contentsline {subsection}{\texttt {MaximalCliques.h}\hspace {0.2em}}{14}{section.7.6}
 \contentsline {subsection}{\texttt {LCT.h}\hspace {0.2em}}{14}{lstnumber.7.16.19}
@@ -128,7 +128,7 @@
 \contentsline {subsection}{\texttt {SegIntersect.h}\hspace {0.2em}}{16}{lstnumber.8.5.8}
 \contentsline {section}{\numberline {8.2}Polygons}{16}{section.8.2}
 \contentsline {subsection}{\texttt {Area.h}\hspace {0.2em}}{16}{section.8.2}
-\contentsline {subsection}{\texttt {InPoly.h}\hspace {0.2em}}{16}{lstnumber.8.7.16}
+\contentsline {subsection}{\texttt {InPoly.h}\hspace {0.2em}}{17}{lstnumber.8.7.16}
 \contentsline {subsection}{\texttt {ConvexHull (13.2).h}\hspace {0.2em}}{17}{lstnumber.8.8.10}
 \contentsline {subsection}{\texttt {PolyDiameter.h}\hspace {0.2em}}{17}{lstnumber.8.9.24}
 \contentsline {section}{\numberline {8.3}Circles}{17}{section.8.3}
@@ -146,17 +146,17 @@
 \ttl@starttoc {chapters@9}
 \contentsline {section}{\numberline {9.1}Lightweight}{18}{section.9.1}
 \contentsline {subsection}{\texttt {KMP.h}\hspace {0.2em}}{18}{section.9.1}
-\contentsline {subsection}{\texttt {Z (14.3).h}\hspace {0.2em}}{19}{lstnumber.9.1.15}
-\contentsline {subsection}{\texttt {Manacher.h}\hspace {0.2em}}{19}{lstnumber.9.2.19}
+\contentsline {subsection}{\texttt {Z (14.3).h}\hspace {0.2em}}{19}{lstnumber.9.1.16}
+\contentsline {subsection}{\texttt {Manacher.h}\hspace {0.2em}}{19}{lstnumber.9.2.17}
 \contentsline {subsection}{\texttt {MinRotation.h}\hspace {0.2em}}{19}{lstnumber.9.3.18}
 \contentsline {subsection}{\texttt {LyndonFactorization.h}\hspace {0.2em}}{19}{lstnumber.9.4.8}
 \contentsline {section}{\numberline {9.2}Suffix Structures}{19}{section.9.2}
 \contentsline {subsection}{\texttt {ACfixed.h}\hspace {0.2em}}{19}{section.9.2}
 \contentsline {subsection}{\texttt {PalTree.h}\hspace {0.2em}}{19}{lstnumber.9.6.36}
 \contentsline {subsection}{\texttt {SuffixArray (14.4).h}\hspace {0.2em}}{19}{lstnumber.9.7.25}
-\contentsline {subsection}{\texttt {ReverseBW (14.4).h}\hspace {0.2em}}{20}{lstnumber.9.8.51}
+\contentsline {subsection}{\texttt {ReverseBW (14.4).h}\hspace {0.2em}}{20}{lstnumber.9.8.50}
 \contentsline {subsection}{\texttt {SuffixAutomaton.h}\hspace {0.2em}}{20}{lstnumber.9.9.8}
 \contentsline {subsection}{\texttt {SuffixTree.h}\hspace {0.2em}}{20}{lstnumber.9.10.73}
-\contentsline {section}{\numberline {9.3}Misc}{20}{section.9.3}
-\contentsline {subsection}{\texttt {TandemRepeats.h}\hspace {0.2em}}{20}{section.9.3}
+\contentsline {section}{\numberline {9.3}Misc}{21}{section.9.3}
+\contentsline {subsection}{\texttt {TandemRepeats.h}\hspace {0.2em}}{21}{section.9.3}
 \contentsfinish 

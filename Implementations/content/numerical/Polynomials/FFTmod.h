@@ -13,15 +13,19 @@ vl multMod(const vl& a, const vl& b) {
 	vcd roots(n); genRoots(roots);
 	
 	vcd ax(n), bx(n);
-	F0R(i,sz(a)) ax[i] = cd((int)a[i]/cut, (int)a[i]%cut); // ax(x)=a1(x)+i*a0(x)
-	F0R(i,sz(b)) bx[i] = cd((int)b[i]/cut, (int)b[i]%cut); // bx(x)=b1(x)+i*b0(x)
+	// ax(x)=a1(x)+i*a0(x)
+	F0R(i,sz(a)) ax[i] = cd((int)a[i]/cut, (int)a[i]%cut); 
+	// bx(x)=b1(x)+i*b0(x)
+	F0R(i,sz(b)) bx[i] = cd((int)b[i]/cut, (int)b[i]%cut); 
 	fft(ax,roots), fft(bx,roots);
 	
 	vcd v1(n), v0(n);
 	F0R(i,n) {
 		int j = (i ? (n-i) : i);
-		v1[i] = (ax[i]+conj(ax[j]))*cd(0.5,0)*bx[i]; // v1 = a1*(b1+b0*cd(0,1));
-		v0[i] = (ax[i]-conj(ax[j]))*cd(0,-0.5)*bx[i]; // v0 = a0*(b1+b0*cd(0,1));
+		// v1 = a1*(b1+b0*cd(0,1));
+		v1[i] = (ax[i]+conj(ax[j]))*cd(0.5,0)*bx[i]; 
+		// v0 = a0*(b1+b0*cd(0,1));
+		v0[i] = (ax[i]-conj(ax[j]))*cd(0,-0.5)*bx[i]; 
 	}
 	fft(v1,roots,1), fft(v0,roots,1);
 	

@@ -4,7 +4,7 @@
  * Verification: https://open.kattis.com/problems/segmentdistance
  */
 
-#include "lineDist.h"
+#include "LineDist.h"
 
 T segDist(P p, P a, P b) { 
 	if (dot(p-a,b-a) <= 0) return abs(p-a);

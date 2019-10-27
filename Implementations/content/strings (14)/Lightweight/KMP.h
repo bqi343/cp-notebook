@@ -18,6 +18,7 @@ vi kmp(string s) {
 
 vi getOc(string a, string b) { // find occurrences of a in b
 	vi f = kmp(a+"@"+b), ret;
-	FOR(i,sz(a),sz(b)+1) if (f[i+sz(a)+1] == sz(a)) ret.pb(i-sz(a));
+	FOR(i,sz(a),sz(b)+1) if (f[i+sz(a)+1] == sz(a)) 
+		ret.pb(i-sz(a));
 	return ret;
 }

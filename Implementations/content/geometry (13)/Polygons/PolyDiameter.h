@@ -1,5 +1,5 @@
 /**
- * Description: computes longest distance between two points in $P$
+ * Description: greatest distance between two points in $P$
  * Time: $O(N)$ given convex hull
  * Source: KACTL
  * Verification:

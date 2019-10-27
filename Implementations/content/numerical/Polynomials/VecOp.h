@@ -1,5 +1,5 @@
 /**
- * Description: arithmetic + misc polynomial operations with vectors
+ * Description: polynomial operations using vectors
  * Source: Own
  * Verification: see FFT
  */

@@ -1,5 +1,5 @@
 /**
- * Description: Basic 3D Geometry
+ * Description: basic 3D geometry
  * Source: Own
  * Verification: 
 	* AMPPZ 2011 Cross Spider

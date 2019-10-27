@@ -1,5 +1,6 @@
 /**
- * Description: faster than standard unordered map
+ * Description: avoid hacks with custom hash, 
+ 	* \texttt{gp\_hash\_table} is generally faster than \texttt{unordered\_map}
  * Source: 
 	* http://codeforces.com/blog/entry/62393
 	* KACTL

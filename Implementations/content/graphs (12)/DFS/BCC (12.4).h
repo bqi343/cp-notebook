@@ -1,5 +1,5 @@
 /**
- * Description: computes biconnected components
+ * Description: biconnected components
  * Time: O(N+M)
  * Source: GeeksForGeeks (corrected)
  * Verification: USACO December 2017, Push a Box

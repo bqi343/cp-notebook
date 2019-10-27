@@ -1,7 +1,7 @@
 /**
- * Description: Berlekamp-Massey: computes linear recurrence of 
- * order $n$ for sequence of $2n$ terms
- * Time: ?
+ * Description: Berlekamp-Massey, computes linear recurrence of 
+ * order $N$ for sequence of $2N$ terms
+ * Time: O(N^2)
  * Source: 
 	* https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm
 	* http://codeforces.com/blog/entry/61306
@@ -17,7 +17,6 @@ struct LinRec {
 	void init(const vmi& _x) {
 		x = _x; int n = sz(x), m = 0;
 		vmi B; B = C = {1}; // B is fail vector
-	
 		mi b = 1; // B gives 0,0,0,...,b
 		F0R(i,n) {
 			m ++;
@@ -27,7 +26,6 @@ struct LinRec {
 			mi coef = d/b; FOR(j,m,m+sz(B)) C[j] -= coef*B[j-m]; // recurrence that gives 0,0,0,...,d
 			if (sz(_B) < m+sz(B)) { B = _B; b = d; m = 0; }
 		}
-	
 		rC = C; reverse(all(rC)); // polynomial for getPo
 		C.erase(begin(C)); trav(t,C) t *= -1; // x[i]=sum_{j=0}^{sz(C)-1}C[j]*x[i-j-1]
 	}

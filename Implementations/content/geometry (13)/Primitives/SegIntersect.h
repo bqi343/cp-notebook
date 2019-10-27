@@ -9,7 +9,8 @@
 vP segIntersect(P a, P b, P c, P d) { 
 	T x = cross(a,b,c), y = cross(a,b,d); 
 	T X = cross(c,d,a), Y = cross(c,d,b); 
-	if (sgn(x)*sgn(y) < 0 && sgn(X)*sgn(Y) < 0) return {(d*x-c*y)/(x-y)};
+	if (sgn(x)*sgn(y) < 0 && sgn(X)*sgn(Y) < 0) 
+		return {(d*x-c*y)/(x-y)};
 	set<P> s;
 	if (onSeg(a,c,d)) s.insert(a);
 	if (onSeg(b,c,d)) s.insert(b);

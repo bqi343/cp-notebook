@@ -45,7 +45,12 @@
         * [Matchings](https://open.kattis.com/contests/acpc17open/problems/matchings)
         * [Counting Triplets](https://toph.co/p/counting-triplets)
         * [A2OJ](https://a2oj.com/category?ID=42)
-
+  * Simplex
+    * [Goat Ropes](https://open.kattis.com/contests/fvfhq4/problems/goatropes)
+  	* [Red & Black Tree](http://codeforces.com/contest/375/problem/E)
+    * [ECNA 2019 C](https://open.kattis.com/contests/ecna19open/problems/cheeseifyouplease)
+	  * USACO Training cowwars
+    
 ### Interesting Task(s)
 
   * [Power Towers](https://open.kattis.com/problems/towers)

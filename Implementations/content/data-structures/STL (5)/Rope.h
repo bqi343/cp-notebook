@@ -11,13 +11,19 @@
 using namespace __gnu_cxx;
 
 void ropeExample() {
-	rope<int> v(5, 0); 
-	F0R(i,sz(v)) v.mutable_reference_at(i) = i+1; // or push_back
-	rope<int> cur = v.substr(1,2); v.erase(1,2);
-	F0R(i,sz(v)) cout << v[i] << " ";  // 1 4 5
-	cout << "\n";
+	// CONSTRUCTION
+	rope<int> v(5, 0); // initialize with 5 zeroes
+	F0R(i,sz(v)) v.mutable_reference_at(i) = i+1; 
+	// rope<int> v; F0R(i,5) v.pb(i+1);
+
+	// CUTTING AND INSERTING
+	rope<int> cur = v.substr(1,2); 
+	v.erase(1,2); // erase 2 elements starting from 1st element
 	v.insert(v.mutable_begin()+2,cur);
-	for (rope<int>::iterator it = v.mutable_begin(); it != v.mutable_end(); ++it)
+
+	// PRINTING
+	for (rope<int>::iterator it = v.mutable_begin(); 
+		it != v.mutable_end(); ++it)
 		cout << *it << " "; // 1 4 2 3 5
-	cout << "\n";
+	// F0R(i,sz(v)) cout << v[i] << " ";  // 1 4 5
 }

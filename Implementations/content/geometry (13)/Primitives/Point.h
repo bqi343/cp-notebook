@@ -1,5 +1,5 @@
 /**
- * Description: Easy Geo
+ * Description: use in place of complex<T>
  * Source: http://codeforces.com/blog/entry/22175, KACTL
  * Verification: various
  */

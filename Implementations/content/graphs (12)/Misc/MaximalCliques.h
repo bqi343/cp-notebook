@@ -1,6 +1,6 @@
 /**
  * Description: Finds all maximal cliques
- * Time: O(3^{n/3})
+ * Time: O(3^{N/3})
  * Source: KACTL
  * Verification: BOSPRE 2016 gaudy
  */

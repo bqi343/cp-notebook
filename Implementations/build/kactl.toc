@@ -48,5 +48,5 @@
 \contentsline {chapter}{\numberline {9}Strings}{18}{chapter.9}
 \contentsline {section}{\numberline {9.1}Lightweight}{18}{section.9.1}
 \contentsline {section}{\numberline {9.2}Suffix Structures}{19}{section.9.2}
-\contentsline {section}{\numberline {9.3}Misc}{20}{section.9.3}
+\contentsline {section}{\numberline {9.3}Misc}{21}{section.9.3}
 \contentsfinish 

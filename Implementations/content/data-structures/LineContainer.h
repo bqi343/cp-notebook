@@ -19,12 +19,15 @@ struct Line {
 struct LC : multiset<Line,less<>> { 
 	// for doubles, use inf = 1/.0, div(a,b) = a/b
 	const ll inf = LLONG_MAX;
-	ll div(ll a, ll b) { return a/b-((a^b) < 0 && a%b); } // floored division
-	ll bet(const Line& x, const Line& y) { // last x such that first line is better
+	// floored division
+	ll div(ll a, ll b) { return a/b-((a^b) < 0 && a%b); } 
+	// last x such that first line is better
+	ll bet(const Line& x, const Line& y) { 
 		if (x.k == y.k) return x.m >= y.m ? inf : -inf;
 		return div(y.m-x.m,x.k-y.k);
 	}
-	bool isect(iterator x, iterator y) { // updates x->p, determines if y is unneeded
+	// updates x->p, determines if y is unneeded
+	bool isect(iterator x, iterator y) { 
 		if (y == end()) { x->p = inf; return 0; }
 		x->p = bet(*x,*y); return x->p >= y->p;
 	}

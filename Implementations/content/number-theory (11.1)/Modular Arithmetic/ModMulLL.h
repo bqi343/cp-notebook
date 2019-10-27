@@ -1,5 +1,5 @@
 /**
- * Description: multiply two 64-bit integers mod another if 128-bit is not available
+ * Description: multiply two 64-bit integers mod another if 128-bit is not available,
 	* works for $0\le a,b<mod<2^{63}$
  * Source: KACTL
  * Verification: see "Faster Factoring"

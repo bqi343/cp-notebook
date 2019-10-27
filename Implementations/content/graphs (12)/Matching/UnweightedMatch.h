@@ -1,6 +1,6 @@
 /**
- * Description: general unweighted matching
- * Time: ?
+ * Description: general unweighted matching, 1-based indexing
+ * Time: O(N^2M)
  * Source: 
 	* https://github.com/koosaga/DeobureoMinkyuParty
 	* https://www-m9.ma.tum.de/graph-algorithms/matchings-blossom-algorithm/index_en.html
@@ -8,21 +8,17 @@
  */
 
 template<int SZ> struct UnweightedMatch {
-	int vis[SZ], par[SZ], orig[SZ], match[SZ], aux[SZ], t, N; // 1-based index
+	int vis[SZ], par[SZ], orig[SZ], match[SZ], aux[SZ], t, N; 
 	vi adj[SZ];
 	queue<int> Q;
-	void addEdge(int u, int v) {
-		adj[u].pb(v); adj[v].pb(u);
-	}
-	
-	void init(int n) {
-		N = n; t = 0;
+	void addEdge(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
+	void init(int _N) {
+		N = _N; t = 0;
 		F0R(i,N+1) {
 			adj[i].clear();
 			match[i] = aux[i] = par[i] = 0;
 		}
 	}
-	
 	void augment(int u, int v) {
 		int pv = v, nv;
 		do {
@@ -31,7 +27,6 @@ template<int SZ> struct UnweightedMatch {
 			v = nv;
 		} while(u != pv);
 	}
-	
 	int lca(int v, int w) {
 		++t;
 		while (1) {
@@ -42,7 +37,6 @@ template<int SZ> struct UnweightedMatch {
 			swap(v, w);
 		}
 	}
-	
 	void blossom(int v, int w, int a) {
 		while (orig[v] != a) {
 			par[v] = w; w = match[v];
@@ -51,10 +45,9 @@ template<int SZ> struct UnweightedMatch {
 			v = par[w];
 		}
 	}
-	
 	bool bfs(int u) {
 		fill(vis+1, vis+1+N, -1); iota(orig + 1, orig + N + 1, 1);
-		Q = queue<int> (); Q.push(u); vis[u] = 0;
+		Q = queue<int>(); Q.push(u); vis[u] = 0;
 		while (sz(Q)) {
 			int v = Q.front(); Q.pop();
 			trav(x,adj[v]) {
@@ -70,7 +63,6 @@ template<int SZ> struct UnweightedMatch {
 		}
 		return false;
 	}
-	
 	int match() {
 		int ans = 0;
 		// find random matching (not necessary, constant improvement)

@@ -1,5 +1,5 @@
 /**
- * Description: convert permutation of $\{0,1,...,N-1\}$ to integer in $[0,N!)$
+ * Description: convert permutation of $\{0,1,...,N-1\}$ to integer in $[0,N!)$ and back
  * Source: http://antoinecomeau.blogspot.com/2014/07/mapping-between-permutations-and.html
  * Verification: ?
  * Time: O(N)

@@ -1,5 +1,5 @@
 /**
-* Description: ?
+* Description: \texttt{sa} contains indices of suffixes in sorted order
 * Time: O(N\log N)
 * Source: SuprDewd, KACTL, majk, ekzhang
 * Verification: 
@@ -50,8 +50,7 @@ template<int SZ> struct SuffixArray {
 			if (h) h--; // if we cut off first chars of two strings with lcp h, then remaining portions still have lcp h-1 
 		}
 	}
-	
-	/*RMQ<int,SZ> R; 
+	/*RMQ<int> R; 
 	int getLCP(int a, int b) {
 		if (max(a,b) >= N) return 0;
 		if (a == b) return N-a;

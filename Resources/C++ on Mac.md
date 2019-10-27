@@ -72,11 +72,12 @@ export CPLUS_INCLUDE_PATH="/usr/local/include/c++/8.1.0/:/Applications/Xcode.app
 
 ### OS X Catalina
 
-Whoops I can't figure out how to use g++ successfully D:
 Maybe the following links are helpful?
 
  * [StackOverflow](https://stackoverflow.com/questions/58278260/cant-compile-a-c-program-on-a-mac-after-upgrading-to-catalina-10-15)
  * [SolarianProgrammer](https://solarianprogrammer.com/2019/10/12/compiling-gcc-macos/)
+
+~~Whoops I couldn't figure out how to use g++ successfully D:~~ g++ was linked to g++-8 instead of g++-9, now it works.
 
 ## Tools
 

@@ -1,6 +1,6 @@
 /**
- * Description: find sqrt of integer mod a prime
- * Time: ?
+ * Description: square root of integer mod a prime
+ * Time: O(\log^2(MOD))
  * Source: http://www.math.vt.edu/people/brown/class_homepages/shanks_tonelli.pdf
  * Verification: https://www.spoj.com/problems/CRYPTO1
  */

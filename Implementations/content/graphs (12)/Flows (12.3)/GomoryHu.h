@@ -1,7 +1,9 @@
 /**
- * Description: Compute max flow between every pair of vertices of 
- * undirected graph
+ * Description: returns edges of Gomory-Hu tree, max flow between 
+ 	* pair of vertices of undirected graph is given by min edge
+ 	* weight along tree path
  * Source: Own
+ * Time: $O(N)$ calls to Dinic
  * Verification: https://codeforces.com/problemset/problem/343/E
  */
 
@@ -36,7 +38,7 @@ template<int SZ> struct GomoryHu {
 	void addTree(int a, int b, int c) { adj[a][b] = c, adj[b][a] = c; }
 	void delTree(int a, int b) { adj[a].erase(b), adj[b].erase(a); }
 
-	vector<pair<pi,int>> init(int _N) { // returns edges of Gomory-Hu Tree
+	vector<pair<pi,int>> init(int _N) { 
 		N = _N;
 		FOR(i,1,N+1) cor[0].pb(i);
 		queue<int> todo; todo.push(0); 
@@ -50,7 +52,8 @@ template<int SZ> struct GomoryHu {
 			int f = gen(cc); // run max flow
 			cor.pb({}), cor.pb({});
 			trav(t,cor[x]) cor[sz(cor)-2+side[t]].pb(t);
-			F0R(i,2) if (sz(cor[sz(cor)-2+i]) > 1) todo.push(sz(cor)-2+i);
+			F0R(i,2) if (sz(cor[sz(cor)-2+i]) > 1) 
+				todo.push(sz(cor)-2+i);
 			F0R(i,sz(cor)-2) if (i != x && adj[i].count(x)) {
 				addTree(i,sz(cor)-2+side[cor[i][0]],adj[i][x]);
 				delTree(i,x);

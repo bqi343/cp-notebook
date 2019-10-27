@@ -70,11 +70,11 @@ struct SuffixAutomaton {
 		trav(y,st[x].next) distinct[x] += getDistinct(y.s);
 		return distinct[x];
 	}
-	ll numDistinct() { // # of distinct substrings, including empty
+	ll numDistinct() { // # of distinct substrings including empty
 		distinct.rsz(sz(st));
 		return getDistinct(0);
 	}
-	ll numDistinct2() { // another way to get # of distinct substrings
+	ll numDistinct2() { // another way to do above
 		ll ans = 1;
 		FOR(i,1,sz(st)) ans += st[i].len-st[st[i].link].len;
 		return ans;

@@ -17,11 +17,9 @@ vi z(string s) {
 	}
 	return ans;
 }
-
 vi getPrefix(string a, string b) { // find prefixes of a in b
 	vi t = z(a+b), T(sz(b));
 	F0R(i,sz(T)) T[i] = min(t[i+sz(a)],sz(a));
 	return T;
 }
-
 // pr(z("abcababcabcaba"),getPrefix("abcab","uwetrabcerabcab"));

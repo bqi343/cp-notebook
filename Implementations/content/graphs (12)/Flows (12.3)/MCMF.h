@@ -1,6 +1,6 @@
 /**
- * Description: Minimum-Cost Maximum Flow with no negative cycles allowed
- * Time: $O(FM\log M)$ assuming that capacities are integers and $F$ is the max flow 
+ * Description: minimum-cost maximum flow, assume no negative cycles
+ * Time: $O(FM\log M)$ if caps are integers and $F$ is max flow
  * Source: GeeksForGeeks
  	* running time is only pseudo-polynomial; see https://codeforces.com/blog/entry/70740
  * Verification: https://codeforces.com/contest/164/problem/C

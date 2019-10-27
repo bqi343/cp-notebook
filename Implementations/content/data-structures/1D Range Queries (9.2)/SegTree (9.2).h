@@ -20,7 +20,7 @@ template<class T> struct Seg {
 	}
 
 	T query(int l, int r) {	 // sum on interval [l, r]
-		T ra = ID, rb = ID; // make sure non-commutative operations work
+		T ra = ID, rb = ID; // non-commutative operations work
 		for (l += n, r += n+1; l < r; l /= 2, r /= 2) {
 			if (l&1) ra = comb(ra,seg[l++]);
 			if (r&1) rb = comb(seg[--r],rb);

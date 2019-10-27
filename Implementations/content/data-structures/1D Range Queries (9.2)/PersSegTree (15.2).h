@@ -23,12 +23,9 @@ template<class T, int SZ> struct pseg {
 		if (!lazy[cur]) return;
 		if (L != R) {
 			l[cur] = copy(l[cur]);
-			val[l[cur]] += lazy[cur];
-			lazy[l[cur]] += lazy[cur];
-			
+			val[l[cur]] += lazy[cur], lazy[l[cur]] += lazy[cur];
 			r[cur] = copy(r[cur]);
-			val[r[cur]] += lazy[cur];
-			lazy[r[cur]] += lazy[cur];
+			val[r[cur]] += lazy[cur], lazy[r[cur]] += lazy[cur];
 		}
 		lazy[cur] = 0;
 	}
@@ -38,15 +35,17 @@ template<class T, int SZ> struct pseg {
 		if (lo <= L && R <= hi) return val[cur];
 		if (R < lo || hi < L) return INF;
 		int M = (L+R)/2;
-		return lazy[cur]+comb(query(l[cur],lo,hi,L,M), query(r[cur],lo,hi,M+1,R));
+		return lazy[cur]+comb(query(l[cur],lo,hi,L,M),
+							query(r[cur],lo,hi,M+1,R));
 	}
 	int upd(int cur, int lo, int hi, T v, int L, int R) {
 		if (R < lo || hi < L) return cur;
-		
 		int x = copy(cur);
-		if (lo <= L && R <= hi) { val[x] += v, lazy[x] += v; return x; }
+		if (lo <= L && R <= hi) { 
+			val[x] += v, lazy[x] += v; 
+			return x; 
+		}
 		push(x,L,R);
-		
 		int M = (L+R)/2;
 		l[x] = upd(l[x],lo,hi,v,L,M), r[x] = upd(r[x],lo,hi,v,M+1,R);
 		pull(x); return x;

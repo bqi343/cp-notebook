@@ -1,5 +1,5 @@
 /**
- * Description: Top-bottom convex hull
+ * Description: top-bottom convex hull
  * Time: O(N\log N)
  * Source: Wikibooks, KACTL
  * Verification:

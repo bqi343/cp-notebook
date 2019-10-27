@@ -21,7 +21,6 @@ struct tnode {
 
 int getsz(pt x) { return x?x->sz:0; }
 ll getsum(pt x) { return x?x->sum:0; }
-
 pt prop(pt x) {
 	if (!x || !x->flip) return x;	
 	swap(x->c[0],x->c[1]);
@@ -29,7 +28,6 @@ pt prop(pt x) {
 	F0R(i,2) if (x->c[i]) x->c[i]->flip ^= 1;
 	return x;
 }
-
 pt calc(pt x) {
 	assert(!x->flip);
 	prop(x->c[0]), prop(x->c[1]);
@@ -48,24 +46,23 @@ pair<pt,pt> split(pt t, int v) { // >= v goes to the right
 	prop(t);
 	if (t->val >= v) {
 		auto p = split(t->c[0], v); t->c[0] = p.s;
-		return {p.f, calc(t)};
+		return {p.f,calc(t)};
 	} else {
 		auto p = split(t->c[1], v); t->c[1] = p.f;
-		return {calc(t), p.s};
+		return {calc(t),p.s};
 	}
 }
-pair<pt,pt> splitsz(pt t, int sz) { // leftmost sz nodes go to left
+pair<pt,pt> splitsz(pt t, int sz) { // sz nodes go to left
 	if (!t) return {t,t};
 	prop(t);
 	if (getsz(t->c[0]) >= sz) {
-		auto p = splitsz(t->c[0], sz); t->c[0] = p.s;
-		return {p.f, calc(t)};
+		auto p = splitsz(t->c[0],sz); t->c[0] = p.s;
+		return {p.f,calc(t)};
 	} else {
-		auto p = splitsz(t->c[1], sz-getsz(t->c[0])-1); t->c[1] = p.f;
-		return {calc(t), p.s};
+		auto p = splitsz(t->c[1],sz-getsz(t->c[0])-1); t->c[1] = p.f;
+		return {calc(t),p.s};
 	}
 }
-	
 pt merge(pt l, pt r) {
 	if (!l || !r) return l ? l : r;
 	prop(l), prop(r);

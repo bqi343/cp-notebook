@@ -1,5 +1,7 @@
 /**
- * Description: can support tree path queries and updates
+ * Description: The centroid of a tree of size $N$ is a vertex such that 
+ 	* after removing it, all resulting subtrees have size at most $\frac{N}{2}.$ 
+ 	* Can support tree path queries and updates
  * Time: $O(N\log N)$
  * Source: own
  * Verification: 

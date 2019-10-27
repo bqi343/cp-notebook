@@ -1,5 +1,5 @@
 /**
- * Description: faster flow
+ * Description: fast flow
  * Time: $O(N^2M)$ flow, $O(M\sqrt N)$ bipartite matching
  * Source: GeeksForGeeks, Chilli
  * Verification: RMI 2017 Day 1 Fashion

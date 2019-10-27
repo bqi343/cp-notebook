@@ -9,9 +9,7 @@
  * Verification: GP of Ekateinburg - H
  */
 
-const int N = 15;
 int n; 
-
 vi inv(vi v) { vi V(sz(v)); F0R(i,sz(v)) V[v[i]] = i; return V; }
 vi id() { vi v(n); iota(all(v),0); return v; }
 vi operator*(const vi& a, const vi& b) {
@@ -19,6 +17,7 @@ vi operator*(const vi& a, const vi& b) {
 	return c;
 }
 
+const int N = 15;
 struct Group {
 	bool flag[N];
 	vi sigma[N]; // sigma[t][k] = t, sigma[t][x] = x if x > k

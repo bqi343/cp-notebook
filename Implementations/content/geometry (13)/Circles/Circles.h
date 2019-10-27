@@ -1,5 +1,5 @@
 /**
- * Description: misc operations with two circles
+ * Description: circle intersection, tangents
  * Source: Own
 	* also see http://mathworld.wolfram.com/Circle-CircleIntersection.html
  * Verification: USACO Laser Cows, https://codefights.com/tournaments/s8thqrnQL2YPK7XQt/L

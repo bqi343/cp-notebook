@@ -1,5 +1,5 @@
 /**
- * Description: 3D Convex Hull + Polyedron Volume
+ * Description: 3D convex hull where no four points coplanar, polyedron volume
  * Time: O(N^2)
  * Source: KACTL
  * Verification: https://open.kattis.com/problems/starsinacan
@@ -48,7 +48,7 @@ vector<F> hull3d(const vP3& A) {
 	trav(it, FS) if (dot(cross(A[it.b]-A[it.a],A[it.c]-A[it.a]),it.q) <= 0) 
 		swap(it.c, it.b);
 	return FS;
-} // computes hull where no four are coplanar
+} 
 
 T signedPolyVolume(const vP3& p, const vector<F>& trilist) {
 	T v = 0;

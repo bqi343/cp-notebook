@@ -1,5 +1,5 @@
 /**
- * Description: computes area + the center of mass of 
+ * Description: area, center of mass of 
  	* a polygon with constant mass per unit area
  * Time: O(N)
  * Source: http://codeforces.com/blog/entry/22175, KACTL
@@ -14,7 +14,7 @@ T area(const vP& v) {
 		int j = (i+1)%sz(v); T a = cross(v[i],v[j]);
 		area += a;
 	}
-	return std::abs(area)/2;
+	return abs(area)/2;
 }
 P centroid(const vP& v) { 
 	P cen(0,0); T area = 0; // 2*signed area

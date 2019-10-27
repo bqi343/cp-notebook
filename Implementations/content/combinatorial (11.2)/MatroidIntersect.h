@@ -8,7 +8,7 @@
  * Verification: https://www.spoj.com/problems/COIN/
  */
 
-#include "DSU.h"
+#include "../graphs (12)/Fundamentals/DSU (7.6).h"
 
 int R;
 map<int,int> m;
@@ -104,10 +104,10 @@ bool augment() {
 }
  
 void solve() {
-	re(R); if (R == 0) exit(0);
+	cin >> R;
 	m.clear(); ground_set.clear(); independent_set.clear();
 	F0R(i,R) {
-		int a,b,c,d; re(a,b,c,d);
+		int a,b,c,d; cin >> a >> b >> c >> d;
 		ground_set.pb(Element(a,b,i));
 		ground_set.pb(Element(c,d,i));
 		m[a] = m[b] = m[c] = m[d] = 0;
@@ -116,5 +116,4 @@ void solve() {
 	trav(t,m) t.s = co++;
 	trav(t,ground_set) t.ed.f = m[t.ed.f], t.ed.s = m[t.ed.s];
 	while (augment());
-	ps(2*sz(independent_set));
 }

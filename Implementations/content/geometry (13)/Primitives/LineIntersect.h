@@ -1,7 +1,7 @@
 /** 
  * Description: computes the intersection point(s) of lines $AB$, $CD;$
- 	* returns {-1,{0,0}} if infinitely many, {0,{0,0}} if none, 
- 	* {1,x} if x is the unique point
+ 	* returns $\{-1,\{0,0\}\}$ if infinitely many, $\{0,\{0,0\}\}$ if none, 
+ 	* $\{1,x\}$ if $x$ is the unique point
  * Source: KACTL
  * Verification: ?
  */

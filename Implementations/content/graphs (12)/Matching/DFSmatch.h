@@ -13,7 +13,6 @@ template<int SZ> struct MaxMatch {
 		memset(match,0,sizeof match); 
 		memset(rmatch,0,sizeof rmatch); 
 	}
-	
 	void connect(int a, int b, bool c = 1) {
 		if (c) match[a] = b, rmatch[b] = a;
 		else match[a] = rmatch[b] = 0;

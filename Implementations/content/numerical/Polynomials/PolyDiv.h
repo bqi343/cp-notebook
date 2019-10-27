@@ -1,6 +1,6 @@
 /**
  * Description: divide two polynomials
- * Time: $O(N\log N)?$
+ * Time: $O(N\log N)$
  */
 
 #include "PolyInv.h"

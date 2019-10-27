@@ -2,7 +2,7 @@
  * Description: naive implementation of Misra \& Gries edge coloring, 
  * by Vizing's Theorem a simple graph with max degree $d$ can be 
  * edge colored with at most $d+1$ colors 
- * Time: O(MN^2)
+ * Time: O(N^2M)
  * Source: 
 	* https://en.m.wikipedia.org/wiki/Vizing%27s_theorem 
 	* https://en.wikipedia.org/wiki/Misra_%26_Gries_edge_coloring_algorithm

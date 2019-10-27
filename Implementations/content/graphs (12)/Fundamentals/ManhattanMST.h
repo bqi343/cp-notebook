@@ -45,11 +45,11 @@ void solve() {
 }
 
 ll mst(vpi v) {
-	N = sz(v); cur.resz(N); ed.clear(); 
+	N = sz(v); cur.rsz(N); ed.clear(); 
 	ind.clear(); F0R(i,N) ind.pb(i);
 	sort(all(ind),[&v](int a, int b) { return v[a] < v[b]; });
 	F0R(i,N-1) if (v[ind[i]] == v[ind[i+1]]) ed.pb({0,{ind[i],ind[i+1]}});
-	F0R(i,2) { // it's probably ok to consider just two quadrants?
+	F0R(i,2) { // ok to consider just two quadrants?
 		F0R(i,N) {
 			auto a = v[i];
 			cur[i][2] = a.f+a.s;

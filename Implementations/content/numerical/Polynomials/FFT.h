@@ -15,19 +15,21 @@ const int MOD = (119 << 23) + 1, root = 3; // = 998244353
 // (479 << 21, 3) and (483 << 21, 5). The last two are > 10^9.
 
 constexpr int size(int s) { return s > 1 ? 32-__builtin_clz(s-1) : 0; }
-void genRoots(vmi& roots) { // primitive n-th roots of unity
+void genRoots(vcd& roots) { // primitive n-th roots of unity
+	int n = sz(roots); double ang = 2*PI/n;
+	// is there a way to compute these trig functions more quickly w/o issues?
+	F0R(i,n) roots[i] = cd(cos(ang*i),sin(ang*i)); 
+}
+void genRoots(vmi& roots) { 
 	int n = sz(roots); mi r = pow(mi(root),(MOD-1)/n);
 	roots[0] = 1; FOR(i,1,n) roots[i] = roots[i-1]*r;
-}
-void genRoots(vcd& roots) { // change cd to complex<double> instead?
-	int n = sz(roots); double ang = 2*PI/n;
-	F0R(i,n) roots[i] = cd(cos(ang*i),sin(ang*i)); // is there a way to do this more quickly?
 }
 
 template<class T> void fft(vector<T>& a, const vector<T>& roots, bool inv = 0) {
 	int n = sz(a);
-	for (int i = 1, j = 0; i < n; i++) { // sort by reverse bit representation
-		int bit = n >> 1;
+	// sort numbers from 0 to n-1 by reverse bit representation
+	for (int i = 1, j = 0; i < n; i++) { 
+		int bit = n>>1;
 		for (; j&bit; bit >>= 1) j ^= bit;
 		j ^= bit; if (i < j) swap(a[i], a[j]);
 	}
@@ -42,10 +44,10 @@ template<class T> void fft(vector<T>& a, const vector<T>& roots, bool inv = 0) {
 }
 
 template<class T> vector<T> mult(vector<T> a, vector<T> b) {
+	if (!min(sz(a),sz(b))) return {};
 	int s = sz(a)+sz(b)-1, n = 1<<size(s);
 	vector<T> roots(n); genRoots(roots);
-	a.rsz(n), fft(a,roots); 
-	b.rsz(n), fft(b,roots);
+	a.rsz(n), fft(a,roots); b.rsz(n), fft(b,roots);
 	F0R(i,n) a[i] *= b[i];
-	fft(a,roots,1); return a;
+	fft(a,roots,1); a.rsz(s); return a;
 }

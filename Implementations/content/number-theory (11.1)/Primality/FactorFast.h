@@ -1,6 +1,6 @@
 /**
  * Description: Factors integers up to $2^{60}$
- * Time: $O(n^{1/4})$ gcd calls, less for numbers with small factors
+ * Time: $O(N^{1/4})$ gcd calls, less for numbers with small factors
  * Source: KACTL
 	* https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test
 	* https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm
@@ -9,18 +9,19 @@
  */
 
 #include "PrimeSieve.h"
+#include "../Modular Arithmetic/ModMulLL.h"
 
 Sieve<1<<20> S = Sieve<1<<20>(); // should take care of all primes up to n^{1/3}
 
 bool millerRabin(ll p) { // test primality
 	if (p == 2) return true;
 	if (p == 1 || p % 2 == 0) return false;
-	ll s = p - 1; while (s % 2 == 0) s /= 2;
+	ll s = p-1; while (s % 2 == 0) s /= 2;
 	F0R(i,30) { // strong liar with probability <= 1/4
-		ll a = rand() % (p - 1) + 1, tmp = s;
-		ll mod = mod_pow(a, tmp, p);
+		ll a = rand() % (p-1) + 1, tmp = s;
+		ll mod = modPow(a, tmp, p);
 		while (tmp != p - 1 && mod != 1 && mod != p - 1) {
-			mod = mod_mul(mod, mod, p);
+			mod = modMul(mod, mod, p);
 			tmp *= 2;
 		}
 		if (mod != p - 1 && tmp % 2 == 0) return false;
@@ -28,8 +29,7 @@ bool millerRabin(ll p) { // test primality
 	return true;
 }
 
-ll f(ll a, ll n, ll &has) { return (mod_mul(a,a,n)+has)%n; }
-
+ll f(ll a, ll n, ll &has) { return (modMul(a,a,n)+has)%n; }
 vpl pollardsRho(ll d) {
 	vpl res;
 	auto& pr = S.pr;

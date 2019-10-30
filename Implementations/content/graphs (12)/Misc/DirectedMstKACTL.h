@@ -6,7 +6,7 @@
  * Verification: https://open.kattis.com/problems/fastestspeedrun
  */
 
-#include "DSU.h"
+#include "../Fundamentals/DSU (7.6).h"
 
 struct Edge { int a, b; ll w; };
 struct Node { /// lazy skew heap node

@@ -1,13 +1,14 @@
 /**
  * Description: calculates determinant via gaussian elimination
- * Time: O(N^3)
+ * Time: O(N^3), determinant of $1000\times 1000$ matrix of modular ints in 
+ 	* 1s if you reduce \# of operations by half
  * Source: various
  * Verification: SPOJ MIFF (matrix inverse modulo prime)
  */
 
 #include "Matrix.h"
 
-template<class T> T gauss(Mat<T>& m) { // determinant of 1000x1000 Matrix in ~1s
+template<class T> T gauss(Mat<T>& m) { 
 	int n = m.r;
 	T prod = 1; int nex = 0;
 	F0R(i,n) {

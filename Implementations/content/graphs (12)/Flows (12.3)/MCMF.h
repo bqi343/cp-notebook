@@ -32,7 +32,8 @@ template<int SZ> struct mcmf {
 	}
 	bool spfa() { // reweight ensures that there will be negative weights 
 		// only during the first time you run this
-		F0R(i,N) cost[i] = {INF,0}; cost[s] = {0,INF};
+		F0R(i,N) cost[i] = {INF,0}; 
+		cost[s] = {0,INF};
 		pqg<pair<C,int>> todo; todo.push({0,s});
 		while (sz(todo)) {
 			auto x = poll(todo); if (x.f > cost[x.s].f) continue;

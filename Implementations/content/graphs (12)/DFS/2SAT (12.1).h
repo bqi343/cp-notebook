@@ -15,7 +15,7 @@
  * Verification: https://codeforces.com/contest/1007/problem/D
  */
 
-#include "SCC.h"
+#include "SCC (12.1).h"
 
 template<int SZ> struct TwoSat {
 	SCC<2*SZ> S;

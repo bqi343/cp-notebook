@@ -20,7 +20,8 @@ template<int SZ> struct LCA {
 	}
 	void init(int _N) {
 		N = _N; dfs(R, 0);
-		FOR(k,1,BITS) FOR(i,1,N+1) par[k][i] = par[k-1][par[k-1][i]];
+		FOR(k,1,BITS) FOR(i,1,N+1) 
+			par[k][i] = par[k-1][par[k-1][i]];
 	}
 
 	// QUERY
@@ -31,7 +32,8 @@ template<int SZ> struct LCA {
 	int lca(int u, int v){
 		if (depth[u] < depth[v]) swap(u,v);
 		u = getPar(u,depth[u]-depth[v]);
-		R0F(k,BITS) if (par[k][u] != par[k][v]) u = par[k][u], v = par[k][v];
+		R0F(k,BITS) if (par[k][u] != par[k][v]) 
+			u = par[k][u], v = par[k][v];
 		return u == v ? u : par[0][u];
 	}
 	int dist(int u, int v) {

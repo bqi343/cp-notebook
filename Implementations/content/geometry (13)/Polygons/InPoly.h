@@ -4,7 +4,7 @@
  * Verification: https://open.kattis.com/problems/pointinpolygon
  */
 
-#include "Point.h"
+#include "../Primitives/Point.h"
 
 string inPoly(const vP& p, P z) {
 	int n = sz(p), ans = 0;

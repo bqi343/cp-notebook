@@ -2,11 +2,11 @@
  * Description: ?
  * Source: USACO Mowing the Field
  * Verification: ?
- * Dependency: sparse segment tree
  */
 
-const int SZ = 1<<17;
+#include "../1D Range Queries (9.2)/SparseSegTree (9.2).h"
 
+const int SZ = 1<<17;
 
 template<class T> struct Node {
 	node<T> seg;

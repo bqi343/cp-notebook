@@ -9,7 +9,8 @@
  * Verification: http://codeforces.com/contest/506/problem/E
  */
 
-using namespace vecOp;
+#include "../Polynomials/VecOp.h"
+#include "../../number-theory (11.1)/Modular Arithmetic/Modular.h"
 
 struct LinRec {
 	vmi x; // original sequence

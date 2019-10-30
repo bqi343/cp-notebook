@@ -45,3 +45,5 @@
 	% find . -name '*.h' ! -type d -exec bash -c 'unexpand -t 4 "$0" > /tmp/e && mv /tmp/e "$0"' {} \;
 % find F0Rd
 	% grep -r 'F0Rd' .
+% test compile all in section
+	% find 'content/geometry (13)' -name '*.h' -exec sh test-compiles.sh "{}" \;

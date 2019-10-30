@@ -5,7 +5,7 @@
  * Verification: CCO 2008 P6 Landing
  */
 
-#include "Point.h"
+#include "../Primitives/Point.h"
 
 typedef ll T;
 

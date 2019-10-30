@@ -9,6 +9,8 @@
 	* also see Combinations
  */
 
+#include "../../contest/CppIO.h"
+
 template<class T> struct modular {
 	T val; 
 	explicit operator T() const { return val; }
@@ -35,7 +37,7 @@ template<class T> struct modular {
 		return ans;
 	}
 	friend modular inv(const modular& a) { 
-		assert(a != 0); return exp(a,MOD-2); 
+		assert(a != 0); return pow(a,MOD-2); 
 	}
 	modular& operator/=(const modular& m) { return (*this) *= inv(m); }
 	

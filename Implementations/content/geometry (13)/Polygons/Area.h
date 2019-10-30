@@ -6,7 +6,7 @@
  * Verification: kattis polygonarea, VT HSPC 2018 Holiday Stars
  */
 
-#include "Point.h"
+#include "../Primitives/Point.h"
 
 T area(const vP& v) {
 	T area = 0;

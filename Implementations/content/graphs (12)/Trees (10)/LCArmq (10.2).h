@@ -4,7 +4,7 @@
  * Verification: USACO Debug the Bugs
  */
 
-#include "RMQ.h"
+#include "../../data-structures/Static Range Queries (9.1)/RMQ (9.1).h"
 
 template<int SZ> struct LCA {
 	int N, R = 1, depth[SZ], pos[SZ];

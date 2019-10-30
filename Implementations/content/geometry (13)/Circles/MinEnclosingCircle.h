@@ -7,8 +7,8 @@
 
 #include "Circumcenter.h"
 
-pair<P, T> mec(vP ps) {
-	shuffle(all(ps), mt19937(time(0)));
+circ mec(vP ps) {
+	shuffle(all(ps), rng);
 	P o = ps[0]; T r = 0, EPS = 1 + 1e-8;
 	F0R(i,sz(ps)) if (abs(o-ps[i]) > r*EPS) {
 		o = ps[i], r = 0;

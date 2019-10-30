@@ -1,5 +1,5 @@
 /**
- * Description: use in place of complex<T>
+ * Description: use in place of \texttt{complex<T>}
  * Source: http://codeforces.com/blog/entry/22175, KACTL
  * Verification: various
  */

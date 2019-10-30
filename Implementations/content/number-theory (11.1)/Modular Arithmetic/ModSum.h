@@ -1,5 +1,6 @@
 /**
  * Description: Sums of mod'ed arithmetic progressions
+ * Time: O(\log (mk))
  * Source: KACTL
  * Verification: ?
  */

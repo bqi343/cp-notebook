@@ -8,6 +8,9 @@
 	* normal unordered map gets TLE
  */
 
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds;
+
 struct chash {
 	static uint64_t splitmix64(uint64_t x) {
 		// http://xorshift.di.unimi.it/splitmix64.c

@@ -4,10 +4,10 @@
  * Verification: https://codeforces.com/contest/1140/problem/F
  */
 
-#include "DSUrb.h"
+#include "DSUrb (15.5).h"
 
 template<int SZ> struct DynaCon { // answer dynamic connectivity queries offline
-	DSUrb<MX> D;
+	DSUrb D;
 	vpi seg[2*SZ];
 	void upd(int l, int r, pi p) {	// add edge p to all times in interval [l, r]
 		r++;

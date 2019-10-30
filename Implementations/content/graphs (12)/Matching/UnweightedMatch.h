@@ -31,7 +31,8 @@ template<int SZ> struct UnweightedMatch {
 		++t;
 		while (1) {
 			if (v) {
-				if (aux[v] == t) return v; aux[v] = t;
+				if (aux[v] == t) return v; 
+				aux[v] = t;
 				v = orig[par[match[v]]];
 			}
 			swap(v, w);
@@ -63,7 +64,7 @@ template<int SZ> struct UnweightedMatch {
 		}
 		return false;
 	}
-	int match() {
+	int calc() {
 		int ans = 0;
 		// find random matching (not necessary, constant improvement)
 		vi V(N-1); iota(all(V), 1);

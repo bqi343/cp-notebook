@@ -6,7 +6,7 @@
 	* https://open.kattis.com/problems/convexhull
  */
 
-#include "Point.h"
+#include "../Primitives/Point.h"
 
 // typedef ll T;
 

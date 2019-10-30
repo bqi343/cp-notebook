@@ -5,7 +5,7 @@
  * Time: O(\log N)
  */
 
-#include "BIT.h"
+#include "BIT (9.2).h"
 
 template<class T, int SZ> struct BITrange {
 	BIT<T,SZ> bit[2]; // piecewise linear functions

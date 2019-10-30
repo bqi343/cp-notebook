@@ -21,7 +21,7 @@ template<class T, int SZ> struct LazySeg { // set SZ to a power of 2
 	}
 	void build() { ROF(i,1,SZ) pull(i); }
 
-	void upd(int lo, int hi, ll inc, int ind = 1, int L = 0, int R = SZ-1) {
+	void upd(int lo, int hi, T inc, int ind = 1, int L = 0, int R = SZ-1) {
 		push(ind,L,R);
 		if (hi < L || R < lo) return;
 		if (lo <= L && R <= hi) {

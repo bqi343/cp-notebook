@@ -1,7 +1,7 @@
 /**
 * Description: \texttt{sa} contains indices of suffixes in sorted order
 * Time: O(N\log N)
-* Source: SuprDewd, KACTL, majk, ekzhang
+* Source: SuprDewd, KACTL, majk, ekzhang (http://ekzlib.herokuapp.com)
 * Verification: 
 	* http://usaco.org/index.php?page=viewproblem2&cpid=768
 		* https://pastebin.com/y2Z9FYr6
@@ -9,7 +9,7 @@
 	* https://codeforces.com/contest/1090/problem/J
 */
 
-template<int SZ> struct SuffixArray {
+struct SuffixArray {
 	string S; int N;
 	void init(const string& _S) {
 		S = _S; N = sz(S);
@@ -18,7 +18,7 @@ template<int SZ> struct SuffixArray {
 	}
 	
 	vi sa, isa;
-	void genSa() { // http://ekzlib.herokuapp.com
+	void genSa() { 
 		sa.rsz(N); vi classes(N);
 		F0R(i,N) sa[i] = N-1-i, classes[i] = S[i];
 		stable_sort(all(sa), [this](int i, int j) { return S[i] < S[j]; });

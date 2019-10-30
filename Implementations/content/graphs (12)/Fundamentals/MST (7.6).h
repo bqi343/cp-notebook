@@ -5,7 +5,7 @@
  * Verification: USACO superbull
  */
 
-#include "DSU.h"
+#include "DSU (7.6).h"
 
 template<class T> T kruskal(int n, vector<pair<T,pi>> edge) {
 	sort(all(edge));

@@ -9,7 +9,7 @@ struct Line {
 	Line(ll _k, ll _m) { k = _k, m = _m; }
 	Line() : Line(0,-INF) { }
 	ll get(ll x) { return k*x+m; }
-	bool majorize(Line X, int L, int R) { 
+	bool majorize(Line X, ll L, ll R) { 
 		return get(L) >= X.get(L) && get(R) >= X.get(R); 
 	}
 };

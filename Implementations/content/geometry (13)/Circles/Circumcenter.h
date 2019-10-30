@@ -4,9 +4,9 @@
  * Verification: see MEC
  */
 
-#include "Point.h"
+#include "Circle.h"
 
-pair<P,T> ccCenter(P a, P b, P c) { 
+circ ccCenter(P a, P b, P c) { 
 	b -= a; c -= a;
 	P res = b*c*(conj(c)-conj(b))/(b*conj(c)-conj(b)*c);
 	return {a+res,abs(res)};

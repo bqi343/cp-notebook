@@ -3,8 +3,9 @@
 	* meet in the middle: O(sqrt(mod)) per query
  * Source: Own
  * Verification: https://www.hackerrank.com/contests/infinitum11/challenges/discrete-logarithm/problem
- * Dependency: Modular Int
  */
+
+#include "Modular.h"
 
 struct DiscreteLog {
 	int mod, root, block;

@@ -17,10 +17,10 @@ void cliques(B P = ~B(), B X={}, B R={}) { // possibly in clique, not in clique,
 		return; 
 	}
 	auto q = (P|X)._Find_first();
-	auto cands = P&~eds[q]; // clique must contain q or non-neighbor of q
+	auto cands = P&~adj[q]; // clique must contain q or non-neighbor of q
 	F0R(i,N) if (cands[i]) {
 		R[i] = 1;
-		cliques(eds, f, P & eds[i], X & eds[i], R);
+		cliques(P&adj[i],X&adj[i],R);
 		R[i] = P[i] = 0; X[i] = 1;
 	}
 }

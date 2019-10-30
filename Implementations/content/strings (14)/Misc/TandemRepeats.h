@@ -6,7 +6,7 @@
  * Verification: http://codeforces.com/contest/1043/problem/G
  */
 
-#include "Z.h"
+#include "../Lightweight/Z (14.3).h"
 
 struct StringRepeat {
 	string S;

@@ -20,7 +20,7 @@ template<int SZ> struct BCC {
 		static int ti = 0;
 		disc[u] = ++ti; int low = disc[u];
 		int child = 0;
-		trav(i,adj[u]) if (i.s != p)
+		trav(i,adj[u]) if (i.s != p) {
 			if (!disc[i.f]) {
 				child ++; st.pb(i.s);
 				int LOW = bcc(i.f,i.s); ckmin(low,LOW);
@@ -35,6 +35,7 @@ template<int SZ> struct BCC {
 				ckmin(low,disc[i.f]);
 				st.pb(i.s);
 			}
+		}
 		return low;
 	}
 

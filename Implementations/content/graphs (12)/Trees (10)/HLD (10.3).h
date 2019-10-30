@@ -5,11 +5,13 @@
  * Verification: USACO Grass Planting, https://www.hackerrank.com/challenges/subtrees-and-paths
  */
 
+#include "../../data-structures/1D Range Queries (9.2)/LazySegTree (15.2).h"
+
 template<int SZ, bool VALUES_IN_EDGES> struct HLD { 
 	int N; vi adj[SZ];
 	int par[SZ], sz[SZ], depth[SZ];
 	int root[SZ], pos[SZ];
-	LazySegTree<ll,SZ> tree;
+	LazySeg<ll,SZ> tree;
 	void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
 	
 	void dfs_sz(int v = 1) {

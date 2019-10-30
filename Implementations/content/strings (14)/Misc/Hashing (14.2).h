@@ -8,7 +8,7 @@
 	* CF Check Transcription
  */
 
-#include "Modular.h"
+#include "../../number-theory (11.1)/Modular Arithmetic/Modular.h"
 
 namespace pairOp {
 	template<class A, class B> pair<A,B> operator+(const pair<A,B>& l, const pair<A,B>& r) { return {l.f+r.f,l.s+r.s}; }

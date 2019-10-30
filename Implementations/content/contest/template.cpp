@@ -48,7 +48,7 @@ const ld PI = 4*atan((ld)1);
 template<class T> bool ckmin(T& a, const T& b) { return a > b ? a = b, 1 : 0; }
 template<class T> bool ckmax(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
 
-mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());
 
 int main() {
     cin.sync_with_stdio(0); cin.tie(0); 

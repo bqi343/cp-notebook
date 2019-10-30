@@ -7,7 +7,7 @@
 	 * vvd A = {{1,-1}, {-1,1}, {-1,-2}};
 	 * vd b = {1,1,-4}, c = {-1,-1}, x;
 	 * T val = LPSolver(A, b, c).solve(x);
- * Time: O(NM \cdot \#pivots), where a pivot may be e.g. an edge relaxation. O(2^n) in the general case.
+ * Time: O(NM \cdot \#pivots), where a pivot may be e.g. an edge relaxation. O(2^N) in the general case.
  * Source: KACTL, Stanford
 	* https://cs.stanford.edu/group/acm/SLPC/notebook.pdf
 	* https://www.utdallas.edu/~scniu/OPRE-6201/documents/LP06-Simplex-Tableau.pdf (good example)
@@ -16,7 +16,7 @@
  */
  
 typedef double T;
-// typedef vector<T> vd;
+typedef vector<T> vd;
 typedef vector<vd> vvd;
 const T eps = 1e-8, inf = 1/.0;
 

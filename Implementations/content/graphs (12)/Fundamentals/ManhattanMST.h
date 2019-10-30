@@ -8,7 +8,7 @@
 	* TC 760 ComponentsForever
  */
 
-#include "MST.h"
+#include "MST (7.6).h"
 
 int N;
 vector<array<int,3>> cur;
@@ -23,7 +23,8 @@ struct {
 		m[a] = b; it = m.find(a);
 		while (it != m.begin() && prev(it)->s >= b) m.erase(prev(it));
 	}
-	pi query(int y) { // for all a > y find min possible value of b 
+	pi query(int y) { // over all a > y 
+		// get min possible value of b 
 		auto it = m.ub(y);
 		if (it == m.end()) return {2*MOD,2*MOD};
 		return it->s;
@@ -48,7 +49,8 @@ ll mst(vpi v) {
 	N = sz(v); cur.rsz(N); ed.clear(); 
 	ind.clear(); F0R(i,N) ind.pb(i);
 	sort(all(ind),[&v](int a, int b) { return v[a] < v[b]; });
-	F0R(i,N-1) if (v[ind[i]] == v[ind[i+1]]) ed.pb({0,{ind[i],ind[i+1]}});
+	F0R(i,N-1) if (v[ind[i]] == v[ind[i+1]]) 
+		ed.pb({0,{ind[i],ind[i+1]}});
 	F0R(i,2) { // ok to consider just two quadrants?
 		F0R(i,N) {
 			auto a = v[i];
@@ -68,5 +70,5 @@ ll mst(vpi v) {
 		solve();
 		trav(a,v) a = {a.s,-a.f}; // rotate 90 degrees, repeat
 	}
-	return kruskal(ed);
+	return kruskal(N,ed);
 }

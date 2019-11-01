@@ -16,7 +16,6 @@ template<int SZ> struct CD {
 	vl dist[SZ];
 	pi cen[SZ];
 	void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
-
 	void dfs (int x) {
 		sub[x] = 1;
 		trav(y,adj[x]) if (!done[y] && y != par[x]) {
@@ -34,7 +33,6 @@ template<int SZ> struct CD {
 			x = mx.s;
 		}
 	}
-
 	void genDist(int x, int p) {
 		dist[x].pb(dist[p].back()+1);
 		trav(y,adj[x]) if (!done[y] && y != p) {

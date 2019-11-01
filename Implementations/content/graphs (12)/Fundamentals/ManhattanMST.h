@@ -58,14 +58,12 @@ ll mst(vpi v) {
 		}
 		F0R(i,N) { // first octant
 			auto a = v[i];
-			cur[i][0] = a.f-a.s;
-			cur[i][1] = a.s;
+			cur[i][0] = a.f-a.s; cur[i][1] = a.s;
 		}
 		solve();
 		F0R(i,N) { // second octant
 			auto a = v[i];
-			cur[i][0] = a.f;
-			cur[i][1] = a.s-a.f;
+			cur[i][0] = a.f; cur[i][1] = a.s-a.f;
 		}
 		solve();
 		trav(a,v) a = {a.s,-a.f}; // rotate 90 degrees, repeat

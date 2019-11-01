@@ -26,6 +26,7 @@ Make sure to [upsolve](https://en.wiktionary.org/wiki/upsolve) after the contest
     * random ICPC stuff
   * [Codechef](http://codechef.com/)
     * Lunchtime, Cookoff
+  * [Google Kickstart](https://codingcompetitions.withgoogle.com/kickstart): Feb - Nov
 
 The following websites do not hold regular contests anymore, but they're still worth looking at.
 
@@ -44,15 +45,26 @@ The following websites do not hold regular contests anymore, but they're still w
 
 ## Annual Contests
 
-  * [BattleCode](https://www.battlecode.org): January
-  * [Russian Code Cup](http://www.russiancodecup.ru/en/): March
-  * [Bubble Cup](http://bubblecup.org/): April
-  * [Google Code Jam](https://code.google.com/codejam/): April
-    * Kickstart: February - November
+  * [Google Code Jam](https://code.google.com/codejam/): Apr
+    * 25 from R3
+  * [Facebook Hacker Cup](https://www.facebook.com/hackercup/): Jun-Jul -> Oct
+    * 25 from R3
+  * [Topcoder Open](https://tco19.topcoder.com/): Apr-Aug -> Nov
+    * 4 from SRMs
+    * 10 from R4
+    * 2 from Wildcard
+  * [AtCoder World Tour Finals](https://codeforces.com/blog/entry/56623)
+    * 8 from AGC
+  * [Bubble Cup](http://bubblecup.org/): Apr
+  * [BattleCode](https://www.battlecode.org): Jan
+
+No Longer Active?
+
   * [IPSC](https://ipsc.ksp.sk/rules): July
-  * [Facebook Hacker Cup](https://www.facebook.com/hackercup/): July
-  * ~~[SnackDown](https://www.codechef.com/snackdown/2017/schedule): May~~
-  * ~~[Yandex Algorithm](https://contest.yandex.ru/contest-list/): April (bad times)~~
+  * [Russian Code Cup](http://www.russiancodecup.ru/en/): March
+  * [Yandex Algorithm](https://contest.yandex.ru/contest-list/): April
+  * [SnackDown](https://www.codechef.com/snackdown): Sep-Dec -> Feb
+    * Global: 15 with travel expenses paid, 10 additional
 
 ## Online HS (US)
 

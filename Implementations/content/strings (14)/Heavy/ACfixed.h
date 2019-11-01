@@ -13,7 +13,6 @@ struct ACfixed { // fixed alphabet
 	};
 	vector<node> d;
 	ACfixed() { d.eb(); }
-
 	int add(string s) { // add word
 		int v = 0;
 		trav(C,s) {
@@ -26,7 +25,6 @@ struct ACfixed { // fixed alphabet
 		}
 		return v;
 	}
-	
 	void init() { // generate links
 		d[0].link = -1; 
 		queue<int> q; q.push(0);

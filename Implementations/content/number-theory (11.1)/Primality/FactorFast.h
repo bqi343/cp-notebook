@@ -11,7 +11,7 @@
 #include "PrimeSieve.h"
 #include "../Modular Arithmetic/ModMulLL.h"
 
-Sieve<1<<20> S = Sieve<1<<20>(); // should take care of all primes up to n^{1/3}
+Sieve<1<<20> S; // primes up to N^{1/3}
 
 bool millerRabin(ll p) { // test primality
 	if (p == 2) return true;

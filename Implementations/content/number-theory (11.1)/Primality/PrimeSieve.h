@@ -6,13 +6,13 @@
  */
 
 template<int SZ> struct Sieve { 
-	bitset<SZ> isprime;
+	bitset<SZ> prime;
 	vi pr;
 	Sieve() {
-		isprime.set(); isprime[0] = isprime[1] = 0;
-		for (int i = 4; i < SZ; i += 2) isprime[i] = 0;
-		for (int i = 3; i*i < SZ; i += 2) if (isprime[i])
-			for (int j = i*i; j < SZ; j += i*2) isprime[j] = 0;
-		FOR(i,2,SZ) if (isprime[i]) pr.pb(i);
+		prime.set(); prime[0] = prime[1] = 0;
+		for (int i = 4; i < SZ; i += 2) prime[i] = 0;
+		for (int i = 3; i*i < SZ; i += 2) if (prime[i])
+			for (int j = i*i; j < SZ; j += i*2) prime[j] = 0;
+		F0R(i,SZ) if (prime[i]) pr.pb(i);
 	}
 };

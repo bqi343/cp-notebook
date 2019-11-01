@@ -1,13 +1,11 @@
 /**
  * Description: custom comparator for map / set
  * Source: StackOverflow
+ * Usage: set<int,cmp> s; map<int,int,cmp> m;
  */
 
 struct cmp {
-	bool operator()(const int& l, const int& r) const {
-		return l > r;
-	}
+	bool operator()(const int& l, const int& r) const { 
+		return l > r; // sort items in decreasing order
+	} 
 };
-
-set<int,cmp> s; // F0R(i,10) s.insert(rand()); trav(i,s) ps(i);
-map<int,int,cmp> m;

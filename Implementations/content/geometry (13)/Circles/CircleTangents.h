@@ -27,5 +27,4 @@ vector<pair<P,P>> external(circ x, circ y) {
 	return v;
 }
 vector<pair<P,P>> internal(circ x, circ y) { 
-	x.s *= -1; return external(x,y);
-}
+	x.s *= -1; return external(x,y); }

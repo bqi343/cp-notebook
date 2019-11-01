@@ -13,7 +13,6 @@ template<int SZ> struct BCC {
 		adj[u].pb({v,sz(ed)}), adj[v].pb({u,sz(ed)}); 
 		ed.pb({u,v});
 	}
-
 	int disc[SZ];
 	vi st; vector<vi> fin;
 	int bcc(int u, int p = -1) { // return lowest disc
@@ -38,7 +37,6 @@ template<int SZ> struct BCC {
 		}
 		return low;
 	}
-
 	void init(int _N) {
 		N = _N; F0R(i,N) disc[i] = 0;
 		F0R(i,N) if (!disc[i]) bcc(i); // st should be empty after each iteration

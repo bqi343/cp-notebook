@@ -10,7 +10,6 @@ template<int SZ> struct SegTreeBeats {
 	int N;
 	ll sum[2*SZ];
 	int mx[2*SZ][2], maxCnt[2*SZ];
-
 	void pull(int ind) {
 		F0R(i,2) mx[ind][i] = max(mx[2*ind][i],mx[2*ind+1][i]);
 		maxCnt[ind] = 0;
@@ -31,7 +30,6 @@ template<int SZ> struct SegTreeBeats {
 		int M = (L+R)/2;
 		build(a,2*ind,L,M); build(a,2*ind+1,M+1,R); pull(ind);
 	}
-	
 	void push(int ind, int L, int R) {
 		if (L == R) return;
 		F0R(i,2) 

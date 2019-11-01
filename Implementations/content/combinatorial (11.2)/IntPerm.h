@@ -1,5 +1,5 @@
 /**
- * Description: convert permutation of $\{0,1,...,N-1\}$ to integer in $[0,N!)$ and back
+ * Description: Unused. Convert permutation of $\{0,1,...,N-1\}$ to integer in $[0,N!)$ and back.
  * Source: http://antoinecomeau.blogspot.com/2014/07/mapping-between-permutations-and.html
  * Verification: ?
  * Time: O(N)
@@ -15,7 +15,6 @@ vi decode(int n, int a) {
 	}
 	return b;
 }
-
 int encode(vi b) {
 	int n = sz(b), a = 0, mul = 1;
 	vi pos(n); iota(all(pos),0); vi el = pos;

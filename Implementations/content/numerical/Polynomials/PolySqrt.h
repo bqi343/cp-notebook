@@ -1,11 +1,11 @@
 /**
- * Description: square root of polynomial
+ * Description: for $p$ a power of 2, computes $ans$ such that $ans\cdot ans \equiv v \pmod{x^p}$
  * Time: O(N\log N)
  */
 
 #include "PolyInv.h"
 
-template<class T> vector<T> sqrt(vector<T> v, int p) { // S*S = v mod x^p, p is power of 2
+template<class T> vector<T> sqrt(vector<T> v, int p) { 
 	assert(v[0] == 1); if (p == 1) return {1};
 	v.rsz(p); auto S = sqrt(v,p/2);
 	auto ans = S+mult(v,inv(S,p)); 

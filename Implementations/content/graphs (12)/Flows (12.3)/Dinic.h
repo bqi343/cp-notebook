@@ -9,7 +9,6 @@
 template<int SZ> struct Dinic {
 	typedef ll F; // flow type
 	struct Edge { int to, rev; F flow, cap; };
-	
 	int N,s,t;
 	vector<Edge> adj[SZ];
 	typename vector<Edge>::iterator cur[SZ];
@@ -18,7 +17,6 @@ template<int SZ> struct Dinic {
 		Edge a{v, sz(adj[v]), 0, cap}, b{u, sz(adj[u]), 0, 0};
 		adj[u].pb(a), adj[v].pb(b);
 	}
-
 	int level[SZ];
 	bool bfs() { // level = shortest distance from source
 		// after computing flow, edges {u,v} such that level[u] \neq -1, level[v] = -1 are part of min cut

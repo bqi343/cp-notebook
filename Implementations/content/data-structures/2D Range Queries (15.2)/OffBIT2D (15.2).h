@@ -1,16 +1,17 @@
 /**
- * Description: similar to merge-sort tree, but offline updates
-	* O(nlogn) memory, O(nlog^2n) time with better constant
+ * Description: offline 2D binary indexed tree, supports point update 
+ 	* and rectangle sum queries
+ * Time: O(N\log^2 N)
+ * Memory: O(N\log N)
  * Source: own
  * Verification: https://dmoj.ca/problem/occ19g4
  */
 
- template<class T, int SZ> struct BIT2D { 
+ template<class T, int SZ> struct OffBIT2D { 
 	bool mode = 0; // mode = 1 -> initialized
 	vpi todo;
 	int cnt[SZ], st[SZ];
 	vi val, bit;
-	
 	void init() {
 		assert(!mode); mode = 1;
 		int lst[SZ]; F0R(i,SZ) lst[i] = cnt[i] = 0;
@@ -25,18 +26,16 @@
 			st[i] = sum; lst[i] = 0; // stores start index for each x
 			sum += cnt[i];
 		}
-		val.rsz(sum); bit.rsz(sum); // store all BITs in single vector
+		val.rsz(sum); bit.rsz(sum); // store BITs in single vector
 		trav(t,todo) for (int X = t.f; X < SZ; X += X&-X) 
 			if (lst[X] != t.s) {
 				lst[X] = t.s; 
 				val[st[X]++] = t.s;
 			}
 	}
-	
 	int rank(int y, int l, int r) {
 		return ub(begin(val)+l,begin(val)+r,y)-begin(val)-l;
 	}
-	
 	void UPD(int x, int y, int t) {
 		int z = st[x]-cnt[x]; // BIT covers range from z to st[x]-1
 		for (y = rank(y,z,st[x]); y <= cnt[x]; y += y&-y) 
@@ -48,7 +47,6 @@
 			for (; x < SZ; x += x&-x) UPD(x,y,t);
 		}
 	}
-	
 	int QUERY(int x, int y) {
 		int z = st[x]-cnt[x], ans = 0;
 		for (y = rank(y,z,st[x]); y; y -= y&-y) 

@@ -44,21 +44,21 @@ There are many reasons to use C++11 over Java, such as
   * [TJSCT](https://activities.tjhsst.edu/sct/)
   * [ekzlib](http://ekzlib.herokuapp.com)
 
-### ACM-ICPC
+### ICPC
 
-  * [ICPC World Finals (Kattis)](https://icpc.kattis.com/problems)
-  * [Stanford](http://web.stanford.edu/class/cs97si/)
-  * [Virginia Tech](https://icpc.cs.vt.edu/#/)
-  * [Carnegie-Mellon](https://contest.cs.cmu.edu/295/f17/)
-  * [ICPCGate](https://icpcgate.org/contest/index.php)
-  * [KACTL](https://github.com/kth-competitive-programming/kactl)
-    * [MIT ICPC Book (based off above)](https://github.com/ecnerwala/icpc-book)
+  * [Past ICPC World Finals (Kattis)](https://icpc.kattis.com/problems)
+  * [KTH ICPC Team Reference (KACTL)](https://github.com/kth-competitive-programming/kactl)
+  * [Stanford ICPC](http://web.stanford.edu/class/cs97si/)
+  * [Virginia Tech ICPC](https://icpc.cs.vt.edu/#/)
+  * [Carnegie-Mellon ICPC](https://contest.cs.cmu.edu/295/f17/)
+  * [ICPCGate Contests](https://icpcgate.org/contest/index.php)
 
-## Visualizers
+## Contest Tools
 
   * [2D Geo Visualizer](https://codeforces.com/blog/entry/70330)
   * [CSA Graph Editor (+ Geo Visualizer + Diff Tool)](https://csacademy.com/app/graph_editor/)
   * [Desmos Grapher](https://www.desmos.com/calculator)
+  * [Wolfram Alpha](https://www.wolframalpha.com/)
 
 ### Other
 

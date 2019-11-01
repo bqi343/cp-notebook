@@ -16,12 +16,12 @@ struct SuffixArray {
 		genSa(); genLcp();
 		// R.init(lcp);
 	}
-	
 	vi sa, isa;
 	void genSa() { 
 		sa.rsz(N); vi classes(N);
 		F0R(i,N) sa[i] = N-1-i, classes[i] = S[i];
-		stable_sort(all(sa), [this](int i, int j) { return S[i] < S[j]; });
+		stable_sort(all(sa), [this](int i, int j) { 
+			return S[i] < S[j]; });
 		for (int len = 1; len < N; len *= 2) { 
 			vi c(classes);
 			F0R(i,N) { // compare first len characters of each suffix
@@ -30,7 +30,7 @@ struct SuffixArray {
 							  && c[sa[i]+len/2] == c[sa[i-1]+len/2];
 				classes[sa[i]] = same ? classes[sa[i-1]] : i;
 			}
-			vi nex(N), s(sa); iota(all(nex),0); // suffixes with <= len chars will not change pos 
+			vi nex(N), s(sa); iota(all(nex),0); // suffixes with <= len chars don't change pos 
 			F0R(i,N) {
 				int s1 = s[i]-len;
 				if (s1 >= 0) sa[nex[classes[s1]]++] = s1; // order pairs w/ same first len chars by next len chars 
@@ -38,7 +38,6 @@ struct SuffixArray {
 		}
 		isa.rsz(N); F0R(i,N) isa[sa[i]] = i;
 	}
-	
 	vi lcp;
 	void genLcp() { // KACTL
 		lcp = vi(N-1);
@@ -51,7 +50,7 @@ struct SuffixArray {
 		}
 	}
 	/*RMQ<int> R; 
-	int getLCP(int a, int b) {
+	int getLCP(int a, int b) { // lcp of suffixes starting at a,b
 		if (max(a,b) >= N) return 0;
 		if (a == b) return N-a;
 		int t0 = isa[a], t1 = isa[b];

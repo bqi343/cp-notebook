@@ -10,7 +10,6 @@ template<class T, int SZ> struct pseg {
 	static const int LIMIT = 10000000; // adjust
 	int l[LIMIT], r[LIMIT], nex = 0;
 	T val[LIMIT], lazy[LIMIT];
-	
 	//// HELPER
 	int copy(int cur) {
 		int x = nex++;
@@ -29,7 +28,6 @@ template<class T, int SZ> struct pseg {
 		}
 		lazy[cur] = 0;
 	}
-
 	//// MAIN FUNCTIONS
 	T query(int cur, int lo, int hi, int L, int R) {  
 		if (lo <= L && R <= hi) return val[cur];

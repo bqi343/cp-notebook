@@ -1,0 +1,12 @@
+
+/* Explanation:
+ * Initially, x^2=ab, ord(b) = 2^m, ord(g) = 2^r where m<r
+ * g = g^{2^{r-m-1}} -> ord(g) = 2^{m+1}
+ * if x'=x*g, then b' = b*g^2
+		(b')^{2^{m-1}} = (b*g^2)^{2^{m-1}}
+					   = b^{2^{m-1}}*g^{2^m}
+					   = -1*-1
+					   = 1
+	-> ord(b')|ord(b)/2
+ * m decreases by at least one each iteration
+ */

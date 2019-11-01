@@ -11,7 +11,6 @@ template<int SZ> struct PalTree {
 	int s[SZ], len[SZ], link[SZ], to[SZ][sigma], oc[SZ];
 	int n, last, sz;
 	PalTree() { s[n++] = -1; link[0] = 1; len[1] = -1; sz = 2; }
-	
 	int getLink(int v) {
 		while (s[n-len[v]-2] != s[n-1]) v = link[v];
 		return v;

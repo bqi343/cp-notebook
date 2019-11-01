@@ -1,5 +1,5 @@
 /**
- * Description: ?
+ * Description: represent circle as \{center,radius\}
  * Source: Own
  * Verification: see circle intersection
  */

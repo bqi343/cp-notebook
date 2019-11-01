@@ -1,7 +1,8 @@
 /**
- * Description: Schreier-Sims,
-	* count number of permutations in group 
-	* and test whether permutation is a member of group
+ * Description: Used only once. Schreier-Sims lets you
+	* add a permutation to a group,
+	* count number of permutations in a group,
+	* and test whether a permutation is a member of a group.
  * Time: ?
  * Source: MIT NULL
 	* see Zlobober's post in Russian version 

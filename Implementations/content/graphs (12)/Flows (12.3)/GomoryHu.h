@@ -13,11 +13,9 @@ template<int SZ> struct GomoryHu {
 	int N;
 	vector<pair<pi,int>> ed;
 	void addEdge(int a, int b, int c) { ed.pb({{a,b},c}); }
-
 	vector<vi> cor = {{}}; // groups of vertices
 	map<int,int> adj[2*SZ]; // current edges of tree
 	int side[SZ];
-
 	int gen(vector<vi> cc) {
 		Dinic<SZ> D = Dinic<SZ>();
 		vi comp(N+1); F0R(i,sz(cc)) trav(t,cc[i]) comp[t] = i;
@@ -29,15 +27,12 @@ template<int SZ> struct GomoryHu {
 		F0R(i,sz(cc)) trav(j,cc[i]) side[j] = D.level[i] >= 0; // min cut
 		return f;
 	}
-
 	void fill(vi& v, int a, int b) {
 		trav(t,cor[a]) v.pb(t);
 		trav(t,adj[a]) if (t.f != b) fill(v,t.f,a);
 	}
-
 	void addTree(int a, int b, int c) { adj[a][b] = c, adj[b][a] = c; }
 	void delTree(int a, int b) { adj[a].erase(b), adj[b].erase(a); }
-
 	vector<pair<pi,int>> init(int _N) { 
 		N = _N;
 		FOR(i,1,N+1) cor[0].pb(i);

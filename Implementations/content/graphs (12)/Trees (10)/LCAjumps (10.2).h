@@ -10,7 +10,6 @@ template<int SZ> struct LCA {
 	int N, R = 1; // vertices from 1 to N, R = root
 	vi adj[SZ];
 	int par[BITS][SZ], depth[SZ];
-
 	// INITIALIZE
 	void addEdge(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
 	void dfs(int u, int prev){
@@ -23,7 +22,6 @@ template<int SZ> struct LCA {
 		FOR(k,1,BITS) FOR(i,1,N+1) 
 			par[k][i] = par[k-1][par[k-1][i]];
 	}
-
 	// QUERY
 	int getPar(int a, int b) {
 		R0F(k,BITS) if (b&(1<<k)) a = par[k][a];

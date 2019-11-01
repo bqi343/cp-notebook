@@ -12,8 +12,7 @@
 #include "Point.h"
 
 template<class T> int half(pair<T,T> x) { 
-	return x.s == 0 ? x.f < 0 : x.s > 0; 
-}
+	return x.s == 0 ? x.f < 0 : x.s > 0; }
 bool angleCmp(P a, P b) { 
 	int A = half(a), B = half(b);
 	return A == B ? cross(a,b) > 0 : A < B;

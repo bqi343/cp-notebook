@@ -14,13 +14,11 @@ template<int SZ, bool directed> struct Euler {
 	vpi adj[SZ];
 	vpi::iterator its[SZ];
 	vector<bool> used;
-
 	void addEdge(int a, int b) {
 		if (directed) adj[a].pb({b,M});
 		else adj[a].pb({b,M}), adj[b].pb({a,M});
 		used.pb(0); M ++;
 	}
-
 	vpi solve(int _N, int src = 1) {
 		N = _N; 
 		FOR(i,1,N+1) its[i] = begin(adj[i]);

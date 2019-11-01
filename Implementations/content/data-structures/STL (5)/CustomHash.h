@@ -1,6 +1,7 @@
 /**
- * Description: avoid hacks with custom hash, 
- 	* \texttt{gp\_hash\_table} is generally faster than \texttt{unordered\_map}
+ * Description: Avoid hacks with custom hash.
+ 	* \texttt{gp\_hash\_table} is faster than \texttt{unordered\_map}
+ 	* but uses more memory.
  * Source: 
 	* http://codeforces.com/blog/entry/62393
 	* KACTL
@@ -28,9 +29,7 @@ struct chash {
 	}
 };
 
-template<class K, class V> using um = unordered_map<K, V, chash>;
-template<class K, class V> using ht = gp_hash_table<K, V, chash>;
-
+template<class K, class V> using um = unordered_map<K,V,chash>;
+template<class K, class V> using ht = gp_hash_table<K,V,chash>;
 template<class K, class V> V get(ht<K,V>& u, K x) {
-	return u.find(x) == end(u) ? 0 : u[x];
-}
+	return u.find(x) == end(u) ? 0 : u[x]; }

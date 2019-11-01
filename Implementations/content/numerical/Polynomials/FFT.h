@@ -15,7 +15,7 @@ const int MOD = (119 << 23) + 1, root = 3; // = 998244353
 // (7 << 26, 3), (479 << 21, 3) and (483 << 21, 5). 
 // The last two are > 10^9.
 
-constexpr int size(int s) { return s > 1 ? 32-__builtin_clz(s-1) : 0; }
+int size(int s) { return s > 1 ? 32-__builtin_clz(s-1) : 0; }
 void genRoots(vcd& roots) { // primitive n-th roots of unity
 	int n = sz(roots); double ang = 2*PI/n;
 	// is there a way to compute these trig functions more quickly w/o issues?
@@ -43,7 +43,6 @@ template<class T> void fft(vector<T>& a, const vector<T>& roots, bool inv = 0) {
 			}
 	if (inv) { T i = T(1)/T(n); trav(x,a) x *= i; }
 }
-
 template<class T> vector<T> mult(vector<T> a, vector<T> b) {
 	if (!min(sz(a),sz(b))) return {};
 	int s = sz(a)+sz(b)-1, n = 1<<size(s);

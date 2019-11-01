@@ -46,5 +46,4 @@ namespace Point {
 	P foot(P p, P a, P b) { return (p+reflect(p,a,b))/(T)2; }
 	bool onSeg(P p, P a, P b) { return cross(a,b,p) == 0 && dot(p-a,p-b) <= 0; }
 };
-
 using namespace Point;

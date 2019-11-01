@@ -11,7 +11,6 @@ template<int SZ> struct SCC {
 	vi adj[SZ], radj[SZ], todo, allComp;
 	bitset<SZ> visit;
 	void addEdge(int a, int b) { adj[a].pb(b), radj[b].pb(a); }
-
 	void dfs(int v) {
 		visit[v] = 1;
 		trav(w,adj[v]) if (!visit[w]) dfs(w);
@@ -21,12 +20,10 @@ template<int SZ> struct SCC {
 		comp[v] = val;
 		trav(w,radj[v]) if (comp[w] == -1) dfs2(w,val);
 	}
-
 	void init(int _N) { // fills allComp
-		N = _N;
-		F0R(i,N) comp[i] = -1, visit[i] = 0;
+		N = _N; F0R(i,N) comp[i] = -1, visit[i] = 0;
 		F0R(i,N) if (!visit[i]) dfs(i);
-		reverse(all(todo)); // now todo stores vertices in order of topological sort
+		reverse(all(todo)); 
 		trav(i,todo) if (comp[i] == -1) dfs2(i,i), allComp.pb(i);
 	}
 };

@@ -24,11 +24,13 @@ struct LinRec {
 			mi d = x[i]; FOR(j,1,sz(C)) d += C[j]*x[i-j];
 			if (d == 0) continue; // recurrence still works
 			auto _B = C; C.rsz(max(sz(C),m+sz(B)));
-			mi coef = d/b; FOR(j,m,m+sz(B)) C[j] -= coef*B[j-m]; // recurrence that gives 0,0,0,...,d
+			// subtract recurrence that gives 0,0,0,...,d
+			mi coef = d/b; FOR(j,m,m+sz(B)) C[j] -= coef*B[j-m]; 
 			if (sz(_B) < m+sz(B)) { B = _B; b = d; m = 0; }
 		}
 		rC = C; reverse(all(rC)); // polynomial for getPo
-		C.erase(begin(C)); trav(t,C) t *= -1; // x[i]=sum_{j=0}^{sz(C)-1}C[j]*x[i-j-1]
+		C.erase(begin(C)); trav(t,C) t *= -1; 
+		// x[i]=sum_{j=0}^{sz(C)-1}C[j]*x[i-j-1]
 	}
 	
 	vmi getPo(int n) {

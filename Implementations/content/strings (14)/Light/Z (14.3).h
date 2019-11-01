@@ -3,6 +3,8 @@
  * Time: O(N)
  * Description: for each index $i$, computes the the maximum $len$ such that
  	* \texttt{s.substr(0,len) == s.substr(i,len)}
+ * Usage: pr(z("abcababcabcaba"),
+ * getPrefix("abcab","uwetrabcerabcab"));
  * Verification: POI 12 Template, https://codeforces.com/contest/1137/problem/B
  */
 
@@ -22,4 +24,3 @@ vi getPrefix(string a, string b) { // find prefixes of a in b
 	F0R(i,sz(T)) T[i] = min(t[i+sz(a)],sz(a));
 	return T;
 }
-// pr(z("abcababcabcaba"),getPrefix("abcab","uwetrabcerabcab"));

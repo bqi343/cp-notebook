@@ -6,12 +6,10 @@
  */
 
 typedef struct tnode* pt;
-
 struct tnode {
 	int pri, val; pt c[2]; // essential
 	int sz; ll sum; // for range queries
 	bool flip; // lazy update
-
 	tnode (int _val) {
 		pri = rand()+(rand()<<15); val = _val; c[0] = c[1] = NULL;
 		sz = 1; sum = val;

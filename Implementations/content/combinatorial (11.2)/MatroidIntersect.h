@@ -115,5 +115,5 @@ void solve() {
 	int co = 0;
 	trav(t,m) t.s = co++;
 	trav(t,ground_set) t.ed.f = m[t.ed.f], t.ed.s = m[t.ed.s];
-	while (augment());
+	while (augment()); // keep increasing size of independent set
 }

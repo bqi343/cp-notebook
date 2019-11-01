@@ -1,3 +1,8 @@
+# SOURCES
+
+  * [KACTL](https://github.com/kth-competitive-programming/kactl)
+  * [MIT NULL ICPC Book](https://github.com/ecnerwala/icpc-book)
+
 # KACTL
 
 This repo hosts KACTL, KTH's ICPC team reference document.

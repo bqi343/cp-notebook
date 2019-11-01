@@ -5,7 +5,7 @@
  * Dependency: sparse segment tree
  */
 
-#include "../1D Range Queries (9.2)/SparseSegTree (9.2).h"
+#include "../1D Range Queries (9.2)/SparseSeg (9.2).h"
 
 const int SZ = 1<<17;
 

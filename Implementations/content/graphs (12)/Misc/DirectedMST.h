@@ -1,6 +1,6 @@
 /**
- * Description: computes minimum weight directed spanning tree, 
- 	* edge from $inv[i]\to i$ for all $i\neq r$
+ * Description: Chu-Liu-Edmonds algorithm. Computes minimum weight directed 
+ 	* spanning tree rooted at $r$, edge from $inv[i]\to i$ for all $i\neq r$
  * Time: O(M\log M)
  * Source: KACTL
  	* https://courses.cs.washington.edu/courses/cse490u/17wi/slides/CLE.pdf

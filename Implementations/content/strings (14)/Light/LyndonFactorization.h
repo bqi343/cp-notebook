@@ -20,7 +20,6 @@ vector<string> duval(const string& s) {
 	}
 	return factors;
 }
-
 int minRotation(string s) { // get min index i such that cyclic shift starting at i is min rotation
 	int n = sz(s); s += s;
 	auto d = duval(s); int ind = 0, ans = 0;

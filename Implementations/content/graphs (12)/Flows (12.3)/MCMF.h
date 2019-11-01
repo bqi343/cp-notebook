@@ -21,7 +21,6 @@ template<int SZ> struct mcmf {
 		Edge a{v, sz(adj[v]), 0, cap, cost}, b{u, sz(adj[u]), 0, 0, -cost};
 		adj[u].pb(a), adj[v].pb(b);
 	}
-
 	int N, s, t;
 	pi pre[SZ]; // previous vertex, edge label on path
 	pair<C,F> cost[SZ]; // tot cost of path, amount of flow

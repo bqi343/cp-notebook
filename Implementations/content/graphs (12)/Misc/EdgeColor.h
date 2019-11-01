@@ -1,6 +1,6 @@
 /**
- * Description: naive implementation of Misra \& Gries edge coloring, 
- * by Vizing's Theorem a simple graph with max degree $d$ can be 
+ * Description: Used only once. Naive implementation of Misra \& Gries edge coloring. 
+ * By Vizing's Theorem, a simple graph with max degree $d$ can be 
  * edge colored with at most $d+1$ colors 
  * Time: O(N^2M)
  * Source: 

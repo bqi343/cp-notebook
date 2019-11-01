@@ -5,7 +5,7 @@
  * Verification: USACO Grass Planting, https://www.hackerrank.com/challenges/subtrees-and-paths
  */
 
-#include "../../data-structures/1D Range Queries (9.2)/LazySegTree (15.2).h"
+#include "../../data-structures/1D Range Queries (9.2)/LazySeg (15.2).h"
 
 template<int SZ, bool VALUES_IN_EDGES> struct HLD { 
 	int N; vi adj[SZ];
@@ -13,7 +13,6 @@ template<int SZ, bool VALUES_IN_EDGES> struct HLD {
 	int root[SZ], pos[SZ];
 	LazySeg<ll,SZ> tree;
 	void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
-	
 	void dfs_sz(int v = 1) {
 		if (par[v]) adj[v].erase(find(all(adj[v]),par[v]));
 		sz[v] = 1;
@@ -35,7 +34,6 @@ template<int SZ, bool VALUES_IN_EDGES> struct HLD {
 		N = _N; par[1] = depth[1] = 0; root[1] = 1; 
 		dfs_sz(); dfs_hld();
 	}
-
 	template <class BinaryOperation>
 	void processPath(int u, int v, BinaryOperation op) {
 		for (; root[u] != root[v]; v = par[root[v]]) {
@@ -45,7 +43,6 @@ template<int SZ, bool VALUES_IN_EDGES> struct HLD {
 		if (depth[u] > depth[v]) swap(u, v);
 		op(pos[u]+VALUES_IN_EDGES, pos[v]); 
 	}
-
 	void modifyPath(int u, int v, int val) { // add val to vertices/edges along path
 		processPath(u, v, [this, &val](int l, int r) { tree.upd(l, r, val); });
 	}

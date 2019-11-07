@@ -13,7 +13,7 @@ If you're still coming up with new ideas, keep thinking. Otherwise, you have sev
  * Leave it for a while and do something else if you actually want to solve it on your own.
  * Get a hint from someone else.
 
-I'm impatient, so usually I go with the first option.
+I'm impatient, so usually I go with the first option. Sometimes I end up reading a CF editorial before reading the statement? Idk if this is a good strategy tho. :/
 
 > I think something should be added or clarified.
 
@@ -25,7 +25,7 @@ Please email me at *bqi343@gmail.com.*
    * Familiarize yourself with the basics. (maybe AoPS prealgebra? might not be as easy as you think ...)
  * Contests
    * MathCounts Chapter
-   * American Mathematics Competitions (AMC) 8 
+   * American Mathematics Competitions (AMC) 8
      * [MAA Website](https://www.maa.org/math-competitions)
      * [Past Contests](https://artofproblemsolving.com/community/c3413_amc_8)
  * [Art of Problem Solving (AoPS)](https://artofproblemsolving.com/)
@@ -61,7 +61,7 @@ Please email me at *bqi343@gmail.com.*
      * Although you've probably seen most of the problems if you did the AMC 10s, it's worth knowing how to do the final five.
    * [AIME](https://artofproblemsolving.com/community/c3416_aime_problems)
    * [Lehigh](https://www.lehigh.edu/~dmd1/hslet.html)
-   * Other 
+   * Other
      * onsite contests - PUMaC, HMMT
        * difficulty / quality vary greatly (especially PUMaC)
      * [OMO](http://internetolympiad.org/)

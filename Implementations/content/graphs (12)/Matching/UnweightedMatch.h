@@ -1,5 +1,5 @@
 /**
- * Description: general unweighted matching, 1-based indexing
+ * Description: General unweighted matching with 1-based indexing
  * Time: O(N^2M)
  * Source: 
 	* https://github.com/koosaga/DeobureoMinkyuParty
@@ -8,47 +8,43 @@
  */
 
 template<int SZ> struct UnweightedMatch {
-	int vis[SZ], par[SZ], orig[SZ], match[SZ], aux[SZ], t, N; 
+	int match[SZ], N; 
 	vi adj[SZ];
-	queue<int> Q;
 	void addEdge(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
 	void init(int _N) {
-		N = _N; t = 0;
-		F0R(i,N+1) {
-			adj[i].clear();
-			match[i] = aux[i] = par[i] = 0;
-		}
+		N = _N; FOR(i,1,N+1) adj[i].clear(), match[i] = 0;
 	}
-	void augment(int u, int v) {
+	queue<int> Q;
+	int par[SZ], vis[SZ], orig[SZ], aux[SZ], t; 
+	void augment(int u, int v) { // flip state of edges on u-v path
 		int pv = v, nv;
 		do {
 			pv = par[v]; nv = match[pv];
 			match[v] = pv; match[pv] = v;
 			v = nv;
-		} while(u != pv);
+		} while (u != pv);
 	}
-	int lca(int v, int w) {
+	int lca(int v, int w) { // find LCA in O(dist)
 		++t;
 		while (1) {
 			if (v) {
 				if (aux[v] == t) return v; 
-				aux[v] = t;
-				v = orig[par[match[v]]];
+				aux[v] = t; v = orig[par[match[v]]];
 			}
-			swap(v, w);
+			swap(v,w);
 		}
 	}
 	void blossom(int v, int w, int a) {
 		while (orig[v] != a) {
-			par[v] = w; w = match[v];
+			par[v] = w; w = match[v]; // can go other way around cycle
 			if (vis[w] == 1) Q.push(w), vis[w] = 0;
-			orig[v] = orig[w] = a;
+			orig[v] = orig[w] = a; // merge into supernode
 			v = par[w];
 		}
 	}
 	bool bfs(int u) {
-		fill(vis+1, vis+1+N, -1); iota(orig + 1, orig + N + 1, 1);
-		Q = queue<int>(); Q.push(u); vis[u] = 0;
+		F0R(i,N+1) par[i] = aux[i] = 0, vis[i] = -1, orig[i] = i;
+		Q = queue<int>(); Q.push(u); vis[u] = t = 0;
 		while (sz(Q)) {
 			int v = Q.front(); Q.pop();
 			trav(x,adj[v]) {
@@ -56,20 +52,18 @@ template<int SZ> struct UnweightedMatch {
 					par[x] = v; vis[x] = 1;
 					if (!match[x]) return augment(u, x), true;
 					Q.push(match[x]); vis[match[x]] = 0;
-				} else if (vis[x] == 0 && orig[v] != orig[x]) {
+				} else if (vis[x] == 0 && orig[v] != orig[x]) { // odd cycle
 					int a = lca(orig[v], orig[x]);
-					blossom(x, v, a); blossom(v, x, a);
+					blossom(x,v,a); blossom(v,x,a);
 				}
 			}
 		}
 		return false;
 	}
 	int calc() {
-		int ans = 0;
-		// find random matching, constant improvement
-		vi V(N-1); iota(all(V), 1);
-		shuffle(all(V), rng);
-		trav(x,V) if(!match[x]) 
+		int ans = 0; // find random matching, constant improvement
+		vi V(N-1); iota(all(V),1); shuffle(all(V),rng);
+		trav(x,V) if (!match[x]) 
 			trav(y,adj[x]) if (!match[y]) {
 				match[x] = y, match[y] = x;
 				++ans; break;

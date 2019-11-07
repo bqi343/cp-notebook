@@ -14,7 +14,7 @@ template<class T> T poll(pqg<T>& x) {
 
 template<int SZ> struct mcmf { 
 	typedef ll F; typedef ll C;
-	struct Edge { int to, rev; F flow, cap; C cost; int id; };
+	struct Edge { int to, rev; F flow, cap; C cost; };
 	vector<Edge> adj[SZ];
 	void addEdge(int u, int v, F cap, C cost) {
 		assert(cap >= 0);

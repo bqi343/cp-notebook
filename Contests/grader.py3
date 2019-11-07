@@ -1,4 +1,4 @@
-# based off grader.sh
+# based off grader.sh, kactl preprocessor
 
 import subprocess
 import os

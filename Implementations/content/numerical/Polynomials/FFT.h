@@ -1,7 +1,10 @@
 /**
  * Description: multiply two polynomials
  * Time: O(N\log N)
- * Source: KACTL, https://cp-algorithms.com/algebra/fft.html
+ * Source: 
+ 	* KACTL
+ 	* https://cp-algorithms.com/algebra/fft.html
+ 	* https://csacademy.com/blog/fast-fourier-transform-and-variations-of-it
  * Verification: 
 	* SPOJ polymul, CSA manhattan, CF Perfect Encoding
 	* http://codeforces.com/contest/632/problem/E
@@ -38,7 +41,8 @@ template<class T> void fft(vector<T>& a, const vector<T>& roots, bool inv = 0) {
 		for (int i = 0; i < n; i += len) 
 			F0R(j,len/2) {
 				int ind = n/len*j; if (inv && ind) ind = n-ind;
-				auto u = a[i+j], v = a[i+j+len/2]*roots[ind];
+				// for xor conv don't multiply by roots[ind]
+				auto u = a[i+j], v = a[i+j+len/2]*roots[ind]; 
 				a[i+j] = u+v, a[i+j+len/2] = u-v;
 			}
 	if (inv) { T i = T(1)/T(n); trav(x,a) x *= i; }

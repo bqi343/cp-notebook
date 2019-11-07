@@ -1,16 +1,18 @@
 /**
- * Description: Ukkonen's algorithm for suffix tree
+ * Description: Used infrequently. Ukkonen's algorithm for suffix tree.
  * Time: O(N\log \sum)
  * Source: 
  	* https://codeforces.com/blog/entry/16780
  	* https://stackoverflow.com/questions/9452701/ukkonens-suffix-tree-algorithm-in-plain-english?rq=1
- * Verification: https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=18&page=show_problem&problem=1620
+ * Verification: 
+ 	* https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=18&page=show_problem&problem=1620
+ 	* https://www.hackerearth.com/practice/data-structures/advanced-data-structures/suffix-trees/practice-problems/algorithm/power-of-string-3/description/
  */
 
- struct SuffixTree {
-	string s; int node, pos;
+struct SuffixTree {
+	str s; int node, pos;
 	struct state {
-		int fpos, len, link = -1;
+		int fpos, len, link = -1; // edge to state is s[fpos,fpos+len)
 		map<char,int> to;
 		state(int fpos, int len) : fpos(fpos), len(len) {}
 	};
@@ -47,24 +49,30 @@
 			else node = st[node].link;
 		}
 	}
-	void init(string _s) {
-		makeNode(0,MOD); node = pos = 0;
+	void init(str _s) {
+		makeNode(-1,0); node = pos = 0;
 		trav(c,_s) extend(c);
+		extend('$'); s.pop_back(); // terminal char
 	}
-	bool isSubstr(string _x) {
-		string x; int node = 0, pos = 0;
-		trav(c,_x) {
-			x += c; pos ++; 
-			while (pos > 1 && pos > st[st[node].to[x[sz(x)-pos]]].len) {
-				node = st[node].to[x[sz(x)-pos]];
-				pos -= st[node].len;
+	int maxPre(str x) { // max prefix of x which is substring
+		int node = 0, ind = 0;
+		while (1) {
+			if (ind == sz(x) || !st[node].to.count(x[ind])) return ind;
+			node = st[node].to[x[ind]];
+			F0R(i,st[node].len) {
+				if (ind == sz(x) || x[ind] != s[st[node].fpos+i]) return ind;
+				ind ++;
 			}
-			char edge = x[sz(x)-pos];
-			if (pos == 1 && !st[node].to.count(edge)) return 0;
-			int& v = st[node].to[edge];
-			char t = s[st[v].fpos+pos-1];
-			if (c != t) return 0;
 		}
-		return 1;
+	}
+	vi sa; // generate suffix array
+	void genSa(int x = 0, int len = 0) {
+		if (!sz(st[x].to)) { // terminal node
+			sa.pb(st[x].fpos-len);
+			if (sa.back() >= sz(s)) sa.pop_back();
+		} else {
+			len += st[x].len;
+			trav(t,st[x].to) genSa(t.s,len);
+		}
 	}
 };

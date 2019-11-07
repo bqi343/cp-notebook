@@ -1,6 +1,6 @@
 # Questions & Comments
 
-You might want to read [this](https://codeforces.com/blog/entry/47516) too.
+You might want to read [Um_nik's FAQ](https://codeforces.com/blog/entry/47516) too. I hope this is slightly more informative. :)
 
 ## General
 
@@ -92,7 +92,7 @@ It's required in the sense that you need to know it to solve a lot of problems, 
 
 > hi dude, can you help me please?, I realy stuck at this problem, could you give me a hint?, I think it is a graph problem
 
-If you give me a link to the problem and I find it sufficiently interesting, then I might provide a solution assuming there isn't a decent tutorial already (or not, if I don't check my messages).
+If you give me a link to the problem and I find it sufficiently interesting, then I might solve it (or not, if I don't check my messages).
 
 ## Personal?
 
@@ -112,11 +112,11 @@ Unfortunately, I usually submit without reading it.
 
 > What do you think about virtual contests?
 
-I don’t believe that I have ever finished a virtual contest while strictly adhering to the time limit. It’s not as fun as a real contest. :(
+Until recently, I don’t believe that I have ever finished a virtual contest while strictly adhering to the time limit. It’s not as fun as a real contest. :(
 
 > could you please tell me which IDE do you use on your MAC?
 
-I use https://csacademy.com/ LOL (looks like queue times are rlly bad now tho). If that doesn't work I use Ideone or sublime text w/ command line. At IOI I used Geany.
+I usehttps://ideone.com/ LOL. I used to use https://csacademy.com/ but it looks like the queue times are rlly bad now. Locally I use Sublime Text w/ command line. At IOI I used Geany.
 
 [Why the downvotes? :(](https://codeforces.com/blog/entry/63065?#comment-469907)
 
@@ -130,7 +130,7 @@ No, I can't figure out how to get GDB to work on Mac and print statements genera
 
 > Are you like entirely self taught, or did you have any tutoring.
 
-mostly self, haven't had any tutors
+mostly self, haven't been tutored or done any tutoring myself
 
 > What was your strategy considering you were preparing for IOI.
 

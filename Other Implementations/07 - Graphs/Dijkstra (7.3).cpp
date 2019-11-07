@@ -14,11 +14,9 @@ template<class T> T poll(pqg<T>& x) {
 template<int SZ> struct Dijkstra {
     ll dist[SZ];
     vpi adj[SZ];
-
     void addEdge(int A, int B, int C) {
         adj[A].pb({B,C}); // adj[B].pb({A,C}); if undirected
     }
-
     void init(int st) {
         fill_n(dist,SZ,INF);
         pqg<pl> q; q.push({dist[st] = 0,st});

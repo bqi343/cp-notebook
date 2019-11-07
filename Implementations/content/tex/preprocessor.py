@@ -296,7 +296,7 @@ def main():
         print(" * \x1b[1m{}\x1b[0m".format(caption))
         if language == "cpp" or language == "cc" or language == "c" or language == "h" or language == "hpp":
             processwithcomments(caption, instream, outstream, 'C++')
-        elif language == "java":
+        elif language == "java" or language == "kt":
             processwithcomments(caption, instream, outstream, 'Java')
         elif language == "ps":
             processraw(caption, instream, outstream) # PostScript was added in listings v1.4

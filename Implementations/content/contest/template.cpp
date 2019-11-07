@@ -40,7 +40,7 @@ typedef vector<cd> vcd;
 #define rsz resize
 #define ins insert
 
-const int MOD = 1e9+7; // 998244353 = (119<<23)+1
+const int MOD = 1e9+7; // 998244353; // = (119<<23)+1
 const ll INF = 1e18;
 const int MX = 2e5+5;
 const ld PI = 4*atan((ld)1);

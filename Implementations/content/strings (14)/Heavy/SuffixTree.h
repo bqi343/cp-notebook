@@ -11,8 +11,8 @@
 
 struct SuffixTree {
 	str s; int node, pos;
-	struct state {
-		int fpos, len, link = -1; // edge to state is s[fpos,fpos+len)
+	struct state { // edge to state is s[fpos,fpos+len)
+		int fpos, len, link = -1; 
 		map<char,int> to;
 		state(int fpos, int len) : fpos(fpos), len(len) {}
 	};

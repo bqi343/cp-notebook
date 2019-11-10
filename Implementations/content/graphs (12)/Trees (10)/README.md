@@ -20,8 +20,11 @@ Topics:
       * [Root LCA Queries](https://csacademy.com/contest/archive/task/root-lca-queries/) [](107)
   * Small to Large (Offline)
   * Centroid Decomposition
-    * [GeeksForGeeks](http://www.geeksforgeeks.org/centroid-decomposition-of-tree/)
-    * [A2OJ](https://a2oj.com/category?ID=319)
+    * Tutorial
+      * [GeeksForGeeks](http://www.geeksforgeeks.org/centroid-decomposition-of-tree/)
+      * [Carpanese](https://medium.com/carpanese/an-illustrated-introduction-to-centroid-decomposition-8c1989d53308)
+    * Problems
+      * [A2OJ](https://a2oj.com/category?ID=319)
   * Heavy-Light Decomposition
     * [Anudeep2011](https://blog.anudeep2011.com/heavy-light-decomposition/)
     * [AI-Cash](http://codeforces.com/blog/entry/22072)

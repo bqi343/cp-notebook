@@ -15,7 +15,6 @@ struct Line {
 	bool operator<(const Line& o) const { return k < o.k; }
 	bool operator<(ll x) const { return p < x; }
 };
-
 struct LC : multiset<Line,less<>> { 
 	// for doubles, use inf = 1/.0, div(a,b) = a/b
 	const ll inf = LLONG_MAX;
@@ -40,7 +39,6 @@ struct LC : multiset<Line,less<>> {
 	}
 	ll query(ll x) {
 		assert(!empty());
-		auto l = *lb(x);
-		return l.k*x+l.m;
+		auto l = *lb(x); return l.k*x+l.m;
 	}
 };

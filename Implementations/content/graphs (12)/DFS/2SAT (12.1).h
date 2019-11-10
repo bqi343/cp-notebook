@@ -22,7 +22,6 @@ template<int SZ> struct TwoSat {
 	bitset<SZ> ans;
 	int N = 0;
 	int addVar() { return N++; }
-
 	void either(int x, int y) { 
 		x = max(2*x,-1-2*x), y = max(2*y,-1-2*y);
 		S.addEdge(x^1,y); S.addEdge(y^1,x); 
@@ -41,7 +40,6 @@ template<int SZ> struct TwoSat {
 		}
 		either(cur,~li[1]);
 	}
-
 	bool solve(int _N) {
 		if (_N != -1) N = _N; 
 		S.init(2*N);

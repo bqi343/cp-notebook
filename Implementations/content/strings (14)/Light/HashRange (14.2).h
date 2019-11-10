@@ -9,8 +9,7 @@
 	* CF Check Transcription
  */
 
-typedef array<int,2> T;
-// not too close to ends
+typedef array<int,2> T; // pick bases not too close to ends
 uniform_int_distribution<int> MULT_DIST(0.1*MOD,0.9*MOD); 
 const T base = {MULT_DIST(rng),MULT_DIST(rng)};
 

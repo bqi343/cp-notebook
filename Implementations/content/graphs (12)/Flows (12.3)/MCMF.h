@@ -29,8 +29,8 @@ template<int SZ> struct mcmf {
 		// all edges on shortest path become 0
 		F0R(i,N) trav(p,adj[i]) p.cost += cost[i].f-cost[p.to].f;
 	}
-	bool spfa() { // reweight ensures that there will be negative weights 
-		// only during the first time you run this
+	bool spfa() { // reweight ensures that there will be negative 
+		// weights only during the first time you run this
 		F0R(i,N) cost[i] = {INF,0}; 
 		cost[s] = {0,INF};
 		pqg<pair<C,int>> todo; todo.push({0,s});

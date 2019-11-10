@@ -8,9 +8,7 @@
 template<int SZ> struct Dominator {
 	vi adj[SZ], ans[SZ]; // input edges, edges of dominator tree
 	vi radj[SZ], child[SZ], sdomChild[SZ];
-	int label[SZ], rlabel[SZ], sdom[SZ], dom[SZ], co;
-	int root = 1;
-	
+	int label[SZ], rlabel[SZ], sdom[SZ], dom[SZ], co = 0;
 	int par[SZ], bes[SZ]; 
 	int get(int x) { 
 		// DSU with path compression
@@ -21,7 +19,6 @@ template<int SZ> struct Dominator {
 		}
 		return bes[x];
 	} 
-	
 	void dfs(int x) { // create DFS tree
 		label[x] = ++co; rlabel[co] = x; 
 		sdom[co] = par[co] = bes[co] = co;
@@ -33,7 +30,7 @@ template<int SZ> struct Dominator {
 			radj[label[y]].pb(label[x]);
 		}
 	}
-	void init() {
+	void init(int root) {
 		dfs(root);
 		ROF(i,1,co+1) {
 			trav(j,radj[i]) ckmin(sdom[i],sdom[get(j)]);

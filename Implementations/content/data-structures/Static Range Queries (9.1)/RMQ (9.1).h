@@ -9,7 +9,8 @@
  */
 
 template<class T> struct RMQ {
-	int level(int x) { return 31-__builtin_clz(x); } // floor(log_2(x))
+	// floor(log_2(x))
+	int level(int x) { return 31-__builtin_clz(x); } 
 	vector<T> v; vector<vi> jmp;
 	int comb(int a, int b) { 
 		return v[a] == v[b] ? min(a,b) : (v[a] < v[b] ? a : b); 

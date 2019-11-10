@@ -7,7 +7,8 @@
 template<class T> struct Mat {
 	int r,c;
 	vector<vector<T>> d;
-	Mat(int _r, int _c) : r(_r), c(_c) { d.assign(r,vector<T>(c)); }
+	Mat(int _r, int _c) : r(_r), c(_c) { 
+		d.assign(r,vector<T>(c)); }
 	Mat() : Mat(0,0) {} 
 	Mat(const vector<vector<T>>& _d) : r(sz(_d)), c(sz(_d[0])) { d = _d; }
 	friend void pr(const Mat& m) { pr(m.d); }

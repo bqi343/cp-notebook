@@ -1,7 +1,7 @@
 /**
  * Description: Used infrequently. Palindromic tree computes 
 	* number of occurrences of each palindrome within string.
-	* \texttt{ans[i][0]} stores min even number $x$ such that 
+	* \texttt{ans[i][0]} stores min even $x$ such that 
 	* the prefix $s[1..i]$ can be split into exactly $x$
 	* palindromes, \texttt{ans[i][1]} does the same for odd $x.$
  * Time: $O(N\sum)$ for addChar, $O(N\log N)$ for updAns
@@ -44,7 +44,8 @@ template<int SZ> struct PalTree {
 			len[sz] = len[last]+2;
 			link[sz] = to[getLink(link[last])][c];
 			diff[sz] = len[sz]-len[link[sz]];
-			if (diff[sz] == diff[link[sz]]) slink[sz] = slink[link[sz]];
+			if (diff[sz] == diff[link[sz]]) 
+				slink[sz] = slink[link[sz]];
 			else slink[sz] = link[sz]; 
 			// slink[v] = max suffix u of v such that diff[v]\neq diff[u]
 			to[last][c] = sz++;

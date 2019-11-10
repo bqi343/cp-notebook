@@ -22,7 +22,6 @@ struct StringRepeat {
 			lo = i-lo+1, hi = i-hi+1; swap(lo,hi);
 			v.pb({2*(m+1-i),lo,hi});
 		}
-
 		return v;
 	}
 	void divi(int l, int r) {

@@ -44,13 +44,15 @@ template<int SZ, bool VALUES_IN_EDGES> struct HLD {
 		op(pos[u]+VALUES_IN_EDGES, pos[v]); 
 	}
 	void modifyPath(int u, int v, int val) { // add val to vertices/edges along path
-		processPath(u, v, [this, &val](int l, int r) { tree.upd(l, r, val); });
+		processPath(u, v, [this, &val](int l, int r) { 
+			tree.upd(l, r, val); });
 	}
 	void modifySubtree(int v, int val) { // add val to vertices/edges in subtree
 		tree.upd(pos[v]+VALUES_IN_EDGES,pos[v]+sz[v]-1,val);
 	}
 	ll queryPath(int u, int v) { // query sum of path
-		ll res = 0; processPath(u, v, [this, &res](int l, int r) { res += tree.qsum(l, r); });
+		ll res = 0; processPath(u, v, [this, &res](int l, int r) { 
+			res += tree.qsum(l, r); });
 		return res;
 	}
 };

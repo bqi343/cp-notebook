@@ -15,7 +15,6 @@ namespace Point {
 		auto c = exp(ang*complex<T>(0,1));
 		return P(c.real(),c.imag());
 	}
-	
 	T norm(P x) { return x.f*x.f+x.s*x.s; }
 	T abs(P x) { return sqrt(norm(x)); }
 	T angle(P x) { return atan2(x.s,x.f); }

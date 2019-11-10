@@ -21,6 +21,5 @@ template <class T, int N, int... Ns> struct BIT<T, N, Ns...> {
 		return res;
 	}
 	template<typename... Args> T query(int l, int r, Args... args) {
-		return sum(r,args...)-sum(l-1,args...);
-	}
+		return sum(r,args...)-sum(l-1,args...); }
 }; 

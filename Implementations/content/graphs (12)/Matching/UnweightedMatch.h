@@ -1,5 +1,5 @@
 /**
- * Description: General unweighted matching with 1-based indexing
+ * Description: Edmond's Blossom Algorithm. General unweighted matching with 1-based indexing.
  * Time: O(N^2M)
  * Source: 
 	* https://github.com/koosaga/DeobureoMinkyuParty
@@ -36,7 +36,7 @@ template<int SZ> struct UnweightedMatch {
 	}
 	void blossom(int v, int w, int a) {
 		while (orig[v] != a) {
-			par[v] = w; w = match[v]; // can go other way around cycle
+			par[v] = w; w = match[v]; // go other way around cycle
 			if (vis[w] == 1) Q.push(w), vis[w] = 0;
 			orig[v] = orig[w] = a; // merge into supernode
 			v = par[w];

@@ -16,7 +16,8 @@ template<class T, int SZ> struct BITrange {
 		// if x > hi, cum[x] += val*hi
 		bit[0].upd(hi+1,hi*val); 
 	}
-	void upd(int lo, int hi, T val) { upd(lo-1,-val), upd(hi,val); }
+	void upd(int lo, int hi, T val) { 
+		upd(lo-1,-val), upd(hi,val); }
 	T sum(int x) { return bit[1].sum(x)*x+bit[0].sum(x); } 
 	T query(int x, int y) { return sum(y)-sum(x-1); }
 }; 

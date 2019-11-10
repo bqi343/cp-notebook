@@ -18,13 +18,13 @@ bool millerRabin(ll p) { // test primality
 	if (p == 1 || p % 2 == 0) return false;
 	ll s = p-1; while (s % 2 == 0) s /= 2;
 	F0R(i,30) { // strong liar with probability <= 1/4
-		ll a = rand() % (p-1) + 1, tmp = s;
-		ll mod = modPow(a, tmp, p);
-		while (tmp != p - 1 && mod != 1 && mod != p - 1) {
-			mod = modMul(mod, mod, p);
+		ll a = rand()%(p-1)+1, tmp = s;
+		ll mod = modPow(a,tmp,p);
+		while (tmp != p-1 && mod != 1 && mod != p-1) {
+			mod = modMul(mod,mod,p);
 			tmp *= 2;
 		}
-		if (mod != p - 1 && tmp % 2 == 0) return false;
+		if (mod != p-1 && tmp%2 == 0) return false;
 	}
 	return true;
 }
@@ -40,7 +40,7 @@ vpl pollardsRho(ll d) {
 	if (d > 1) { // d is now a product of at most 2 primes.
 		if (millerRabin(d)) res.pb({d,1});
 		else while (1) {
-			ll has = rand() % 2321 + 47;
+			ll has = rand()%2321+47;
 			ll x = 2, y = 2, c = 1;
 			for (; c == 1; c = __gcd(abs(x-y), d)) {
 				x = f(x, d, has);

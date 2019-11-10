@@ -21,7 +21,8 @@ struct {
 		auto it = m.lb(a);
 		if (it != m.end() && it->s <= b) return;
 		m[a] = b; it = m.find(a);
-		while (it != m.begin() && prev(it)->s >= b) m.erase(prev(it));
+		while (it != m.begin() && prev(it)->s >= b) 
+			m.erase(prev(it));
 	}
 	pi query(int y) { // over all a > y 
 		// get min possible value of b 
@@ -32,7 +33,8 @@ struct {
 } S;
 
 void solve() {
-	sort(all(ind),[](int a, int b) { return cur[a][0] > cur[b][0]; });
+	sort(all(ind),[](int a, int b) { 
+		return cur[a][0] > cur[b][0]; });
 	S.m.clear();
 	int nex = 0;
 	trav(x,ind) { // cur[x][0] <= ?, cur[x][1] < ? 
@@ -44,7 +46,6 @@ void solve() {
 		if (t.s != 2*MOD) ed.pb({(ll)t.f-cur[x][2],{x,t.s}});
 	}
 }
-
 ll mst(vpi v) {
 	N = sz(v); cur.rsz(N); ed.clear(); 
 	ind.clear(); F0R(i,N) ind.pb(i);

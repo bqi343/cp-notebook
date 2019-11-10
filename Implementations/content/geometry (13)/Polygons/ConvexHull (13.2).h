@@ -20,7 +20,6 @@ pair<vi,vi> ulHull(const vP& P) {
 	}
 	return {u,l};
 }
-
 vi hullInd(const vP& P) {
 	vi u,l; tie(u,l) = ulHull(P);
 	if (sz(l) <= 1) return l;

@@ -20,11 +20,9 @@ struct snode {
 		p = c[0] = c[1] = NULL;
 		val = v; calc();
 	}
-	
 	friend int getSum(sn x) { return x?x->sum:0; }
 	friend int getMn(sn x) { return x?x->mn:0; }
 	friend int getMx(sn x) { return x?x->mx:0; }
-	
 	void prop() {
 		if (!flip) return;
 		swap(c[0],c[1]); tie(mn,mx) = mp(sum-mx,sum-mn);
@@ -37,7 +35,6 @@ struct snode {
 		mn = min(getMn(c[0]),s0+val+getMn(c[1]));
 		mx = max(getMx(c[0]),s0+val+getMx(c[1]));
 	}
-	
 	//////// SPLAY TREE OPERATIONS
 	int dir() {
 		if (!p) return -2;
@@ -45,7 +42,6 @@ struct snode {
 		return -1; // p is path-parent pointer, not in current splay tree
 	}
 	bool isRoot() { return dir() < 0; }
-	
 	friend void setLink(sn x, sn y, int d) {
 		if (y) y->p = x;
 		if (d >= 0) x->c[d] = y;
@@ -66,7 +62,6 @@ struct snode {
 		if (!isRoot()) p->prop(), prop(), rot();
 		prop();
 	}
-
 	//////// LINK CUT TREE BASE OPERATIONS
 	void access() { // bring this to top of tree
 		for (sn v = this, pre = NULL; v; v = v->p) {
@@ -81,7 +76,6 @@ struct snode {
 	}
 	void makeRoot() { access(); flip ^= 1; }
 	void set(int v) { splay(); val = v; calc(); } // change value in node, splay suffices instead of access because it doesn't affect values in nodes above it
-	
 	//////// LINK CUT TREE QUERIES
 	friend sn lca(sn x, sn y) {
 		if (x == y) return x;
@@ -93,7 +87,6 @@ struct snode {
 		x->makeRoot(); y->access(); 
 		return y->sum-2*y->mn;
 	}
-	
 	//////// LINK CUT TREE MODIFICATIONS
 	friend bool link(sn x, sn y) { // make x parent of y
 		if (connected(x,y)) return 0; // don't induce cycle

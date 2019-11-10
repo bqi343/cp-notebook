@@ -20,7 +20,6 @@ struct Element {
 	int independent_set_position;
 	Element(int u, int v, int c) { ed = {u,v}; col = c; }
 };
- 
 vi independent_set;
 vector<Element> ground_set;
 bool col_used[300];
@@ -31,7 +30,6 @@ struct GBasis {
 	void add(pi v) { assert(D.unite(v.f,v.s)); }
 	bool independent_with(pi v) { return !D.sameSet(v.f,v.s); }
 };
- 
 GBasis basis, basis_wo[300];
  
 bool graph_oracle(int inserted) {
@@ -49,7 +47,6 @@ void prepare_graph_oracle() {
 		F0R(j,sz(independent_set)) if (i != j) basis_wo[j].add(v);
 	}
 }
- 
 bool colorful_oracle(int ins) {
 	ins = ground_set[ins].col;
 	return !col_used[ins];
@@ -67,7 +64,6 @@ void prepare_colorful_oracle() {
 bool augment() {
 	prepare_graph_oracle();
 	prepare_colorful_oracle();
-	
 	vi par(sz(ground_set),MOD);
 	queue<int> q;
 	F0R(i,sz(ground_set)) if (colorful_oracle(i)) {
@@ -102,7 +98,6 @@ bool augment() {
 	}
 	return 1;
 }
- 
 void solve() {
 	cin >> R;
 	m.clear(); ground_set.clear(); independent_set.clear();

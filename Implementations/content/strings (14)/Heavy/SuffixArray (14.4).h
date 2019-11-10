@@ -13,8 +13,7 @@ struct SuffixArray {
 	string S; int N;
 	void init(const string& _S) {
 		S = _S; N = sz(S);
-		genSa(); genLcp();
-		// R.init(lcp);
+		genSa(); genLcp(); // R.init(lcp);
 	}
 	vi sa, isa;
 	void genSa() { 
@@ -25,7 +24,7 @@ struct SuffixArray {
 		for (int len = 1; len < N; len *= 2) { 
 			vi c(classes);
 			F0R(i,N) { // compare first len characters of each suffix
-				bool same = i && sa[i-1] + len < N
+				bool same = i && sa[i-1]+len < N
 							  && c[sa[i]] == c[sa[i-1]]
 							  && c[sa[i]+len/2] == c[sa[i-1]+len/2];
 				classes[sa[i]] = same ? classes[sa[i-1]] : i;
@@ -39,7 +38,7 @@ struct SuffixArray {
 		isa.rsz(N); F0R(i,N) isa[sa[i]] = i;
 	}
 	vi lcp;
-	void genLcp() { // KACTL
+	void genLcp() { 
 		lcp = vi(N-1);
 		int h = 0;
 		F0R(i,N) if (isa[i]) {

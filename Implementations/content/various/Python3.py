@@ -1,6 +1,6 @@
 /**
- * Description: python3 (not pypy3) demo, solves 
-	* CF Good Bye 2018 Factorisation Collaboration
+ * Description: Python3 (not Pypy3) demo, solves 
+	* CF Good Bye 2018 G - Factorisation Collaboration
  * Source: own
  * Verification: 
 	* https://codeforces.com/contest/1091/problem/G
@@ -10,7 +10,6 @@
 from math import *
 import sys
 import random
- 
 def nextInt():
 	return int(input())
 def nextStrs():
@@ -47,3 +46,5 @@ for i in v:
 	print(f' {i}',end='')
 print()
 sys.stdout.flush()
+# sys.setrecursionlimit(int(1e9)) -> stack size, sys.exit(0) -> exit
+# print(f'{ans:=.6f}') -> print ans to 6 decimal places

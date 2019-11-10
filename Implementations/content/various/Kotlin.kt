@@ -83,9 +83,7 @@ fun nextLongs() = next().split(" ").map { it.toLong() }
 val out = StringBuilder()
 fun YN(b: Boolean):String { return if (b) "YES" else "NO"  }
  
-fun solve() {
-
-}
+fun solve() {}
  
 fun main(args: Array<String>) {
 	val t = 1 // # of test cases

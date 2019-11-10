@@ -16,11 +16,9 @@ template<int SZ> struct EdgeColor {
 		memset(deg,0,sizeof deg);
 	}
 	void addEdge(int a, int b, int c) { 
-		adj[a][b] = adj[b][a] = c; 
-	}
+		adj[a][b] = adj[b][a] = c; }
 	int delEdge(int a, int b) {
-		int c = adj[a][b]; 
-		adj[a][b] = adj[b][a] = 0;
+		int c = adj[a][b]; adj[a][b] = adj[b][a] = 0;
 		return c;
 	}
 	vector<bool> genCol(int x) { 
@@ -39,8 +37,8 @@ template<int SZ> struct EdgeColor {
 		// check if you can add edge w/o doing any work
 		assert(N); ckmax(maxDeg,max(++deg[u],++deg[v]));
 		auto a = genCol(u), b = genCol(v);
-		FOR(i,1,maxDeg+2) if (!a[i] && !b[i]) return addEdge(u,v,i); 
-
+		FOR(i,1,maxDeg+2) if (!a[i] && !b[i]) 
+			return addEdge(u,v,i); 
 		// 2. find maximal fan of u starting at v
 		vector<bool> use(N); vi fan = {v}; use[v] = 1;
 		while (1) {
@@ -50,7 +48,6 @@ template<int SZ> struct EdgeColor {
 			if (i < N) fan.pb(i), use[i] = 1;
 			else break;
 		} 
-
 		// 3/4. choose free cols for endpoints of fan, invert cd_u path
 		int c = freeCol(u), d = freeCol(fan.back()); invert(u,d,c); 
 		// 5. find i such that d is free on fan[i]

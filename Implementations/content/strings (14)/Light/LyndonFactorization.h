@@ -11,7 +11,7 @@
 vector<string> duval(const string& s) {
 	int n = sz(s); vector<string> factors;
 	for (int i = 0; i < n; ) {
-		int j = i + 1, k = i;
+		int j = i+1, k = i;
 		for (; j < n && s[k] <= s[j]; j++) {
 			if (s[k] < s[j]) k = i;
 			else k ++;

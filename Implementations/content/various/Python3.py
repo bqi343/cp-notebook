@@ -45,6 +45,6 @@ print(f'! {len(v)}',end='')
 for i in v:
 	print(f' {i}',end='')
 print()
-sys.stdout.flush()
-# sys.setrecursionlimit(int(1e9)) -> stack size, sys.exit(0) -> exit
+sys.stdout.flush() # sys.exit(0) -> exit
+# sys.setrecursionlimit(int(1e9)) -> stack size
 # print(f'{ans:=.6f}') -> print ans to 6 decimal places

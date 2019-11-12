@@ -11,7 +11,7 @@ I am currently not updating the following pages:
  * README's for most implementations
  * tables and solutions for non-platinum USACO contests
 
-If you would like to contribute, provide feedback, or encourage me to update something, please email me at *bqi343@gmail.com* or submit a pull request. If you have a question, it may be answered by another file in this folder.
+Since I frequently move stuff around, some text may refer to files which no longer exist. If you would like to contribute, provide feedback, or encourage me to update something, please email me at *bqi343@gmail.com* or submit a pull request.
 
 ## Getting Started
 
@@ -19,13 +19,14 @@ I recommend that you use C++, even if you already know some other language such 
 
   * [C++ Tutorial](https://www.google.com/url?q=http%3A%2F%2Fwww.cplusplus.com%2Fdoc%2Ftutorial%2F&sa=D)
   * [CodeSignal](https://codesignal.com/)
-    * good way to practice syntax
+    * good place to practice basics
   * [AtCoder](http://atcoder.jp/)
-    * beginner contests are good
+    * beginner contests!
 
-The following links are good. Also see the material in the "Helpful" folder.
+Check out the following links. Also see the material in the "Resources" folder (especially "Questions").
 
   * [IOI: Getting Started](https://ioinformatics.org/page/getting-started/14)
-  * [Philippines OI: Prepare](https://noi.ph/prepare/)
   * [Schedule for Beginners](https://www.quora.com/What-is-a-good-schedule-to-follow-for-becoming-better-at-competitive-programming-for-beginners)
+  * [Philippines OI: Prepare](https://noi.ph/prepare/)
   * [E869120 Tutorial](http://codeforces.com/blog/entry/53341)
+    * personally I didn't do this, but you might find it helpful

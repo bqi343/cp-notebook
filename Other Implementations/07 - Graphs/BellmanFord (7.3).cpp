@@ -3,7 +3,9 @@
     * Can be useful with linear programming
     * Constraints of the form x_i-x_j<k
  * Source: Own
- * Verification: https://open.kattis.com/problems/shortestpath3
+ * Verification: 
+    * https://open.kattis.com/problems/shortestpath3
+    * https://codeforces.com/gym/102394/problem/A
  */
 
 template<int SZ> struct BellmanFord {

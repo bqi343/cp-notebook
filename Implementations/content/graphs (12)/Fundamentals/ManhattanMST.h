@@ -1,7 +1,11 @@
 /**
- * Description: Compute minimum spanning tree of points where edges are manhattan distances 
+ * Description: Given $N$ points, returns up to $4N$ edges which are guaranteed
+ * to contain a minimum spanning tree for the graph with edge weights 
+ * $w(p, q) =|p.x - q.x| + |p.y - q.y|.$ Edges are in the form 
+ * \texttt{\{distance, \{src, dst\}\}}. Use a
+ * standard MST algorithm on the result to find the final MST.
  * Time: O(N\log N)
- * Source: Rezwan Arefin
+ * Source: KACTL
  * Verification: 
 	* https://open.kattis.com/problems/gridmst
 	* CSA 84 The Sprawl
@@ -10,64 +14,27 @@
 
 #include "MST (7.6).h"
 
-int N;
-vector<array<int,3>> cur;
-vector<pair<ll,pi>> ed;
-vi ind;
-
-struct {
-	map<int,pi> m;
-	void upd(int a, pi b) { 
-		auto it = m.lb(a);
-		if (it != m.end() && it->s <= b) return;
-		m[a] = b; it = m.find(a);
-		while (it != m.begin() && prev(it)->s >= b) 
-			m.erase(prev(it));
-	}
-	pi query(int y) { // over all a > y 
-		// get min possible value of b 
-		auto it = m.ub(y);
-		if (it == m.end()) return {2*MOD,2*MOD};
-		return it->s;
-	}
-} S;
-
-void solve() {
-	sort(all(ind),[](int a, int b) { 
-		return cur[a][0] > cur[b][0]; });
-	S.m.clear();
-	int nex = 0;
-	trav(x,ind) { // cur[x][0] <= ?, cur[x][1] < ? 
-		while (nex < N && cur[ind[nex]][0] >= cur[x][0]) {
-			int b = ind[nex++]; 
-			S.upd(cur[b][1],{cur[b][2],b});
+vector<pair<int,pi>> manhattanMst(vpi v) {
+	vi id(sz(v)); iota(all(id),0);
+	vector<pair<int,pi>> ed;
+	F0R(k,4) {
+		sort(all(id),[&](int i, int j) { 
+			return v[i].f+v[i].s < v[j].f+v[j].s; });
+		map<int,int> sweep;
+		trav(i,id) { // find neighbors for first octant
+			for (auto it = sweep.lb(-v[i].s); 
+				it != end(sweep); sweep.erase(it++)) {
+				int j = it->s;
+				pi d = {v[i].f-v[j].f,v[i].s-v[j].s};
+				if (d.s > d.f) break;
+				ed.pb({d.f+d.s,{i,j}});
+			}
+			sweep[-v[i].s] = i;
 		}
-		pi t = S.query(cur[x][1]);
-		if (t.s != 2*MOD) ed.pb({(ll)t.f-cur[x][2],{x,t.s}});
+		trav(p,v) {
+			if (k&1) p.f *= -1;
+			else swap(p.f,p.s);
+		}
 	}
-}
-ll mst(vpi v) {
-	N = sz(v); cur.rsz(N); ed.clear(); 
-	ind.clear(); F0R(i,N) ind.pb(i);
-	sort(all(ind),[&v](int a, int b) { return v[a] < v[b]; });
-	F0R(i,N-1) if (v[ind[i]] == v[ind[i+1]]) 
-		ed.pb({0,{ind[i],ind[i+1]}});
-	F0R(i,2) { // ok to consider just two quadrants?
-		F0R(i,N) {
-			auto a = v[i];
-			cur[i][2] = a.f+a.s;
-		}
-		F0R(i,N) { // first octant
-			auto a = v[i];
-			cur[i][0] = a.f-a.s; cur[i][1] = a.s;
-		}
-		solve();
-		F0R(i,N) { // second octant
-			auto a = v[i];
-			cur[i][0] = a.f; cur[i][1] = a.s-a.f;
-		}
-		solve();
-		trav(a,v) a = {a.s,-a.f}; // rotate 90 degrees, repeat
-	}
-	return kruskal(N,ed);
+	return ed;
 }

@@ -1,5 +1,7 @@
 # Solving Problems
 
+[Errichto - How to practice](https://github.com/Errichto/youtube/wiki/How-to-practice%3F)
+
 > What problems have I done over the last month? (August 2018)
 
 Mostly CEOI, JOI, Baltic OI, APIO problems from oj.uz (see OI Checklist). Also some CSAcademy, and 30+ hours of live competition. I have finished an average of ~4/5 problems from all div 1 rounds from CF round 400 on.

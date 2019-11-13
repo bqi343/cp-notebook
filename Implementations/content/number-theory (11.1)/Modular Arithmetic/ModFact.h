@@ -8,9 +8,9 @@
 
 vi invs, fac, ifac;
 void genFac(int SZ) {
-	invs.rsz(SZ), fac.rsz(SZ), ifac.rsz(SZ);
-	invs[1] = 1; FOR(i,2,SZ) invs[i] = MOD-(ll)MOD/i*invs[MOD%i]%MOD;
-	fac[0] = ifac[0] = 1;
+	invs.rsz(SZ), fac.rsz(SZ), ifac.rsz(SZ); 
+	invs[1] = fac[0] = ifac[0] = 1; 
+	FOR(i,2,SZ) invs[i] = MOD-(ll)MOD/i*invs[MOD%i]%MOD;
 	FOR(i,1,SZ) {
 		fac[i] = (ll)fac[i-1]*i%MOD;
 		ifac[i] = (ll)ifac[i-1]*invs[i]%MOD;

@@ -11,6 +11,7 @@ Make sure to [upsolve](https://en.wiktionary.org/wiki/upsolve) after the contest
       * Beginner / Regular: 4 problems, 100 min
       * Grand: 6 problems, ~110 min
       * [Visualizer](https://kenkoooo.com/atcoder/#/table/Benq)
+    * I've done nearly all of the AGC problems.
   * [Codeforces](http://codeforces.com/problemset)
     * Contests
       * Div 2, Div 1: 5 problems, 2 hrs
@@ -39,6 +40,7 @@ The following websites do not hold regular contests anymore, but they're still w
       * short statements, editorials
       * solve statistics
       * ability to view best solutions
+    * I've done nearly all of the problems.
   * [HackerRank](https://www.hackerrank.com/dashboard)
     * HourRank: 3-4 problems, 1 hr
     * 101 Hack: 5 problems, 2 hrs

@@ -20,13 +20,19 @@ namespace Point {
 	T angle(P x) { return atan2(x.s,x.f); }
 	P conj(P x) { return P(x.f,-x.s); }
 	
-	P operator+(const P& l, const P& r) { return P(l.f+r.f,l.s+r.s); }
-	P operator-(const P& l, const P& r) { return P(l.f-r.f,l.s-r.s); }
-	P operator*(const P& l, const T& r) { return P(l.f*r,l.s*r); }
+	P operator+(const P& l, const P& r) { 
+		return P(l.f+r.f,l.s+r.s); }
+	P operator-(const P& l, const P& r) { 
+		return P(l.f-r.f,l.s-r.s); }
+	P operator*(const P& l, const T& r) { 
+		return P(l.f*r,l.s*r); }
 	P operator*(const T& l, const P& r) { return r*l; }
-	P operator/(const P& l, const T& r) { return P(l.f/r,l.s/r); }
-	P operator*(const P& l, const P& r) { return P(l.f*r.f-l.s*r.s,l.s*r.f+l.f*r.s); }
-	P operator/(const P& l, const P& r) { return l*conj(r)/norm(r); }
+	P operator/(const P& l, const T& r) { 
+		return P(l.f/r,l.s/r); }
+	P operator*(const P& l, const P& r) { 
+		return P(l.f*r.f-l.s*r.s,l.s*r.f+l.f*r.s); }
+	P operator/(const P& l, const P& r) { 
+		return l*conj(r)/norm(r); }
 	
 	P& operator+=(P& l, const P& r) { return l = l+r; }
 	P& operator-=(P& l, const P& r) { return l = l-r; }
@@ -41,8 +47,10 @@ namespace Point {
 	T cross(P p, P a, P b) { return cross(a-p,b-p); }
 	P rotate(P a, T b) { return a*P(cos(b),sin(b)); }
 
-	P reflect(P p, P a, P b) { return a+conj((p-a)/(b-a))*(b-a); }
+	P reflect(P p, P a, P b) { 
+		return a+conj((p-a)/(b-a))*(b-a); }
 	P foot(P p, P a, P b) { return (p+reflect(p,a,b))/(T)2; }
-	bool onSeg(P p, P a, P b) { return cross(a,b,p) == 0 && dot(p-a,p-b) <= 0; }
+	bool onSeg(P p, P a, P b) { 
+		return cross(a,b,p) == 0 && dot(p-a,p-b) <= 0; }
 };
 using namespace Point;

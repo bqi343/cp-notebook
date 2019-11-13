@@ -1,5 +1,6 @@
 /**
- * Description: Heavy-Light Decomposition
+ * Description: Heavy-Light Decomposition, add val to verts 
+ 	* and query sum in path/subtree
  * Time: any tree path is split into $O(\log N)$ parts
  * Source: http://codeforces.com/blog/entry/22072, https://codeforces.com/blog/entry/53170
  * Verification: USACO Grass Planting, https://www.hackerrank.com/challenges/subtrees-and-paths
@@ -23,8 +24,7 @@ template<int SZ, bool VALUES_IN_EDGES> struct HLD {
 		}
 	}
 	void dfs_hld(int v = 1) {
-		static int t = 0;
-		pos[v] = t++;
+		static int t = 0; pos[v] = t++;
 		trav(u,adj[v]) {
 			root[u] = (u == adj[v][0] ? root[v] : u);
 			dfs_hld(u);
@@ -43,14 +43,14 @@ template<int SZ, bool VALUES_IN_EDGES> struct HLD {
 		if (depth[u] > depth[v]) swap(u, v);
 		op(pos[u]+VALUES_IN_EDGES, pos[v]); 
 	}
-	void modifyPath(int u, int v, int val) { // add val to vertices/edges along path
+	void modifyPath(int u, int v, int val) { 
 		processPath(u, v, [this, &val](int l, int r) { 
 			tree.upd(l, r, val); });
 	}
-	void modifySubtree(int v, int val) { // add val to vertices/edges in subtree
+	void modifySubtree(int v, int val) { 
 		tree.upd(pos[v]+VALUES_IN_EDGES,pos[v]+sz[v]-1,val);
 	}
-	ll queryPath(int u, int v) { // query sum of path
+	ll queryPath(int u, int v) { 
 		ll res = 0; processPath(u, v, [this, &res](int l, int r) { 
 			res += tree.qsum(l, r); });
 		return res;

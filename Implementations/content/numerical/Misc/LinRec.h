@@ -32,7 +32,6 @@ struct LinRec {
 		C.erase(begin(C)); trav(t,C) t *= -1; 
 		// x[i]=sum_{j=0}^{sz(C)-1}C[j]*x[i-j-1]
 	}
-	
 	vmi getPo(int n) {
 		if (n == 0) return {1};
 		vmi x = getPo(n/2); x = rem(x*x,rC);

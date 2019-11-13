@@ -15,7 +15,8 @@
 	void init() {
 		assert(!mode); mode = 1;
 		int lst[SZ]; F0R(i,SZ) lst[i] = cnt[i] = 0;
-		sort(all(todo),[](const pi& a, const pi& b) { return a.s < b.s; });
+		sort(all(todo),[](const pi& a, const pi& b) { 
+			return a.s < b.s; });
 		trav(t,todo) for (int X = t.f; X < SZ; X += X&-X) 
 			if (lst[X] != t.s) {
 				lst[X] = t.s;
@@ -58,7 +59,7 @@
 		int t = 0; for (; x; x -= x&-x) t += QUERY(x,y);
 		return t;
 	}
-	int query(int lox, int hix, int loy, int hiy) { // query number of elements within a rectangle
+	int query(int lox, int hix, int loy, int hiy) { 
 		return query(hix,hiy)-query(lox-1,hiy)
 			-query(hix,loy-1)+query(lox-1,loy-1);
 	}

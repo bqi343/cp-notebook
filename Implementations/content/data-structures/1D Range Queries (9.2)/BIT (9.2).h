@@ -17,9 +17,10 @@ template <class T, int N, int... Ns> struct BIT<T, N, Ns...> {
 		for (; pos <= N; pos += (pos&-pos)) bit[pos].upd(args...);
 	}
 	template<typename... Args> T sum(int r, Args... args) {
-		T res = 0; for (; r; r -= (r&-r)) res += bit[r].query(args...); 
+		T res = 0; for (; r; r -= (r&-r)) 
+			res += bit[r].query(args...); 
 		return res;
 	}
-	template<typename... Args> T query(int l, int r, Args... args) {
-		return sum(r,args...)-sum(l-1,args...); }
+	template<typename... Args> T query(int l, int r, Args... 
+		args) { return sum(r,args...)-sum(l-1,args...); }
 }; 

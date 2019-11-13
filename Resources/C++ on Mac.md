@@ -109,8 +109,8 @@ Maybe the following links are helpful?
 
 ### Reference
 
-* [cplusplus](http://www.cplusplus.com/reference/)
-* [cppreference](http://en.cppreference.com/w/)
+ * [cplusplus](http://www.cplusplus.com/reference/)
+ * [cppreference](http://en.cppreference.com/w/)
 
 ### Other
 

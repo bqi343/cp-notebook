@@ -15,7 +15,7 @@
  * Verification: https://open.kattis.com/contests/ecna19open/problems/cheeseifyouplease
  */
  
-typedef double T;
+typedef db T;
 typedef vector<T> vd;
 typedef vector<vd> vvd;
 const T eps = 1e-8, inf = 1/.0;

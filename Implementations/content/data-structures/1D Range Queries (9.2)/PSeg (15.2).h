@@ -45,7 +45,8 @@ template<class T, int SZ> struct pseg {
 		}
 		push(x,L,R);
 		int M = (L+R)/2;
-		l[x] = upd(l[x],lo,hi,v,L,M), r[x] = upd(r[x],lo,hi,v,M+1,R);
+		l[x] = upd(l[x],lo,hi,v,L,M);
+		r[x] = upd(r[x],lo,hi,v,M+1,R);
 		pull(x); return x;
 	}
 	int build(vector<T>& arr, int L, int R) {
@@ -62,7 +63,9 @@ template<class T, int SZ> struct pseg {
 	
 	//// PUBLIC
 	vi loc;
-	void upd(int lo, int hi, T v) { loc.pb(upd(loc.back(),lo,hi,v,0,SZ-1)); }
-	T query(int ti, int lo, int hi) { return query(loc[ti],lo,hi,0,SZ-1); }
+	void upd(int lo, int hi, T v) { 
+		loc.pb(upd(loc.back(),lo,hi,v,0,SZ-1)); }
+	T query(int ti, int lo, int hi) { 
+		return query(loc[ti],lo,hi,0,SZ-1); }
 	void build(vector<T>& arr) { loc.pb(build(arr,0,SZ-1)); }
 };

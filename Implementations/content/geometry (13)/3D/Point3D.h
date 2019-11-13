@@ -7,7 +7,6 @@
  */
 
 typedef ld T;
-
 namespace Point3D {
 	typedef array<T,3> P3;
 	typedef vector<P3> vP3;
@@ -17,10 +16,14 @@ namespace Point3D {
 	}
 	T abs(const P3& x) { return sqrt(norm(x)); }
 	
-	P3& operator+=(P3& l, const P3& r) { F0R(i,3) l[i] += r[i]; return l; }
-	P3& operator-=(P3& l, const P3& r) { F0R(i,3) l[i] -= r[i]; return l; }
-	P3& operator*=(P3& l, const T& r) { F0R(i,3) l[i] *= r; return l; }
-	P3& operator/=(P3& l, const T& r) { F0R(i,3) l[i] /= r; return l; }
+	P3& operator+=(P3& l, const P3& r) { 
+		F0R(i,3) l[i] += r[i]; return l; }
+	P3& operator-=(P3& l, const P3& r) { 
+		F0R(i,3) l[i] -= r[i]; return l; }
+	P3& operator*=(P3& l, const T& r) { 
+		F0R(i,3) l[i] *= r; return l; }
+	P3& operator/=(P3& l, const T& r) { 
+		F0R(i,3) l[i] /= r; return l; }
 	P3 operator+(P3 l, const P3& r) { return l += r; }
 	P3 operator-(P3 l, const P3& r) { return l -= r; }
 	P3 operator*(P3 l, const T& r) { return l *= r; }
@@ -41,9 +44,9 @@ namespace Point3D {
 		F0R(i,sz(c)) if (c[i] != 0) return 0; 
 		return 1;
 	}
-	bool collinear(const P3& a, const P3& b, const P3& c) { return isMult(b-a,c-a); }
+	bool collinear(const P3& a, const P3& b, const P3& c) { 
+		return isMult(b-a,c-a); }
 	bool coplanar(const P3& a, const P3& b, const P3& c, const P3& d) { 
-		return isMult(cross(b-a,c-a),cross(b-a,d-a)); 
-	}
+		return isMult(cross(b-a,c-a),cross(b-a,d-a)); }
 }
 using namespace Point3D;

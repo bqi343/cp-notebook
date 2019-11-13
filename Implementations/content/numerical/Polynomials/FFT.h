@@ -13,6 +13,7 @@
 #include "../../number-theory (11.1)/Modular Arithmetic/Modular.h"
 
 typedef complex<db> cd;
+typedef vector<cd> vcd;
 const int MOD = (119 << 23) + 1, root = 3; // = 998244353
 // NTT: For p < 2^30 there is also e.g. (5 << 25, 3), 
 // (7 << 26, 3), (479 << 21, 3) and (483 << 21, 5). 

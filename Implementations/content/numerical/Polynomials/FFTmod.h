@@ -11,14 +11,12 @@ vl multMod(const vl& a, const vl& b) {
 	if (!min(sz(a),sz(b))) return {};
 	int s = sz(a)+sz(b)-1, n = 1<<size(s), cut = sqrt(MOD);
 	vcd roots(n); genRoots(roots);
-	
 	vcd ax(n), bx(n);
 	// ax(x)=a1(x)+i*a0(x)
 	F0R(i,sz(a)) ax[i] = cd((int)a[i]/cut, (int)a[i]%cut); 
 	// bx(x)=b1(x)+i*b0(x)
 	F0R(i,sz(b)) bx[i] = cd((int)b[i]/cut, (int)b[i]%cut); 
 	fft(ax,roots), fft(bx,roots);
-	
 	vcd v1(n), v0(n);
 	F0R(i,n) {
 		int j = (i ? (n-i) : i);
@@ -28,7 +26,6 @@ vl multMod(const vl& a, const vl& b) {
 		v0[i] = (ax[i]-conj(ax[j]))*cd(0,-0.5)*bx[i]; 
 	}
 	fft(v1,roots,1), fft(v0,roots,1);
-	
 	vl ret(n);
 	F0R(i,n) {
 		ll V2 = (ll)round(v1[i].real()); // a1*b1

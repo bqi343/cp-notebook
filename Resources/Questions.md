@@ -64,6 +64,14 @@ Mostly just looking stuff up along the way.
 
 Keep doing interesting problems (and stay organized??) idk
 
+> I find difficult to prepare for math and cp competitions together without neglecting school ...  I know you obviously can't solve my problem, but I'd just like to have the advice of an expert like you and if you've ever been in my situation
+
+You shouldn't neglect school, but generally I've kept up with schoolwork and still had plenty of free time.
+
+> do you have a particular method to organize time well and manage everything (competitions, courses, homework ...)
+
+clist.by & workflowy & google calendar
+
 ## Topics
 
 > i think whenever i am learning some new topic i m not able to solve good questions on that topic so thats what holding me back.
@@ -122,7 +130,7 @@ I usehttps://ideone.com/ LOL. I used to use https://csacademy.com/ but it looks 
 
 > Do you use a debugger?
 
-No, I can't figure out how to get GDB to work on Mac and print statements generally suffice.
+No, ~~I can't figure out how to get GDB to work on Mac~~ and print statements generally suffice. Actually, [these instructions](https://sourceware.org/gdb/wiki/BuildingOnDarwin) should work but sometimes it hangs ...
 
 > did you do it on your own or did you have a coach !
 
@@ -130,7 +138,7 @@ No, I can't figure out how to get GDB to work on Mac and print statements genera
 
 > Are you like entirely self taught, or did you have any tutoring.
 
-mostly self, haven't been tutored or done any tutoring myself
+mostly self? haven't been tutored or done any tutoring myself
 
 > What was your strategy considering you were preparing for IOI.
 
@@ -172,7 +180,7 @@ ok
 
 > In what order or from where would you suggest to solve dp problems ? I have read and understand standard dp problems but i am not very much good in thinking dp solutions.
 
-I don't think the order really matters
+I don't think the order really matters (aside from doing easier problems first?!)
 
 > but i don't know where to start
 

@@ -1,6 +1,7 @@
 /**
- * Description: persistent segtree with lazy updates, assumes that \texttt{lazy[cur]} is 
- 	* included in \texttt{val[cur]} before propagating \texttt{cur}
+ * Description: Persistent min segtree with lazy updates. Unlike typical
+ 	* lazy segtree, assumes that \texttt{lazy[cur]} is included in 
+ 	* \texttt{val[cur]} before propagating \texttt{cur.}
  * Time: O(\log N)
  * Source: CF, Franklyn Wang
  * Verification: https://codeforces.com/contest/1090/problem/G
@@ -55,12 +56,10 @@ template<class T, int SZ> struct pseg {
 			if (L < sz(arr)) val[cur] = arr[L];
 			return cur;
 		}
-		
 		int M = (L+R)/2;
 		l[cur] = build(arr,L,M), r[cur] = build(arr,M+1,R);
 		pull(cur); return cur;
 	}
-	
 	//// PUBLIC
 	vi loc;
 	void upd(int lo, int hi, T v) { 

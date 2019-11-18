@@ -1,5 +1,7 @@
 # CPH <-> USACO
 
+[Book](https://cses.fi/book/book.pdf)
+
 x = generally doesn't appear on USACO contests
 
  * 1: Bronze

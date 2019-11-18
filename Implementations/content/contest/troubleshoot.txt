@@ -6,19 +6,19 @@ Could anything overflow?
 Make sure to submit the right file.
 
 Wrong answer:
-Print your solution! Print debug output, as well.
-Are you clearing all data structures between test cases?
-Can your algorithm handle the whole range of input?
 Read the full problem statement again.
-Do you handle all corner cases correctly (ex. n=1)?
 Have you understood the problem correctly?
-Any uninitialized variables?
-Any undefined behavior (ex. shifting ll by 64 bits or more)
-Any overflows?
-Confusing N and M, i and j, etc.?
 Are you sure your algorithm works?
-What special cases have you not thought of?
-For geometry problems, are you dealing with epsilons correctly?
+Can your algorithm handle the whole range of input?
+Did you consider corner cases such as n=1 or other special cases?
+Print your solution! Print debug output, as well.
+Is your output format correct? (including whitespace)
+Are you clearing all data structures between test cases?
+Any uninitialized variables?
+Any undefined behavior (array out of bounds, shifting ll by 64 bits or more)?
+Any overflows or NaNs?
+Confusing N and M, i and j, etc.?
+Make sure that you deal correctly with numbers close to (but not equal to) zero.
 Are you sure the STL functions you use work as you think?
 Add some assertions, maybe resubmit.
 Create some test cases to run your algorithm on.
@@ -27,7 +27,6 @@ Go through this list again.
 Explain your algorithm to a teammate.
 Ask the teammate to look at your code.
 Go for a small walk, e.g. to the toilet.
-Is your output format correct? (including whitespace)
 Rewrite your solution from the start or let a teammate do it.
 
 Runtime error:

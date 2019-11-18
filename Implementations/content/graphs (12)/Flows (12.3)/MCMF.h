@@ -1,5 +1,6 @@
 /**
- * Description: minimum-cost maximum flow, assume no negative cycles
+ * Description: Minimum-cost maximum flow, assumes no negative cycles. 
+ 	* Edges may be negative only during first run of SPFA.
  * Time: $O(FM\log M)$ if caps are integers and $F$ is max flow
  * Source: GeeksForGeeks
  	* running time is only pseudo-polynomial; see https://codeforces.com/blog/entry/70740
@@ -8,11 +9,9 @@
 
 template<class T> using pqg = priority_queue<T,vector<T>,greater<T>>;
 template<class T> T poll(pqg<T>& x) {
-	T y = x.top(); x.pop();
-	return y;
-}
+	T y = x.top(); x.pop(); return y; }
 
-template<int SZ> struct mcmf { 
+template<int SZ> struct MCMF { 
 	typedef ll F; typedef ll C;
 	struct Edge { int to, rev; F flow, cap; C cost; };
 	vector<Edge> adj[SZ];
@@ -25,14 +24,9 @@ template<int SZ> struct mcmf {
 	pi pre[SZ]; // previous vertex, edge label on path
 	pair<C,F> cost[SZ]; // tot cost of path, amount of flow
 	C totCost, curCost; F totFlow; 
-	void reweight() { // makes all edge costs non-negative
-		// all edges on shortest path become 0
-		F0R(i,N) trav(p,adj[i]) p.cost += cost[i].f-cost[p.to].f;
-	}
-	bool spfa() { // reweight ensures that there will be negative 
-		// weights only during the first time you run this
-		F0R(i,N) cost[i] = {INF,0}; 
-		cost[s] = {0,INF};
+	bool spfa() { 
+		F0R(i,N) cost[i] = {numeric_limits<C>::max(),0}; 
+		cost[s] = {0,numeric_limits<F>::max()};
 		pqg<pair<C,int>> todo; todo.push({0,s});
 		while (sz(todo)) {
 			auto x = poll(todo); if (x.f > cost[x.s].f) continue;
@@ -44,18 +38,21 @@ template<int SZ> struct mcmf {
 				todo.push({cost[a.to].f,a.to});
 			}
 		}
-		curCost += cost[t].f; return cost[t].s;
+		return cost[t].s;
 	}
 	void backtrack() {
-		F df = cost[t].s; totFlow += df, totCost += curCost*df;
+		F df = cost[t].s; totFlow += df;
+		curCost += cost[t].f; totCost += curCost*df;
 		for (int x = t; x != s; x = pre[x].f) {
 			adj[x][pre[x].s].flow -= df;
 			adj[pre[x].f][adj[x][pre[x].s].rev].flow += df;
 		}
+		F0R(i,N) trav(p,adj[i]) p.cost += cost[i].f-cost[p.to].f;
+		// makes all edge costs non-negative, edges on shortest path become 0
 	}
 	pair<F,C> calc(int _N, int _s, int _t) {
 		N = _N; s = _s, t = _t; totFlow = totCost = curCost = 0;
-		while (spfa()) reweight(), backtrack();
-		return {totFlow, totCost};
+		while (spfa()) backtrack();
+		return {totFlow,totCost};
 	}
 };

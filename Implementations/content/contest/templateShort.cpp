@@ -18,16 +18,16 @@ typedef vector<pi> vpi;
 #define rsz resize
 
 #define mp make_pair
-#define pb push_back 
+#define pb push_back
 #define f first
 #define s second
 
-const int MOD = 1e9+7;
+const int MOD = 1e9+7; // 998244353; // = (119<<23)+1
 const int MX = 2e5+5;
 
-template<class T> bool ckmin(T& a, const T& b) { 
+template<class T> bool ckmin(T& a, const T& b) {
 	return a > b ? a = b, 1 : 0; }
-template<class T> bool ckmax(T& a, const T& b) { 
+template<class T> bool ckmax(T& a, const T& b) {
 	return a < b ? a = b, 1 : 0; }
 
 mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());

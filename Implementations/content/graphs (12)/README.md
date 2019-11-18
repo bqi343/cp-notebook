@@ -15,8 +15,11 @@
     * Related
       * Articulation Points
       * Bridges
+      * Block-Cut Tree
     * Tutorial
       * [GeeksforGeeks](http://www.geeksforgeeks.org/articulation-points-or-cut-vertices-in-a-graph/)
+      * [Wikipedia](https://en.wikipedia.org/wiki/Biconnected_component)
+      * [CF DFS Tree + Bridges](https://codeforces.com/blog/entry/68138)
     * Problems
       * [Blockade](https://szkopul.edu.pl/problemset/problem/eDt8w290owtatmCjad0O0ywk/site/?key=statement)
       * [POLICIJA](http://wcipeg.com/problem/coi06p2)

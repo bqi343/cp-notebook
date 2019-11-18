@@ -1,5 +1,7 @@
 /**
- * Description: \texttt{sa} contains indices of suffixes in sorted order
+ * Description: \texttt{sa} contains indices of suffixes in sorted order, 
+ * \texttt{isa} contains inverses. Can speed up on random test data by 
+ * breaking when elements of \texttt{isa} are all distinct.
  * Time: O(N\log N)
  * Source: SuprDewd, KACTL, majk, ekzhang (http://ekzlib.herokuapp.com)
  * Verification: 
@@ -17,12 +19,9 @@ struct SuffixArray {
 	}
 	vi sa, isa;
 	void genSa() {
-		sa.rsz(N); isa.rsz(N);
-		F0R(i,N) sa[i] = N-1-i, isa[i] = S[i];
+		sa.rsz(N); isa.rsz(N); F0R(i,N) sa[i] = N-1-i, isa[i] = S[i];
 		stable_sort(all(sa), [this](int i, int j) { 
 			return S[i] < S[j]; });
-		// can speed up on random test data by breaking 
-		// when elements of isa are all distinct
 		for (int len = 1; len < N; len *= 2) { 
 			vi is(isa), s(sa), nex(N); iota(all(nex),0); 
 			F0R(i,N) { // compare first len characters of each suf
@@ -41,10 +40,9 @@ struct SuffixArray {
 	void genLcp() { // Kasai's Algo
 		lcp = vi(N-1); int h = 0;
 		F0R(i,N) if (isa[i]) {
-			int pre = sa[isa[i]-1];
-			while (max(i,pre)+h < N && S[i+h] == S[pre+h]) h++;
-			lcp[isa[i]-1] = h; // lcp of sufs starting at pre and i
-			if (h) h--; // if we cut off first chars of two strings 
+			for (int j = sa[isa[i]-1]; j+h < N && S[i+h] == S[j+h]; h++);
+			lcp[isa[i]-1] = h; if (h) h--; 
+			// if we cut off first chars of two strings 
 			// with lcp h then remaining portions still have lcp h-1 
 		}
 	}

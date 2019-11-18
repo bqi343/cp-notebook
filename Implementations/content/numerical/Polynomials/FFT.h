@@ -1,5 +1,6 @@
 /**
- * Description: multiply two polynomials
+ * Description: Multiply two polynomials. For xor convolution 
+ 	* don't multiply by \texttt{roots[ind]}.
  * Time: O(N\log N)
  * Source: 
  	* KACTL
@@ -32,7 +33,7 @@ void genRoots(vmi& roots) {
 
 template<class T> void fft(vector<T>& a, const vector<T>& roots, bool inv = 0) {
 	int n = sz(a);
-	// sort numbers from 0 to n-1 by reverse bit representation
+	// sort #s from 0 to n-1 by reverse bit representation
 	for (int i = 1, j = 0; i < n; i++) { 
 		int bit = n>>1;
 		for (; j&bit; bit >>= 1) j ^= bit;
@@ -42,7 +43,6 @@ template<class T> void fft(vector<T>& a, const vector<T>& roots, bool inv = 0) {
 		for (int i = 0; i < n; i += len) 
 			F0R(j,len/2) {
 				int ind = n/len*j; if (inv && ind) ind = n-ind;
-				// for xor conv don't multiply by roots[ind]
 				auto u = a[i+j], v = a[i+j+len/2]*roots[ind]; 
 				a[i+j] = u+v, a[i+j+len/2] = u-v;
 			}

@@ -18,6 +18,7 @@ Since I frequently move stuff around, some text may refer to files which no long
 I recommend that you use C++, even if you already know some other language such as Java or Python. A solid foundation in math (ex. AIME qualification) can help greatly.
 
   * [C++ Tutorial](https://www.google.com/url?q=http%3A%2F%2Fwww.cplusplus.com%2Fdoc%2Ftutorial%2F&sa=D)
+    * you don't need to understand everything about pointers / classes the first time through
   * [CodeSignal](https://codesignal.com/)
     * good place to practice basics
   * [AtCoder](http://atcoder.jp/)

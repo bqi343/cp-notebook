@@ -32,9 +32,11 @@ template<class T> struct modular {
 
 	modular operator-() const { return modular(-val); }
 	modular& operator+=(const modular& m) { 
-		if ((val += m.val) >= MOD) val -= MOD; return *this; }
+		if ((val += m.val) >= MOD) val -= MOD; 
+		return *this; }
 	modular& operator-=(const modular& m) { 
-		if ((val -= m.val) < 0) val += MOD; return *this; }
+		if ((val -= m.val) < 0) val += MOD; 
+		return *this; }
 	modular& operator*=(const modular& m) { 
 		val = (ll)val*m.val%MOD; return *this; }
 	friend modular pow(modular a, ll p) {

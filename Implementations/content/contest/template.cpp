@@ -2,20 +2,20 @@
 using namespace std;
  
 typedef long long ll;
-typedef long double ld;
-typedef double db;
-typedef string str;
-
+typedef long double ld; //
+typedef double db; //
+typedef string str; //
+//
 typedef pair<int, int> pi;
-typedef pair<ll,ll> pl;
-typedef pair<ld,ld> pd;
-
-typedef vector<int> vi;
+typedef pair<ll,ll> pl; //
+typedef pair<ld,ld> pd; //
+//
+typedef vector<int> vi; 
 typedef vector<ll> vl;
-typedef vector<ld> vd;
-typedef vector<str> vs;
+typedef vector<ld> vd; //
+typedef vector<str> vs; //
 typedef vector<pi> vpi;
-typedef vector<pl> vpl;
+typedef vector<pl> vpl; //
 
 #define FOR(i,a,b) for (int i = (a); i < (b); ++i)
 #define F0R(i,a) FOR(i,0,a)
@@ -25,22 +25,22 @@ typedef vector<pl> vpl;
 
 #define sz(x) (int)x.size()
 #define all(x) begin(x), end(x)
-#define rall(x) rbegin(x), rend(x)
+#define rall(x) rbegin(x), rend(x) //
 #define rsz resize
-#define ins insert
+#define ins insert //
 
 #define mp make_pair
 #define pb push_back
-#define eb emplace_back
+#define eb emplace_back //
 #define f first
 #define s second
-#define lb lower_bound
-#define ub upper_bound
+#define lb lower_bound //
+#define ub upper_bound //
 
 const int MOD = 1e9+7; // 998244353; // = (119<<23)+1
 const int MX = 2e5+5;
-const ll INF = 1e18;
-const ld PI = 4*atan((ld)1);
+const ll INF = 1e18; //
+const ld PI = 4*atan((ld)1); //
 
 template<class T> bool ckmin(T& a, const T& b) { 
 	return a > b ? a = b, 1 : 0; }

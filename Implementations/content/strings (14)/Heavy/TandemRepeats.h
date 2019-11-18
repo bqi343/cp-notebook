@@ -8,15 +8,15 @@
 
 #include "../Light/Z (14.3).h"
 
-struct StringRepeat {
+struct TandemRepeats {
 	string S;
 	vector<array<int,3>> al; 
 	// (t[0],t[1],t[2]) -> there is a repeating substring starting at x 
 	// with length t[0]/2 for all t[1] <= x <= t[2]
 	vector<array<int,3>> solveLeft(string s, int m) {
 		vector<array<int,3>> v;
-		vi v2 = getPrefix(string(s.begin()+m+1,s.end()),string(s.begin(),s.begin()+m+1));
-		string V = string(s.begin(),s.begin()+m+2); reverse(all(V)); vi v1 = z(V); reverse(all(v1));
+		vi v2 = getPrefix(string(begin(s)+m+1,end(s)),string(begin(s),begin(s)+m+1));
+		string V = string(begin(s),begin(s)+m+2); reverse(all(V)); vi v1 = z(V); reverse(all(v1));
 		F0R(i,m+1) if (v1[i]+v2[i] >= m+2-i) {
 			int lo = max(1,m+2-i-v2[i]), hi = min(v1[i],m+1-i);
 			lo = i-lo+1, hi = i-hi+1; swap(lo,hi);
@@ -27,7 +27,7 @@ struct StringRepeat {
 	void divi(int l, int r) {
 		if (l == r) return;
 		int m = (l+r)/2; divi(l,m); divi(m+1,r);
-		string t = string(S.begin()+l,S.begin()+r+1);
+		string t(begin(S)+l,begin(S)+r+1);
 		m = (sz(t)-1)/2;
 		auto a = solveLeft(t,m);
 		reverse(all(t));

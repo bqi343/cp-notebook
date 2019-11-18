@@ -2,7 +2,7 @@
  * Description: The centroid of a tree of size $N$ is a vertex such that 
  	* after removing it, all resulting subtrees have size at most $\frac{N}{2}.$ 
  	* Can support tree path queries and updates
- * Time: $O(N\log N)$
+ * Time: O(N\log N)
  * Source: own
  * Verification: 
 	* https://codeforces.com/contest/342/problem/E
@@ -11,10 +11,10 @@
 
 template<int SZ> struct CD {
 	vi adj[SZ];
-	bool done[SZ];
-	int sub[SZ], par[SZ];
-	vl dist[SZ];
-	pi cen[SZ];
+	bool done[SZ]; 
+	int sub[SZ], par[SZ]; // subtree size, current par
+	pi cen[SZ]; // immediate centroid anc
+	vi dist[SZ]; // dists to all centroid ancs
 	void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
 	void dfs (int x) {
 		sub[x] = 1;
@@ -35,20 +35,13 @@ template<int SZ> struct CD {
 	}
 	void genDist(int x, int p) {
 		dist[x].pb(dist[p].back()+1);
-		trav(y,adj[x]) if (!done[y] && y != p) {
-			cen[y] = cen[x];
-			genDist(y,x);
-		}
+		trav(y,adj[x]) if (!done[y] && y != p) genDist(y,x); 
 	}
-	void gen(int x, bool fst = 0) {
-		done[x = centroid(x)] = 1; dist[x].pb(0); 
-		if (fst) cen[x].f = -1;
-		int co = 0;
-		trav(y,adj[x]) if (!done[y]) {
-			cen[y] = {x,co++}; 
-			genDist(y,x);
-		}
-		trav(y,adj[x]) if (!done[y]) gen(y);
+	void gen(pi CEN, int x) {
+		done[x = centroid(x)] = 1; cen[x] = CEN; 
+		dist[x].pb(0); int co = 0;
+		trav(y,adj[x]) if (!done[y]) genDist(y,x);
+		trav(y,adj[x]) if (!done[y]) gen({x,co++},y);
 	}
-	void init() { gen(1,1); }
+	void init() { gen({-1,0},1); }
 };

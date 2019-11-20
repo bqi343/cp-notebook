@@ -8,47 +8,47 @@
 
 #include "../../data-structures/1D Range Queries (9.2)/LazySeg (15.2).h"
 
-template<int SZ, bool VALUES_IN_EDGES> struct HLD { 
+template<int SZ, bool VALS_IN_EDGES> struct HLD { 
 	int N; vi adj[SZ];
 	int par[SZ], sz[SZ], depth[SZ];
-	int root[SZ], pos[SZ];
-	LazySeg<ll,SZ> tree;
+	int root[SZ], pos[SZ]; vi rpos;
 	void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
-	void dfs_sz(int v = 1) {
+	void dfsSz(int v = 1) {
 		if (par[v]) adj[v].erase(find(all(adj[v]),par[v]));
 		sz[v] = 1;
 		trav(u,adj[v]) {
 			par[u] = v; depth[u] = depth[v]+1;
-			dfs_sz(u); sz[v] += sz[u];
+			dfsSz(u); sz[v] += sz[u];
 			if (sz[u] > sz[adj[v][0]]) swap(u, adj[v][0]);
 		}
 	}
-	void dfs_hld(int v = 1) {
-		static int t = 0; pos[v] = t++;
+	void dfsHld(int v = 1) {
+		static int t = 0; pos[v] = t++; rpos.pb(v);
 		trav(u,adj[v]) {
 			root[u] = (u == adj[v][0] ? root[v] : u);
-			dfs_hld(u);
+			dfsHld(u);
 		}
 	}
 	void init(int _N) {
 		N = _N; par[1] = depth[1] = 0; root[1] = 1; 
-		dfs_sz(); dfs_hld();
+		dfsSz(); dfsHld();
 	}
-	template <class BinaryOperation>
-	void processPath(int u, int v, BinaryOperation op) {
+	LazySeg<ll,SZ> tree;
+	template <class BinaryOp>
+	void processPath(int u, int v, BinaryOp op) {
 		for (; root[u] != root[v]; v = par[root[v]]) {
 			if (depth[root[u]] > depth[root[v]]) swap(u, v);
 			op(pos[root[v]], pos[v]);
 		}
 		if (depth[u] > depth[v]) swap(u, v);
-		op(pos[u]+VALUES_IN_EDGES, pos[v]); 
+		op(pos[u]+VALS_IN_EDGES, pos[v]); 
 	}
 	void modifyPath(int u, int v, int val) { 
 		processPath(u, v, [this, &val](int l, int r) { 
 			tree.upd(l, r, val); });
 	}
 	void modifySubtree(int v, int val) { 
-		tree.upd(pos[v]+VALUES_IN_EDGES,pos[v]+sz[v]-1,val);
+		tree.upd(pos[v]+VALS_IN_EDGES,pos[v]+sz[v]-1,val);
 	}
 	ll queryPath(int u, int v) { 
 		ll res = 0; processPath(u, v, [this, &res](int l, int r) { 

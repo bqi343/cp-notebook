@@ -19,7 +19,7 @@ void init() {
 		bes.s *= -1;
 	}
 }
-void adjust(int col) { // remove col'th character of b, adjust DP
+void adjust(int col) { // remove col'th character of b, fix DP
 	int x = 1; while (x <= sz(A) && dp[x][col].s == 0) x ++;
 	if (x > sz(A)) return; // no adjustments to dp
 	pi cur = {x,col}; dp[cur.f][cur.s].s = 0;

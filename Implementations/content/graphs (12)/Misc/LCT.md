@@ -1,23 +1,3 @@
-Balanced Binary Search Trees
-
-# 4
-
-  * Treap
-    * Notes
-      * [Quora](https://threads-iiith.quora.com/Treaps-One-Tree-to-Rule-em-all-Part-1)
-      * [PPT](https://docs.google.com/presentation/d/14xgtdDWnIBwmJRAuIdZ8FvLZcX9uRxnNoGOGAQRDIvc/edit?usp=sharing)
-      * Samuel Hsiang Guide (see resources)
-    * Problems
-      * [Strings](https://csacademy.com/contest/archive/task/strings/) [](181)
-      * [Points & Distances](https://www.hackerearth.com/problem/algorithm/septembereasy-points-and-distances-d30d0e6b/description/) [](185)
-      * [Tree Rotations 2](https://szkopul.edu.pl/problemset/problem/b0BM0al2crQBt6zovEtJfOc6/site/?key=statement) [](193)
-      * [A2OJ](https://a2oj.com/category?ID=14)
-  * Mo's Algorithm
-    * Tutorial
-      * [CF Intro](http://codeforces.com/blog/entry/7383)
-      * [Mo's on Trees](http://codeforces.com/blog/entry/43230)
-    * Problems
-      * [A2OJ](https://a2oj.com/category?ID=318)
 # 5
 
   * Splay Tree
@@ -53,3 +33,5 @@ Balanced Binary Search Trees
           * Requires operations on subtrees in addition to those from the easy version
         * [CEOI Treasure Hunt](https://cses.fi/174/list/)
           * get k-th parent
+        * [CERC 17 D](https://codeforces.com/gym/101620)
+          * LCT not needed, but can directly apply solution from "The Applicant"

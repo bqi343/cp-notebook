@@ -30,7 +30,7 @@ with open('templateLong.cpp', 'w') as outfile:
 			if fname == 'template.cpp':
 				for i in range(len(v)):
 					line = v[i]
-					if i < len(v)-5:
+					if i < len(v)-4:
 						ad(line)
 					elif i > len(v)-4:
 						extra.append(line)

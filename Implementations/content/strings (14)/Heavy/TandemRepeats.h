@@ -1,6 +1,6 @@
 /**
  * Description: Used only once. Main-Lorentz algorithm
-	* finds all $(x,y)$ such that \texttt{s.substr(x,y-1) == s.substr(x+y,y-1)}
+	* finds all $(x,y)$ such that \texttt{s.substr(x,y-1) == s.substr(x+y,y-1)}.
  * Time: O(N\log N)
  * Source: https://cp-algorithms.com/string/main_lorentz.html
  * Verification: http://codeforces.com/contest/1043/problem/G

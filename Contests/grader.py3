@@ -6,11 +6,12 @@ import sys
 from termcolor import colored # print in color + bold
 import getopt # command line
 
-IN="wire$.in"
+IN="I.$" # $ is replaced with file number
 OUT="O.$"
 
 TL=2
-CPP="g++ -O2 -w $.cpp -o $" # C++, -w = suppress warnings
+CPP="g++ -std=c++11 -O2 -Wl,-stack_size -Wl,0x10000000 -w $.cpp -o $" 
+# C++, -w = suppress warnings
 
 def replace(x,y): # replace occurrences of $ in x with y
 	return x.replace('$',str(y))
@@ -50,7 +51,7 @@ def run(x, inputF): # return tuple of output file, exit code, time
 	ret = subprocess.call(runCom,shell=True)
 	if ret != 0:
 		return outputF,ret,-1
-	timeCo = 'cat .time_info | grep real | cut -d" " -f2' # get real time
+	timeCom = 'cat .time_info | grep real | cut -d" " -f2' # get real time
 	proc = subprocess.Popen(timeCom, stdout=subprocess.PIPE, shell=True)
 	time = proc.communicate()[0].rstrip().decode("utf-8") 
 	return outputF,ret,time
@@ -75,6 +76,8 @@ def check(o0,o1): # check if output files o0,o1 match
 
 def interpret(e): # interpret exit code
 	assert e != 0
+	if e == 139:
+		return "R", "stack size exceeded?"
 	if e == 152:
 		return "T", "time limit exceeded"
 	return "R", f"exit code {e}"
@@ -125,7 +128,7 @@ def GETOUTPUT(f):
 			break
 		res,message,t = getOutput(f,inputF)
 		output(label,res,message,t)
-		total = i
+		total += 1
 		if res == 'A':
 			correct += 1
 	print()

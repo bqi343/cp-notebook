@@ -9,7 +9,7 @@
 using namespace __gnu_pbds;
 
 struct chash { // To use most bits rather than just the lowest ones:
-	const uint64_t C = ll(2e18 * M_PI) + 71; // large odd number
+	const uint64_t C = ll(2e18*PI)+71; // large odd number
 	const int RANDOM = rng();
 	ll operator()(ll x) const { return __builtin_bswap64((x^RANDOM)*C); }
 };

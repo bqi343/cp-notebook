@@ -28,7 +28,8 @@ template<int SZ, bool directed> struct Euler {
 			auto& it = its[x], end = adj[x].end();
 			while (it != end && used[it->s]) it ++;
 			if (it == end) { 
-				if (sz(ret) && ret.back().f.s != s.back().f.f) return {}; // path isn't valid
+				if (sz(ret) && ret.back().f.s != s.back().f.f) 
+					return {}; // path isn't valid
 				ret.pb(s.back()), s.pop_back(); 
 			} else { s.pb({{it->f,x},it->s}); used[it->s] = 1; }
 		}

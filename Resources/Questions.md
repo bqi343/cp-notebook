@@ -72,6 +72,14 @@ You shouldn't neglect school, but generally I've kept up with schoolwork and sti
 
 clist.by & workflowy & google calendar
 
+> Which site to practice on ? I want to concentrate only on one ... Which is better way of practice, doing questions topic wise ? Or sorting all the questions in ascending order and try to complete as many as possible ?
+
+I don’t know, try all of them and see what works for you ...
+
+> Will it be a good idea to follow your profile on any of this site and do all the questions you have done ?
+
+I usually just do all the questions above a certain difficulty level :|
+
 ## Topics
 
 > i think whenever i am learning some new topic i m not able to solve good questions on that topic so thats what holding me back.
@@ -142,7 +150,7 @@ mostly self? haven't been tutored or done any tutoring myself
 
 > What was your strategy considering you were preparing for IOI.
 
-Other than doing past IOI tasks, I didn't do anything specifically for IOI.
+Other than doing past IOI tasks, I didn't do anything specifically for IOI. If you're looking for olympiad problems see "Contests."
 
 ## Bad
 

@@ -47,6 +47,8 @@ template<class T> bool ckmin(T& a, const T& b) {
 template<class T> bool ckmax(T& a, const T& b) { 
 	return a < b ? a = b, 1 : 0; }
 
+mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());
+
 namespace input {
 	template<class T> void re(complex<T>& x);
 	template<class T1, class T2> void re(pair<T1,T2>& p);
@@ -146,9 +148,11 @@ template<class T> struct modular {
 
 	modular operator-() const { return modular(-val); }
 	modular& operator+=(const modular& m) { 
-		if ((val += m.val) >= MOD) val -= MOD; return *this; }
+		if ((val += m.val) >= MOD) val -= MOD; 
+		return *this; }
 	modular& operator-=(const modular& m) { 
-		if ((val -= m.val) < 0) val += MOD; return *this; }
+		if ((val -= m.val) < 0) val += MOD; 
+		return *this; }
 	modular& operator*=(const modular& m) { 
 		val = (ll)val*m.val%MOD; return *this; }
 	friend modular pow(modular a, ll p) {

@@ -1,5 +1,5 @@
 /**
- * Description: for $p$ a power of 2, computes $ans$ such that $ans\cdot ans \equiv v \pmod{x^p}$
+ * Description: for $p$ a power of 2, computes $ans$ such that $ans^2 \equiv v \pmod{x^p}$
  * Time: O(N\log N)
  */
 

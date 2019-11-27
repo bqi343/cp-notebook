@@ -11,7 +11,7 @@
 	* http://codeforces.com/contest/632/problem/E
  */
 
-#include "../../number-theory (11.1)/Modular Arithmetic/Modular.h"
+#include "../../number-theory (11.1)/Modular Arithmetic/ModInt.h"
 
 typedef complex<db> cd;
 typedef vector<cd> vcd;
@@ -23,7 +23,7 @@ const int MOD = (119 << 23) + 1, root = 3; // = 998244353
 int size(int s) { return s > 1 ? 32-__builtin_clz(s-1) : 0; }
 void genRoots(vcd& roots) { // primitive n-th roots of unity
 	int n = sz(roots); double ang = 2*PI/n;
-	// is there a way to compute these trig functions more quickly w/o issues?
+	// good way to compute these trig functions more quickly?
 	F0R(i,n) roots[i] = cd(cos(ang*i),sin(ang*i)); 
 }
 void genRoots(vmi& roots) { 

@@ -23,7 +23,7 @@ vi hullInd(const vP& P) {
 	vi u,l; tie(u,l) = ulHull(P);
 	if (sz(l) <= 1) return l;
 	if (P[l[0]] == P[l[1]]) return {0};
-	l.insert(end(l),rbegin(u)+1,rend(u)-1); return l;
+	l.insert(end(l),u.rbegin()+1,u.rend()-1); return l;
 }
 vP hull(const vP& P) {
 	vi v = hullInd(P);

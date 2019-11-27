@@ -12,12 +12,12 @@ template<class T, int SZ> struct LazySeg { // set SZ to a power of 2
 	}
 	void push(int ind, int L, int R) { // modify values for current node
 		sum[ind] += (R-L+1)*lazy[ind]; 
-		if (L != R) lazy[2*ind] += lazy[ind], lazy[2*ind+1] += lazy[ind]; // push lazy to children
-		lazy[ind] = 0;
+		if (L != R) lazy[2*ind] += lazy[ind], lazy[2*ind+1] += lazy[ind]; 
+		lazy[ind] = 0; // pushed lazy to children
 	}
 	void pull(int ind) { // recalc values for current node
 		sum[ind] = sum[2*ind]+sum[2*ind+1]; }
-	void build() { ROF(i,1,SZ) pull(i); }=
+	void build() { ROF(i,1,SZ) pull(i); }
 	void upd(int lo, int hi, T inc, int ind = 1, int L = 0, int R = SZ-1) {
 		push(ind,L,R);
 		if (hi < L || R < lo) return;

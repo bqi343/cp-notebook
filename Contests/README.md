@@ -80,9 +80,7 @@ No Longer Active?
     * 4 hours
     * December
 
-## Codeforces
-
-### Tools
+## Codeforces Tools
 
   * [Code Drills](http://code-drills.com/)
   * [Stopstalk](https://www.stopstalk.com)

@@ -1,10 +1,14 @@
 Pre-submit:
+Write down your thoughts, even if they don't completely solve the problem.
+Stay organized (don't leave papers all over the place)!
+Give your variables (and files) useful names!
 Write a few simple test cases if sample is not enough.
 Are time limits close? If so, generate max cases.
 Is the memory usage fine?
 Could anything overflow?
+Remove debug output.
 Make sure to submit the right file.
-If your code is disorganized and you're not sure about what it's doing, it's probably not going to pass.
+You should know what your code is doing ...
 
 Wrong answer:
 Read the full problem statement again.
@@ -20,6 +24,7 @@ Any uninitialized variables?
 Any undefined behavior (array out of bounds)?
 Any overflows or NaNs (shifting ll by 64 bits or more)?
 Confusing N and M, i and j, etc.?
+Confusing ++i and i++?
 Make sure that you deal correctly with numbers close to (but not) zero.
 Are you sure the STL functions you use work as you think?
 Add some assertions, maybe resubmit.

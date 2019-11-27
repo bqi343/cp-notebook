@@ -31,7 +31,8 @@ struct LPSolver {
 			F0R(i,m) F0R(j,n) D[i][j] = A[i][j]; 
 			F0R(i,m) { 
 				B[i] = n+i, D[i][n] = -1, D[i][n+1] = b[i]; 
-				// B[i]: add basic variable for each constraint, convert ineqs to eqs
+				// B[i]: add basic variable for each constraint, 
+				// convert ineqs to eqs
 				// D[i][n]: artificial variable for testing feasibility
 			}
 			F0R(j,n) { 
@@ -45,10 +46,11 @@ struct LPSolver {
 		T *a = D[r].data(), inv = 1/a[s]; 
 		F0R(i,m+2) if (i != r && abs(D[i][s]) > eps) {
 			T *b = D[i].data(), binv = b[s]*inv;
-			F0R(j,n+2) b[j] -= a[j]*binv; // make column corresponding to s all zeroes
+			F0R(j,n+2) b[j] -= a[j]*binv; 
+			// make column corresponding to s all 0s
 			b[s] = a[s]*binv; // swap N[s] with B[r]
 		}
-		// equation corresponding to r scaled so x_r coefficient equals 1
+		// equation for r scaled so x_r coefficient equals 1
 		F0R(j,n+2) if (j != s) D[r][j] *= inv; 
 		F0R(i,m+2) if (i != r) D[i][s] *= -inv; 
 		D[r][s] = inv; swap(B[r], N[s]); // swap basic w/ non-basic
@@ -56,14 +58,16 @@ struct LPSolver {
 	bool simplex(int phase) {
 		int x = m+phase-1;
 		while (1) {
-			int s = -1; F0R(j,n+1) if (N[j] != -phase) ltj(D[x]); // find most negative col for nonbasic variable
-			if (D[x][s] >= -eps) return true; // can't get better sol by increasing non-basic variable, terminate
+			int s = -1; F0R(j,n+1) if (N[j] != -phase) ltj(D[x]); 
+			// find most negative col for nonbasic (nb) variable
+			if (D[x][s] >= -eps) return true; 
+			// can't get better sol by increasing nb variable, terminate
 			int r = -1;
 			F0R(i,m) {
 				if (D[i][s] <= eps) continue;
 				if (r == -1 || mp(D[i][n+1] / D[i][s], B[i])
 							 < mp(D[r][n+1] / D[r][s], B[r])) r = i; 
-				// find smallest positive ratio, aka max we can increase nonbasic variable
+				// find smallest positive ratio, max increase in nonbasic variable
 			}
 			if (r == -1) return false; // increase N[s] infinitely -> unbounded
 			pivot(r,s);
@@ -72,8 +76,9 @@ struct LPSolver {
 
 	T solve(vd &x) {
 		int r = 0; FOR(i,1,m) if (D[i][n+1] < D[r][n+1]) r = i;
-		if (D[r][n+1] < -eps) { // x=0 not feasible, run simplex to find smth feasible 
-			pivot(r, n); // N[n] = -1 is artificial variable, initially set to smth large
+		if (D[r][n+1] < -eps) { // x=0 not feasible, run simplex to find feasible 
+			pivot(r, n); // N[n] = -1 is artificial variable
+			// initially set to smth large
 			if (!simplex(2) || D[m+1][n+1] < -eps) return -inf; 
 			// D[m+1][n+1] is max possible value of the negation of 
 			// artificial variable, optimal value should be zero 

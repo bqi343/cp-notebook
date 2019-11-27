@@ -60,7 +60,8 @@ struct SuffixTree {
 			if (ind == sz(x) || !st[node].to.count(x[ind])) return ind;
 			node = st[node].to[x[ind]];
 			F0R(i,st[node].len) {
-				if (ind == sz(x) || x[ind] != s[st[node].fpos+i]) return ind;
+				if (ind == sz(x) || x[ind] != s[st[node].fpos+i]) 
+					return ind;
 				ind ++;
 			}
 		}

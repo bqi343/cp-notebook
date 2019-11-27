@@ -6,7 +6,7 @@
  */
 
 #include "MatrixInv.h"
-#include "../../number-theory (11.1)/Modular Arithmetic/Modular.h"
+#include "../../number-theory (11.1)/Modular Arithmetic/ModInt.h"
 
 mi numSpan(Mat<mi> m) { 
 	int n = m.r;

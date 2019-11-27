@@ -5,7 +5,8 @@
 
 #include "PolyInv.h"
 
-template<class T> pair<vector<T>,vector<T>> divi(const vector<T>& f, const vector<T>& g) { 
+template<class T> pair<vector<T>,vector<T>> divi(
+  const vector<T>& f, const vector<T>& g) { 
 	if (sz(f) < sz(g)) return {{},f};
 	auto q = mult(inv(rev(g),sz(f)-sz(g)+1),rev(f));
 	q.rsz(sz(f)-sz(g)+1); q = rev(q);

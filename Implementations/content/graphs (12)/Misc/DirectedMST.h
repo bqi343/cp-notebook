@@ -55,11 +55,12 @@ pair<ll,vi> dmst(int n, int r, const vector<Edge>& g) {
 					cyc = merge(cyc, heap[w = path.back().f]);
 					cycs.back().s.pb(path.back().s);
 					path.pop_back(); 
-				} while (dsu.unite(u, w));
+				} while (dsu.unite(u,w));
 				u = dsu.get(u); heap[u] = cyc, seen[u] = -1;
 			}
 		}
-		trav(t,path) in[dsu.get(t.s.b)] = {t.s.a,t.s.b}; // found path from root
+		trav(t,path) in[dsu.get(t.s.b)] = {t.s.a,t.s.b}; 
+		// found path from root
 	}
 	while (sz(cycs)) { // expand cycs to restore sol
 		auto c = cycs.back(); cycs.pop_back();

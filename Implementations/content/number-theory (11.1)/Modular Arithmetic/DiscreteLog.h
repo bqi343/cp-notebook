@@ -5,13 +5,12 @@
  * Verification: https://www.hackerrank.com/contests/infinitum11/challenges/discrete-logarithm/problem
  */
 
-#include "Modular.h"
+#include "ModInt.h"
 
 struct DiscreteLog {
 	int mod, root, block;
 	unordered_map<int,int> u;
 	mi cur;
-
 	int query(mi x) { 
 		F0R(i,block) {
 			if (u.count((int)x)) return i*block+u[(int)x];
@@ -19,7 +18,6 @@ struct DiscreteLog {
 		}
 		return -1;
 	}
-
 	void init(int m, int r) { // gcd(m,r) = 1
 		mod = m; root = r; block = sqrt(mod)+1;
 		u.clear(); 

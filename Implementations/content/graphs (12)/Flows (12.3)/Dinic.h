@@ -1,5 +1,6 @@
 /**
- * Description: fast flow
+ * Description: Fast flow. After computing flow, edges $\{u,v\}$ such that 
+	* $level[u] \neq -1,$ $level[v] = -1$ are part of min cut.
  * Time: $O(N^2M)$ flow, $O(M\sqrt N)$ bipartite matching
  * Source: GeeksForGeeks, Chilli
  * Verification: RMI 2017 Day 1 Fashion
@@ -19,7 +20,6 @@ template<int SZ> struct Dinic {
 	}
 	int level[SZ];
 	bool bfs() { // level = shortest distance from source
-		// after computing flow, edges {u,v} such that level[u] \neq -1, level[v] = -1 are part of min cut
 		F0R(i,N) level[i] = -1, cur[i] = begin(adj[i]);
 		queue<int> q({s}); level[s] = 0; 
 		while (sz(q)) {
@@ -33,7 +33,8 @@ template<int SZ> struct Dinic {
 		if (v == t) return flow;
 		for (; cur[v] != end(adj[v]); cur[v]++) {
 			Edge& e = *cur[v];
-			if (level[e.to] != level[v]+1 || e.flow == e.cap) continue;
+			if (level[e.to] != level[v]+1 || e.flow == e.cap) 
+				continue;
 			auto df = sendFlow(e.to,min(flow,e.cap-e.flow));
 			if (df) { // saturated at least one edge
 				e.flow += df; adj[e.to][e.rev].flow -= df;
@@ -45,7 +46,8 @@ template<int SZ> struct Dinic {
 	F maxFlow(int _N, int _s, int _t) {
 		N = _N, s = _s, t = _t; if (s == t) return -1;
 		F tot = 0;
-		while (bfs()) while (auto df = sendFlow(s,numeric_limits<F>::max())) tot += df;
+		while (bfs()) while (auto df = sendFlow(s,
+			numeric_limits<F>::max())) tot += df;
 		return tot;
 	}
 };

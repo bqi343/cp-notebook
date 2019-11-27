@@ -12,7 +12,6 @@ template<int SZ> struct LCA {
 	vpi tmp;
 	RMQ<pi> r;
 	void addEdge(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
-
 	void dfs(int u, int prev){
 		pos[u] = sz(tmp); depth[u] = depth[prev]+1;
 		tmp.pb({depth[u],u});
@@ -25,7 +24,6 @@ template<int SZ> struct LCA {
 		N = _N; dfs(R, 0);
 		r.init(tmp);
 	}
-
 	int lca(int u, int v){
 		u = pos[u], v = pos[v]; if (u > v) swap(u,v);
 		return r.query(u,v).s;

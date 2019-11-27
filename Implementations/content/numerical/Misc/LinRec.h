@@ -10,7 +10,7 @@
  */
 
 #include "../Polynomials/VecOp.h"
-#include "../../number-theory (11.1)/Modular Arithmetic/Modular.h"
+#include "../../number-theory (11.1)/Modular Arithmetic/ModInt.h"
 
 struct LinRec {
 	vmi x; // original sequence

@@ -59,6 +59,7 @@ There are many reasons to use C++11 over Java, such as
   * [CSA Graph Editor (+ Geo Visualizer + Diff Tool)](https://csacademy.com/app/graph_editor/)
   * [Desmos Grapher](https://www.desmos.com/calculator)
   * [Wolfram Alpha](https://www.wolframalpha.com/)
+  * [OEIS](https://oeis.org/)
 
 ### Other
 

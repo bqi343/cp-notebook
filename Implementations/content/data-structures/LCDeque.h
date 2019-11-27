@@ -1,18 +1,12 @@
 /**
- * Description: same as linecontainer but linear time given assumptions
+ * Description: same as LineContainer but linear time given assumptions
+ * Source: Own
+ * Verification: http://acm.hdu.edu.cn/diy/contest_showproblem.php?cid=36005&pid=1009
  */
 
 #include "LineContainer.h"
 
-struct LC0 : deque<Line> { // linear time w/ additional assumptions
-	// for doubles, use inf = 1/.0, div(a,b) = a/b
-	const ll inf = LLONG_MAX;
-	ll div(ll a, ll b) { return a/b-((a^b) < 0 && a%b); } // floored division
-	ll bet(const Line& x, const Line& y) { // last x such that first line is better
-		if (x.k == y.k) return x.m >= y.m ? inf : -inf;
-		return div(y.m-x.m,x.k-y.k);
-	}
-	
+struct LC0 : deque<Line> { 
 	void addBack(Line L) { // assume nonempty
 		while (1) {
 			auto a = back(); pop_back(); a.p = bet(a,L);
@@ -33,7 +27,6 @@ struct LC0 : deque<Line> { // linear time w/ additional assumptions
 		if (!size() || k <= front().k) addFront({k,m,0});
 		else assert(k >= back().k), addBack({k,m,0});
 	}
-	
 	int ord = 0; // 1 = increasing, -1 = decreasing
 	ll query(ll x) { 
 		assert(ord);

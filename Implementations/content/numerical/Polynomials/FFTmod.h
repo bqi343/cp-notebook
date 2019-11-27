@@ -2,6 +2,7 @@
  * Description: multiply two polynomials with arbitrary $MOD$
 	* ensures precision by splitting in half
  * Source: KACTL, https://cp-algorithms.com/algebra/fft.html
+ * Time: $\sim$0.8s when \texttt{sz(a)=sz(b)=1<<19}
  * Verification: see FFT
  */
 
@@ -29,9 +30,10 @@ vl multMod(const vl& a, const vl& b) {
 	vl ret(n);
 	F0R(i,n) {
 		ll V2 = (ll)round(v1[i].real()); // a1*b1
-		ll V1 = (ll)round(v1[i].imag())+(ll)round(v0[i].real()); // a0*b1+a1*b0
+		ll V1 = (ll)round(v1[i].imag())+(ll)round(v0[i].real()); 
+		// a0*b1+a1*b0
 		ll V0 = (ll)round(v0[i].imag()); // a0*b0
 		ret[i] = ((V2%MOD*cut+V1)%MOD*cut+V0)%MOD;
 	}
 	ret.rsz(s); return ret;
-} // ~0.8s when sz(a)=sz(b)=1<<19
+} 

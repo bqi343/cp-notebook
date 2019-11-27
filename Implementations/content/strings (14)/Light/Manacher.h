@@ -17,6 +17,6 @@ vi manacher(string s) {
 		if (i+ans[i] > hi) lo = i-ans[i], hi = i+ans[i];
 	}
 	ans.erase(begin(ans));
-	F0R(i,sz(ans)) if ((i&1) == (ans[i]&1)) ans[i] ++; // adjust lengths
+	F0R(i,sz(ans)) if ((i&1) == (ans[i]&1)) ans[i] ++; 
 	return ans;
 } 

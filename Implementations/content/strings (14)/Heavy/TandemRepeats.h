@@ -11,7 +11,7 @@
 struct TandemRepeats {
 	string S;
 	vector<array<int,3>> al; 
-	// (t[0],t[1],t[2]) -> there is a repeating substring starting at x 
+	// (t[0],t[1],t[2]) -> exists repeating substring starting at x 
 	// with length t[0]/2 for all t[1] <= x <= t[2]
 	vector<array<int,3>> solveLeft(string s, int m) {
 		vector<array<int,3>> v;

@@ -42,8 +42,8 @@ void ins(const vi& cur, int k) {
 	F0R(i,n) if (g[k].flag[i]) updateX(cur*g[k].sigma[i],k);
 }
 void updateX(const vi& cur, int k) {
-	int t = cur[k];
-	if (g[k].flag[t]) ins(inv(g[k].sigma[t])*cur,k-1); // fixes k -> k
+	int t = cur[k]; // if flag, fixes k -> k
+	if (g[k].flag[t]) ins(inv(g[k].sigma[t])*cur,k-1); 
 	else {
 		g[k].flag[t] = 1, g[k].sigma[t] = cur;
 		trav(x,g[k].gen) updateX(x*cur,k);

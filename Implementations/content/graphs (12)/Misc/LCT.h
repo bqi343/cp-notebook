@@ -40,8 +40,8 @@ struct snode {
 		return -1; // p is path-parent pointer,
 		// so not in current splay tree
 	}
-	// root of current splay tree
 	bool isRoot() { return dir() < 0; } 
+	// test if root of current splay tree
 	friend void setLink(sn x, sn y, int d) {
 		if (y) y->p = x;
 		if (d >= 0) x->c[d] = y;
@@ -72,19 +72,24 @@ struct snode {
 			pre = v;
 			// v->sz should remain the same if using vir
 		}
-		splay(); assert(!c[1]); // left subtree of this is now path to root, right subtree is empty
+		splay(); // left subtree of this is now path to root
+		assert(!c[1]); // right subtree is empty
 	}
 	void makeRoot() { access(); flip ^= 1; }
-	void set(int v) { splay(); val = v; calc(); } // change value in node, splay suffices instead of access because it doesn't affect values in nodes above it
+	void set(int v) { splay(); val = v; calc(); } // change value in node
+	// splay suffices instead of access because it doesn't affect values in nodes above it
 	//////// LINK CUT TREE QUERIES
 	friend sn lca(sn x, sn y) {
 		if (x == y) return x;
 		x->access(), y->access(); if (!x->p) return NULL; 
-		// access at y did not affect x, so they must not be connected
+		// access at y did not affect x
+		// so they must not be connected
 		x->splay(); return x->p ? x->p : x;
 	}
-	friend bool connected(sn x, sn y) { return lca(x,y); } // LCA is null if not connected
-	int distRoot() { access(); return getSz(c[0]); } // # nodes above
+	friend bool connected(sn x, sn y) { return lca(x,y); } 
+	// LCA is null if not connected
+	int distRoot() { access(); return getSz(c[0]); } 
+	// # nodes above
 	sn getRoot() { // get root of LCT component
 		access(); auto a = this; 
 		while (a->c[0]) a = a->c[0], a->prop();
@@ -122,10 +127,10 @@ struct snode {
 		y->c[0]->p = NULL; y->c[0] = NULL;
 		y->calc(); return 1;
 	}
-	friend bool cut(sn x, sn y) { // assumes x, y adjacent in tree
+	friend bool cut(sn x, sn y) { // if x, y adjacent in tree
 		x->makeRoot(); y->access(); 
 		if (y->c[0] != x || x->c[0] || x->c[1]) return 0; 
-		// splay tree with y should not contain anything else besides x
+		// splay tree with y should not contain anything besides x
 		assert(cut(y)); return 1;
 	}
 };

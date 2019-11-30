@@ -127,57 +127,51 @@ namespace io {
 
 using namespace io;
 
-template<class T> struct modular {
+typedef decay<decltype(MOD)>::type T;
+struct mi {
 	T val; 
 	explicit operator T() const { return val; }
-	modular() { val = 0; }
-	modular(const ll& v) { 
+	mi() { val = 0; }
+	mi(const ll& v) { 
 		val = (-MOD <= v && v <= MOD) ? v : v % MOD;
 		if (val < 0) val += MOD;
 	}
-	// friend ostream& operator<<(ostream& os, const modular& a) { return os << a.val; }
-	friend void pr(const modular& a) { pr(a.val); }
-	friend void re(modular& a) { ll x; re(x); a = modular(x); }
+	// friend ostream& operator<<(ostream& os, const mi& a) { 
+		// return os << a.val; }
+	friend void pr(const mi& a) { pr(a.val); }
+	friend void re(mi& a) { ll x; re(x); a = mi(x); }
    
-	friend bool operator==(const modular& a, const modular& b) { 
+	friend bool operator==(const mi& a, const mi& b) { 
 		return a.val == b.val; }
-	friend bool operator!=(const modular& a, const modular& b) { 
+	friend bool operator!=(const mi& a, const mi& b) { 
 		return !(a == b); }
-	friend bool operator<(const modular& a, const modular& b) { 
+	friend bool operator<(const mi& a, const mi& b) { 
 		return a.val < b.val; }
 
-	modular operator-() const { return modular(-val); }
-	modular& operator+=(const modular& m) { 
+	mi operator-() const { return mi(-val); }
+	mi& operator+=(const mi& m) { 
 		if ((val += m.val) >= MOD) val -= MOD; 
 		return *this; }
-	modular& operator-=(const modular& m) { 
+	mi& operator-=(const mi& m) { 
 		if ((val -= m.val) < 0) val += MOD; 
 		return *this; }
-	modular& operator*=(const modular& m) { 
+	mi& operator*=(const mi& m) { 
 		val = (ll)val*m.val%MOD; return *this; }
-	friend modular pow(modular a, ll p) {
-		modular ans = 1; 
+	friend mi pow(mi a, ll p) {
+		mi ans = 1; assert(p >= 0);
 		for (; p; p /= 2, a *= a) if (p&1) ans *= a;
 		return ans;
 	}
-	friend modular inv(const modular& a) { 
-		assert(a != 0); return pow(a,MOD-2); 
-	}
-	modular& operator/=(const modular& m) { 
-		return (*this) *= inv(m); }
+	friend mi inv(const mi& a) { 
+		assert(a != 0); return pow(a,MOD-2); }
+	mi& operator/=(const mi& m) { return (*this) *= inv(m); }
 	
-	friend modular operator+(modular a, const modular& b) { 
-		return a += b; }
-	friend modular operator-(modular a, const modular& b) { 
-		return a -= b; }
-	friend modular operator*(modular a, const modular& b) { 
-		return a *= b; }
-	
-	friend modular operator/(modular a, const modular& b) { 
-		return a /= b; }
+	friend mi operator+(mi a, const mi& b) { return a += b; }
+	friend mi operator-(mi a, const mi& b) { return a -= b; }
+	friend mi operator*(mi a, const mi& b) { return a *= b; }
+	friend mi operator/(mi a, const mi& b) { return a /= b; }
 };
 
-typedef modular<int> mi;
 typedef pair<mi,mi> pmi;
 typedef vector<mi> vmi;
 typedef vector<pmi> vpmi;

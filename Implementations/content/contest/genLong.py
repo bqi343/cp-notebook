@@ -1,4 +1,4 @@
-filenames = ['template.cpp', 'CppIO.h', '../number-theory (11.1)/Modular Arithmetic/Modular.h']
+filenames = ['template.cpp', 'CppIO.h', '../number-theory (11.1)/Modular Arithmetic/ModInt.h']
 with open('templateLong.cpp', 'w') as outfile:
 	res = []
 	active = False

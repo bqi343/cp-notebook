@@ -21,6 +21,7 @@ namespace Point {
 		return P(c.real(),c.imag());
 	}
 	
+	P operator-(const P& l) { return P(-l.f,-l.s); }
 	P operator+(const P& l, const P& r) { 
 		return P(l.f+r.f,l.s+r.s); }
 	P operator-(const P& l, const P& r) { 

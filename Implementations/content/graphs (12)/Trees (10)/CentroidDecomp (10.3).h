@@ -16,7 +16,7 @@ template<int SZ> struct CD {
 	pi cen[SZ]; // immediate centroid anc
 	vi dist[SZ]; // dists to all centroid ancs
 	void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
-	void dfs (int x) {
+	void dfs(int x) {
 		sub[x] = 1;
 		trav(y,adj[x]) if (!done[y] && y != par[x]) {
 			par[y] = x; dfs(y);

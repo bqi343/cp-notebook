@@ -20,11 +20,11 @@ struct Line {
 // for doubles, use inf = 1/.0, div(a,b) = a/b
 const ll inf = LLONG_MAX;
 // floored division
-ll div(ll a, ll b) { return a/b-((a^b) < 0 && a%b); } 
+ll divi(ll a, ll b) { return a/b-((a^b) < 0 && a%b); } 
 // last x such that first line is better
 ll bet(const Line& x, const Line& y) { 
 	if (x.k == y.k) return x.m >= y.m ? inf : -inf;
-	return div(y.m-x.m,x.k-y.k);
+	return divi(y.m-x.m,x.k-y.k);
 }
 
 struct LC : multiset<Line,less<>> { 

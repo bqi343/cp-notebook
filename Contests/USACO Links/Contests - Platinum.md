@@ -118,5 +118,13 @@ These problems are all submittable through the current USACO website. Percentage
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=925) | mooriokart    | Tree / Knapsack                          | Done   | 17   |
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=926) | mowing        | Convexity / Binary Search / Queue        | Done   | 3    |
 | 2019 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=948) | treeboxes     | LCA                                      | Done   | ?    |
-|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=949) | escape        | DP / DSU                                 | Done   | ?    |
-|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=950) | valleys       | DSU                                      | Done   | ?    |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=949) | escape        | DP / DSU / MST                           | Done   | ?    |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=950) | valleys       | DSU / Euler's Formula                    | Done   | ?    |
+
+(getting ready for another year!)
+
+| Contest   | #                                                              | Name          | Topic                                    | Result | %    |
+| --------- | -------------------------------------------------------------- | ------------- | ---------------------------------------- | ------ | ---- |
+| 2019 Dec  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=948) | treeboxes     |                                          |        | ?    |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=949) | escape        |                                          |        | ?    |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=950) | valleys       |                                          |        | ?    |

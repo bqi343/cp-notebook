@@ -50,5 +50,5 @@ template<class T> bool ckmax(T& a, const T& b) {
 mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());
 
 int main() {
-	cin.sync_with_stdio(0); cin.tie(0); 
+	ios_base::sync_with_stdio(0); cin.tie(0);
 }

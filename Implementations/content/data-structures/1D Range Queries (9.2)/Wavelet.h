@@ -1,5 +1,7 @@
 /**
-* Description: Segment tree on values instead of indices
+* Description: Segment tree on values instead of indices. 
+	* Return $k$-th largest number in interval (lo,hi]
+* Time: O(\log N)
 * Source: http://rachitiitr.blogspot.com/2017/06
 	/wavelet-trees-wavelet-trees-editorial.html
 * Verification: http://www.spoj.com/problems/MKTHNUM/
@@ -16,19 +18,14 @@ template<int SZ> struct Wavelet {
 			mapl[ind].pb(sz(val[2*ind])-1);
 			mapr[ind].pb(sz(val[2*ind+1])-1);
 		}
-		build(a,2*ind,L,M);
-		build(a,2*ind+1,M+1,R);
+		build(a,2*ind,L,M); build(a,2*ind+1,M+1,R);
 	}
-
 	int getl(int ind, int x) { return x < 0 ? -1 : mapl[ind][x]; }
 	int getr(int ind, int x) { return x < 0 ? -1 : mapr[ind][x]; }
-	int query(int lind, int rind, int k, int ind = 1, int L = 0, int R = SZ-1) { // get k-th largest number in interval
+	int query(int lo, int hi, int k, int ind = 1, int L = 0, int R = SZ-1) { 
 		if (L == R) return L;
-		int M = (L+R)/2;
-		int t = getl(ind,rind)-getl(ind,lind-1);
-		if (t >= k) return query(getl(ind,lind-1)+1,
-								getl(ind,rind),k,2*ind,L,M);
-		return query(getr(ind,lind-1)+1,
-					getr(ind,rind),k-t,2*ind+1,M+1,R);
+		int M = (L+R)/2, t = getl(ind,hi)-getl(ind,lo);
+		if (t >= k) return query(getl(ind,lo),getl(ind,hi),k,2*ind,L,M);
+		return query(getr(ind,lo),getr(ind,hi),k-t,2*ind+1,M+1,R);
 	}
 };

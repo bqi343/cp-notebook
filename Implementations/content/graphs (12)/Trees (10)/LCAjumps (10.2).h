@@ -1,5 +1,6 @@
 /**
- * Description: calculates least common ancestor in tree with binary jumping
+ * Description: Calculates least common ancestor in tree with binary jumping. 
+ 	* Vertices labeled from $1$ to $N$, $R$ is the root.
  * Time: O(N\log N)
  * Source: USACO Camp
  * Verification: Debug the Bugs
@@ -7,7 +8,7 @@
 
 template<int SZ> struct LCA {
 	static const int BITS = 32-__builtin_clz(SZ);
-	int N, R = 1; // vertices from 1 to N, R = root
+	int N, R = 1; 
 	vi adj[SZ];
 	int par[BITS][SZ], depth[SZ];
 	// INITIALIZE

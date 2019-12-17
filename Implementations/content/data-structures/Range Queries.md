@@ -70,6 +70,7 @@
 ## 6
 
   * [Wavelet Tree](http://codeforces.com/blog/entry/52854)
+    * [DMOJ](https://dmoj.ca/problem/globexcup19s4)
   * [Segment Tree Beats](http://codeforces.com/blog/entry/57319)
   * Sqrt Tree (don't think this is useful for anything tho)
     * [Pt 1](http://codeforces.com/blog/entry/57046)

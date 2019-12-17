@@ -42,13 +42,11 @@ int recalc(pi node, int num) {
 void input() {
     freopen("atlarge.in","r",stdin);
     freopen("atlarge.out","w",stdout);
-
     cin >> N;
     F0R(i,N-1) {
         int a,b; cin >> a >> b;
         adj[a].pb(b), adj[b].pb(a);
     }
-    
     FOR(i,1,N+1) for (int j: adj[i]) dp[{i,j}] = 1;
 }
 
@@ -57,7 +55,6 @@ queue<pi> todo;
 
 void genCloseLeaf() {
     FOR(i,1,N+1) for (int j: adj[i]) lef[i].insert(j);
-    
     FOR(i,1,N+1) if (sz(adj[i]) == 1) {
         for (int j: adj[i]) {
             closeLeaf[{j,i}] = 0;
@@ -65,7 +62,6 @@ void genCloseLeaf() {
             lef[i].erase(j);
         }
     }
-    
     while (sz(todo) > 0) {
         auto a = todo.front(); todo.pop();
         for (int i: lef[a.f]) if (i != a.s) {
@@ -74,23 +70,22 @@ void genCloseLeaf() {
             lef[a.f].erase(i);
         }
     }
-    
     for (auto a: closeLeaf) if (a.s > 0) testChange[a.s-1].insert(a.f);
 }
 
 set<pi> done;
 
-void calcVals() {
+void calcVals() { // help I have no idea what this is doing lol
     FORd(i,1,N) {
         vector<pair<pi,int>> change;
         for (pi j: testChange[i]) {
             int DPJ = recalc(j,i);
             if (DPJ != dp[j]) change.pb({j,DPJ});
         }
-        
         for (auto a: change) {
             dp[a.f] = a.s;
-            if (i > 0) for (int j: adj[a.f.f]) if (j != a.f.s) testChange[i-1].insert({j,a.f.f});
+            if (i > 0) for (int j: adj[a.f.f]) if (j != a.f.s) 
+                testChange[i-1].insert({j,a.f.f});
         }
     }
 }

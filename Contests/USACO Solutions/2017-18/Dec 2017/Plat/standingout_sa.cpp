@@ -184,33 +184,47 @@ struct SuffixArray {
 	}
 	vi sa, isa;
 	void genSa() {
-		sa.rsz(N); isa.rsz(N); F0R(i,N) sa[i] = N-1-i, isa[i] = S[i];
+		sa.rsz(N), isa.rsz(N); F0R(i,N) sa[i] = N-1-i;
 		stable_sort(all(sa), [this](int i, int j) { 
 			return S[i] < S[j]; });
+		F0R(i,N) {
+			bool same = i && sa[i-1]+1 < N && S[sa[i]] == S[sa[i-1]];
+			isa[sa[i]] = same ? isa[sa[i-1]] : i; 
+		}
 		for (int len = 1; len < N; len *= 2) { 
+			// sufs currently sorted by first len chars
+			// those of shorter length go later
 			vi is(isa), s(sa), nex(N); iota(all(nex),0); 
-			F0R(i,N) { // compare first len characters of each suf
-				bool same = i && sa[i-1]+len < N
-							  && is[sa[i]] == is[sa[i-1]]
-							  && is[sa[i]+len/2] == is[sa[i-1]+len/2];
-				isa[sa[i]] = same ? isa[sa[i-1]] : i;
-			} 
-			F0R(i,N) { // rearrange sufs with >len chars
+			F0R(i,N) { // rearrange sufs with length > len
 				int s1 = s[i]-len; 
 				if (s1 >= 0) sa[nex[isa[s1]]++] = s1; 
 			} 
+			F0R(i,N) { // update isa for 2*len
+				bool same = i && sa[i-1]+2*len < N 
+							  && is[sa[i]] == is[sa[i-1]]
+							  && is[sa[i]+len] == is[sa[i-1]+len]; 
+				isa[sa[i]] = same ? isa[sa[i-1]] : i; 
+			}
 		}
 	}
 	vi lcp;
 	void genLcp() { // Kasai's Algo
 		lcp = vi(N-1); int h = 0;
 		F0R(i,N) if (isa[i]) {
-			for (int j = sa[isa[i]-1]; j+h < N && S[i+h] == S[j+h]; h++);
+			for (int j=sa[isa[i]-1]; j+h<N && S[i+h]==S[j+h]; h++);
 			lcp[isa[i]-1] = h; if (h) h--; 
 			// if we cut off first chars of two strings 
 			// with lcp h then remaining portions still have lcp h-1 
 		}
 	}
+	/*RMQ<int> R; 
+	int getLCP(int a, int b) { // lcp of suffixes starting at a,b
+		if (max(a,b) >= N) return 0;
+		if (a == b) return N-a;
+		int t0 = isa[a], t1 = isa[b];
+		if (t0 > t1) swap(t0,t1);
+		return R.query(t0,t1-1);
+	}*/
 };
 
 SuffixArray S;

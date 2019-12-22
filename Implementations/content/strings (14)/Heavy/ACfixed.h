@@ -13,7 +13,7 @@ struct ACfixed { // fixed alphabet
 	};
 	vector<node> d;
 	ACfixed() { d.eb(); }
-	int add(string s) { // add word
+	int add(str s) { // add word
 		int v = 0;
 		trav(C,s) {
 			int c = C-'a';

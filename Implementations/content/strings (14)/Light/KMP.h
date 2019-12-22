@@ -6,7 +6,7 @@
  * Verification: https://open.kattis.com/problems/stringmatching
  */
 
-vi kmp(string s) {
+vi kmp(str s) {
 	int N = sz(s); vi f(N+1); f[0] = -1;
 	FOR(i,1,N+1) {
 		f[i] = f[i-1];
@@ -15,7 +15,7 @@ vi kmp(string s) {
 	}
 	return f;
 }
-vi getOc(string a, string b) { // find occurrences of a in b
+vi getOc(str a, str b) { // find occurrences of a in b
 	vi f = kmp(a+"@"+b), ret;
 	FOR(i,sz(a),sz(b)+1) if (f[i+sz(a)+1] == sz(a)) 
 		ret.pb(i-sz(a));

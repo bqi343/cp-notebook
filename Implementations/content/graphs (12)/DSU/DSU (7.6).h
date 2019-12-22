@@ -1,6 +1,7 @@
 /**
  * Description: Disjoint Set Union with path compression. 
- 	* Add edges and test connectivity.
+ 	* Add edges and test connectivity. Use for Kruskal's 
+ 	* minimum spanning tree.
  * Time: O(\alpha(N))
  * Source: CSAcademy, KACTL
  * Verification: USACO superbull
@@ -18,3 +19,10 @@ struct DSU {
 		return 1;
 	}
 };
+
+/**template<class T> T kruskal(int n, vector<pair<T,pi>> ed) {
+	sort(all(ed));
+	T ans = 0; DSU D; D.init(n); // edges that unite are in MST
+	trav(a,ed) if (D.unite(a.s.f,a.s.s)) ans += a.f; 
+	return ans;
+}*/

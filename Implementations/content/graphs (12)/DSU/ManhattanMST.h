@@ -12,7 +12,7 @@
 	* TC 760 ComponentsForever
  */
 
-#include "MST (7.6).h"
+#include "DSU (7.6).h"
 
 vector<pair<int,pi>> manhattanMst(vpi v) {
 	vi id(sz(v)); iota(all(id),0);

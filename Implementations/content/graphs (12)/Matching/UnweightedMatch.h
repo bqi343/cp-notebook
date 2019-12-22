@@ -16,7 +16,8 @@ template<int SZ> struct UnweightedMatch {
 	}
 	queue<int> Q;
 	int par[SZ], vis[SZ], orig[SZ], aux[SZ], t; 
-	void augment(int u, int v) { // flip state of edges on u-v path
+	void augment(int u, int v) { 
+		// flip states of edges on u-v path
 		int pv = v, nv;
 		do {
 			pv = par[v]; nv = match[pv];

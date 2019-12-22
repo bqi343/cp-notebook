@@ -1,13 +1,12 @@
 /**
- * Description: multiply two 64-bit integers mod another if 128-bit is not available,
-	* works for $0\le a,b<mod<2^{63}$
+ * Description: Multiply two 64-bit integers mod another if 128-bit is not available.
+	* modMul is equivalent to \texttt{(ul)(\_\_int128(a)*b\%mod)}. 
+	* Works for $0\le a,b<mod<2^{63}.$
  * Source: KACTL
  * Verification: see "Faster Factoring"
  */
 
 typedef unsigned long long ul;
-
-// equivalent to (ul)(__int128(a)*b%mod)
 ul modMul(ul a, ul b, const ul mod) {
 	ll ret = a*b-mod*(ul)((ld)a*b/mod);
 	return ret+((ret<0)-(ret>=(ll)mod))*mod;

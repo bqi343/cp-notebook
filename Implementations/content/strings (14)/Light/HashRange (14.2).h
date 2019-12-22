@@ -21,9 +21,9 @@ T operator*(const T& l, const T& r) { T x;
 	F0R(i,2) x[i] = (ll)l[i]*r[i]%MOD; return x; }
 
 struct HashRange {
-	string S; 
+	str S; 
 	vector<T> pows, cum;
-	void init(string _S) {
+	void init(str _S) {
 		S = _S; pows.rsz(sz(S)), cum.rsz(sz(S)+1);
 		pows[0] = {1,1}; FOR(i,1,sz(S)) pows[i] = pows[i-1]*base;
 		F0R(i,sz(S)) {

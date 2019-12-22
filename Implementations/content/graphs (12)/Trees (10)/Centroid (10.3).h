@@ -9,7 +9,7 @@
 	* Triway Cup 2019 G
  */
 
-template<int SZ> struct CD {
+template<int SZ> struct Centroid {
 	vi adj[SZ];
 	bool done[SZ]; 
 	int sub[SZ], par[SZ]; // subtree size, current par

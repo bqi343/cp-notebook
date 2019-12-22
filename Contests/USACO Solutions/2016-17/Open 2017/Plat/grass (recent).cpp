@@ -119,7 +119,7 @@ namespace io {
 	void setIn(string s) { freopen(s.c_str(),"r",stdin); }
 	void setOut(string s) { freopen(s.c_str(),"w",stdout); }
 	void setIO(string s = "") {
-		ios_base::sync_with_stdio(0); cin.tie(0); // fast I/O
+		cin.sync_with_stdio(0); cin.tie(0); // fast I/O
 		// cin.exceptions(cin.failbit); // ex. throws exception when you try to read letter into int
 		if (sz(s)) { setIn(s+".in"), setOut(s+".out"); } // for USACO
 	}
@@ -176,9 +176,103 @@ typedef pair<mi,mi> pmi;
 typedef vector<mi> vmi;
 typedef vector<pmi> vpmi;
 
+struct DSU {
+	vi e; void init(int n) { e = vi(n,-1); }
+	int get(int x) { return e[x] < 0 ? x : e[x] = get(e[x]); } 
+	bool sameSet(int a, int b) { return get(a) == get(b); }
+	int size(int x) { return -e[get(x)]; }
+	bool unite(int x, int y) { // union-by-rank
+		x = get(x), y = get(y); if (x == y) return 0;
+		if (e[x] > e[y]) swap(x,y);
+		e[x] += e[y]; e[y] = x;
+		return 1;
+	}
+};
+
+int N,M,K,Q;
+vector<pair<int,pi>> ed, ED;
+set<pi> vals[MX];
+map<int,multiset<int>> child[MX];
+multiset<int> ans;
+vpi adj[MX];
+int par[MX], wei[MX], col[MX];
+
+void dfs(int x) {
+	trav(t,adj[x]) if (t.f != par[x]) {
+		par[t.f] = x;
+		wei[t.f] = t.s;
+		dfs(t.f);
+	}
+}
+
+int getAns(int x) {
+	auto it = begin(vals[x]);
+	while (1) {
+		if (it == end(vals[x])) return MOD;
+		if (it->s != col[x]) return it->f;
+		it ++;
+	}
+}
+
+template<class A, class B> void ins(A& a, B b) { a.insert(b); }
+template<class A, class B> void rem(A& a, B b) { 
+	auto it = a.find(b);
+	if (it == end(a)) {
+		ps("OOPS");
+		exit(0);
+	}
+	a.erase(it);
+}
+
 int main() {
-	ios_base::sync_with_stdio(0); cin.tie(0);
-	// you should actually read the stuff at the bottom
+	setIO("grass");
+	re(N,M,K,Q);
+	F0R(i,M) {
+		int A,B,L; re(A,B,L);
+		ed.pb({L,{A,B}});
+	}
+	sort(all(ed));
+	DSU D; D.init(N+1);
+	trav(a,ed) if (D.unite(a.s.f,a.s.s)) {
+		adj[a.s.f].pb({a.s.s,a.f});
+		adj[a.s.s].pb({a.s.f,a.f});
+	}
+	dfs(1);
+	FOR(i,1,N+1) re(col[i]);
+	FOR(i,1,N+1) if (par[i]) 
+		ins(child[par[i]][col[i]],wei[i]);
+	FOR(i,1,N+1) {
+		trav(t,child[i]) ins(vals[i],mp(*begin(t.s),t.f));
+		ins(ans,getAns(i));
+	}
+	//FOR(i,1,N+1) ps(i,par[i],wei[i]);
+	//exit(0);
+	F0R(i,Q) {
+		int A,B; re(A,B); 
+		int p = par[A];
+		if (p) {
+			rem(ans,getAns(p));
+			{
+				multiset<int>& m = child[p][col[A]];
+				assert(sz(m));
+				vals[p].erase(mp(*begin(m),col[A]));
+				rem(m,wei[A]);
+				if (!sz(m)) child[p].erase(col[A]);
+				else ins(vals[p],mp(*begin(m),col[A]));
+			}
+			{
+				multiset<int>& m = child[p][B];
+				if (sz(m)) rem(vals[p],mp(*begin(m),B));
+				ins(m,wei[A]);
+				ins(vals[p],mp(*begin(m),B));
+			}
+			ins(ans,getAns(p));
+		}
+		rem(ans,getAns(A));
+		col[A] = B;
+		ins(ans,getAns(A));
+		ps(*begin(ans));
+	}
 }
 
 /* stuff you should look for

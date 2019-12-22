@@ -119,7 +119,7 @@ namespace io {
 	void setIn(string s) { freopen(s.c_str(),"r",stdin); }
 	void setOut(string s) { freopen(s.c_str(),"w",stdout); }
 	void setIO(string s = "") {
-		ios_base::sync_with_stdio(0); cin.tie(0); // fast I/O
+		cin.sync_with_stdio(0); cin.tie(0); // fast I/O
 		// cin.exceptions(cin.failbit); // ex. throws exception when you try to read letter into int
 		if (sz(s)) { setIn(s+".in"), setOut(s+".out"); } // for USACO
 	}
@@ -176,9 +176,90 @@ typedef pair<mi,mi> pmi;
 typedef vector<mi> vmi;
 typedef vector<pmi> vpmi;
 
+struct SuffixArray {
+	string S; int N;
+	void init(const string& _S) {
+		S = _S; N = sz(S);
+		genSa(); genLcp(); // R.init(lcp);
+	}
+	vi sa, isa;
+	void genSa() {
+		sa.rsz(N); isa.rsz(N); F0R(i,N) sa[i] = N-1-i, isa[i] = S[i];
+		stable_sort(all(sa), [this](int i, int j) { 
+			return S[i] < S[j]; });
+		for (int len = 1; len < N; len *= 2) { 
+			vi is(isa), s(sa), nex(N); iota(all(nex),0); 
+			F0R(i,N) { // compare first len characters of each suf
+				bool same = i && sa[i-1]+len < N
+							  && is[sa[i]] == is[sa[i-1]]
+							  && is[sa[i]+len/2] == is[sa[i-1]+len/2];
+				isa[sa[i]] = same ? isa[sa[i-1]] : i;
+			} 
+			F0R(i,N) { // rearrange sufs with >len chars
+				int s1 = s[i]-len; 
+				if (s1 >= 0) sa[nex[isa[s1]]++] = s1; 
+			} 
+		}
+	}
+	vi lcp;
+	void genLcp() { // Kasai's Algo
+		lcp = vi(N-1); int h = 0;
+		F0R(i,N) if (isa[i]) {
+			for (int j = sa[isa[i]-1]; j+h < N && S[i+h] == S[j+h]; h++);
+			lcp[isa[i]-1] = h; if (h) h--; 
+			// if we cut off first chars of two strings 
+			// with lcp h then remaining portions still have lcp h-1 
+		}
+	}
+};
+
+SuffixArray S;
+int N;
+vs v;
+str tot;
+vi len, cat;
+
 int main() {
-	ios_base::sync_with_stdio(0); cin.tie(0);
-	// you should actually read the stuff at the bottom
+	setIO("standingout");
+	re(N); v.rsz(N); re(v);
+	int cnt = 0;
+	trav(t,v) {
+		F0R(i,sz(t)+1) {
+			len.pb(sz(t)-i);
+			cat.pb(cnt);
+		}
+		tot += t; tot += '#'; cnt ++;
+	}
+	vl ans(cnt);
+	S.init(tot);
+	F0R(i,sz(S.lcp)) {
+		ckmin(S.lcp[i],min(len[S.sa[i]],len[S.sa[i+1]]));
+	}
+	// ps(tot,S.sa);
+	cnt = 0;
+	trav(t,S.sa) {
+		// ps(t,len[t],tot.substr(t,sz(tot)-t));
+		if (cnt < sz(S.lcp)) {
+			// ps(S.lcp[cnt]);
+			cnt ++;
+		}
+	}
+	for (int i = 0; i < sz(S.sa); ) {
+		int I = i; int z = cat[S.sa[I]];
+		while (i < sz(S.sa) && cat[S.sa[i]] == z) i ++;
+		FOR(j,I,i) {
+			ans[z] += len[S.sa[j]];
+			if (j > I) ans[z] -= S.lcp[j-1];
+		}
+		if (I) ans[z] -= S.lcp[I-1];
+		if (i < sz(S.sa)) ans[z] -= S.lcp[i-1];
+		if (I && i < sz(S.sa)) {
+			int mn = MOD;
+			FOR(j,I-1,i) ckmin(mn,S.lcp[j]);
+			ans[z] += mn;
+		}
+	}
+	trav(t,ans) ps(t);
 }
 
 /* stuff you should look for

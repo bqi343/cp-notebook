@@ -11,8 +11,8 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 
   * [Explanation](https://codeforces.com/blog/entry/54682?#comment-387553)
   * Problems
-    * [Nagini](https://codeforces.com/contest/855/submission/47823825)
-    * [Welcome home, Chtholly](https://codeforces.com/contest/896/submission/47824007)
+	* [Nagini](https://codeforces.com/contest/855/submission/47823825)
+	* [Welcome home, Chtholly](https://codeforces.com/contest/896/submission/47824007)
 
 # Snippets
 
@@ -22,15 +22,22 @@ TopCoder:
 
 ```
 class C {
-    public:
-        int m() {
-
-        }
+	public:
+		void gen(int seed) {
+			ll state = seed;
+			while (1) {
+				state = (state * 1103515245 + 12345) % (1LL<<31);
+				
+			}
+		}
+		int m() {
+			
+		}
 };
 
 int main() {
-    setIO();
-    C c; ps(c.m());
+	setIO();
+	C c; ps(c.m());
 }
 ```
 
@@ -40,21 +47,21 @@ Google Kickstart / Facebook Hacker Cup
 int N;
 
 void inp(vi& v) { // common way to reduce amount of input
-    v.rsz(1); ll A,B,C; re(v,A,B,C);
-    while (sz(v) < N) v.pb((A*v.back()+B)%C+1);
+	v.rsz(1); ll A,B,C; re(v,A,B,C);
+	while (sz(v) < N) v.pb((A*v.back()+B)%C+1);
 }
 
 void solve(int caseNum) {
-    cerr << "Doing #" << caseNum << "\n";
+	cerr << "Doing #" << caseNum << "\n";
 
 }
 
 int main() {
-    // setIO("A");
-    int T; re(T);
-    FOR(i,1,T+1) {
-        pr("Case #",i,": ");
-        solve(i);
-    }
+	// setIO("A");
+	int T; re(T);
+	FOR(i,1,T+1) {
+		pr("Case #",i,": ");
+		solve(i);
+	}
 }
 ```

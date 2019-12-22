@@ -33,7 +33,7 @@ template<int SZ> struct PalTree {
 			seriesAns[v] = ans[n-1-(len[slink[v]]+diff[v])];
 			if (diff[v] == diff[link[v]]) 
 				F0R(i,2) ckmin(seriesAns[v][i],seriesAns[link[v]][i]);
-			// previous oc of link[v] coincides with start of last oc of v
+			// previous oc of link[v] = start of last oc of v
 			F0R(i,2) ckmin(ans[n-1][i],seriesAns[v][i^1]+1);
 		}
 	}

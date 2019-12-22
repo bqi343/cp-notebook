@@ -13,7 +13,6 @@ struct ED {
 	int cnt() { return (a != -1)+(b != -1); }
 	int a, b;
 };
-
 struct F { P3 q; int a, b, c; };
 
 vector<F> hull3d(const vP3& A) { 
@@ -29,7 +28,6 @@ vector<F> hull3d(const vP3& A) {
 		FS.pb(f);
 	};
 	F0R(i,4) FOR(j,i+1,4) FOR(k,j+1,4) mf(i, j, k, 6-i-j-k);
-
 	FOR(i,4,sz(A)) {
 		F0R(j,sz(FS)) {
 			F f = FS[j];

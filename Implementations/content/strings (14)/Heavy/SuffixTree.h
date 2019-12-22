@@ -21,7 +21,7 @@ struct SuffixTree {
 		st.pb(state(pos,len)); return sz(st)-1;
 	}
 	void goEdge() {
-		while (pos > 1 && pos > st[st[node].to[s[sz(s)-pos]]].len) {
+		while (pos>1 && pos>st[st[node].to[s[sz(s)-pos]]].len) {
 			node = st[node].to[s[sz(s)-pos]];
 			pos -= st[node].len;
 		}

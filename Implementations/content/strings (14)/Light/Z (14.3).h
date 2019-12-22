@@ -8,7 +8,7 @@
  * Verification: POI 12 Template, https://codeforces.com/contest/1137/problem/B
  */
 
-vi z(string s) {
+vi z(str s) {
 	int N = sz(s); s += '#';
 	vi ans(N); ans[0] = N; 
 	int L = 1, R = 0;
@@ -19,7 +19,7 @@ vi z(string s) {
 	}
 	return ans;
 }
-vi getPrefix(string a, string b) { // find prefixes of a in b
+vi getPrefix(str a, str b) { // find prefixes of a in b
 	vi t = z(a+b), T(sz(b));
 	F0R(i,sz(T)) T[i] = min(t[i+sz(a)],sz(a));
 	return T;

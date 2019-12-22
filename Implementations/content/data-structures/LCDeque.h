@@ -23,7 +23,7 @@ struct LC0 : deque<Line> {
 		}
 		push_front(L);
 	}
-	void add(ll k, ll m) { // assume line goes to one end of deque
+	void add(ll k, ll m) { // line goes to one end of deque
 		if (!size() || k <= front().k) addFront({k,m,0});
 		else assert(k >= back().k), addBack({k,m,0});
 	}
@@ -34,7 +34,8 @@ struct LC0 : deque<Line> {
 			while (front().p < x) pop_front();
 			return front().eval(x);
 		} else {
-			while (size() > 1 && prev(prev(end()))->p >= x) pop_back();
+			while (size() > 1 && prev(prev(end()))->p >= x) 
+				pop_back();
 			return back().eval(x);
 		}
 	}	

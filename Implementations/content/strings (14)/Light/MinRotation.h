@@ -5,7 +5,7 @@
  * Verification: https://cses.fi/problemset/task/1110/
  */
  
-int minRotation(string s) {
+int minRotation(str s) {
 	int a = 0, N = sz(s); s += s;
 	F0R(b,N) F0R(i,N) { 
 		// a is current best rotation found up to b-1

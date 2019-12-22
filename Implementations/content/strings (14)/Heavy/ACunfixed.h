@@ -13,7 +13,7 @@ struct ACunfixed {
 	vector<node> d;
 	ACunfixed() { d.emplace_back(); }
 	
-	int add(string s) { // add word
+	int add(str s) { // add word
 		int v = 0;
 		trav(c,s) {
 			if (!d[v].to.count(c)) {

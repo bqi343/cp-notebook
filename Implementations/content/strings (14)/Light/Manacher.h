@@ -6,8 +6,8 @@
  * Verification: http://www.spoj.com/problems/MSUBSTR/
  */
 
-vi manacher(string s) {
-	string s1 = "@"; trav(c,s) s1 += c, s1 += "#";
+vi manacher(str s) {
+	str s1 = "@"; trav(c,s) s1 += c, s1 += "#";
 	s1.back() = '&';
 	vi ans(sz(s1)-1);
 	int lo = 0, hi = 0;

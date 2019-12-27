@@ -46,3 +46,5 @@
         * Min Weight Graphic + Colorful
         * [NAIPC 2018 Sols](http://serjudging.vanb.org/?p=1165)
         * [Arup Guha Sol](http://www.cs.ucf.edu/~dmarino/progcontests/mysols/northamerica/2018/g.java)
+      * [TST](https://dmoj.ca/problem/dmopc19c3p6)
+        * Partition into 3 MST's

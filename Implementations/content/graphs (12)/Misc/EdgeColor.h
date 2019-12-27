@@ -6,6 +6,8 @@
  * Source: 
 	* https://en.m.wikipedia.org/wiki/Vizing%27s_theorem 
 	* https://en.wikipedia.org/wiki/Misra_%26_Gries_edge_coloring_algorithm
+	* https://apps.dtic.mil/dtic/tr/fulltext/u2/a093097.pdf (optimal edge color on bipartite)
+	* https://codeforces.com/blog/entry/62593
  * Verification: https://open.kattis.com/problems/gamescheduling
  */
  

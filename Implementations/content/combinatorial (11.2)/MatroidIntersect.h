@@ -1,7 +1,8 @@
 /**
- * Description: computes a set of maximum size which is independent 
+ * Description: Computes a set of maximum size which is independent 
  	* in both graphic and colorful matroids, aka a spanning forest where
- 	* no two edges are of the same color
+ 	* no two edges are of the same color. In general, construct the exchange
+ 	* graph and find a shortest path.
  * Time: $O(GI^{1.5})$ calls to oracles, where $G$ is the size of the ground set 
  	* and $I$ is the size of the independent set
  * Source: https://codeforces.com/blog/entry/69287

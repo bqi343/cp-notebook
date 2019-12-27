@@ -1,6 +1,6 @@
 /**
- * Description: multiply two polynomials with arbitrary $MOD$
-	* ensures precision by splitting in half
+ * Description: Multiply two polynomials with arbitrary $MOD.$
+	* Ensures precision by splitting into halves.
  * Source: KACTL, https://cp-algorithms.com/algebra/fft.html
  * Time: $\sim$0.8s when \texttt{sz(a)=sz(b)=1<<19}
  * Verification: see FFT

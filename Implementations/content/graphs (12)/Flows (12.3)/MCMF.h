@@ -25,7 +25,7 @@ template<int SZ> struct MCMF {
 	pi pre[SZ]; // previous vertex, edge label on path
 	pair<C,F> cost[SZ]; // tot cost of path, amount of flow
 	C totCost, curCost; F totFlow; 
-	bool spfa() { // find lowest cost path such that you can send flow through it
+	bool spfa() { // find lowest cost path to send flow through
 		F0R(i,N) cost[i] = {numeric_limits<C>::max(),0}; 
 		cost[s] = {0,numeric_limits<F>::max()};
 		pqg<pair<C,int>> todo; todo.push({0,s});

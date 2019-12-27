@@ -1,10 +1,10 @@
 /**
- * Description: 1D range update, range query
+ * Description: 1D range update and query. Set SZ to a power of 2.
  * Source: USACO Counting Haybales
  * Verification: SPOJ Horrible
  */
 
-template<class T, int SZ> struct LazySeg { // set SZ to a power of 2
+template<class T, int SZ> struct LazySeg { 
 	T sum[2*SZ], lazy[2*SZ]; 
 	LazySeg() {
 		memset(sum,0,sizeof sum);

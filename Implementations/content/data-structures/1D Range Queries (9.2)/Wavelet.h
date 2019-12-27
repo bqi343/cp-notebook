@@ -1,31 +1,32 @@
 /**
 * Description: Segment tree on values instead of indices. 
-	* Return $k$-th largest number in interval (lo,hi]
-* Time: O(\log N)
+	* Returns $k$-th largest number in 0-indexed interval \texttt{[lo,hi)}.
+	* SZ should be a power of 2, and all values in $a$ must lie in \texttt{[0,SZ)}.
+* Memory: O(N\log N)
+* Time: O(\log N) query
 * Source: http://rachitiitr.blogspot.com/2017/06
 	/wavelet-trees-wavelet-trees-editorial.html
 * Verification: http://www.spoj.com/problems/MKTHNUM/
 */
 
-template<int SZ> struct Wavelet {
-	vi mapl[2*SZ], mapr[2*SZ], val[2*SZ];
-	void build(vi& a, int ind = 1, int L = 0, int R = SZ-1) { // build a wavelet tree
-		if (ind == 1) { F0R(i,sz(a)) val[ind].pb(i); }
+template<int SZ> struct Wavelet { 
+	vi nexl[SZ], nexr[SZ];
+	void build(vi a, int ind = 1, int L = 0, int R = SZ-1) { 
 		if (L == R) return;
-		int M = (L+R)/2;
-		trav(i,val[ind]) {
-			val[2*ind+(a[i] > M)].pb(i);
-			mapl[ind].pb(sz(val[2*ind])-1);
-			mapr[ind].pb(sz(val[2*ind+1])-1);
+		nexl[ind] = nexr[ind] = {0};
+		vi A[2]; int M = (L+R)/2;
+		trav(t,a) {
+			A[t>M].pb(t);
+			nexl[ind].pb(sz(A[0])), nexr[ind].pb(sz(A[1]));
 		}
-		build(a,2*ind,L,M); build(a,2*ind+1,M+1,R);
+		build(A[0],2*ind,L,M), build(A[1],2*ind+1,M+1,R);
 	}
-	int getl(int ind, int x) { return x < 0 ? -1 : mapl[ind][x]; }
-	int getr(int ind, int x) { return x < 0 ? -1 : mapr[ind][x]; }
-	int query(int lo, int hi, int k, int ind = 1, int L = 0, int R = SZ-1) { 
+	int query(int lo,int hi,int k,int ind=1,int L=0,int R=SZ-1) { 
 		if (L == R) return L;
-		int M = (L+R)/2, t = getl(ind,hi)-getl(ind,lo);
-		if (t >= k) return query(getl(ind,lo),getl(ind,hi),k,2*ind,L,M);
-		return query(getr(ind,lo),getr(ind,hi),k-t,2*ind+1,M+1,R);
+		int M = (L+R)/2, t = nexl[ind][hi]-nexl[ind][lo];
+		if (t >= k) return query(nexl[ind][lo],
+						nexl[ind][hi],k,2*ind,L,M);
+		return query(nexr[ind][lo],
+			nexr[ind][hi],k-t,2*ind+1,M+1,R);
 	}
 };

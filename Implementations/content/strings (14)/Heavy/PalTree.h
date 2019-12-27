@@ -18,7 +18,7 @@ template<int SZ> struct PalTree {
 	int s[SZ], len[SZ], link[SZ], to[SZ][sigma], oc[SZ];
 	int slink[SZ], diff[SZ];
 	array<int,2> ans[SZ], seriesAns[SZ];
-	int n, last, sz;
+	int n = 0, last = 0, sz;
 	PalTree() { 
 		s[n++] = -1; link[0] = 1; len[1] = -1; sz = 2; 
 		ans[0] = {0,MOD};

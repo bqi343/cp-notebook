@@ -1,7 +1,8 @@
 /**
- * Description: Persistent min segtree with lazy updates. Unlike typical
+ * Description: Persistent min segtree with lazy updates. Unlike other
  	* lazy segtree, assumes that \texttt{lazy[cur]} is included in 
  	* \texttt{val[cur]} before propagating \texttt{cur.}
+ * Memory: O(N+Q\log N)
  * Time: O(\log N)
  * Source: CF, Franklyn Wang
  * Verification: https://codeforces.com/contest/1090/problem/G
@@ -14,7 +15,7 @@ template<class T, int SZ> struct pseg {
 	//// HELPER
 	int copy(int cur) {
 		int x = nex++;
-		val[x] = val[cur], l[x] = l[cur], r[x] = r[cur], lazy[x] = lazy[cur];
+		val[x]=val[cur], l[x]=l[cur], r[x]=r[cur], lazy[x]=lazy[cur];
 		return x;
 	}
 	T comb(T a, T b) { return min(a,b); }

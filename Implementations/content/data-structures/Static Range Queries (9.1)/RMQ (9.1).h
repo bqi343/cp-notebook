@@ -5,7 +5,8 @@
 	* https://cses.fi/problemset/stats/1647/
 	* http://wcipeg.com/problem/ioi1223
 	* https://pastebin.com/ChpniVZL
- * Time: $O(N\log N)$ build, $O(1)$ query
+ * Memory: O(N\log N)
+ * Time: O(1)
  */
 
 template<class T> struct RMQ {

@@ -1,6 +1,6 @@
 /**
- * Description: supports modifications in the form \texttt{ckmin(a\_i,t)} 
- 	* for all $l\le i\le r$, range max and sum queries
+ * Description: Supports modifications in the form \texttt{ckmin(a\_i,t)} 
+ 	* for all $l\le i\le r$, range max and sum queries. SZ should be a power of 2.
  * Time: O(\log N)
  * Source: http://codeforces.com/blog/entry/57319
  * Verification: http://acm.hdu.edu.cn/showproblem.php?pid=5306
@@ -39,7 +39,7 @@ template<int SZ> struct SegTreeBeats {
 				mx[2*ind^i][0] = mx[ind][0];
 			}
 	}
-	void upd(int x, int y, int t, int ind = 1, int L = 0, int R = -1) { 
+	void upd(int x, int y, int t, int ind=1, int L=0, int R=-1) { 
 		if (R == -1) R += N;
 		if (R < x || y < L || mx[ind][0] <= t) return;
 		push(ind,L,R);
@@ -66,6 +66,6 @@ template<int SZ> struct SegTreeBeats {
 		push(ind,L,R);
 		if (x <= L && R <= y) return mx[ind][0];
 		int M = (L+R)/2;
-		return max(qmax(x,y,2*ind,L,M), qmax(x,y,2*ind+1,M+1,R));
+		return max(qmax(x,y,2*ind,L,M),qmax(x,y,2*ind+1,M+1,R));
 	}
 };

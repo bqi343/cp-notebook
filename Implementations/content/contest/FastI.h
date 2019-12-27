@@ -1,6 +1,6 @@
 /**
  * Description: fast input for chinese contests
- * Time: $\sim$300ms faster for $10^6$ long longs
+ * Time: $\sim$300ms faster for $10^6$ long longs on CF
  * Source: 
  	* https://codeforces.com/gym/102394/submission/64154785
  	* maybe also see https://codeforces.com/blog/entry/45835 ?

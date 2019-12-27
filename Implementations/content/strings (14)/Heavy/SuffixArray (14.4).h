@@ -15,7 +15,7 @@ struct SuffixArray {
 	string S; int N;
 	void init(const string& _S) {
 		S = _S; N = sz(S);
-		genSa(); genLcp(); // R.init(lcp);
+		genSa(); genLcp(); 
 	}
 	vi sa, isa;
 	void genSa() {
@@ -46,11 +46,12 @@ struct SuffixArray {
 		F0R(i,N) if (isa[i]) {
 			for (int j=sa[isa[i]-1]; j+h<N && S[i+h]==S[j+h]; h++);
 			lcp[isa[i]-1] = h; if (h) h--; 
-			// if we cut off first chars of two strings 
-			// with lcp h then remaining portions still have lcp h-1 
 		}
+		// if we cut off first chars of two strings with lcp h 
+		// then remaining portions still have lcp h-1 
+		/// R.init(lcp);
 	}
-	/*RMQ<int> R; 
+	/**RMQ<int> R; 
 	int getLCP(int a, int b) { // lcp of suffixes starting at a,b
 		if (max(a,b) >= N) return 0;
 		if (a == b) return N-a;

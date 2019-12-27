@@ -57,7 +57,7 @@ pair<pt,pt> splitsz(pt t, int sz) { // sz nodes go to left
 		auto p = splitsz(t->c[0],sz); t->c[0] = p.s;
 		return {p.f,calc(t)};
 	} else {
-		auto p = splitsz(t->c[1],sz-getsz(t->c[0])-1); t->c[1] = p.f;
+		auto p=splitsz(t->c[1],sz-getsz(t->c[0])-1); t->c[1]=p.f;
 		return {calc(t),p.s};
 	}
 }

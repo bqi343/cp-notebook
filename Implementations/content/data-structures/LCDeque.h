@@ -1,5 +1,6 @@
 /**
- * Description: same as LineContainer but linear time given assumptions
+ * Description: LineContainer given assumptions
+ * Time: O(1)
  * Source: Own
  * Verification: http://acm.hdu.edu.cn/diy/contest_showproblem.php?cid=36005&pid=1009
  */

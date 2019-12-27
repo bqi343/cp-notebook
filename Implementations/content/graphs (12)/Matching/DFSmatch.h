@@ -27,6 +27,5 @@ template<int SZ> struct MaxMatch {
 	}
 	void tri(int x) { vis.reset(); flow += dfs(x); }
 	void init(int _N) { 
-		N = _N; FOR(i,1,N+1) if (!match[i]) tri(i); 
-	}
+		N = _N; FOR(i,1,N+1) if (!match[i]) tri(i); }
 };

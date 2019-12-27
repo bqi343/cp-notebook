@@ -1,6 +1,7 @@
 /**
  * Description: Chu-Liu-Edmonds algorithm. Computes minimum weight directed 
- 	* spanning tree rooted at $r$, edge from $inv[i]\to i$ for all $i\neq r$
+ 	* spanning tree rooted at $r$, edge from $inv[i]\to i$ for all $i\neq r.$
+ 	* Use DSU with rollback if need to return edges.
  * Time: O(M\log M)
  * Source: KACTL
  	* https://courses.cs.washington.edu/courses/cse490u/17wi/slides/CLE.pdf
@@ -12,7 +13,7 @@
 #include "../Fundamentals/DSUrb (15.5).h"
 
 struct Edge { int a, b; ll w; };
-struct Node { /// lazy skew heap node
+struct Node { // lazy skew heap node
 	Edge key;
 	Node *l, *r;
 	ll delta;
@@ -35,12 +36,11 @@ void pop(Node*& a) { a->prop(); a = merge(a->l, a->r); }
 
 pair<ll,vi> dmst(int n, int r, const vector<Edge>& g) {
 	DSUrb dsu; dsu.init(n); 
-	// DSU with rollback if need to return edges
 	vector<Node*> heap(n); // store edges entering each vertex 
 	// in increasing order of weight
 	trav(e,g) heap[e.b] = merge(heap[e.b], new Node{e});
 	ll res = 0; vi seen(n,-1); seen[r] = r; 
-	vpi in(n,{-1,-1});
+	vpi in(n,{-1,-1}); // edge entering each vertex in MST
 	vector<pair<int,vector<Edge>>> cycs;
 	F0R(s,n) {
 		int u = s, w;
@@ -51,18 +51,19 @@ pair<ll,vi> dmst(int n, int r, const vector<Edge>& g) {
 			Edge e = heap[u]->top(); path.pb({u,e}); 
 			heap[u]->delta -= e.w, pop(heap[u]);
 			res += e.w, u = dsu.get(e.a); 
-			if (seen[u] == s) { // compress verts in cycle
-				Node* cyc = 0; cycs.pb({u,{}});
+			if (seen[u] == s) { // found cycle, contract
+				Node* cyc = 0; cycs.eb();
 				do {
 					cyc = merge(cyc, heap[w = path.back().f]);
 					cycs.back().s.pb(path.back().s);
 					path.pop_back(); 
 				} while (dsu.unite(u,w));
 				u = dsu.get(u); heap[u] = cyc, seen[u] = -1;
+				cycs.back().f = u;
 			}
 		}
 		trav(t,path) in[dsu.get(t.s.b)] = {t.s.a,t.s.b}; 
-		// found path from root
+		// found path from root to s, done
 	}
 	while (sz(cycs)) { // expand cycs to restore sol
 		auto c = cycs.back(); cycs.pop_back();

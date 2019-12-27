@@ -30,7 +30,7 @@ Node *merge(Node *a, Node *b) {
 }
 void pop(Node*& a) { a->prop(); a = merge(a->l, a->r); }
 
-ll dmst(int n, int r, vector<Edge>& g) {
+ll dmstKACTL(int n, int r, const vector<Edge>& g) {
 	DSU dsu; dsu.init(n);
 	vector<Node*> heap(n);
 	trav(e, g) heap[e.b] = merge(heap[e.b], new Node{e});

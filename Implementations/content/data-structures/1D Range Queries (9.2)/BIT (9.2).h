@@ -2,7 +2,7 @@
  * Description: $N$-D range sum query with point update
  * Source: https://codeforces.com/blog/entry/64914
  * Verification: SPOJ matsum
- * Usage: \texttt{BIT<int,10,10>} gives a 2D BIT
+ * Usage: BIT<int,10,10> -> 2D BIT
  * Time: O((\log N)^D)
  */
 

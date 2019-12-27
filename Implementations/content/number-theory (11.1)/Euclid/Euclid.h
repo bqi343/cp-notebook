@@ -11,7 +11,7 @@ pl euclid(ll a, ll b) {
 	pl p = euclid(b,a%b);
 	return {p.s,p.f-a/b*p.s};
 }
-ll invGeneral(ll a, ll b) { 
+ll invGen(ll a, ll b) { 
 	pl p = euclid(a,b); assert(p.f*a+p.s*b == 1); // gcd is 1
 	return p.f+(p.f<0)*b;
 }

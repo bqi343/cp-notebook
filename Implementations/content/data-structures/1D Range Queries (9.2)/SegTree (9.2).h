@@ -1,6 +1,6 @@
 /**
- * Description: 1D point update, range query. Change \texttt{comb} 
- 	* to any associative (not necessarily commutative) operation
+ * Description: 1D point update, range query. \texttt{comb} 
+ 	* can be any associative operation.
  * Time: O(\log N)
  * Source: 
 	* http://codeforces.com/blog/entry/18051
@@ -12,7 +12,7 @@ template<class T> struct Seg {
 	const T ID = 0; // comb(ID,b) must equal b
 	T comb(T a, T b) { return a+b; } 
 	int n; vector<T> seg;
-	void init(int _n) { n = _n; seg.rsz(2*n); }
+	void init(int _n) { n = _n; seg.assign(2*n,ID); }
 	void pull(int p) { seg[p] = comb(seg[2*p],seg[2*p+1]); }
 	void upd(int p, T value) {	// set value at position p
 		seg[p += n] = value;

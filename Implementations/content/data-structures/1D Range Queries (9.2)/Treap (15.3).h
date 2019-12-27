@@ -62,8 +62,8 @@ pair<pt,pt> splitsz(pt t, int sz) { // sz nodes go to left
 	}
 }
 pt merge(pt l, pt r) {
-	if (!l || !r) return l ? l : r;
-	prop(l), prop(r);
+	if (!l || !r) return l?:r;
+	prop(l), prop(r); 
 	pt t;
 	if (l->pri > r->pri) l->c[1] = merge(l->c[1],r), t = l;
 	else r->c[0] = merge(l,r->c[0]), t = r;

@@ -1,6 +1,6 @@
 /**
  * Description: Chu-Liu-Edmonds algorithm. Computes minimum weight directed 
- 	* spanning tree rooted at $r$, edge from $inv[i]\to i$ for all $i\neq r.$
+ 	* spanning tree rooted at $r$, edge from $par[i]\to i$ for all $i\neq r.$
  	* Use DSU with rollback if need to return edges.
  * Time: O(M\log M)
  * Source: KACTL
@@ -29,7 +29,7 @@ Node *merge(Node *a, Node *b) {
 	if (!a || !b) return a ?: b;
 	a->prop(), b->prop();
 	if (a->key.w > b->key.w) swap(a, b);
-	swap(a->l, (a->r = merge(b, a->r)));
+	swap(a->l, a->r = merge(b, a->r));
 	return a;
 }
 void pop(Node*& a) { a->prop(); a = merge(a->l, a->r); }
@@ -72,10 +72,7 @@ pair<ll,vi> dmst(int n, int r, const vector<Edge>& g) {
 		trav(t,c.s) in[dsu.get(t.b)] = {t.a,t.b};
 		in[dsu.get(inEdge.s)] = inEdge;
 	}
-	vi inv; 
-	F0R(i,n) { 
-		assert(i == r ? in[i].s == -1 : in[i].s == i);
-		inv.pb(in[i].f); 
-	} 
-	return {res,inv};
+	vi par(n); F0R(i,n) par[i] = in[i].f; 
+	// i == r ? in[i].s == -1 : in[i].s == i
+	return {res,par};
 }

@@ -6,11 +6,11 @@ import sys
 from termcolor import colored # print in color + bold
 import getopt # command line
 
-IN="I.$" # $ is replaced with file number
+IN="$.in" # $ is replaced with file number
 OUT="O.$"
 
 TL=2
-CPP="g++ -std=c++11 -O2 -Wl,-stack_size -Wl,0x10000000 -w $.cpp -o $" 
+CPP="g++-9 -std=c++17 -O2 -Wl,-stack_size -Wl,0x10000000 -w $.cpp -o $" 
 # C++, -w = suppress warnings
 
 def replace(x,y): # replace occurrences of $ in x with y
@@ -32,7 +32,7 @@ def error(a,b): # min of absolute and relative error for two doubles
 def parse(output): # split output by spaces
 	assert os.path.isfile(output), f'File "{output}" does not exist, cannot parse'
 	output = list(open(output))
-	output = " ".join(output).split(" ")
+	output = " ".join(output).split()
 	return [i for i in output if i]
 
 def compile(x): # compile cpp file x
@@ -169,7 +169,7 @@ def compare(f0,f1,inputF):
 		return interpret(e1)+(t1,)
 	return check(o0,o1)+((t0,t1),)
 
-def COMPARE(f0,f1):
+def COMPARE(f0,f1,wrong):
 	print(cb(f"COMPARING CORRECT {f0}.cpp AGAINST {f1}.cpp","blue"))
 	print()
 	compile(f0), compile(f1)
@@ -184,18 +184,29 @@ def COMPARE(f0,f1):
 		if not os.path.isfile(inputF):
 			break
 		res,message,t = compare(f0,f1,inputF)
-		output(label,res,message,t)
+		if not wrong or res != 'A':
+			output(label,res,message,t)
 		total = i
 		if res == 'A':
 			correct += 1
 	print()
 	outputRes(correct,total)
 
+def cppFiles():
+	res = []
+	for root, dirs, files in os.walk("."):
+		for filename in files:
+			if filename.endswith(".cpp"):
+				res.append(filename[:-4])
+	return res
+
 def main():
 	try:
 		correct = None
+		start = None
 		output = False
-		opts, args = getopt.getopt(sys.argv[1:], "ohc:t:", ["output","help","correct","time"])
+		grade = False
+		opts, args = getopt.getopt(sys.argv[1:], "ohc:t:gs:", ["output","help","correct","time","grade","start"])
 		for option, value in opts:
 			if option in ("-h", "--help"):
 				print("This is the help section for this program.")
@@ -203,11 +214,13 @@ def main():
 				print("Available options are:")
 				print("\t -h --help: display help")
 				print("\t -t --time: set time limit")
+				print("\t -s --start: set starting time (for grade)")
 				print()
 				print("Available commands are:")
-				print("\t 'python3 grader.py3 A': test if A.cpp produces correct output file for every input file")
-				print("\t 'python3 grader.py3 -o A': display output of A.cpp for every input file")
-				print("\t 'python3 grader.py3 -c B A': test if A.cpp produces same output as B.cpp for every input file")
+				print("\t 'python3 grader.py A': test if A.cpp produces correct output file for every input file")
+				print("\t 'python3 grader.py -o A': display output of A.cpp for every input file")
+				print("\t 'python3 grader.py -c B A': compare A.cpp against correct B.cpp for every input file")
+				print("\t 'python3 grader.py -g A': compare A.cpp against all submissions in folder")
 				return
 			if option in ("-t", "--time"):
 				TL = float(value)
@@ -215,14 +228,36 @@ def main():
 				correct = value 
 			if option in ("-o"):
 				output = True
+			if option in ("-g"):
+				grade = True
+			if option in ("-s"):
+				start = value
 		if len(args) != 1:
 			raise ValueError("must have exactly one argument")
+		cnt = 0
+		if grade:
+			cnt += 1
 		if correct:
-			if output:
-				raise ValueError("cannot have both -c and -o")
+			cnt += 1
+		if output:
+			cnt += 1
+		if cnt > 1:
+			raise ValueError("too many options")
+
+		if grade:
+			subs = []
+			for filename in cppFiles():
+				if len(filename) >= 8 and filename[0:8].isdigit():
+					subs.append(filename)
+			subs.sort()
+			for sub in subs:
+				if start and sub < start:
+					continue
+				COMPARE(args[0],sub,True)
+		elif correct:
 			if correct == args[0]:
 				raise ValueError("can't compare same prog against itself")
-			COMPARE(correct,args[0])
+			COMPARE(correct,args[0],False)
 		elif output:
 			GETOUTPUT(args[0])
 		else:

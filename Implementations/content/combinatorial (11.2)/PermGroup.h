@@ -11,7 +11,7 @@
  */
 
 int n; 
-vi inv(vi v) { vi V(sz(v)); F0R(i,sz(v)) V[v[i]] = i; return V; }
+vi inv(vi v) { vi V(sz(v)); F0R(i,sz(v)) V[v[i]]=i; return V; }
 vi id() { vi v(n); iota(all(v),0); return v; }
 vi operator*(const vi& a, const vi& b) {
 	vi c(sz(a)); F0R(i,sz(a)) c[i] = a[b[i]];

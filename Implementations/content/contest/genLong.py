@@ -1,4 +1,4 @@
-filenames = ['template.cpp', 'CppIO.h', '../number-theory (11.1)/Modular Arithmetic/ModInt.h']
+filenames = ['template.cpp', '../data-structures/STL (5)/IndexedSet.h', 'CppIO.h', '../number-theory (11.1)/Modular Arithmetic/ModInt.h']
 with open('templateLong.cpp', 'w') as outfile:
 	res = []
 	active = False
@@ -6,13 +6,16 @@ with open('templateLong.cpp', 'w') as outfile:
 		global active
 		if line.startswith('#include "'):
 			return 
-		if line.startswith('/**'):
+		if line.startswith('/**'): 
 			active = True
 		if active and '*/' in line:
 			active = False 
 			return
+		line = line.replace('/// ','')
+		line = line.replace('/**','')
+		line = line.replace('*/','')
 		if active:
-			return 
+			return
 		if line.endswith("//\n"):
 			line = line[:-3]+"\n"
 		res.append(line)
@@ -20,6 +23,8 @@ with open('templateLong.cpp', 'w') as outfile:
 			res[-1] += '\n'
 		while len(res) > 1 and len(res[-1]) <= 1 and len(res[-2]) <= 1:
 			res.pop()
+		# if len(res) > 1:
+			# print("REC",res[-2],res[-1],len(res[-2]),len(res[-1]))
 
 	extra = []
 	for fname in filenames:
@@ -27,6 +32,7 @@ with open('templateLong.cpp', 'w') as outfile:
 			v = []
 			for line in infile:
 				v.append(line)
+			print(fname)
 			if fname == 'template.cpp':
 				for i in range(len(v)):
 					line = v[i]
@@ -36,6 +42,7 @@ with open('templateLong.cpp', 'w') as outfile:
 						extra.append(line)
 			else:
 				for line in v:
+					# print("OOPS",line)
 					ad(line)
 		ad('\n')
 	for line in extra:

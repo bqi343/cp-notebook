@@ -28,13 +28,18 @@
 	\kactlimport{Primality/FactorFast.h}
 
 \section{Euclidean Algorithm}
+
+\begin{comment}
 	\subsection{Bézout's identity}
 	For $a \neq $, $b \neq 0$, then $d=\gcd(a,b)$ is the smallest positive integer for which there are integer solutions to
 	$$ax+by=d$$
 	If $(x,y)$ is one solution, then all solutions are given by
 	$$\left(x+\frac{kb}{\gcd(a,b)}, y-\frac{ka}{\gcd(a,b)}\right), \quad k\in\mathbb{Z}$$
+\end{comment}
 
+	\kactlimport{Euclid/FracInterval.h}
 	\kactlimport{Euclid/Euclid.h}
+	\kactlimport{Euclid/Euclid2.h}
 	\kactlimport{Euclid/CRT.h}
 	
 \section{Pythagorean Triples}

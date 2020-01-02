@@ -7,9 +7,8 @@
  */
 
 template<int SZ> struct SegTreeBeats {
-	int N;
+	int N, mx[2*SZ][2], maxCnt[2*SZ];
 	ll sum[2*SZ];
-	int mx[2*SZ][2], maxCnt[2*SZ];
 	void pull(int ind) {
 		F0R(i,2) mx[ind][i] = max(mx[2*ind][i],mx[2*ind+1][i]);
 		maxCnt[ind] = 0;
@@ -32,12 +31,11 @@ template<int SZ> struct SegTreeBeats {
 	}
 	void push(int ind, int L, int R) {
 		if (L == R) return;
-		F0R(i,2) 
-			if (mx[2*ind^i][0] > mx[ind][0]) {
-				sum[2*ind^i] -= (ll)maxCnt[2*ind^i]*
-								(mx[2*ind^i][0]-mx[ind][0]);
-				mx[2*ind^i][0] = mx[ind][0];
-			}
+		F0R(i,2) if (mx[2*ind^i][0] > mx[ind][0]) {
+			sum[2*ind^i] -= (ll)maxCnt[2*ind^i]*
+							(mx[2*ind^i][0]-mx[ind][0]);
+			mx[2*ind^i][0] = mx[ind][0];
+		}
 	}
 	void upd(int x, int y, int t, int ind=1, int L=0, int R=-1) { 
 		if (R == -1) R += N;

@@ -1,7 +1,6 @@
 /**
  * Description: \texttt{sa} contains indices of suffixes in sorted order, 
- * \texttt{isa} contains inverses. Can speed up on random test data by 
- * breaking when elements of \texttt{isa} are all distinct.
+ * \texttt{isa} contains inverses. 
  * Time: O(N\log N)
  * Source: SuprDewd, KACTL, majk, ekzhang (http://ekzlib.herokuapp.com)
  * Verification: 
@@ -31,7 +30,7 @@ struct SuffixArray {
 			FOR(i,-1,N) { // rearrange sufs by 2*len
 				int s1 = (i == -1 ? N : s[i])-len; 
 				if (s1 >= 0) sa[nex[isa[s1]]++] = s1; 
-			} 
+			} // to make faster, break when all ints in sa distinct
 			F0R(i,N) { // update isa for 2*len
 				bool same = i && sa[i-1]+len < N
 							  && is[sa[i]] == is[sa[i-1]]

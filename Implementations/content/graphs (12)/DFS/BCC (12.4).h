@@ -19,9 +19,8 @@ template<int SZ> struct BCC {
 	int disc[SZ];
 	vi st; vector<vi> bccs; // edges for each bcc
 	int bcc(int u, int p = -1) { // return lowest disc
-		static int ti = 0;
-		disc[u] = ++ti; int low = disc[u];
-		int child = 0;
+		static int ti = 0; disc[u] = ++ti; 
+		int low = disc[u], child = 0;
 		trav(i,adj[u]) if (i.s != p) {
 			if (!disc[i.f]) {
 				child ++; st.pb(i.s);
@@ -33,9 +32,8 @@ template<int SZ> struct BCC {
 					for (bool done = 0; !done; tmp.pb(st.back()), 
 						st.pop_back()) done |= st.back() == i.s;
 				}
-			} else if (disc[i.f] < disc[u]) {
-				ckmin(low,disc[i.f]); st.pb(i.s);
-			}
+			} else if (disc[i.f] < disc[u]) 
+				ckmin(low,disc[i.f]), st.pb(i.s);
 		}
 		return low;
 	}

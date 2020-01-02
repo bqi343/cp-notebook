@@ -1,5 +1,5 @@
 /**
- * Description: multiply two polynomials, FFT is usually fine
+ * Description: Multiply two polynomials. FFT almost always works instead.
  * Time: $O(N^{\log_2 3})$
  * Source: kevinsogo 
 	* https://www.hackerrank.com/contests/noi-ph-2019/challenges/yet-another-packing-problem/editorial
@@ -9,7 +9,7 @@
  */
 
 int size(int s) { return s > 1 ? 32-__builtin_clz(s-1) : 0; }
-void karatsuba(ll *a, ll *b, ll *c, ll *t, int n) {
+void karatsuba(ll* a, ll* b, ll* c, ll* t, int n) {
 	int ca = 0, cb = 0; F0R(i,n) ca += !!a[i], cb += !!b[i];
 	if (min(ca, cb) <= 1500/n) { // few numbers to multiply
 		if (ca > cb) swap(a, b);

@@ -197,8 +197,79 @@ typedef pair<mi,mi> pmi;
 typedef vector<mi> vmi;
 typedef vector<pmi> vpmi;
 
+int T[MX];
+
+template<int SZ> struct LCA {
+	static const int BITS = 32-__builtin_clz(SZ);
+	int N, R = 1, cnt = 0, label[SZ]; 
+	vi adj[SZ], cur[SZ];
+	vpi CUR[SZ];
+	int par[BITS][SZ], depth[SZ];
+	// INITIALIZE
+	void addEdge(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
+	void dfs(int u, int prev) {
+		label[u] = cnt++;
+		cur[T[u]].pb(u);
+		CUR[T[u]].pb({label[u],u});
+		par[0][u] = prev;
+		depth[u] = depth[prev]+1;
+		trav(v,adj[u]) if (v != prev) dfs(v, u);
+		cur[T[u]].pop_back();
+		CUR[T[u]].pb({cnt,sz(cur[T[u]])?cur[T[u]].back():0});
+	}
+	void init(int _N) {
+		N = _N; dfs(R, 0);
+		FOR(k,1,BITS) FOR(i,1,N+1) 
+			par[k][i] = par[k-1][par[k-1][i]];
+	}
+	// QUERY
+	int getPar(int a, int b) {
+		R0F(k,BITS) if (b&(1<<k)) a = par[k][a];
+		return a;
+	}
+	int lca(int u, int v){
+		if (depth[u] < depth[v]) swap(u,v);
+		u = getPar(u,depth[u]-depth[v]);
+		R0F(k,BITS) if (par[k][u] != par[k][v]) 
+			u = par[k][u], v = par[k][v];
+		return u == v ? u : par[0][u];
+	}
+	int dist(int u, int v) {
+		return depth[u]+depth[v]-2*depth[lca(u,v)];
+	}
+	int last(int a, int c) {
+		auto it = ub(all(CUR[c]),mp(label[a],MOD));
+		if (it == begin(CUR[c])) return 0;
+		return prev(it)->s;
+	}
+};
+
+LCA<MX> L;
+int N,M,co;
+
 int main() {
-	ios_base::sync_with_stdio(0); cin.tie(0);
+	setIO("milkvisits");
+	re(N,M); FOR(i,1,N+1) re(T[i]);
+	F0R(i,N-1) {
+		int X,Y; re(X,Y);
+		L.addEdge(X,Y);
+	}
+	L.init(N);
+	F0R(i,M) {
+		int A,B,C; re(A,B,C);
+		int z = L.lca(A,B);
+		int a = L.last(A,C); 
+		if (a && L.depth[a] >= L.depth[z]) {
+			pr(1);
+			continue;
+		}
+		a = L.last(B,C);
+		if (a && L.depth[a] >= L.depth[z]) {
+			pr(1);
+			continue;
+		}
+		pr(0);
+	}
 	// you should actually read the stuff at the bottom
 }
 

@@ -1,7 +1,7 @@
 /**
- * Description: Chinese Remainder Theorem, combine $a.f\pmod{a.s}$ and $b.f\pmod{b.s}$ 
- 	* into something $\pmod{\text{lcm}(a.s,b.s)},$
- 	* should work for $ab<2^{62}$
+ * Description: Chinese Remainder Theorem. 
+ 	* $a.f\pmod{a.s},b.f\pmod{b.s}$ $\implies ? \pmod{\text{lcm}(a.s,b.s)}$. 
+ 	* Should work for $ab<2^{62}$.
  * Source: KACTL
  * Verification: Kattis generalchineseremainder
  */

@@ -1,6 +1,5 @@
 /**
  * Description: Polynomial hash for substrings with two bases.
- * Usage: HashRange H; H.init("ababab"); F0R(i,6) FOR(j,i,6) ps(i,j,H.hash(i,j));
  * Source:
 	* KACTL
 	* https://codeforces.com/contest/1207/submission/59309672
@@ -42,3 +41,4 @@ struct HashRange {
 		return lo;
 	}
 };
+/// HashRange H; H.init("ababab"); F0R(i,6) FOR(j,i,6) ps(i,j,H.hash(i,j));

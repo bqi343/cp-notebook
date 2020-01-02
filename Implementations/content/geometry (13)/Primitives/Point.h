@@ -4,13 +4,12 @@
  * Verification: various
  */
 
-typedef ld T;
-template <class T> int sgn(T x) { return (x > 0) - (x < 0); }
-
 namespace Point {
+	typedef ld T;
+	template<class T> int sgn(T x) { return (x>0)-(x<0); }
+
 	typedef pair<T,T> P;
 	typedef vector<P> vP;
-
 	T norm(P x) { return x.f*x.f+x.s*x.s; }
 	T abs(P x) { return sqrt(norm(x)); }
 	T angle(P x) { return atan2(x.s,x.f); }

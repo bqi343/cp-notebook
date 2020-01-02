@@ -46,7 +46,7 @@ namespace Point3D {
 	}
 	bool collinear(const P3& a, const P3& b, const P3& c) { 
 		return isMult(b-a,c-a); }
-	bool coplanar(const P3& a, const P3& b, const P3& c, const P3& d) { 
+	bool coplanar(const P3&a,const P3&b,const P3&c,const P3&d) { 
 		return isMult(cross(b-a,c-a),cross(b-a,d-a)); }
 }
 using namespace Point3D;

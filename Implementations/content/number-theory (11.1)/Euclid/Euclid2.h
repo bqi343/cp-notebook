@@ -1,7 +1,7 @@
 /**
- * Description: finds first x such that L <= A*x%P <= R
+ * Description: finds first $x$ such that $L\le Ax\pmod{P}\le R$
  * Source: https://codeforces.com/gym/102411/submission/64315879
- * Verification: 
+ * Verification: https://codeforces.com/gym/102411/problem/G
  */
 
 ll cdiv(ll x, ll y) { return (x+y-1)/y; }

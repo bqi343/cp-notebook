@@ -7,7 +7,6 @@
  */
 
 typedef unsigned long long ul;
-
 ul sumsq(ul to) { return (to-1)*to/2; } // sum of 0..to-1
 ul divsum(ul to, ul c, ul k, ul m) { 
 	ul res = k/m*sumsq(to)+c/m*to;

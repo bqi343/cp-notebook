@@ -68,7 +68,7 @@ No Longer Active?
   * [SnackDown](https://www.codechef.com/snackdown): Sep-Dec -> Feb
     * Global: 15 with travel expenses paid, 10 additional
 
-## Online HS (US)
+## US High School
 
  * [VT HSPC](https://icpc.cs.vt.edu/#/hscontest2017)
     * Online
@@ -79,6 +79,8 @@ No Longer Active?
     * Online
     * 4 hours
     * December
+  * [Cornell HSPC](https://www.cs.cornell.edu/events/cornell-high-school-programming-contest)
+    * [2019](https://cornell-hspc19.kattis.com/problems)
 
 ## Codeforces Tools
 

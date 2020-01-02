@@ -1,5 +1,6 @@
 /**
- * Description: query max xor with some int in the trie
+ * Description: insert int, query max xor with some int in the trie
+ * Time: O(MXBIT)
  * Source: CF Algorithms Gym
  * Verification: January Easy 2018 - Shubham and Subarray Xor
  */
@@ -7,11 +8,7 @@
 template<int MX, int MXBIT> struct Trie {
 	int nex[MX][2], sz[MX], num = 0; // num is last node in trie
 	// change 2 to 26 for lowercase letters
-	Trie() {
-		memset(nex,0,sizeof nex);
-		memset(sz,0,sizeof sz);
-	}
-
+	Trie() { memset(nex,0,sizeof nex); memset(sz,0,sizeof sz); }
 	void ins(ll x, int a = 1) { // insert or delete
 		int cur = 0; sz[cur] += a;
 		R0F(i,MXBIT) {

@@ -15,7 +15,7 @@ template<class T, int SZ> struct pseg {
 	//// HELPER
 	int copy(int cur) {
 		int x = nex++;
-		val[x]=val[cur], l[x]=l[cur], r[x]=r[cur], lazy[x]=lazy[cur];
+		val[x]=val[cur],l[x]=l[cur],r[x]=r[cur],lazy[x]=lazy[cur];
 		return x;
 	}
 	T comb(T a, T b) { return min(a,b); }

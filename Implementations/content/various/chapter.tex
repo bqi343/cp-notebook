@@ -33,6 +33,9 @@ When doing DP on intervals: $a[i][j] = \min_{i < k < j}(a[i][k] + a[k][j]) + f(i
 			\item \lstinline{#pragma GCC target ("avx,avx2")} can double performance of vectorized code, but causes crashes on old machines.
 			\item \lstinline{#pragma GCC optimize ("trapv")} kills the program on integer overflows (but is really slow).
 		\end{itemize}
+	\kactlimport{BumpAllocator.h}
+	\kactlimport{SmallPtr.h}
+	\kactlimport{BumpAllocatorSTL.h}
 
 \section{Other languages}
 	\kactlimport{Main.java}

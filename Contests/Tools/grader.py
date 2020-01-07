@@ -7,10 +7,11 @@ from termcolor import colored # print in color + bold
 import getopt # command line
 
 IN="$.in" # $ is replaced with file number
-OUT="O.$"
+OUT="$.out"
 
 TL=2
-CPP="g++-9 -std=c++17 -O2 -Wl,-stack_size -Wl,0x10000000 -w $.cpp -o $" 
+sep='-'*50
+CPP="g++-9 -std=c++11 -O2 -Wl,-stack_size -Wl,0x10000000 -w -o $ $.cpp" 
 # C++, -w = suppress warnings
 
 def replace(x,y): # replace occurrences of $ in x with y
@@ -82,11 +83,35 @@ def interpret(e): # interpret exit code
 		return "T", "time limit exceeded"
 	return "R", f"exit code {e}"
 
+debug = False
+
 def grade(prog,inputF,outputF):
 	o, e, t = run(prog,inputF)
 	if e != 0:
-		return interpret(e)+(t,)
-	return check(outputF,o)+(t,) 
+		return interpret(e)+(t,"")
+	pad = '\t'
+	report = ""
+	if debug:
+		report += pad+sep+"\n"
+		report += pad+"INPUT:\n"
+		report += pad+sep+"\n"
+		for line in open(inputF):
+			report += pad+line
+		report += pad+sep+"\n"
+
+		report += pad+"CORRECT OUTPUT:\n"
+		report += pad+sep+"\n"
+		for line in open(outputF):
+			report += pad+line
+		report += pad+sep+"\n"
+
+		report += pad+"YOUR OUTPUT:\n"
+		report += pad+sep+"\n"
+		for line in open(o):
+			report += pad+line
+		report += pad+sep+"\n"
+		res = check(outputF,o)+(t,report) 
+	return res
 
 def getOutput(prog,inputF):
 	o, e, t = run(prog,inputF)
@@ -118,8 +143,8 @@ def GETOUTPUT(f):
 	compile(f)
 	print(cb("RUNNING TESTS","blue"))
 	total,correct = 0,0
-	for i in range(1,1000):
-		label = str(i)
+	while True:
+		label = str(total+1)
 		inputF = replace(IN,label)
 		if not os.path.isfile(inputF):
 			label = "0"+label
@@ -135,12 +160,13 @@ def GETOUTPUT(f):
 	outputRes(correct,total)
 
 def GRADE(f):
+	global debug
 	print(cb(f"GRADING {f}.cpp","blue"))
 	compile(f)
 	print(cb("RUNNING TESTS","blue"))
 	total,correct = 0,0
-	for i in range(1,1000):
-		label = str(i)
+	while True:
+		label = str(total+1)
 		inputF = replace(IN,label)
 		outputF = replace(OUT,label)
 		if not os.path.isfile(inputF):
@@ -152,9 +178,12 @@ def GRADE(f):
 		if not os.path.isfile(outputF):
 			print(cb("ERROR:",'grey')+" Output file '"+outputF+"' missing!")
 			sys.exit(0)
-		res,message,t = grade(f,inputF,outputF)
+		res,message,t,report = grade(f,inputF,outputF)
 		output(label,res,message,t)
-		total = i
+		# print("HA",debug)
+		if res == 'W' and debug:
+			print('\n'+report)
+		total += 1
 		if res == 'A':
 			correct += 1
 	print()
@@ -175,8 +204,8 @@ def COMPARE(f0,f1,wrong):
 	compile(f0), compile(f1)
 	print(cb("RUNNING TESTS","blue"))
 	total,correct = 0,0
-	for i in range(1,1000):
-		label = str(i)
+	while True:
+		label = str(total+1)
 		inputF = replace(IN,label)
 		if not os.path.isfile(inputF):
 			label = "0"+label
@@ -186,7 +215,7 @@ def COMPARE(f0,f1,wrong):
 		res,message,t = compare(f0,f1,inputF)
 		if not wrong or res != 'A':
 			output(label,res,message,t)
-		total = i
+		total += 1
 		if res == 'A':
 			correct += 1
 	print()
@@ -201,12 +230,14 @@ def cppFiles():
 	return res
 
 def main():
+	global debug
+	global CPP 
 	try:
 		correct = None
 		start = None
 		output = False
 		grade = False
-		opts, args = getopt.getopt(sys.argv[1:], "ohc:t:gs:", ["output","help","correct","time","grade","start"])
+		opts, args = getopt.getopt(sys.argv[1:], "ohc:t:gs:d", ["output","help","correct","time","grade","start","debug"])
 		for option, value in opts:
 			if option in ("-h", "--help"):
 				print("This is the help section for this program.")
@@ -214,6 +245,7 @@ def main():
 				print("Available options are:")
 				print("\t -h --help: display help")
 				print("\t -t --time: set time limit")
+				print("\t -d --debug: debug mode")
 				print("\t -s --start: set starting time (for grade)")
 				print()
 				print("Available commands are:")
@@ -230,6 +262,9 @@ def main():
 				output = True
 			if option in ("-g"):
 				grade = True
+			if option in ("-d"):
+				debug = True
+				CPP = CPP.replace("-w","-Wall -Wextra")
 			if option in ("-s"):
 				start = value
 		if len(args) != 1:

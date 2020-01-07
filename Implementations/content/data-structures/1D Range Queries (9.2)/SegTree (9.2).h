@@ -1,6 +1,7 @@
 /**
  * Description: 1D point update, range query. \texttt{comb} 
- 	* can be any associative operation.
+ 	* can be any associative operation. $N$ doesn't have to be a power of 2
+ 	* (but then \texttt{seg[1]} might not equal \texttt{query(0,N-1)}).
  * Time: O(\log N)
  * Source: 
 	* http://codeforces.com/blog/entry/18051

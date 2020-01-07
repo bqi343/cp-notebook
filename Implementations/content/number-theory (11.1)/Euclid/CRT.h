@@ -8,7 +8,7 @@
 
 #include "Euclid.h"
 
-pl solve(pl a, pl b) {
+pl CRT(pl a, pl b) {
 	if (a.s < b.s) swap(a,b);
 	ll x,y; tie(x,y) = euclid(a.s,b.s); 
 	ll g = a.s*x+b.s*y, l = a.s/g*b.s;

@@ -38,13 +38,16 @@ Open your bash profile with a text editor such as gedit (or sublime).
 brew install gedit
 gedit ~/.bash_profile
 ```
-Add the following functions.
+Add the following aliases and functions.
 ```
+alias BPS='source ~/.bash_profile'
+alias BPO='subl ~/.bash_profile'
+alias IMPL='cd ~/Documents/GitHub/USACO/Implementations/'
 co() {
-    g++-9 -std=c++17 -Ofast -Wall -Wl,-stack_size -Wl,0x10000000 -o $1 $1.cpp
+  g++-9 -std=c++11 -O2 -Wl,-stack_size -Wl,0x10000000 -Wall -Wextra -o $1 $1.cpp
 }
 run() {
-    co $1 && ./$1
+  co $1 && ./$1
 }
 ```
 Now you can easily run C++ from the command line by calling run.

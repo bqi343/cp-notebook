@@ -1,5 +1,5 @@
 /**
- * Description: 2D matrix operations
+ * Description: 2D matrix operations. Change d to array if possible.
  * Source: KACTL
  * Verification: https://dmoj.ca/problem/si17c1p5, SPOJ MIFF
  */
@@ -11,7 +11,7 @@ template<class T> struct Mat {
 		d.assign(r,vector<T>(c)); }
 	Mat() : Mat(0,0) {} 
 	Mat(const vector<vector<T>>& _d) : r(sz(_d)), c(sz(_d[0])) { d = _d; }
-	friend void pr(const Mat& m) { pr(m.d); }
+	/// friend void pr(const Mat& m) { pr(m.d); }
 	Mat& operator+=(const Mat& m) {
 		assert(r == m.r && c == m.c);
 		F0R(i,r) F0R(j,c) d[i][j] += m.d[i][j];

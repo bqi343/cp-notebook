@@ -43,8 +43,8 @@ typedef vector<pd> vpd; //
 const int MOD = 1e9+7; // 998244353; // = (119<<23)+1
 const int MX = 2e5+5; //
 const ll INF = 1e18; //
-const ld PI = 4*atan((ld)1); 
-const int xd[4] = {0,1,0,-1}, yd[4] = {1,0,-1,0}; //
+const ld PI = acos((ld)-1);
+const int xd[4] = {1,0,-1,0}, yd[4] = {0,1,0,-1}; //
 
 template<class T> bool ckmin(T& a, const T& b) { 
 	return a > b ? a = b, 1 : 0; }

@@ -20,31 +20,11 @@ You might want to read [Um_nik's FAQ](https://codeforces.com/blog/entry/47516) t
 
 > I have just started on codeforces and competetive programming. Can you suggest something?
 
-I hope this link helps you. (If not, please let me know!)
-
-> bro could u please tell me only one more thing where u learned matheatics ?
-
-> After how much time thinking on a problem should I look at the editorial?
-
-> How to practice problems when I don't understand tutorial. It really bothers me. Do you have any suggestions?
-
-See "Competition Math."
-
-> which problems should I solve
-
-See "Contests."
-
-> Can you provide me some coding books where I can inprove my skills.
-
-See "Resources."
+I hope this link helps you. If not, please let me know!
 
 > does this contains all the things or full training materials
 
 I tried to add everything I could think of.
-
-> I looked at your guide, but some resources were quite difficult.
-
-Look at the resources again; I think that CPH and USACO Bronze are definitely okay for beginners.
 
 > Where did you learn programming :D ?
 
@@ -76,9 +56,31 @@ clist.by & workflowy & google calendar
 
 I don’t know, try all of them and see what works for you ...
 
-> Will it be a good idea to follow your profile on any of this site and do all the questions you have done ?
+> What was your strategy considering you were preparing for IOI.
 
-I usually just do all the questions above a certain difficulty level :|
+Other than doing past IOI tasks, I didn't do anything specifically for IOI. If you're looking for olympiad problems see "Contests."
+
+## Redirection
+
+> bro could u please tell me only one more thing where u learned matheatics ?
+
+> After how much time thinking on a problem should I look at the editorial?
+
+> How to practice problems when I don't understand tutorial. It really bothers me. Do you have any suggestions?
+
+See "Competition Math."
+
+> which problems should I solve
+
+See "Contests."
+
+> Can you provide me some coding books where I can inprove my skills.
+
+See "Resources."
+
+> I looked at your guide, but some resources were quite difficult.
+
+See "Resources" again; I think that CPH and USACO Bronze are definitely okay for beginners.
 
 ## Topics
 
@@ -99,6 +101,18 @@ Idk, there are plenty of hard questions involving easy topics.
 > what is your view on mathematics for CP? Is it highly required for one to be really good at discrete math to advance to the next level?
 
 It's required in the sense that you need to know it to solve a lot of problems, but this applies to other topics as well ...
+
+> The topics, such generally does not appear on USACO contest, are topics such appear on IOI competitions or generally does not appear on IOI too?
+
+Many topics that are banned by the IOI are used in USACO contests (look up the IOI syllabus).
+
+> In what order or from where would you suggest to solve dp problems ? I have read and understand standard dp problems but i am not very much good in thinking dp solutions.
+
+I don't think the order really matters (aside from doing easier problems first?!)
+
+> Can you compare CPH and "Competitive Programming 3" of Steven and Felix Halim?
+
+The former is quite good. I haven't read the latter.
 
 > I am stuck on a CSES task, know as "Hotels", I saw your name in the top 5 fastest solutions. Can you give me some hint on how to solve it, just a little will be okay too.
 
@@ -132,13 +146,13 @@ Until recently, I don’t believe that I have ever finished a virtual contest wh
 
 > could you please tell me which IDE do you use on your MAC?
 
-I usehttps://ideone.com/ LOL. I used to use https://csacademy.com/ but it looks like the queue times are rlly bad now. Locally I use Sublime Text w/ command line. At IOI I used Geany.
+I use https://ideone.com/ LOL. I used to use https://csacademy.com/ but it looks like the queue times are rlly bad now. Locally I use Sublime Text w/ command line. At IOI I used Geany.
 
 [Why the downvotes? :(](https://codeforces.com/blog/entry/63065?#comment-469907)
 
 > Do you use a debugger?
 
-No, ~~I can't figure out how to get GDB to work on Mac~~ and print statements generally suffice. Actually, [these instructions](https://sourceware.org/gdb/wiki/BuildingOnDarwin) should work but sometimes it hangs ...
+No, ~~I can't figure out how to get GDB to work on Mac~~ and print statements generally suffice. Actually, [these instructions](https://sourceware.org/gdb/wiki/BuildingOnDarwin) work but sometimes it hangs ...
 
 > did you do it on your own or did you have a coach !
 
@@ -147,10 +161,6 @@ No, ~~I can't figure out how to get GDB to work on Mac~~ and print statements ge
 > Are you like entirely self taught, or did you have any tutoring.
 
 mostly self? haven't been tutored or done any tutoring myself
-
-> What was your strategy considering you were preparing for IOI.
-
-Other than doing past IOI tasks, I didn't do anything specifically for IOI. If you're looking for olympiad problems see "Contests."
 
 ## Bad
 
@@ -176,19 +186,19 @@ idk
 
 2 year !
 
+> Will it be a good idea to follow your profile on any of this site and do all the questions you have done ?
+
+Doubt it. (How are you going to do ALL of the questions that I've done? o_O)
+
 > How much time you spend almost daily ?
 
 > How many hours you practice daily?
 
-idk, you can probably estimate from my submission history
+Idk, you can probably estimate from my submission history and tell me.
 
 > ur graph seems very interesting to me .
 
-ok
-
-> In what order or from where would you suggest to solve dp problems ? I have read and understand standard dp problems but i am not very much good in thinking dp solutions.
-
-I don't think the order really matters (aside from doing easier problems first?!)
+ok !
 
 > but i don't know where to start
 
@@ -216,7 +226,7 @@ what even is that lol
 
 > why don't u defeat umnik and tourist
 
-I'm not as good ...
+I'm not as good ... (yet)
 
 > Pls which calendar do u use to structure ur coding schedule.
 

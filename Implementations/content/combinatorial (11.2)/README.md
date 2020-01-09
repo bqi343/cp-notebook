@@ -40,6 +40,8 @@
         * Max Size Graphic + Colorful
       * [Coins](https://www.spoj.com/problems/COIN/)
         * Max Size Graphic + Colorful
+      * [Seollal](https://codeforces.com/contest/1284/problem/G)
+        * Max Size Graphic + Colorful
       * [Nim](https://codeforces.com/gym/102156/problem/D)
         * Max Size Linear + Colorful
       * [Rainbow Graph](https://open.kattis.com/problems/rainbowgraph)

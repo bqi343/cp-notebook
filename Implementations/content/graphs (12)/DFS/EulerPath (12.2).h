@@ -20,8 +20,7 @@ template<int SZ, bool directed> struct Euler {
 		used.pb(0); M ++;
 	}
 	vpi solve(int _N, int src = 1) {
-		N = _N; 
-		FOR(i,1,N+1) its[i] = begin(adj[i]);
+		N = _N; FOR(i,1,N+1) its[i] = begin(adj[i]);
 		vector<pair<pi,int>> ret, s = {{{src,-1},-1}};
 		while (sz(s)) {
 			int x = s.back().f.f;

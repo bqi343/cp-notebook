@@ -2,11 +2,12 @@
 
   * Splay Tree
     * Notes
-      * [Paper](https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf)
+      * [Splay Tree Paper](https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf)
       * [Splay Tree Presentation](https://web.stanford.edu/class/archive/cs/cs166/cs166.1146/lectures/08/Slides08.pdf)
   * Link Cut Tree
     * Notes
       * [Link-Cut Tree](http://courses.csail.mit.edu/6.851/spring12/scribe/L19.pdf)
+      * [CTSC 2014 Translation](https://www.overleaf.com/read/zbbwngftkrkx?fbclid=IwAR1VJmGscfSZJHejVqU5_2Nlm8-R09pFlU7PpEg_i3CXEd0Qw-dzliSn5RI)
       * [Subtree Queries Tutorial](https://codeforces.com/blog/entry/67637)
     * Problems
       * SPOJ

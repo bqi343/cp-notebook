@@ -32,7 +32,7 @@ with open('templateLong.cpp', 'w') as outfile:
 			v = []
 			for line in infile:
 				v.append(line)
-			print(fname)
+			print("IMPORTING",fname)
 			if fname == 'template.cpp':
 				for i in range(len(v)):
 					line = v[i]

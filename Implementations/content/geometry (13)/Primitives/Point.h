@@ -4,21 +4,19 @@
  * Verification: various
  */
 
-namespace Point {
-	typedef ld T;
-	template<class T> int sgn(T x) { return (x>0)-(x<0); }
+typedef ld T;
+int sgn(T x) { return (x>0)-(x<0); }
+T sq(T x) { return x*x; }
 
+namespace Point {
 	typedef pair<T,T> P;
 	typedef vector<P> vP;
-	T norm(P x) { return x.f*x.f+x.s*x.s; }
-	T abs(P x) { return sqrt(norm(x)); }
-	T angle(P x) { return atan2(x.s,x.f); }
-	P conj(P x) { return P(x.f,-x.s); }
-	P perp(P x) { return P(-x.s,x.f); }
-	P dir(T ang) {
-		auto c = exp(ang*complex<T>(0,1));
-		return P(c.real(),c.imag());
-	}
+	T norm(const P& x) { return sq(x.f)+sq(x.s); }
+	T abs(const P& x) { return sqrt(norm(x)); }
+	T angle(const P& x) { return atan2(x.s,x.f); }
+	P conj(const P& x) { return P(x.f,-x.s); }
+	P perp(const P& x) { return P(-x.s,x.f); }
+	P dir(T ang) { return P(cos(ang),sin(ang)); }
 	
 	P operator-(const P& l) { return P(-l.f,-l.s); }
 	P operator+(const P& l, const P& r) { 
@@ -41,15 +39,17 @@ namespace Point {
 	P& operator*=(P& l, const P& r) { return l = l*r; }
 	P& operator/=(P& l, const P& r) { return l = l/r; }
 	
-	P unit(P x) { return x/abs(x); }
-	T dot(P a, P b) { return (conj(a)*b).f; }
-	T cross(P a, P b) { return (conj(a)*b).s; }
-	T cross(P p, P a, P b) { return cross(a-p,b-p); }
-	P rotate(P a, T b) { return a*P(cos(b),sin(b)); }
-	P reflect(P p, P a, P b) { 
+	P unit(const P& x) { return x/abs(x); }
+	T dot(const P& a, const P& b) { return a.f*b.f+a.s*b.s; }
+	T cross(const P& a, const P& b) { return a.f*b.s-a.s*b.f; }
+	T cross(const P& p, const P& a, const P& b) {
+		return cross(a-p,b-p); }
+	P rotate(const P& a, T b) { return a*P(cos(b),sin(b)); }
+	P reflect(const P& p, const P& a, const P& b) { 
 		return a+conj((p-a)/(b-a))*(b-a); }
-	P foot(P p, P a, P b) { return (p+reflect(p,a,b))/(T)2; }
-	bool onSeg(P p, P a, P b) { 
+	P foot(const P& p, const P& a, const P& b) { 
+		return (p+reflect(p,a,b))/(T)2; }
+	bool onSeg(const P& p, const P& a, const P& b) { 
 		return cross(a,b,p) == 0 && dot(p-a,p-b) <= 0; }
 };
 using namespace Point;

@@ -57,7 +57,7 @@ struct SuffixTree {
 	int maxPre(str x) { // max prefix of x which is substring
 		int node = 0, ind = 0;
 		while (1) {
-			if (ind == sz(x) || !st[node].to.count(x[ind])) return ind;
+			if (ind==sz(x) || !st[node].to.count(x[ind])) return ind;
 			node = st[node].to[x[ind]];
 			F0R(i,st[node].len) {
 				if (ind == sz(x) || x[ind] != s[st[node].fpos+i]) 

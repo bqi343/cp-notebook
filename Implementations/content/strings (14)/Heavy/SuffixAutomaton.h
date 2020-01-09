@@ -19,15 +19,14 @@ struct SuffixAutomaton {
 	int last = 0;
 	void extend(char c) {
 		int cur = sz(st); st.eb();
-		st[cur].len = st[last].len+1, st[cur].firstPos = st[cur].len-1;
+		st[cur].len=st[last].len+1, st[cur].firstPos=st[cur].len-1;
 		int p = last;
 		while (p != -1 && !st[p].next.count(c)) {
 			st[p].next[c] = cur;
 			p = st[p].link;
 		}
-		if (p == -1) {
-			st[cur].link = 0;
-		} else {
+		if (p == -1) st[cur].link = 0;
+		else {
 			int q = st[p].next[c];
 			if (st[p].len+1 == st[q].len) {
 				st[cur].link = q;
@@ -61,7 +60,6 @@ struct SuffixAutomaton {
 		vi oc; getAllOccur(oc,cur); trav(t,oc) t += 1-sz(s);
 		sort(all(oc)); return oc;
 	}
-	
 	vl distinct;
 	ll getDistinct(int x) {
 		if (distinct[x]) return distinct[x];
@@ -70,9 +68,7 @@ struct SuffixAutomaton {
 		return distinct[x];
 	}
 	ll numDistinct() { // # of distinct substrings including empty
-		distinct.rsz(sz(st));
-		return getDistinct(0);
-	}
+		distinct.rsz(sz(st)); return getDistinct(0); }
 	ll numDistinct2() { // another way to do above
 		ll ans = 1;
 		FOR(i,1,sz(st)) ans += st[i].len-st[st[i].link].len;

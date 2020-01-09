@@ -20,7 +20,7 @@ typedef vector<int> vi;
 #define trav(a,x) for (auto& a: x)
 
 const int MOD = 1e9+7; // 998244353; // = (119<<23)+1
-const ld PI = 4*atan((ld)1);
+const ld PI = acos((ld)-1);
 
 template<class T> bool ckmin(T& a, const T& b) {
 	return a > b ? a = b, 1 : 0; }

@@ -1,16 +1,16 @@
 /**
  * Description: Fast input for chinese contests. For output use 
- 	\texttt{fwrite(buf,1,pos,stdout)}.
+	* \texttt{fwrite(buf,1,len,stdout)}.
  * Time: $\sim$300ms faster for $10^6$ long longs on CF
  * Source: 
  	* https://codeforces.com/gym/102394/submission/64154785
  	* https://codeforces.com/contest/1254/submission/65420506 (neal)
- 	* maybe also see https://codeforces.com/blog/entry/45835 ?
+ 	* https://codeforces.com/blog/entry/45835 (AI.Cash)
  * Verification: https://codeforces.com/gym/102394/problem/G 
  */
 
-namespace fastI {
-	const int BSZ = 2<<15;
+namespace FastI {
+	const int BSZ = 1<<15;
 	char nc() { // next char
 		static char buf[BSZ]; static int pos = 0, len = 0;
 		if (pos == len) {
@@ -27,5 +27,5 @@ namespace fastI {
 	}
 	/// bool blank(char ch) { return ch == ' ' || ch == '\n' || ch == '\r' || ch == '\t'; }
 }
-using namespace fastI;
+/// using namespace FastI;
 /// int a,b; ri(a); ri(b); ps(a,b); ps(nc() == EOF);

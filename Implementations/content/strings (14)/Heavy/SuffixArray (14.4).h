@@ -46,8 +46,8 @@ struct SuffixArray {
 			for (int j=sa[isa[i]-1]; j+h<N && S[i+h]==S[j+h]; h++);
 			lcp[isa[i]-1] = h; if (h) h--; 
 		}
-		// if we cut off first chars of two strings with lcp h 
-		// then remaining portions still have lcp h-1 
+		/// if we cut off first chars of two strings with lcp h 
+		/// then remaining portions still have lcp h-1 
 		/// R.init(lcp);
 	}
 	/**RMQ<int> R; 

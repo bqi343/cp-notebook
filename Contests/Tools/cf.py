@@ -329,7 +329,6 @@ def lex(pn):
 				if c>=2 and u[c]=='$' and u[c-1]=='$' and u[c-2]=='$':
 					c -= 2
 					u=u[:c]+"##"+u[c:]
-					# print("WHAT DOES THIS MEAN?",u)
 			u=u.replace('—',', i.e. ')
 			u=u.replace('--',', i.e. ')
 			u=u.replace(',',' , ')
@@ -337,7 +336,6 @@ def lex(pn):
 				u=u.replace('  ',' ')
 			u=u.replace(', and ',' and ')
 			u=u.split(',') # list of cleaned statements
-
 			uu=[]
 			for c_ in u:
 				c=' '+c_+' '
@@ -392,6 +390,9 @@ def lex(pn):
 			else:
 				continue # irrelevant?
 			u = clean(u)
+			if TESTING:
+				print()
+				print("CLEANED",u)
 			ps = cleanParen(u)
 			if TESTING:
 				print("PS",ps)
@@ -400,8 +401,8 @@ def lex(pn):
 			vis=set()
 			counters=set()
 
-			# print("OH",ps)
 			matrix = False
+			stri = False
 			for w in range(1,len(ps),2):
 				if ps[w].find('=')==-1:
 					psw=ps[w].split(',')
@@ -415,7 +416,6 @@ def lex(pn):
 						if o.find('_')!=-1: # array elements a_1,a_2,...
 							o=o[:o.find('_')]
 							if o in vis:
-								# print("IN VIS?",psw)
 								continue
 							vis.add(o)
 						if o=='':
@@ -424,6 +424,8 @@ def lex(pn):
 							continue
 						if w+1 < len(ps) and 'string' in ps[w+1] and 'line' in ps[w+1]:
 							matrix = True
+						if 'string' in ps[w-1] and (not o in isArr):
+							stri = True
 						pg.append(o)
 			PG = []
 			for x in pg:
@@ -435,24 +437,32 @@ def lex(pn):
 			isLoop=int(not(pg[0].isalpha() and not (pg[0] in isArr))) # has variable appeared before
 			if isLoop and len(pg)==1:
 				continue
-
-			# print("WUT",pg,isLoop)
 			matrixFlag = False
+			striFlag = False
+			newVars = []
 			for w in range(isLoop,len(pg)):
 				if pg[w].isalpha() and not (pg[w] in isArr):
 					if firstVar=='':
 						firstVar=pg[w]
 					isArr[pg[w]]=isLoop
 					varType[pg[w]]=0
+					newVars.append(pg[w])
 				else:
 					if matrix and len(pg) == 2 and isLoop:
 						matrixFlag = True
+					elif stri and not isLoop:
+						striFlag = True
 					else:
 						return None # something bad happened :(
 			if matrixFlag:
 				program.append((pg[0],["gr"]))
 				isArr["gr"] = True
 				varType["gr"] = 3
+				continue
+			if striFlag:
+				if len(newVars) != 1:
+					return None
+				program.append((None,newVars))
 				continue
 			if isLoop:
 				lo=pg[0]
@@ -478,7 +488,9 @@ def parse_i(p,inputs):
 	#single case?
 	firstVar,isArr,varType,program=l
 	if TESTING:
-		print("PROGRAM FOR",p,"IS",program)
+		print()
+		print("PROGRAM FOR PROBLEM",p,"IS",program)
+		print()
 	varList=list(isArr.keys())
 	varList.sort(key=len,reverse=True)
 

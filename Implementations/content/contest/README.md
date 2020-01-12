@@ -24,7 +24,6 @@ class C {
 };
 
 int main() {
-	setIO();
 	C c; ps(c.m());
 }
 ```

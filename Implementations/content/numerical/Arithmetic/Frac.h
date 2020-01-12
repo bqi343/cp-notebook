@@ -22,6 +22,7 @@ struct frac {
 	friend bool operator==(const frac& l, const frac& r) { return l.n == r.n && l.d == r.d; }
 	friend bool operator!=(const frac& l, const frac& r) { return !(l == r); }
 
+	frac operator-() const { return frac(-n,d); }
 	friend frac operator+(const frac& l, const frac& r) { return frac(l.n*r.d+r.n*l.d,l.d*r.d); }
 	friend frac operator-(const frac& l, const frac& r) { return frac(l.n*r.d-r.n*l.d,l.d*r.d); }
 	friend frac operator*(const frac& l, const frac& r) { return frac(l.n*r.n,l.d*r.d); }

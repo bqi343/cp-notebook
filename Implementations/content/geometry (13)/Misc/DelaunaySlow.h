@@ -1,6 +1,8 @@
 /**
  * Description: Bowyer-Watson incremental Delaunay triangulation, 
- 	* not all points collinear. Works for $|x|,|y|\le 10^4.$
+ 	* not all points collinear. Works for $|x|,|y|\le 10^4,$
+ 	* assuming that all circumradii in final triangulation are
+ 	* $\ll 10^9.$
  * Time: O(N^2\log N)
  * Source: Own
  * Verification: 
@@ -10,7 +12,7 @@
 
 #include "DelaunayFast.h"
 
-const int BIG = 1e9; // >>(10^4)^2
+const T BIG = 1e9; // >>(10^4)^2
 vector<array<int,3>> triangulate(vP v) {
 	v.pb({-BIG,-BIG}); v.pb({BIG,0}); v.pb({0,BIG});
 	vector<array<int,3>> ret, tmp;

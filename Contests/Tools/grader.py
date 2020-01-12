@@ -16,7 +16,7 @@ CPP="g++-9 -std=c++11 -O2 -Wl,-stack_size -Wl,0x10000000 -w -o $ $.cpp"
 
 def replace(x,y): # replace occurrences of $ in x with y
 	return x.replace('$',str(y))
-def cb(text,col): # color and bold text with color col
+def cb(text,col="grey"): # color and bold text with color col
 	return colored(text,col,attrs=['bold'])
 def isfloat(value): # check if it can be float
 	try:
@@ -110,7 +110,7 @@ def grade(prog,inputF,outputF):
 		for line in open(o):
 			report += pad+line
 		report += pad+sep+"\n"
-		res = check(outputF,o)+(t,report) 
+	res = check(outputF,o)+(t,report) 
 	return res
 
 def getOutput(prog,inputF):
@@ -240,12 +240,12 @@ def main():
 		opts, args = getopt.getopt(sys.argv[1:], "ohc:t:gs:d", ["output","help","correct","time","grade","start","debug"])
 		for option, value in opts:
 			if option in ("-h", "--help"):
-				print("This is the help section for this program.")
+				print("This is the help section for "+cb("grader.py")+".")
 				print()
 				print("Available options are:")
 				print("\t -h --help: display help")
 				print("\t -t --time: set time limit")
-				print("\t -d --debug: debug mode")
+				print("\t -d --debug: give input /output for WAs")
 				print("\t -s --start: set starting time (for grade)")
 				print()
 				print("Available commands are:")

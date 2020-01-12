@@ -3,6 +3,7 @@
 import subprocess # run terminal stuff
 import os # check if file exists
 import sys
+import timeit
 from termcolor import colored # print in color + bold
 import getopt # command line
 
@@ -48,14 +49,20 @@ def compile(x): # compile cpp file x
 
 def run(x, inputF): # return tuple of output file, exit code, time
 	outputF = f"{x}.out"
-	runCom = f"ulimit -t {TL}; time -p (./{x} < {inputF} > {outputF}) 2> .time_info;"
-	ret = subprocess.call(runCom,shell=True)
-	if ret != 0:
-		return outputF,ret,-1
-	timeCom = 'cat .time_info | grep real | cut -d" " -f2' # get real time
-	proc = subprocess.Popen(timeCom, stdout=subprocess.PIPE, shell=True)
-	time = proc.communicate()[0].rstrip().decode("utf-8") 
-	return outputF,ret,time
+	try:
+		runCom = f"time -p (./{x} < {inputF} > {outputF}) 2> .time_info;"
+		ret = subprocess.call(runCom,shell=True,timeout=TL+0.5)
+		if ret != 0:
+			return outputF,ret,-1
+		timeCom = 'cat .time_info | grep real | cut -d" " -f2' # get real time
+		proc = subprocess.Popen(timeCom, stdout=subprocess.PIPE, shell=True)
+		time = proc.communicate()[0].rstrip().decode("utf-8") 
+		return outputF,ret,time
+	except subprocess.TimeoutExpired as e:
+		# template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+		# message = template.format(type(e).__name__, e.args)
+		# print(message)
+		return "",152,TL
 
 def check(o0,o1): # check if output files o0,o1 match
 	O0,O1 = parse(o0),parse(o1)
@@ -70,7 +77,7 @@ def check(o0,o1): # check if output files o0,o1 match
 				return "W", f"{i}-th elements don't match, expected {z0} but found {z1}"
 			e = error(float(z0),float(z1))
 			if e > 1e-6:
-				return "W", f"{i}-th floats differ, error={e}"
+				return "W", f"{i}-th floats differ, error={e}. Expected {z0} but found {z1}"
 			continue
 		return "W", f"{i}-th elements don't match, expected {z0} but found {z1}"
 	return "A", "OK"
@@ -86,7 +93,8 @@ def interpret(e): # interpret exit code
 debug = False
 
 def grade(prog,inputF,outputF):
-	o, e, t = run(prog,inputF)
+	global TL
+	o,e,t = run(prog,inputF)
 	if e != 0:
 		return interpret(e)+(t,"")
 	pad = '\t'
@@ -111,9 +119,13 @@ def grade(prog,inputF,outputF):
 			report += pad+line
 		report += pad+sep+"\n"
 	res = check(outputF,o)+(t,report) 
+	# print("??",t)
+	if float(t) > TL:
+		res = (res[0]+"T",)+res[1:]
 	return res
 
 def getOutput(prog,inputF):
+	global TL
 	o, e, t = run(prog,inputF)
 	if e != 0:
 		return interpret(e)+(t,)
@@ -126,7 +138,7 @@ def output(i,res,message,t):
 	else:
 		print(cb(res,"red"),end="")
 	print(f" - {message}",end="")
-	if res == 'A' or res == 'W':
+	if ('A' in res) or ('W' in res):
 		print(f" [{t}]",end="")
 	print()
 
@@ -232,6 +244,7 @@ def cppFiles():
 def main():
 	global debug
 	global CPP 
+	global TL
 	try:
 		correct = None
 		start = None
@@ -256,6 +269,7 @@ def main():
 				return
 			if option in ("-t", "--time"):
 				TL = float(value)
+				print("Time limit set to "+str(TL)+" seconds.")
 			if option in ("-c", "--correct"):
 				correct = value 
 			if option in ("-o"):

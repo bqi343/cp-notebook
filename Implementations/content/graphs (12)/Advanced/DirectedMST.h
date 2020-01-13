@@ -54,21 +54,21 @@ pair<ll,vi> dmst(int n, int r, const vector<Edge>& g) {
 			if (seen[u] == s) { // found cycle, contract
 				Node* cyc = 0; cycs.eb();
 				do {
-					cyc = merge(cyc, heap[w = path.back().f]);
-					cycs.back().s.pb(path.back().s);
+					cyc = merge(cyc, heap[w = path.bk.f]);
+					cycs.bk.s.pb(path.bk.s);
 					path.pop_back(); 
 				} while (dsu.unite(u,w));
 				u = dsu.get(u); heap[u] = cyc, seen[u] = -1;
-				cycs.back().f = u;
+				cycs.bk.f = u;
 			}
 		}
 		trav(t,path) in[dsu.get(t.s.b)] = {t.s.a,t.s.b}; 
 		// found path from root to s, done
 	}
 	while (sz(cycs)) { // expand cycs to restore sol
-		auto c = cycs.back(); cycs.pop_back();
+		auto c = cycs.bk; cycs.pop_back();
 		pi inEdge = in[c.f];
-		trav(t,c.s) dsu.rollback();
+		trav(t,c.s) dsu.rol.bk;
 		trav(t,c.s) in[dsu.get(t.b)] = {t.a,t.b};
 		in[dsu.get(inEdge.s)] = inEdge;
 	}

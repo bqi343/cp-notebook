@@ -11,8 +11,8 @@
 template<int SZ, bool VALS_IN_EDGES> struct HLD { 
 	int N; vi adj[SZ];
 	int par[SZ], sz[SZ], depth[SZ];
-	int root[SZ], pos[SZ]; vi rpos;
-	void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
+	int root[SZ], pos[SZ]; /// vi rpos;
+	void ae(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
 	void dfsSz(int v = 1) {
 		if (par[v]) adj[v].erase(find(all(adj[v]),par[v]));
 		sz[v] = 1;
@@ -23,7 +23,7 @@ template<int SZ, bool VALS_IN_EDGES> struct HLD {
 		}
 	}
 	void dfsHld(int v = 1) {
-		static int t = 0; pos[v] = t++; rpos.pb(v);
+		static int t = 0; pos[v] = t++; /// rpos.pb(v);
 		trav(u,adj[v]) {
 			root[u] = (u == adj[v][0] ? root[v] : u);
 			dfsHld(u);

@@ -12,7 +12,7 @@ template<int SZ> struct LCA {
 	vi adj[SZ];
 	int par[BITS][SZ], depth[SZ];
 	// INITIALIZE
-	void addEdge(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
+	void ae(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
 	void dfs(int u, int prev){
 		par[0][u] = prev;
 		depth[u] = depth[prev]+1;

@@ -70,7 +70,7 @@ struct SuffixTree {
 	void genSa(int x = 0, int len = 0) {
 		if (!sz(st[x].to)) { // terminal node
 			sa.pb(st[x].fpos-len);
-			if (sa.back() >= sz(s)) sa.pop_back();
+			if (sa.bk >= sz(s)) sa.pop_back();
 		} else {
 			len += st[x].len;
 			trav(t,st[x].to) genSa(t.s,len);

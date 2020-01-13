@@ -10,7 +10,7 @@
 template<int SZ> struct UnweightedMatch {
 	int match[SZ], N; 
 	vi adj[SZ];
-	void addEdge(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
+	void ae(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
 	void init(int _N) {
 		N = _N; FOR(i,1,N+1) adj[i].clear(), match[i] = 0;
 	}

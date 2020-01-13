@@ -15,7 +15,7 @@ template<int SZ> struct Centroid {
 	int sub[SZ], par[SZ]; // subtree size, current par
 	pi cen[SZ]; // immediate centroid anc
 	vi dist[SZ]; // dists to all centroid ancs
-	void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
+	void ae(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
 	void dfs(int x) {
 		sub[x] = 1;
 		trav(y,adj[x]) if (!done[y] && y != par[x]) {
@@ -34,7 +34,7 @@ template<int SZ> struct Centroid {
 		}
 	}
 	void genDist(int x, int p) {
-		dist[x].pb(dist[p].back()+1);
+		dist[x].pb(dist[p].bk+1);
 		trav(y,adj[x]) if (!done[y] && y != p) genDist(y,x); 
 	}
 	void gen(pi CEN, int x) {

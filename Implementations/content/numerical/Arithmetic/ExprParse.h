@@ -28,9 +28,9 @@ namespace ExprParse {
 
 	int process(vi& num, vector<char>& op) {
 		if (sz(num) < 2 || sz(op) < 1) return -1;
-		int y = num.back(); num.pop_back();
-		int x = num.back(); num.pop_back();
-		char c = op.back(); op.pop_back();
+		int y = num.bk; num.pop_back();
+		int x = num.bk; num.pop_back();
+		char c = op.bk; op.pop_back();
 		num.pb(eval(c,x,y));
 		return 0;
 	}
@@ -57,7 +57,7 @@ namespace ExprParse {
 				return finish(state,num,op);
 			} else if (expr[ind] == '(') {
 				ind ++;
-				num.pb(eval(1)); if (num.back() == -1) return -1;
+				num.pb(eval(1)); if (num.bk == -1) return -1;
 				if (state == 0) return -1;
 				state = 0;
 			} else if (isdigit(expr[ind])) {
@@ -70,7 +70,7 @@ namespace ExprParse {
 				if (state == 0) return -1;
 				state = 0;
 			} else {
-				while (sz(op) && pri(op.back()) >= pri(expr[ind])) {
+				while (sz(op) && pri(op.bk) >= pri(expr[ind])) {
 					int t = process(num,op);
 					if (t == -1) return -1;
 				}

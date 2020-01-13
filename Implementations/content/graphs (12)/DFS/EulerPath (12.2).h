@@ -14,7 +14,7 @@ template<int SZ, bool directed> struct Euler {
 	vpi adj[SZ];
 	vpi::iterator its[SZ];
 	vector<bool> used;
-	void addEdge(int a, int b) {
+	void ae(int a, int b) {
 		if (directed) adj[a].pb({b,M});
 		else adj[a].pb({b,M}), adj[b].pb({a,M});
 		used.pb(0); M ++;
@@ -23,13 +23,13 @@ template<int SZ, bool directed> struct Euler {
 		N = _N; FOR(i,1,N+1) its[i] = begin(adj[i]);
 		vector<pair<pi,int>> ret, s = {{{src,-1},-1}};
 		while (sz(s)) {
-			int x = s.back().f.f;
+			int x = s.bk.f.f;
 			auto& it = its[x], end = adj[x].end();
 			while (it != end && used[it->s]) it ++;
 			if (it == end) { 
-				if (sz(ret) && ret.back().f.s != s.back().f.f) 
+				if (sz(ret) && ret.bk.f.s != s.bk.f.f) 
 					return {}; // path isn't valid
-				ret.pb(s.back()), s.pop_back(); 
+				ret.pb(s.bk), s.pop_back(); 
 			} else { s.pb({{it->f,x},it->s}); used[it->s] = 1; }
 		}
 		if (sz(ret) != M+1) return {};

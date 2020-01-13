@@ -22,8 +22,8 @@ struct DSUrb {
 		e[x] += e[y]; e[y] = x;
 		return 1;
 	}
-	void rollback() {
-		auto a = mod.back(); mod.pop_back();
+	void rol.bk {
+		auto a = mod.bk; mod.pop_back();
 		if (a[0] != MOD) e[a[0]] = a[2], e[a[1]] = a[3];
 	}
 };

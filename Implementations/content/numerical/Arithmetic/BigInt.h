@@ -84,7 +84,7 @@ struct bigint {
 	bigint operator*(int v) const { return bigint(*this) *= v; }
 
 	friend pair<bigint, bigint> divmod(const bigint &a1, const bigint &b1) {
-		int norm = base / (b1.z.back() + 1);
+		int norm = base / (b1.z.bk + 1);
 		bigint a = a1.abs() * norm;
 		bigint b = b1.abs() * norm;
 		bigint q, r;
@@ -95,7 +95,7 @@ struct bigint {
 			r += a.z[i];
 			int s1 = b.z.size() < r.z.size() ? r.z[b.z.size()] : 0;
 			int s2 = b.z.size() - 1 < r.z.size() ? r.z[b.z.size() - 1] : 0;
-			int d = (int) (((long long) s1 * base + s2) / b.z.back());
+			int d = (int) (((long long) s1 * base + s2) / b.z.bk);
 			r -= b * d;
 			while (r < 0)
 				r += b, --d;
@@ -200,7 +200,7 @@ struct bigint {
 	bool operator!=(const bigint &v) const { return *this < v || v < *this; }
 
 	void trim() {
-		while (!z.empty() && z.back() == 0) z.pop_back();
+		while (!z.empty() && z.bk == 0) z.pop_back();
 		if (z.empty()) sign = 1;
 	}
 
@@ -257,7 +257,7 @@ struct bigint {
 	friend ostream &operator<<(ostream &stream, const bigint &v) {
 		if (v.sign == -1)
 			stream << '-';
-		stream << (v.z.empty() ? 0 : v.z.back());
+		stream << (v.z.empty() ? 0 : v.z.bk);
 		for (int i = (int) v.z.size() - 2; i >= 0; --i)
 			stream << setw(base_digits) << setfill('0') << v.z[i];
 		return stream;
@@ -281,7 +281,7 @@ struct bigint {
 			}
 		}
 		res.push_back((int) cur);
-		while (!res.empty() && res.back() == 0)
+		while (!res.empty() && res.bk == 0)
 			res.pop_back();
 		return res;
 	}

@@ -14,7 +14,7 @@ pair<vi,vi> ulHull(const vP& P) {
 	sort(all(p), [&P](int a, int b) { return P[a] < P[b]; });
 	trav(i,p) {
 		#define ADDP(C, cmp) while (sz(C) > 1 && cross(\
-			P[C[sz(C)-2]],P[C.back()],P[i]) cmp 0) C.pop_back(); C.pb(i);
+			P[C[sz(C)-2]],P[C.bk],P[i]) cmp 0) C.pop_back(); C.pb(i);
 		ADDP(u, >=); ADDP(l, <=);
 	}
 	return {u,l};

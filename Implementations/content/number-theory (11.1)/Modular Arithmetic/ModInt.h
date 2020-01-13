@@ -7,56 +7,55 @@
 	* https://codeforces.com/contest/1264/submission/66344993 (ksun)
  * Verification: 
 	* https://open.kattis.com/problems/modulararithmetic
-	* also see Combinations
  */
 
 #include "../../contest/CppIO.h"
 
 struct mi {
 	typedef decay<decltype(MOD)>::type T;
-	T val; 
-	explicit operator T() const { return val; }
-	mi() { val = 0; }
-	mi(ll v) { 
-		val = (-MOD <= v && v <= MOD) ? v : v % MOD;
-		if (val < 0) val += MOD;
+	T v; 
+	explicit operator T() const { return v; }
+	mi() { v = 0; }
+	mi(ll _v) { 
+		v = (-MOD < _v && _v < MOD) ? _v : _v % MOD;
+		if (v < 0) v += MOD;
 	}
 	friend bool operator==(const mi& a, const mi& b) { 
-		return a.val == b.val; }
-	/**friend bool operator!=(const mi& a, const mi& b) { 
+		return a.v == b.v; }
+	friend bool operator!=(const mi& a, const mi& b) { 
 		return !(a == b); }
 	friend bool operator<(const mi& a, const mi& b) { 
-		return a.val < b.val; }
+		return a.v < b.v; }
 	friend void re(mi& a) { ll x; re(x); a = mi(x); }
-	friend void pr(const mi& a) { pr(a.val); }
+	friend void pr(const mi& a) { pr(a.v); }
 	friend ostream& operator<<(ostream& os, const mi& a) { 
-		return os << a.val; }*/
+		return os << a.v; }
    
-	mi operator-() const { return mi(-val); }
+	mi operator-() const { return mi(-v); }
 	mi& operator+=(const mi& m) { 
-		if ((val += m.val) >= MOD) val -= MOD; 
+		if ((v += m.v) >= MOD) v -= MOD; 
 		return *this; }
 	mi& operator-=(const mi& m) { 
-		if ((val -= m.val) < 0) val += MOD; 
+		if ((v -= m.v) < 0) v += MOD; 
 		return *this; }
-	/// mi& operator++() { return *this += 1; }
-	/// mi& operator--() { return *this -= 1; }
+	mi& operator++() { return *this += 1; }
+	mi& operator--() { return *this -= 1; }
 	friend mi operator+(mi a, const mi& b) { return a += b; }
 	friend mi operator-(mi a, const mi& b) { return a -= b; }
 
 	mi& operator*=(const mi& m) { 
-		val = (ll)val*m.val%MOD; return *this; }
+		v = (ll)v*m.v%MOD; return *this; }
+	mi& operator/=(const mi& m) { return (*this) *= inv(m); }
+	friend mi operator*(mi a, const mi& b) { return a *= b; }
+	friend mi operator/(mi a, const mi& b) { return a /= b; }
 	friend mi pow(mi a, ll p) {
 		mi ans = 1; assert(p >= 0);
 		for (; p; p /= 2, a *= a) if (p&1) ans *= a;
 		return ans;
 	}
 	friend mi inv(const mi& a) { 
-		assert(!(a == 0)); return pow(a,MOD-2); }
-	mi& operator/=(const mi& m) { return (*this) *= inv(m); }
-	friend mi operator*(mi a, const mi& b) { return a *= b; }
-	friend mi operator/(mi a, const mi& b) { return a /= b; }
+		assert(a.v != 0); return pow(a,MOD-2); }
 };
-/// typedef pair<mi,mi> pmi;
-/// typedef vector<mi> vmi;
-/// typedef vector<pmi> vpmi;
+typedef vector<mi> vmi;
+typedef pair<mi,mi> pmi;
+typedef vector<pmi> vpmi;

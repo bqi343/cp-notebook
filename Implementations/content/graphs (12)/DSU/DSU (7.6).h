@@ -21,7 +21,7 @@ struct DSU {
 
 /**template<class T> T kruskal(int n, vector<pair<T,pi>> ed) {
 	sort(all(ed));
-	T ans = 0; DSU D; D.init(n); // edges that unite are in MST
+	T ans = 0; DSU D; D.init(n+1); // edges that unite are in MST
 	trav(a,ed) if (D.unite(a.s.f,a.s.s)) ans += a.f; 
 	return ans;
 }*/

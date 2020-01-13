@@ -11,7 +11,7 @@ vi decode(int n, int a) {
 	F0R(i,n) {
 		int z = a%sz(el);
 		b.pb(el[z]); a /= sz(el);
-		swap(el[z],el.back()); el.pop_back();
+		swap(el[z],el.bk); el.pop_back();
 	}
 	return b;
 }
@@ -20,8 +20,8 @@ int encode(vi b) {
 	vi pos(n); iota(all(pos),0); vi el = pos;
 	F0R(i,n) {
 		int z = pos[b[i]]; a += mul*z; mul *= sz(el);
-		swap(pos[el[z]],pos[el.back()]); 
-		swap(el[z],el.back()); el.pop_back();
+		swap(pos[el[z]],pos[el.bk]); 
+		swap(el[z],el.bk); el.pop_back();
 	}
 	return a;
 }

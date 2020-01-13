@@ -10,13 +10,12 @@
  */
 
 template<int SZ> struct BCC {
-	int N;
 	vpi adj[SZ], ed;
-	void addEdge(int u, int v) { 
+	void ae(int u, int v) { 
 		adj[u].pb({v,sz(ed)}), adj[v].pb({u,sz(ed)}); 
 		ed.pb({u,v});
 	}
-	int disc[SZ];
+	int N, disc[SZ];
 	vi st; vector<vi> bccs; // edges for each bcc
 	int bcc(int u, int p = -1) { // return lowest disc
 		static int ti = 0; disc[u] = ++ti; 
@@ -28,9 +27,9 @@ template<int SZ> struct BCC {
 				// if (disc[u] < LOW) -> bridge
 				if (disc[u] <= LOW) { // get edges in bcc
 					// if (p != -1 || child > 1) -> u is articulation pt
-					bccs.eb(); vi& tmp = bccs.back(); // new bcc
-					for (bool done = 0; !done; tmp.pb(st.back()), 
-						st.pop_back()) done |= st.back() == i.s;
+					bccs.eb(); vi& tmp = bccs.bk; // new bcc
+					for (bool done = 0; !done; tmp.pb(st.bk),
+						st.pop_back()) done |= st.bk == i.s;
 				}
 			} else if (disc[i.f] < disc[u]) 
 				ckmin(low,disc[i.f]), st.pb(i.s);
@@ -40,6 +39,6 @@ template<int SZ> struct BCC {
 	void init(int _N) {
 		N = _N; F0R(i,N) disc[i] = 0;
 		F0R(i,N) if (!disc[i]) bcc(i); 
-		// st should be empty after each iteration
+		/// st should be empty after each iteration
 	}
 };

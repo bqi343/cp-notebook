@@ -33,7 +33,7 @@ vector<F> hull3d(const vP3& A) {
 			F f = FS[j];
 			if (dot(f.q,A[i]) > dot(f.q,A[f.a])) { // face is visible, remove edges
 				E(a,b).rem(f.c), E(a,c).rem(f.b), E(b,c).rem(f.a);
-				swap(FS[j--], FS.back());
+				swap(FS[j--], FS.bk);
 				FS.pop_back();
 			}
 		}

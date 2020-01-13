@@ -9,7 +9,7 @@
 template<int SZ> struct TreeDiameter {
 	int N; 
 	vi adj[SZ];
-	void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
+	void ae(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
 	int par[SZ], dist[SZ];
 	void dfs(int x) {
 		trav(y,adj[x]) if (y != par[x]) {

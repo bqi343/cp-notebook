@@ -65,7 +65,7 @@ ll area(vector<pair<pi,pi>> v) { // area of union of rectangles
 	F0R(i,sz(ev)-1) {
 		const auto& t = ev[i];
 		L.upd(t[2],t[3],t[1]);
-		int len = y.back()-y.front()-L.mn[1].s; // L.mn[0].f should equal 0
+		int len = y.bk-y.front()-L.mn[1].s; // L.mn[0].f should equal 0
 		ans += (ll)(ev[i+1][0]-t[0])*len;
 	}
 	return ans;

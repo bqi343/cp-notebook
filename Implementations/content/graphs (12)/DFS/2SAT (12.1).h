@@ -24,7 +24,7 @@ template<int SZ> struct TwoSat {
 	int addVar() { return N++; }
 	void either(int x, int y) { 
 		x = max(2*x,-1-2*x), y = max(2*y,-1-2*y);
-		S.addEdge(x^1,y); S.addEdge(y^1,x); 
+		S.ae(x^1,y); S.ae(y^1,x); 
 	}
 	void implies(int x, int y) { either(~x,y); }
 	void setVal(int x) { either(x,x); }

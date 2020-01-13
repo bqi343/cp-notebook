@@ -16,7 +16,7 @@ template<int SZ> struct MCMF {
 	typedef ll F; typedef ll C;
 	struct Edge { int to, rev; F flow, cap; C cost; };
 	vector<Edge> adj[SZ];
-	void addEdge(int u, int v, F cap, C cost) {
+	void ae(int u, int v, F cap, C cost) {
 		assert(cap >= 0);
 		Edge a{v,sz(adj[v]),0,cap,cost}, b{u,sz(adj[u]),0,0,-cost};
 		adj[u].pb(a), adj[v].pb(b);

@@ -2,11 +2,11 @@
 using namespace std;
  
 typedef long long ll;
-typedef long double ld; //
+typedef long double ld;
 typedef double db; //
 typedef string str; //
 //
-typedef pair<int, int> pi;
+typedef pair<int,int> pi;
 typedef pair<ll,ll> pl; //
 typedef pair<ld,ld> pd; //
 #define mp make_pair
@@ -17,7 +17,7 @@ typedef vector<int> vi;
 typedef vector<ll> vl; //
 typedef vector<ld> vd; //
 typedef vector<str> vs; //
-typedef vector<pi> vpi; //
+typedef vector<pi> vpi;
 typedef vector<pl> vpl; //
 typedef vector<pd> vpd; //
 //
@@ -27,7 +27,7 @@ typedef vector<pd> vpd; //
 #define rsz resize
 #define ins insert //
 #define ft front() //
-#define bk back() //
+#define bk back()
 #define pf push_front //
 #define pb push_back
 #define eb emplace_back //
@@ -41,7 +41,7 @@ typedef vector<pd> vpd; //
 #define trav(a,x) for (auto& a: x)
 
 const int MOD = 1e9+7; // 998244353; // = (119<<23)+1
-const int MX = 2e5+5; //
+const int MX = 2e5+5;
 const ll INF = 1e18; //
 const ld PI = acos((ld)-1);
 const int xd[4] = {1,0,-1,0}, yd[4] = {0,1,0,-1}; //

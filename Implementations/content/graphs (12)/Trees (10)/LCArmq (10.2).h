@@ -11,7 +11,7 @@ template<int SZ> struct LCA {
 	vi adj[SZ];
 	vpi tmp;
 	RMQ<pi> r;
-	void addEdge(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
+	void ae(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
 	void dfs(int u, int prev){
 		pos[u] = sz(tmp); depth[u] = depth[prev]+1;
 		tmp.pb({depth[u],u});

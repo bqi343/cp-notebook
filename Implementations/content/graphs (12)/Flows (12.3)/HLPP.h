@@ -11,7 +11,7 @@ template <int SZ> struct HLPP {
 	
 	int N,s,t;
 	vector<Edge> adj[SZ];
-	void addEdge(int u, int v, F cap) {
+	void ae(int u, int v, F cap) {
 		assert(cap >= 0); // don't try smth dumb
 		Edge a{v, sz(adj[v]), cap}, b{u, sz(adj[u]), 0};
 		adj[u].pb(a), adj[v].pb(b);
@@ -75,7 +75,7 @@ template <int SZ> struct HLPP {
 		trav(e,adj[s]) push(s,e);
 		for (; highest >= 0; highest--) 
 			while (sz(lst[highest])) {
-				int v = lst[highest].back();
+				int v = lst[highest].bk;
 				lst[highest].pop_back();
 				discharge(v);
 				if (work > 4*N) globalRelabel();

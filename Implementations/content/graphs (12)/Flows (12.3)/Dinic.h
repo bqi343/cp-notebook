@@ -13,7 +13,7 @@ template<int SZ> struct Dinic {
 	int N,s,t;
 	vector<Edge> adj[SZ];
 	typename vector<Edge>::iterator cur[SZ];
-	void addEdge(int u, int v, F cap) {
+	void ae(int u, int v, F cap) {
 		assert(cap >= 0); // don't try smth dumb
 		Edge a{v, sz(adj[v]), 0, cap}, b{u, sz(adj[u]), 0, 0};
 		adj[u].pb(a), adj[v].pb(b);

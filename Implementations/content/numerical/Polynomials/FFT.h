@@ -22,8 +22,8 @@ const int MOD = (119 << 23) + 1, root = 3; // = 998244353
 
 int size(int s) { return s > 1 ? 32-__builtin_clz(s-1) : 0; }
 void genRoots(vcd& roots) { // primitive n-th roots of unity
-	int n = sz(roots); double ang = 2*PI/n;
-	// good way to compute these trig functions more quickly?
+	int n = sz(roots); db ang = 2*PI/n;
+	/// good way to compute these trig functions more quickly?
 	F0R(i,n) roots[i] = cd(cos(ang*i),sin(ang*i)); 
 }
 void genRoots(vmi& roots) { 
@@ -35,17 +35,15 @@ template<class T> void fft(vector<T>& a,
   const vector<T>& roots, bool inv = 0) {
 	int n = sz(a); // sort #s from 0 to n-1 by reverse binary
 	for (int i = 1, j = 0; i < n; i++) { 
-		int bit = n>>1;
-		for (; j&bit; bit >>= 1) j ^= bit;
-		j ^= bit; if (i < j) swap(a[i], a[j]);
+		int bit = n>>1; for (; j&bit; bit /= 2) j ^= bit;
+		j ^= bit; if (i < j) swap(a[i],a[j]);
 	}
-	for (int len = 2; len <= n; len <<= 1) 
-		for (int i = 0; i < n; i += len) 
-			F0R(j,len/2) {
-				int ind = n/len*j; if (inv && ind) ind = n-ind;
-				auto u = a[i+j], v = a[i+j+len/2]*roots[ind]; 
-				a[i+j] = u+v, a[i+j+len/2] = u-v;
-			}
+	for (int len = 2; len <= n; len *= 2) 
+		for (int i = 0; i < n; i += len) F0R(j,len/2) {
+			int ind = n/len*j; if (inv && ind) ind = n-ind;
+			auto u = a[i+j], v = a[i+j+len/2]*roots[ind]; 
+			a[i+j] = u+v, a[i+j+len/2] = u-v;
+		}
 	if (inv) { T i = T(1)/T(n); trav(x,a) x *= i; }
 }
 template<class T> vector<T> mult(vector<T> a, vector<T> b) {

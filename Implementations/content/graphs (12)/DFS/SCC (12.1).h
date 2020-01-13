@@ -10,7 +10,7 @@ template<int SZ> struct SCC {
 	int N, comp[SZ];
 	vi adj[SZ], radj[SZ], todo, allComp;
 	bitset<SZ> visit;
-	void addEdge(int a, int b) { adj[a].pb(b), radj[b].pb(a); }
+	void ae(int a, int b) { adj[a].pb(b), radj[b].pb(a); }
 	void dfs(int v) {
 		visit[v] = 1;
 		trav(w,adj[v]) if (!visit[w]) dfs(w);

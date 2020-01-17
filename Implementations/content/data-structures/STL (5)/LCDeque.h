@@ -7,7 +7,7 @@
 
 #include "LineContainer.h"
 
-struct LC0 : deque<Line> { 
+struct LCdeque : deque<Line> { 
 	void addBack(Line L) { // assume nonempty
 		while (1) {
 			auto a = bk; pop.bk; a.p = bet(a,L);

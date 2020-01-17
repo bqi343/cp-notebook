@@ -52,3 +52,8 @@ int main() {
 	}
 }
 ```
+
+# CF Hacking
+
+ * [Java Arrays.sort()](https://codeforces.com/blog/entry/4827)
+ * [Blowing up unordered_map](https://codeforces.com/blog/entry/62393)

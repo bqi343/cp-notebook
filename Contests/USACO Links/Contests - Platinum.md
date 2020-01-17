@@ -121,10 +121,11 @@ These problems are all submittable through the current USACO website. Percentage
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=949) | escape        | DP / DSU / MST                           | Done   | ?    |
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=950) | valleys       | DSU / Euler's Formula                    | Done   | ?    |
 
-(getting ready for another year!)
-
 | Contest   | #                                                              | Name          | Topic                                    | Result | %    |
 | --------- | -------------------------------------------------------------- | ------------- | ---------------------------------------- | ------ | ---- |
 | 2019 Dec  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=948) | pieaters      | DP                                       | Done   | ?    |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=949) | snowcow       | BIT / DFS                                | Done   | ?    |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=950) | treedepth     | GenFunc                                  | Done   | ?    |
+| 2020 Jan  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=948) | pieaters      | DP                                       | Done   | ?    |
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=949) | snowcow       | BIT / DFS                                | Done   | ?    |
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=950) | treedepth     | GenFunc                                  | Done   | ?    |

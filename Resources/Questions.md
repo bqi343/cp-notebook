@@ -124,6 +124,10 @@ The former is quite good. I haven't read the latter.
 
 If you give me a link to the problem and I find it sufficiently interesting, then I might solve it (or not, if I don't check my messages).
 
+> Any opinion on working through random contests v.s. practicing topic by topic?
+
+Not really (but I would definitely recommend going through the CPH problemset).
+
 ## Personal?
 
 > When did you start

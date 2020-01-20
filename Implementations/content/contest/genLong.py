@@ -52,7 +52,7 @@ with open('templateLong.cpp', 'w') as outfile:
 	res.append('}\n\n')
 	res.append("""/* stuff you should look for
 	* int overflow, array bounds
-	* special cases (n=1?), slow multiset operations
+	* special cases (n=1?)
 	* do smth instead of nothing and stay organized
 */""")
 	for line in res:

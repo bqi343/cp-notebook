@@ -258,8 +258,8 @@ def main():
 				print("Available options are:")
 				print("\t -h --help: display help")
 				print("\t -t --time: set time limit")
-				print("\t -d --debug: give input /output for WAs")
-				print("\t -s --start: set starting time (for grade)")
+				print("\t -d --debug: give input/output for WAs")
+				print("\t -s --start: set starting submission (for grade)")
 				print()
 				print("Available commands are:")
 				print("\t 'python3 grader.py A': test if A.cpp produces correct output file for every input file")
@@ -272,14 +272,14 @@ def main():
 				print("Time limit set to "+str(TL)+" seconds.")
 			if option in ("-c", "--correct"):
 				correct = value 
-			if option in ("-o"):
+			if option in ("-o","--output"):
 				output = True
-			if option in ("-g"):
+			if option in ("-g","--grade"):
 				grade = True
-			if option in ("-d"):
+			if option in ("-d","--debug"):
 				debug = True
 				CPP = CPP.replace("-w","-Wall -Wextra")
-			if option in ("-s"):
+			if option in ("-s","--start"):
 				start = value
 		if len(args) != 1:
 			raise ValueError("must have exactly one argument")

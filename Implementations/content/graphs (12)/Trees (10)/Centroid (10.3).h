@@ -1,7 +1,7 @@
 /**
  * Description: The centroid of a tree of size $N$ is a vertex such that 
  	* after removing it, all resulting subtrees have size at most $\frac{N}{2}.$ 
- 	* Can support tree path queries and updates
+ 	* Can support tree path queries and updates.
  * Time: O(N\log N)
  * Source: own
  * Verification: 
@@ -11,7 +11,7 @@
 
 template<int SZ> struct Centroid {
 	vi adj[SZ];
-	bool done[SZ]; 
+	bool done[SZ]; // processed as centroid yet
 	int sub[SZ], par[SZ]; // subtree size, current par
 	pi cen[SZ]; // immediate centroid anc
 	vi dist[SZ]; // dists to all centroid ancs
@@ -37,7 +37,8 @@ template<int SZ> struct Centroid {
 		dist[x].pb(dist[p].bk+1);
 		trav(y,adj[x]) if (!done[y] && y != p) genDist(y,x); 
 	}
-	void gen(pi CEN, int x) {
+	// CEN = {centroid above x, label of centroid subtree}
+	void gen(pi CEN, int x) { 
 		done[x = centroid(x)] = 1; cen[x] = CEN; 
 		dist[x].pb(0); int co = 0;
 		trav(y,adj[x]) if (!done[y]) genDist(y,x);

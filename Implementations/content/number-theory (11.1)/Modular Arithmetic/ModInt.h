@@ -59,3 +59,10 @@ struct mi {
 typedef vector<mi> vmi;
 typedef pair<mi,mi> pmi;
 typedef vector<pmi> vpmi;
+
+vector<vmi> comb;
+void genComb(int SZ) {
+	comb.assign(SZ,vmi(SZ)); comb[0][0] = 1;
+	FOR(i,1,SZ) F0R(j,i+1) 
+		comb[i][j] = comb[i-1][j]+(j?comb[i-1][j-1]:0);
+}

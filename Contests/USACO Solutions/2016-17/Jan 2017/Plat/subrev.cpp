@@ -41,7 +41,6 @@ typedef vector<pd> vpd;
 #define trav(a,x) for (auto& a: x)
 
 const int MOD = 1e9+7; // 998244353; // = (119<<23)+1
-const int MX = 2e5+5; 
 const ll INF = 1e18; 
 const ld PI = acos((ld)-1);
 const int xd[4] = {1,0,-1,0}, yd[4] = {0,1,0,-1}; 
@@ -197,8 +196,36 @@ typedef pair<mi,mi> pmi;
 typedef vector<mi> vmi;
 typedef vector<pmi> vpmi;
 
+const int MX = 55;
+
+int N,a[MX];
+int dp[MX][MX][MX][MX];
+
 int main() {
-	ios_base::sync_with_stdio(0); cin.tie(0);
+	setIO("subrev");
+	re(N); FOR(i,1,N+1) re(a[i]);
+	FOR(i,1,N+1) ROF(j,i,N+1) {
+		F0R(I,52) ROF(J,I,52) {
+			int d = dp[i][j][I][J];
+			// not reverse
+			ckmax(dp[i+1][j][I][J],d);
+			if (I <= a[i]) ckmax(dp[i+1][j][a[i]][J],d+1);
+			ckmax(dp[i][j-1][I][J],d);
+			if (a[j] <= J) ckmax(dp[i][j-1][I][a[j]],d+1);
+			// reverse
+			if (i < j) {
+				// a[j], a[i]
+				if (I <= a[j]) ckmax(dp[i+1][j-1][a[j]][J],d+1);
+				if (a[i] <= J) ckmax(dp[i+1][j-1][I][a[i]],d+1);
+				if (I <= a[j] && a[i] <= J) ckmax(dp[i+1][j-1][a[j]][a[i]],d+2);
+			}
+		}
+	}
+	// 1,1 -> 1,0
+	// N,N -> N+1,N
+	int ans = 0;
+	FOR(i,1,N+1) F0R(I,52) FOR(J,I,52) ckmax(ans,dp[i][i-1][I][J]);
+	ps(ans);
 	// you should actually read the stuff at the bottom
 }
 

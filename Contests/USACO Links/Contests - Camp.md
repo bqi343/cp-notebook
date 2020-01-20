@@ -7,14 +7,14 @@
 * [How do I get into USACO Camp?](https://www.quora.com/How-do-I-get-into-the-USACO-training-camp)
 * Monthly contests + US Open
 	* top 9-12 students are invited to USACO camp as "holsteins"
-	* rest of ~26 finalists are invited as "guernseys"
+	* rest of \~26 finalists are invited as "guernseys"
 	  * seniors, previous finalists are not eligible
 
 ## Camp Contests
 
-* four short contests
-  * 3 problems, 3 hours
-* two long contests
-  * 3-4 problems, 5 hours
-* Although prewritten code is not allowed, there is nothing preventing you from reusing code you wrote during previous camp contests.
-* [Copy / Paste Ubuntu](https://howtoubuntu.org/how-to-cut-copy-and-paste-in-the-terminal-in-ubuntu)
+  * four short contests
+    * 3 problems, 3 hours
+  * two long contests
+    * 3-4 problems, 5 hours
+  * Although prewritten code is not allowed, there is nothing preventing you from reusing code you wrote during previous camp contests. (lol you shouldn't do this though)
+  * [Copy / Paste Ubuntu](https://howtoubuntu.org/how-to-cut-copy-and-paste-in-the-terminal-in-ubuntu)

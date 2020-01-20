@@ -1,8 +1,12 @@
 /**
- * Description: Used only once. $a$ dominates $b$ iff every path from $1$ to $b$ passes through $a$
+ * Description: Used only a few times. Assuming that all nodes are 
+ 	* reachable from $root,$ $a$ dominates $b$ iff every path from 
+ 	* $root$ to $b$ passes through $a.$
  * Time: O(M\log N)
  * Source: https://tanujkhattar.wordpress.com/2016/01/11/dominator-tree-of-a-directed-graph/
- * Verification: https://codeforces.com/gym/100513/problem/L
+ * Verification: 
+ 	* https://codeforces.com/gym/100513/problem/L
+ 	* https://open.kattis.com/problems/skiresort
  */
 
 template<int SZ> struct Dominator {
@@ -10,8 +14,8 @@ template<int SZ> struct Dominator {
 	vi radj[SZ], child[SZ], sdomChild[SZ];
 	int label[SZ], rlabel[SZ], sdom[SZ], dom[SZ], co = 0;
 	int par[SZ], bes[SZ]; 
-	int get(int x) { 
-		// DSU with path compression
+	void ae(int a, int b) { adj[a].pb(b); }
+	int get(int x) { // DSU with path compression
 		// get vertex with smallest sdom on path to root
 		if (par[x] != x) {
 			int t = get(par[x]); par[x] = par[par[x]];

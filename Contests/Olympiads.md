@@ -57,16 +57,3 @@ See [here](https://ioinformatics.org/page/members/7) for additional links. The [
   * [APIO](http://apio-olympiad.org/)
   * [IOIT](http://ioit.altervista.org/2018-teams-and-contests-.html)
   * [InfO(1) cup](http://info1cup.com/)
-
-### Approximate CF Rating to USACO
-
-Assumes that you have done enough contests such that your rating has stabilized.
-
-  * 1200+: Silver
-  * 1400+: Gold
-  * 1600+: Platinum
-    * Personally I was ~1500 when making platinum (lol), but it's harder nowadays.
-  * 1900+: Training Camp
-    * I believe that most first-time camp participants are around this rating. However, the converse doesn't hold, as many people reach 1900 before 12th grade but never make camp.
-
-Please let me know if these are ~~outdated~~ blatantly wrong. 

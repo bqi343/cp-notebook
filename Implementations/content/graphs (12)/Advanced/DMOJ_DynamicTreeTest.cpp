@@ -1,4 +1,5 @@
 // solves https://dmoj.ca/problem/ds5
+// https://blog.csdn.net/iamzky/article/details/43494481
 
 #pragma GCC optimize ("O3")
 #pragma GCC target ("sse4")

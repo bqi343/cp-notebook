@@ -10,11 +10,7 @@ You might want to read [Um_nik's FAQ](https://codeforces.com/blog/entry/47516) t
 
 > Please suggest me a step by step process so that I can master DS and ALGO on my own and be great at coding.
 
-> I've been doing Programming since almost 2 years, And I didn't see a much progress. I sometimes struggle with Div2 C in contest time. I have solved almost 400 problems from different OJs like spoj, codechef or cf. I generally got fear from higher difficulty problems.
-
-> i left coding some months ago. i was distressed as i was not doing well as i was not improving , the time when i started codechef contests  i was stuck on question 4 or 5 and now also i m stuck on same level questions
-
-> i heard that you also reply and train people. all i want from you sir show me the way to do competitive programming i'm not good in mathematics but i really wanna work hard in algortihms/ds i haven't anybody else that interested in CP so i just wanna take guide from you sir please :) show me the way only and i'll surely do that and yes there are tons of blogs about CP how to get start and blah blah but i wanna learn from you people so sir i'm expecting my answer from you if you won't reply i'll lose my motivation please sir :) reply me and may god bless you thanks soo much. please just show me the way like what to do first (1) step (2) step (3) step please guide me like that i'm not saying just teach me i'm saying show me the way and i'll find resources and surely i'll do thanks soo much sir please reply me
+> all i want from you sir show me the way to do competitive programming i'm not good in mathematics but i really wanna work hard in algortihms/ds i haven't anybody else that interested in CP so i just wanna take guide from you sir please :) show me the way only and i'll surely do that and yes there are tons of blogs about CP how to get start and blah blah but i wanna learn from you people so sir i'm expecting my answer from you if you won't reply i'll lose my motivation please sir :) reply me and may god bless you thanks soo much. please just show me the way like what to do first (1) step (2) step (3) step please guide me like that i'm not saying just teach me i'm saying show me the way and i'll find resources and surely i'll do thanks soo much sir please reply me
 
 > hey can u tell how to practice for cp ?
 
@@ -50,6 +46,8 @@ You shouldn't neglect school, but generally I've kept up with schoolwork and sti
 
 > do you have a particular method to organize time well and manage everything (competitions, courses, homework ...)
 
+> Pls which calendar do u use to structure ur coding schedule.
+
 clist.by & workflowy & google calendar
 
 > Which site to practice on ? I want to concentrate only on one ... Which is better way of practice, doing questions topic wise ? Or sorting all the questions in ascending order and try to complete as many as possible ?
@@ -82,11 +80,15 @@ See "Resources."
 
 See "Resources" again; I think that CPH and USACO Bronze are definitely okay for beginners.
 
-## Topics
-
 > i think whenever i am learning some new topic i m not able to solve good questions on that topic so thats what holding me back.
 
-I hope the links in implementations will suffice.
+I hope the links in "Implementations" will suffice.
+
+> Can you suggest me some of the topics or algorithms I need to master to rock on Silver Category???
+
+See "Contests" -> "USACO Links."
+
+## Topics
 
 > I have covered the basic concepts of topics like Number Theory, Greedy Algorithm, Dynamic Programming, Graph Theory, but I am unable to do contest questions C and D, will you please help me
 
@@ -168,6 +170,13 @@ mostly self? haven't been tutored or done any tutoring myself
 
 ## Bad
 
+
+> I've been doing Programming since almost 2 years, And I didn't see a much progress. I sometimes struggle with Div2 C in contest time. I have solved almost 400 problems from different OJs like spoj, codechef or cf. I generally got fear from higher difficulty problems.
+
+> i left coding some months ago. i was distressed as i was not doing well as i was not improving , the time when i started codechef contests  i was stuck on question 4 or 5 and now also i m stuck on same level questions
+
+Do more problems? :shrug:
+
 > https://www.codechef.com/JULY18A/problems/GEARS This is the problem, I am trying to solve.
 
 > hey friend, please please send me the code for C small only. please i beg you.i need job badly .please. only c small.please please Please friend. i am not getting job Save my life only c small .Please. i beg you
@@ -206,7 +215,7 @@ ok !
 
 > but i don't know where to start
 
-idk either
+idk either (just go with CPH?)
 
 > please please could u please tell me how much mathematics or TOPICS needed for CP ? please tell me please
 
@@ -231,10 +240,6 @@ what even is that lol
 > why don't u defeat umnik and tourist
 
 I'm not as good ... (yet)
-
-> Pls which calendar do u use to structure ur coding schedule.
-
-google?
 
 > hi
 

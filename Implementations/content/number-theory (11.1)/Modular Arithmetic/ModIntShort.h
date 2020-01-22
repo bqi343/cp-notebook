@@ -4,11 +4,10 @@
  * Verification: https://open.kattis.com/problems/modulararithmetic
  */
 
-typedef int T; 
 struct mi {
- 	T v; explicit operator T() const { return v; }
+ 	int v; explicit operator int() const { return v; } 
+	mi() { v = 0; }
 	mi(ll _v) : v(_v%MOD) { v += (v<0)*MOD; }
-	mi() : mi(0) {}
 };
 mi operator+(mi a, mi b) { return mi(a.v+b.v); }
 mi operator-(mi a, mi b) { return mi(a.v-b.v); }

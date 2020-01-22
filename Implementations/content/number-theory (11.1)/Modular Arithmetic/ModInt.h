@@ -12,8 +12,8 @@
 #include "../../contest/CppIO.h"
 
 struct mi {
-	typedef decay<decltype(MOD)>::type T;
-	T v; 
+	typedef decay<decltype(MOD)>::type T; T v;
+ 	/// don't silently convert to T
 	explicit operator T() const { return v; }
 	mi() { v = 0; }
 	mi(ll _v) { 

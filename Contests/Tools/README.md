@@ -1,18 +1,18 @@
 # Tools
 
-Several python tools written (at least partially) by me. Probably buggy, let me know about any issues.
+Some written by me. Probably buggy, let me know about any issues.
 
  * grader.py
  	* Based off grader.sh. Outputs results in color!
- 	* Given input and output files, check the correctness of a program. 
- 	* Given input files, compare two programs against each other. 
+ 	* Given input and output files, check the correctness of a program.
+ 	* Given input files, compare two programs against each other.
  * cf.py:
- 	* TLE's CF booster with some modifications. 
- 	* Downloads CF sample cases and parses input. 
- 	* Use during contest with grader.py and the -d flag. 
+ 	* TLE's CF booster with some modifications.
+ 	* Downloads CF sample cases and parses input.
+ 	* Use during contest with grader.py and the -d flag.
  	* Test with the -t flag.
  * cf_subs.py:
- 	* Downloads problem submissions. 
+ 	* Downloads problem submissions.
  	* Use for Educational CF hacking with a test case generator and grader.py with the -g flag.
  * others parse problem statistics from various websites (codeforces, topcoder, ioi, usaco)
 
@@ -25,7 +25,7 @@ test() { # from folder $ run $.cpp against test cases
 }
 op() { # navitage to folder containing $.cpp
 	if [ ! -d "$1" ]
-	then 
+	then
 		cd ..
 	fi
 	cd $1 && subl $1.cpp

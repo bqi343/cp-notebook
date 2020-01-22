@@ -1,5 +1,7 @@
 /**
- * Description: modular arithmetic operations 
+ * Description: Modular arithmetic operations. To make faster, 
+ 	* change add and subtract so that they don't require taking
+ 	* a remainder.
  * Source: KACTL
  * Verification: https://open.kattis.com/problems/modulararithmetic
  */

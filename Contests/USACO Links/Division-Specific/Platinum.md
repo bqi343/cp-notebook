@@ -123,9 +123,9 @@ These problems are all submittable through the current USACO website. Percentage
 
 | Contest   | #                                                              | Name          | Topic                                    | Result | %    |
 | --------- | -------------------------------------------------------------- | ------------- | ---------------------------------------- | ------ | ---- |
-| 2019 Dec  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=948) | pieaters      | DP                                       | Done   | ?    |
-|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=949) | snowcow       | BIT / DFS                                | Done   | ?    |
-|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=950) | treedepth     | GenFunc                                  | Done   | ?    |
-| 2020 Jan  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=948) | pieaters      | DP                                       | Done   | ?    |
-|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=949) | snowcow       | BIT / DFS                                | Done   | ?    |
-|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=950) | treedepth     | GenFunc                                  | Done   | ?    |
+| 2019 Dec  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=972) | pieaters      | DP                                       | Done   | ?    |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=973) | snowcow       | BIT / DFS                                | Done   | ?    |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=974) | treedepth     | GenFunc                                  | Done   | ?    |
+| 2020 Jan  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=948) | cave          | Tree / DP                                | Done   | ?    |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=949) | nondec        | Divide & Conquer / Matrices              | Done   | ?    |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=950) | falling       | Convex Hull                              | Done   | ?    |

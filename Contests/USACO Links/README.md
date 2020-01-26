@@ -17,21 +17,3 @@ Assumes that you have done enough contests such that your rating has stabilized.
     * Idk, too much variation.
 
 Please let me know if these are ~~outdated~~ blatantly wrong. 
-
-## Camp Selection
-
-  * [What is it like to attend USACO Camp?](https://www.quora.com/What-is-it-like-to-attend-the-USACO-training-camp)
-  * [How do I get into USACO Camp?](https://www.quora.com/How-do-I-get-into-the-USACO-training-camp)
-  * Monthly contests + US Open (+ Training Pages??)
-	* top 9-12 students are invited to USACO camp as "holsteins"
-	* rest of \~26 finalists are invited as "guernseys"
-	  * seniors, previous finalists are not eligible
-
-## Camp Contests
-
-  * four short contests
-    * 3-4 problems, 3 hours
-  * two long contests
-    * 3-4 problems, 5 hours
-  * Although prewritten code is not allowed, there is nothing preventing you from reusing code you wrote during previous camp contests. (lol you shouldn't do this though)
-  * [Copy / Paste in Ubuntu](https://howtoubuntu.org/how-to-cut-copy-and-paste-in-the-terminal-in-ubuntu)

@@ -1,3 +1,5 @@
+// https://codeforces.com/blog/entry/44054?#comment-288014
+
 #pragma GCC optimize ("O3")
 #pragma GCC target ("sse4")
 

@@ -5,7 +5,7 @@
  * Source: Own
  * Verification: 
     * https://open.kattis.com/problems/shortestpath3
-    * https://codeforces.com/gym/102394/problem/A
+
  */
 
 template<int SZ> struct BellmanFord {

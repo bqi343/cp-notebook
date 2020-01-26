@@ -38,7 +38,7 @@
  */
 /* comparing pairs
 	val pq = PriorityQueue<Pair<Long,Int>>({x,y -> x.first.compareTo(y.first)})
-	val pq = PriorityQueue<Pair<Long,Int>>(compareBy {it.first})
+										~ (compareBy {it.first})
 	val A = arrayListOf(Pair(1,3),Pair(3,2),Pair(2,3))
 	val B = A.sortedWith(Comparator<Pair<Int,Int>>{x,y -> x.first.compareTo(y.first)})
 	sortBy

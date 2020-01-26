@@ -1,55 +1,50 @@
 /**
- * Description: 3D convex hull where no four points coplanar, polyedron volume
- * Time: O(N^2)
- * Source: KACTL
- * Verification: https://open.kattis.com/problems/starsinacan
+ * Description: 3D convex hull and polyedron volume.
+ 	* Not all points should be coplanar.
+ * Time: O(N^2\log N)
+ * Source: 
+ 	* KACTL
+ 	* https://codeforces.com/blog/entry/73366?#comment-575862
+ * Verification: https://www.spoj.com/problems/CH3D/
+
  */
 
 #include "Point3D.h"
 
-struct ED {
-	void ins(int x) { (a == -1 ? a : b) = x; }
-	void rem(int x) { (a == x ? a : b) = -1; }
-	int cnt() { return (a != -1)+(b != -1); }
-	int a, b;
-};
-struct F { P3 q; int a, b, c; };
+bool above(P3 a, P3 b, P3 c, P3 p) { // is p on or above plane
+	return dot(cross(a,b,c),p-a) >= 0; }
 
-vector<F> hull3d(const vP3& A) { 
-	assert(sz(A) >= 4);
-	vector<vector<ED>> E(sz(A), vector<ED>(sz(A), {-1, -1}));
-	#define E(x,y) E[f.x][f.y]
-	vector<F> FS; // faces
-	auto mf = [&](int i, int j, int k, int l) { // make face
-		P3 q = cross(A[j]-A[i],A[k]-A[i]);
-		if (dot(q,A[l]) > dot(q,A[i])) q *= -1; // make sure q points outward
-		F f{q, i, j, k};
-		E(a,b).ins(k); E(a,c).ins(j); E(b,c).ins(i);
-		FS.pb(f);
+typedef array<int,3> F; // face
+vector<F> hull3d(vP3& p) { // make first four points form tetrahedron
+	FOR(i,1,sz(p)) if (p[0] != p[i]) swap(p[1],p[i]);
+	FOR(i,2,sz(p)) if (!collinear(p[0],p[1],p[i])) swap(p[2],p[i]); 
+	FOR(i,3,sz(p)) if (!coplanar(p[0],p[1],p[2],p[i])) swap(p[3],p[i]);
+	set<F> hull;
+	auto ins = [&](int a, int b, int c) {
+		F v = {a,b,c}; rotate(begin(v),max_element(all(v)),end(v));
+		F V = {v[0],v[2],v[1]}; 
+		if (hull.count(V)) hull.erase(V);
+		else hull.insert(v);
 	};
-	F0R(i,4) FOR(j,i+1,4) FOR(k,j+1,4) mf(i, j, k, 6-i-j-k);
-	FOR(i,4,sz(A)) {
-		F0R(j,sz(FS)) {
-			F f = FS[j];
-			if (dot(f.q,A[i]) > dot(f.q,A[f.a])) { // face is visible, remove edges
-				E(a,b).rem(f.c), E(a,c).rem(f.b), E(b,c).rem(f.a);
-				swap(FS[j--], FS.bk);
-				FS.pop_back();
-			}
-		}
-		F0R(j,sz(FS)) { // add faces with new point
-			F f = FS[j];
-			#define C(a, b, c) if (E(a,b).cnt() != 2) mf(f.a, f.b, i, f.c);
-			C(a, b, c); C(a, c, b); C(b, c, a);
+	int a = 0, b = 1, c = 2, d = 3;
+	if (above(p[a],p[b],p[c],p[d])) swap(c,d);
+	ins(a,b,c); ins(b,a,d); ins(c,b,d); ins(a,c,d);
+	FOR(i,4,sz(p)) {
+		set<F> HULL; swap(hull,HULL);
+		trav(f,HULL) {
+			int i0 = f[0], i1 = f[1], i2 = f[2]; 
+			if (above(p[i0],p[i1],p[i2],p[i])) {
+				ins(i0,i1,i); ins(i1,i2,i); ins(i2,i0,i);
+			} else hull.insert({i0,i1,i2});
 		}
 	}
-	trav(it, FS) if (dot(cross(A[it.b]-A[it.a],A[it.c]-A[it.a]),it.q) <= 0) 
-		swap(it.c, it.b);
-	return FS;
-} 
-
-T signedPolyVolume(const vP3& p, const vector<F>& trilist) {
-	T v = 0;
-	trav(i,trilist) v += dot(cross(p[i.a],p[i.b]),p[i.c]);
-	return v/6;
+	return vector<F>(all(hull));
+}
+pair<T,T> SaVol(const vP3& p, const vector<F>& faces) {
+	T s = 0, v = 0; 
+	trav(i,faces) {
+		s += abs(cross(p[i[0]],p[i[1]],p[i[2]]));
+		v += dot(cross(p[i[0]],p[i[1]]),p[i[2]]);
+	}
+	return {s/2,v/6};
 }

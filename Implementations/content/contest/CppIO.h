@@ -3,6 +3,7 @@
  * Source: 
 	* https://codeforces.com/blog/entry/65311
 	* https://codeforces.com/blog/entry/68809
+	* https://codeforces.com/blog/entry/5217
  * Verification: http://codeforces.com/contest/1045/problem/D
  */
 

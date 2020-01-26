@@ -56,6 +56,11 @@
       * [ADATRIP](http://www.spoj.com/problems/ADATRIP/)
       * [Lane Switching](https://open.kattis.com/contests/acpc17open/problems/laneswitching)
       * [Robot Turtles](https://open.kattis.com/problems/robotturtles) [](100)
+    * (Simple) Linear Programming with Bellman-Ford
+      * [Restore Array](https://oj.uz/problem/view/RMI19_restore)
+      * [Art](https://codeforces.com/gym/102394/problem/A) (basically same as above)
+      * [Timeline](https://probgate.org/viewproblem.php?pid=524&cid=80)
+      * [Truth Telling](https://probgate.org/viewproblem.php?pid=378)
   * Topological Sort
     * Tutorial
       * CPH (16, Directed Graphs)
@@ -65,7 +70,7 @@
       * [Quantum](https://open.kattis.com/contests/acpc17open/problems/quantumsuperposition) [](84)
       * [A2OJ](https://a2oj.com/category?ID=31)
 
-## 4 
+## 4
   * Successor Graphs
     * Problems
       * [Mafia](https://szkopul.edu.pl/problemset/problem/w3YAoAT3ej27YeiaNWjK57_G/site/?key=statement)

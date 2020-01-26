@@ -1,5 +1,5 @@
 /**
- * Description: 3D convex hull and polyedron volume.
+ * Description: 3D convex hull and polyedron surface area/volume.
  	* Not all points should be coplanar.
  * Time: O(N^2\log N)
  * Source: 
@@ -22,26 +22,26 @@ vector<F> hull3d(vP3& p) { // make first four points form tetrahedron
 	set<F> hull;
 	auto ins = [&](int a, int b, int c) {
 		F v = {a,b,c}; rotate(begin(v),max_element(all(v)),end(v));
-		F V = {v[0],v[2],v[1]}; 
-		if (hull.count(V)) hull.erase(V);
-		else hull.insert(v);
+		F V = {v[0],v[2],v[1]};  // reverse face
+		if (hull.count(V)) hull.erase(V); // cancels out
+		else hull.insert(v); // insert new face
 	};
 	int a = 0, b = 1, c = 2, d = 3;
 	if (above(p[a],p[b],p[c],p[d])) swap(c,d);
-	ins(a,b,c); ins(b,a,d); ins(c,b,d); ins(a,c,d);
-	FOR(i,4,sz(p)) {
+	ins(a,b,c); ins(b,a,d); ins(c,b,d); ins(a,c,d); // initial tetra
+	FOR(i,4,sz(p)) { // incremental construction
 		set<F> HULL; swap(hull,HULL);
 		trav(f,HULL) {
 			int i0 = f[0], i1 = f[1], i2 = f[2]; 
-			if (above(p[i0],p[i1],p[i2],p[i])) {
+			if (above(p[i0],p[i1],p[i2],p[i])) { 
 				ins(i0,i1,i); ins(i1,i2,i); ins(i2,i0,i);
-			} else hull.insert({i0,i1,i2});
+			} else hull.insert({i0,i1,i2}); // face remains
 		}
 	}
 	return vector<F>(all(hull));
 }
 pair<T,T> SaVol(const vP3& p, const vector<F>& faces) {
-	T s = 0, v = 0; 
+	T s = 0, v = 0; // surface area, volume
 	trav(i,faces) {
 		s += abs(cross(p[i[0]],p[i[1]],p[i[2]]));
 		v += dot(cross(p[i[0]],p[i[1]]),p[i[2]]);

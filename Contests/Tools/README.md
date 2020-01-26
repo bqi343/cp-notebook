@@ -23,7 +23,7 @@ alias cf="python3 cf.py"
 test() { # from folder $ run $.cpp against test cases
 	python3 ../grader.py -d ${PWD##*/}
 }
-op() { # navitage to folder containing $.cpp
+CD() { # navitage to folder containing $.cpp
 	if [ ! -d "$1" ]
 	then
 		cd ..

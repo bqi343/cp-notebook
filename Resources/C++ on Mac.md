@@ -38,16 +38,17 @@ Open your bash profile with a text editor such as gedit (or sublime).
 brew install gedit
 gedit ~/.bash_profile
 ```
-Add the following aliases and functions.
+You can add aliases and functions here, such as the following:
 ```
+alias clr="clear"
 alias BPS='source ~/.bash_profile'
 alias BPO='subl ~/.bash_profile'
 alias IMPL='cd ~/Documents/GitHub/USACO/Implementations/'
 co() {
-  g++-9 -std=c++11 -O2 -Wl,-stack_size -Wl,0x10000000 -Wall -Wextra -o $1 $1.cpp
+	g++-9 -std=c++11 -O2 -Wl,-stack_size -Wl,0x10000000 -Wall -Wextra -o $1 $1.cpp
 }
 run() {
-  co $1 && ./$1
+	co $1 && ./$1
 }
 ```
 Now you can easily run C++ from the command line by calling run.
@@ -89,27 +90,27 @@ Maybe the following links are helpful?
 ### Online
 
  * [CSAcademy](https://csacademy.com/workspace/)
-   * I used this a lot until the queue time limits got rlly annoying
+	 * I used this a lot until the queue time limits got rlly annoying
  * [Ideone](http://ideone.com/)
-   * seems okay if you use an ad blocker
-   * sometimes randomly erases your code when you first create it (so get in the habit of copying your code before creating it :P)
+	 * seems okay if you use an ad blocker
+	 * sometimes randomly erases your code when you first create it (so get in the habit of copying your code before creating it :P)
 
 ### Local IDEs
 
  * [Geany](https://www.geany.org/)
  * [Visual Studio Code](https://code.visualstudio.com/)
  * [XCode](https://developer.apple.com/xcode/)
-   * mac
+	 * mac
  * [Codeblocks](http://www.codeblocks.org/)
-   * bad on mac :(
+	 * bad on mac :(
 
 ### Text Editors
 
  * [Sublime Text 3](https://www.sublimetext.com/)
-   * [Editing Build Settings](https://stackoverflow.com/questions/23789410/how-to-edit-sublime-text-build-settings)
-   * [FastOlympicCoding Addon](https://github.com/Jatana/FastOlympicCoding)
-   * [Symlink](https://www.sublimetext.com/docs/3/osx_command_line.html) 
-   	 * Using '/usr/local/bin/subl' instead of '~/bin/subl' worked for me on OS X Mojave.
+	 * [Editing Build Settings](https://stackoverflow.com/questions/23789410/how-to-edit-sublime-text-build-settings)
+	 * [FastOlympicCoding Addon](https://github.com/Jatana/FastOlympicCoding)
+	 * [Symlink](https://www.sublimetext.com/docs/3/osx_command_line.html) 
+		 * Using '/usr/local/bin/subl' instead of '~/bin/subl' worked for me on OS X Mojave.
  * [Atom](https://atom.io/)
 
 ## Useful Links

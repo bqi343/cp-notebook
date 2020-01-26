@@ -36,13 +36,13 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 Open your bash profile with a text editor such as gedit (or sublime).
 ```
 brew install gedit
-gedit ~/.bash_profile
+gedit ~/.zshenv
 ```
 You can add aliases and functions here, such as the following:
 ```
 alias clr="clear"
-alias BPS='source ~/.bash_profile'
-alias BPO='subl ~/.bash_profile'
+alias BPS='source ~/.zshenv'
+alias BPO='subl ~/.zshenv'
 alias IMPL='cd ~/Documents/GitHub/USACO/Implementations/'
 co() {
 	g++-9 -std=c++11 -O2 -Wl,-stack_size -Wl,0x10000000 -Wall -Wextra -o $1 $1.cpp

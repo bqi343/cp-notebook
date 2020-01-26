@@ -1,5 +1,5 @@
 /**
- * Description: Intersect two polygons and compute the area 
+ * Description: Compute union of two polygons and compute the area 
  	* of the resulting figure with \texttt{java.awt.geom}.
  * Time: Runs quite quickly for two convex polygons with $N=10^5$ vertices each.
  * Source: Nick Wu

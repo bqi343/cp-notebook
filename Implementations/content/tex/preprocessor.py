@@ -161,6 +161,7 @@ def processwithcomments(caption, instream, outstream, listingslang):
 		nsource = nsource.rstrip() + source[end:]
 	nsource = nsource.strip()
 
+	if listingslang in ['C++','Java']:
 		hash_script = 'hash'
 		p = subprocess.Popen(['sh', 'content/contest/%s.sh' % hash_script], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
 		hsh, _ = p.communicate(nsource)

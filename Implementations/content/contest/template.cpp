@@ -9,7 +9,7 @@ typedef string str; //
 typedef pair<int,int> pi;
 typedef pair<ll,ll> pl; //
 typedef pair<ld,ld> pd; //
-#define mp make_pair
+#define mp make_pair //
 #define f first
 #define s second
 
@@ -50,8 +50,8 @@ template<class T> bool ckmin(T& a, const T& b) {
 	return a > b ? a = b, 1 : 0; }
 template<class T> bool ckmax(T& a, const T& b) { 
 	return a < b ? a = b, 1 : 0; }
-mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());
+int pc(int x) { return __builtin_popcount(x); } //
+int bit(int x) { return 31-__builtin_clz(x); } // floor(log2(x)) //
+mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count()); //
 
-int main() {
-	ios_base::sync_with_stdio(0); cin.tie(0);
-}
+int main() { ios_base::sync_with_stdio(0); cin.tie(0); }

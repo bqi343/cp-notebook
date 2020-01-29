@@ -21,12 +21,10 @@ template<int SZ> struct EdgeColor {
 		adj[a][b] = adj[b][a] = c; }
 	int delEdge(int a, int b) {
 		int c = adj[a][b]; adj[a][b] = adj[b][a] = 0;
-		return c;
-	}
+		return c; }
 	vector<bool> genCol(int x) { 
 		vector<bool> col(N+1); F0R(i,N) col[adj[x][i]] = 1;
-		return col;
-	}
+		return col; }
 	int freeCol(int u) {
 		auto col = genCol(u);
 		int x = 1; while (col[x]) x ++; return x;
@@ -35,7 +33,7 @@ template<int SZ> struct EdgeColor {
 		F0R(i,N) if (adj[x][i] == d) 
 			delEdge(x,i), invert(i,c,d), ae(x,i,c);
 	}
-	void ae(int u, int v) { // follows wikipedia steps
+	void ae(int u, int v) { 
 		// check if you can add edge w/o doing any work
 		assert(N); ckmax(maxDeg,max(++deg[u],++deg[v]));
 		auto a = genCol(u), b = genCol(v);
@@ -50,7 +48,8 @@ template<int SZ> struct EdgeColor {
 			if (i < N) fan.pb(i), use[i] = 1;
 			else break;
 		} 
-		// 3/4. choose free cols for endpoints of fan, invert cd_u path
+		// 3. choose free cols c and d for endpoints of fan
+		// 4. invert cd_u path
 		int c = freeCol(u), d = freeCol(fan.bk); invert(u,d,c); 
 		// 5. find i such that d is free on fan[i]
 		int i = 0; while (i < sz(fan) && genCol(fan[i])[d] 

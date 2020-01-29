@@ -1,7 +1,7 @@
 Pre-submit:
-Write down your thoughts, even if they don't completely solve the problem.
+Write down most of your thoughts, even if you're not sure whether they are useful.
+Give your variables (and files) useful names.
 Stay organized (don't leave papers all over the place)!
-Give your variables (and files) useful names!
 Write a few simple test cases if sample is not enough.
 Are time limits close? If so, generate max cases.
 Is the memory usage fine?
@@ -53,10 +53,10 @@ Do you have any possible infinite loops?
 What's your complexity? Large TL does not mean that something simple (like NlogN) isn't intended.
 Are you copying a lot of unnecessary data? (References)
 Avoid vector, map. (use arrays/unordered_map)
-How big is the input and output? (consider FastI)
+How big is the input and output? (consider FastIO)
 What do your teammates think about your algorithm?
 
 Memory limit exceeded:
 What is the max amount of memory your algorithm should need?
 Are you clearing all data structures between test cases?
-Delete pointers?
+Delete pointers (use BumpAllocator)?

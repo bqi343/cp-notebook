@@ -16,7 +16,7 @@ template<int SZ> struct Sieve {
 		F0R(i,SZ) if (pri[i]) pr.pb(i);
 	}
 	int sp[SZ]; // smallest prime that divides
-	void linear() { // above is faster
+	void linear() { // linear time, but above is faster
 		memset(sp,0,sizeof sp);
 		FOR(i,2,SZ) { 
 			if (sp[i] == 0) sp[i] = i, pr.pb(i); 

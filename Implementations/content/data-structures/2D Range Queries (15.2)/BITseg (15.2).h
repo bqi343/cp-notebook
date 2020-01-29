@@ -14,9 +14,9 @@ template<class T> struct BITseg {
 	BITseg() { F0R(i,SZ) seg[i] = node<T>(); }
 	void upd(int x, int y, int v) { // add v
 		for (; x < SZ; x += x&-x) seg[x].upd(y,v); }
-	T query(int x, int y1, int y2) {
-		T res = 0; for (; x; x-=x&-x) res += seg[x].query(y1,y2);
+	T query(int x, int yl, int yr) {
+		T res = 0; for (; x; x-=x&-x) res += seg[x].query(yl,yr);
 		return res; }
-	T query(int x1, int x2, int y1, int y2) { // query sum of rectangle
-		return query(x2,y1,y2)-query(x1-1,y1,y2); }
+	T query(int xl, int xr, int yl, int yr) { // query sum of rectangle
+		return query(xr,yl,yr)-query(xl-1,yl,yr); }
 };

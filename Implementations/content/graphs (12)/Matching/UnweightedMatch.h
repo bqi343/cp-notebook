@@ -47,14 +47,14 @@ template<int SZ> struct UnweightedMatch {
 		F0R(i,N+1) par[i] = aux[i] = 0, vis[i] = -1, orig[i] = i;
 		Q = queue<int>(); Q.push(u); vis[u] = t = 0;
 		while (sz(Q)) {
-			int v = Q.front(); Q.pop();
+			int v = Q.ft; Q.pop();
 			trav(x,adj[v]) {
 				if (vis[x] == -1) {
 					par[x] = v; vis[x] = 1;
 					if (!match[x]) return augment(u, x), true;
 					Q.push(match[x]); vis[match[x]] = 0;
-				} else if (vis[x] == 0 && orig[v] != orig[x]) { // odd cycle
-					int a = lca(orig[v], orig[x]);
+				} else if (vis[x] == 0 && orig[v] != orig[x]) { 
+					int a = lca(orig[v], orig[x]); // odd cycle
 					blossom(x,v,a); blossom(v,x,a);
 				}
 			}

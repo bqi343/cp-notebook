@@ -207,8 +207,123 @@ void genComb(int SZ) {
 
 mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count()); 
 
+/**
+ * Description: custom bitset
+ * Source: Own
+ 	* Also see https://www.hackerrank.com/contests/noi-ph-2019-finals-1/challenges/sumbong-centers/editorial
+ * Verification: see bset.cpp
+ */
+
+struct bset {
+	typedef uint64_t ul;
+	int size; vector<ul> b; 
+	bset(int x) : size(x), b((x+63)/64) {}
+	bool get(int x) const { return (b[x/64]>>(x%64))&1; }
+	void flip(int x) { b[x/64] ^= (ul)1<<(x%64); }
+	void set(int x) { if (!get(x)) flip(x); }
+	int count() {
+		int res = 0; trav(t,b) res += __builtin_popcountll(t);
+		return res;
+	}
+	friend void pr(const bset& x) { F0R(i,x.size) pr((int)x.get(i)); }
+	bset& operator|=(const bset& r) {
+		assert(size == r.size); F0R(i,sz(b)) b[i] |= r.b[i]; }
+	bset& operator&=(const bset& r) {
+		assert(size == r.size); F0R(i,sz(b)) b[i] &= r.b[i]; }
+	bset shift(int inc) { // cyclic shift b to right
+		inc %= size; if (inc < 0) inc += size;
+		bset res(size);
+		int r0 = inc/64, r1 = inc%64;
+		int l0 = (size-inc)/64, l1 = (size-inc)%64;
+		F0R(i,sz(b)-r0) {
+			res.b[i+r0] |= b[i]<<r1;
+			if (r1 && i+r0+1 < sz(b)) 
+				res.b[i+r0+1] |= b[i]>>(64-r1);
+		}
+		FOR(i,l0,sz(b)) {
+			res.b[i-l0] |= b[i]>>l1;
+			if (l1 && i >= l0+1) 
+				res.b[i-l0-1] |= b[i]<<(64-l1);
+		}
+		int rem = size%64; if (rem) res.b.bk &= ((ul)1<<rem)-1;
+		return res;
+	}
+	int findNext(int x) { // first bit after x
+		int i = x < 0 ? -1 : x/64, p = (x+1)%64;
+		if (p != 0) {
+			ul a = b[i]; a ^= a&(((ul)1<<p)-1);
+			int t = __builtin_ffsll(a);
+			if (t) return 64*i+t-1;
+		}
+		while (++i < sz(b)) {
+			int t = __builtin_ffsll(b[i]);
+			if (t) return 64*i+t-1;
+		}
+		return size;
+	}
+};
+
 int main() { 
-	ios_base::sync_with_stdio(0); cin.tie(0); 
+	// ios_base::sync_with_stdio(0); cin.tie(0); 
+	F0R(i,1000) {
+		int sz = rand()%1000+1;
+		bset t(sz);
+		vector<bool> b; F0R(j,sz) b.pb(rand()&1);
+		// ps("??",sz,sz(b));
+		int num = 0;
+		F0R(i,sz(b)) if (b[i]) {
+			t.set(i);
+			num ++;
+			// ps("FLIP",i);
+			//ps(t.get(i));
+			//exit(0);
+		}
+		int inc = rand()%sz;
+		auto T = t.shift(inc);
+		F0R(j,sz) if (b[j] != T.get((j+inc)%sz)) {
+			// ps("OOPS",j,(bool)b[j],T.get((j+inc)%sz));
+			pr(t); ps(); pr(T);
+			exit(0);
+		}
+		assert(num == T.count());
+
+	}
+	F0R(i,1000) {
+		int sz = rand()%1000+1;
+		bset t(sz);
+		set<int> ok;
+		F0R(j,rand()%20+1) {
+			int pos = rand()%sz;
+			t.set(pos);
+			ok.insert(pos);
+		}
+		int a = -1;
+		set<int> OK;
+		while (a != t.size) {
+			OK.insert(a);
+			int A = a;
+			a = t.findNext(a);
+			if (a == A) {
+				ps("WHOOPS",a);
+				exit(0);
+			}
+			//ps("HA",a);
+		}
+		OK.erase(-1);
+		assert(ok == OK);
+		/*int pos = rand()%sz;
+		t.set(pos);
+		//ps(t.get(64));
+		if (pos != t.findFirst()) {
+			ps("AH",sz,pos,t.findFirst());
+			exit(0);
+		}
+		assert(pos == t.findFirst());*/
+	}
+	//ps(ffs(0),ffs(1),ffs(2),ffs(3));
+	//uint64_t u; u += ((uint64_t)1<<63)+(uint64_t)(1<<5);
+	//ps((ll)u,__builtin_ffsll(u));
+	ps("OK");
 	// you should actually read the stuff at the bottom
 }
 

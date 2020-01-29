@@ -20,7 +20,7 @@ namespace input {
 		re(t); re(ts...); 
 	}
 
-	template<class T> void re(complex<T>& x) { T a,b; re(a,b); x = cd(a,b); }
+	template<class T> void re(complex<T>& x) { T a,b; re(a,b); x = {a,b}; }
 	template<class T1, class T2> void re(pair<T1,T2>& p) { re(p.f,p.s); }
 	template<class T> void re(vector<T>& a) { F0R(i,sz(a)) re(a[i]); }
 	template<class T, size_t SZ> void re(array<T,SZ>& a) { F0R(i,SZ) re(a[i]); }
@@ -78,7 +78,9 @@ namespace io {
 	void setOut(string s) { freopen(s.c_str(),"w",stdout); }
 	void setIO(string s = "") {
 		ios_base::sync_with_stdio(0); cin.tie(0); // fast I/O
-		// cin.exceptions(cin.failbit); // ex. throws exception when you try to read letter into int
+		// cin.exceptions(cin.failbit); 
+		// throws exception when do smth illegal
+		// ex. try to read letter into int
 		if (sz(s)) { setIn(s+".in"), setOut(s+".out"); } // for USACO
 	}
 }

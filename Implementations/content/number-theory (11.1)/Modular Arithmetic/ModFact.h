@@ -16,7 +16,9 @@ void genFac(int SZ) {
 		ifac[i] = (ll)ifac[i-1]*invs[i]%MOD;
 	}
 }
+/**
 ll comb(int a, int b) {
 	if (a < b || b < 0) return 0;
 	return (ll)fac[a]*ifac[b]%MOD*ifac[a-b]%MOD;
 }
+*/

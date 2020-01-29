@@ -1,6 +1,6 @@
 /**
  * Source: KACTL
- * Description: Finds the real roots of a polynomial.
+ * Description: Unused. Finds the real roots of a polynomial.
  * Usage: poly_roots({{2,-3,1}},-1e9,1e9) // solve x^2-3x+2 = 0
  * Time: O(N^2 \log(1/\epsilon))
  */

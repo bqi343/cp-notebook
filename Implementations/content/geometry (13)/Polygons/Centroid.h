@@ -1,5 +1,5 @@
 /**
- * Description: area, center of mass of 
+ * Description: centroid (center of mass) and signed area of 
  	* a polygon with constant mass per unit area
  * Time: O(N)
  * Source: http://codeforces.com/blog/entry/22175, KACTL
@@ -8,19 +8,11 @@
 
 #include "../Primitives/Point.h"
 
-T area(const vP& v) {
-	T area = 0;
-	F0R(i,sz(v)) {
-		int j = (i+1)%sz(v); T a = cross(v[i],v[j]);
-		area += a;
-	}
-	return abs(area)/2;
-}
-P centroid(const vP& v) { 
-	P cen(0,0); T area = 0; // 2*signed area
+pair<P,T> cenArea(const vP& v) { 
+	P cen(0,0); T area = 0; 
 	F0R(i,sz(v)) {
 		int j = (i+1)%sz(v); T a = cross(v[i],v[j]);
 		cen += a*(v[i]+v[j]); area += a;
 	}
-	return cen/area/(T)3;
+	return {cen/area/(T)3,area/2};
 }

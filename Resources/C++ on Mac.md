@@ -41,8 +41,8 @@ gedit ~/.zshenv
 You can add aliases and functions here, such as the following:
 ```
 alias clr="clear"
-alias BPS='source ~/.zshenv'
-alias BPO='subl ~/.zshenv'
+alias ZES='source ~/.zshenv'
+alias ZEO='subl ~/.zshenv'
 alias IMPL='cd ~/Documents/GitHub/USACO/Implementations/'
 co() {
 	g++-9 -std=c++11 -O2 -Wl,-stack_size -Wl,0x10000000 -Wall -Wextra -o $1 $1.cpp

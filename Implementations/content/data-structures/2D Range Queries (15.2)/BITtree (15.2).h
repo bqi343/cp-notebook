@@ -1,5 +1,6 @@
 /**
  * Description: BIT of indexed sets (or treaps). $x\in (0,SZ)$.
+ 	* Only supports setting value at each point to $0$ or $1$.
  * Memory: O(N\log N)
  * Verification: 
  	* http://codeforces.com/contest/785/submission/33953058
@@ -20,7 +21,7 @@ template<int SZ> struct BITtree {
 		int res = 0; for (; x; x -= x&-x) res += val[x].ook({y,MOD});
 		return res;
 	}
-	int query(int lox, int hix, int loy, int hiy) { 
-		return query(hix,hiy)-query(lox-1,hiy)
-			-query(hix,loy-1)+query(lox-1,loy-1); }
+	int query(int xl, int xr, int yl, int yr) { 
+		return query(xr,yr)-query(xl-1,yr)
+			-query(xr,yl-1)+query(xl-1,yl-1); }
 };

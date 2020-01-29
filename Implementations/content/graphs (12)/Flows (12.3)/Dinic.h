@@ -23,7 +23,7 @@ template<int SZ> struct Dinic {
 		F0R(i,N) level[i] = -1, cur[i] = begin(adj[i]);
 		queue<int> q({s}); level[s] = 0; 
 		while (sz(q)) {
-			int u = q.front(); q.pop();
+			int u = q.ft; q.pop();
 			trav(e,adj[u]) if (level[e.to] < 0 && e.flow < e.cap) 
 				q.push(e.to), level[e.to] = level[u]+1;
 		}

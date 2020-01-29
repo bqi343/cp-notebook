@@ -84,9 +84,19 @@ No Longer Active?
 
 ## Codeforces Tools
 
-  * [Code Drills](http://code-drills.com/)
   * [Stopstalk](https://www.stopstalk.com)
+  * [Code Drills](http://code-drills.com/)
   * [CF Visualizer](http://cfviz.netlify.com/compare.html)
-  * [CF Achievements](http://cfa.yuldashev.net/)
-  * [CF Predictor](https://chrome.google.com/webstore/detail/cf-predictor/ocfloejijfhhkkdmheodbaanephbnfhn)
+  * [CF Rating Predictor](https://chrome.google.com/webstore/detail/cf-predictor/ocfloejijfhhkkdmheodbaanephbnfhn)
+  * [CF Command Line](https://codeforces.com/blog/entry/66552)
+  * [CF Editor](https://codeforces.com/blog/entry/72952)
   * [CF Enhancer](https://chrome.google.com/webstore/detail/codeforces-enhancer/ocmandagmgmkcplckgnfgaokpgkfenmp)
+    * no longer works
+
+## Contest Tools
+
+  * [2D Geo Visualizer](https://codeforces.com/blog/entry/70330)
+  * [CSA Graph Editor (+ Geo Visualizer + Diff Tool)](https://csacademy.com/app/graph_editor/)
+  * [Desmos Grapher](https://www.desmos.com/calculator)
+  * [Wolfram Alpha](https://www.wolframalpha.com/)
+  * [OEIS](https://oeis.org/)

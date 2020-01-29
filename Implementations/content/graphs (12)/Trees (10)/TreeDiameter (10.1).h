@@ -22,8 +22,8 @@ template<int SZ> struct TreeDiameter {
 	vi center, dia = {1,1}; 
 	void init(int _N) {
 		N = _N; // find one endpoint of a diameter
-		genDist(1); FOR(i,1,N+1) if (dist[i] > dist[dia[0]]) dia[0] = i; 
-		genDist(dia[0]); FOR(i,1,N+1) if (dist[i] > dist[dia[1]]) dia[1] = i;
+		genDist(1); FOR(i,1,N+1) if (dist[i]>dist[dia[0]]) dia[0] = i; 
+		genDist(dia[0]); FOR(i,1,N+1) if (dist[i]>dist[dia[1]]) dia[1] = i;
 		diaLen = dist[dia[1]];
 		int cen = dia[1]; F0R(i,diaLen/2) cen = par[cen];
 		if (diaLen&1) center = {cen,par[cen]};

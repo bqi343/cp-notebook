@@ -23,8 +23,8 @@ template<class T, int SZ> struct OffBIT2D {
 			if (lst[x] != t.s) lst[x] = t.s, cnt[x] ++;
 		int sum = 0;
 		F0R(i,SZ) {
-			st[i] = sum; lst[i] = 0; // start index for each x
-			sum += cnt[i];
+			lst[i] = 0; 
+			st[i] = sum; sum += cnt[i]; 
 		}
 		val.rsz(sum); bit.rsz(sum); // store BITs in single vector
 		trav(t,todo) for (int x = t.f; x < SZ; x += x&-x) 
@@ -51,7 +51,7 @@ template<class T, int SZ> struct OffBIT2D {
 		int res = 0; for (; x; x -= x&-x) res += QUERY(x,y);
 		return res;
 	}
-	int query(int lox, int hix, int loy, int hiy) { 
-		return query(hix,hiy)-query(lox-1,hiy)
-			-query(hix,loy-1)+query(lox-1,loy-1); }
+	int query(int xl, int xr, int yl, int yr) { 
+		return query(xr,yr)-query(xl-1,yr)
+			-query(xr,yl-1)+query(xl-1,yl-1); }
 };

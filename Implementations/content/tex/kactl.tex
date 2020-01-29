@@ -54,3 +54,6 @@
 	% find 'content/geometry (13)' -name '*.h' -exec sh test-compiles.sh "{}" \;
 % view files marked --assume-unchanged
 	% https://stackoverflow.com/questions/2363197/can-i-get-a-list-of-files-marked-assume-unchanged
+% lines of length > 70, no comments or *
+	% find . -name '*.h' -print0 | xargs -0 grep '.\{70\}' | grep -v  '[ (tab char)]*\*' | grep -v # | grep -v '///'
+	% https://stackoverflow.com/questions/10038188/searching-tabs-with-grep

@@ -6,10 +6,11 @@
 
 #include "DSUrb (15.5).h"
 
-template<int SZ> struct DynaCon { // answer dynamic connectivity queries offline
+template<int SZ> struct DynaCon { 
 	DSUrb D;
 	vpi seg[2*SZ];
-	void upd(int l, int r, pi p) {	// add edge p to all times in interval [l, r]
+	void upd(int l, int r, pi p) {	
+		// add edge p to all times in interval [l, r]
 		r++;
 		for (l += SZ, r += SZ; l < r; l >>= 1, r >>= 1) {
 			if (l&1) seg[l++].pb(p);

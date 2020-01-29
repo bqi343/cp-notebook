@@ -125,6 +125,7 @@ struct snode {
 };
 sn LCT[MX];
 
+//////// THE APPLICANT SOLUTION
 void setNex(sn a, sn b) { // set f[a] = b
 	if (connected(a,b)) a->extra = b;
 	else link(b,a);

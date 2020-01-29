@@ -11,5 +11,4 @@ T lineDist(P p, P a, P b) {
 T segDist(P p, P a, P b) { 
 	if (dot(p-a,b-a) <= 0) return abs(p-a);
 	if (dot(p-b,a-b) <= 0) return abs(p-b);
-	return lineDist(p,a,b);
-}
+	return lineDist(p,a,b); }

@@ -1,8 +1,13 @@
 /**
- * Description: Solves a general linear maximization problem: maximize $c^T x$ subject to $Ax \le b$, $x \ge 0$.
-	 * Returns -inf if there is no solution, inf if there are arbitrarily good solutions, or the maximum value of $c^T x$ otherwise.
-	 * The input vector is set to an optimal $x$ (or in the unbounded case, an arbitrary solution fulfilling the constraints).
-	 * Numerical stability is not guaranteed. For better performance, define variables such that $x = 0$ is viable.
+ * Description: Solves a general linear maximization problem: 
+ 	* maximize $c^T x$ subject to $Ax \le b$, $x \ge 0$.
+	* Returns -inf if there is no solution, 
+	* inf if there are arbitrarily good solutions, 
+	* or the maximum value of $c^T x$ otherwise.
+	* The input vector is set to an optimal $x$ 
+	* (or in the unbounded case, an arbitrary solution fulfilling the constraints).
+	* Numerical stability is not guaranteed. For better performance, 
+	* define variables such that $x = 0$ is viable.
  * Usage:
 	 * vvd A = {{1,-1}, {-1,1}, {-1,-2}};
 	 * vd b = {1,1,-4}, c = {-1,-1}, x;
@@ -67,16 +72,17 @@ struct LPSolver {
 				if (D[i][s] <= eps) continue;
 				if (r == -1 || mp(D[i][n+1] / D[i][s], B[i])
 							 < mp(D[r][n+1] / D[r][s], B[r])) r = i; 
-				// find smallest positive ratio, max increase in nonbasic variable
+				// find smallest positive ratio
+				// -> max increase in nonbasic variable
 			}
-			if (r == -1) return false; // increase N[s] infinitely -> unbounded
+			if (r == -1) return false; // unbounded
 			pivot(r,s);
 		}
 	}
 
 	T solve(vd &x) {
 		int r = 0; FOR(i,1,m) if (D[i][n+1] < D[r][n+1]) r = i;
-		if (D[r][n+1] < -eps) { // x=0 not feasible, run simplex to find feasible 
+		if (D[r][n+1] < -eps) { // run simplex to find feasible x != 0
 			pivot(r, n); // N[n] = -1 is artificial variable
 			// initially set to smth large
 			if (!simplex(2) || D[m+1][n+1] < -eps) return -inf; 

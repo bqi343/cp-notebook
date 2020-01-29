@@ -47,7 +47,8 @@ template<int SZ> struct PalTree {
 			if (diff[sz] == diff[link[sz]]) 
 				slink[sz] = slink[link[sz]];
 			else slink[sz] = link[sz]; 
-			// slink[v] = max suffix u of v such that diff[v]\neq diff[u]
+			// slink[v] = max suffix u of v such that 
+			// diff[v]\neq diff[u]
 			to[last][c] = sz++;
 		}
 		last = to[last][c]; oc[last] ++;

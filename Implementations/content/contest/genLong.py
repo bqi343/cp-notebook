@@ -11,7 +11,7 @@ with open('templateLong.cpp', 'w') as outfile:
 		if active and '*/' in line:
 			active = False 
 			return
-		line = line.replace('/// ','')
+		# line = line.replace('/// ','')
 		line = line.replace('/**','')
 		line = line.replace('*/','')
 		if active:
@@ -47,7 +47,12 @@ with open('templateLong.cpp', 'w') as outfile:
 		ad('\n')
 	for line in extra:
 		ad(line)
-	res.pop()
+	# print("OH",res[-1],"HA",res[-1][-1],res[-1][-2])
+	ind = res[-1].find("ios")
+	res[-1] = res[-1][:ind]+"\n\t"+res[-1][ind:]
+	res[-2] = res[-2][:ind]
+	res[-1] = res[-1][:-2]+"\n"
+
 	res.append('	// you should actually read the stuff at the bottom\n')
 	res.append('}\n\n')
 	res.append("""/* stuff you should look for

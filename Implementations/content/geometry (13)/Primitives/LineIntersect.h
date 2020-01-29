@@ -10,10 +10,8 @@
 
 P extension(P a, P b, P c, P d) { 
 	T x = cross(a,b,c), y = cross(a,b,d);
-	return (d*x-c*y)/(x-y);
-}
+	return (d*x-c*y)/(x-y); }
 pair<int,P> lineIntersect(P a, P b, P c, P d) {
 	if (cross(b-a,d-c) == 0) 
 		return {-(cross(a,c,d) == 0),P(0,0)};
-	return {1,extension(a,b,c,d)};
-}
+	return {1,extension(a,b,c,d)}; }

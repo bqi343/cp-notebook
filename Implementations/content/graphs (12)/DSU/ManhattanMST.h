@@ -1,9 +1,9 @@
 /**
  * Description: Given $N$ points, returns up to $4N$ edges which are guaranteed
- * to contain a minimum spanning tree for the graph with edge weights 
- * $w(p, q) =|p.x - q.x| + |p.y - q.y|.$ Edges are in the form 
- * \texttt{\{distance, \{src, dst\}\}}. Use a
- * standard MST algorithm on the result to find the final MST.
+	* to contain a minimum spanning tree for the graph with edge weights 
+	* $w(p, q) =|p.x - q.x| + |p.y - q.y|.$ Edges are in the form 
+	* \texttt{\{distance, \{src, dst\}\}}. Use a
+	* standard MST algorithm on the result to find the final MST.
  * Time: O(N\log N)
  * Source: KACTL
  * Verification: 

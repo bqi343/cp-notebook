@@ -1,3 +1,3 @@
-# Hashes a file, ignoring all whitespace and comments. Use for
-# verifying that code was correctly typed.
-cpp-9 -dD -P -fpreprocessed|tr -d '[:space:]'|md5sum|cut -c-6
+# Hash file ignoring whitespace and comments. Verifies that 
+# code was correctly typed. Usage: sh hash.sh < A.cpp
+cpp -dD -P -fpreprocessed|tr -d '[:space:]'|md5sum|cut -c-6

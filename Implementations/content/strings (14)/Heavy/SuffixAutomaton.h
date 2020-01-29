@@ -67,7 +67,7 @@ struct SuffixAutomaton {
 		trav(y,st[x].next) distinct[x] += getDistinct(y.s);
 		return distinct[x];
 	}
-	ll numDistinct() { // # of distinct substrings including empty
+	ll numDistinct() { // # distinct substrings including empty
 		distinct.rsz(sz(st)); return getDistinct(0); }
 	ll numDistinct2() { // another way to do above
 		ll ans = 1;

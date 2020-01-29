@@ -1,6 +1,7 @@
 /**
- * Description: Supports modifications in the form \texttt{ckmin(a\_i,t)} 
- 	* for all $l\le i\le r$, range max and sum queries. SZ should be a power of 2.
+ * Description: Lazy SegTree supports modifications of the form 
+ 	* \texttt{ckmin(a\_i,t)} for all $l\le i\le r$, range max and sum queries. 
+ 	* \texttt{SZ} is power of 2.
  * Time: O(\log N)
  * Source: http://codeforces.com/blog/entry/57319
  * Verification: http://acm.hdu.edu.cn/showproblem.php?pid=5306

@@ -40,10 +40,9 @@ int hungarian(const vector<vi>& a) {
 		} while (p[j0]); // Potentials adjusted so all edge weights 
 		// are non-negative. Perfect matching has zero weight and
 		// costs of augmenting paths do not change.
-		while (j0) { // update jobs picked by workers on alternating path
+		while (j0) { // update alternating path
 			int j1 = pre[j0];
-			p[j0] = p[j1];
-			j0 = j1;
+			p[j0] = p[j1]; j0 = j1;
 		} 
 	}
 	return -v[0]; // min cost

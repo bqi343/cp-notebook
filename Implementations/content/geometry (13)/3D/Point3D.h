@@ -1,5 +1,5 @@
 /**
- * Description: basic 3D geometry
+ * Description: Basic 3D geometry. 
  * Source: Own
  * Verification: (haven't done much 3D geo yet)
 	* AMPPZ 2011 Cross Spider
@@ -8,9 +8,11 @@
 	* https://codeforces.com/gym/102452/problem/F
  */
 
-typedef ld T;
-int sgn(T x) { return (x>0)-(x<0); }
-T sq(T x) { return x*x; }
+#include "Point.h"
+
+/// typedef ld T;
+/// int sgn(T x) { return (x>0)-(x<0); }
+/// T sq(T x) { return x*x; }
 
 namespace Point3D {
 	typedef array<T,3> P3;
@@ -98,4 +100,4 @@ namespace Point3D {
 		return (y*a0-x*a1)/(y-x);
 	}
 }
-using namespace Point3D;
+/// using namespace Point3D;

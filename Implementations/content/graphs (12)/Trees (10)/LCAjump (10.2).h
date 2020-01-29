@@ -8,9 +8,8 @@
 
 template<int SZ> struct LCA {
 	static const int BITS = 32-__builtin_clz(SZ);
-	int N, R = 1; 
+	int N, R = 1, par[BITS][SZ], depth[SZ];
 	vi adj[SZ];
-	int par[BITS][SZ], depth[SZ];
 	// INITIALIZE
 	void ae(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
 	void dfs(int u, int prev){
@@ -26,8 +25,7 @@ template<int SZ> struct LCA {
 	// QUERY
 	int getPar(int a, int b) {
 		R0F(k,BITS) if (b&(1<<k)) a = par[k][a];
-		return a;
-	}
+		return a; }
 	int lca(int u, int v){
 		if (depth[u] < depth[v]) swap(u,v);
 		u = getPar(u,depth[u]-depth[v]);
@@ -36,6 +34,5 @@ template<int SZ> struct LCA {
 		return u == v ? u : par[0][u];
 	}
 	int dist(int u, int v) {
-		return depth[u]+depth[v]-2*depth[lca(u,v)];
-	}
+		return depth[u]+depth[v]-2*depth[lca(u,v)]; }
 };

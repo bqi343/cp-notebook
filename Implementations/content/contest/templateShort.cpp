@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 typedef long long ll;
 typedef long double ld;
 typedef pair<int,int> pi;
@@ -8,7 +8,7 @@ typedef pair<int,int> pi;
 #define f first
 #define s second
 
-typedef vector<int> vi;
+typedef vector<int> vi; 
 typedef vector<pi> vpi;
 #define sz(x) (int)x.size()
 #define all(x) begin(x), end(x)
@@ -26,12 +26,9 @@ const int MOD = 1e9+7; // 998244353; // = (119<<23)+1
 const int MX = 2e5+5;
 const ld PI = acos((ld)-1);
 
-template<class T> bool ckmin(T& a, const T& b) {
+template<class T> bool ckmin(T& a, const T& b) { 
 	return a > b ? a = b, 1 : 0; }
-template<class T> bool ckmax(T& a, const T& b) {
+template<class T> bool ckmax(T& a, const T& b) { 
 	return a < b ? a = b, 1 : 0; }
-mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count());
 
-int main() {
-	ios_base::sync_with_stdio(0); cin.tie(0);
-}
+int main() { ios_base::sync_with_stdio(0); cin.tie(0); }

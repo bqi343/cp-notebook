@@ -36,7 +36,7 @@ template <int SZ> struct HLPP {
 		height[t] = 0;
 		queue<int> q({t});
 		while (sz(q)) {
-			int v = q.front(); q.pop();
+			int v = q.ft; q.pop();
 			trav(e,adj[v])
 				if (height[e.to] == N && adj[e.to][e.rev].f > 0)
 					q.push(e.to), updHeight(e.to, height[v] + 1);

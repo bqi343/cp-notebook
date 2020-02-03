@@ -1,5 +1,6 @@
 Pre-submit:
-Write down most of your thoughts, even if you're not sure whether they are useful.
+Write down most of your thoughts, even if you're not sure 
+whether they're useful.
 Give your variables (and files) useful names.
 Stay organized (don't leave papers all over the place)!
 Write a few simple test cases if sample is not enough.
@@ -25,8 +26,6 @@ Any undefined behavior (array out of bounds)?
 Any overflows or NaNs (shifting ll by 64 bits or more)?
 Confusing N and M, i and j, etc.?
 Confusing ++i and i++?
-Correctly account for numbers close to (but not) zero.
-For line sweeping over polygons, correctly deal with vertices.
 Are you sure the STL functions you use work as you think?
 Add some assertions, maybe resubmit.
 Create some test cases to run your algorithm on.
@@ -36,6 +35,13 @@ Explain your algorithm to a teammate.
 Ask the teammate to look at your code.
 Go for a small walk, e.g. to the toilet.
 Rewrite your solution from the start or let a teammate do it.
+
+Geometry:
+Work with ints if possible.
+Correctly account for numbers close to (but not) zero. Related: for acos 
+make sure absolute val of input is not (slightly) greater than one.
+Correctly deal with vertices that are collinear, concyclic, 
+coplanar (in 3D), etc.
 
 Runtime error:
 Have you tested all corner cases locally?

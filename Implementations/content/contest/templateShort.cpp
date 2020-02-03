@@ -4,12 +4,11 @@ using namespace std;
 typedef long long ll;
 typedef long double ld;
 typedef pair<int,int> pi;
-#define mp make_pair
-#define f first
-#define s second
-
 typedef vector<int> vi; 
 typedef vector<pi> vpi;
+
+#define f first
+#define s second
 #define sz(x) (int)x.size()
 #define all(x) begin(x), end(x)
 #define rsz resize
@@ -22,8 +21,7 @@ typedef vector<pi> vpi;
 #define R0F(i,a) ROF(i,0,a)
 #define trav(a,x) for (auto& a: x)
 
-const int MOD = 1e9+7; // 998244353; // = (119<<23)+1
-const int MX = 2e5+5;
+const int MOD = 1e9+7;
 const ld PI = acos((ld)-1);
 
 template<class T> bool ckmin(T& a, const T& b) { 

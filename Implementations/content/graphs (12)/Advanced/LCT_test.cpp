@@ -203,13 +203,13 @@ typedef struct snode* sn;
 struct snode { 
 	//////// VARIABLES
 	sn p, c[2]; // parent, children
-	bool flip = 0; // subtree flipped or not
-	int val, sz; // value in node, # nodes in subtree
 	sn extra; // extra cycle node for "The Applicant"
-	int sub, vir = 0; // stores sum of virtual children
-	snode(int v) {
+	bool flip = 0; // subtree flipped or not
+	int val, sz; // value in node, # nodes in current splay tree
+	int sub, vsub = 0; // vsub stores sum of virtual children
+	snode(int _val) : val(_val) {
 		p = c[0] = c[1] = extra = NULL;
-		val = v; calc();
+		calc();
 	}
 	friend int getSz(sn x) { return x?x->sz:0; }
 	friend int getSub(sn x) { return x?x->sub:0; }
@@ -218,10 +218,11 @@ struct snode {
 		swap(c[0],c[1]); F0R(i,2) if (c[i]) c[i]->flip ^= 1;
 		flip = 0; 
 	}
+	ll totVal = 0, virVal = 0;
 	void calc() { // recalc vals
 		F0R(i,2) if (c[i]) c[i]->prop();
 		sz = 1+getSz(c[0])+getSz(c[1]);
-		sub = 1+getSub(c[0])+getSub(c[1])+vir;
+		sub = 1+getSub(c[0])+getSub(c[1])+vsub;
 	}
 	//////// SPLAY TREE OPERATIONS
 	int dir() {
@@ -253,19 +254,19 @@ struct snode {
 		prop();
 	}
 	//////// BASE OPERATIONS
-	void access() { // bring this to top of tree
+	void access() { // bring this to top of tree, propagate
 		for (sn v = this, pre = NULL; v; v = v->p) {
-			v->splay(); 
-			if (pre) v->vir -= pre->sub;
-			if (v->c[1]) v->vir += v->c[1]->sub;
-			v->c[1] = pre; v->calc();
-			pre = v;
-			// v->sub should remain the same 
+			v->splay(); // now switch virtual children
+			if (pre) v->vsub -= pre->sub;
+			if (v->c[1]) v->vsub += v->c[1]->sub;
+			v->c[1] = pre; v->calc(); pre = v;
 		}
-		splay(); // left subtree of this is now path to root
-		assert(!c[1]); // right subtree is empty
+		splay(); assert(!c[1]); // right subtree is empty
 	}
-	void makeRoot() { access(); flip ^= 1; }
+	void makeRoot() { 
+		access(); flip ^= 1; access(); 
+		assert(!c[0] && !c[1]);
+	}
 	//////// QUERIES
 	friend sn lca(sn x, sn y) {
 		if (x == y) return x;
@@ -274,8 +275,8 @@ struct snode {
 		x->splay(); return x->p?:x;
 	}
 	friend bool connected(sn x, sn y) { return lca(x,y); } 
-	int distRoot() { access(); return getSz(c[0]); } 
 	// # nodes above
+	int distRoot() { access(); return getSz(c[0]); } 
 	sn getRoot() { // get root of LCT component
 		access(); auto a = this; 
 		while (a->c[0]) a = a->c[0], a->prop();
@@ -298,7 +299,7 @@ struct snode {
 		assert(!connected(x,y));
 		if (force) y->makeRoot();
 		else { y->access(); assert(!y->c[0]); }
-		y->p = x; x->access(); x->vir += y->sub; x->calc();
+		x->access(); setLink(y,x,0); y->calc();
 	}
 	friend void cut(sn y) { // cut y from its parent
 		y->access(); assert(y->c[0]);
@@ -312,6 +313,7 @@ struct snode {
 };
 sn LCT[MX];
 
+//////// THE APPLICANT SOLUTION
 void setNex(sn a, sn b) { // set f[a] = b
 	if (connected(a,b)) a->extra = b;
 	else link(b,a);
@@ -354,7 +356,7 @@ void dfs(int a, int b = 0) {
 	}
 }
 
-void qpath(int a, int b) {
+void qpath(int a, int b) { // query # edges on path
 	dfs(a); LCT[a]->makeRoot();
 	int x = dist[b], y = LCT[b]->distRoot();
 	// ps("PATH",x,y);
@@ -365,15 +367,15 @@ void root(int a) {
 	r = a; 
 }
 
-void qsub(int a) {
+void qsub(int a) { // query subtree
 	LCT[r]->makeRoot(); LCT[a]->access();
 	dfs(r);
-	int x = sub[a], y = LCT[a]->vir+1;
+	int x = sub[a], y = LCT[a]->vsub+1;
 	// ps("SUB",x,y);
 	assert(x == y);
 }
 
-void qlca(int b, int c) {
+void qlca(int b, int c) { // query LCA
 	LCT[r]->makeRoot(); int v = lca(LCT[b],LCT[c])->val;
 	dfs(r);
 	while (b != c) {

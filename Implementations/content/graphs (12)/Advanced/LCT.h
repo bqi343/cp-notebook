@@ -1,7 +1,9 @@
 /**
  * Description: Link-Cut Tree. Given a function $f(1\ldots N)\to 1\ldots N,$ 
- 	* evaluates $f^b(a)$ for any $a,b.$ For subtree size queries use 
- 	* \texttt{vir} and \texttt{sub}.
+ 	* evaluates $f^b(a)$ for any $a,b.$ \texttt{x->access()} brings \texttt{x}
+ 	* to the top and propagates it; its left subtree will be the path from 
+ 	* \texttt{x} to the root and its right subtree will be empty. \texttt{sz}
+ 	* is for path queries; \texttt{sub}, \texttt{vsub} are for subtree queries.
  * Time: O(\log N)
  * Source: Dhruv Rohatgi, Eric Zhang
 	* https://sites.google.com/site/kc97ble/container/splay-tree/splaytree-cpp-3
@@ -16,34 +18,35 @@ typedef struct snode* sn;
 struct snode { 
 	//////// VARIABLES
 	sn p, c[2]; // parent, children
-	bool flip = 0; // subtree flipped or not
-	int val, sz; // value in node, # nodes in subtree
 	sn extra; // extra cycle node for "The Applicant"
-	int sub, vir = 0; // stores sum of virtual children
-	snode(int v) {
+	bool flip = 0; // subtree flipped or not
+	int val, sz; // value in node, # nodes in current splay tree
+	int sub, vsub = 0; // vsub stores sum of virtual children
+	snode(int _val) : val(_val) {
 		p = c[0] = c[1] = extra = NULL;
-		val = v; calc();
+		calc();
 	}
 	friend int getSz(sn x) { return x?x->sz:0; }
 	friend int getSub(sn x) { return x?x->sub:0; }
 	void prop() { // lazy prop
 		if (!flip) return;
-		swap(c[0],c[1]); F0R(i,2) if (c[i]) c[i]->flip ^= 1;
+		swap(c[0],c[1]); 
+		F0R(i,2) if (c[i]) c[i]->flip ^= 1;
 		flip = 0; 
 	}
 	void calc() { // recalc vals
 		F0R(i,2) if (c[i]) c[i]->prop();
 		sz = 1+getSz(c[0])+getSz(c[1]);
-		sub = 1+getSub(c[0])+getSub(c[1])+vir;
+		sub = 1+getSub(c[0])+getSub(c[1])+vsub;
 	}
 	//////// SPLAY TREE OPERATIONS
 	int dir() {
 		if (!p) return -2;
 		F0R(i,2) if (p->c[i] == this) return i;
-		return -1; // p is path-parent pointer,
-		// so not in current splay tree
+		return -1; // p is path-parent pointer
+		/// -> not in current splay tree
 	}
-	// test if root of current splay tree
+	/// test if root of current splay tree
 	bool isRoot() { return dir() < 0; } 
 	friend void setLink(sn x, sn y, int d) {
 		if (y) y->p = x;
@@ -66,29 +69,29 @@ struct snode {
 		prop();
 	}
 	//////// BASE OPERATIONS
-	void access() { // bring this to top of tree
+	void access() { // bring this to top of tree, propagate
 		for (sn v = this, pre = NULL; v; v = v->p) {
-			v->splay(); 
-			if (pre) v->vir -= pre->sub;
-			if (v->c[1]) v->vir += v->c[1]->sub;
-			v->c[1] = pre; v->calc();
-			pre = v;
-			// v->sub should remain the same 
+			v->splay(); // now switch virtual children
+			if (pre) v->vsub -= pre->sub;
+			if (v->c[1]) v->vsub += v->c[1]->sub;
+			v->c[1] = pre; v->calc(); pre = v;
 		}
-		splay(); // left subtree of this is now path to root
-		assert(!c[1]); // right subtree is empty
+		splay(); assert(!c[1]); // right subtree is empty
 	}
-	void makeRoot() { access(); flip ^= 1; }
+	void makeRoot() { 
+		access(); flip ^= 1; access(); 
+		assert(!c[0] && !c[1]);
+	}
 	//////// QUERIES
 	friend sn lca(sn x, sn y) {
 		if (x == y) return x;
 		x->access(), y->access(); if (!x->p) return NULL; 
-		// access at y did not affect x -> not connected
+		/// access at y did not affect x -> not connected
 		x->splay(); return x->p?:x;
 	}
 	friend bool connected(sn x, sn y) { return lca(x,y); } 
+	/// # nodes above
 	int distRoot() { access(); return getSz(c[0]); } 
-	// # nodes above
 	sn getRoot() { // get root of LCT component
 		access(); auto a = this; 
 		while (a->c[0]) a = a->c[0], a->prop();
@@ -106,12 +109,12 @@ struct snode {
 		}
 	}
 	//////// MODIFICATIONS
-	void set(int v) { access(); val = v; calc(); } 
-	friend void link(sn x, sn y, bool force = 0) { // make x par of y
-		assert(!connected(x,y));
-		if (force) y->makeRoot();
+	/// void set(int v) { access(); val = v; calc(); } 
+	friend void link(sn x, sn y, bool force = 0) { 
+		assert(!connected(x,y)); 
+		if (force) y->makeRoot(); // make x par of y
 		else { y->access(); assert(!y->c[0]); }
-		y->p = x; x->access(); x->vir += y->sub; x->calc();
+		x->access(); setLink(y,x,0); y->calc();
 	}
 	friend void cut(sn y) { // cut y from its parent
 		y->access(); assert(y->c[0]);

@@ -7,14 +7,14 @@
 
 #include "Circle.h"
 
-vP intersectPoint(circ x, circ y) { 
+vP isectPoint(circ x, circ y) { 
 	T d = abs(x.f-y.f), a = x.s, b = y.s; 
 	if (d == 0) { assert(a != b); return {}; }
 	T C = (a*a+d*d-b*b)/(2*a*d); if (abs(C) > 1) return {};
 	T S = sqrt(1-C*C); P tmp = (y.f-x.f)/d*x.s;
 	return {x.f+tmp*P(C,S),x.f+tmp*P(C,-S)};
 }
-T intersectArea(circ x, circ y) { // not thoroughly tested
+T isectArea(circ x, circ y) { // not thoroughly tested
 	T d = abs(x.f-y.f), a = x.s, b = y.s; if (a < b) swap(a,b);
 	if (d >= a+b) return 0;
 	if (d <= a-b) return PI*b*b;

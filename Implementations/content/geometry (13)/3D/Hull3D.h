@@ -45,7 +45,6 @@ vector<F> hull3d(vP3& p) { // make first four points form tetra
 	}
 	return hull;
 }
-
 pair<T,T> SaVol(const vP3& p, const vector<F>& faces) {
 	T s = 0, v = 0; // surface area, volume
 	trav(i,faces) {

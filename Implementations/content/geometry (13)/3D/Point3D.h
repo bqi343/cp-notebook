@@ -10,31 +10,30 @@
 
 #include "Point.h"
 
-/// typedef ld T;
-/// int sgn(T x) { return (x>0)-(x<0); }
-/// T sq(T x) { return x*x; }
+/**
+typedef ld T;
+int sgn(T x) { return (x>0)-(x<0); }
+T sq(T x) { return x*x; }
+*/
 
 namespace Point3D {
 	typedef array<T,3> P3;
 	typedef array<P3,3> tri;
 	typedef vector<P3> vP3;
 	T norm(const P3& x) { 
-		T sum = 0; F0R(i,sz(x)) sum += sq(x[i]);
+		T sum = 0; F0R(i,3) sum += sq(x[i]);
 		return sum; }
 	T abs(const P3& x) { return sqrt(norm(x)); }
 	
 	P3& operator+=(P3& l, const P3& r) { 
-		F0R(i,3) l[i] += r[i]; 
-		return l; }
+		F0R(i,3) l[i] += r[i]; return l; }
 	P3& operator-=(P3& l, const P3& r) { 
-		F0R(i,3) l[i] -= r[i]; 
-		return l; }
+		F0R(i,3) l[i] -= r[i]; return l; }
 	P3& operator*=(P3& l, const T& r) { 
-		F0R(i,3) l[i] *= r; 
-		return l; }
+		F0R(i,3) l[i] *= r; return l; }
 	P3& operator/=(P3& l, const T& r) { 
-		F0R(i,3) l[i] /= r; 
-		return l; }
+		F0R(i,3) l[i] /= r; return l; }
+	P3 operator-(P3 l) { l *= -1; return l; }
 	P3 operator+(P3 l, const P3& r) { return l += r; }
 	P3 operator-(P3 l, const P3& r) { return l -= r; }
 	P3 operator*(P3 l, const T& r) { return l *= r; }

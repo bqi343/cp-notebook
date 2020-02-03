@@ -10,52 +10,49 @@
 	* https://codeforces.com/blog/entry/19193
  * Verification: 
 	* https://oj.uz/problem/view/APIO14_palindrome
-	* http://acm.timus.ru/problem.aspx?space=1&num=2058
+	* http://acm.timus.ru/problem.aspx?space=1&num=2058 (call vector reserve to pass ML)
+	* https://codeforces.com/gym/102141/attachments F
  */
 
-template<int SZ> struct PalTree {
-	static const int sigma = 26;
-	int s[SZ], len[SZ], link[SZ], to[SZ][sigma], oc[SZ];
-	int slink[SZ], diff[SZ];
-	array<int,2> ans[SZ], seriesAns[SZ];
-	int n = 0, last = 0, sz;
-	PalTree() { 
-		s[n++] = -1; link[0] = 1; len[1] = -1; sz = 2; 
-		ans[0] = {0,MOD};
-	}
+struct PalTree {
+	static const int ASZ = 26;
+	struct node {
+		array<int,ASZ> to = array<int,ASZ>();
+		int len, link, oc = 0; // # occurrences of pal
+		int slink = 0, diff = 0;
+		array<int,2> seriesAns;
+		node(int _len, int _link) : len(_len), link(_link) {}
+	};
+	str s = "@"; vector<array<int,2>> ans = {{0,MOD}};
+	vector<node> d = {{0,1},{-1,0}}; // dummy pals of len 0,-1
+	int last = 1;
 	int getLink(int v) {
-		while (s[n-len[v]-2] != s[n-1]) v = link[v];
+		while (s[sz(s)-d[v].len-2] != s.bk) v = d[v].link;
 		return v;
 	}
 	void updAns() { // serial path has O(log n) vertices
-		ans[n-1] = {MOD,MOD};
-		for (int v = last; len[v] > 0; v = slink[v]) {
-			seriesAns[v] = ans[n-1-(len[slink[v]]+diff[v])];
-			if (diff[v] == diff[link[v]]) 
-				F0R(i,2) ckmin(seriesAns[v][i],seriesAns[link[v]][i]);
-			// previous oc of link[v] = start of last oc of v
-			F0R(i,2) ckmin(ans[n-1][i],seriesAns[v][i^1]+1);
+		ans.pb({MOD,MOD});
+		for (int v = last; d[v].len > 0; v = d[v].slink) {
+			d[v].seriesAns=ans[sz(s)-1-d[d[v].slink].len-d[v].diff];
+			if (d[v].diff == d[d[v].link].diff) 
+				F0R(i,2) ckmin(d[v].seriesAns[i],
+							d[d[v].link].seriesAns[i]);
+			// start of previous oc of link[v]=start of last oc of v
+			F0R(i,2) ckmin(ans.bk[i],d[v].seriesAns[i^1]+1);
 		}
 	}
-	void addChar(int c) {
-		s[n++] = c;
-		last = getLink(last);
-		if (!to[last][c]) {
-			len[sz] = len[last]+2;
-			link[sz] = to[getLink(link[last])][c];
-			diff[sz] = len[sz]-len[link[sz]];
-			if (diff[sz] == diff[link[sz]]) 
-				slink[sz] = slink[link[sz]];
-			else slink[sz] = link[sz]; 
-			// slink[v] = max suffix u of v such that 
-			// diff[v]\neq diff[u]
-			to[last][c] = sz++;
+	void addChar(char C) {
+		s += C; int c = C-'a'; last = getLink(last);
+		if (!d[last].to[c]) {
+			d.eb(d[last].len+2,d[getLink(d[last].link)].to[c]);
+			d[last].to[c] = sz(d)-1;
+			auto& z = d.bk; z.diff = z.len-d[z.link].len;
+			z.slink = z.diff == d[z.link].diff 
+				? d[z.link].slink : z.link;
+			// max suf with different dif
 		}
-		last = to[last][c]; oc[last] ++;
+		last = d[last].to[c]; d[last].oc ++;
 		updAns();
 	}
-	void numOc() { // # occurrences of each palindrome
-		vpi v; FOR(i,2,sz) v.pb({len[i],i});
-		sort(rall(v)); trav(a,v) oc[link[a.s]] += oc[a.s];
-	}
+	void numOc() { ROF(i,2,sz(d)) d[d[i].link].oc += d[i].oc; }
 };

@@ -7,9 +7,7 @@
  */
 
 #include <ext/rope>
-
 using namespace __gnu_cxx;
-
 void ropeExample() {
 	rope<int> v(5, 0); // initialize with 5 zeroes
 	F0R(i,sz(v)) v.mutable_reference_at(i) = i+1; 

@@ -23,9 +23,14 @@ suf="""</tabTrigger>
 	<!-- <description> demo description </description> -->
 </snippet>"""
 
-print("LOC",LOC.replace(' ','\\ '));
+print("SNIPPETS LOC:\n\n",LOC.replace(' ','\\ '),'\n');
+
+snippets = ""
+temp = ""
 
 for root, dirs, files in os.walk("/Users/benq/Documents/USACO/Implementations",topdown=False):
+	# for name in dirs:
+		# print(os.path.join(root, name))
 	for name in files:
 		if name.endswith(".h"):
 			if name[0].isupper():
@@ -48,55 +53,93 @@ for root, dirs, files in os.walk("/Users/benq/Documents/USACO/Implementations",t
 				short = "Temp"
 				PATH = LOC+short+".sublime-snippet"
 				with open(os.path.join(root, name),"r") as fin:
+					flag = False
+					for a in fin:
+						if "int main()" in a:
+							flag = True
+						a = a.replace('$','\\$')
+						if flag and a == "\t\n":
+							a = "\t$0\n"
+						temp += a
+				with open(PATH,"w") as fout:
+					fout.write(pref)
+					fout.write(temp)
+					fout.write(mid)
+					fout.write(short)
+					fout.write(suf)
+			elif "templateShort" in name:
+				short = "TempShort"
+				PATH = LOC+short+".sublime-snippet"
+				with open(os.path.join(root, name),"r") as fin:
 					with open(PATH,"w") as fout:
 						fout.write(pref)
+						flag = False
 						for a in fin:
-							fout.write(a.replace('$','\\$'))
+							if "int main()" in a:
+								flag = True
+							a = a.replace('$','\\$')
+							if flag and "ios_base" in a:
+								ind = a.find("ios_base")
+								fout.write(a[:ind]+"\n")
+								fout.write("\t"+a[ind:-2]+"\n")
+								fout.write("\t$0\n}\n")
+							else:
+								fout.write(a)
 						fout.write(mid)
 						fout.write(short)
 						fout.write(suf)
 		if name == "Snippets.md":
-			codes = []
-			names = []
-			with open(os.path.join(root, name),"r") as fin:
-				lines = list(fin)
-				# print("WHOOPS",lines)
-				flag = 0
-				for i in range(len(lines)):
-					# print("OH",lines[i])
-					if lines[i] == "```\n":
-						flag ^= 1
-						if flag == 1:
-							codes.append([])
-							names.append(lines[i-2][3:].rstrip())
-							continue
-					if flag == 1:
-						codes[-1].append(lines[i])
-			# print("HUH",names)
-			for i in range(len(names)):
-				short = names[i]
-				PATH = LOC+short+".sublime-snippet"
-				with open(PATH,"w") as fout:
-					fout.write(pref)
-					for a in codes[i]:
-						a = a.replace('$','\\$')
-						if "TC" in names[i]:
-							a = a.replace('Name','${1:Name}')
-							a = a.replace('method','${2:method}')
-						fout.write(a)
-					fout.write(mid)
-					fout.write(short)
-					fout.write(suf)
-				# if "FHC" in names[i]:
-				# 	with open(LOC+"GCJ"+".sublime-snippet","w") as fout:
-				# 		fout.write(pref)
-				# 		for a in codes[i]:
-				# 			a = a.replace('$','\\$')
-				# 			fout.write(a)
-				# 		fout.write(mid)
-				# 		fout.write("GCJ")
-				# 		fout.write(suf)
+			snippets = os.path.join(root, name)
 
+assert len(snippets) > 0, "snippets not found"
 
-	# for name in dirs:
-		# print(os.path.join(root, name))
+# print("TEMPLATE",temp)
+codes = []
+names = []
+with open(snippets,"r") as fin:
+	lines = list(fin)
+	flag = 0
+	for i in range(len(lines)):
+		if "```" in lines[i]: # entered or exited code
+			flag ^= 1
+			if flag == 1:
+				codes.append([])
+				names.append(lines[i-2][3:].rstrip())
+				continue
+		if flag == 1:
+			codes[-1].append(lines[i])
+
+ST = temp.find("int main()")
+EN = ST
+while temp[EN] != '}':
+	EN += 1
+EN += 2
+
+for i in range(len(names)):
+	short = names[i]
+	PATH = LOC+short+".sublime-snippet"
+	code = ""
+	for a in codes[i]:
+		# a = a.replace('$','\\$')
+		# if "TC" in names[i]:
+			# a = a.replace('Name','${1:Name}')
+			# a = a.replace('method','${2:method}')
+		code += a
+	if "TC" in names[i] or "FHC" in names[i]:
+		code = temp[:ST]+code+temp[EN:]
+	with open(PATH,"w") as fout:
+		fout.write(pref)
+		fout.write(code)
+		fout.write(mid)
+		fout.write(short)
+		fout.write(suf)
+	# if "FHC" in names[i]:
+	# 	with open(LOC+"GCJ"+".sublime-snippet","w") as fout:
+	# 		fout.write(pref)
+	# 		for a in codes[i]:
+	# 			a = a.replace('$','\\$')
+	# 			fout.write(a)
+	# 		fout.write(mid)
+	# 		fout.write("GCJ")
+	# 		fout.write(suf)
+

@@ -1,11 +1,7 @@
 /**
- * Description: custom comparator for map / set
+ * Description: example of function object for map or set
  * Source: StackOverflow
  * Usage: set<int,cmp> s; map<int,int,cmp> m;
  */
 
-struct cmp {
-	bool operator()(const int& l, const int& r) const { 
-		return l > r; // sort items in decreasing order
-	} 
-};
+struct cmp{bool operator()(int l,int r)const{return l>r;}};

@@ -12,10 +12,7 @@
 
 struct SuffixArray {
 	string S; int N;
-	void init(const string& _S) {
-		S = _S; N = sz(S);
-		genSa(); genLcp(); 
-	}
+	void init(const str&_S):S(_S),N(sz(_S)){ genSa(),genLcp(); }
 	vi sa, isa;
 	void genSa() {
 		sa.rsz(N), isa.rsz(N); iota(all(sa),0);

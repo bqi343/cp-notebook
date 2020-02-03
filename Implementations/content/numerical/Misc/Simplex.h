@@ -25,7 +25,7 @@ typedef vector<T> vd;
 typedef vector<vd> vvd;
 const T eps = 1e-8, inf = 1/.0;
 
-#define ltj(X) if (s == -1 || mp(X[j],N[j]) < mp(X[s],N[s])) s=j
+#define ltj(X) if (s==-1 || mp(X[j],N[j])<mp(X[s],N[s])) s=j
 
 struct LPSolver {
 	int m, n; // # contraints, # variables
@@ -66,7 +66,7 @@ struct LPSolver {
 			int s = -1; F0R(j,n+1) if (N[j] != -phase) ltj(D[x]); 
 			// find most negative col for nonbasic (nb) variable
 			if (D[x][s] >= -eps) return true; 
-			// can't get better sol by increasing nb variable, terminate
+			// can't get better sol by increasing nb variable
 			int r = -1;
 			F0R(i,m) {
 				if (D[i][s] <= eps) continue;
@@ -82,7 +82,7 @@ struct LPSolver {
 
 	T solve(vd &x) {
 		int r = 0; FOR(i,1,m) if (D[i][n+1] < D[r][n+1]) r = i;
-		if (D[r][n+1] < -eps) { // run simplex to find feasible x != 0
+		if (D[r][n+1] < -eps) { // run simplex, find feasible x!=0
 			pivot(r, n); // N[n] = -1 is artificial variable
 			// initially set to smth large
 			if (!simplex(2) || D[m+1][n+1] < -eps) return -inf; 

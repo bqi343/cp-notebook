@@ -9,8 +9,6 @@
 	* https://open.kattis.com/problems/modulararithmetic
  */
 
-#include "../../contest/CppIO.h"
-
 struct mi {
 	typedef decay<decltype(MOD)>::type T; 
  	/// don't silently convert to T

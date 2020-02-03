@@ -1,9 +1,13 @@
 # Snippets
 
+for sublime text 3
+
 ## TC
 
 ```
-struct Name {
+// INITIALIZE ARRAYS TO ZERO
+
+struct ${1:Name} {
 	void gen(int seed) {
 		ll state = seed;
 		while (1) {
@@ -11,19 +15,21 @@ struct Name {
 			
 		}
 	}
-	int method() {
+	int ${2:method}() {
 		return 5;
 	}
 };
 
 int main() {
-	Name c; ps(c.method());
+	${1:Name} c; ps(c.${2:method}());
 }
 ```
 
 ## FHC
 
 ```
+// INITIALIZE ARRAYS BETWEEN TCs
+
 int N;
 
 void inp(vi& v) { // common way to reduce amount of input
@@ -33,7 +39,7 @@ void inp(vi& v) { // common way to reduce amount of input
 
 void solve(int caseNum) {
 	cerr << "Doing #" << caseNum << "\n";
-
+	${0}
 }
 
 int main() {
@@ -43,5 +49,25 @@ int main() {
 		pr("Case #",i,": ");
 		solve(i);
 	}
+}
+```
+
+## InG
+
+```
+re(N,M);
+F0R(i,M) {
+	int a,b; re(a,b);
+	adj[a].pb(b), adj[b].pb(a);
+}
+```
+
+## InT
+
+```
+re(N);
+F0R(i,N-1) {
+	int a,b; re(a,b);
+	adj[a].pb(b), adj[b].pb(a);
 }
 ```

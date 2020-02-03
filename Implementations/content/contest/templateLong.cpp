@@ -9,7 +9,7 @@ typedef string str;
 typedef pair<int,int> pi;
 typedef pair<ll,ll> pl; 
 typedef pair<ld,ld> pd; 
-#define mp make_pair
+#define mp make_pair 
 #define f first
 #define s second
 
@@ -52,23 +52,6 @@ template<class T> bool ckmax(T& a, const T& b) {
 	return a < b ? a = b, 1 : 0; }
 int pc(int x) { return __builtin_popcount(x); } 
 
-#include <ext/pb_ds/tree_policy.hpp>
-#include <ext/pb_ds/assoc_container.hpp>
-using namespace __gnu_pbds;
-template <class T> using Tree = tree<T, null_type, less<T>, 
-	rb_tree_tag, tree_order_statistics_node_update>; 
-// change null_type for map
-#define ook order_of_key
-#define fbo find_by_order
-
-void treeExample() {
-	Tree<int> t, t2; t.insert(8);
-	auto it = t.insert(10).f; assert(it == t.lb(9));
-	assert(t.ook(10) == 1); assert(t.ook(11) == 2);
-	assert(*t.fbo(0) == 8);
-	t.join(t2); // assuming T < T2 or T > T2, merge t2 into t
-}
-
 namespace input {
 	template<class T> void re(complex<T>& x);
 	template<class T1, class T2> void re(pair<T1,T2>& p);
@@ -82,7 +65,7 @@ namespace input {
 		re(t); re(ts...); 
 	}
 
-	template<class T> void re(complex<T>& x) { T a,b; re(a,b); x = cd(a,b); }
+	template<class T> void re(complex<T>& x) { T a,b; re(a,b); x = {a,b}; }
 	template<class T1, class T2> void re(pair<T1,T2>& p) { re(p.f,p.s); }
 	template<class T> void re(vector<T>& a) { F0R(i,sz(a)) re(a[i]); }
 	template<class T, size_t SZ> void re(array<T,SZ>& a) { F0R(i,SZ) re(a[i]); }
@@ -149,66 +132,11 @@ namespace io {
 
 using namespace io;
 
-struct mi {
-	typedef decay<decltype(MOD)>::type T; 
- 	/// don't silently convert to T
-	T v; explicit operator T() const { return v; }
-	mi() { v = 0; }
-	mi(ll _v) { 
-		v = (-MOD < _v && _v < MOD) ? _v : _v % MOD;
-		if (v < 0) v += MOD;
-	}
-	friend bool operator==(const mi& a, const mi& b) { 
-		return a.v == b.v; }
-	friend bool operator!=(const mi& a, const mi& b) { 
-		return !(a == b); }
-	friend bool operator<(const mi& a, const mi& b) { 
-		return a.v < b.v; }
-	friend void re(mi& a) { ll x; re(x); a = mi(x); }
-	friend void pr(const mi& a) { pr(a.v); }
-	friend ostream& operator<<(ostream& os, const mi& a) { 
-		return os << a.v; }
-   
-	mi& operator+=(const mi& m) { 
-		if ((v += m.v) >= MOD) v -= MOD; 
-		return *this; }
-	mi& operator-=(const mi& m) { 
-		if ((v -= m.v) < 0) v += MOD; 
-		return *this; }
-	mi& operator*=(const mi& m) { 
-		v = (ll)v*m.v%MOD; return *this; }
-	mi& operator/=(const mi& m) { return (*this) *= inv(m); }
-	friend mi pow(mi a, ll p) {
-		mi ans = 1; assert(p >= 0);
-		for (; p; p /= 2, a *= a) if (p&1) ans *= a;
-		return ans;
-	}
-	friend mi inv(const mi& a) { assert(a.v != 0); 
-		return pow(a,MOD-2); }
-		
-	mi operator-() const { return mi(-v); }
-	mi& operator++() { return *this += 1; }
-	mi& operator--() { return *this -= 1; }
-	friend mi operator+(mi a, const mi& b) { return a += b; }
-	friend mi operator-(mi a, const mi& b) { return a -= b; }
-	friend mi operator*(mi a, const mi& b) { return a *= b; }
-	friend mi operator/(mi a, const mi& b) { return a /= b; }
-};
-typedef vector<mi> vmi;
-typedef pair<mi,mi> pmi;
-typedef vector<pmi> vpmi;
-
-vector<vmi> comb;
-void genComb(int SZ) {
-	comb.assign(SZ,vmi(SZ)); comb[0][0] = 1;
-	FOR(i,1,SZ) F0R(j,i+1) 
-		comb[i][j] = comb[i-1][j]+(j?comb[i-1][j-1]:0);
-}
-
 mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count()); 
 
-int main() { 
-	ios_base::sync_with_stdio(0); cin.tie(0); 
+int main() {
+	setIO();
+	
 	// you should actually read the stuff at the bottom
 }
 

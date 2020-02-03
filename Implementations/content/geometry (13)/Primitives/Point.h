@@ -49,5 +49,7 @@ namespace Point {
 		return (p+reflect(p,a,b))/(T)2; }
 	bool onSeg(const P& p, const P& a, const P& b) { 
 		return cross(a,b,p) == 0 && dot(p-a,p-b) <= 0; }
+	ostream& operator<<(ostream& os, const P& p) {
+		return os << "(" << p.f << "," << p.s << ")"; }
 };
 /// using namespace Point;

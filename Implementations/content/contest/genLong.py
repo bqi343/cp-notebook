@@ -1,4 +1,6 @@
-filenames = ['template.cpp', '../data-structures/STL (5)/IndexedSet.h', 'CppIO.h', '../number-theory (11.1)/Modular Arithmetic/ModInt.h']
+filenames = ['template.cpp', 'CppIO.h']
+# '../data-structures/STL (5)/IndexedSet.h', '../number-theory (11.1)/Modular Arithmetic/ModInt.h'
+
 with open('templateLong.cpp', 'w') as outfile:
 	res = []
 	active = False
@@ -49,9 +51,7 @@ with open('templateLong.cpp', 'w') as outfile:
 		ad(line)
 	# print("OH",res[-1],"HA",res[-1][-1],res[-1][-2])
 	ind = res[-1].find("ios")
-	res[-1] = res[-1][:ind]+"\n\t"+res[-1][ind:]
-	res[-2] = res[-2][:ind]
-	res[-1] = res[-1][:-2]+"\n"
+	res[-1] = res[-1][:ind-1]+"\n\tsetIO();\n\t\n"
 
 	res.append('	// you should actually read the stuff at the bottom\n')
 	res.append('}\n\n')

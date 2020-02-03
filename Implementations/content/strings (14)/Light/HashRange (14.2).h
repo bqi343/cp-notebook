@@ -8,7 +8,7 @@
 	* CF Check Transcription
  */
 
-typedef array<int,2> T; // pick bases not too close to ends
+typedef array<int,2> T; // bases not too close to ends
 uniform_int_distribution<int> MULT_DIST(0.1*MOD,0.9*MOD); 
 const T base = {MULT_DIST(rng),MULT_DIST(rng)};
 
@@ -31,7 +31,7 @@ struct HashRange {
 		}
 	}
 	T hash(int l, int r) { return cum[r+1]-pows[r+1-l]*cum[l]; }
-	int lcp(HashRange& b) {
+	/**int lcp(HashRange& b) {
 		int lo = 0, hi = min(sz(S),sz(b.S));
 		while (lo < hi) {
 			int mid = (lo+hi+1)/2;
@@ -39,6 +39,6 @@ struct HashRange {
 			else hi = mid-1;
 		}
 		return lo;
-	}
+	}*/
 };
 /// HashRange H; H.init("ababab"); F0R(i,6) FOR(j,i,6) ps(i,j,H.hash(i,j));

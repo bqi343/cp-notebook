@@ -18,7 +18,7 @@ struct bset {
 		int res = 0; trav(t,b) res += __builtin_popcountll(t);
 		return res;
 	}
-	friend void pr(const bset& x) { F0R(i,x.size) pr((int)x.get(i)); }
+	friend void pr(const bset&x){F0R(i,x.size)pr((int)x.get(i));}
 	bset& operator|=(const bset& r) {
 		assert(size == r.size); F0R(i,sz(b)) b[i] |= r.b[i]; }
 	bset& operator&=(const bset& r) {

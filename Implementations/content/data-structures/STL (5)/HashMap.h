@@ -7,7 +7,6 @@
 
 #include <ext/pb_ds/assoc_container.hpp>
 using namespace __gnu_pbds;
-
 struct chash { /// use most bits rather than just the lowest ones
 	const uint64_t C = ll(2e18*PI)+71; // large odd number
 	const int RANDOM = rng();

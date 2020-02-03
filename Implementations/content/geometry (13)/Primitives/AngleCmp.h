@@ -1,6 +1,6 @@
 /**
- * Description: sorts points in ccw order about origin, 
- 	* \texttt{atan2} returns real in $(-\pi,\pi]$ so points on negative $x$-axis come last
+ * Description: Sorts points in ccw order about origin. \texttt{atan2} 
+ 	* returns real in $(-\pi,\pi]$ so points on negative $x$-axis come last.
  * Usage: 
  	* vP v;
  	* sort(all(v),[](P a, P b) { return 

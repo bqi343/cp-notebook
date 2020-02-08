@@ -1,7 +1,7 @@
-filenames = ['template.cpp', 'CppIO.h']
+filenames = ['Template.cpp', 'CppIO.h']
 # '../data-structures/STL (5)/IndexedSet.h', '../number-theory (11.1)/Modular Arithmetic/ModInt.h'
 
-with open('templateLong.cpp', 'w') as outfile:
+with open('TemplateLong.cpp', 'w') as outfile:
 	res = []
 	active = False
 	def ad(line):
@@ -35,7 +35,7 @@ with open('templateLong.cpp', 'w') as outfile:
 			for line in infile:
 				v.append(line)
 			print("IMPORTING",fname)
-			if fname == 'template.cpp':
+			if fname == 'Template.cpp':
 				for i in range(len(v)):
 					line = v[i]
 					if i < len(v)-4:

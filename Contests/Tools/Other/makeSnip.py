@@ -31,8 +31,12 @@ temp = ""
 for root, dirs, files in os.walk("/Users/benq/Documents/USACO/Implementations",topdown=False):
 	# for name in dirs:
 		# print(os.path.join(root, name))
+	#print("ROOT",root)
+	#print("DIRS",dirs)
+	#print("FILES",files)
 	for name in files:
 		if name.endswith(".h"):
+			# print("PROCESSED",name)
 			if name[0].isupper():
 				short = name[:-2]
 				if '(' in short:
@@ -49,7 +53,8 @@ for root, dirs, files in os.walk("/Users/benq/Documents/USACO/Implementations",t
 						fout.write(suf)
 				# print(os.path.join(root, name))
 		if name.endswith(".cpp"):
-			if "templateLong" in name:
+			# print("WHOOPS",name)
+			if "TemplateLong" in name:
 				short = "Temp"
 				PATH = LOC+short+".sublime-snippet"
 				with open(os.path.join(root, name),"r") as fin:
@@ -67,7 +72,7 @@ for root, dirs, files in os.walk("/Users/benq/Documents/USACO/Implementations",t
 					fout.write(mid)
 					fout.write(short)
 					fout.write(suf)
-			elif "templateShort" in name:
+			elif "TemplateShort" in name:
 				short = "TempShort"
 				PATH = LOC+short+".sublime-snippet"
 				with open(os.path.join(root, name),"r") as fin:
@@ -88,6 +93,8 @@ for root, dirs, files in os.walk("/Users/benq/Documents/USACO/Implementations",t
 						fout.write(mid)
 						fout.write(short)
 						fout.write(suf)
+			elif "template" not in name.lower() and "test" not in name.lower():
+				print("CPP NOT INCLUDED:",name)
 		if name == "Snippets.md":
 			snippets = os.path.join(root, name)
 

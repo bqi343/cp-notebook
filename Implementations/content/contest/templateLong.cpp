@@ -9,9 +9,6 @@ typedef string str;
 typedef pair<int,int> pi;
 typedef pair<ll,ll> pl; 
 typedef pair<ld,ld> pd; 
-#define mp make_pair 
-#define f first
-#define s second
 
 typedef vector<int> vi; 
 typedef vector<ll> vl; 
@@ -21,6 +18,9 @@ typedef vector<pi> vpi;
 typedef vector<pl> vpl; 
 typedef vector<pd> vpd; 
 
+#define mp make_pair 
+#define f first
+#define s second
 #define sz(x) (int)x.size()
 #define all(x) begin(x), end(x)
 #define rall(x) (x).rbegin(), (x).rend() 
@@ -40,14 +40,14 @@ typedef vector<pd> vpd;
 #define R0F(i,a) ROF(i,0,a)
 #define trav(a,x) for (auto& a: x)
 
-const int MOD = 1e9+7; // 998244353; // = (119<<23)+1
-const int MX = 2e5+5;
+const int MOD = 1e9+7; // 998244353;
+const int MX = 2e5+5; 
 const ll INF = 1e18; 
 const ld PI = acos((ld)-1);
 const int xd[4] = {1,0,-1,0}, yd[4] = {0,1,0,-1}; 
 
 template<class T> bool ckmin(T& a, const T& b) { 
-	return a > b ? a = b, 1 : 0; }
+	return b < a ? a = b, 1 : 0; }
 template<class T> bool ckmax(T& a, const T& b) { 
 	return a < b ? a = b, 1 : 0; }
 int pc(int x) { return __builtin_popcount(x); } 

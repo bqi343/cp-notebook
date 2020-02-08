@@ -25,7 +25,7 @@ const int MOD = 1e9+7;
 const ld PI = acos((ld)-1);
 
 template<class T> bool ckmin(T& a, const T& b) { 
-	return a > b ? a = b, 1 : 0; }
+	return b < a ? a = b, 1 : 0; }
 template<class T> bool ckmax(T& a, const T& b) { 
 	return a < b ? a = b, 1 : 0; }
 

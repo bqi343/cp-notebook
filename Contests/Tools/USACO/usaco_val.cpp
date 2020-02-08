@@ -158,21 +158,32 @@ vector<int> get_test_case_batches(int argc, char** argv) {
   return res;
 }
  
-typedef vector<int> vi;
 typedef long long ll;
- 
+typedef long double ld;
+typedef pair<int,int> pi;
+typedef vector<int> vi; 
+typedef vector<pi> vpi;
+
+#define f first
+#define s second
+#define sz(x) (int)x.size()
+#define all(x) begin(x), end(x)
+#define rsz resize
+#define bk back()
+#define pb push_back
+
 #define FOR(i,a,b) for (int i = (a); i < (b); ++i)
 #define F0R(i,a) FOR(i,0,a)
 #define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
 #define R0F(i,a) ROF(i,0,a)
 #define trav(a,x) for (auto& a: x)
 
-#define sz(x) (int)x.size()
-#define pb push_back
+const int MOD = 1e9+7;
 
-#define gi(a,b) in.get_int(a,b)
-#define gs() in.get_space()
-#define ge() in.get_eol()
+template<class T> bool ckmin(T& a, const T& b) { 
+  return b < a ? a = b, 1 : 0; }
+template<class T> bool ckmax(T& a, const T& b) { 
+  return a < b ? a = b, 1 : 0; }
 
 struct DSU {
   vi e; void init(int n) { e = vi(n,-1); }
@@ -189,12 +200,20 @@ struct DSU {
  
 input in(cin);
 
+#define gi(a,b) in.get_int(a,b)
+#define gl(a,b) in.get_line(a,b)
+#define gs() in.get_space()
+#define ge() in.get_eol()
+#define gt() in.get_token()
+
 int main(int argc, char** argv) {
   // vector<int> batches = get_test_case_batches(argc, argv);
   // int batch = batches.empty() ? 1 : batches[0];
   // cerr << "Batch: " << batch << endl;
   int id = atoi(argv[1]); // test id
+  cerr << "Test: " << id << endl;
   // write stuff here
 
+  cerr << "OK" << endl;
   in.get_eof();
 }

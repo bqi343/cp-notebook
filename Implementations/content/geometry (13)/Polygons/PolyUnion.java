@@ -3,7 +3,9 @@
  	* of the resulting figure with \texttt{java.awt.geom}.
  * Time: Runs quite quickly for two convex polygons with $N=10^5$ vertices each.
  * Source: Nick Wu
- * Verification: https://probgate.org/viewproblem.php?pid=249
+ * Verification: 
+ 	* https://open.kattis.com/problems/abstractart
+ 	* https://probgate.org/viewproblem.php?pid=249
  */
 
 import java.awt.geom.*;

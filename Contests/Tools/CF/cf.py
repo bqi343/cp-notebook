@@ -1,5 +1,6 @@
 # source: https://github.com/fjzzq2002/CFBooster
 # download CF sample cases, parse input
+# use at your own risk :P
 
 from bs4 import BeautifulSoup
 import urllib.request
@@ -18,6 +19,7 @@ def parseUrl(url):
 
 TESTING=False
 DEFAULT=False
+REMOVE=False
 padding='\t'
 contest="1284"
 probs = ""
@@ -566,7 +568,8 @@ force = False
 
 def run():
 	global cfTemp
-	assert os.path.exists('templateLong.cpp'), 'template doesn\'t exist'
+	tname = "/Users/benq/Documents/USACO/Implementations/content/contest/TemplateLong.cpp"
+	assert os.path.exists(tname), 'template doesn\'t exist'
 	def insBefore(a,b):
 		global cfTemp
 		ind = cfTemp.index(a)
@@ -576,10 +579,12 @@ def run():
 			b += '\n'
 		cfTemp = cfTemp[:ind]+b+cfTemp[ind:]
 
-	with open('templateLong.cpp','r') as tempFile:
+	with open(tname,'r') as tempFile:
 		cfTemp = tempFile.read()
+		ind = cfTemp.find("setIO();")+len("setIO();\n")
+		cfTemp = cfTemp[:ind]+cfTemp[ind+2:] # remove \t\n
 		insBefore("int main()","[VARS]")
-		insBefore("	// you should actually","[CODES]")
+		insBefore("\t// you should actually","[CODES]")
 		# print(cfTemp)
 		# sys.exit(0)
 	probNames = []
@@ -611,10 +616,15 @@ def run():
 		print('fetched full problemset, length='+str(len(soup.text)))
 		print('found problems: '+','.join(probNames))
 		print()
-	if TESTING:
+	if REMOVE:
+		rem = False
 		for o in probNames:
 			if os.path.exists(o+"/"):
+				rem = True
+				print("removed folder "+o)
 				shutil.rmtree(o+"/") 
+		if rem:
+			print()
 	else:
 		for o in probNames:
 			if os.path.exists(o+"/"):
@@ -629,30 +639,44 @@ def run():
 
 def main():
 	try:
-		global contest, probs, TESTING, DEFAULT
-		opts, args = getopt.getopt(sys.argv[1:], "tdh",["test","default","help"])
+		global contest, probs, TESTING, DEFAULT, REMOVE
+		opts, args = getopt.getopt(sys.argv[1:], "tdhr",["test","default","help","rem"])
 		for option, value in opts:
 			if option in ("-h","--help"):
 				print("This is the help section for "+cb("cf.py")+".")
 				print()
 				print("Available options are:")
 				print("\t -h --help: display help")
-				print("\t -t --test: displays debug information, forcibly removes folder")
+				print("\t -r --rem: remove folders if they exist")
+				print("\t -t --test: displays debug information, enables -r")
 				print("\t -d --default: initialize folders given names")
 				print()
 				print("Available commands are:")
 				print("\t 'python3 cf.py 1295': parse contest 1295")
 				print("\t 'python3 cf.py -d AB2': initialize folders for problems A, B1, B2")
 				return
+			if option in ("-r","--rem"):
+				REMOVE = True
 			if option in ("-t","--test"):
 				TESTING = True
+				REMOVE = True
 			if option in ("-d","--default"):
 				DEFAULT = True
-		if DEFAULT:
-			probs = args[0]
+		if len(args) == 0:
+			assert REMOVE
+			for o in "ABCDEF":
+				if os.path.exists(o+"/"):
+					rem = True
+					print("removed folder "+o)
+					shutil.rmtree(o+"/") 
+			if rem:
+				print()
 		else:
-			contest = args[0]
-		run()
+			if DEFAULT:
+				probs = args[0]
+			else:
+				contest = args[0]
+			run()
 	except (ValueError, getopt.GetoptError, IOError) as err:
 		print(str(err), file=sys.stderr)
 		print("\t for help use --help", file=sys.stderr)

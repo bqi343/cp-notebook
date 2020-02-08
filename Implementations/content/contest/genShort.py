@@ -1,6 +1,6 @@
-filenames = ['template.cpp', 'CppIO.h', '../number-theory (11.1)/Modular Arithmetic/Modular.h']
-with open('templateShort.cpp', 'w') as outfile:
-	with open('template.cpp','r') as infile:
+filenames = ['Template.cpp', 'CppIO.h', '../number-theory (11.1)/Modular Arithmetic/Modular.h']
+with open('TemplateShort.cpp', 'w') as outfile:
+	with open('Template.cpp','r') as infile:
 		for line in infile:
 			if not line.endswith('//\n'):
 				if "// 998244353" in line:

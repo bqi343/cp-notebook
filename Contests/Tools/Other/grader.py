@@ -104,7 +104,7 @@ def check(o0,o1): # check if output files o0,o1 match
 			if isfloat(z0) and '.' in z0:
 				if not isfloat(z1):
 					return "W", f"{i+1}-th elements don't match, expected {z0} but found {z1}"
-				e = error(float(z0),float(z1))
+				e = doubleError(float(z0),float(z1))
 				if e > EPS:
 					return "W", f"{i+1}-th floats differ, error={e}. Expected {z0} but found {z1}."
 				continue
@@ -209,16 +209,34 @@ def getTests(): # $ can be any sequence of digits
 	ind = IN.find('$')
 	after = len(IN)-1-ind
 	L = []
+	LL = []
 	files = [f for f in os.listdir('.') if os.path.isfile(f)]
 	# print("WHOOPS",files)
+	def makeKey(x):
+		x = x[:x.rfind('.')]
+		return [len(x),x]
+	files.sort(key=makeKey)
 	for file in files:
 		if len(file) >= len(IN):
 			if IN[:ind] == file[:ind] and IN[-after:] == file[-after:]:
 				dig = file[ind:-after]
 				if dig.isdigit():
-					if debug:
-						print("FOUND TEST "+file)
 					L.append(dig)
+					LL.append(file)
+	if debug:
+		if len(LL) == 0:
+			print("NO TESTS FOUND")
+		else:
+			print("FOUND TESTS",end='')
+			fst = True
+			for name in LL:
+				if fst:
+					print(' ',end='')
+					fst = False
+				else:
+					print(', ',end='')
+				print(name,end='')
+			print()
 	return L 
 
 def GETOUTPUT(f):

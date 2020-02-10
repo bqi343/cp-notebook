@@ -50,7 +50,7 @@ template<class T> bool ckmin(T& a, const T& b) {
 	return b < a ? a = b, 1 : 0; }
 template<class T> bool ckmax(T& a, const T& b) { 
 	return a < b ? a = b, 1 : 0; }
-int pc(int x) { return __builtin_popcount(x); } 
+int pct(int x) { return __builtin_popcount(x); } 
 
 namespace input {
 	template<class T> void re(complex<T>& x);

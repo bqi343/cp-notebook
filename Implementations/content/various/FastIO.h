@@ -19,9 +19,9 @@ namespace FastIO {
 		}
 		return ibuf[ipos++];
 	}
-	void rs(str& res) { // read string
+	void rs(str& x) { // read str
 		char ch; while (isspace(ch = nc()));
-		do { res += ch; } while (!isspace(ch = nc()) && ch != EOF);
+		do { x += ch; } while (!isspace(ch = nc()) && ch != EOF);
 	}
 	template<class T> void ri(T& x) { // read int or ll
 		char ch; int sgn = 1;
@@ -38,7 +38,7 @@ namespace FastIO {
 		if (opos == BSZ) flushOut();
 		obuf[opos++] = c;
 	}
-	void ws(string s) { trav(c,s) wc(c); } // write char
+	void ws(str s) { trav(c,s) wc(c); } // write char
 	template<class T> void wi(T x, char after = '\0') { /// write int
 		if (x < 0) wc('-'), x *= -1;
 		int len = 0; for (;x>=10;x/=10) numBuf[len++] = '0'+(x%10);

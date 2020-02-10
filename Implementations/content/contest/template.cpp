@@ -50,7 +50,7 @@ template<class T> bool ckmin(T& a, const T& b) {
 	return b < a ? a = b, 1 : 0; }
 template<class T> bool ckmax(T& a, const T& b) { 
 	return a < b ? a = b, 1 : 0; }
-int pc(int x) { return __builtin_popcount(x); } //
+int pct(int x) { return __builtin_popcount(x); } //
 int bit(int x) { return 31-__builtin_clz(x); } // floor(log2(x)) //
 mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count()); //
 

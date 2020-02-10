@@ -458,8 +458,10 @@ def interactive(p):
 	l = lex(p)
 	if l != None:
 		l = (None,)+l[1:]
+		# print("??",l)
 		a,b = getCode(l)
-		DEFS = a 
+		print("WUT",a,b)
+		DEFS = "\n"+a
 		CODES += "\n"+b
 
 	# for d in probs[p].find_all(class_='problem-statement'):
@@ -487,23 +489,28 @@ def interactive(p):
 			for i in range(1,len(X)):
 				varType[c] = max(varType[c],guess_type(X[i]))
 
-	def output(b):
-		if b:
-			return padding+'trav(t,a) pr(t,\' \')\n'+padding+'ps();\n'
-		else:
-			return padding+'ps(a);\n'
-
 	if '?' in isArr:
+		def outputQ(b):
+			if b:
+				return padding+'pr("? ",sz(a));\n'+padding+'trav(t,a) pr(" ",t);\n'+padding+'ps();\n'
+			else:
+				return padding+'ps("?",a);\n'
 		c = '?'
-		DEFS += f'\nvoid query({getType(varType[c],isArr[c])} a) {{\n'
-		DEFS += output(isArr[c])
-		DEFS += padding+'re(?);\n'
-		DEFS += padding+'return ?;\n'
+		DEFS += f'\nstr query({getType(varType[c],isArr[c])} a) {{\n'
+		DEFS += outputQ(isArr[c])
+		DEFS += padding+'str r; re(r);\n'
+		DEFS += padding+'// calculate result locally?\n'
+		DEFS += padding+'return r;\n'
 		DEFS += '}\n'
 	if '!' in isArr:
+		def outputA(b):
+			if b:
+				return padding+'pr("! ",sz(a));\n'+padding+'trav(t,a) pr(" ",t);\n'+padding+'ps();\n'
+			else:
+				return padding+'ps("!",a);\n'
 		c = '!'
 		DEFS += f'\nvoid fin({getType(varType[c],isArr[c])} a) {{\n'
-		DEFS += output(isArr[c])
+		DEFS += outputA(isArr[c])
 		DEFS += padding+'exit(0);\n'
 		DEFS += '}\n'
 
@@ -514,7 +521,7 @@ def interactive(p):
 	print(cb('interactive template for problem '+p+'.','blue'))
 	code = cfTemp.replace('[CODES]',CODES).replace('[VARS]',DEFS)
 	code = code.replace('pr("\\n");','cout << endl;')
-	code = ''.join(code.rsplit(padding+'ios_base::sync_with_stdio(0); cin.tie(0);\n',1))
+	code = ''.join(code.rsplit(padding+'setIO();\n',1))
 	writeFile(cppName,code)
 
 def writeDefault():

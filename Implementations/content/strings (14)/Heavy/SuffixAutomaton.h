@@ -42,7 +42,7 @@ struct SuffixAutomaton {
 		}
 		last = cur;
 	}
-	void init(string s) { 
+	void init(str s) { 
 		st.eb(); trav(x,s) extend(x); 
 		FOR(v,1,sz(st)) st[st[v].link].invLink.pb(v);
 	}
@@ -51,7 +51,7 @@ struct SuffixAutomaton {
 		if (!st[v].isClone) oc.pb(st[v].firstPos);
 		trav(u,st[v].invLink) getAllOccur(oc,u);
 	}
-	vi allOccur(string s) {
+	vi allOccur(str s) {
 		int cur = 0;
 		trav(x,s) {
 			if (!st[cur].next.count(x)) return {};

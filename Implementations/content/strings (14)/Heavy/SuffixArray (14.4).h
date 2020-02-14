@@ -1,6 +1,5 @@
 /**
- * Description: \texttt{sa} contains indices of suffixes in sorted order, 
- * \texttt{isa} contains inverses. 
+ * Description: Sort suffixes. 
  * Time: O(N\log N)
  * Source: SuprDewd, KACTL, majk, ekzhang (http://ekzlib.herokuapp.com)
  * Verification: 
@@ -13,7 +12,7 @@
 struct SuffixArray {
 	str S; int N;
 	void init(str _S) { S = _S, N = sz(S); genSa(), genLcp(); }
-	vi sa, isa;
+	vi sa, isa; // indices of suffixes in sorted order, inverses
 	void genSa() {
 		sa.rsz(N), isa.rsz(N); iota(all(sa),0);
 		sort(all(sa),[&](int a, int b) { return S[a] < S[b]; });
@@ -36,7 +35,7 @@ struct SuffixArray {
 			}
 		}
 	}
-	vi lcp;
+	vi lcp; // common prefix of every two indices in sa
 	void genLcp() { // Kasai's Algo
 		lcp = vi(N-1); int h = 0;
 		F0R(i,N) if (isa[i]) {

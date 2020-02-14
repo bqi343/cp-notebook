@@ -1,16 +1,16 @@
 /**
- * Description: LineContainer given assumptions
+ * Description: LineContainer assuming both slopes and queries monotonic.
  * Time: O(1)
  * Source: Own
  * Verification: http://acm.hdu.edu.cn/diy/contest_showproblem.php?cid=36005&pid=1009
  */
 
-#include "LineContainer.h"
+#include "LCold.h"
 
 struct LCdeque : deque<Line> { 
 	void addBack(Line L) { // assume nonempty
 		while (1) {
-			auto a = bk; pop.bk; a.p = bet(a,L);
+			auto a = bk; pop_back(); a.p = bet(a,L);
 			if (size() && bk.p >= a.p) continue;
 			pb(a); break;
 		}
@@ -35,8 +35,7 @@ struct LCdeque : deque<Line> {
 			while (ft.p < x) pop_front();
 			return ft.eval(x);
 		} else {
-			while (size() > 1 && prev(prev(end()))->p >= x) 
-				pop.bk;
+			while(size()>1&&prev(prev(end()))->p>=x)pop_back();
 			return bk.eval(x);
 		}
 	}	

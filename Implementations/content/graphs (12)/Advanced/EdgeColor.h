@@ -39,25 +39,25 @@ template<int SZ> struct EdgeColor {
 		auto a = genCol(u), b = genCol(v);
 		FOR(i,1,maxDeg+2) if (!a[i] && !b[i]) 
 			return ae(u,v,i); 
-		// 2. find maximal fan of u starting at v
+		/// 2. find maximal fan of u starting at v
 		vector<bool> use(N); vi fan = {v}; use[v] = 1;
 		while (1) {
 			auto col = genCol(fan.bk);
 			if (sz(fan) > 1) col[adj[fan.bk][u]] = 0;
-			int i = 0; while (i < N && (use[i] || col[adj[u][i]])) i ++;
+			int i=0; while (i<N && (use[i] || col[adj[u][i]])) i++;
 			if (i < N) fan.pb(i), use[i] = 1;
 			else break;
 		} 
-		// 3. choose free cols c and d for endpoints of fan
-		// 4. invert cd_u path
+		/// 3. choose free cols c and d for endpoints of fan
+		/// 4. invert cd_u path
 		int c = freeCol(u), d = freeCol(fan.bk); invert(u,d,c); 
-		// 5. find i such that d is free on fan[i]
+		/// 5. find i such that d is free on fan[i]
 		int i = 0; while (i < sz(fan) && genCol(fan[i])[d] 
 			&& adj[u][fan[i]] != d) i ++; 
 		assert (i != sz(fan));
-		// 6. rotate fan from 0 to i
+		/// 6. rotate fan from 0 to i
 		F0R(j,i) ae(u,fan[j],delEdge(u,fan[j+1]));
-		// 7. add new edge
+		/// 7. add new edge
 		ae(u,fan[i],d);
 	}
 };

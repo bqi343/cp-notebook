@@ -1,5 +1,5 @@
 /**
- * Description: BumpAllocator for STL containers.
+ * Description: Unused. BumpAllocator for STL containers.
  * Source: Simon Lindholm
  * Usage: vector<vector<int, small<int>>> ed(N);
  * Status: tested
@@ -7,7 +7,6 @@
 
 char buf[450 << 20] alignas(16);
 size_t buf_ind = sizeof buf;
-
 template<class T> struct small {
 	typedef T value_type;
 	small() {}

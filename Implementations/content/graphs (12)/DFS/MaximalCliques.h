@@ -7,7 +7,6 @@
 
 typedef bitset<128> B; B adj[128];
 int N;
-
 // possibly in clique, not in clique, in clique
 void cliques(B P = ~B(), B X={}, B R={}) { 
 	if (!P.any()) { 

@@ -6,12 +6,12 @@ import sys # to exit program
 from termcolor import colored # print in color + bold
 import getopt # command line
 
-IN = "$.in" # $ is replaced with file number
-OUT = "$.out"
-TL = 2
+IN = "I.$" # $ is replaced with file number
+OUT = "O.$"
+TL = 4
 EPS = 1e-6
 exts = [".cpp",".cc",".java",".py",".py3"]
-cppc = "g++-9 -std=c++17 -O2 -Wl,-stack_size -Wl,0x10000000 -w -o $ #" 
+cppc = "g++-9 -std=c++11 -O2 -Wl,-stack_size -Wl,0x10000000 -w -o $ #" 
 javac = "javac #"
 
 sep = '-'*50
@@ -91,7 +91,9 @@ def run(file,inputF): # return tuple of output file, exit code, time
 		return "",152,TL
 
 def check(o0,o1): # check if output files o0,o1 match
+	assert o0 != o1
 	O0,O1 = splitWhite(o0),splitWhite(o1)
+	# print("HAHA",o0,o1,len(O1),O1[0])
 	if len(O0) != len(O1):
 		return "W", f"{o0} has {len(O0)} lines but {o1} has {len(O1)} lines"
 	for i in range(len(O0)):
@@ -114,7 +116,7 @@ def check(o0,o1): # check if output files o0,o1 match
 def interpretExit(e): # interpret exit code
 	assert e != 0, "success??"
 	if e == 139:
-		return "R", "stack size exceeded?"
+		return "R", "runtime error"
 	if e == 152:
 		return "T", "time limit exceeded"
 	return "R", f"exit code {e}"
@@ -177,6 +179,7 @@ def getOutput(prog,inputF): # verdict, message, time
 def compare(f0,f1,inputF): # verdict, message, time
 	o0,e0,t0 = run(f0,inputF)
 	o1,e1,t1 = run(f1,inputF)
+	# print(len(o1),o1[0])
 	if e0 != 0:
 		return "E", "supposedly correct code gave "+interpretExit(e0)[1], (t0,)
 	if e1 != 0:
@@ -215,14 +218,24 @@ def getTests(): # $ can be any sequence of digits
 	def makeKey(x):
 		x = x[:x.rfind('.')]
 		return [len(x),x]
-	files.sort(key=makeKey)
+	# files.sort(key=makeKey)
+	# print("??",after)
 	for file in files:
 		if len(file) >= len(IN):
-			if IN[:ind] == file[:ind] and IN[-after:] == file[-after:]:
+			if IN[:ind] != file[:ind]: 
+				continue 
+			if after != 0:
+				if IN[-after:] != file[-after:]:
+					continue
+			if after != 0:
 				dig = file[ind:-after]
-				if dig.isdigit():
-					L.append(dig)
-					LL.append(file)
+			else:
+				dig = file[ind:]
+			if dig.isdigit():
+				L.append(dig)
+				LL.append(file)
+	L.sort(key=lambda x: [len(x),x]);
+	LL.sort(key=makeKey)
 	if debug:
 		if len(LL) == 0:
 			print("NO TESTS FOUND")

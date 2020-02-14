@@ -16,5 +16,4 @@ ul divsum(ul to, ul c, ul k, ul m) {
 }
 ll modsum(ul to, ll c, ll k, ll m) {
 	c = (c%m+m)%m, k = (k%m+m)%m;
-	return to*c+k*sumsq(to)-m*divsum(to,c,k,m);
-}
+	return to*c+k*sumsq(to)-m*divsum(to,c,k,m); }

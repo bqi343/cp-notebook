@@ -22,10 +22,7 @@ template<class T, int SZ> struct OffBIT2D {
 		trav(t,todo) for (int x = t.f; x < SZ; x += x&-x) 
 			if (lst[x] != t.s) lst[x] = t.s, cnt[x] ++;
 		int sum = 0;
-		F0R(i,SZ) {
-			lst[i] = 0; 
-			st[i] = sum; sum += cnt[i]; 
-		}
+		F0R(i,SZ) { lst[i] = 0; st[i] = sum; sum += cnt[i]; }
 		val.rsz(sum); bit.rsz(sum); // store BITs in single vector
 		trav(t,todo) for (int x = t.f; x < SZ; x += x&-x) 
 			if (lst[x] != t.s) lst[x] = t.s, val[st[x]++] = t.s;

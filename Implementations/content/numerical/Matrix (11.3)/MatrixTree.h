@@ -9,8 +9,7 @@
 #include "../../number-theory (11.1)/Modular Arithmetic/ModInt.h"
 
 mi numSpan(Mat<mi> m) { 
-	int n = m.r;
-	Mat<mi> res(n-1,n-1);
+	int n = m.r; Mat<mi> res(n-1,n-1);
 	F0R(i,n) FOR(j,i+1,n) {
 		mi ed = m.d[i][j]; res.d[i][i] += ed;
 		if (j != n-1) {

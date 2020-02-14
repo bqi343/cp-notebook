@@ -9,6 +9,8 @@
 	* https://open.kattis.com/problems/modulararithmetic
  */
 
+#pragma once
+
 struct mi {
 	typedef decay<decltype(MOD)>::type T; 
  	/// don't silently convert to T

@@ -8,7 +8,7 @@
 
 #include "FFT.h"
 
-vl multMod(const vl& a, const vl& b) { 
+vl mulMod(const vl& a, const vl& b) { 
 	if (!min(sz(a),sz(b))) return {};
 	int s = sz(a)+sz(b)-1, n = 1<<size(s), cut = sqrt(MOD);
 	vcd roots(n); genRoots(roots);

@@ -1,6 +1,5 @@
 /**
- * Description: Python3 (not Pypy3) demo, solves 
-	* CF Good Bye 2018 G - Factorisation Collaboration
+ * Description: not PyPy3, solves CF Factorisation Collaboration
  * Source: own
  * Verification: 
 	* https://codeforces.com/contest/1091/problem/G
@@ -8,8 +7,7 @@
  */
 
 from math import *
-import sys
-import random
+import sys, random
 def nextInt():
 	return int(input())
 def nextStrs():

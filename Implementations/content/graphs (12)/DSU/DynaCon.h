@@ -22,6 +22,6 @@ template<int SZ> struct DynaCon {
 		if (ind >= SZ) {
 			// do stuff with D at time ind-SZ
 		} else process(2*ind), process(2*ind+1);
-		trav(t,seg[ind]) D.rol.bk;
+		trav(t,seg[ind]) D.rollback();
 	}
 };

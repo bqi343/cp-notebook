@@ -8,14 +8,12 @@
  	* https://code.google.com/codejam/contest/6314486/dashboard#s=p3
  		* make sure to deal with coplanar and use __int128 if necessary
  * Verification: https://www.spoj.com/problems/CH3D/
-
  */
 
 #include "Point3D.h"
 
 bool above(P3 a, P3 b, P3 c, P3 p) { // is p on or above plane
 	return dot(cross(a,b,c),p-a) >= 0; }
-
 typedef array<int,3> F; // face
 vector<F> hull3d(vP3& p) { // make first four points form tetra
 	int N = sz(p); FOR(i,1,N) if (p[0] != p[i]) swap(p[1],p[i]);
@@ -44,12 +42,4 @@ vector<F> hull3d(vP3& p) { // make first four points form tetra
 		swap(hull,def);
 	}
 	return hull;
-}
-pair<T,T> SaVol(const vP3& p, const vector<F>& faces) {
-	T s = 0, v = 0; // surface area, volume
-	trav(i,faces) {
-		s += abs(cross(p[i[0]],p[i[1]],p[i[2]]));
-		v += dot(cross(p[i[0]],p[i[1]]),p[i[2]]);
-	}
-	return {s/2,v/6};
 }

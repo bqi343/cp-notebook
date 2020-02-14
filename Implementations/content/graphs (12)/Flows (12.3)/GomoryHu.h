@@ -18,10 +18,7 @@ template<int SZ> struct GomoryHu {
 		vpi ret(N+1,mp(1,0));
 		FOR(i,2,N+1) {
 			Dinic<SZ> D;
-			trav(t,ed) {
-				D.ae(t.f.f,t.f.s,t.s); 
-				D.ae(t.f.s,t.f.f,t.s);
-			}
+			trav(t,ed) D.ae(t.f.f,t.f.s,t.s),D.ae(t.f.s,t.f.f,t.s);
 			ret[i].s = D.maxFlow(N+1,i,ret[i].f);
 			FOR(j,i+1,N+1) if (ret[j].f == ret[i].f 
 				&& D.level[j] != -1) ret[j].f = i;

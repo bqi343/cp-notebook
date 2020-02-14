@@ -1,5 +1,6 @@
 /**
- * Description: 1D range minimum query
+ * Description: 1D range minimum query. Can also do queries 
+ 	* for any associative operation in $O(1)$ with D\&C
  * Source: KACTL
  * Verification: 
 	* https://cses.fi/problemset/stats/1647/
@@ -9,12 +10,11 @@
  * Time: O(1)
  */
 
-template<class T> struct RMQ {
-	// floor(log_2(x))
+template<class T> struct RMQ { // floor(log_2(x))
 	int level(int x) { return 31-__builtin_clz(x); } 
 	vector<T> v; vector<vi> jmp;
 	int comb(int a, int b) { // index of min
-		return v[a]==v[b] ? min(a,b) : (v[a]<v[b]?a:b); } 
+		return v[a]==v[b]?min(a,b):(v[a]<v[b]?a:b); } 
 	void init(const vector<T>& _v) {
 		v = _v; jmp = {vi(sz(v))}; iota(all(jmp[0]),0);
 		for (int j = 1; 1<<j <= sz(v); ++j) {

@@ -33,8 +33,7 @@ template<int SZ> struct Dinic {
 		if (v == t) return flow;
 		for (; cur[v] != end(adj[v]); cur[v]++) {
 			Edge& e = *cur[v];
-			if (level[e.to] != level[v]+1 || e.flow == e.cap) 
-				continue;
+			if (level[e.to]!=level[v]+1||e.flow==e.cap) continue;
 			auto df = sendFlow(e.to,min(flow,e.cap-e.flow));
 			if (df) { // saturated at least one edge
 				e.flow += df; adj[e.to][e.rev].flow -= df;

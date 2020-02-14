@@ -13,12 +13,11 @@
 
 #include "../../number-theory (11.1)/Modular Arithmetic/ModInt.h"
 
-typedef complex<db> cd;
-typedef vector<cd> vcd;
-const int MOD = (119<<23)+1, root = 3; // = 998244353
-// NTT: For p < 2^30 there is also e.g. (5 << 25, 3), 
-// (7 << 26, 3), (479 << 21, 3) and (483 << 21, 5). 
-// The last two are > 10^9.
+typedef complex<db> cd; typedef vector<cd> vcd;
+const int root = 3; // for NTT
+// const int MOD = (119<<23)+1; // = 998244353
+// For p < 2^30 there is also e.g. (5<<25, 3), (7<<26, 3), 
+// (479<<21, 3) and (483<<21, 5). Last two are > 10^9.
 
 int size(int s) { return s > 1 ? 32-__builtin_clz(s-1) : 0; }
 void genRoots(vcd& roots) { // primitive n-th roots of unity
@@ -46,7 +45,7 @@ template<class T> void fft(vector<T>& a,
 		}
 	if (inv) { T i = T(1)/T(n); trav(x,a) x *= i; }
 }
-template<class T> vector<T> mult(vector<T> a, vector<T> b) {
+template<class T> vector<T> mul(vector<T> a, vector<T> b) {
 	if (!min(sz(a),sz(b))) return {};
 	int s = sz(a)+sz(b)-1, n = 1<<size(s);
 	vector<T> roots(n); genRoots(roots);

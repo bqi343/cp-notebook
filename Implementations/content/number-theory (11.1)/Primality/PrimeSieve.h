@@ -1,13 +1,13 @@
 /**
- * Description: tests primality up to $SZ$
+ * Description: Tests primality up to $SZ$. Runs faster if only
+ 	* odd indices are stored.
  * Time: O(SZ\log\log SZ) or O(SZ)
  * Source: KACTL 
  * Verification: https://open.kattis.com/problems/primesieve
  */
 
 template<int SZ> struct Sieve { 
-	bitset<SZ> pri;
-	vi pr;
+	bitset<SZ> pri; vi pr;
 	Sieve() {
 		pri.set(); pri[0] = pri[1] = 0;
 		for (int i = 4; i < SZ; i += 2) pri[i] = 0;

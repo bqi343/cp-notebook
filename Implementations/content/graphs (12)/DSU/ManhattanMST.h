@@ -25,8 +25,7 @@ vector<pair<int,pi>> manhattanMst(vpi v) {
 			for (auto it = sweep.lb(-v[i].s); 
 				it != end(sweep); sweep.erase(it++)) {
 				int j = it->s;
-				pi d = {v[i].f-v[j].f,v[i].s-v[j].s};
-				if (d.s > d.f) break;
+				pi d={v[i].f-v[j].f,v[i].s-v[j].s};if (d.s>d.f)break;
 				ed.pb({d.f+d.s,{i,j}});
 			}
 			sweep[-v[i].s] = i;

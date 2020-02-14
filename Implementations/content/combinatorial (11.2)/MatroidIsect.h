@@ -9,7 +9,7 @@
  * Verification: https://www.spoj.com/problems/COIN/
  */
 
-#include "../graphs (12)/Fundamentals/DSU (7.6).h"
+#include "../graphs (12)/DSU/DSU (7.6).h"
 
 map<int,int> m;
 struct Element {
@@ -19,7 +19,6 @@ struct Element {
 };
 vi iset; // independent set
 vector<Element> gset; // ground set
-
 struct GBasis {
 	DSU D;
 	void reset() { D.init(sz(m)); } 
@@ -28,6 +27,7 @@ struct GBasis {
 };
 GBasis basis;
 vector<GBasis> basisWo; // basis without
+
 bool graphOracle(int ins) { return basis.indep(gset[ins].ed); }
 bool graphOracle(int ins, int rem) {
 	return basisWo[gset[rem].ipos].indep(gset[ins].ed); }
@@ -38,7 +38,6 @@ void prepGraphOracle() {
 		F0R(j,sz(iset)) if (i != j) basisWo[j].add(v);
 	}
 }
-
 vector<bool> colUsed;
 bool colorOracle(int ins) { 
 	ins = gset[ins].col; return !colUsed[ins]; }
@@ -86,8 +85,7 @@ int solve() {
 	m.clear(); gset.clear(); iset.clear();
 	int R; cin >> R; if (!R) exit(0); // # edges
 	colUsed.rsz(R); basisWo.rsz(R);
-	F0R(i,R) {
-		// edges (a,b) and (c,d) of same col
+	F0R(i,R) { // edges (a,b) and (c,d) of same col
 		int a,b,c,d; cin >> a >> b >> c >> d; 
 		gset.pb(Element(a,b,i)), gset.pb(Element(c,d,i));
 		m[a] = m[b] = m[c] = m[d] = 0;

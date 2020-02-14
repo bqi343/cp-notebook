@@ -1,6 +1,6 @@
 /**
- * Description: pre-compute factorial mod inverses for $MOD$, 
- 	* assumes $MOD$ is prime and $SZ < MOD$
+ * Description: pre-compute factorial mod inverses,
+ 	* assumes $MOD$ is prime and $SZ < MOD$.
  * Time: O(SZ)
  * Source: KACTL
  * Verification: https://dmoj.ca/problem/tle17c4p5

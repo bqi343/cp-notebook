@@ -33,9 +33,7 @@ template<int SZ> struct TwoSat {
 		int cur = ~li[0];
 		FOR(i,2,sz(li)) {
 			int next = addVar();
-			either(cur,~li[i]);
-			either(cur,next);
-			either(~li[i],next);
+			either(cur,~li[i]);either(cur,next);either(~li[i],next);
 			cur = ~next;
 		}
 		either(cur,~li[1]);

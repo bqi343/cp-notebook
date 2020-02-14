@@ -1,6 +1,6 @@
 /**
- * Description: Used infrequently. Constructs minimal DFA that 
- 	* recognizes all suffixes of a string
+ * Description: Used infrequently. Constructs minimal deterministic 
+ 	* finite automaton (DFA) that recognizes all suffixes of a string
  * Time: O(N\log \sum)
  * Source: https://cp-algorithms.com/string/suffix-automaton.html
  * Verification: 

@@ -8,16 +8,18 @@
 	* CF Check Transcription
  */
 
-typedef array<int,2> T; // bases not too close to ends
-uniform_int_distribution<int> MULT_DIST(0.1*MOD,0.9*MOD); 
+uniform_int_distribution<int> MULT_DIST(0.1*MOD,0.9*MOD);
+typedef array<int,2> T; // bases not too close to ends 
 const T base = {MULT_DIST(rng),MULT_DIST(rng)};
-
-T operator+(const T& l, const T& r) { T x; 
-	F0R(i,2) x[i] = (l[i]+r[i])%MOD; return x; }
-T operator-(const T& l, const T& r) { T x; 
-	F0R(i,2) x[i] = (l[i]-r[i]+MOD)%MOD; return x; }
-T operator*(const T& l, const T& r) { T x; 
-	F0R(i,2) x[i] = (ll)l[i]*r[i]%MOD; return x; }
+T operator+(const T& l, const T& r) { 
+	T x; F0R(i,2) x[i] = (l[i]+r[i])%MOD; 
+	return x; }
+T operator-(const T& l, const T& r) { 
+	T x; F0R(i,2) x[i] = (l[i]-r[i]+MOD)%MOD; 
+	return x; }
+T operator*(const T& l, const T& r) { 
+	T x; F0R(i,2) x[i] = (ll)l[i]*r[i]%MOD; 
+	return x; }
 
 struct HashRange {
 	str S; 

@@ -29,7 +29,6 @@ struct Group {
 		gen.clear();
 	}
 } g[N];
-
 bool check(const vi& cur, int k) {
 	if (!k) return 1;
 	int t = cur[k];
@@ -49,7 +48,6 @@ void updateX(const vi& cur, int k) {
 		trav(x,g[k].gen) updateX(x*cur,k);
 	}
 }
-
 ll order(vector<vi> gen) { 
 	assert(sz(gen)); n = sz(gen[0]); F0R(i,n) g[i].clear(i);
 	trav(a,gen) ins(a,n-1); // insert perms into group one by one

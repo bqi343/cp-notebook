@@ -19,9 +19,7 @@ template<int SZ> struct Centroid {
 	void dfs(int x) {
 		sub[x] = 1;
 		trav(y,adj[x]) if (!done[y] && y != par[x]) {
-			par[y] = x; dfs(y);
-			sub[x] += sub[y];
-		}
+			par[y] = x; dfs(y); sub[x] += sub[y]; }
 	}
 	int centroid(int x) {
 		par[x] = -1; dfs(x); 
@@ -36,8 +34,7 @@ template<int SZ> struct Centroid {
 	void genDist(int x, int p) {
 		dist[x].pb(dist[p].bk+1);
 		trav(y,adj[x]) if (!done[y] && y != p) genDist(y,x); 
-	}
-	// CEN = {centroid above x, label of centroid subtree}
+	} // CEN = {centroid above x, label of centroid subtree}
 	void gen(pi CEN, int x) { 
 		done[x = centroid(x)] = 1; cen[x] = CEN; 
 		dist[x].pb(0); int co = 0;

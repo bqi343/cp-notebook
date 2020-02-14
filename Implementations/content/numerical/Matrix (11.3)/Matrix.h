@@ -1,12 +1,12 @@
 /**
- * Description: 2D matrix operations. Change d to array if possible.
+ * Description: 2D matrix operations. Change \texttt{d} 
+ 	* to array if possible.
  * Source: KACTL
  * Verification: https://dmoj.ca/problem/si17c1p5, SPOJ MIFF
  */
 
 template<class T> struct Mat {
-	int r,c;
-	vector<vector<T>> d;
+	int r,c; vector<vector<T>> d;
 	Mat(int _r, int _c) : r(_r), c(_c) { 
 		d.assign(r,vector<T>(c)); }
 	Mat() : Mat(0,0) {} 

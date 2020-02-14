@@ -1,5 +1,5 @@
 /**
- * Description: Fast input and output for chinese contests. 
+ * Description: Fast input and output.
  * Time: input is $\sim$300ms faster for $10^6$ long longs on CF
  * Source: 
  	* https://codeforces.com/gym/102394/submission/64154785
@@ -9,8 +9,7 @@
  */
 
 namespace FastIO {
-	const int BSZ = 1<<15;
-	////// INPUT
+	const int BSZ = 1<<15; ////// INPUT
 	char ibuf[BSZ]; int ipos, ilen;
 	char nc() { // next char
 		if (ipos == ilen) {
@@ -36,9 +35,8 @@ namespace FastIO {
 	void flushOut() { fwrite(obuf,1,opos,stdout); opos = 0; }
 	void wc(char c) { // write char
 		if (opos == BSZ) flushOut();
-		obuf[opos++] = c;
-	}
-	void ws(str s) { trav(c,s) wc(c); } // write char
+		obuf[opos++] = c; }
+	void ws(str s) { trav(c,s) wc(c); } // write str
 	template<class T> void wi(T x, char after = '\0') { /// write int
 		if (x < 0) wc('-'), x *= -1;
 		int len = 0; for (;x>=10;x/=10) numBuf[len++] = '0'+(x%10);

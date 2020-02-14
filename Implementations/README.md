@@ -1,9 +1,17 @@
-# SOURCES
+# README
 
+**If you find this organization confusing, please tell me how it could be improved!**
+
+This collection is composed of the algorithms I have needed for USACO contests, plus a few more for CodeForces (and now ICPC). Thanks to kfoldcrossvalidator for some corrections.
+
+Sources: 
   * [KACTL](https://github.com/kth-competitive-programming/kactl)
   * [MIT NULL ICPC Book](https://github.com/ecnerwala/icpc-book)
+  * [CPH](https://cses.fi/book.pdf) refers to the competitive programmer's handbook.
+    * Section numbers correspond with the [Guide to Competitive Programming](http://www.springer.com/us/book/9783319725468).
+  * Previously, [Notebook Generator](https://github.com/pin3da/notebook-generator) was used to create the PDF.
 
-# KACTL
+## From KACTL
 
 This repo hosts KACTL, KTH's ICPC team reference document.
 It consists of 25 pages of copy-paste:able code, for use in ICPC-style programming competitions.
@@ -11,7 +19,7 @@ It consists of 25 pages of copy-paste:able code, for use in ICPC-style programmi
 See [kactl.pdf](https://github.com/kth-competitive-programming/kactl/blob/master/kactl.pdf) for the final, browsable version,
 and [content/](https://github.com/kth-competitive-programming/kactl/tree/master/content) for raw source code.
 
-## Aspirations
+### Aspirations
 
 KACTL algorithms should be: useful, short, fast enough, readable, and if relevant, easy to modify.
 Short and readable sometimes conflict -- usually then short takes precedence, although
@@ -23,7 +31,7 @@ Due to space issues, we also exclude algorithms that are very common/simple (e.g
 
 If you feel that something is missing, could be cleaned up, or notice a bug, please file an issue or send us a pull request!
 
-## Hacking on KACTL
+### Hacking on KACTL
 
 For coding style, try to copy existing code.
 Each algorithm should contain a header with the author of the code, the date it
@@ -47,14 +55,14 @@ You may also enable colored syntax highlighting in the same file.
 
 To upstream your changes, [send a pull request](https://help.github.com/articles/fork-a-repo/).
 
-## Testing
+### Testing
 
 KACTL algorithms are tested manually, on online judges and/or using fuzz-tests (see the `fuzz-tests` directory).
 Simple variable renamings etc. don't need testing, but it's prudent to at least run `./test-compiles.sh file.h` to make sure the file still compiles.
 
 `old-unit-tests` contains a couple of broken unit tests, last touched about ten years ago.
 
-## License
+### License
 
 As usual for competitive programming, the licensing situation is a bit unclear.
 Many source files are marked with license (we try to go with

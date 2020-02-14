@@ -22,8 +22,6 @@ Non-distinct roots $r$ become polynomial factors, e.g. $a_n = (d_1n + d_2)r^n$.
 \begin{align*}
 \sin(v+w)&{}=\sin v\cos w+\cos v\sin w\\
 \cos(v+w)&{}=\cos v\cos w-\sin v\sin w\\
-\end{align*}
-\begin{align*}
 \tan(v+w)&{}=\dfrac{\tan v+\tan w}{1-\tan v\tan w}\\
 \sin v+\sin w&{}=2\sin\dfrac{v+w}{2}\cos\dfrac{v-w}{2}\\
 \cos v+\cos w&{}=2\cos\dfrac{v+w}{2}\cos\dfrac{v-w}{2}
@@ -38,8 +36,8 @@ where $r=\sqrt{a^2+b^2}, \phi=\operatorname{atan2}(b,a)$.
 
 \subsection{Triangles}
 Side lengths: $a,b,c$\\
-Semiperimeter: $p=\dfrac{a+b+c}{2}$\\
-Area: $A=\sqrt{p(p-a)(p-b)(p-c)}$\\
+Semiperimeter: $s=\dfrac{a+b+c}{2}$\\
+Area: $A=\sqrt{s(s-a)(s-b)(s-c)}$\\
 Circumradius: $R=\dfrac{abc}{4A}$\\
 Inradius: $r=\dfrac{A}{p}$\\
 Length of median (divides triangle into two equal-area triangles): $m_a=\tfrac{1}{2}\sqrt{2b^2+2c^2-a^2}$\\
@@ -55,7 +53,7 @@ magic flux $F=b^2+d^2-a^2-c^2$:
 \[ 4A = 2ef \cdot \sin\theta = F\tan\theta = \sqrt{4e^2f^2-F^2} \]
 
  For cyclic quadrilaterals the sum of opposite angles is $180^\circ$,
-$ef = ac + bd$, and $A = \sqrt{(p-a)(p-b)(p-c)(p-d)}$.
+$ef = ac + bd$, and $A = \sqrt{(s-a)(s-b)(s-c)(s-d)}$.
 
 \subsection{Spherical coordinates}
 \centerline{\includegraphics[width=25mm]{content/math/sphericalCoordinates}}
@@ -76,16 +74,18 @@ z = r\cos\theta & \phi = \textrm{atan2}(y,x)
 Integration by parts:
 \[\int_a^bf(x)g(x)dx = [F(x)g(x)]_a^b-\int_a^bF(x)g'(x)dx\]
 
-\section{Sums}
+\section{Sums/Series}
+
+\begin{comment}
 \[ c^a + c^{a+1} + \dots + c^{b} = \frac{c^{b+1} - c^a}{c-1}, c \neq 1 \]
 \begin{align*}
 	1 + 2 + 3 + \dots + n &= \frac{n(n+1)}{2} \\
-	1^2 + 2^2 + 3^2 + \dots + n^2 &= \frac{n(2n+1)(n+1)}{6} \\
+	1^2 + 2^2 + 3^2 + \dots + n^2 &= \frac{n(n+1)(2n+1)}{6} \\
 	1^3 + 2^3 + 3^3 + \dots + n^3 &= \frac{n^2(n+1)^2}{4} \\
-	1^4 + 2^4 + 3^4 + \dots + n^4 &= \frac{n(n+1)(2n+1)(3n^2 + 3n - 1)}{30} \\
+	1^4 + 2^4 + 3^4 + \dots + n^4 &= \frac{n(n+1)(2n+1)(3n^2+3n - 1)}{30} 
 \end{align*}
-
-\section{Series} 
+\end{comment}
+$$1^4 + 2^4 + 3^4 + \dots + n^4= \frac{n(n+1)(2n+1)(3n^2+3n - 1)}{30}$$
 $$e^x = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots,\,(-\infty<x<\infty)$$
 $$\ln(1+x) = x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\dots,\,(-1<x\leq1)$$
 $$\sqrt{1+x} = 1+\frac{x}{2}-\frac{x^2}{8}+\frac{2x^3}{32}-\frac{5x^4}{128}+\dots,\,(-1\leq x\leq1)$$
@@ -93,19 +93,20 @@ $$\sin x = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\dots,\,(-\infty<x<\in
 $$\cos x = 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\dots,\,(-\infty<x<\infty)$$
 
 \section{Probability theory}
-Let $X$ be a discrete random variable with probability $p_X(x)$ of assuming the value $x$. It will then have an expected value (mean) $\mu=\mathbb{E}(X)=\sum_xxp_X(x)$ and variance $\sigma^2=V(X)=\mathbb{E}(X^2)-(\mathbb{E}(X))^2=\sum_x(x-\mathbb{E}(X))^2p_X(x)$ where $\sigma$ is the standard deviation. If $X$ is instead continuous it will have a probability density function $f_X(x)$ and the sums above will instead be integrals with $p_X(x)$ replaced by $f_X(x)$.
-
-% Expectation is linear:
+Let $X$ be a discrete random variable with probability $p_X(x)$ of assuming the value $x$. It will then have an expected value (mean) $\mu=\mathbb{E}(X)=\sum_xxp_X(x)$ and variance $\sigma^2=V(X)=\mathbb{E}(X^2)-(\mathbb{E}(X))^2=\sum_x(x-\mathbb{E}(X))^2p_X(x)$ where $\sigma$ is the standard deviation. 
 \[\mathbb{E}(aX+bY) = a\mathbb{E}(X)+b\mathbb{E}(Y)\]
-For independent $X$ and $Y$, \[V(aX+bY) = a^2V(X)+b^2V(Y).\]
+If $X,Y$ independent, \[V(aX+bY) = a^2V(X)+b^2V(Y).\]
+% Expectation is linear
+% If $X$ is instead continuous it will have a probability density function $f_X(x)$ and the sums above will instead be integrals with $p_X(x)$ replaced by $f_X(x)$.
+
 
 \subsection{Discrete distributions}
 
 \subsubsection{Binomial distribution}
-The number of successes in $n$ independent yes/no experiments, each which yields success with probability $p$ is $\textrm{Bin}(n,p),\,n=1,2,\dots,\, 0\leq p\leq1$.
+\# of successes in $n$ independent yes/no experiments, each which yields success with probability $p$ is $\textrm{Bin}(n,p),\,n=1,2,\dots,\, 0\leq p\leq1$.
 \[p(k)=\binom{n}{k}p^k(1-p)^{n-k}\]
 \[\mu = np,\,\sigma^2=np(1-p)\]
-$\textrm{Bin}(n,p)$ is approximately $\textrm{Po}(np)$ for small $p$.
+$\textrm{Bin}(n,p)\approx \textrm{Po}(np)$ for small $p$.
 
 \subsubsection{First success distribution}
 The number of trials needed to get the first success in independent yes/no experiments, each wich yields success with probability $p$ is $\textrm{Fs}(p),\,0\leq p\leq1$.
@@ -156,14 +157,16 @@ If the Markov chain is \emph{irreducible} (it is possible to get to any state fr
 then $\pi_i = \frac{1}{\mathbb{E}(T_i)}$ where $\mathbb{E}(T_i)$  is the expected time between two visits in state $i$.
 $\pi_j/\pi_i$ is the expected number of visits in state $j$ between two visits in state $i$.
 
-For a connected, undirected and non-bipartite graph, where the transition probability is uniform among all neighbors, $\pi_i$ is proportional to node $i$'s degree.
+For a connected, undirected and non-bipartite graph, where the transition probability is uniform among all neighbors, $\pi_i$ is proportional to node $i$'s degree. \textbf{(IMPORTANT)} % https://codeforces.com/gym/101081/problem/B
 
 % \subsubsection{Ergodicity}
 A Markov chain is \emph{ergodic} if the asymptotic distribution is independent of the initial distribution.
 A finite Markov chain is ergodic iff it is irreducible and \emph{aperiodic} (i.e., the gcd of cycle lengths is 1).
 $\lim_{k\rightarrow\infty}\mathbf{P}^k = \mathbf{1}\pi$.
 
+\begin{comment}
 % \subsubsection{Absorption}
-A Markov chain is an A-chain if the states can be partitioned into two sets $\mathbf{A}$ and $\mathbf{G}$, such that all states in $\mathbf{A}$ are absorbing ($p_{ii}=1$), and all states in $\mathbf{G}$ leads to an absorbing state in $\mathbf{A}$.
+A Markov chain is an A-chain if the states can be partitioned into two sets $\mathbf{A}$ and $\mathbf{G}$, such that all states in $\mathbf{A}$ are absorbing ($p_{ii}=1$), and all states in $\mathbf{G}$ lead to an absorbing state in $\mathbf{A}$.
 The probability for absorption in state $i\in\mathbf{A}$, when the initial state is $j$, is $a_{ij} = p_{ij}+\sum_{k\in\mathbf{G}} a_{ik}p_{kj}$.
 The expected time until absorption, when the initial state is $i$, is $t_i = 1+\sum_{k\in\mathbf{G}}p_{ki}t_k$.
+\end{comment}

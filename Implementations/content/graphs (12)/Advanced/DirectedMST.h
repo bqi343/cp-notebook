@@ -10,7 +10,7 @@
  	* https://codeforces.com/problemset/problem/240/E
  */
 
-#include "../Fundamentals/DSUrb (15.5).h"
+#include "../DSU/DSUrb (15.5).h"
 
 struct Edge { int a, b; ll w; };
 struct Node { // lazy skew heap node
@@ -68,7 +68,7 @@ pair<ll,vi> dmst(int n, int r, const vector<Edge>& g) {
 	while (sz(cycs)) { // expand cycs to restore sol
 		auto c = cycs.bk; cycs.pop_back();
 		pi inEdge = in[c.f];
-		trav(t,c.s) dsu.rol.bk;
+		trav(t,c.s) dsu.rollback();
 		trav(t,c.s) in[dsu.get(t.b)] = {t.a,t.b};
 		in[dsu.get(inEdge.s)] = inEdge;
 	}

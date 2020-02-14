@@ -1,5 +1,5 @@
 /**
- * Description: A 32-bit pointer that points into BumpAllocator memory.
+ * Description: Unused. A 32-bit pointer that points into BumpAllocator memory.
  * Source: Simon Lindholm
  * Status: tested
  */

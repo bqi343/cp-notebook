@@ -1,5 +1,6 @@
 /**
- * Description: LineContainer. Given set of lines, computes greatest $y$-coordinate for any $x.$
+ * Description: LineContainer; add lines of the form $kx+m$, 
+ 	* compute greatest $y$-coordinate for any $x$.
  * Time: O(\log N)
  * Source: KACTL
    * https://github.com/kth-competitive-programming/kactl/commit/165807e28402c9be906f6e6a09452431787bb70d?diff=unified
@@ -23,15 +24,13 @@ ll divi(ll a, ll b) { return a/b-((a^b) < 0 && a%b); }
 // last x such that first line is better
 ll bet(const Line& x, const Line& y) { 
 	if (x.k == y.k) return x.m >= y.m ? inf : -inf;
-	return divi(y.m-x.m,x.k-y.k);
-}
+	return divi(y.m-x.m,x.k-y.k); }
 
 struct LC : multiset<Line> { 
 	// updates x->p, determines if y is unneeded
 	bool isect(iterator x, iterator y) { 
 		if (y == end()) { x->p = inf; return 0; }
-		x->p = bet(*x,*y); return x->p >= y->p;
-	}
+		x->p = bet(*x,*y); return x->p >= y->p; }
 	void add(ll k, ll m) {
 		auto z = insert({k,m,0}), y = z++, x = y;
 		while (isect(y, z)) z = erase(z);

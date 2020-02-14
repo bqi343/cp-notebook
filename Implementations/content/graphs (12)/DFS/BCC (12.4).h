@@ -1,7 +1,8 @@
 /**
- * Description: Biconnected components. To get block-cut tree, create a bipartite graph
- 	* with the original vertices on the left and a vertex for each BCC on the right. Draw edge 
- 	* $u\leftrightarrow v$ if $u$ is contained within the BCC for $v.$
+ * Description: Biconnected components, removing any vertex in component 
+ 	* doesn't disconnect it. To get block-cut tree, create a bipartite graph
+ 	* with the original vertices on the left and a vertex for each BCC on the right. 
+ 	* Draw edge $u\leftrightarrow v$ if $u$ is contained within the BCC for $v.$
  * Time: O(N+M)
  * Source: GeeksForGeeks (corrected)
  * Verification: 
@@ -12,14 +13,11 @@
 template<int SZ> struct BCC {
 	vpi adj[SZ], ed;
 	void ae(int u, int v) { 
-		adj[u].pb({v,sz(ed)}), adj[v].pb({u,sz(ed)}); 
-		ed.pb({u,v});
-	}
+		adj[u].pb({v,sz(ed)}), adj[v].pb({u,sz(ed)});, ed.pb({u,v}); }
 	int N, disc[SZ];
 	vi st; vector<vi> bccs; // edges for each bcc
 	int bcc(int u, int p = -1) { // return lowest disc
-		static int ti = 0; disc[u] = ++ti; 
-		int low = disc[u], child = 0;
+		static int ti = 0; int low = disc[u] = ++ti, child = 0;
 		trav(i,adj[u]) if (i.s != p) {
 			if (!disc[i.f]) {
 				child ++; st.pb(i.s);

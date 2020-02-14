@@ -9,12 +9,9 @@
 typedef unsigned long long ul;
 ul modMul(ul a, ul b, const ul mod) {
 	ll ret = a*b-mod*(ul)((ld)a*b/mod);
-	return ret+((ret<0)-(ret>=(ll)mod))*mod;
-}
+	return ret+((ret<0)-(ret>=(ll)mod))*mod; }
 ul modPow(ul a, ul b, const ul mod) {
 	if (b == 0) return 1;
-	ul res = modPow(a,b/2,mod);
-	res = modMul(res,res,mod);
-	if (b&1) return modMul(res,a,mod);
-	return res;
+	ul res = modPow(a,b/2,mod); res = modMul(res,res,mod);
+	return b&1 ? modMul(res,a,mod) : res;
 }

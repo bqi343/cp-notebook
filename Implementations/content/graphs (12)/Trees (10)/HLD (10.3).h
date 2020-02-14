@@ -26,8 +26,7 @@ template<int SZ, bool VALS_IN_EDGES> struct HLD {
 		static int t = 0; pos[v] = t++; /// rpos.pb(v);
 		trav(u,adj[v]) {
 			root[u] = (u == adj[v][0] ? root[v] : u);
-			dfsHld(u);
-		}
+			dfsHld(u); }
 	}
 	void init(int _N) {
 		N = _N; par[1] = depth[1] = 0; root[1] = 1; 
@@ -38,18 +37,17 @@ template<int SZ, bool VALS_IN_EDGES> struct HLD {
 	void processPath(int u, int v, BinaryOp op) {
 		for (; root[u] != root[v]; v = par[root[v]]) {
 			if (depth[root[u]] > depth[root[v]]) swap(u, v);
-			op(pos[root[v]], pos[v]);
-		}
+			op(pos[root[v]], pos[v]); }
 		if (depth[u] > depth[v]) swap(u, v);
 		op(pos[u]+VALS_IN_EDGES, pos[v]); 
 	}
 	void modifyPath(int u, int v, int val) { 
-		processPath(u, v, [this, &val](int l, int r) { 
-			tree.upd(l, r, val); }); }
+		processPath(u,v,[this, &val](int l,int r) { 
+			tree.upd(l,r,val); }); }
 	void modifySubtree(int v, int val) { 
 		tree.upd(pos[v]+VALS_IN_EDGES,pos[v]+sz[v]-1,val); }
 	ll queryPath(int u, int v) { 
-		ll res = 0; processPath(u, v, [this, &res](int l, int r) { 
-			res += tree.qsum(l, r); });
+		ll res = 0; processPath(u,v,[this,&res](int l,int r) { 
+			res += tree.qsum(l,r); });
 		return res; }
 };

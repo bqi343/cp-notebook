@@ -200,10 +200,19 @@ def processwithcomments(caption, instream, outstream, listingslang):
 
 def processraw(caption, instream, outstream, listingslang = 'raw'):
 	try:
+		# print("WUT",caption)
 		source = instream.read().strip()
 		addref(caption, outstream)
 		print(formCap(caption), file=outstream)
-		print(r"\rightcaption{%d lines}" % len(source.split("\n")), file=outstream)
+		if "Template" in caption:
+			hash_script = 'hash'
+			p = subprocess.Popen(['sh', 'content/contest/%s.sh' % hash_script], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+			hsh, _ = p.communicate(source)
+			hsh = hsh.split(None, 1)[0]
+			hsh = hsh + ', '
+			print(r"\rightcaption{%s%d lines}" % (hsh, len(source.split("\n"))), file=outstream)
+		else:
+			print(r"\rightcaption{%d lines}" % len(source.split("\n")), file=outstream)
 		print(r"\begin{lstlisting}[language=%s,caption={%s}]" % (listingslang, pathescape(caption)), file=outstream)
 		print(source, file=outstream)
 		print(r"\end{lstlisting}", file=outstream)
@@ -299,6 +308,7 @@ def main():
 			print_header(print_header_value, outstream)
 			return
 		print(" * \x1b[1m{}\x1b[0m".format(caption))
+		# print("HA",language)
 		if language == "cpp" or language == "cc" or language == "c" or language == "h" or language == "hpp":
 			processwithcomments(caption, instream, outstream, 'C++')
 		elif language == "java" or language == "kt":

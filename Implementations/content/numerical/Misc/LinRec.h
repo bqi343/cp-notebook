@@ -9,26 +9,25 @@
  * Verification: http://codeforces.com/contest/506/problem/E
  */
 
-#include "../Polynomials/VecOp.h"
+#include "../Polynomials/Poly.h"
 #include "../../number-theory (11.1)/Modular Arithmetic/ModInt.h"
 
 struct LinRec {
-	vmi x; // original sequence
-	vmi C, rC;
-	void init(const vmi& _x) {
+	vmi x, C, rC;
+	void init(const vmi& _x) { // original sequence
 		x = _x; int n = sz(x), m = 0;
 		vmi B; B = C = {1}; // B is fail vector
 		mi b = 1; // B gives 0,0,0,...,b
 		F0R(i,n) {
 			m ++;
 			mi d = x[i]; FOR(j,1,sz(C)) d += C[j]*x[i-j];
-			if (d == 0) continue; // recurrence still works
+			if (d == 0) continue; // rec still works
 			auto _B = C; C.rsz(max(sz(C),m+sz(B)));
-			// subtract recurrence that gives 0,0,0,...,d
+			// subtract rec that gives 0,0,0,...,d
 			mi coef = d/b; FOR(j,m,m+sz(B)) C[j] -= coef*B[j-m]; 
 			if (sz(_B) < m+sz(B)) { B = _B; b = d; m = 0; }
 		}
-		rC = C; reverse(all(rC)); // polynomial for getPo
+		rC = C; reverse(all(rC)); // poly for getPo
 		C.erase(begin(C)); trav(t,C) t *= -1; 
 		// x[i]=sum_{j=0}^{sz(C)-1}C[j]*x[i-j-1]
 	}
@@ -38,7 +37,7 @@ struct LinRec {
 		if (n&1) { vmi v = {0,1}; x = rem(x*v,rC); }
 		return x;
 	}
-	mi eval(int n) {
+	mi eval(int n) { // evaluate n-th term
 		vmi t = getPo(n);
 		mi ans = 0; F0R(i,sz(t)) ans += t[i]*x[i];
 		return ans;

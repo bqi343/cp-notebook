@@ -52,4 +52,4 @@ namespace Point {
 	ostream& operator<<(ostream& os, const P& p) {
 		return os << "(" << p.f << "," << p.s << ")"; }
 };
-/// using namespace Point;
+using namespace Point;

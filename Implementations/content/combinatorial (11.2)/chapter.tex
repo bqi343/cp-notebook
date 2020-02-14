@@ -1,9 +1,8 @@
 \chapter{Combinatorial}
 
 \section{Permutations}
-	\subsection{Factorial}
-		\import{factorial.tex}
-		\kactlimport{IntPerm.h}
+	% \subsection{Factorial}
+		% \import{factorial.tex}
 
 	\subsection{Cycles}
 		Let $g_S(n)$ be the number of $n$-permutations whose cycle lengths all belong to the set $S$. Then
@@ -21,6 +20,7 @@
 		 If $f(n)$ counts ``configurations'' (of some sort) of length $n$, we can ignore rotational symmetry using $G = \mathbb Z_n$ to get
 		 \[ g(n) = \frac 1 n \sum_{k=0}^{n-1}{f(\text{gcd}(n, k))} = \frac 1 n \sum_{k|n}{f(k)\phi(n/k)}. \]
 
+	\kactlimport{IntPerm.h}
 	\kactlimport{PermGroup.h}
 
 \section{Partitions and subsets}
@@ -102,6 +102,70 @@
 			\item permutations of $[n]$ with no 3-term increasing subseq.
 		\end{itemize}
 
-\section{Matroid}
+\section{Young Tableaux}
 
+Let a \textbf{Young diagram} have shape $\lambda=(\lambda_1\geq \cdots\geq \lambda_k),$ where $\lambda_i$ equals the number of cells in the $i$-th (left-justified) row from the top. A \textbf{Young tableau} of shape $\lambda$ is a filling of the $n=\sum \lambda_i$ cells with a permutation of $1\ldots n$ such that each row and  column is increasing.
+
+\textbf{Hook-Length Formula}: For the cell in position $(i,j)$, let $h_\lambda(i,j)=\left|\{(I,J)|i\le I, j\le J, (I=i\text{ or }J=j)\}\right|.$ The number of Young tableaux of shape $\lambda$ is equal to
+$f^\lambda \ =\ \frac{n!}{\prod h_\lambda (i,j)}.$
+
+\textbf{Schensted's Algorithm}: converts a permutation $\sigma$ of length $n$ into a pair of Young Tableaux $(S(\sigma),T(\sigma))$ of the same shape. When inserting $x=\sigma_i$,
+
+\begin{enumerate}
+\item Add $x$ to the first row of $S$ by inserting $x$ in place of the largest $y$ with $x<y$. If $y$ doesn't exist, push $x$ to the end of the row, set the value of $T$ at that position to be $i$, and stop.
+\item Add $y$ to the second row using the same rule, keep repeating as necessary.
+\end{enumerate}
+
+\begin{comment}
+For $\sigma=(5,2,3,1,4),$
+$$S(\sigma): \begin{array}{c}
+5
+\end{array}\to \begin{array}{c}
+2 \\ 
+5
+\end{array}\to \begin{array}{cc}
+2 & 3 \\ 
+5
+\end{array}\to \begin{array}{cc}
+1 & 3 \\ 
+2 \\
+5
+\end{array}\to \begin{array}{ccc}
+1 & 3 & 4\\ 
+2 \\
+5
+\end{array}$$
+$$T(\sigma): \begin{array}{c}
+1
+\end{array}\to \begin{array}{c}
+1 \\ 
+2
+\end{array}\to \begin{array}{cc}
+1 & 3 \\ 
+2
+\end{array}\to \begin{array}{cc}
+1 & 3 \\ 
+2 \\
+4
+\end{array}\to \begin{array}{ccc}
+1 & 3 & 5\\ 
+2 \\
+4
+\end{array}$$
+\end{comment}
+
+All pairs $(S(\sigma),T(\sigma))$ of the same shape correspond to a unique $\sigma$, so
+$n!=\sum (f^{\lambda})^2.$ Also, $S(\sigma^R)=S(\sigma)^T.$
+
+Let $d_k(\sigma),a_k(\sigma)$ be the lengths of the longest subseqs which are a union of $k$ decreasing/ascending subseqs, respectively. Then $a_k(\sigma)=\sum_{i=1}^k\lambda_i, d_k(\sigma)=\sum_{i=1}^k\lambda^*_i,$ where $\lambda^*_i$ is size of the $i$-th column. 
+
+% 300iq Disjoint LIS
+% msg camp 2014 "sequence shape"
+
+	\kactlimport{RSK.h}
+	\kactlimport{RSKrecover.h}
+
+\section{Other}
+	\kactlimport{DeBruijnSeq.h}
+	\kactlimport{NimProduct.h}
 	\kactlimport{MatroidIsect.h}

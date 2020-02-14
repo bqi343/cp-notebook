@@ -1,18 +1,16 @@
 /**
- * Description: Fast Delaunay triangulation.
-	 * Each circumcircle contains none of the input points.
-	 * There must be no duplicate points.
-	 * If all points are on a line, no triangles will be returned.
-	 * Should work for doubles as well, though there may be precision issues in 'circ'.
-	 * Returns triangles in order \{t[0][0], t[0][1], t[0][2], t[1][0], \dots\}, all counter-clockwise.
+ * Description: Fast Delaunay triangulation assuming no duplicates and not 
+ 	* all points collinear (in latter case, result will be empty). Should 
+ 	* work for doubles as well, though there may be precision issues in 'circ'.
+	* Returns triangles in ccw order. Each circumcircle will contain none of the input points.
  * Time: O(N\log N)
  * Source: KACTL
  * Verification: https://dmoj.ca/problem/cco08p6
  */
 
 #include "../Primitives/Point.h"
-typedef ll T;
 
+// typedef ll T;
 typedef __int128 lll; // (can be ll if coords are < 2e4)
 bool inCircle(P p, P a, P b, P c) {
 	a -= p, b -= p, c -= p; // assert(cross(a,b,c)>0);
@@ -42,7 +40,6 @@ Q connect(Q a, Q b) {
 	splice(q, a->next()); splice(q->r(), b);
 	return q;
 }
-
 pair<Q,Q> rec(const vP& s) {
 	if (sz(s) <= 3) {
 		Q a = makeEdge(s[0], s[1]), b = makeEdge(s[1], s.bk);

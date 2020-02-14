@@ -7,7 +7,7 @@
  * Verification: http://acm.hdu.edu.cn/showproblem.php?pid=5306
  */
 
-template<int SZ> struct SegTreeBeats {
+template<int SZ> struct SegTreeBeats { // declare globally
 	int N, mx[2*SZ][2], maxCnt[2*SZ];
 	ll sum[2*SZ];
 	void pull(int ind) {

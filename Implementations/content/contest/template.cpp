@@ -8,11 +8,11 @@ typedef string str; //
 //
 typedef pair<int,int> pi;
 typedef pair<ll,ll> pl; //
-typedef pair<ld,ld> pd; //
+typedef pair<db,db> pd; //
 //
 typedef vector<int> vi; 
 typedef vector<ll> vl; //
-typedef vector<ld> vd; //
+typedef vector<db> vd; //
 typedef vector<str> vs; //
 typedef vector<pi> vpi;
 typedef vector<pl> vpl; //
@@ -40,7 +40,7 @@ typedef vector<pd> vpd; //
 #define R0F(i,a) ROF(i,0,a)
 #define trav(a,x) for (auto& a: x)
 
-const int MOD = 1e9+7; // 998244353;
+const int MOD = 998244353; // 1e9+7
 const int MX = 2e5+5; //
 const ll INF = 1e18; //
 const ld PI = acos((ld)-1);

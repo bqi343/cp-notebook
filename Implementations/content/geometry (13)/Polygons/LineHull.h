@@ -9,6 +9,8 @@
  * Verification: tested
  */
 
+#include "../Primitives/Point.h"
+
 typedef array<P,2> Line;
 #define cmp(i,j) sgn(-dot(dir,poly[(i)%n]-poly[(j)%n]))
 #define extr(i) cmp(i+1,i) >= 0 && cmp(i,i-1+n) < 0

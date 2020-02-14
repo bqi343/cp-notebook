@@ -1,5 +1,6 @@
 /**
- * Description: Eulerian Path for both directed and undirected graphs
+ * Description: Eulerian path for both directed and undirected graphs,
+ 	* if it exists.
  * Time: $O(N+M)$ 
  * Source: 
 	* USACO Training
@@ -11,8 +12,7 @@
 
 template<int SZ, bool directed> struct Euler {
 	int N, M = 0;
-	vpi adj[SZ];
-	vpi::iterator its[SZ];
+	vpi adj[SZ]; vpi::iterator its[SZ];
 	vector<bool> used;
 	void ae(int a, int b) {
 		if (directed) adj[a].pb({b,M});
@@ -24,11 +24,10 @@ template<int SZ, bool directed> struct Euler {
 		vector<pair<pi,int>> ret, s = {{{src,-1},-1}};
 		while (sz(s)) {
 			int x = s.bk.f.f;
-			auto& it = its[x], end = adj[x].end();
-			while (it != end && used[it->s]) it ++;
-			if (it == end) { 
-				if (sz(ret) && ret.bk.f.s != s.bk.f.f) 
-					return {}; // path isn't valid
+			auto& it = its[x], en = end(adj[x]);
+			while (it != en && used[it->s]) it ++;
+			if (it == en) { 
+				if (sz(ret) && ret.bk.f.s != s.bk.f.f) return {}; 
 				ret.pb(s.bk), s.pop_back(); 
 			} else { s.pb({{it->f,x},it->s}); used[it->s] = 1; }
 		}

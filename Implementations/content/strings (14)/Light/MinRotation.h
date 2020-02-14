@@ -1,5 +1,5 @@
 /**
- * Description: minimum rotation of string
+ * Description: minimum cyclic shift
  * Time: O(N)
  * Source: KACTL
  * Verification: https://cses.fi/problemset/task/1110/

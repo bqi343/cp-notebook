@@ -1,10 +1,10 @@
 /**
- * Description: find directed cycle in graph
+ * Description: use stack
  * Source: https://www.geeksforgeeks.org/detect-cycle-in-a-graph/
  * Verification: VT HSPC 2019 D
  */
 
-template<int SZ> struct DirectedCycle {
+template<int SZ> struct DirCyc {
 	vi adj[SZ], st;
 	bool inSt[SZ], vis[SZ];
 	vi dfs(int x) {

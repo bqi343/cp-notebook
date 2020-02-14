@@ -3,20 +3,16 @@
  * Source: KACTL, https://cp-algorithms.com/algebra/fft.html
  */
 
-#include "VecOp.h"
+#include "Poly.h"
 #include "FFT.h"
 
-template<class T> bool small(const vector<T>& a, const vector<T>& b) { 
-	return (ll)sz(a)*sz(b) <= 500000; // for small vectors, multiply directly
-} 
-vmi smart(const vmi& a, const vmi& b) { return mult(a,b); }
-vcd smart(const vcd& a, const vcd& b) { return mult(a,b); }
+bool small(const poly& a, const poly& b) { // multiply directly
+	return (ll)sz(a)*sz(b) <= 500000; } 
+vmi smart(const vmi& a, const vmi& b) { return mul(a,b); }
 vl smart(const vl& a, const vl& b) {
-	auto X = smart(vcd(all(a)),vcd(all(b)));
+	auto X = mul(vcd(all(a)),vcd(all(b)));
 	vl x(sz(X)); F0R(i,sz(X)) x[i] = round(X[i].real());
 	return x;
 }
-template<class T> vector<T> conv(const vector<T>& a, const vector<T>& b) {
-	if (small(a,b)) return a*b;
-	return smart(a,b);
-} 
+poly conv(const poly& a, const poly& b) {
+	return small(a,b) ? a*b : smart(a,b); } 

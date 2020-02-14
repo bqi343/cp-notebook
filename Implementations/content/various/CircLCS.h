@@ -1,14 +1,14 @@
 /**
- * Description: For strings $a,b$ calculates longest common subsequence 
- 	* of $a$ with all rotations of $b$
+ * Description: Used only twice. For strs $a,b$ calculates 
+ 	* longest common subsequence of $a$ with all rotations of $b$
  * Time: O(N^2)
- * Source: gs14004
+ * Source: gs14004, oj.uz
  * Verification: https://oj.uz/problem/view/IZhO13_rowords
+ 	* also see B from https://codeforces.com/gym/101657/standings
  */
 
 pi dp[2001][4001];
-str A,B;
- 
+str A,B; // both of len <= 2000
 void init() {
 	FOR(i,1,sz(A)+1) FOR(j,1,sz(B)+1) { 
 		// naive LCS, store where value came from

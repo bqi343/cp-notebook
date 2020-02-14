@@ -1,5 +1,5 @@
 /**
- * Description: finds first $x$ such that $L\le Ax\pmod{P}\le R$
+ * Description: finds smallest $x\ge 0$ such that $L\le Ax\pmod{P}\le R$
  * Source: https://codeforces.com/gym/102411/submission/64315879
  * Verification: https://codeforces.com/gym/102411/problem/G
  */

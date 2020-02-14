@@ -8,7 +8,7 @@
 
 #include "../Primitives/Point.h"
 
-// typedef ll T;
+/// typedef ll T;
 pair<vi,vi> ulHull(const vP& P) {
 	vi p(sz(P)), u, l; iota(all(p), 0);
 	sort(all(p), [&P](int a, int b) { return P[a] < P[b]; });
@@ -20,13 +20,10 @@ pair<vi,vi> ulHull(const vP& P) {
 	return {u,l};
 }
 vi hullInd(const vP& P) {
-	vi u,l; tie(u,l) = ulHull(P);
-	if (sz(l) <= 1) return l;
+	vi u,l; tie(u,l) = ulHull(P); if (sz(l) <= 1) return l;
 	if (P[l[0]] == P[l[1]]) return {0};
 	l.insert(end(l),1+rall(u)-1); return l;
 }
 vP hull(const vP& P) {
-	vi v = hullInd(P);
-	vP res; trav(t,v) res.pb(P[t]);
-	return res;
-}
+	vi v = hullInd(P); vP res; trav(t,v) res.pb(P[t]);
+	return res; }

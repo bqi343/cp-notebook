@@ -6,7 +6,7 @@
 
 #include <bits/extc++.h>
 
-pqExample() {
+void pqExample() {
 	__gnu_pbds::priority_queue<int> p;
 	vi act; vector<decltype(p)::point_iterator> v;
 	int n = 1000000;

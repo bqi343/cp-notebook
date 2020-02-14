@@ -1,12 +1,9 @@
 /**
- * Description: Persistent min segtree with lazy updates. 
- 	* Unlike other lazy segtree, assumes that \texttt{d[cur].lazy} 
- 	* is included in \texttt{d[cur].val} before propagating 
- 	* \texttt{cur.} Less of a pain to use array of fixed size to 
- 	* store data rather than vector. Maybe faster to have separate
- 	* arrays for each of $\texttt{l,r,val,lazy}$.
+ * Description: Persistent min segtree with lazy updates, no propagation.
+ 	* If making \texttt{d} a vector then save the results of
+ 	* \texttt{upd} and \texttt{build} in local variables first to
+ 	* avoid issues when vector resizes in C++14 or lower.
  * Memory: O(N+Q\log N)
- * Time: O(\log N)
  * Source: CF, Franklyn Wang
  * Verification: 
  	* https://codeforces.com/contest/1090/problem/G
@@ -14,53 +11,45 @@
  */ 
 
 template<class T, int SZ> struct pseg {
-	const int LIM = 2e7;
+	static const int LIM = 2e7;
 	struct node { 
-		int l,r; T val = 0,lazy = 0; 
-		void inc(T x) { val += x, lazy += x; }
+		int l, r; T val = 0, lazy = 0; 
+		void inc(T x) { lazy += x; }
+		T get() { return val+lazy; }
 	};
 	node d[LIM]; int nex = 0;
-	//// HELPER
-	int copy(int cur) { d[nex] = d[cur]; return nex++; }
+	int copy(int c) { d[nex] = d[c]; return nex++; }
 	T comb(T a, T b) { return min(a,b); }
-	void pull(int x){d[x].val=comb(d[d[x].l].val,d[d[x].r].val);} 
-	void push(int cur, int L, int R) { 
-		T& x = d[cur].lazy; if (!x) return;
-		if (L != R) {
-			d[d[cur].l = copy(d[cur].l)].inc(x);
-			d[d[cur].r = copy(d[cur].r)].inc(x);
-		}
-		x = 0;
-	}
+	void pull(int c) { d[c].val = 
+		comb(d[d[c].l].get(), d[d[c].r].get()); } 
 	//// MAIN FUNCTIONS
-	T query(int cur, int lo, int hi, int L, int R) {  
-		if (lo <= L && R <= hi) return d[cur].val;
-		if (R < lo || hi < L) return INF;
+	T query(int c, int lo, int hi, int L, int R) {  
+		if (lo <= L && R <= hi) return d[c].get();
+		if (R < lo || hi < L) return MOD;
 		int M = (L+R)/2;
-		return d[cur].lazy+comb(query(d[cur].l,lo,hi,L,M),
-							query(d[cur].r,lo,hi,M+1,R));
+		return d[c].lazy+comb(query(d[c].l,lo,hi,L,M),
+							query(d[c].r,lo,hi,M+1,R));
 	}
-	int upd(int cur, int lo, int hi, T v, int L, int R) {
-		if (R < lo || hi < L) return cur;
-		int x = copy(cur);
+	int upd(int c, int lo, int hi, T v, int L, int R) {
+		if (R < lo || hi < L) return c;
+		int x = copy(c);
 		if (lo <= L && R <= hi) { d[x].inc(v); return x; }
-		push(x,L,R); int M = (L+R)/2;
+		int M = (L+R)/2;
 		d[x].l = upd(d[x].l,lo,hi,v,L,M);
 		d[x].r = upd(d[x].r,lo,hi,v,M+1,R);
 		pull(x); return x;
 	}
 	int build(const vector<T>& arr, int L, int R) {
-		int cur = nex++;
+		int c = nex++;
 		if (L == R) {
-			if (L < sz(arr)) d[cur].val = arr[L];
-			return cur;
+			if (L < sz(arr)) d[c].val = arr[L];
+			return c;
 		}
 		int M = (L+R)/2;
-		d[cur].l = build(arr,L,M), d[cur].r = build(arr,M+1,R);
-		pull(cur); return cur;
+		d[c].l = build(arr,L,M), d[c].r = build(arr,M+1,R);
+		pull(c); return c;
 	}
-	//// PUBLIC
-	vi loc;
+	vi loc; //// PUBLIC
 	void upd(int lo, int hi, T v) { 
 		loc.pb(upd(loc.bk,lo,hi,v,0,SZ-1)); }
 	T query(int ti, int lo, int hi) { 

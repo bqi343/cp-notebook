@@ -6,9 +6,11 @@
  * Verification: tested
  */
 
+#include "../Primitives/Point.h"
+
 bool lower;
 bool better(P a, P b, P c) { 
-	ll z = cross(a,b,c); 
+	T z = cross(a,b,c); 
 	return lower ? z < 0 : z > 0; 
 }
 int tangent(const vP& a, P b) {

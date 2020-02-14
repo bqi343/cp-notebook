@@ -4,7 +4,7 @@
 	* use a modified form of the Euclidean algorithm because modular inverse 
 	* may not exist. If you have computed $A^{-1}\pmod{p^k},$ then the inverse 
 	* $\pmod{p^{2k}}$ is $A^{-1}(2I-AA^{-1}).$
- * Time: O(N^3), determinant of $1000\times 1000$ matrix of modular ints in 
+ * Time: O(N^3), determinant of $1000\times 1000$ matrix of modints in 
 	* 1 second if you reduce \# of operations by half
  * Source: various
  * Verification: 
@@ -24,10 +24,9 @@ int getRow(Mat<mi>& m, int n, int i, int nex) {
 	FOR(j,nex,n) if (m.d[j][i] != 0) return j;
 	return -1;
 }
-
 template<class T> pair<T,int> gauss(Mat<T>& m) { 
 	int n = m.r, rank = 0, nex = 0;
-	T prod = 1; 
+	T prod = 1; // determinant
 	F0R(i,n) {
 		int row = getRow(m,n,i,nex);
 		if (row == -1) { prod = 0; continue; }

@@ -1,5 +1,5 @@
 /**
- * Description: Used only once. The Burrows-Wheeler Transform appends 
+ * Description: Used only once. Burrows-Wheeler Transform appends 
  	* \# to a string, sorts the rotations of the string in increasing order, 
 	* and constructs a new string that contains the last character 
 	* of each rotation. This function reverses the transform.

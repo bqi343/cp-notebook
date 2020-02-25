@@ -1,6 +1,7 @@
 /**
  * Description: find nearest neighbor to point and squared dist
- * Time: supposedly $O(\log N)$ on average for randomly distributed points 
+ * Time: Insertion and find nearest neighbor are $O(\log N)$ on 
+ 	* average for randomly distributed points.
  * Source: KACTL, Stanford
  	* https://en.wikipedia.org/wiki/K-d_tree
  * Verification: https://open.kattis.com/problems/closestpair1

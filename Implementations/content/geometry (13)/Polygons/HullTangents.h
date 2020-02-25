@@ -11,8 +11,7 @@
 bool lower;
 bool better(P a, P b, P c) { 
 	T z = cross(a,b,c); 
-	return lower ? z < 0 : z > 0; 
-}
+	return lower ? z < 0 : z > 0; }
 int tangent(const vP& a, P b) {
 	if (sz(a) == 1) return 0;
 	int lo, hi;

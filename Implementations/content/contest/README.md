@@ -1,7 +1,9 @@
 # Template Notes
 
-- The header files will not compile with clang; use gcc instead.
-- clr in .bashrc comes from [here](https://superuser.com/questions/122911/what-commands-can-i-use-to-reset-and-clear-my-terminal).
+ * The header files will not compile with clang; use gcc instead.
+ * .bashrc:
+   * clr in comes from [here](https://superuser.com/questions/122911/what-commands-can-i-use-to-reset-and-clear-my-terminal).
+   * on mac, use g++-9 and add -Wl,-stack_size -Wl,0x10000000 to co to avoid stack size issues.
 
 TopCoder:
 

@@ -27,6 +27,8 @@
 	  * [Johnson's Algorithm](https://en.wikipedia.org/wiki/Johnson%27s_algorithm)
 	* Problems
 	  * [April Fool's Problem](http://codeforces.com/contest/802/problem/N)
+	  * [Cow & Exercise](https://codeforces.com/contest/1307/problem/G)
+	  	* consider LP dual
 	  * [A2OJ](https://a2oj.com/category?ID=662)
 
 ## 6

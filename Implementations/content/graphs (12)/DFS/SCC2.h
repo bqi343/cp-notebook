@@ -1,5 +1,7 @@
 /**
- * Description: Tarjan's Algorithm, generate SCCs in topological order. 
+ * Description: Tarjan's Algorithm, DFS two times to generate 
+ 	* strongly connected components in topological order. $a,b$
+ 	* in same component if both $a\to b$ and $b\to a$ exist.
  * Time: O(N+M)
  * Source: KACTL
  	* https://github.com/kth-competitive-programming/kactl/blob/master/content/graph/SCC.h

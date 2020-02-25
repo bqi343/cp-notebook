@@ -139,6 +139,9 @@ These problems are all submittable through the current USACO website. Percentage
 | 2019 Dec  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=972) | pieaters      | DP                                       | Done   | ?    |
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=973) | snowcow       | BIT / DFS                                | Done   | ?    |
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=974) | treedepth     | Generating Functions                     | Done   | ?    |
-| 2020 Jan  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=948) | cave          | Tree / DP                                | Done   | ?    |
-|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=949) | nondec        | D&C / Matrices                           | Done   | ?    |
-|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=950) | falling       | Convex Hull                              | Done   | ?    |
+| 2020 Jan  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=996) | cave          | Tree / DP                                | Done   | ?    |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=997) | nondec        | D&C / Matrices                           | Done   | ?    |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=998) | falling       | Convex Hull                              | Done   | ?    |
+| 2020 Feb  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=948) | deleg         | Tree / DP                                | Done   | ?    |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=949) | triangles     | Prefix Sums                              | Done   | ?    |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=950) | help          | Segment Tree / DP                        | Done   | ?    |

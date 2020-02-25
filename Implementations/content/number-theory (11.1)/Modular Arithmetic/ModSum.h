@@ -3,6 +3,7 @@
  	* modsum defined similarly
  * Time: O(\log m)
  * Source: KACTL
+ 	* https://codeforces.com/gym/102135/problem/G
  * Verification: https://open.kattis.com/problems/aladin
  */
 

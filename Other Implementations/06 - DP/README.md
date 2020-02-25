@@ -44,18 +44,25 @@
     * Problem(s)
       * [A2OJ](https://a2oj.com/category?ID=315)
   * SOS DP
-  * Slope Trick (aka convex DP with priority queues)
+  * Slope Trick 
+    * aka convex DP with priority queues
     * [Tutorial (zscoder)](http://codeforces.com/blog/entry/47821)
     * Problems
       * [Buy Low Sell High](https://codeforces.com/contest/866/problem/D)
       * [CCDSAP Exam](https://www.codechef.com/problems/CCDSAP)
-      * [Wall](https://atcoder.jp/contests/kupc2016/tasks/kupc2016_h)
-      * [Potatoes](https://oj.uz/problem/view/LMIO19_bulves)
       * [Moving Walkways](https://codeforces.com/contest/1209/problem/H)
       * [Stock Trading](https://probgate.org/viewproblem.php?pid=531&cid=81)
-      * [April Fools' Problem](https://codeforces.com/contest/802/problem/O)
+      * [Potatoes](https://oj.uz/problem/view/LMIO19_bulves)
+        * add differences b_i-a_i in order from i=1...N
+        * maintain some convex structure after each addition
+      * [Wall](https://atcoder.jp/contests/kupc2016/tasks/kupc2016_h)
+        * same as above
       * [Landscaping](http://www.usaco.org/index.php?page=viewproblem2&cpid=650)
+        * extension of "Potatoes"
+      * [April Fools' Problem](https://codeforces.com/contest/802/problem/O)
       * [Conquer the World](https://icpc.kattis.com/problems/conquertheworld)
+        * note: ICPC world finals, 0 solves in contest
+        * "Potatoes" on tree
   * Misc
     * [DP Problems](http://codeforces.com/blog/entry/325)
     * [More Optimizations](http://codeforces.com/blog/entry/8219)

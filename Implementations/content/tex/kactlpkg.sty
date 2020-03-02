@@ -18,9 +18,12 @@
 \usepackage{paralist}                   % For compact enumerations
 \usepackage[inline]{enumitem}           % For horizontal lists
 \usepackage[parfill]{parskip}           % For compact enumerations
-\usepackage[dvipsnames]{xcolor}
+\usepackage[dvipsnames]{xcolor}         % extra colors
 \usepackage[normalem]{ulem}
 \usepackage[hidelinks]{hyperref}        % For clickable table of contents
+
+%\usepackage[T1]{fontenc}
+%\usepackage[scale]{beramono}
 
 % Config commands
 \newcommand{\subtitle}[1]{
@@ -38,13 +41,6 @@
 	\def\@unishort{#1}
 	\def\@unilong{#2}
 	\def\@unilogo{#3}
-}
-
-\newcommand{\enablecolors}{
-	\lstset{basicstyle=\scriptsize\ttfamily\color{mygreen}}
-	\lstset{commentstyle=\color{darkgray}\normalfont\itshape}
-	\lstset{keywordstyle=\color{myblue}}
-	\lstset{identifierstyle=\color{black}}
 }
 
 % Some default config
@@ -65,7 +61,9 @@
 
 % Remove temp files from old failed runs
 \AtBeginDocument{\immediate\write18{rm -f \@builddir/header.tmp}}
-\AtEndDocument{\immediate\write18{rm -f \@builddir/header.tmp}\immediate\write18{rm -f \@builddir/header2.tmp}\immediate\write18{rm -f \@builddir/kactl.tmp}}
+\AtEndDocument{\immediate\write18{rm -f \@builddir/header.tmp}\immediate\write18{rm -f \@builddir/header2.tmp}\immediate\write18{rm -f \@builddir/kactl.tmp}\immediate\write18{rm -f ./header.tmp}}
+
+% https://tex.stackexchange.com/questions/20444/what-are-immediate-write18-and-how-does-one-use-them
 
 % Include a list of source files at the top of every page. For the purpose
 % of recording those, we use eTeX marks. (We can't just append data directly to
@@ -170,30 +168,44 @@
 
 \definecolor{mygreen}{HTML}{007000}
 \definecolor{myblue}{HTML}{0000dd}
+\definecolor{mygray}{HTML}{eeeeee}
 
 % Configure source code listings
 \lstset{language=C++}
-\lstset{morekeywords={alignas,alignof}}
-\lstset{deletedirectives={line}}
-\lstset{frame=t}
+\lstset{aboveskip=3pt}	
+\lstset{belowskip=2pt}
+% \lstset{morekeywords={alignas,alignof}}
+% \lstset{deletedirectives={line}}
+% \lstset{backgroundcolor=\color{mygray}}
+\lstset{frame=t} % line on top of code block
 \lstset{tabsize=2}
 \lstset{showstringspaces=false}
+\lstset{breaklines=true,breakindent=12pt} 
+\lstset{postbreak=\raisebox{0ex}[0ex][0ex]{\color{darkgray}\ensuremath{\hookrightarrow}}} 
+% arrow after break
+% \lstset{emptylines=1} % skip > 1 empty line, * maintains original line numbering
+% \lstset{numbers=left}
+\lstset{stepnumber=1}
+\lstset{numberstyle=\footnotesize\color{black}}
 
-\lstset{breaklines=true,breakindent=12pt}
-\lstset{postbreak=\raisebox{0ex}[0ex][0ex]{\color{lightgray}\ensuremath{\hookrightarrow}}}
-\lstset{basicstyle=\scriptsize\ttfamily}			
-\lstset{commentstyle=\color{darkgray}\itshape}
-\lstset{identifierstyle=\color{black}}
-% \lstset{commentstyle=\normalfont\itshape}	
-% \lstset{basicstyle=\scriptsize\ttfamily\color{mygreen}}
-% \lstset{keywordstyle=\color{myblue}}
 
+%%% TEXT
+% https://tex.stackexchange.com/questions/24599/what-point-pt-font-size-are-large-etc
+% tt family: monospaced typedwriter - https://www.tug.org/pracjourn/2006-1/schmidt/schmidt.pdf
+% http://texdoc.net/texmf-dist/doc/latex/listings/listings.pdf
+
+\lstset{basicstyle=\scriptsize\ttfamily}
 \lstset{literate={^}{\caret}{1}}
 \lstset{literate={~}{\tilde}{1}}
-\lstset{emptylines=*1}
 \lstset{inputencoding=utf8}
-\lstset{aboveskip=3pt}
-\lstset{belowskip=2pt}
+
+\newcommand{\enablecolors}{	
+	\lstset{basicstyle=\scriptsize\ttfamily\color{mygreen}}	
+	\lstset{commentstyle=\color{darkgray}\itshape}
+	\lstset{keywordstyle=\color{myblue}} % default \bfseries
+	%ex. for, if, int, ...,	
+	\lstset{identifierstyle=\color{black}}	
+}
 
 \lstdefinelanguage{raw}{} % Raw language, no keywords.
 

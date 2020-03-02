@@ -32,8 +32,9 @@
       * [Guards in the Storehouse](http://codeforces.com/problemset/problem/845/F) [](71)
   * Divide and Conquer
     * Tutorial
-      * [DP With Divide & Conquer](http://codeforces.com/blog/entry/8219)
+      * [CP-Algo](https://cp-algorithms.com/dynamic_programming/divide-and-conquer-dp.html)
     * Problems
+      * [Circular Barn](http://www.usaco.org/index.php?page=viewproblem2&cpid=626)
       * [Two Sawmills](https://szkopul.edu.pl/problemset/problem/ovRIpLFK3IhyFPjnVXeZtGxH/site/?key=statement)
       * [Minimization Problem](http://codeforces.com/contest/868/problem/F)
 
@@ -43,13 +44,17 @@
       * [Digit DP](http://codeforces.com/blog/entry/53960)
     * Problem(s)
       * [A2OJ](https://a2oj.com/category?ID=315)
-  * SOS DP
+  * Sum Over Subsets DP
+  * Aliens Trick
+    * [Aliens](https://dmoj.ca/problem/ioi16p6)
+    * [Handle Change](https://codeforces.com/contest/1279/problem/F)
   * Slope Trick 
     * aka convex DP with priority queues
     * [Tutorial (zscoder)](http://codeforces.com/blog/entry/47821)
     * Problems
       * [Buy Low Sell High](https://codeforces.com/contest/866/problem/D)
       * [CCDSAP Exam](https://www.codechef.com/problems/CCDSAP)
+      * [Farm of Monsters](https://codeforces.com/gym/102538/problem/F)
       * [Moving Walkways](https://codeforces.com/contest/1209/problem/H)
       * [Stock Trading](https://probgate.org/viewproblem.php?pid=531&cid=81)
       * [Potatoes](https://oj.uz/problem/view/LMIO19_bulves)

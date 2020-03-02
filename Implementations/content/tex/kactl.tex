@@ -1,12 +1,12 @@
 \documentclass[letterpaper, 10pt, notitlepage]{report}
-\usepackage{kactlpkg,comment}
+\usepackage{kactlpkg}
 \kactlcontentdir{content}
 
 \university{MIT}{Massachusetts Institute of Technology}{mit}
 \team{MIT \$(\^{}w\^{})\$}{Benjamin Qi, Spencer Compton, Zhezheng Luo}
 % \contest{ACM-ICPC World Finals 2017}{May 24, 2017}
 \contest{adapted from KACTL and MIT NULL}{\today}
-% \enablecolors
+\enablecolors
 
 \begin{document}
 	\maketeampage
@@ -17,7 +17,8 @@
 	\thispagestyle{fancy}
 	% Table of contents, without subsections:
 	\setcounter{tocdepth}{0}
-	\tableofcontents
+	\tableofcontents\thispagestyle{fancy}
+	% https://tex.stackexchange.com/questions/42912/how-to-get-header-and-footer-over-toc-lof-and-nomeclature
 
 	\kactlchapter{contest}
 	\kactlchapter{math}

@@ -13,7 +13,7 @@
 template<int SZ> struct BCC {
 	vpi adj[SZ], ed;
 	void ae(int u, int v) { 
-		adj[u].pb({v,sz(ed)}), adj[v].pb({u,sz(ed)});, ed.pb({u,v}); }
+		adj[u].eb(v,sz(ed)), adj[v].eb(u,sz(ed)), ed.eb(u,v); }
 	int N, disc[SZ];
 	vi st; vector<vi> bccs; // edges for each bcc
 	int bcc(int u, int p = -1) { // return lowest disc

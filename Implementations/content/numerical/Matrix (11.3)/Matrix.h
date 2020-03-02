@@ -30,7 +30,7 @@ template<class T> struct Mat {
 	Mat operator-(const Mat& m) { return Mat(*this)-=m; }
 	Mat& operator*=(const Mat& m) { return *this = (*this)*m; }
 	friend Mat pow(Mat m, ll p) {
-		/// assert(m.r == m.c);
+		assert(m.r == m.c && p >= 0);
 		Mat res(m.r,m.c); F0R(i,m.r) res.d[i][i] = 1;
 		for (; p; p /= 2, m *= m) if (p&1) res *= m;
 		return res;

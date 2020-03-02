@@ -12,6 +12,8 @@ import random
 import string
 import os
 import shutil
+from datetime import datetime, timezone
+import pytz
 
 def parseUrl(url):
 	page = urllib.request.urlopen(url)
@@ -26,7 +28,7 @@ probs = ""
 cfPrefix="https://codeforces.com/contest/"
 cfTemp=""
 
-def cb(text,col): # color and bold text with color col
+def cb(text,col="grey"): # color and bold text with color col
 	return colored(text,col,attrs=['bold'])
 
 def query_yes_no(question, default="yes"):
@@ -525,7 +527,7 @@ def interactive(p):
 	writeFile(cppName,code)
 
 def writeDefault():
-	code1=cfTemp.replace('[CODES]','').replace('[VARS]','')
+	code1=cfTemp.replace('[CODES]','\t').replace('[VARS]','')
 	writeFile(cppName,code1)
 
 def parse(p): # given input format make prog
@@ -644,19 +646,178 @@ def run():
 		print()
 	print('all done.')
 
+def printTable(table):
+	maxLen = []
+	for i in range(len(table)):
+		if len(table[i]) != len(table[0]):
+			# print("OOPS",i,len(table[0]),len(table[i]))
+			print(table[0],table[i])
+			sys.exit(0)
+	for i in range(len(table[0])):
+		maxLen.append(0)
+		for j in range(len(table)):
+			maxLen[-1] = max(maxLen[-1],len(table[j][i]))
+
+	for j in range(len(table)):
+		print('|',end='')
+		for i in range(len(table[0])):
+			print(table[j][i].center(maxLen[i]+2),end='')
+			print('|',end='')
+		print()
+		if j == 0:
+			print('|',end='')
+			for i in range(len(table[0])):
+				print('-'*(maxLen[i]+2),end='')
+				print('|',end='')
+			print()
+	print()
+
+def getStats():
+	print(cb(f"STATS FOR CONTEST {contest}:\n"))
+	page = parseUrl(cfPrefix+contest)
+	# print(page)
+	probs = page.find_all(class_="problems")
+	name = []
+	mem = []
+	for a in probs:
+		for b in a.find_all("td"):
+			for c in b.find_all("div"):
+				if "standard" in c.text and "s" in c.text:
+					name.append(c.find_all('a')[0].text)
+					text = c.text.rstrip()
+					pos = -11
+					assert text[pos].isdigit()
+					while text[pos-1].isdigit():
+						pos -= 1
+					mem.append(text[pos:])
+					break
+	totTable = [['#','Problem','Limits','Solves']]
+	solves = []
+	co = 0
+	for a in page.find_all(title="Participants solved the problem"):
+		label = a['href'][-1]
+		text = a.text
+		solves.append(text[text.find('x')+1:])
+		if len(solves[-1]) == 0:
+			solves[-1] = "0"
+		totTable.append([label,name[co],mem[co],solves[co]])
+		co += 1
+	printTable(totTable)
+	sortSolves = []
+	for _a in solves:
+		a = int(_a)
+		if a > 0:
+			sortSolves.append(a)
+	sortSolves.sort()
+	for j in range(1,len(totTable)):
+		label = totTable[j][0]
+		link = f"https://codeforces.com/contest/{contest}/status/{label}?order=BY_ARRIVED_ASC"
+		#print(link)
+		s = int(solves[j-1])
+		if s != 0 and (s <= 10 or s <= sortSolves[min(1,len(sortSolves)-1)]): # print submissions for that problem
+			print("PROBLEM",label,"SOLVES:")
+			print()
+			page = parseUrl(link)
+			# print("WUT",page)
+			table = [["When","Who","Lang","Time","Mem"]]
+			for t in page.find_all("tr"):
+				if t.has_attr("data-a"):
+					lang = ""
+					for z in t.find_all("td"):
+						if len(z.attrs) == 0:
+							lang = z.text.strip()
+					exeTime = t.find(class_="time-consumed-cell").text.strip()
+					mem = t.find(class_="memory-consumed-cell").text.strip()
+					who = ""
+					sub = ""
+					for z in t.find_all(class_="rated-user"):
+						# print(z['href'][len("/profile/"):])
+						who = z['title']
+					for z in t.find_all(class_="format-time"):
+						sub = z.text
+					subTime = pytz.timezone("Europe/Moscow").localize(datetime.strptime(sub,"%b/%d/%Y %H:%M"))
+					# https://stackoverflow.com/questions/6410971/python-datetime-object-show-wrong-timezone-offset
+					st = subTime.astimezone(pytz.timezone('US/Eastern'))
+					en = datetime.now(pytz.timezone('US/Eastern'))
+					def make2(x):
+						x = str(x)
+						while len(x) < 2: 
+							x = "0"+x 
+						return x
+					def formTime(x):
+						x = int(x)
+						if x < 60:
+							return str(x)+" min"
+						if x < 24*60:
+							return str(x//60)+":"+make2(str(x%60))
+						return str(x//1440)+" days"
+						# mn = str(x%60)
+						# while len(mn) < 2:
+						# 	mn = "0"+mn
+						# return str(x//60)+":"+mn
+						# if x < 60:
+						# 	return ""
+					when = formTime((en-st).total_seconds()/60)+" ago"
+					table.append([when,who,lang,exeTime,mem])
+					# print(current_time)
+			while len(table) > 7:
+				table.pop()
+			if len(table) == 7:
+				table[-1] = ["..." for i in range(len(table[-1]))]
+			printTable(table)
+
+def getStands():
+	print(cb(f"STANDINGS FOR CONTEST {contest}:\n"))
+	link = f"https://codeforces.com/contest/{contest}/standings"
+	page = parseUrl(link)
+	fst = page.find('table').find('tr')
+	standings = [[]]
+	for b in fst.find_all(recursive=False):
+		if len(b.find_all('a')):
+			standings[0].append(b.find_all('a')[0].text)
+		else:
+			standings[0].append(b.text)
+	for a in page.find_all('tr'):
+		if 'participantid' in a.attrs:
+			# print("WHOOPS",a)
+			standings.append([])
+			cells = a.find_all('td')
+			for j in cells:
+				def simp(x):
+					x = x.strip().replace(" ","").replace("\r",", ").replace("\n","")
+					x = x.replace("\xa0"," ").replace(" : ",":")
+					return x
+				standings[-1].append(simp(j.text))
+			while len(standings[-1]) > len(standings[0]):
+				standings[-1].pop()
+			assert len(standings[-1]) == len(standings[0])
+			if len(standings) >= 12:
+				if '+' not in standings[-1][3]:
+					standings.pop()
+				elif len(standings) == 12:
+					standings.insert(-1,["..."]*len(standings[0]))
+	# for t in standings:
+		# print(t)
+	printTable(standings)
+
+
 def main():
 	try:
 		global contest, probs, TESTING, DEFAULT, REMOVE
-		opts, args = getopt.getopt(sys.argv[1:], "tdhr",["test","default","help","rem"])
+		opts, args = getopt.getopt(sys.argv[1:], "tdhrsS",["test","default","help","rem","stats","stands"])
+		STATS = False
+		STANDS = False
 		for option, value in opts:
 			if option in ("-h","--help"):
 				print("This is the help section for "+cb("cf.py")+".")
 				print()
 				print("Available options are:")
 				print("\t -h --help: display help")
-				print("\t -r --rem: remove folders if they exist")
+				print("\t -r --rem: remove folders if they exist, does not need argument")
 				print("\t -t --test: displays debug information, enables -r")
 				print("\t -d --default: initialize folders given names")
+				print("\t -s --stats: print solve stats and info about first solves")
+				print("\t -S --stands: print top 10 + hacks")
 				print()
 				print("Available commands are:")
 				print("\t 'python3 cf.py 1295': parse contest 1295")
@@ -669,15 +830,25 @@ def main():
 				REMOVE = True
 			if option in ("-d","--default"):
 				DEFAULT = True
+			if option in ("-s","--stats"):
+				STATS = True
+			if option in ("-S","--stands"):
+				STANDS = True
 		if len(args) == 0:
 			assert REMOVE
-			for o in "ABCDEF":
+			for o in "ABCDEFGHIJ":
 				if os.path.exists(o+"/"):
 					rem = True
 					print("removed folder "+o)
 					shutil.rmtree(o+"/") 
 			if rem:
 				print()
+		elif STATS:
+			contest = args[0]
+			getStats()
+		elif STANDS:
+			contest = args[0]
+			getStands()
 		else:
 			if DEFAULT:
 				probs = args[0]

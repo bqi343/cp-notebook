@@ -14,7 +14,7 @@
 #include "../../number-theory (11.1)/Modular Arithmetic/ModInt.h"
 
 typedef complex<db> cd; typedef vector<cd> vcd;
-const int root = 3; // for NTT
+const int root = 3; // for NTT, UNCOMMENT LINE BELOW
 // const int MOD = (119<<23)+1; // = 998244353
 // For p < 2^30 there is also e.g. (5<<25, 3), (7<<26, 3), 
 // (479<<21, 3) and (483<<21, 5). Last two are > 10^9.

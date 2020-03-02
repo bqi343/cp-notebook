@@ -6,8 +6,8 @@ import sys # to exit program
 from termcolor import colored # print in color + bold
 import getopt # command line
 
-IN = "I.$" # $ is replaced with file number
-OUT = "O.$"
+IN = "$.in" # $ is replaced with file number
+OUT = "$.out"
 TL = 4
 EPS = 1e-6
 exts = [".cpp",".cc",".java",".py",".py3"]

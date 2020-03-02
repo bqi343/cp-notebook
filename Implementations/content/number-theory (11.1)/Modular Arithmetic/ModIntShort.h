@@ -13,16 +13,15 @@ struct mi {
 mi& operator+=(mi& a, mi b) { 
 	if ((a.v += b.v) >= MOD) a.v -= MOD; 
 	return a; }
-mi operator+(mi a, mi b) { return a += b; }
 mi& operator-=(mi& a, mi b) { 
 	if ((a.v -= b.v) < 0) a.v += MOD; 
 	return a; }
+mi operator+(mi a, mi b) { return a += b; }
 mi operator-(mi a, mi b) { return a -= b; }
 mi operator*(mi a, mi b) { return mi((ll)a.v*b.v); }
-mi pow(mi a, ll p) {
-	mi ans = 1; assert(p >= 0);
-	for (;p;p/=2,a=a*a) if (p&1) ans = ans*a;
-	return ans; }
+mi& operator*=(mi& a, mi b) { return a = a*b; }
+mi pow(mi a, ll p) { assert(p >= 0); // asserts are important! 
+	return p==0?1:pow(a*a,p/2)*(p&1?a:1); }
 mi inv(const mi& a) { assert(a.v != 0); return pow(a,MOD-2); }
 mi operator/(mi a, mi b) { return a*inv(b); }
 /// mi a = MOD+5; ps((int)inv(a));

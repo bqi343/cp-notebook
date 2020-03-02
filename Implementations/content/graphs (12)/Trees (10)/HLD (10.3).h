@@ -30,8 +30,7 @@ template<int SZ, bool VALS_IN_EDGES> struct HLD {
 	}
 	void init(int _N) {
 		N = _N; par[1] = depth[1] = 0; root[1] = 1; 
-		dfsSz(); dfsHld();
-	}
+		dfsSz(); dfsHld(); }
 	LazySeg<ll,SZ> tree;
 	template <class BinaryOp>
 	void processPath(int u, int v, BinaryOp op) {

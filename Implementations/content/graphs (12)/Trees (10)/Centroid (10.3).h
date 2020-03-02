@@ -41,5 +41,5 @@ template<int SZ> struct Centroid {
 		trav(y,adj[x]) if (!done[y]) genDist(y,x);
 		trav(y,adj[x]) if (!done[y]) gen({x,co++},y);
 	}
-	void init() { gen({-1,0},1); }
+	void init() { gen({-1,0},1); } // start with vertex 1
 };

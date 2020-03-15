@@ -498,7 +498,7 @@ def interactive(p):
 			else:
 				return padding+'ps("?",a);\n'
 		c = '?'
-		DEFS += f'\nstr query({getType(varType[c],isArr[c])} a) {{\n'
+		DEFS += f'str query({getType(varType[c],isArr[c])} a) {{\n'
 		DEFS += outputQ(isArr[c])
 		DEFS += padding+'str r; re(r);\n'
 		DEFS += padding+'// calculate result locally?\n'

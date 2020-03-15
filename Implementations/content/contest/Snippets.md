@@ -4,6 +4,8 @@ for sublime text 3
 
 ## TC
 
+[ifdef](https://codeforces.com/blog/entry/50312?#comment-342457)
+
 ```
 // INITIALIZE ARRAYS TO ZERO
 
@@ -20,15 +22,17 @@ struct ${1:Name} {
 	}
 };
 
+#ifdef LOCAL
 int main() {
 	${1:Name} c; ps(c.${2:method}());
 }
+#endif
 ```
 
 ## FHC
 
 ```
-// INITIALIZE ARRAYS BETWEEN TCs
+// REINITIALIZE ARRAYS BETWEEN TCs
 
 int N;
 

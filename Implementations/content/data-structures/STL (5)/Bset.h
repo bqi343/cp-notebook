@@ -16,13 +16,17 @@ struct bset {
 	void set(int x) { if (!get(x)) flip(x); }
 	int count() {
 		int res = 0; trav(t,b) res += __builtin_popcountll(t);
-		return res;
-	}
+		return res; }
 	friend void pr(const bset&x){F0R(i,x.size)pr((int)x.get(i));}
 	bset& operator|=(const bset& r) {
-		assert(size == r.size); F0R(i,sz(b)) b[i] |= r.b[i]; }
+		assert(size == r.size); F0R(i,sz(b)) b[i] |= r.b[i]; 
+		return b; }
 	bset& operator&=(const bset& r) {
-		assert(size == r.size); F0R(i,sz(b)) b[i] &= r.b[i]; }
+		assert(size == r.size); F0R(i,sz(b)) b[i] &= r.b[i]; 
+		return b; }
+	bset& operator^=(const bset& r) {
+		assert(size == r.size); F0R(i,sz(b)) b[i] ^= r.b[i]; 
+		return b; }
 	bset shift(int inc) { // cyclic shift b to right
 		inc %= size; if (inc < 0) inc += size;
 		bset res(size);

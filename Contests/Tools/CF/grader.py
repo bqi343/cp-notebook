@@ -76,14 +76,22 @@ def run(file,inputF): # return tuple of output file, exit code, time
 	runCom = coms[ext].replace('$',name).replace('#',file)
 	runCom += f" < {inputF} > {outputF}"
 	try:
-		runCom = f"time -p ({runCom}) 2> .time_info;"
+		runCom = f"(time -p {runCom}) 2> .time_info;"
 		ret = subprocess.call(runCom,shell=True,timeout=TL+0.5)
 		if ret != 0:
 			return outputF,ret,-1
-		timeCom = 'cat .time_info | grep real | cut -d" " -f2' # get real time
-		proc = subprocess.Popen(timeCom, stdout=subprocess.PIPE, shell=True)
-		time = proc.communicate()[0].rstrip().decode("utf-8") 
-		return outputF,ret,time
+		def timeInfo():
+			# 'cat .time_info | grep real | cut -d " " -f 2'
+			# -d sets delimiter
+			# -f 2 gets second field
+			proc = subprocess.Popen("cat .time_info", stdout=subprocess.PIPE, shell=True)
+			res = proc.communicate()[0].rstrip().decode("utf-8").split('\n')
+			real = float(res[0][len("real "):])
+			user = float(res[1][len("user "):])
+			sys = float(res[2][len("sys "):])
+			return real,user,sys
+		real,user,sys = timeInfo()
+		return outputF,ret,user+sys
 	except subprocess.TimeoutExpired as e:
 		# template = "An exception of type {0} occurred. Arguments:\n{1!r}"
 		# message = template.format(type(e).__name__, e.args)
@@ -196,7 +204,8 @@ def output(i,res,message,t):
 		print(cb(res,"red"),end="")
 	print(f" - {message}",end="")
 	if ('A' in res) or ('W' in res):
-		print(f" [{t}]",end="")
+		T = "{:.2f}".format(t)
+		print(f" [{T}]",end="")
 	print()
 
 def outputRes(correct,total):

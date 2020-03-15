@@ -40,12 +40,12 @@ typedef vector<pd> vpd; //
 #define R0F(i,a) ROF(i,0,a)
 #define trav(a,x) for (auto& a: x)
 
-const int MOD = 998244353; // 1e9+7
+const int MOD = 1e9+7; // 998244353;
 const int MX = 2e5+5; //
 const ll INF = 1e18; //
 const ld PI = acos((ld)-1);
 const int xd[4] = {1,0,-1,0}, yd[4] = {0,1,0,-1}; //
-
+//
 template<class T> bool ckmin(T& a, const T& b) { 
 	return b < a ? a = b, 1 : 0; }
 template<class T> bool ckmax(T& a, const T& b) { //
@@ -53,7 +53,7 @@ template<class T> bool ckmax(T& a, const T& b) { //
 int pct(int x) { return __builtin_popcount(x); } //
 int bit(int x) { return 31-__builtin_clz(x); } // floor(log2(x)) //
 int cdiv(int a, int b) { return a/b+!(a<0||a%b == 0); } // division of a by b rounded up, assumes b > 0 //
-
+//
 mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count()); //
 
 int main() { ios_base::sync_with_stdio(0); cin.tie(0); }

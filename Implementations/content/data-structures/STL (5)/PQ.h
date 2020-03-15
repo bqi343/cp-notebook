@@ -4,7 +4,7 @@
  * Verification: ?
  */
 
-#include <bits/extc++.h>
+#include <ext/pb_ds/priority_queue.hpp>
 
 void pqExample() {
 	__gnu_pbds::priority_queue<int> p;

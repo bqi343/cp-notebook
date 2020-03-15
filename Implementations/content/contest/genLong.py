@@ -59,6 +59,7 @@ with open('TemplateLong.cpp', 'w') as outfile:
 	* int overflow, array bounds
 	* special cases (n=1?)
 	* do smth instead of nothing and stay organized
+	* WRITE STUFF DOWN
 */""")
 	for line in res:
 		outfile.write(line)

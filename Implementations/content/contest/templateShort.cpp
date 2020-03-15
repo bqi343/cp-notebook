@@ -21,9 +21,8 @@ typedef vector<pi> vpi;
 #define R0F(i,a) ROF(i,0,a)
 #define trav(a,x) for (auto& a: x)
 
-const int MOD = 998244353; // 1e9+7
+const int MOD = 1e9+7;
 const ld PI = acos((ld)-1);
-
 template<class T> bool ckmin(T& a, const T& b) { 
 	return b < a ? a = b, 1 : 0; }
 

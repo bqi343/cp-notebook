@@ -4,6 +4,8 @@ These problems are submittable through the extended USACO training pages rather 
 
 [Test Data / Solutions](http://contest.usaco.org/TESTDATA/)
 
+[Submit?](https://www.acmicpc.net/category/106)
+
 | Contest                                                 | # | Name       | Topic                 | Result |
 | ------------------------------------------------------- | - | ---------- | --------------------- | ------ |
 | [2007 Oct](http://tjsct.wikidot.com/usaco-oct07-gold)   | 1 | money      | Knapsack              |        |

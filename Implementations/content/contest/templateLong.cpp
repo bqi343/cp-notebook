@@ -8,11 +8,11 @@ typedef string str;
 
 typedef pair<int,int> pi;
 typedef pair<ll,ll> pl; 
-typedef pair<ld,ld> pd; 
+typedef pair<db,db> pd; 
 
 typedef vector<int> vi; 
 typedef vector<ll> vl; 
-typedef vector<ld> vd; 
+typedef vector<db> vd; 
 typedef vector<str> vs; 
 typedef vector<pi> vpi;
 typedef vector<pl> vpl; 
@@ -49,8 +49,10 @@ const int xd[4] = {1,0,-1,0}, yd[4] = {0,1,0,-1};
 template<class T> bool ckmin(T& a, const T& b) { 
 	return b < a ? a = b, 1 : 0; }
 template<class T> bool ckmax(T& a, const T& b) { 
-	return a < b ? a = b, 1 : 0; }
+	return a < b ? a = b, 1 : 0; } 
 int pct(int x) { return __builtin_popcount(x); } 
+int bit(int x) { return 31-__builtin_clz(x); } // floor(log2(x)) 
+int cdiv(int a, int b) { return a/b+!(a<0||a%b == 0); } // division of a by b rounded up, assumes b > 0 
 
 namespace input {
 	template<class T> void re(complex<T>& x);
@@ -144,4 +146,5 @@ int main() {
 	* int overflow, array bounds
 	* special cases (n=1?)
 	* do smth instead of nothing and stay organized
+	* WRITE STUFF DOWN
 */

@@ -22,6 +22,6 @@ mi operator*(mi a, mi b) { return mi((ll)a.v*b.v); }
 mi& operator*=(mi& a, mi b) { return a = a*b; }
 mi pow(mi a, ll p) { assert(p >= 0); // asserts are important! 
 	return p==0?1:pow(a*a,p/2)*(p&1?a:1); }
-mi inv(const mi& a) { assert(a.v != 0); return pow(a,MOD-2); }
+mi inv(mi a) { assert(a.v != 0); return pow(a,MOD-2); }
 mi operator/(mi a, mi b) { return a*inv(b); }
 /// mi a = MOD+5; ps((int)inv(a));

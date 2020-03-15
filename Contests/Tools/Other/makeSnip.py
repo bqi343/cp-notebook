@@ -2,8 +2,8 @@
 
 import os,shutil,sys
 
-PREFIX="""/Users/benq/Library/Application Support/Sublime Text 3/Packages/User"""
-LOC=PREFIX+"""/algos/"""
+SUBL="""/Users/benq/Library/Application Support/Sublime Text 3/Packages/User"""
+LOC=SUBL+"""/algos/"""
 
 if os.path.exists(LOC):
 	shutil.rmtree(LOC)
@@ -23,80 +23,101 @@ suf="""</tabTrigger>
 	<!-- <description> demo description </description> -->
 </snippet>"""
 
-print("SNIPPETS LOC:\n\n",LOC.replace(' ','\\ '),'\n');
+print("SNIPPETS LOCATION:\n\n",LOC.replace(' ','\\ '),'\n');
 
 snippets = ""
 temp = ""
 
-for root, dirs, files in os.walk("/Users/benq/Documents/USACO/Implementations",topdown=False):
-	# for name in dirs:
-		# print(os.path.join(root, name))
-	#print("ROOT",root)
-	#print("DIRS",dirs)
-	#print("FILES",files)
-	for name in files:
-		if name.endswith(".h"):
-			# print("PROCESSED",name)
-			if name[0].isupper():
-				short = name[:-2]
-				if '(' in short:
-					short = short[:short.find('(')]
-				short = short.rstrip()
-				PATH = LOC+short+".sublime-snippet"
-				with open(os.path.join(root, name),"r") as fin:
-					with open(PATH,"w") as fout:
-						fout.write(pref)
-						for a in fin:
+def process(root,name):
+	global snippets,temp
+	if name.endswith(".h"):
+		if name[0].isupper():
+			short = name[:-2]
+			if '(' in short:
+				short = short[:short.find('(')]
+			short = short.rstrip()
+			PATH = LOC+short+".sublime-snippet"
+			with open(os.path.join(root, name),"r") as fin:
+				with open(PATH,"w") as fout:
+					fout.write(pref)
+					blank = False
+					for a in fin:
+						if '#pragma once' in a:
+							continue
+						if len(a) <= 1:
+							if not blank:
+								fout.write(a)
+							blank = True
+						else:
+							blank = False
 							fout.write(a.replace('$','\\$'))
-						fout.write(mid)
-						fout.write(short)
-						fout.write(suf)
-				# print(os.path.join(root, name))
-		if name.endswith(".cpp"):
-			# print("WHOOPS",name)
-			if "TemplateLong" in name:
-				short = "Temp"
-				PATH = LOC+short+".sublime-snippet"
-				with open(os.path.join(root, name),"r") as fin:
+					fout.write(mid)
+					fout.write(short)
+					fout.write(suf)
+	if name.endswith(".cpp"):
+		if "TemplateLong" in name:
+			short = "Temp"
+			PATH = LOC+short+".sublime-snippet"
+			with open(os.path.join(root, name),"r") as fin:
+				flag = False
+				for a in fin:
+					if "int main()" in a:
+						flag = True
+					a = a.replace('$','\\$')
+					if flag and a == "\t\n":
+						a = "\t$0\n"
+					temp += a
+			with open(PATH,"w") as fout:
+				fout.write(pref)
+				fout.write(temp)
+				fout.write(mid)
+				fout.write(short)
+				fout.write(suf)
+		elif "TemplateShort" in name:
+			short = "TempShort"
+			PATH = LOC+short+".sublime-snippet"
+			with open(os.path.join(root, name),"r") as fin:
+				with open(PATH,"w") as fout:
+					fout.write(pref)
 					flag = False
 					for a in fin:
 						if "int main()" in a:
 							flag = True
 						a = a.replace('$','\\$')
-						if flag and a == "\t\n":
-							a = "\t$0\n"
-						temp += a
-				with open(PATH,"w") as fout:
-					fout.write(pref)
-					fout.write(temp)
+						if flag and "ios_base" in a:
+							ind = a.find("ios_base")
+							fout.write(a[:ind]+"\n")
+							fout.write("\t"+a[ind:-2]+"\n")
+							fout.write("\t$0\n}\n")
+						else:
+							fout.write(a)
 					fout.write(mid)
 					fout.write(short)
 					fout.write(suf)
-			elif "TemplateShort" in name:
-				short = "TempShort"
-				PATH = LOC+short+".sublime-snippet"
-				with open(os.path.join(root, name),"r") as fin:
-					with open(PATH,"w") as fout:
-						fout.write(pref)
-						flag = False
-						for a in fin:
-							if "int main()" in a:
-								flag = True
-							a = a.replace('$','\\$')
-							if flag and "ios_base" in a:
-								ind = a.find("ios_base")
-								fout.write(a[:ind]+"\n")
-								fout.write("\t"+a[ind:-2]+"\n")
-								fout.write("\t$0\n}\n")
-							else:
-								fout.write(a)
-						fout.write(mid)
-						fout.write(short)
-						fout.write(suf)
-			elif "template" not in name.lower() and "test" not in name.lower():
-				print("CPP NOT INCLUDED:",name)
-		if name == "Snippets.md":
-			snippets = os.path.join(root, name)
+		elif "usaco" in name:
+			short = name[:name.rfind('.')]
+			# print("USACO SHORT NAME:",short)
+			PATH = LOC+short+".sublime-snippet"
+			with open(os.path.join(root, name),"r") as fin:
+				with open(PATH,"w") as fout:
+					fout.write(pref)
+					for a in fin:
+						fout.write(a.replace('$','\\$'))
+					fout.write(mid)
+					fout.write(short)
+					fout.write(suf)
+		elif "template" not in name.lower() and "test" not in name.lower():
+			print("CPP NOT INCLUDED:",name)
+	if name == "Snippets.md":
+		snippets = os.path.join(root, name)
+
+for root, dirs, files in os.walk("/Users/benq/Documents/USACO/Implementations",topdown=False):
+	for name in files:
+		process(root,name)
+
+for root, dirs, files in os.walk("/Users/benq/Documents/USACO/Contests/Tools",topdown=False):
+	for name in files:
+		process(root,name)
 
 assert len(snippets) > 0, "snippets not found"
 
@@ -111,7 +132,10 @@ with open(snippets,"r") as fin:
 			flag ^= 1
 			if flag == 1:
 				codes.append([])
-				names.append(lines[i-2][3:].rstrip())
+				ind = i-2
+				while not lines[ind].startswith('##'):
+					ind -= 1
+				names.append(lines[ind][3:].rstrip())
 				continue
 		if flag == 1:
 			codes[-1].append(lines[i])

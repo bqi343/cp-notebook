@@ -1,6 +1,6 @@
 /**
- * Description: Edmond's Blossom Algorithm. General unweighted matching 
- 	* with 1-based indexing.
+ * Description: Edmond's Blossom Algorithm. 
+ 	* General unweighted matching with 1-based indexing.
  * Time: O(N^2M)
  * Source: 
 	* https://github.com/koosaga/DeobureoMinkyuParty
@@ -9,13 +9,12 @@
  */
 
 template<int SZ> struct UnweightedMatch {
-	int match[SZ], N; 
-	vi adj[SZ];
+	int match[SZ], N; vi adj[SZ];
 	void ae(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
-	void init(int _N) {
-		N = _N; FOR(i,1,N+1) adj[i].clear(), match[i] = 0; }
+	void init(int _N) { N = _N; 
+		FOR(i,1,N+1) adj[i].clear(), match[i] = 0; }
 	queue<int> Q;
-	int par[SZ], vis[SZ], orig[SZ], aux[SZ], t; 
+	int par[SZ], vis[SZ], orig[SZ], aux[SZ]; 
 	void augment(int u, int v) { // toggle edges on u-v path
 		int pv = v, nv;
 		do {
@@ -25,11 +24,11 @@ template<int SZ> struct UnweightedMatch {
 		} while (u != pv);
 	}
 	int lca(int v, int w) { // find LCA in O(dist)
-		++t;
+		static int tt = 0; ++tt;
 		while (1) {
 			if (v) {
-				if (aux[v] == t) return v; 
-				aux[v] = t; v = orig[par[match[v]]];
+				if (aux[v] == tt) return v; 
+				aux[v] = tt; v = orig[par[match[v]]];
 			}
 			swap(v,w);
 		}
@@ -44,13 +43,13 @@ template<int SZ> struct UnweightedMatch {
 	}
 	bool bfs(int u) {
 		F0R(i,N+1) par[i] = aux[i] = 0, vis[i] = -1, orig[i] = i;
-		Q = queue<int>(); Q.push(u); vis[u] = t = 0;
+		Q = queue<int>(); Q.push(u); vis[u] = 0;
 		while (sz(Q)) {
 			int v = Q.ft; Q.pop();
 			trav(x,adj[v]) {
 				if (vis[x] == -1) {
 					par[x] = v; vis[x] = 1;
-					if (!match[x]) return augment(u, x), 1;
+					if (!match[x]) return augment(u,x),1;
 					Q.push(match[x]); vis[match[x]] = 0;
 				} else if (vis[x] == 0 && orig[v] != orig[x]) { 
 					int a = lca(orig[v], orig[x]); // odd cycle
@@ -63,10 +62,8 @@ template<int SZ> struct UnweightedMatch {
 	int calc() {
 		int ans = 0; // find random matching, constant improvement
 		vi V(N-1); iota(all(V),1); shuffle(all(V),rng);
-		trav(x,V) if (!match[x]) trav(y,adj[x]) if (!match[y]) {
-			match[x] = y, match[y] = x;
-			++ans; break;
-		}
+		trav(x,V) if (!match[x]) trav(y,adj[x]) if (!match[y]) 
+			{ match[x] = y, match[y] = x; ++ans; break; }
 		FOR(i,1,N+1) if (!match[i] && bfs(i)) ++ans;
 		return ans;
 	}

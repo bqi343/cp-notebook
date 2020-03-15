@@ -1,7 +1,7 @@
 /**
  * Description: 1D point update, range query where \texttt{comb} is
- 	* any associative operation. $N$ doesn't have to be a power of 2
- 	* but then \texttt{seg[1] != query(0,N-1)}.
+ 	* any associative operation. If $N$ is not power of 2 then 
+ 	* operations work but \texttt{seg[1] != query(0,N-1)}.
  * Time: O(\log N)
  * Source: 
 	* http://codeforces.com/blog/entry/18051
@@ -9,9 +9,8 @@
  * Verification: SPOJ Fenwick
  */
 
-template<class T> struct Seg { 
-	const T ID = 0; // comb(ID,b) must equal b
-	T comb(T a, T b) { return a+b; } 
+template<class T> struct Seg { // comb(ID,b) = b
+	const T ID = 0; T comb(T a, T b) { return a+b; } 
 	int n; vector<T> seg;
 	void init(int _n) { n = _n; seg.assign(2*n,ID); }
 	void pull(int p) { seg[p] = comb(seg[2*p],seg[2*p+1]); }

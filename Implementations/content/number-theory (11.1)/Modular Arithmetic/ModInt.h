@@ -27,9 +27,7 @@ struct mi {
 	friend bool operator<(const mi& a, const mi& b) { 
 		return a.v < b.v; }
 	friend void re(mi& a) { ll x; re(x); a = mi(x); }
-	friend void pr(const mi& a) { pr(a.v); }
-	friend ostream& operator<<(ostream& os, const mi& a) { 
-		return os << a.v; }
+	friend str ts(mi a) { return ts(a.v); }
    
 	mi& operator+=(const mi& m) { 
 		if ((v += m.v) >= MOD) v -= MOD; 

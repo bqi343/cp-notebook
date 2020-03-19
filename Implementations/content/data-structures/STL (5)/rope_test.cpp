@@ -47,9 +47,9 @@ const ld PI = acos((ld)-1);
 const int xd[4] = {1,0,-1,0}, yd[4] = {0,1,0,-1}; 
 
 template<class T> bool ckmin(T& a, const T& b) { 
-	return b < a ? a = b, 1 : 0; }
+    return b < a ? a = b, 1 : 0; }
 template<class T> bool ckmax(T& a, const T& b) { 
-	return a < b ? a = b, 1 : 0; } 
+    return a < b ? a = b, 1 : 0; } 
 int pct(int x) { return __builtin_popcount(x); } 
 int bit(int x) { return 31-__builtin_clz(x); } // floor(log2(x)) 
 int cdiv(int a, int b) { return a/b+!(a<0||a%b == 0); } // division of a by b rounded up, assumes b > 0 
@@ -79,40 +79,40 @@ str ts(char c) { str s = ""; s += c; return s; }
 str ts(str s) { return s; }
 str ts(const char* s) { return (str)s; }
 str ts(vector<bool> v) { 
-	bool fst = 1; str res = "{";
-	F0R(i,sz(v)) {
-		if (!fst) res += ", ";
-		fst = 0; res += ts(v[i]);
-	}
-	res += "}"; return res;
+    bool fst = 1; str res = "{";
+    F0R(i,sz(v)) {
+        if (!fst) res += ", ";
+        fst = 0; res += ts(v[i]);
+    }
+    res += "}"; return res;
 }
 template<size_t SZ> str ts(bitset<SZ> b) {
-	str res = ""; F0R(i,SZ) res += char('0'+b[i]);
-	return res; }
+    str res = ""; F0R(i,SZ) res += char('0'+b[i]);
+    return res; }
 template<class T> str ts(T v) {
-	bool fst = 1; str res = "{";
-	for (const auto& x: v) {
-		if (!fst) res += ", ";
-		fst = 0; res += ts(x);
-	}
-	res += "}"; return res;
+    bool fst = 1; str res = "{";
+    for (const auto& x: v) {
+        if (!fst) res += ", ";
+        fst = 0; res += ts(x);
+    }
+    res += "}"; return res;
 }
 template<class A, class B> str ts(pair<A,B> p) {
-	return "("+ts(p.f)+", "+ts(p.s)+")"; }
+    return "("+ts(p.f)+", "+ts(p.s)+")"; }
 
 // OUTPUT
 template<class A> void pr(A x) { cout << ts(x); }
 template<class H, class... T> void pr(const H& h, const T&... t) { 
-	pr(h); pr(t...); }
+    pr(h); pr(t...); }
 void ps() { pr("\n"); } // print w/ spaces
 template<class H, class... T> void ps(const H& h, const T&... t) { 
-	pr(h); if (sizeof...(t)) pr(" "); ps(t...); }
+    pr(h); if (sizeof...(t)) pr(" "); ps(t...); }
 
 // DEBUG
 void DBG() { cerr << "]" << endl; }
 template<class H, class... T> void DBG(H h, T... t) {
-	cerr << to_string(h); if (sizeof...(t)) cerr << ", ";
-	DBG(t...); }
+    cerr << to_string(h); if (sizeof...(t)) cerr << ", ";
+    DBG(t...); }
 #ifdef LOCAL // compile with -DLOCAL
 #define dbg(...) cerr << "[" << #__VA_ARGS__ << "]: [", DBG(__VA_ARGS__)
 #else
@@ -124,24 +124,64 @@ void setIn(string s) { freopen(s.c_str(),"r",stdin); }
 void setOut(string s) { freopen(s.c_str(),"w",stdout); }
 void unsyncIO() { ios_base::sync_with_stdio(0); cin.tie(0); }
 void setIO(string s = "") {
-	unsyncIO();
-	// cin.exceptions(cin.failbit); 
-	// throws exception when do smth illegal
-	// ex. try to read letter into int
-	if (sz(s)) { setIn(s+".in"), setOut(s+".out"); } // for USACO
+    unsyncIO();
+    // cin.exceptions(cin.failbit); 
+    // throws exception when do smth illegal
+    // ex. try to read letter into int
+    if (sz(s)) { setIn(s+".in"), setOut(s+".out"); } // for USACO
 }
 
 mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count()); 
 
+/**
+ * Description: insert element at $i$-th position,
+    * cut a substring and re-insert somewhere else
+ * Time: O(\log N) per operation? not well tested
+ * Source: https://codeforces.com/blog/entry/10355
+ * Verification: CEOI 2018 Day 2 Triangles
+ */
+
+#include <ext/rope>
+using namespace __gnu_cxx;
+void ropeExample() {
+    rope<int> v(5,0); // initialize with 5 zeroes
+    F0R(i,sz(v)) v.mutable_reference_at(i) = i+1; 
+    F0R(i,5) v.pb(i+1); // constant time pb
+    rope<int> cur = v.substr(1,2); 
+    v.erase(1,3); // erase 3 elements starting from 1st element
+    for (rope<int>::iterator it = v.mutable_begin(); 
+        it != v.mutable_end(); ++it) pr((int)*it,' ');
+    ps(); // 1 5 1 2 3 4 5
+    v.insert(v.mutable_begin()+2,cur); // or just 2
+    v += cur; F0R(i,sz(v)) pr(v[i],' ');
+    ps(); // 1 5 2 3 1 2 3 4 5 2 3
+}
+
 int main() {
-	setIO();
-	
-	// you should actually read the stuff at the bottom
+    clock_t beg = clock();
+    // vi v; 
+    rope<int> v; 
+    F0R(i,MX) v.pb(i);
+    F0R(i,MX) {
+        int l = rand()%MX, r = rand()%MX;
+        if (l > r) swap(l,r);
+        rope<int> V = v.substr(l,r-l+1);
+        v.erase(l,r-l+1);
+        v.insert(v.mutable_begin(),V);
+        //rotate(begin(v),begin(v)+l,begin(v)+r+1);
+    }
+    ll ret = 0;
+    F0R(i,sz(v)) ret += (ll)i*v[i];
+    ps(ret);
+    ps((db)(clock()-beg)/CLOCKS_PER_SEC);
+    exit(0);
+    // you should actually read the stuff at the bottom
 }
 
 /* stuff you should look for
-	* int overflow, array bounds
-	* special cases (n=1?)
-	* do smth instead of nothing and stay organized
-	* WRITE STUFF DOWN
+    * int overflow, array bounds
+    * special cases (n=1?)
+    * do smth instead of nothing and stay organized
+    * WRITE STUFF DOWN
 */
+

@@ -1,5 +1,5 @@
 /**
- * Description: use bellman ford
+ * Description: use Bellman-Ford (make sure no underflow)
  * Source: cp-algorithms
  * Verification: https://cses.fi/problemset/task/1197/
  */

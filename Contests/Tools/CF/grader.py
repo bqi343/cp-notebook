@@ -3,8 +3,8 @@
 import subprocess # run terminal stuff
 import os # check if file exists
 import sys # to exit program
-from termcolor import colored # print in color + bold
 import getopt # command line
+from termcolor import colored # print in color + bold
 
 IN = "$.in" # $ is replaced with file number
 OUT = "$.out"
@@ -203,9 +203,14 @@ def output(i,res,message,t):
 	else:
 		print(cb(res,"red"),end="")
 	print(f" - {message}",end="")
+	# print("??",t)
 	if ('A' in res) or ('W' in res):
-		T = "{:.2f}".format(t)
-		print(f" [{T}]",end="")
+		if isinstance(t,float):
+			T = "{:.2f}".format(t)
+			print(f" [{T}]",end="")
+		else:
+			T0,T1 = "{:.2f}".format(t[0]), "{:.2f}".format(t[1])
+			print(f" [{T0}, {T1}]",end="")
 	print()
 
 def outputRes(correct,total):
@@ -331,6 +336,8 @@ def main():
 	global checker
 	global cppc 
 	global TL
+	global IN
+	global OUT
 
 	def makeFile(file): # add extension to file if doesn't exist
 		if file[file.rfind('.'):] not in exts:
@@ -350,7 +357,7 @@ def main():
 		start = None
 		output = False
 		grade = False
-		opts, args = getopt.getopt(sys.argv[1:], "ohc:t:gs:dC:", ["output","help","correct","time","grade","start","debug","checker"])
+		opts, args = getopt.getopt(sys.argv[1:], "ohc:t:gs:dC:I:O:", ["output","help","correct","time","grade","start","debug","checker","infile","outfile"])
 		print(cb("STARTING PROGRAM","blue"))
 		for option, value in opts:
 			if option in ("-h", "--help"):
@@ -362,6 +369,8 @@ def main():
 				print("\t -d --debug: give input/output for WAs")
 				print("\t -s --start: set starting submission (for grade)")
 				print("\t -C --checker: provide python checker")
+				print("\t -I --infile: format of input file names ($ will be replaced by the testcase number)")
+				print("\t -O --outfile: format of output file names")
 				print()
 				print("Available commands are:")
 				print("\t 'python3 grader.py A': test if A.cpp produces correct output file for every input file")
@@ -369,6 +378,12 @@ def main():
 				print("\t 'python3 grader.py -c B A': compare A.cpp against correct B.cpp for every input file")
 				print("\t 'python3 grader.py -g A': compare A.cpp against all submissions in folder")
 				return
+			if option in ("-I", "--infile"):
+				IN = str(value)
+				print(cb(f" * Input file format set to '{IN}'"))
+			if option in ("-O", "--outfile"):
+				OUT = str(value)
+				print(cb(f" * Output file format set to '{OUT}'"))
 			if option in ("-t", "--time"):
 				TL = float(value)
 				print(cb(f" * Time limit set to {TL} seconds."))

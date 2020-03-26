@@ -12,7 +12,7 @@ template<class T> struct Mat {
 	Mat() : Mat(0,0) {} 
 	Mat(const vector<vector<T>>&_d) : 
 		r(sz(_d)), c(sz(_d[0])) { d = _d; }
-	/// friend void pr(const Mat& m) { pr(m.d); }
+	/// friend str ts(const Mat& m) { return ts(m.d); }
 	Mat& operator+=(const Mat& m) {
 		/// assert(r == m.r && c == m.c);
 		F0R(i,r) F0R(j,c) d[i][j] += m.d[i][j];

@@ -16,7 +16,7 @@ int sgn(T x) { return (x>0)-(x<0); }
 T sq(T x) { return x*x; }
 */
 
-	typedef array<T,3> P3;
+typedef array<T,3> P3;
 typedef array<P3,3> tri;
 typedef vector<P3> vP3;
 T norm(const P3& x) { 

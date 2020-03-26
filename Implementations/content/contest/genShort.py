@@ -4,9 +4,9 @@ template<class H, class... T> void DBG(H h, T... t) {
 	cerr << to_string(h); if (sizeof...(t)) cerr << ", ";
 	DBG(t...); }
 #ifdef LOCAL // compile with -DLOCAL
-#define dbg(...) cerr << "[" << #__VA_ARGS__ << "]: [", DBG(__VA_ARGS__)
+	#define dbg(...) cerr << "[" << #__VA_ARGS__ << "]: [", DBG(__VA_ARGS__)
 #else
-#define dbg(...) 42
+	#define dbg(...) 42
 #endif
 """
 
@@ -19,5 +19,6 @@ with open('TemplateShort.cpp', 'w') as outfile:
 				# while len(line) >= 2 and line[-2] == ' ':
 					# line = line[:-2]+'\n'
 				if 'int main()' in line:
+					outfile.write('mt19937 rng; // or mt19937_64\n\n')
 					outfile.write(debug+"\n")
 				outfile.write(line)

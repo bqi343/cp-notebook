@@ -32,6 +32,6 @@ template<int SZ> struct LCA {
 			u = par[k][u], v = par[k][v];
 		return u == v ? u : par[0][u];
 	}
-	int dist(int u, int v) {
+	int dist(int u, int v) { // # edges on path
 		return depth[u]+depth[v]-2*depth[lca(u,v)]; }
 };

@@ -142,6 +142,9 @@ These problems are all submittable through the current USACO website. Percentage
 | 2020 Jan  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=996) | cave          | Tree / DP                                | Done   | ?    |
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=997) | nondec        | D&C / Matrices                           | Done   | ?    |
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=998) | falling       | Convex Hull                              | Done   | ?    |
-| 2020 Feb  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=948) | deleg         | Tree / DP                                | Done   | ?    |
-|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=949) | triangles     | Prefix Sums                              | Done   | ?    |
-|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=950) | help          | Segment Tree / DP                        | Done   | ?    |
+| 2020 Feb  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=1020)| deleg         | Tree / DP                                | Done   | ?    |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=1021)| triangles     | Prefix Sums                              | Done   | ?    |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=1022)| help          | Segment Tree / DP                        | Done   | ?    |
+| 2020 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=1020)| sprinklers2   | DP                                       | Done   | ?    |
+|           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=1021)| exercise      | Combinatorics / DP                       | Done   | ?    |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=1022)| circus        | Tree                                     | Done   | ?    |

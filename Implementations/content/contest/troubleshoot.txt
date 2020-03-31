@@ -28,6 +28,7 @@ Any undefined behavior (array out of bounds)?
 Any overflows or NaNs (or shifting ll by >=64 bits)?
 Confusing N and M, i and j, etc.?
 Confusing ++i and i++?
+Return vs continue vs break?
 Are you sure the STL functions you use work as you think?
 Add some assertions, maybe resubmit.
 Create some test cases to run your algorithm on.
@@ -45,6 +46,7 @@ for functions like acos make sure absolute val of input is not
 (slightly) greater than one.
 Correctly deal with vertices that are collinear, concyclic, 
 coplanar (in 3D), etc.
+Subtracting a point from every other (but not itself)?
 
 Runtime error:
 Have you tested all corner cases locally?

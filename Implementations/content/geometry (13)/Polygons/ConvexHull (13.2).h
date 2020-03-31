@@ -9,21 +9,21 @@
 #include "../Primitives/Point.h"
 
 /// typedef ll T;
-pair<vi,vi> ulHull(const vP& P) {
-	vi p(sz(P)), u, l; iota(all(p), 0);
-	sort(all(p), [&P](int a, int b) { return P[a] < P[b]; });
+pair<vi,vi> ulHull(const vP& v) {
+	vi p(sz(v)), u, l; iota(all(p), 0);
+	sort(all(p), [&v](int a, int b) { return v[a] < v[b]; });
 	trav(i,p) {
 		#define ADDP(C, cmp) while (sz(C) > 1 && cross(\
-			P[C[sz(C)-2]],P[C.bk],P[i]) cmp 0) C.pop_back(); C.pb(i);
+			v[C[sz(C)-2]],v[C.bk],v[i]) cmp 0) C.pop_back(); C.pb(i);
 		ADDP(u, >=); ADDP(l, <=);
 	}
 	return {u,l};
 }
-vi hullInd(const vP& P) {
-	vi u,l; tie(u,l) = ulHull(P); if (sz(l) <= 1) return l;
-	if (P[l[0]] == P[l[1]]) return {0};
+vi hullInd(const vP& v) {
+	vi u,l; tie(u,l) = ulHull(v); if (sz(l) <= 1) return l;
+	if (v[l[0]] == v[l[1]]) return {0};
 	l.insert(end(l),1+rall(u)-1); return l;
 }
-vP hull(const vP& P) {
-	vi v = hullInd(P); vP res; trav(t,v) res.pb(P[t]);
+vP hull(const vP& v) {
+	vi w = hullInd(v); vP res; trav(t,w) res.pb(v[t]);
 	return res; }

@@ -1,5 +1,6 @@
 /** 
- * Description: tests whether a point is inside, on, or outside of the perimeter of a polygon
+ * Description: Tests whether a point is inside, on, or outside of the 
+ 	* perimeter of a polygon. Both CW and CCW are ok.
  * Time: O(N)
  * Verification: https://open.kattis.com/problems/pointinpolygon
  */

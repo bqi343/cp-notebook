@@ -63,8 +63,7 @@ pair<ll,vi> dmst(int n, int r, const vector<Edge>& g) {
 			}
 		}
 		trav(t,path) in[dsu.get(t.s.b)] = {t.s.a,t.s.b}; 
-		// found path from root to s, done
-	}
+	} // found path from root to s, done
 	while (sz(cycs)) { // expand cycs to restore sol
 		auto c = cycs.bk; cycs.pop_back();
 		pi inEdge = in[c.f];

@@ -7,7 +7,7 @@
 
 #define x real()
 #define y imag()
-typedef complex<double> P;
+typedef complex<db> P;
 namespace std { 
 	bool operator<(P l,P r) { return mp(l.x,l.y)<mp(r.x,r.y); } }
 /// vector<P> v = {{4,5},{3,6},{5,7}}; sort(all(v)); ps(v);

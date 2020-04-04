@@ -7,6 +7,7 @@ typedef pair<int,int> pi;
 typedef vector<int> vi; 
 typedef vector<pi> vpi;
 
+#define mp make_pair
 #define f first
 #define s second
 #define sz(x) (int)x.size()
@@ -29,7 +30,7 @@ mt19937 rng; // or mt19937_64
 
 void DBG() { cerr << "]" << endl; }
 template<class H, class... T> void DBG(H h, T... t) {
-	cerr << to_string(h); if (sizeof...(t)) cerr << ", ";
+	cerr << h; if (sizeof...(t)) cerr << ", ";
 	DBG(t...); }
 #ifdef LOCAL // compile with -DLOCAL
 	#define dbg(...) cerr << "[" << #__VA_ARGS__ << "]: [", DBG(__VA_ARGS__)

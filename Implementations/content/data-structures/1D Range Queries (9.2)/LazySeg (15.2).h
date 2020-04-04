@@ -1,5 +1,5 @@
 /**
- * Description: 1D range update and query. Set SZ to a power of 2.
+ * Description: 1D range update and query, $SZ=2^p$.
  * Source: USACO Counting Haybales
  * Verification: SPOJ Horrible
  */
@@ -17,9 +17,8 @@ template<class T, int SZ> struct LazySeg {
 		push(ind,L,R); if (hi < L || R < lo) return;
 		if (lo <= L && R <= hi) { 
 			lazy[ind] = inc; push(ind,L,R); return; }
-		int M = (L+R)/2;
-		upd(lo,hi,inc,2*ind,L,M); upd(lo,hi,inc,2*ind+1,M+1,R); 
-		pull(ind);
+		int M = (L+R)/2; upd(lo,hi,inc,2*ind,L,M); 
+		upd(lo,hi,inc,2*ind+1,M+1,R); pull(ind);
 	}
 	T qsum(int lo, int hi, int ind=1, int L=0, int R = SZ-1) {
 		push(ind,L,R); if (lo > R || L > hi) return 0;

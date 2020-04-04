@@ -50,11 +50,11 @@ poly& operator*=(poly& l, const poly& r) { return l = l*r; }
 pair<poly,poly> quoRem(poly a, poly b) { 
 	assert(sz(b)); auto B = b.bk; assert(B != 0);
 	B = 1/B; trav(t,b) t *= B;
-	norm(a); poly q(max(sz(a)-sz(b)+1,0));
+	remz(a); poly q(max(sz(a)-sz(b)+1,0));
 	while (sz(a) >= sz(b)) {
 		q[sz(a)-sz(b)] = a.bk;
 		F0R(i,sz(b)) a[i+sz(a)-sz(b)] -= a.bk*b[i];
-		norm(a);
+		remz(a);
 	}
 	trav(t,q) t *= B; 
 	return {q,a};

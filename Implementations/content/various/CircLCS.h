@@ -9,9 +9,8 @@
 
 pi dp[2001][4001];
 str A,B; // both of len <= 2000
-void init() {
+void init() { // naive LCS, store where values came from
 	FOR(i,1,sz(A)+1) FOR(j,1,sz(B)+1) { 
-		// naive LCS, store where value came from
 		pi& bes = dp[i][j]; bes = {-1,-1};
 		ckmax(bes,{dp[i-1][j].f,0});
 		ckmax(bes,{dp[i-1][j-1].f+(A[i-1] == B[j-1]),-1});
@@ -26,12 +25,10 @@ void adjust(int col) { // remove col'th character of b, fix DP
 	while (cur.f <= sz(A) && cur.s <= sz(B)) { 
 		// every dp[cur.f][y >= cur.s].f decreased by 1
 		if (cur.s < sz(B) && dp[cur.f][cur.s+1].s == 2) {
-			cur.s ++;
-			dp[cur.f][cur.s].s = 0;
+			dp[cur.f][++cur.s].s = 0;
 		} else if (cur.f < sz(A) && cur.s < sz(B) 
 			&& dp[cur.f+1][cur.s+1].s == 1) {
-			cur.f ++, cur.s ++;
-			dp[cur.f][cur.s].s = 0;
+			dp[++cur.f][++cur.s].s = 0;
 		} else cur.f ++;
 	}
 }

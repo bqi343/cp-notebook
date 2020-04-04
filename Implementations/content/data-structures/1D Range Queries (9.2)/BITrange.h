@@ -1,6 +1,5 @@
 /**
- * Description: 1D range increment and sum query. 
- 	* Possible for higher dimensions.
+ * Description: $D$-dimensional range increment and sum query with $2^D$ BITs, case $D=1$
  * Source: https://www.geeksforgeeks.org/binary-indexed-tree-range-update-range-queries/
  * Verification: CSES
  * Time: O(\log N)

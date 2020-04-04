@@ -36,11 +36,10 @@ struct KDtree {
 	pair<T,P> search(Node *node, const P& p) {
 		if (!node->f) { // should not find the point itself
 			if (p == node->pt) return {INF, P()};
-			return mp(norm(p-node->pt), node->pt);
-		}
+			return {norm(p-node->pt), node->pt}; }
 		Node *f = node->f, *s = node->s;
 		T bf = f->distance(p), bs = s->distance(p);
-		if (bf > bs) swap(bs, bf), swap(f, s);
+		if (bf > bs) swap(bs,bf), swap(f,s);
 		// search closest side f, other side if needed
 		auto best = search(f,p); 
 		if (bs < best.f) ckmin(best,search(s,p));

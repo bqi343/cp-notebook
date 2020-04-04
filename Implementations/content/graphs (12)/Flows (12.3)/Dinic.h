@@ -8,17 +8,16 @@
  */
 
 template<int SZ> struct Dinic {
+	int N,s,t; // # verts, source, sink
 	typedef ll F; // flow type
 	struct Edge { int to, rev; F flow, cap; };
-	int N,s,t;
 	vector<Edge> adj[SZ];
-	typename vector<Edge>::iterator cur[SZ];
 	void ae(int u, int v, F cap) {
 		assert(cap >= 0); // don't try smth dumb
-		Edge a{v, sz(adj[v]), 0, cap}, b{u, sz(adj[u]), 0, 0};
+		Edge a{v,sz(adj[v]),0,cap}, b{u,sz(adj[u]),0,0};
 		adj[u].pb(a), adj[v].pb(b);
 	}
-	int level[SZ];
+	int level[SZ]; typename vector<Edge>::iterator cur[SZ]; 
 	bool bfs() { // level = shortest distance from source
 		F0R(i,N) level[i] = -1, cur[i] = begin(adj[i]);
 		queue<int> q({s}); level[s] = 0; 
@@ -43,10 +42,9 @@ template<int SZ> struct Dinic {
 		return 0;
 	}
 	F maxFlow(int _N, int _s, int _t) {
-		N = _N, s = _s, t = _t; if (s == t) return -1;
-		F tot = 0;
-		while (bfs()) while (auto df = sendFlow(s,
-			numeric_limits<F>::max())) tot += df;
+		N = _N, s = _s, t = _t; assert(s != t);
+		F tot = 0; while (bfs()) while (F df = 
+			sendFlow(s,numeric_limits<F>::max())) tot += df;
 		return tot;
 	}
 };

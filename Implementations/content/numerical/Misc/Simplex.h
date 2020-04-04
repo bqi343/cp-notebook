@@ -26,17 +26,14 @@ const T eps = 1e-8, inf = 1/.0;
 
 #define ltj(X) if (s==-1 || mp(X[j],N[j])<mp(X[s],N[s])) s=j
 struct LPSolver {
-	int m, n; // # contraints, # variables
-	vi N, B; vvd D;
+	int m, n; vi N, B; vvd D; // # contraints, # variables
 	LPSolver(const vvd& A, const vd& b, const vd& c) :
 	  m(sz(b)), n(sz(c)), N(n+1), B(m), D(m+2, vd(n+2)) {
 		F0R(i,m) F0R(j,n) D[i][j] = A[i][j]; 
-		F0R(i,m) { 
+		F0R(i,m) { // B[i]: add basic variable for each constraint, 
 			B[i] = n+i, D[i][n] = -1, D[i][n+1] = b[i]; 
-			// B[i]: add basic variable for each constraint, 
 			// convert ineqs to eqs
-			// D[i][n]: artificial variable for testing feasibility
-		}
+		} // D[i][n]: artificial variable for testing feasibility
 		F0R(j,n) { 
 			N[j] = j; // non-basic variables, all zero
 			D[m][j] = -c[j]; // minimize -c^T x
@@ -69,8 +66,7 @@ struct LPSolver {
 				if (r == -1 || mp(D[i][n+1] / D[i][s], B[i])
 							 < mp(D[r][n+1] / D[r][s], B[r])) r = i; 
 				// find smallest positive ratio
-				// -> max increase in nonbasic variable
-			}
+			} // -> max increase in nonbasic variable
 			if (r == -1) return 0; // unbounded
 			pivot(r,s);
 		}

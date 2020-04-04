@@ -1,7 +1,7 @@
 filenames = ['Template.cpp', 'CppIO.h', '../number-theory (11.1)/Modular Arithmetic/Modular.h']
 debug = """void DBG() { cerr << "]" << endl; }
 template<class H, class... T> void DBG(H h, T... t) {
-	cerr << to_string(h); if (sizeof...(t)) cerr << ", ";
+	cerr << h; if (sizeof...(t)) cerr << ", ";
 	DBG(t...); }
 #ifdef LOCAL // compile with -DLOCAL
 	#define dbg(...) cerr << "[" << #__VA_ARGS__ << "]: [", DBG(__VA_ARGS__)

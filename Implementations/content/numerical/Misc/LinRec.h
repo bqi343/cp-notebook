@@ -19,8 +19,7 @@ struct LinRec {
 		vmi B; B = C = {1}; // B is fail vector
 		mi b = 1; // B gives 0,0,0,...,b
 		F0R(i,n) {
-			m ++;
-			mi d = x[i]; FOR(j,1,sz(C)) d += C[j]*x[i-j];
+			m ++; mi d = x[i]; FOR(j,1,sz(C)) d += C[j]*x[i-j];
 			if (d == 0) continue; // rec still works
 			auto _B = C; C.rsz(max(sz(C),m+sz(B)));
 			// subtract rec that gives 0,0,0,...,d
@@ -29,8 +28,7 @@ struct LinRec {
 		}
 		rC = C; reverse(all(rC)); // poly for getPo
 		C.erase(begin(C)); trav(t,C) t *= -1; 
-		// x[i]=sum_{j=0}^{sz(C)-1}C[j]*x[i-j-1]
-	}
+	} // x[i]=sum_{j=0}^{sz(C)-1}C[j]*x[i-j-1]
 	vmi getPo(int n) {
 		if (n == 0) return {1};
 		vmi x = getPo(n/2); x = rem(x*x,rC);

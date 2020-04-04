@@ -13,22 +13,19 @@
 
 #include "../../number-theory (11.1)/Modular Arithmetic/ModInt.h"
 
-typedef complex<db> cd; typedef vector<cd> vcd;
 const int root = 3, MOD = (119<<23)+1; // 998244353
 // For p < 2^30 there is also e.g. (5<<25, 3), (7<<26, 3) 
 /// (479<<21, 3) and (483<<21, 5). Last two are > 10^9.
-
-int size(int s) { return s > 1 ? 32-__builtin_clz(s-1) : 0; }
+void genRoots(vmi& roots) { // REPLACE DEF OF MOD
+	int n = sz(roots); mi r = pow(mi(root),(MOD-1)/n);
+	roots[0] = 1; FOR(i,1,n) roots[i] = roots[i-1]*r; }
+typedef complex<db> cd; typedef vector<cd> vcd;
 void genRoots(vcd& roots) { // primitive n-th roots of unity
 	int n = sz(roots); db ang = 2*PI/n;
 	/// good way to compute these trig functions more quickly?
-	F0R(i,n) roots[i] = cd(cos(ang*i),sin(ang*i)); 
-}
-void genRoots(vmi& roots) {
-	int n = sz(roots); mi r = pow(mi(root),(MOD-1)/n);
-	roots[0] = 1; FOR(i,1,n) roots[i] = roots[i-1]*r;
-}
+	F0R(i,n) roots[i] = cd(cos(ang*i),sin(ang*i)); }
 
+int size(int s) { return s > 1 ? 32-__builtin_clz(s-1) : 0; }
 template<class T> void fft(vector<T>& a, 
   const vector<T>& rts, bool inv = 0) {
 	int n = sz(a);

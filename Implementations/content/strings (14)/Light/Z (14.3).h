@@ -7,9 +7,8 @@
  */
 
 vi z(str s) {
-	int N = sz(s); s += '#';
+	int N = sz(s), L = 1, R = 0; s += '#';
 	vi ans(N); ans[0] = N; 
-	int L = 1, R = 0;
 	FOR(i,1,N) {
 		if (i <= R) ans[i] = min(R-i+1,ans[i-L]);
 		while (s[i+ans[i]] == s[ans[i]]) ans[i] ++;

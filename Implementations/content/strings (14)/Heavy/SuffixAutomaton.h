@@ -1,6 +1,10 @@
 /**
  * Description: Used infrequently. Constructs minimal deterministic 
- 	* finite automaton (DFA) that recognizes all suffixes of a string
+ 	* finite automaton (DFA) that recognizes all suffixes of a string.
+ 	* \texttt{len} corresponds to the maximum length of a string in
+ 	* the equivalence class, \texttt{firstPos} corresponds to
+ 	* the first ending position of such a string, \texttt{len}
+ 	* corresponds to the longest suffix that is in a different class.
  * Time: O(N\log \sum)
  * Source: https://cp-algorithms.com/string/suffix-automaton.html
  * Verification: 
@@ -10,37 +14,30 @@
  
 struct SuffixAutomaton {
 	struct state {
-		int len = 0, firstPos = -1, link = -1;
-		bool isClone = 0;
+		int len = 0, firstPos = -1; bool isClone = 0;
+		int link = -1; vi invLink; 
 		map<char, int> next;
-		vi invLink;
-	};
-	vector<state> st;
+	}; vector<state> st;
 	int last = 0;
 	void extend(char c) {
 		int cur = sz(st); st.eb();
 		st[cur].len=st[last].len+1, st[cur].firstPos=st[cur].len-1;
 		int p = last;
-		while (p != -1 && !st[p].next.count(c)) {
-			st[p].next[c] = cur;
-			p = st[p].link;
-		}
+		while (p != -1 && !st[p].next.count(c)) 
+			st[p].next[c] = cur, p = st[p].link;
 		if (p == -1) st[cur].link = 0;
 		else {
 			int q = st[p].next[c];
-			if (st[p].len+1 == st[q].len) {
-				st[cur].link = q;
-			} else {
+			if (st[p].len+1 == st[q].len) st[cur].link = q;
+			else { // new equivalence class
 				int clone = sz(st); st.pb(st[q]);
 				st[clone].len = st[p].len+1, st[clone].isClone = 1;
-				while (p != -1 && st[p].next[c] == q) {
-					st[p].next[c] = clone;
-					p = st[p].link;
-				}
+				while (p != -1 && st[p].next[c] == q) 
+					st[p].next[c] = clone, p = st[p].link;
 				st[q].link = st[cur].link = clone;
-			}
-		}
-		last = cur;
+			} // first pos of longest[link[link[last]]] increases
+		} // whenever transition is redirected, amortized linear
+		last = cur; 
 	}
 	void init(str s) { 
 		st.eb(); trav(x,s) extend(x); 

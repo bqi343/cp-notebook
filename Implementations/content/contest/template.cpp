@@ -18,7 +18,7 @@ typedef vector<pi> vpi;
 typedef vector<pl> vpl; //
 typedef vector<pd> vpd; //
 
-#define mp make_pair //
+#define mp make_pair
 #define f first
 #define s second
 #define sz(x) (int)x.size()

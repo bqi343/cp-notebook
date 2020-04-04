@@ -35,7 +35,12 @@
         * Graham Scan
       * Additional
         * [Lichao Segment Tree](http://codeforces.com/blog/entry/51275?#comment-351510)
+      * Half-Plane Intersection
+        * [Blogewoosh (Ternary Search)](https://codeforces.com/blog/entry/61710)
+        * [retrograd](https://codeforces.com/blog/entry/61710?#comment-457662)
+        * [Petr (Linear](https://petr-mitrichev.blogspot.com/2016/07/a-half-plane-week.html)
         * LineContainer
+          * maintaining separate ones for bottom and top hulls should suffice?
     * Problem(s)
       * [Bridges](https://csacademy.com/contest/archive/task/building-bridges/)
       * [Fence Orthogonality](https://open.kattis.com/problems/fenceortho)

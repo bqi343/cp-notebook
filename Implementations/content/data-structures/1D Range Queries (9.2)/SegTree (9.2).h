@@ -1,7 +1,6 @@
 /**
  * Description: 1D point update, range query where \texttt{comb} is
- 	* any associative operation. If $N$ is not power of 2 then 
- 	* operations work but \texttt{seg[1] != query(0,N-1)}.
+ 	* any associative operation. If $N=2^p$ then \texttt{seg[1]==query(0,N-1)}.
  * Time: O(\log N)
  * Source: 
 	* http://codeforces.com/blog/entry/18051

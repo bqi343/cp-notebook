@@ -12,14 +12,11 @@
 struct SuffixTree {
 	str s; int node, pos;
 	struct state { // edge to state is s[fpos,fpos+len)
-		int fpos, len, link = -1; 
-		map<char,int> to;
+		int fpos, len, link = -1; map<char,int> to;
 		state(int fpos, int len) : fpos(fpos), len(len) {}
-	};
-	vector<state> st;
+	}; vector<state> st;
 	int makeNode(int pos, int len) { 
-		st.pb(state(pos,len)); return sz(st)-1;
-	}
+		st.pb(state(pos,len)); return sz(st)-1; }
 	void goEdge() {
 		while (pos>1 && pos>st[st[node].to[s[sz(s)-pos]]].len) {
 			node = st[node].to[s[sz(s)-pos]];

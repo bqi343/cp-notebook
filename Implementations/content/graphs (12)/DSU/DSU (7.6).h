@@ -1,7 +1,7 @@
 /**
- * Description: Disjoint Set Union with path compression. 
- 	* Add edges and test connectivity. Use for Kruskal's 
- 	* minimum spanning tree.
+ * Description: Disjoint Set Union with path compression
+ 	* and union by size. Add edges and test connectivity. 
+ 	* Use for Kruskal's or Boruvka's minimum spanning tree.
  * Time: O(\alpha(N))
  * Source: CSAcademy, KACTL
  * Verification: USACO superbull

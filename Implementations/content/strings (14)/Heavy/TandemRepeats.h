@@ -9,8 +9,7 @@
 #include "../Light/Z (14.3).h"
 
 struct TandemRepeats {
-	str S;
-	vector<array<int,3>> al; 
+	str S; vector<array<int,3>> al; 
 	// (t[0],t[1],t[2]) -> exists repeating substr starting 
 	// at x with length t[0]/2 for all t[1] <= x <= t[2]
 	vector<array<int,3>> solveLeft(str s, int m) {

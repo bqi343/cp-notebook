@@ -23,8 +23,7 @@ ul nimProd(int i, int j) { // nim prod of 2^i, 2^j
 	int a = (i&j)&-(i&j); // 2^{2^k}
 	return u=nimProd(i^a,j)^nimProd((i^a)|(a-1),(j^a)|(i&(a-1)));
 	// 2^{2^k}*2^{2^k} = 2^{2^k}+2^{2^k-1}
-	// 2^{2^i}*2^{2^j} = 2^{2^i+2^j} if i<j
-}
+} // 2^{2^i}*2^{2^j} = 2^{2^i+2^j} if i<j
 struct nb { // nimber
 	ul x; nb() { x = 0; }
 	nb(ul _x): x(_x) {}

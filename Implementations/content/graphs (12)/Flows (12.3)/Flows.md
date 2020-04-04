@@ -33,6 +33,7 @@
 
 ## 6
   * [Max Flow w/ Lower Bounds](https://pdfs.semanticscholar.org/03a2/785783f43202925da70ae842eeda9cebd77e.pdf)
+  	* [Diverse Singing](https://codeforces.com/group/ZFgXbZSjvp/contest/274398/problem/C)
 	* [Captain America](https://codeforces.com/contest/704/problem/D)
 	* [Incorrect Flow](https://codeforces.com/contest/708/problem/D)
 	* [Multi-Path Story](https://atcoder.jp/contests/jag2013summer-day4/tasks/icpc2013summer_day4_i)

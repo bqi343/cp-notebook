@@ -65,7 +65,7 @@ class BIT() {
     }
 }*/
 
-fun main() {
+fun example() {
     println(String.format("%.8f", 5.25)) // print to 8 decimals
     val arr2D = Array<IntArray>(5,{IntArray(5,{5})})
     var (x,y) = arrayOf(3,2) // or rInts(2)
@@ -96,3 +96,4 @@ fun main() {
     list.add(actualInsertPoint, 'd') // [a,b,c,d,e]
     list.removeAt(1) // remove at index -> [a,c,d,e]
 }
+fun main() {}

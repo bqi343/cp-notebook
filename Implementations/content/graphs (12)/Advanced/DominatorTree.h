@@ -28,9 +28,7 @@ template<int SZ> struct Dominator {
 		sdom[co] = par[co] = bes[co] = co;
 		trav(y,adj[x]) {
 			if (!label[y]) {
-				dfs(y); 
-				child[label[x]].pb(label[y]);
-			}
+				dfs(y); child[label[x]].pb(label[y]); }
 			radj[label[y]].pb(label[x]);
 		}
 	}

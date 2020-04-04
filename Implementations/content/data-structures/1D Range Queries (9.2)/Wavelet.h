@@ -1,7 +1,7 @@
 /**
-* Description: Segment tree on values instead of indices. 
-	* Returns $k$-th largest number in 0-indexed interval \texttt{[lo,hi)}.
-	* SZ should be a power of 2, and all values in $a$ must lie in \texttt{[0,SZ)}.
+* Description: SegTree on values instead of indices. Returns $k$-th 
+	* largest number in 0-indexed interval \texttt{[lo,hi)}.
+	* $SZ=2^p$ and all values in $a$ must lie in $[0,SZ)$.
 * Memory: O(N\log N)
 * Time: O(\log N) query
 * Source: http://rachitiitr.blogspot.com/2017/06

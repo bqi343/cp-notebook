@@ -1,69 +1,68 @@
 /**
- * Description: Edmond's Blossom Algorithm. 
- 	* General unweighted matching with 1-based indexing.
- * Time: O(N^2M)
+ * Description: Edmond's Blossom Algorithm. General unweighted 
+ 	* matching with 1-based indexing. \texttt{v} is part of every 
+ 	* max matching if it's never the case that \texttt{aux[v]=0}
+ 	* when \texttt{bfs} returns 0.
+ * Time: O(N^3), faster in practice
  * Source: 
 	* https://github.com/koosaga/DeobureoMinkyuParty
 	* https://www-m9.ma.tum.de/graph-algorithms/matchings-blossom-algorithm/index_en.html
- * Verification: https://codeforces.com/contest/1089/problem/B
+	* https://codeforces.com/blog/entry/63630
+ * Verification: 
+ 	* https://codeforces.com/contest/1089 B
+ 	* https://www.codechef.com/problems/HAMILG
  */
 
 template<int SZ> struct UnweightedMatch {
 	int match[SZ], N; vi adj[SZ];
 	void ae(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
-	void init(int _N) { N = _N; 
-		FOR(i,1,N+1) adj[i].clear(), match[i] = 0; }
-	queue<int> Q;
-	int par[SZ], vis[SZ], orig[SZ], aux[SZ]; 
+	queue<int> q;
+	int par[SZ], vis[SZ], orig[SZ], aux[SZ];
 	void augment(int u, int v) { // toggle edges on u-v path
-		int pv = v, nv;
-		do {
-			pv = par[v]; nv = match[pv];
+		while (1) { // one more matched pair
+			int pv = par[v], nv = match[pv];
 			match[v] = pv; match[pv] = v;
-			v = nv;
-		} while (u != pv);
-	}
-	int lca(int v, int w) { // find LCA in O(dist)
-		static int tt = 0; ++tt;
-		while (1) {
-			if (v) {
-				if (aux[v] == tt) return v; 
-				aux[v] = tt; v = orig[par[match[v]]];
-			}
-			swap(v,w);
+			v = nv; if (u == pv) return;
 		}
 	}
-	void blossom(int v, int w, int a) {
-		while (orig[v] != a) {
-			par[v] = w; w = match[v]; // go other way around cycle
-			if (vis[w] == 1) Q.push(w), vis[w] = 0;
-			orig[v] = orig[w] = a; // merge into supernode
-			v = par[w];
+	int lca(int u, int v) { // find LCA of supernodes in O(dist)
+		static int t = 0;
+		for (++t;;swap(u,v)) {
+			if (!u) continue;
+			if (aux[u] == t) return u; // found LCA
+			aux[u] = t; u = orig[par[match[u]]];
 		}
 	}
-	bool bfs(int u) {
-		F0R(i,N+1) par[i] = aux[i] = 0, vis[i] = -1, orig[i] = i;
-		Q = queue<int>(); Q.push(u); vis[u] = 0;
-		while (sz(Q)) {
-			int v = Q.ft; Q.pop();
+	void blossom(int u, int v, int a) { // go other way
+		for (; orig[u] != a; u = par[v]) { // around cycle
+			par[u] = v; v = match[u]; // treat u as if vis[u] = 1
+			if (vis[v] == 1) vis[v] = 0, q.push(v);
+			orig[u] = orig[v] = a; // merge into supernode
+		}
+	}
+	bool bfs(int u) { // u is initially unmatched
+		F0R(i,N+1) par[i] = 0, vis[i] = -1, orig[i] = i;
+		q = queue<int>(); vis[u] = 0, q.push(u);
+		while (sz(q)) {
+			int v = q.ft; q.pop(); // 0 -> unmatched vertex
 			trav(x,adj[v]) {
-				if (vis[x] == -1) {
-					par[x] = v; vis[x] = 1;
+				if (vis[x] == -1) { // neither of x, match[x] visited
+					vis[x] = 1; par[x] = v;
 					if (!match[x]) return augment(u,x),1;
-					Q.push(match[x]); vis[match[x]] = 0;
-				} else if (vis[x] == 0 && orig[v] != orig[x]) { 
-					int a = lca(orig[v], orig[x]); // odd cycle
-					blossom(x,v,a); blossom(v,x,a);
-				}
+					vis[match[x]] = 0, q.push(match[x]);
+				} else if (vis[x] == 0 && orig[v] != orig[x]) {
+					int a = lca(orig[v],orig[x]); // odd cycle
+					blossom(x,v,a), blossom(v,x,a); 
+				} // contract O(n) times
 			}
 		}
 		return 0;
 	}
-	int calc() {
-		int ans = 0; // find random matching, constant improvement
-		vi V(N-1); iota(all(V),1); shuffle(all(V),rng);
-		trav(x,V) if (!match[x]) trav(y,adj[x]) if (!match[y]) 
-			{ match[x] = y, match[y] = x; ++ans; break; }
+	int calc(int _N) { // random matching for constant improvement
+		N = _N; F0R(i,N+1) match[i] = aux[i] = 0; 
+		int ans = 0; vi V(N-1); iota(all(V),1); shuffle(all(V),rng);
+		trav(x,V) if (!match[x]) trav(y,adj[x]) if (!match[y]) { 
+			match[x] = y, match[y] = x; ++ans; break; }
 		FOR(i,1,N+1) if (!match[i] && bfs(i)) ++ans;
 		return ans;
 	}

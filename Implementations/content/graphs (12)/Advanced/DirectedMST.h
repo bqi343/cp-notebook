@@ -14,9 +14,7 @@
 
 struct Edge { int a, b; ll w; };
 struct Node { // lazy skew heap node
-	Edge key;
-	Node *l, *r;
-	ll delta;
+	Edge key; Node *l, *r; ll delta;
 	void prop() {
 		key.w += delta;
 		if (l) l->delta += delta;

@@ -17,7 +17,6 @@ T(\sigma) = 1 -> 1 -> 1 3 -> 1 3 -> 1 3 5
                  2    2      2      2
                              4      4
 */
-
 vector<vi> boundedRsk(const vi& A, int k) {
 	vector<vi> h(k);
 	F0R(i,sz(A)) {

@@ -13,12 +13,10 @@ template<int SZ> struct MCMF {
 	int N,s,t; // # verts, source, sink
 	typedef ll F; typedef ll C; // flow type, cost type
 	struct Edge { int to, rev; F flow, cap; C cost; };
-	vector<Edge> adj[SZ];
-	void ae(int u, int v, F cap, C cost) {
-		assert(cap >= 0); // don't try smth dumb
+	vector<Edge> adj[SZ]; // use asserts, don't try smth dumb
+	void ae(int u, int v, F cap, C cost) { assert(cap >= 0); 
 		Edge a{v,sz(adj[v]),0,cap,cost}, b{u,sz(adj[u]),0,0,-cost};
-		adj[u].pb(a), adj[v].pb(b);
-	}
+		adj[u].pb(a), adj[v].pb(b); }
 	pi pre[SZ]; // previous vertex, edge label on path
 	pair<C,F> cost[SZ]; // tot cost of path, amount of flow
 	C totCost = 0, curCost = 0; F totFlow = 0; 

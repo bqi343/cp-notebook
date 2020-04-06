@@ -15,8 +15,7 @@ template<int SZ, bool directed> struct Euler {
 	vector<bool> used;
 	void ae(int a, int b) {
 		int M = sz(used); used.pb(0); 
-		adj[a].eb(b,M); if (!directed) adj[b].eb(a,M);
-	}
+		adj[a].eb(b,M); if (!directed) adj[b].eb(a,M); }
 	vpi solve(int _N, int src = 0) {
 		N = _N; F0R(i,N) its[i] = begin(adj[i]);
 		vector<pair<pi,int>> ret, s = {{{src,-1},-1}}; 

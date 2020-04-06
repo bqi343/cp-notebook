@@ -34,8 +34,7 @@ template<int SZ> struct FakeMatch {
 		random_shuffle(all(ed));
 		trav(c,ed) {
 			int a = c.f, b = c.s, w = min(min(f[a],f[b]),cap[a][b]);
-			x(a,b,w); f[a] -= w, f[b] -= w;
-		}
+			x(a,b,w); f[a] -= w, f[b] -= w; }
 		while (1) {
 			vi lef; FOR(i,1,N+1) if (f[i]) lef.pb(i);
 			if (!sz(lef)) break;

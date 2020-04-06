@@ -11,12 +11,10 @@ template<int SZ> struct Dinic {
 	int N,s,t; // # verts, source, sink
 	typedef ll F; // flow type
 	struct Edge { int to, rev; F flow, cap; };
-	vector<Edge> adj[SZ];
-	void ae(int u, int v, F cap) {
-		assert(cap >= 0); // don't try smth dumb
+	vector<Edge> adj[SZ]; // use asserts, don't be dumb
+	void ae(int u, int v, F cap) { assert(cap >= 0); 
 		Edge a{v,sz(adj[v]),0,cap}, b{u,sz(adj[u]),0,0};
-		adj[u].pb(a), adj[v].pb(b);
-	}
+		adj[u].pb(a), adj[v].pb(b); }
 	int level[SZ]; typename vector<Edge>::iterator cur[SZ]; 
 	bool bfs() { // level = shortest distance from source
 		F0R(i,N) level[i] = -1, cur[i] = begin(adj[i]);
@@ -36,8 +34,7 @@ template<int SZ> struct Dinic {
 			auto df = sendFlow(e.to,min(flow,e.cap-e.flow));
 			if (df) { // saturated at least one edge
 				e.flow += df; adj[e.to][e.rev].flow -= df;
-				return df;
-			}
+				return df; }
 		}
 		return 0;
 	}

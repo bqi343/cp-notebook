@@ -35,7 +35,7 @@ int hungarian(const vector<vi>& a) {
 				else dist[j] -= delta; 
 			}
 			j0 = j1; // j1 must be initialized
-		} // Potentials adjusted so all edge weights are non-negative. 
+		} // Potentials adjusted so all edge weights >= 0.
 		// Perfect matching has zero weight and
 		// costs of augmenting paths do not change.
 		while (j0) { int j1 = pre[j0]; p[j0] = p[j1]; j0 = j1; }

@@ -9,15 +9,13 @@
  */
 
 struct MaxClique {
-	db limit=0.025, pk=0; // # of steps
+	db limit = 0.025, pk = 0; // # of steps
 	struct Vertex { int i, d=0; Vertex(int _i):i(_i){} };
 	typedef vector<Vertex> vv; vv V;
-	vector<bitset<200>> e; 
-	vector<vi> C; // colors
+	vector<bitset<200>> e; vector<vi> C; // colors
 	vi qmax,q,S,old; // max/current clique, sum # steps up to lev
-	void init(vv& r) {
-		trav(v,r) v.d = 0; 
-		trav(v,r) trav(j,r) v.d += e[v.i][j.i]; // degree
+	void init(vv& r) { // v.d -> degree
+		trav(v,r) { v.d = 0; trav(j,r) v.d += e[v.i][j.i]; } 
 		sort(all(r),[](Vertex a,Vertex b) { return a.d > b.d; });
 		int mxD = r[0].d; F0R(i,sz(r)) r[i].d = min(i,mxD)+1;
 	}
@@ -33,7 +31,7 @@ struct MaxClique {
 				C[1].clear(), C[2].clear();
 				trav(v,T) {
 					int k = 1; auto f = [&](int i) { return e[v.i][i]; };
-					while (any_of(all(C[k]),f)) k++; /// while common edge ++
+					while (any_of(all(C[k]),f)) k ++; /// while common edge ++
 					if (k > mxk) mxk = k, C[mxk+1].clear(); // new set
 					if (k < mnk) T[j++].i = v.i;
 					C[k].pb(v.i);

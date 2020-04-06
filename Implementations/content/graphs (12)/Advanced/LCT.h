@@ -23,16 +23,13 @@ struct snode {
 	int val, sz; // value in node, # nodes in current splay tree
 	int sub, vsub = 0; // vsub stores sum of virtual children
 	snode(int _val) : val(_val) {
-		p = c[0] = c[1] = extra = NULL;
-		calc();
-	}
+		p = c[0] = c[1] = extra = NULL; calc(); }
 	friend int getSz(sn x) { return x?x->sz:0; }
 	friend int getSub(sn x) { return x?x->sub:0; }
 	void prop() { // lazy prop
 		if (!flip) return;
-		swap(c[0],c[1]); 
+		swap(c[0],c[1]); flip = 0;
 		F0R(i,2) if (c[i]) c[i]->flip ^= 1;
-		flip = 0; 
 	}
 	void calc() { // recalc vals
 		F0R(i,2) if (c[i]) c[i]->prop();
@@ -50,13 +47,11 @@ struct snode {
 	bool isRoot() { return dir() < 0; } 
 	friend void setLink(sn x, sn y, int d) {
 		if (y) y->p = x;
-		if (d >= 0) x->c[d] = y;
-	}
+		if (d >= 0) x->c[d] = y; }
 	void rot() { // assume p and p->p propagated
 		assert(!isRoot()); int x = dir(); sn pa = p;
 		setLink(pa->p, this, pa->dir());
-		setLink(pa, c[x^1], x);
-		setLink(this, pa, x^1);
+		setLink(pa, c[x^1], x); setLink(this, pa, x^1);
 		pa->calc(); calc();
 	}
 	void splay() {
@@ -79,9 +74,7 @@ struct snode {
 		splay(); assert(!c[1]); // right subtree is empty
 	}
 	void makeRoot() { 
-		access(); flip ^= 1; access(); 
-		assert(!c[0] && !c[1]);
-	}
+		access(); flip ^= 1; access(); assert(!c[0] && !c[1]); }
 	//////// QUERIES
 	friend sn lca(sn x, sn y) {
 		if (x == y) return x;
@@ -109,7 +102,7 @@ struct snode {
 		}
 	}
 	//////// MODIFICATIONS
-	/// void set(int v) { access(); val = v; calc(); } 
+	void set(int v) { access(); val = v; calc(); } 
 	friend void link(sn x, sn y, bool force = 0) { 
 		assert(!connected(x,y)); 
 		if (force) y->makeRoot(); // make x par of y
@@ -118,21 +111,17 @@ struct snode {
 	}
 	friend void cut(sn y) { // cut y from its parent
 		y->access(); assert(y->c[0]);
-		y->c[0]->p = NULL; y->c[0] = NULL; y->calc(); 
-	}
+		y->c[0]->p = NULL; y->c[0] = NULL; y->calc(); }
 	friend void cut(sn x, sn y) { // if x, y adj in tree
 		x->makeRoot(); y->access(); 
-		assert(y->c[0] == x && !x->c[0] && !x->c[1]);
-		cut(y); 
-	}
+		assert(y->c[0] == x && !x->c[0] && !x->c[1]); cut(y); }
 };
 sn LCT[MX];
 
 //////// THE APPLICANT SOLUTION
 void setNex(sn a, sn b) { // set f[a] = b
 	if (connected(a,b)) a->extra = b;
-	else link(b,a);
-}
+	else link(b,a); }
 void delNex(sn a) { // set f[a] = NULL
 	auto t = a->getRoot();
 	if (t == a) { t->extra = NULL; return; }

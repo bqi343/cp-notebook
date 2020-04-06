@@ -36,37 +36,39 @@
 		\end{itemize}
 
 \section{DFS Algorithms}
-	\kactlimport{DFS/SCC (12.1).h}
-	% \kactlimport{DFS/SCC2.h}
-	\kactlimport{DFS/TwoSAT (12.1).h}
+	% \kactlimport{DFS/SCC (12.1).h}
 	\kactlimport{DFS/EulerPath (12.2).h}
+	\kactlimport{DFS/SCC2.h}
+	\kactlimport{DFS/TwoSAT (12.1).h}
 	\kactlimport{DFS/BCC (12.4).h}
 	\kactlimport{DFS/MaximalCliques.h}
-	\kactlimport{DFS/MaxClique.h}
 
 \section{Flows}
 
 	\textbf{Konig's Theorem:} In a bipartite graph, max matching = min vertex cover.
 
-	\textbf{Dilworth's Theorem:} For any partially ordered set, the sizes of the largest antichain and of the smallest chain decomposition are equal. Equivalent to Konig's theorem on the bipartite graph $(U,V,E)$ where $U=V=S$ and $(u,v)$ is an edge when $u<v.$ % Wikipedia, https://codeforces.com/gym/102428/problem/A
+	\textbf{Dilworth's Theorem:} For any partially ordered set, the sizes of the max antichain and of the min chain decomposition are equal. Equivalent to Konig's theorem on the bipartite graph $(U,V,E)$ where $U=V=S$ and $(u,v)$ is an edge when $u<v$. Those vertices outside the min vertex cover in both $U$ and $V$ form a max antichain.
+
+	% Wikipedia, https://codeforces.com/gym/102428/problem/A, https://maps20.kattis.com/problems/maps20.thewrathofkahn
 
 	\kactlimport{Flows (12.3)/Dinic.h}
+	\kactlimport{Flows (12.3)/GomoryHu.h}
 	\kactlimport{Flows (12.3)/MCMF.h}
 	\kactlimport{Flows (12.3)/GlobalMinCut.h}
-	\kactlimport{Flows (12.3)/GomoryHu.h}
 
 \section{Matching}
 
 	\kactlimport{Matching/DFSmatch.h}
 	\kactlimport{Matching/Hungarian.h}
 	\kactlimport{Matching/UnweightedMatch.h}
-	\kactlimport{Matching/WeightedMatch.h}
 	\kactlimport{Matching/FakeMatch.h}
+	\kactlimport{Matching/WeightedMatch.h}
 	% \kactlimport{Matching/UnweightedMatch2.h}
 
 \section{Advanced}
 
-	\kactlimport{Advanced/LCT.h}
-	\kactlimport{Advanced/DirectedMST.h}
+	\kactlimport{Advanced/MaxClique.h}
 	\kactlimport{Advanced/DominatorTree.h}
 	\kactlimport{Advanced/EdgeColor.h}
+	\kactlimport{Advanced/DirectedMST.h}
+	\kactlimport{Advanced/LCT.h}

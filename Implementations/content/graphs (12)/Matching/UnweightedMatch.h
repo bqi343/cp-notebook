@@ -58,9 +58,9 @@ template<int SZ> struct UnweightedMatch {
 		}
 		return 0;
 	}
-	int calc(int _N) { // random matching for constant improvement
+	int calc(int _N) { // rand matching -> constant improvement
 		N = _N; F0R(i,N+1) match[i] = aux[i] = 0; 
-		int ans = 0; vi V(N-1); iota(all(V),1); shuffle(all(V),rng);
+		int ans = 0; vi V(N); iota(all(V),1); shuffle(all(V),rng);
 		trav(x,V) if (!match[x]) trav(y,adj[x]) if (!match[y]) { 
 			match[x] = y, match[y] = x; ++ans; break; }
 		FOR(i,1,N+1) if (!match[i] && bfs(i)) ++ans;

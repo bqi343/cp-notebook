@@ -24,13 +24,11 @@ template<int SZ> struct EdgeColor {
 		vector<bool> col(N+1); F0R(i,N) col[adj[x][i]] = 1;
 		return col; }
 	int freeCol(int u) {
-		auto col = genCol(u);
-		int x = 1; while (col[x]) x ++; return x;
-	}
+		auto col = genCol(u); int x = 1; 
+		while (col[x]) x ++; return x; }
 	void invert(int x, int d, int c) {
 		F0R(i,N) if (adj[x][i] == d) 
-			delEdge(x,i), invert(i,c,d), ae(x,i,c);
-	}
+			delEdge(x,i), invert(i,c,d), ae(x,i,c); }
 	void ae(int u, int v) { 
 		// check if you can add edge w/o doing any work
 		assert(N); ckmax(maxDeg,max(++deg[u],++deg[v]));

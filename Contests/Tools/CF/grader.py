@@ -12,15 +12,20 @@ TL = 4
 EPS = 1e-6
 exts = [".cpp",".cc",".java",".py",".py3"]
 cppc = "g++-9 -std=c++11 -O2 -Wl,-stack_size -Wl,0x10000000 -w -o $ #" 
+# -w = suppress warnings 
 javac = "javac #"
 
 sep = '-'*50
 pad = '\t'
 checker = None
+debug = False
 
 def cb(text,col="grey"): # color and bold text with color col
 	return colored(text,col,attrs=['bold'])
-def isfloat(value): # check if it can be float
+def isfloat(value): 
+	"""
+	check if value can be float, returns boolean
+	"""
 	try:
 		float(value)
 		return True
@@ -35,10 +40,12 @@ def splitWhite(output): # split output by whitespace
 	assert os.path.isfile(output), f'File "{output}" does not exist, cannot splitWhite'
 	output = list(open(output))
 	res = [i.split() for i in output]
-	return [i for i in res if len(i) > 0] # eliminate empty lines
+	return [i for i in res if len(i) > 0] # ignores empty lines
 
-def compile(file): # compile file  
-	# -w = suppress warnings 
+def compile(file): 
+	"""
+	compiles file, returns True if successful
+	"""
 	coms = {}
 	coms[".cpp"] = coms[".cc"] = cppc
 	coms[".java"] = javac
@@ -46,14 +53,13 @@ def compile(file): # compile file
 
 	name = file[:file.rfind('.')] # stuff before extension
 	ext = file[file.rfind('.'):]
-	if (ext not in coms):
+	if ext not in coms:
 		print(cb(f" * Compilation failed, extension {ext} not recognized","red"))
 		return False
 	if coms[ext] == "":
 		print(cb(" * No compilation for python."))
 		return True
 	com = coms[ext].replace('$',name).replace('#',file)
-
 	print(cb(f" * Compiling {file}","cyan"))
 	if subprocess.call(com,shell=True) != 0:
 		print(cb(" * Compilation failed","red"))
@@ -62,7 +68,10 @@ def compile(file): # compile file
 		print(cb(" * Compilation successful!","green"))
 		return True
 
-def run(file,inputF): # return tuple of output file, exit code, time
+def run(file,inputF): 
+	"""
+	returns tuple (output file name, exit code, time)
+	"""
 	coms = {}
 	coms[".cpp"] = coms[".cc"] = "./$"
 	coms[".java"] = "java $"
@@ -70,7 +79,7 @@ def run(file,inputF): # return tuple of output file, exit code, time
 
 	name = file[:file.rfind('.')] # stuff before extension
 	ext = file[file.rfind('.'):]
-	assert ext in coms, "extension not recognized??"
+	assert ext in coms, f"cannot run file with extension {ext}"
 
 	outputF = f"{name}.out"
 	runCom = coms[ext].replace('$',name).replace('#',file)
@@ -98,15 +107,18 @@ def run(file,inputF): # return tuple of output file, exit code, time
 		# print(message)
 		return "",152,TL
 
-def check(o0,o1): # check if output files o0,o1 match
+def check(o0,o1): 
+	"""
+	check if output files o0,o1 match
+	returns (verdict, message)
+	"""
 	assert o0 != o1
 	O0,O1 = splitWhite(o0),splitWhite(o1)
-	# print("HAHA",o0,o1,len(O1),O1[0])
 	if len(O0) != len(O1):
 		return "W", f"{o0} has {len(O0)} lines but {o1} has {len(O1)} lines"
 	for i in range(len(O0)):
 		if len(O0[i]) != len(O1[i]):
-			return "W", f"{i+1}-th line of {o0} has {len(O0[i])} tokens but {o1} has {len(O1[i])} lines"
+			return "W", f"{i+1}-th line of {o0} has {len(O0[i])} tokens but {o1} has {len(O1[i])} tokens"
 		for j in range(len(O0[i])):
 			z0,z1 = O0[i][j],O1[i][j]
 			if z0 == z1:
@@ -121,22 +133,27 @@ def check(o0,o1): # check if output files o0,o1 match
 			return "W", f"{i}-th elements don't match, expected {z0} but found {z1}"
 	return "A", "OK"
 
-def interpretExit(e): # interpret exit code
-	assert e != 0, "success??"
+def interpretExit(e): 
+	"""
+	interpret exit code
+	returns (verdict, message)
+	"""
+	assert e != 0, "e should not be 0"
 	if e == 139:
 		return "R", "runtime error"
 	if e == 152:
 		return "T", "time limit exceeded"
 	return "R", f"exit code {e}"
 
-debug = False
-
 def checkTL(res,t):
-	if float(t) > TL:
+	if float(t) > TL: # verdict A -> AT
 		res = (res[0]+"T",)+res[1:]
 	return res
 
 def runChecker(inputF,outputF,o):
+	"""
+	returns verdict, message
+	"""
 	assert checker.endswith(".py") or checker.endswith(".py3")
 	res = subprocess.call(f"python3 {checker} {inputF} {outputF} {o}",shell=True)
 	if res == 0:
@@ -144,21 +161,24 @@ def runChecker(inputF,outputF,o):
 	return "W", "checker failed with exit code "+str(res)
 
 def grade(prog,inputF,outputF): # verdict, message, time, report
-	global TL
-	global grader
+	global TL,grader
 	report = ""
 	if debug:
+		def getText(file):
+			res = ""
+			for line in open(file):
+				res += pad+line
+			if res == "":
+				res += pad+"(empty file)\n"
+			return res
 		report += pad+sep+"\n"
 		report += pad+"INPUT:\n"
 		report += pad+sep+"\n"
-		for line in open(inputF):
-			report += pad+line
+		report += getText(inputF)
 		report += pad+sep+"\n"
-
 		report += pad+"CORRECT OUTPUT:\n"
 		report += pad+sep+"\n"
-		for line in open(outputF):
-			report += pad+line
+		report += getText(outputF)
 		report += pad+sep+"\n"
 	o,e,t = run(prog,inputF)
 	if e != 0:
@@ -187,7 +207,6 @@ def getOutput(prog,inputF): # verdict, message, time
 def compare(f0,f1,inputF): # verdict, message, time
 	o0,e0,t0 = run(f0,inputF)
 	o1,e1,t1 = run(f1,inputF)
-	# print(len(o1),o1[0])
 	if e0 != 0:
 		return "E", "supposedly correct code gave "+interpretExit(e0)[1], (t0,)
 	if e1 != 0:
@@ -228,12 +247,9 @@ def getTests(): # $ can be any sequence of digits
 	L = []
 	LL = []
 	files = [f for f in os.listdir('.') if os.path.isfile(f)]
-	# print("WHOOPS",files)
 	def makeKey(x):
 		x = x[:x.rfind('.')]
 		return [len(x),x]
-	# files.sort(key=makeKey)
-	# print("??",after)
 	for file in files:
 		if len(file) >= len(IN):
 			if IN[:ind] != file[:ind]: 
@@ -332,13 +348,7 @@ def progs():
 	return res
 
 def main():
-	global debug
-	global checker
-	global cppc 
-	global TL
-	global IN
-	global OUT
-
+	global debug,checker,cppc,TL,IN,OUT
 	def makeFile(file): # add extension to file if doesn't exist
 		if file[file.rfind('.'):] not in exts:
 			done = False
@@ -351,7 +361,6 @@ def main():
 			assert done, "no extension found"
 		assert os.path.isfile(file), "file not found"
 		return file
-
 	try:
 		correct = None
 		start = None

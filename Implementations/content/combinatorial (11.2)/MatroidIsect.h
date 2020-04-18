@@ -2,100 +2,85 @@
  * Description: Computes a set of maximum size which is independent 
  	* in both graphic and colorful matroids, aka a spanning forest where
  	* no two edges are of the same color. In general, construct the exchange
- 	* graph and find a shortest path.
- * Time: $O(GI^{1.5})$ calls to oracles, where $G$ is the size of the ground set 
- 	* and $I$ is the size of the independent set
+ 	* graph and find a shortest path. Can apply similar concept to partition
+ 	* matroid.
+ * Time: $O(GI^{1.5})$ calls to oracles, where $G$ is size of ground set 
+ 	* and $I$ is size of independent set.
  * Source: https://codeforces.com/blog/entry/69287
+ 	* chilli (KACTL)
  * Verification: https://www.spoj.com/problems/COIN/
+ * Usage: MatroidIsect<Gmat,Cmat> M(sz(ed),Gmat(ed),Cmat(col))
  */
 
 #include "../graphs (12)/DSU/DSU (7.6).h"
 
-struct Element {
-	pi ed; int col;
-	bool indep = 0; int ipos; // independent set pos
-	Element(int u, int v, int c) { ed = {u,v}; col = c; }
-};
-vector<Element> gset; vi iset; // ground set, independent set
-
-int verts; // graphic matroid
-struct GBasis { 
-	DSU D; GBasis() { D.init(verts); } 
-	void add(pi v) { assert(D.unite(v.f,v.s)); }
-	bool indep(pi v) { return !D.sameSet(v.f,v.s); }
-};
-GBasis basis; vector<GBasis> basisWo; // basis without
-bool graphOracle(int ins) { return basis.indep(gset[ins].ed); }
-bool graphOracle(int ins, int rem) {
-	return basisWo[gset[rem].ipos].indep(gset[ins].ed); }
-void prepGraphOracle() {
-	basis = GBasis(); basisWo.assign(sz(iset),GBasis());
-	F0R(i,sz(iset)) {
-		pi v = gset[iset[i]].ed; basis.add(v);
-		F0R(j,sz(iset)) if (i != j) basisWo[j].add(v);
+struct Gmat { // graphic matroid
+	int V = 0; vpi ed; DSU D;
+	Gmat(vpi ed):ed(ed) {
+		map<int,int> m; trav(t,ed) m[t.f] = m[t.s] = 0;
+		trav(t,m) t.s = V++; 
+		trav(t,this->ed) t.f = m[t.f], t.s = m[t.s];
 	}
-}
-int cols; vector<bool> colUsed; // colorful matroid
-bool colorOracle(int ins) { 
-	ins = gset[ins].col; return !colUsed[ins]; }
-bool colorOracle(int ins, int rem) {
-	ins = gset[ins].col, rem = gset[rem].col;
-	return !colUsed[ins] || ins == rem; }
-void prepColorOracle() {
-	colUsed.assign(cols,0);
-	trav(t,iset) colUsed[gset[t].col] = 1;
-}
- 
-bool augment() {
-	prepGraphOracle(); prepColorOracle();
-	vi par(sz(gset),-2); queue<int> q;
-	F0R(i,sz(gset)) if (!gset[i].indep && colorOracle(i)) 
-		par[i] = -1, q.push(i);
-	int lst = -1;
-	while (sz(q)) {
-		int cur = q.ft; q.pop();
-		if (gset[cur].indep) {
-			F0R(to,sz(gset)) if (!gset[to].indep && par[to] == -2) {
-				if (!colorOracle(to,cur)) continue;
-				par[to] = cur; q.push(to);
-			}
-		} else {
-			if (graphOracle(cur)) { lst = cur; break;	}
-			trav(to,iset) if (par[to] == -2) {
-				if (!graphOracle(cur,to)) continue;
-				par[to] = cur; q.push(to);
+	void clear() { D.init(V); }
+	void ins(int i) { assert(D.unite(ed[i].f,ed[i].s)); }
+	bool indep(int i) { return !D.sameSet(ed[i].f,ed[i].s); }
+};
+struct Cmat { // colorful matroid
+	int C = 0; vi col; vector<bool> used;
+	Cmat(vi col):col(col) {trav(t,col) ckmax(C,t+1); }
+	void clear() { used.assign(C,0); }
+	void ins(int i) { used[col[i]] = 1; }
+	bool indep(int i) { return !used[col[i]]; }
+};
+template<class M1, class M2> struct MatroidIsect {
+	int n; vector<bool> iset; M1 m1; M2 m2;
+	bool augment() {
+		vi pre(n+1,-1); queue<int> q({n});
+		while (sz(q)) {
+			int x = q.ft; q.pop();
+			if (iset[x]) {
+				m1.clear(); F0R(i,n) if (iset[i] && i != x) m1.ins(i);
+				F0R(i,n) if (!iset[i] && pre[i] == -1 && m1.indep(i))
+					pre[i] = x, q.push(i);
+			} else {
+				auto backE = [&]() { // back edge
+					m2.clear(); 
+					F0R(c,2)F0R(i,n)if((x==i||iset[i])&&(pre[i]==-1)==c){
+						if (!m2.indep(i))return c?pre[i]=x,q.push(i),i:-1;
+						m2.ins(i); }
+					return n; 
+				};
+				for (int y; (y = backE()) != -1;) if (y == n) { 
+					for(; x != n; x = pre[x]) iset[x] = !iset[x];
+					return 1; }
 			}
 		}
+		return 0;
 	}
-	if (lst == -1) return 0;
-	do { gset[lst].indep^=1; lst=par[lst]; } while (lst!=-1);
-	iset.clear(); F0R(i,sz(gset)) if (gset[i].indep) 
-		gset[i].ipos = sz(iset), iset.pb(i);
-	return 1; // increased sz(iset) by 1
-}
-int calc() {
-	iset.clear(); verts = cols = 0;
-	trav(g,gset) {
-		ckmax(verts,max(g.ed.f,g.ed.s)+1);
-		ckmax(cols,g.col+1);
+	MatroidIsect(int n, M1 m1, M2 m2):n(n), m1(m1), m2(m2) {
+		iset.assign(n+1,0); iset[n] = 1;
+		m1.clear(); m2.clear(); // greedily add to basis
+		R0F(i,n) if (m1.indep(i) && m2.indep(i)) 
+			iset[i] = 1, m1.ins(i), m2.ins(i); 
+		while (augment());
 	}
-	while (augment()); // keep increasing size of indep set
-	return sz(iset);
-}
+};
 
-/**int solve() {
-	gset.clear(); 
-	int R; cin >> R; if (!R) exit(0);
-	map<int,int> m;
-	F0R(i,R) { // edges (a,b) and (c,d) of same col
-		int a,b,c,d; cin >> a >> b >> c >> d; 
-		gset.eb(a,b,i), gset.eb(c,d,i);
-		m[a] = m[b] = m[c] = m[d] = 0;
-	}
-	int co = 0; trav(t,m) t.s = co++;
-	trav(t,gset) t.ed.f = m[t.ed.f], t.ed.s = m[t.ed.s];
-	return calc();
-}
+/**
 int main() {
-	while (1) ps(2*solve());
-}*/
+	setIO();
+	int r; 
+	while (cin >> r) {
+		if (!r) break;
+		vpi ed; vi col;
+		F0R(i,r) {
+			int a,b,c,d; re(a,b,c,d);
+			ed.pb({a,b}), ed.pb({c,d});
+			col.pb(i); col.pb(i);
+		}
+		MatroidIsect<Gmat,Cmat> M(sz(ed),Gmat(ed),Cmat(col));
+		int cnt = 0; F0R(i,M.n) cnt += M.iset[i];
+		ps(2*cnt);
+	}
+}
+*/

@@ -20,3 +20,10 @@ void treeExample() {
 	assert(t.ook(10) == 1 && t.ook(11) == 2 && *t.fbo(0) == 8);
 	t.join(t2); // assuming T < T2 or T > T2, merge t2 into t
 }
+
+/**
+int atMost(Tree<pi>& T, int r) { 
+	return T.ook({r,MOD}); }
+int getSum(Tree<pi>& T, int l, int r) { 
+	return atMost(T,r)-atMost(T,l-1); }
+*/

@@ -53,6 +53,7 @@
     * [Tutorial (zscoder)](http://codeforces.com/blog/entry/47821)
     * Problems
       * [Buy Low Sell High](https://codeforces.com/contest/866/problem/D)
+      * [Bookface](https://codeforces.com/group/ZFgXbZSjvp/contest/274852/problem/C)
       * [CCDSAP Exam](https://www.codechef.com/problems/CCDSAP)
       * [Farm of Monsters](https://codeforces.com/gym/102538/problem/F)
       * [Moving Walkways](https://codeforces.com/contest/1209/problem/H)

@@ -11,5 +11,6 @@ TopCoder:
 
 # CF Hacking
 
- * [Java Arrays.sort()](https://codeforces.com/blog/entry/4827)
- * [Blowing up unordered_map](https://codeforces.com/blog/entry/62393)
+  * [Java Arrays.sort()](https://codeforces.com/blog/entry/4827)
+	* [One that actually works?](https://codeforces.com/contest/1324/submission/73058869)
+  * [Blowing up unordered_map](https://codeforces.com/blog/entry/62393)

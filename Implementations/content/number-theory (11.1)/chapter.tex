@@ -22,11 +22,21 @@
 
 	The number of divisors of $n$ is at most around 100 for $n < 5e4$, 500 for $n < 1e7$, 2000 for $n < 1e10$, 200\,000 for $n < 1e19$.
 
+	\textbf{Direchlet Convolution:} Given a function $f(x)$, let $(f*g)(x)=\sum_{d|x}g(d)f(x/d)$. If the partial sums $s_{f*g}(n),s_g(n)$ can be computed in $O(1)$ and $s_f(1\ldots n^{2/3})$ can be computed in $O(n^{2/3}$ then $s_f(n)$ can as well. Use
+	$$s_{f*g}(n)=\sum_{d=1}^ng(d)s_f(n/d).$$ % \implies s_f(n)=\frac{s_{f*g}(n)-\sum_{d=2}^ng(d)s_f(n/d)}{g(1)}
+	For example, if $f(x)=\phi(x)$ then $g(x)=1, (f*g)(x)=n$, and $s_f(n)=\frac{n(n+1)}{2}-\sum_{i=2}^ns_f(n/i).$
+
+	% https://codeforces.com/blog/entry/54150
+
+	\begin{comment}
 	Let $s(x)=\sum_{i=1}^x\phi(i).$ Then 
 	$$s(n)=\frac{n(n+1)}{2}-\sum_{i=2}^ns\left(\left\lfloor\frac{n}{i}\right\rfloor\right)$$
 	can be computed in faster than $\Theta(n)$.
+	\end{comment}
 	
-	\kactlimport{Primality/PrimeSieve.h}
+	\kactlimport{Primality/Sieve.h}
+	\kactlimport{Primality/MultiplicativePrefix.h}
+	\kactlimport{Primality/PrimeCnt.h}
 	\kactlimport{Primality/MillerRabin.h}
 	\kactlimport{Primality/FactorFast.h}
 

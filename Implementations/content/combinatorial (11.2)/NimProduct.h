@@ -1,6 +1,7 @@
 /**
  * Description: Product of nimbers is associative, commutative, and distributive 
- 	* over addition (xor). Forms finite field of size $2^{2^k}.$ Application: 
+ 	* over addition (xor). Forms finite field of size $2^{2^k}.$ 
+ 	* Defined by $ab=\text{mex}(\{a'b+ab'+a'b':a'<a,b'<b\}).$ Application: 
  	* Given 1D coin turning games $G_1,G_2$ $G_1\times G_2$ is the 2D coin turning 
  	* game defined as follows. If turning coins at $x_1,x_2,\ldots,x_m$ is legal 
  	* in $G_1$ and $y_1,y_2,\ldots,y_n$ is legal in $G_2$, then turning coins at 
@@ -20,7 +21,7 @@ ul _nimProd[64][64];
 ul nimProd(int i, int j) { // nim prod of 2^i, 2^j
 	ul& u =_nimProd[i][j]; if (u) return u;
 	if (!(i&j)) return u = 1ULL<<(i|j);
-	int a = (i&j)&-(i&j); // 2^{2^k}
+	int a = (i&j)&-(i&j); // a=2^k, consider 2^{2^k}
 	return u=nimProd(i^a,j)^nimProd((i^a)|(a-1),(j^a)|(i&(a-1)));
 	// 2^{2^k}*2^{2^k} = 2^{2^k}+2^{2^k-1}
 } // 2^{2^i}*2^{2^j} = 2^{2^i+2^j} if i<j
@@ -32,8 +33,7 @@ struct nb { // nimber
 	nb operator*(nb y) {
 		ul res = 0;
 		F0R(i,64)if(x>>i&1)F0R(j,64)if(y.x>>j&1)res^=nimProd(i,j);
-		return nb(res);
-	}
+		return nb(res); }
 	friend nb pow(nb b, ul p) {
 		nb res = 1; for (;p;p/=2,b=b*b) if (p&1) res = res*b;
 		return res; } // b^{2^{2^A}-1}=1 where 2^{2^A} > b

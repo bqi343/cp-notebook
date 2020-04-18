@@ -15,8 +15,7 @@ vi inv(vi v) { vi V(sz(v)); F0R(i,sz(v)) V[v[i]]=i; return V; }
 vi id() { vi v(n); iota(all(v),0); return v; }
 vi operator*(const vi& a, const vi& b) {
 	vi c(sz(a)); F0R(i,sz(a)) c[i] = a[b[i]];
-	return c;
-}
+	return c; }
 
 const int N = 15;
 struct Group {
@@ -24,9 +23,8 @@ struct Group {
 	vi sigma[N]; // sigma[t][k] = t, sigma[t][x] = x if x > k
 	vector<vi> gen;
 	void clear(int p) {
-		memset(flag,0, sizeof flag);
-		flag[p] = 1; sigma[p] = id();
-		gen.clear();
+		memset(flag,0,sizeof flag);
+		flag[p] = 1; sigma[p] = id(); gen.clear();
 	}
 } g[N];
 bool check(const vi& cur, int k) {
@@ -43,10 +41,8 @@ void ins(const vi& cur, int k) {
 void updateX(const vi& cur, int k) {
 	int t = cur[k]; // if flag, fixes k -> k
 	if (g[k].flag[t]) ins(inv(g[k].sigma[t])*cur,k-1); 
-	else {
-		g[k].flag[t] = 1, g[k].sigma[t] = cur;
-		trav(x,g[k].gen) updateX(x*cur,k);
-	}
+	else { g[k].flag[t] = 1, g[k].sigma[t] = cur;
+		trav(x,g[k].gen) updateX(x*cur,k); }
 }
 ll order(vector<vi> gen) { 
 	assert(sz(gen)); n = sz(gen[0]); F0R(i,n) g[i].clear(i);
@@ -54,7 +50,6 @@ ll order(vector<vi> gen) {
 	ll tot = 1;
 	F0R(i,n) {
 		int cnt = 0; F0R(j,i+1) cnt += g[i].flag[j];
-		tot *= cnt;
-	}
+		tot *= cnt; }
 	return tot;
 }

@@ -58,9 +58,9 @@ typedef vector<mi> vmi;
 typedef pair<mi,mi> pmi;
 typedef vector<pmi> vpmi;
 
-vector<vmi> comb;
+vector<vmi> scmb; // small combinations
 void genComb(int SZ) {
-	comb.assign(SZ,vmi(SZ)); comb[0][0] = 1;
+	scmb.assign(SZ,vmi(SZ)); scmb[0][0] = 1;
 	FOR(i,1,SZ) F0R(j,i+1) 
-		comb[i][j] = comb[i-1][j]+(j?comb[i-1][j-1]:0);
+		scmb[i][j] = scmb[i-1][j]+(j?scmb[i-1][j-1]:0);
 }

@@ -36,7 +36,7 @@
       * [Parametrized Algorithms Ch 12](http://parameterized-algorithms.mimuw.edu.pl/parameterized-algorithms.pdf)
       * [Illinois Lecture Notes](https://courses.engr.illinois.edu/cs598csc/sp2010/Lectures/Lecture17.pdf)
       * [Goemans](https://math.mit.edu/~goemans/18438F09/lec13.pdf)
-        * describes partition
+        * describes partition matroid
     * Problems
       * [Honesty](https://www.urionlinejudge.com.br/judge/en/problems/view/2128)
         * Max Size Graphic + Colorful

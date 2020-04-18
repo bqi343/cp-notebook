@@ -18,7 +18,7 @@
 		trav(i,adj[u]) if (comp[i] < 0) ckmin(low,val[i]?:dfs(i));
 		if (low == val[u]) {
 			allComp.pb(u); int x; 
-			do { comp[x=st.bk] = u; st.pop_back(); } while (x!=u);
+			do { comp[x=st.bk]=u; st.pop_back(); } while (x!=u);
 		}
 		return val[u] = low;
 	}

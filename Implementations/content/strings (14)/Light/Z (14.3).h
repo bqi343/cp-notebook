@@ -1,8 +1,8 @@
 /**
- * Source: http://codeforces.com/blog/entry/3107
+ * Description: \texttt{f[i]} is the max \texttt{len} such that 
+ 	* \texttt{s.substr(0,len) == s.substr(i,len)}
  * Time: O(N)
- * Description: for each index \texttt{i}, computes the the maximum 
- 	* \texttt{len} such that \texttt{s.substr(0,len) == s.substr(i,len)}
+ * Source: http://codeforces.com/blog/entry/3107
  * Verification: POI 12 Template, https://codeforces.com/contest/1137/problem/B
  */
 
@@ -17,9 +17,8 @@ vi z(str s) {
 	return ans;
 }
 vi getPrefix(str a, str b) { // find prefixes of a in b
-	vi t = z(a+b), T(sz(b));
-	F0R(i,sz(T)) T[i] = min(t[i+sz(a)],sz(a));
-	return T;
+	vi t = z(a+b); t = vi(sz(a)+all(t)); 
+	trav(u,t) ckmin(u,sz(a));
+	return t;
 }
-
 /// Usage: pr(z("abcababcabcaba"),getPrefix("abcab","uwetrabcerabcab"));

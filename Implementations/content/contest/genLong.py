@@ -36,11 +36,16 @@ with open('TemplateLong.cpp', 'w') as outfile:
 				v.append(line)
 			print("IMPORTING",fname)
 			if fname == 'Template.cpp':
+				foundMain = False
 				for i in range(len(v)):
 					line = v[i]
-					if i < len(v)-4:
+					if "// IGNORE" in line:
+						continue
+					if "int main()" in line:
+						foundMain = True
+					if not foundMain:
 						ad(line)
-					elif i > len(v)-4:
+					else:
 						extra.append(line)
 			else:
 				for line in v:

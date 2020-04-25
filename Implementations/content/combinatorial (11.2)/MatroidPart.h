@@ -76,7 +76,7 @@ template<class M> struct MatroidPart {
 		m.assign(k,_m); F0R(i,k) m[i].clear();
 		int cur = 0;
 		F0R(j,k) F0R(i,n) if (iset[i] == -1 && m[j].indep(i)) 
-			iset[i] = j, m[j].ins(i), cur --;
+			iset[i] = j, m[j].ins(i), cur ++;
 		int lef = n-cur;
 		F0R(i,n) if (iset[i] == -1) {
 			cur += augment(i); lef --;

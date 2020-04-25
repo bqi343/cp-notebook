@@ -1,7 +1,9 @@
 /**
  * Description: Easy BBST. Use split and merge to implement insert and delete.
  * Time: O(\log N)
- * Source: https://cp-algorithms.com/data_structures/treap.html + others
+ * Source: https://cp-algorithms.com/data_structures/treap.html + others. Also consider
+ 	* https://codeforces.com/contest/1340/submission/77861280 (no pointers -> faster)
+ 	* https://codeforces.com/contest/1340/submission/77852254 (shared_ptr -> destroyed when nothing refers to it)
  * Verification: http://www.spoj.com/problems/ORDERSET/
  */
 
@@ -11,7 +13,7 @@ struct tnode {
 	int sz; ll sum; // for range queries
 	bool flip = 0; // lazy update
 	tnode (int _val) {
-		pri = rand()+(rand()<<15); sum = val = _val; 
+		pri = rng(); sum = val = _val; 
 		sz = 1; c[0] = c[1] = NULL;
 	}
 };
@@ -24,9 +26,10 @@ pt prop(pt x) {
 	return x;
 }
 pt calc(pt x) {
-	assert(!x->flip); prop(x->c[0]), prop(x->c[1]);
-	x->sz = 1+getsz(x->c[0])+getsz(x->c[1]);
-	x->sum = x->val+getsum(x->c[0])+getsum(x->c[1]);
+	pt a = x->c[0], b = x->c[1];
+	assert(!x->flip); prop(a), prop(b);
+	x->sz = 1+getsz(a)+getsz(b);
+	x->sum = x->val+getsum(a)+getsum(b);
 	return x;
 }
 void tour(pt x, vi& v) {

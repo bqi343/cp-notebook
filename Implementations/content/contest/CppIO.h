@@ -5,6 +5,7 @@
 	* https://codeforces.com/blog/entry/68809 (tests)
 	* https://codeforces.com/blog/entry/5217 (input speed)
 	* https://codeforces.com/contest/1305/submission/72346555 (tourist)
+	* https://codeforces.com/blog/entry/76087
  * Verification: http://codeforces.com/contest/1045/problem/D
  */
 
@@ -26,24 +27,20 @@ template<class A, size_t SZ> void re(array<A,SZ>& x) { trav(a,x) re(a); }
 
 // TO_STRING
 #define ts to_string
-template<class A, class B> str ts(pair<A,B> p);
-template<class A> str ts(complex<A> c) { return ts(mp(c.real(),c.imag())); }
+str ts(char c) { return str(1,c); }
 str ts(bool b) { return b ? "true" : "false"; }
-str ts(char c) { str s = ""; s += c; return s; }
-str ts(str s) { return s; }
 str ts(const char* s) { return (str)s; }
+str ts(str s) { return s; }
+template<class A> str ts(complex<A> c) { 
+	stringstream ss; ss << c; return ss.str(); }
 str ts(vector<bool> v) { 
-	bool fst = 1; str res = "{";
-	F0R(i,sz(v)) {
-		if (!fst) res += ", ";
-		fst = 0; res += ts(v[i]);
-	}
-	res += "}"; return res;
-}
+	str res = "{"; F0R(i,sz(v)) res += char('0'+v[i]);
+	res += "}"; return res; }
 template<size_t SZ> str ts(bitset<SZ> b) {
 	str res = ""; F0R(i,SZ) res += char('0'+b[i]);
 	return res; }
-template<class T> str ts(T v) {
+template<class A, class B> str ts(pair<A,B> p);
+template<class T> str ts(T v) { // containers with begin(), end()
 	bool fst = 1; str res = "{";
 	for (const auto& x: v) {
 		if (!fst) res += ", ";
@@ -65,12 +62,12 @@ template<class H, class... T> void ps(const H& h, const T&... t) {
 // DEBUG
 void DBG() { cerr << "]" << endl; }
 template<class H, class... T> void DBG(H h, T... t) {
-	cerr << to_string(h); if (sizeof...(t)) cerr << ", ";
+	cerr << ts(h); if (sizeof...(t)) cerr << ", ";
 	DBG(t...); }
 #ifdef LOCAL // compile with -DLOCAL
-#define dbg(...) cerr << "[" << #__VA_ARGS__ << "]: [", DBG(__VA_ARGS__)
+#define dbg(...) cerr << "LINE(" << __LINE__ << ") -> [" << #__VA_ARGS__ << "]: [", DBG(__VA_ARGS__)
 #else
-#define dbg(...) 42
+#define dbg(...) 0
 #endif
 
 // FILE I/O

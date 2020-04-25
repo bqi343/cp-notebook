@@ -15,8 +15,7 @@
  */
 
 typedef struct snode* sn;
-struct snode { 
-	//////// VARIABLES
+struct snode { //////// VARIABLES
 	sn p, c[2]; // parent, children
 	sn extra; // extra cycle node for "The Applicant"
 	bool flip = 0; // subtree flipped or not
@@ -41,9 +40,8 @@ struct snode {
 		if (!p) return -2;
 		F0R(i,2) if (p->c[i] == this) return i;
 		return -1; // p is path-parent pointer
-		/// -> not in current splay tree
-	}
-	/// test if root of current splay tree
+	} // -> not in current splay tree
+	// test if root of current splay tree
 	bool isRoot() { return dir() < 0; } 
 	friend void setLink(sn x, sn y, int d) {
 		if (y) y->p = x;
@@ -78,12 +76,11 @@ struct snode {
 	//////// QUERIES
 	friend sn lca(sn x, sn y) {
 		if (x == y) return x;
-		x->access(), y->access(); if (!x->p) return NULL; 
-		/// access at y did not affect x -> not connected
+		x->access(), y->access(); if (!x->p) return NULL;
 		x->splay(); return x->p?:x;
-	}
+	} // access at y did not affect x -> not connected
 	friend bool connected(sn x, sn y) { return lca(x,y); } 
-	/// # nodes above
+	// # nodes above
 	int distRoot() { access(); return getSz(c[0]); } 
 	sn getRoot() { // get root of LCT component
 		access(); auto a = this; 

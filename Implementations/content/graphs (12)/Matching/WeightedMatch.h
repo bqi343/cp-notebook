@@ -76,7 +76,7 @@ template<int SZ> struct WeightedMatch {
 		FOR(x,1,N+1) floFrom[b][x] = 0;
 		trav(xs,flo[b]) { // find tightest constraints
 			FOR(x,1,NX+1) if (g[b][x].w == 0 || eDelta(g[xs][x]) < 
-				eDelta(g[b][x])) g[b][x] = g[xs][x], g[x][b] = g[x][xs]; 
+				eDelta(g[b][x])) g[b][x]=g[xs][x], g[x][b]=g[x][xs]; 
 			FOR(x,1,N+1) if (floFrom[xs][x]) floFrom[b][x] = xs; 
 		} // floFrom to deconstruct blossom
 		setSlack(b); // since didn't qPush everything

@@ -7,15 +7,13 @@
  	* also see B from https://codeforces.com/gym/101657/standings
  */
 
-pi dp[2001][4001];
-str A,B; // both of len <= 2000
+pi dp[2001][4001]; str A,B; // both of len <= 2000
 void init() { // naive LCS, store where values came from
 	FOR(i,1,sz(A)+1) FOR(j,1,sz(B)+1) { 
 		pi& bes = dp[i][j]; bes = {-1,-1};
 		ckmax(bes,{dp[i-1][j].f,0});
 		ckmax(bes,{dp[i-1][j-1].f+(A[i-1] == B[j-1]),-1});
-		ckmax(bes,{dp[i][j-1].f,-2});
-		bes.s *= -1;
+		ckmax(bes,{dp[i][j-1].f,-2}); bes.s *= -1;
 	}
 }
 void adjust(int col) { // remove col'th character of b, fix DP
@@ -46,7 +44,6 @@ int circLCS(str a, str b) {
 	int ans = 0;
 	F0R(i,sz(b)) {
 		ckmax(ans,getAns({sz(a),i+sz(b)}));
-		adjust(i+1);
-	}
+		adjust(i+1); }
 	return ans;
 }

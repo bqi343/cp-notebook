@@ -11,19 +11,20 @@
  * Usage: vmi v={1,5,2,3,4}; ps(exp(2*log(v,9),9)); // squares v
  * Verification: https://codeforces.com/contest/438/problem/E
  	* https://codeforces.com/gym/102028/submission/77687049
+ 	* https://loj.ac/problem/6703 (MultipointEval)
  */
 
 #include "PolyConv.h"
 
 poly inv(poly A, int n) { // Q-(1/Q-A)/(-Q^{-2})
-	poly B = {1/A[0]};
+	poly B{1/A[0]};
 	while (sz(B) < n) {
 		int x = 2*sz(B);
 		B = RSZ(2*B-conv(RSZ(A,x),conv(B,B)),x); }
 	return RSZ(B,n);
 }
 poly sqrt(const poly& A, int n) {  // Q-(Q^2-A)/(2Q)
-	assert(A[0] == 1); poly B = {1};
+	assert(A[0] == 1); poly B{1};
 	while (sz(B) < n) {
 		int x = 2*sz(B);
 		B = T(1)/T(2)*RSZ(B+mul(RSZ(A,x),inv(B,x)),x); }
@@ -44,3 +45,22 @@ poly exp(poly A, int n) { // Q-(lnQ-A)/(1/Q)
 		B = RSZ(B+conv(B,RSZ(A,x)-log(B,x)),x); }
 	return RSZ(B,n);
 }
+
+/**
+struct MultipointEval {
+	poly stor[1<<18];
+	void prep(vmi v, int ind = 1) { // v -> places to evaluate at
+		if (sz(v) == 1) { stor[ind] = {-v[0],1}; return; }
+		int m = sz(v)/2;
+		prep(vmi(begin(v),begin(v)+m),2*ind);
+		prep(vmi(m+all(v)),2*ind+1);
+		stor[ind] = conv(stor[2*ind],stor[2*ind+1]);
+	}
+	vmi res;
+	void eval(vmi v, int ind = 1) {
+		v = divi(v,stor[ind]).s;
+		if (sz(stor[ind]) == 2) { res.pb(v[0]); return; }
+		eval(v,2*ind); eval(v,2*ind+1);
+	}
+};
+*/

@@ -16,14 +16,12 @@
 
 const ld EPS = 1e-12;
 int getRow(Mat<ld>& m, int n, int i, int nex) {
-	pair<ld,int> bes = {0,-1};
+	pair<ld,int> bes = {0,-1}; // find row with max absolute value
 	FOR(j,nex,n) ckmax(bes,{abs(m.d[j][i]),j}); 
-	return bes.f < EPS ? -1 : bes.s;
-}
+	return bes.f < EPS ? -1 : bes.s; }
 int getRow(Mat<mi>& m, int n, int i, int nex) {
 	FOR(j,nex,n) if (m.d[j][i] != 0) return j;
-	return -1;
-}
+	return -1; }
 template<class T> pair<T,int> gauss(Mat<T>& m) { 
 	int n = m.r, rank = 0, nex = 0;
 	T prod = 1; // determinant

@@ -19,8 +19,7 @@ vi hullInd(const vP& v) {
 	#define bad(x) cross(v[C[sz(C)-2]],v[C.bk],v[x]) <= 0
 	trav(t,cand) {
 		while (sz(C) > 1 && bad(t)) C.pop_back();
-		C.pb(t);
-	} // if hull has > 1 point
+		C.pb(t); } // if hull has > 1 point
 	if (v[ind]!=v[C.bk])while(sz(C)>2&&bad(ind))C.pop_back();
 	return C;
 }

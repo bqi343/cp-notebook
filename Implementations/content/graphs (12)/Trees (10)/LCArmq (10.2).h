@@ -14,11 +14,11 @@ template<int SZ> struct LCA {
 	int N, R = 1, depth[SZ], st[SZ];
 	vi adj[SZ]; vpi tmp; RMQ<pi> r;
 	void ae(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
-	void dfs(int u, int prev){
-		st[u] = sz(tmp), depth[u] = depth[prev]+1;
-		tmp.pb({depth[u],u});
-		trav(v,adj[u]) if (v != prev) 
-			dfs(v,u), tmp.pb({depth[u],u});
+	void dfs(int u, int prv){
+		st[u] = sz(tmp), depth[u] = depth[prv]+1;
+		tmp.eb(depth[u],u); 
+		trav(v,adj[u]) if (v != prv) 
+			dfs(v,u), tmp.eb(depth[u],u);
 	}
 	void init(int _N) { N = _N; dfs(R,0); r.init(tmp); }
 	int lca(int u, int v){
@@ -29,11 +29,9 @@ template<int SZ> struct LCA {
 	vpi compress(vi S) {
 		static vi rev; rev.rsz(N+1);
 		auto cmp = [&](int a, int b) { return st[a] < st[b]; };
-		sort(all(S),cmp);
-		int m = sz(S)-1; F0R(i,m) S.pb(lca(S[i],S[i+1]));
+		sort(all(S),cmp); R0F(i,sz(S)-1) S.pb(lca(S[i],S[i+1]));
 		sort(all(S),cmp); S.erase(unique(all(S)),end(S));
-		F0R(i,sz(S)) rev[S[i]] = i;
-		vpi ret = {pi(0,S[0])};
+		vpi ret{{0,S[0]}}; F0R(i,sz(S)) rev[S[i]] = i;
 		F0R(i,sz(S)-1) ret.eb(rev[lca(S[i],S[i+1])],S[i+1]);
 		return ret;
 	}

@@ -55,6 +55,8 @@
 
   * [Power Towers](https://open.kattis.com/problems/towers)
     * [Solution](https://petr-mitrichev.blogspot.com/2019/06/power-towers-solution.html)
+  * [ODE](https://codeforces.com/blog/entry/76447)
+    * EGF, D&C, Poly Inverse, Power Method
   * [P-Recursive](https://min-25.hatenablog.com/entry/2018/05/10/212805)
     * For a sequence $S_1,S_2,S_3,\ldots$ and $D\ge 0$, find the minimum $B>0$ such that there exist (nontrivial) coefficients $c_{ij}$ such that $\sum_{i=0}^{B-1}S_{y+i}\sum_{j=0}^{D}c_{ij}y^j=0$ for all $y>0$.
     * Ignore leading zeroes, use Gaussian Elim to find coefs. 

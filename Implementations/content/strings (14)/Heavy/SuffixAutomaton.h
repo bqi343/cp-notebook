@@ -69,6 +69,5 @@ struct SuffixAutomaton {
 	ll numDistinct2() { // another way to do above
 		ll ans = 1;
 		FOR(i,1,sz(st)) ans += st[i].len-st[st[i].link].len;
-		return ans;
-	}
+		return ans; }
 };

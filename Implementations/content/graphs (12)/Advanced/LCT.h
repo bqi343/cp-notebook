@@ -1,14 +1,18 @@
 /**
  * Description: Link-Cut Tree. Given a function $f(1\ldots N)\to 1\ldots N,$ 
- 	* evaluates $f^b(a)$ for any $a,b.$ \texttt{x->access()} brings \texttt{x}
- 	* to the top and propagates it; its left subtree will be the path from 
- 	* \texttt{x} to the root and its right subtree will be empty. \texttt{sz}
- 	* is for path queries; \texttt{sub}, \texttt{vsub} are for subtree queries.
+ 	* evaluates $f^b(a)$ for any $a,b.$ \texttt{sz} is for path queries; 
+ 	* \texttt{sub}, \texttt{vsub} are for subtree queries. \texttt{x->access()} 
+ 	* brings \texttt{x} to the top and propagates it; its left subtree will be 
+ 	* the path from \texttt{x} to the root and its right subtree will be empty. 
+ 	* Then \texttt{sub} will be the number of nodes in the connected component
+ 	* of \texttt{x} and \texttt{vsub} will be the number of nodes under \texttt{x}.
+ 	* Use \texttt{makeRoot} for arbitrary path queries.
  * Time: O(\log N)
+ * Usage: FOR(i,1,N+1)LCT[i]=new snode(i); link(LCT[1],LCT[2],1);
  * Source: Dhruv Rohatgi, Eric Zhang
 	* https://sites.google.com/site/kc97ble/container/splay-tree/splaytree-cpp-3
 	* https://codeforces.com/blog/entry/67637
- * Verification: 
+ * Verification: (see README for links)
 	* ekzhang Balanced Tokens
 	* Dynamic Tree Test (Easy)
 	* https://probgate.org/viewproblem.php?pid=578 (The Applicant)
@@ -87,17 +91,15 @@ struct snode { //////// VARIABLES
 		while (a->c[0]) a = a->c[0], a->prop();
 		a->access(); return a;
 	}
-	sn getPar(int b) { // get b-th parent
+	sn getPar(int b) { // get b-th parent on path to root
 		access(); b = getSz(c[0])-b; assert(b >= 0);
-		auto a = this;
-		while (1) {
+		for (sn a = this;;a->prop()) {
 			int z = getSz(a->c[0]);
 			if (b == z) { a->access(); return a; }
 			if (b < z) a = a->c[0];
 			else a = a->c[1], b -= z+1;
-			a->prop();
 		}
-	}
+	} // can also get min, max on path to root, etc
 	//////// MODIFICATIONS
 	void set(int v) { access(); val = v; calc(); } 
 	friend void link(sn x, sn y, bool force = 0) { 

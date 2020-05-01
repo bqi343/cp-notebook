@@ -13,10 +13,10 @@ In general, given an equation $Ax = b$, the solution to a variable $x_i$ is give
 \[x_i = \frac{\det A_i'}{\det A} \]
 where $A_i'$ is $A$ with the $i$'th column replaced by $b$.
 
-\section{Recurrences}
-If $a_n = c_1 a_{n-1} + \dots + c_k a_{n-k}$, and $r_1, \dots, r_k$ are distinct roots of $x^k + c_1 x^{k-1} + \dots + c_k$, there are $d_1, \dots, d_k$ s.t.
-\[a_n = d_1r_1^n + \dots + d_kr_k^n. \]
-Non-distinct roots $r$ become polynomial factors, e.g. $a_n = (d_1n + d_2)r^n$.
+% \section{Recurrences}
+% If $a_n = c_1 a_{n-1} + \dots + c_k a_{n-k}$, and $r_1, \dots, r_k$ are distinct roots of $x^k + c_1 x^{k-1} + \dots + c_k$, there are $d_1, \dots, d_k$ s.t.
+% \[a_n = d_1r_1^n + \dots + d_kr_k^n. \]
+% Non-distinct roots $r$ become polynomial factors, e.g. $a_n = (d_1n + d_2)r^n$.
 
 \section{Trigonometry}
 \begin{align*}
@@ -85,12 +85,14 @@ Integration by parts:
 	1^4 + 2^4 + 3^4 + \dots + n^4 &= \frac{n(n+1)(2n+1)(3n^2+3n - 1)}{30} 
 \end{align*}
 \end{comment}
-$$1^4 + 2^4 + 3^4 + \dots + n^4= \frac{n(n+1)(2n+1)(3n^2+3n - 1)}{30}$$
-$$e^x = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots,\,(-\infty<x<\infty)$$
+
+% $$1^4 + 2^4 + 3^4 + \dots + n^4= \frac{n(n+1)(2n+1)(3n^2+3n - 1)}{30}$$
+% $$e^x = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots,\,(-\infty<x<\infty)$$
 $$\ln(1+x) = x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\dots,\,(-1<x\leq1)$$
 $$\sqrt{1+x} = 1+\frac{x}{2}-\frac{x^2}{8}+\frac{2x^3}{32}-\frac{5x^4}{128}+\dots,\,(-1\leq x\leq1)$$
 $$\sin x = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\dots,\,(-\infty<x<\infty)$$
 $$\cos x = 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\dots,\,(-\infty<x<\infty)$$
+% $$e^{ix}=\cos x+i\sin x$$
 
 \section{Probability theory}
 Let $X$ be a discrete random variable with probability $p_X(x)$ of assuming the value $x$. It will then have an expected value (mean) $\mu=\mathbb{E}(X)=\sum_xxp_X(x)$ and variance $\sigma^2=V(X)=\mathbb{E}(X^2)-(\mathbb{E}(X))^2=\sum_x(x-\mathbb{E}(X))^2p_X(x)$ where $\sigma$ is the standard deviation. 
@@ -102,11 +104,11 @@ If $X,Y$ are independent, \[V(aX+bY) = a^2V(X)+b^2V(Y).\]
 
 \subsection{Discrete distributions}
 
-\subsubsection{Binomial distribution}
-\# of successes in $n$ independent yes/no experiments, each which yields success with probability $p$ is $\textrm{Bin}(n,p),\,n=1,2,\dots,\, 0\leq p\leq1$.
-\[p(k)=\binom{n}{k}p^k(1-p)^{n-k}\]
-\[\mu = np,\,\sigma^2=np(1-p)\]
-$\textrm{Bin}(n,p)\approx \textrm{Po}(np)$ for small $p$.
+% \subsubsection{Binomial distribution}
+% \# of successes in $n$ independent yes/no experiments, each which yields success with probability $p$ is $\textrm{Bin}(n,p),\,n=1,2,\dots,\, 0\leq p\leq1$.
+% \[p(k)=\binom{n}{k}p^k(1-p)^{n-k}\]
+% \[\mu = np,\,\sigma^2=np(1-p)\]
+% $\textrm{Bin}(n,p)\approx \textrm{Po}(np)$ for small $p$.
 
 \subsubsection{First success distribution}
 The number of trials needed to get the first success in independent yes/no experiments, each wich yields success with probability $p$ is $\textrm{Fs}(p),\,0\leq p\leq1$.
@@ -117,17 +119,18 @@ The number of trials needed to get the first success in independent yes/no exper
 The number of events occurring in a fixed period of time $t$ if these events occur with a known average rate $\kappa$ and independently of the time since the last event is $\textrm{Po}(\lambda),\,\lambda=t\kappa$.
 \[p(k)=e^{-\lambda}\frac{\lambda^k}{k!}, k=0,1,2,\dots\]
 \[\mu=\lambda,\,\sigma^2=\lambda\]
+$\textrm{Bin}(n,p)\approx \textrm{Po}(np)$ for small $p$ (binomial distribution with $n$ coin flips, each of which is heads with probability $p$).
 
 \subsection{Continuous distributions}
 
-\subsubsection{Uniform distribution}
-If the probability density function is constant between $a$ and $b$ and 0 elsewhere it is $\textrm{U}(a,b),\,a<b$.
-\[f(x) = \left\{
-\begin{array}{cl}
-\frac{1}{b-a} & a<x<b\\
-0 & \textrm{otherwise}
-\end{array}\right.\]
-\[\mu=\frac{a+b}{2},\,\sigma^2=\frac{(b-a)^2}{12}\]
+% \subsubsection{Uniform distribution}
+% If the probability density function is constant between $a$ and $b$ and 0 elsewhere it is $\textrm{U}(a,b),\,a<b$.
+% \[f(x) = \left\{
+% \begin{array}{cl}
+% \frac{1}{b-a} & a<x<b\\
+% 0 & \textrm{otherwise}
+% \end{array}\right.\]
+% \[\mu=\frac{a+b}{2},\,\sigma^2=\frac{(b-a)^2}{12}\]
 
 \subsubsection{Exponential distribution}
 The time between events in a Poisson process is $\textrm{Exp}(\lambda),\,\lambda>0$.
@@ -141,8 +144,8 @@ The time between events in a Poisson process is $\textrm{Exp}(\lambda),\,\lambda
 \subsubsection{Normal distribution}
 Most real random values with mean $\mu$ and variance $\sigma^2$ are well described by $\mathcal{N}(\mu,\sigma^2),\,\sigma>0$.
 \[ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} \]
-If $X_1 \sim \mathcal{N}(\mu_1,\sigma_1^2)$ and $X_2 \sim \mathcal{N}(\mu_2,\sigma_2^2)$ then
-\[ aX_1 + bX_2 + c \sim \mathcal{N}(\mu_1+\mu_2+c,a^2\sigma_1^2+b^2\sigma_2^2) \]
+% If $X_1 \sim \mathcal{N}(\mu_1,\sigma_1^2)$ and $X_2 \sim \mathcal{N}(\mu_2,\sigma_2^2)$ then
+% \[ aX_1 + bX_2 + c \sim \mathcal{N}(\mu_1+\mu_2+c,a^2\sigma_1^2+b^2\sigma_2^2) \]
 
 \section{Markov chains}
 A \emph{Markov chain} is a discrete random process with the property that the next state depends only on the current state.

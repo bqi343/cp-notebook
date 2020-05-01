@@ -1,6 +1,8 @@
 /**
  * Description: Multiply two polynomials. For xor convolution 
- 	* don't multiply \texttt{v} by \texttt{roots[ind]}.
+ 	* don't multiply \texttt{v} by \texttt{roots[ind]}. If
+ 	* product of sizes is at most a certain threshold (ex. 10000)
+ 	* then it's faster to multiply directly.
  * Time: O(N\log N)
  * Source: 
  	* KACTL

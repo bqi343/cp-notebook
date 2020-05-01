@@ -1,5 +1,5 @@
 /**
- * Description: find nearest neighbor to point and squared dist
+ * Description: nearest neighbor to point and squared dist
  * Time: Insertion and find nearest neighbor are $O(\log N)$ on 
  	* average for randomly distributed points.
  * Source: KACTL, Stanford

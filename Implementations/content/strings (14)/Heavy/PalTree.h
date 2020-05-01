@@ -49,8 +49,7 @@ struct PalTree {
 			auto& z = d.bk; z.diff = z.len-d[z.link].len;
 			z.slink = z.diff == d[z.link].diff 
 				? d[z.link].slink : z.link;
-			// max suf with different dif
-		}
+		} // max suf with different dif
 		last = d[last].to[c]; d[last].oc ++;
 		updAns();
 	}

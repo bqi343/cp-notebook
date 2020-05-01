@@ -11,11 +11,11 @@
 
 template<int SZ> struct Centroid {
 	vi adj[SZ];
+	void ae(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
 	bool done[SZ]; // processed as centroid yet
 	int sub[SZ], par[SZ]; // subtree size, current par
 	pi cen[SZ]; // immediate centroid anc
 	vi dist[SZ]; // dists to all centroid ancs
-	void ae(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
 	void dfs(int x) {
 		sub[x] = 1;
 		trav(y,adj[x]) if (!done[y] && y != par[x]) {

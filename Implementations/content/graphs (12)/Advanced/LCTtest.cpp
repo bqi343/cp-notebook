@@ -393,7 +393,6 @@ int main() {
 	FOR(i,1,10001) {
 		int t,a = rand()%n+1,b = rand()%n+1; 
 		t = rand()%3+1;
-		// ps("HUH",i,t);
 		if (t == 1) {
 			qpath(a,b);
 		} else if (t == 2) {
@@ -401,7 +400,6 @@ int main() {
 			qsub(b);
 		} else {
 			int c = rand()%n+1;
-			// ps("HA");
 			root(a);
 			qlca(b,c);
 		}
@@ -409,7 +407,6 @@ int main() {
 			int x = rand()%n+1;
 			int y = *begin(adj[x]);
 			de(x,y);
-			// ps("HA",x,y); exit(0);
 			while (1) {
 				int a = rand()%n+1, b = rand()%n+1;
 				if (!connected(LCT[a],LCT[b])) {
@@ -417,7 +414,6 @@ int main() {
 					break;
 				}
 			}
-			// ps("WUT"); exit(0);
 		}
 	}
 	ps("OK");

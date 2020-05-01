@@ -1,4 +1,5 @@
 # based off grader.sh, kactl preprocessor
+# or just use https://github.com/Errichto/youtube/blob/master/testing/s.sh :)
 
 import subprocess # run terminal stuff
 import os # check if file exists

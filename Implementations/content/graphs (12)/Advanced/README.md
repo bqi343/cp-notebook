@@ -17,16 +17,22 @@
       * CF
         * [Silence's Sounds](https://codeforces.com/contest/1109/problem/F)
           * test connectivity
+        * [Train Tracking](https://codeforces.com/contest/1344/problem/E)
+          * switching can be done with LCT access
+          * set min on path with lazy prop
+          * [Solution](https://codeforces.com/contest/1344/submission/79212522)
         * [Tree or not Tree](https://codeforces.com/contest/117/problem/E)
           * tree + one edge
         * [Old Driver Tree](https://codeforces.com/contest/1172/problem/E)
         * [Pastoral Oddities](https://codeforces.com/contest/603/problem/E)
           * path + subtree queries
-      * USACO Camp
+      * USACO Camp (not public)
         * [The Applicant](https://probgate.org/viewproblem.php?pid=578)
           * tree + one edge
         * [Cows Play on a Tree](https://probgate.org/viewproblem.php?pid=259)
-          * HLD or LCT with Treap
+          * reverse tree paths
+          * HLD + Treap
+          * or two LCTs, one for real tree labels and one for query labels
       * Other
         * [Balanced Tokens (Eric Zhang)](https://www.hackerrank.com/contests/pwshpc-online-round/challenges/pwsh-tokens/problem)
         * [Dynamic Tree Test (Easy)](https://dmoj.ca/problem/ds5easy)

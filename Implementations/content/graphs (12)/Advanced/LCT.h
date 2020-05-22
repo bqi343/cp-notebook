@@ -65,6 +65,11 @@ struct snode { //////// VARIABLES
 		if (!isRoot()) p->prop(), prop(), rot();
 		prop();
 	}
+	sn fbo(int b) { // find by order
+		prop(); int z = getSz(c[0]); // of splay tree
+		if (b == z) { splay(); return this; }
+		return b < z ? c[0]->fbo(b) : c[1] -> fbo(b-z-1);
+	}
 	//////// BASE OPERATIONS
 	void access() { // bring this to top of tree, propagate
 		for (sn v = this, pre = NULL; v; v = v->p) {
@@ -81,24 +86,19 @@ struct snode { //////// VARIABLES
 	friend sn lca(sn x, sn y) {
 		if (x == y) return x;
 		x->access(), y->access(); if (!x->p) return NULL;
-		x->splay(); return x->p?:x;
+		x->splay(); return x->p?:x; // y was below x in latter case
 	} // access at y did not affect x -> not connected
 	friend bool connected(sn x, sn y) { return lca(x,y); } 
 	// # nodes above
 	int distRoot() { access(); return getSz(c[0]); } 
 	sn getRoot() { // get root of LCT component
-		access(); auto a = this; 
+		access(); sn a = this; 
 		while (a->c[0]) a = a->c[0], a->prop();
 		a->access(); return a;
 	}
 	sn getPar(int b) { // get b-th parent on path to root
 		access(); b = getSz(c[0])-b; assert(b >= 0);
-		for (sn a = this;;a->prop()) {
-			int z = getSz(a->c[0]);
-			if (b == z) { a->access(); return a; }
-			if (b < z) a = a->c[0];
-			else a = a->c[1], b -= z+1;
-		}
+		return fbo(b);
 	} // can also get min, max on path to root, etc
 	//////// MODIFICATIONS
 	void set(int v) { access(); val = v; calc(); } 

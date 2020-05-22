@@ -13,8 +13,8 @@
 \section{Trees}
 	\kactlimport{Trees (10)/LCAjump (10.2).h}
 	\kactlimport{Trees (10)/LCArmq (10.2).h}
-	\kactlimport{Trees (10)/Centroid (10.3).h}
 	\kactlimport{Trees (10)/HLD (10.3).h}
+	\kactlimport{Trees (10)/Centroid (10.3).h}
 
 	\subsection{SqrtDecompton}
 
@@ -34,6 +34,10 @@
 		\item If $u$ is an ancestor of $v,$ query \texttt{[st[u],st[v]]}.
 		\item Otherwise, query $\texttt{[en[u],st[v]]}$ and consider $LCA(u,v)$ separately.
 		\end{itemize}
+
+		Solutions with worse complexities can be faster if you optimize the operations that are performed most frequently. Use arrays instead of vectors whenever possible. Iterating over an array in order is faster than iterating through the same array in some other order (ex. one given by a random permutation) or DFSing on a tree of the same size. Also, the difference between $\sqrt N$ and the optimal block (or buffer) size can be quite large. Try up to 5x smaller or larger (at least).
+
+		% ex. GP of Nanjing 2020 K
 
 \section{DFS Algorithms}
 
@@ -60,16 +64,17 @@
 
 \section{Matching}
 
-	\kactlimport{Matching/DFSmatch.h}
+	% \kactlimport{Matching/DFSmatch.h}
 	\kactlimport{Matching/Hungarian.h}
 	\kactlimport{Matching/UnweightedMatch.h}
 	\kactlimport{Matching/FakeMatch.h}
 	\kactlimport{Matching/WeightedMatch.h}
+	\kactlimport{Matching/MaxMatchLexMin.h}
 	% \kactlimport{Matching/UnweightedMatch2.h}
 
 \section{Advanced}
 
-	\kactlimport{Advanced/MaxClique.h}
+	% \kactlimport{Advanced/MaxClique.h}
 	\kactlimport{Advanced/DominatorTree.h}
 	\kactlimport{Advanced/EdgeColor.h}
 	\kactlimport{Advanced/DirectedMST.h}

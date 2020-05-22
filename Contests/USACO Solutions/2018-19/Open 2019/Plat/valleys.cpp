@@ -1,3 +1,5 @@
+// also see https://utipc20s.kattis.com/problems/utipc20s.islandarchipelago (a generalization of this)
+
 #pragma GCC optimize ("O3")
 #pragma GCC target ("sse4")
 

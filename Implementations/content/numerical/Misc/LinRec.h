@@ -1,8 +1,8 @@
 /**
  * Description: Berlekamp-Massey, computes linear recurrence of 
- * order $N$ for sequence of $2N$ terms
- * Time: If $R$ is reccurrence length, then \texttt{init} $\implies O(NR)$
- 	* and \texttt{eval} $\implies O(R^2\log p)$.
+	* order $N$ for sequence of $2N$ terms.
+ * Time: \texttt{init} $\Rightarrow O(N|C|),$ 
+ 	* \texttt{eval} $\Rightarrow O(|C|^2\log p)$.
  * Usage: LinRec L; L.init({0,1,1,2,3,5,8}); // Fibonacci
  * Source: 
 	* https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm

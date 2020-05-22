@@ -49,10 +49,12 @@ poly& operator*=(poly& l, const poly& r) { return l = l*r; }
 
 pair<poly,poly> quoRem(poly a, poly b) { 
 	remz(a); remz(b); assert(sz(b));
-	auto B = T(1)/b.bk; trav(t,a) t *= B; trav(t,b) t *= B;
+	T lst = b.bk, B = T(1)/lst; trav(t,a) t *= B; 
+	trav(t,b) t *= B;
 	poly q(max(sz(a)-sz(b)+1,0));
 	for (int dif; (dif=sz(a)-sz(b)) >= 0; remz(a)) {
 		q[dif] = a.bk; F0R(i,sz(b)) a[i+dif] -= q[dif]*b[i]; }
+	trav(t,a) t *= lst;
 	return {q,a}; // quotient, remainder
 }
 /**
@@ -62,3 +64,14 @@ poly rem(poly a, poly b) { return quoRem(a,b).s; }
 poly a = {1,3,5,8,6,0,0,0,0}, b = {1,5,1};
 ps(quoRem(a,b)); a = 2*a, b = 2*b; ps(quoRem(a,b));
 */
+T resultant(poly a, poly b) { // R(A,B)
+	// =b_m^n*prod_{j=1}^mA(mu_j)
+	// =b_m^na_m^n*prod_{i=1}^nprod_{j=1}^m(mu_j-lambda_i)
+	// =(-1)^{mn}a_n^m*prod_{i=1}^nB(lambda_i)
+	// =(-1)^{nm}R(B,A)
+	// Also, R(A,B)=b_m^{deg(A)-deg(A-CB)}R(A-CB,B)
+	int ad = sz(a)-1, bd = sz(b)-1; 
+	if (bd <= 0) return bd < 0 ? 0 : pow(b.bk,ad);
+    int pw = ad; a = quoRem(a,b).s; pw -= (ad = sz(a)-1);
+    return resultant(b,a)*pow(b.bk,pw)*T((bd&ad&1)?-1:1);
+}

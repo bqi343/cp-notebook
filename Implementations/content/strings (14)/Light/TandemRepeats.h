@@ -1,8 +1,10 @@
 /**
- * Description: Find all $(i,p)$ such that \texttt{s.substr(i,p) == s.substr(i+p,p)}.
+ * Description: Find all $(i,p)$ such that 
+ 	* \texttt{s.substr(i,p) == s.substr(i+p,p)}. No two intervals
+ 	* with the same period intersect or touch.
  * Time: O(N\log N)
  * Source: https://codeforces.com/gym/102012/submission/54638473
- * Verification: ?
+ * Verification: GP of Nanjing 2020 D - String Theory
  */
 
 #include "SuffixArray.h"

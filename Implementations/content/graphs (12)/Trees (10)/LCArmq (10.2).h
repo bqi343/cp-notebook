@@ -1,8 +1,10 @@
 /**
- * Description: Euler Tour LCA w/ O(1) query. Compress takes a subset $S$ 
- 	* of nodes and computes the minimal subtree that contains all the nodes 
-	* pairwise LCA's and compressing edges. Returns a list of (par, orig\_index) 
-	* representing a tree rooted at 0. The root points to itself.
+ * Description: Euler Tour LCA. Compress takes a subset $S$ of nodes 
+ 	* and computes the minimal subtree that contains all the nodes 
+	* pairwise LCA's and compressing edges. Returns a list of
+	* \texttt{(par, orig\_index)} representing a tree rooted at 0. 
+	* The root points to itself.
+ * Time: O(N\log N) build, O(1) LCA
  * Source: USACO, Simon Lindholm (KACTL)
  * Verification: USACO Debug the Bugs
  	* https://codeforces.com/contest/1320/problem/E
@@ -14,10 +16,10 @@ template<int SZ> struct LCA {
 	int N, R = 1, depth[SZ], st[SZ];
 	vi adj[SZ]; vpi tmp; RMQ<pi> r;
 	void ae(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
-	void dfs(int u, int prv){
-		st[u] = sz(tmp), depth[u] = depth[prv]+1;
+	void dfs(int u, int p) {
+		st[u] = sz(tmp), depth[u] = depth[p]+1;
 		tmp.eb(depth[u],u); 
-		trav(v,adj[u]) if (v != prv) 
+		trav(v,adj[u]) if (v != p) 
 			dfs(v,u), tmp.eb(depth[u],u);
 	}
 	void init(int _N) { N = _N; dfs(R,0); r.init(tmp); }

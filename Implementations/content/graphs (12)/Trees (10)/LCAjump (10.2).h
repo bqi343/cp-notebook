@@ -2,6 +2,7 @@
  * Description: Calculates least common ancestor in tree 
  	* with root $R$ using binary jumping. 
  * Time: O(N\log N) build, O(\log N) query
+ * Memory: O(N\log N)
  * Source: USACO Camp
  * Verification: Debug the Bugs
  */

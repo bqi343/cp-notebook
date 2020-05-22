@@ -18,15 +18,13 @@
 
 poly inv(poly A, int n) { // Q-(1/Q-A)/(-Q^{-2})
 	poly B{1/A[0]};
-	while (sz(B) < n) {
-		int x = 2*sz(B);
+	while (sz(B) < n) { int x = 2*sz(B);
 		B = RSZ(2*B-conv(RSZ(A,x),conv(B,B)),x); }
 	return RSZ(B,n);
 }
 poly sqrt(const poly& A, int n) {  // Q-(Q^2-A)/(2Q)
 	assert(A[0] == 1); poly B{1};
-	while (sz(B) < n) {
-		int x = 2*sz(B);
+	while (sz(B) < n) { int x = 2*sz(B);
 		B = T(1)/T(2)*RSZ(B+mul(RSZ(A,x),inv(B,x)),x); }
 	return RSZ(B,n);
 }
@@ -40,27 +38,36 @@ poly log(poly A, int n) { assert(A[0] == 1); // (ln A)' = A'/A
 	return RSZ(integ(conv(dif(A),inv(A,n))),n); }
 poly exp(poly A, int n) { // Q-(lnQ-A)/(1/Q)
 	assert(A[0] == 0); poly B = {1};
-	while (sz(B) < n) {
-		int x = 2*sz(B);
+	while (sz(B) < n) { int x = 2*sz(B);
 		B = RSZ(B+conv(B,RSZ(A,x)-log(B,x)),x); }
 	return RSZ(B,n);
 }
 
-/**
-struct MultipointEval {
-	poly stor[1<<18];
-	void prep(vmi v, int ind = 1) { // v -> places to evaluate at
-		if (sz(v) == 1) { stor[ind] = {-v[0],1}; return; }
-		int m = sz(v)/2;
-		prep(vmi(begin(v),begin(v)+m),2*ind);
-		prep(vmi(m+all(v)),2*ind+1);
-		stor[ind] = conv(stor[2*ind],stor[2*ind+1]);
-	}
-	vmi res;
-	void eval(vmi v, int ind = 1) {
-		v = divi(v,stor[ind]).s;
-		if (sz(stor[ind]) == 2) { res.pb(v[0]); return; }
-		eval(v,2*ind); eval(v,2*ind+1);
-	}
-};
-*/
+void segProd(vector<poly>& stor, poly& v, int ind, int l, int r) { // v -> places to evaluate at
+	if (l == r) { stor[ind] = {-v[l],1}; return; }
+	int m = (l+r)/2; segProd(stor,v,2*ind,l,m); segProd(stor,v,2*ind+1,m+1,r);
+	stor[ind] = conv(stor[2*ind],stor[2*ind+1]);
+}
+void evalAll(vector<poly>& stor, vmi& res, poly v, int ind = 1) {
+	v = divi(v,stor[ind]).s;
+	if (sz(stor[ind]) == 2) { res.pb(sz(v)?v[0]:0); return; }
+	evalAll(stor,res,v,2*ind); evalAll(stor,res,v,2*ind+1);
+}
+poly multiEval(poly v, poly p) {
+	vector<poly> stor(4*sz(p)); segProd(stor,p,1,0,sz(p)-1);
+	poly res; evalAll(stor,res,v); return res; }
+
+poly combAll(vector<poly>& stor, poly& dems, int ind, int l, int r) {
+	if (l == r) return {dems[l]};
+	int m = (l+r)/2;
+	poly a = combAll(stor,dems,2*ind,l,m), b = combAll(stor,dems,2*ind+1,m+1,r);
+	return conv(a,stor[2*ind+1])+conv(b,stor[2*ind]);
+}
+poly interpolate(vector<pair<T,T>> v) {
+	poly x; trav(t,v) x.pb(t.f);
+	int n = sz(v);
+	vector<poly> stor(4*n); segProd(stor,x,1,0,n-1);
+	poly dems; evalAll(stor,dems,dif(stor[1]));
+	F0R(i,n) dems[i] = v[i].s/dems[i];
+	return combAll(stor,dems,1,0,n-1);
+}

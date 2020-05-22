@@ -29,7 +29,7 @@ Please email me at *bqi343@gmail.com.*
      * [MAA Website](https://www.maa.org/math-competitions)
      * [Past Contests](https://artofproblemsolving.com/community/c3413_amc_8)
  * [Art of Problem Solving (AoPS)](https://artofproblemsolving.com/)
-   * [Alcumus](https://artofproblemsolving.com/alcumus) is quite good.
+   * [Alcumus](https://artofproblemsolving.com/alcumus) is quite good. 
    * FTW! may (?) be helpful for improving speed and accuracy.
    * Introduction Series Books / Classes
  * Articles
@@ -49,7 +49,7 @@ Please email me at *bqi343@gmail.com.*
    * [PHS TST](https://sites.google.com/view/phsmathteam/tst?authuser=0)
      * Most problems are by me; let me know what you think of them!
  * Suggestions
-   * Again, [Alcumus](https://artofproblemsolving.com/alcumus) is quite good.
+   * Again, [Alcumus](https://artofproblemsolving.com/alcumus) is quite good. Try to master everything!
    * Create a record of your results and review as necessary.
 
 ## Level 2: 120+ on AMC 10

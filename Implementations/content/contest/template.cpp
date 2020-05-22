@@ -52,7 +52,7 @@ template<class T> bool ckmin(T& a, const T& b) {
 template<class T> bool ckmax(T& a, const T& b) { //
 	return a < b ? a = b, 1 : 0; } //
 int pct(int x) { return __builtin_popcount(x); } //
-int bit(int x) { return 31-__builtin_clz(x); } // floor(log2(x)) //
+int bits(int x) { return 31-__builtin_clz(x); } // floor(log2(x)) //
 int cdiv(int a, int b) { return a/b+!(a<0||a%b == 0); } // division of a by b rounded up, assumes b > 0 //
 // IGNORE
 int fstTrue(function<bool(int)> f, int lo, int hi) {

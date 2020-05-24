@@ -10,17 +10,17 @@
 import java.io.*
 import java.util.* // do NOT use Arrays.sort()
 
-//@JvmField val INPUT = File("input.txt").inputStream()
-//@JvmField val OUTPUT = File("output.txt").outputStream()
+/// https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-field/
+// @JvmField val INPUT = File("input.txt").inputStream()
 @JvmField val INPUT = System.`in`
+// @JvmField val OUTPUT = File("output.txt").outputStream()
 @JvmField val OUTPUT = System.out
 @JvmField val _reader = INPUT.bufferedReader()
-@JvmField val _writer = PrintWriter(OUTPUT, false)
-// call _writer.flush() at end
+@JvmField val _writer = PrintWriter(OUTPUT, false) // if not interactive, faster to call _writer.flush() at end
 fun rLine(): String? = _reader.readLine()
 fun rLn() = rLine()!!
 @JvmField var _tokenizer: StringTokenizer = StringTokenizer("")
-fun read(): String {
+fun read(): String { // if no input left returns empty string
     while (_tokenizer.hasMoreTokens().not()) _tokenizer =
         StringTokenizer(_reader.readLine() ?: return "", " ")
     return _tokenizer.nextToken()
@@ -43,27 +43,6 @@ fun add(a: Int, b: Int) = (a+b) % MOD // from tourist :o
 fun sub(a: Int, b: Int) = (a-b+MOD) % MOD
 fun mul(a: Int, b: Int) = ((a.toLong()*b)%MOD).toInt()*/
 fun gcd(a: Int, b: Int) : Int = if (b == 0) a else gcd(b,a%b)
-
-/**
-class BIT() {
-    val v = LongArray(SZ)
-    fun upd(_a: Int, b: Long) {
-        var a = _a
-        while (a < SZ) {
-            v[a] += b
-            a += (a and -a)
-        }
-    }
-    fun query(_a: Int): Long {
-        var a = _a
-        var ans: Long = 0
-        while (a > 0) {
-            ans += v[a]
-            a -= (a and -a)
-        }
-        return ans
-    }
-}*/
 
 fun example() {
     println(String.format("%.8f", 5.25)) // print to 8 decimals

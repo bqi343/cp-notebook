@@ -5,11 +5,15 @@
  	* the equivalence class, \texttt{firstPos} corresponds to
  	* the first ending position of such a string, \texttt{len}
  	* corresponds to the longest suffix that is in a different class.
+ 	* Suffix links correspond to suffix tree of the reversed string!
  * Time: O(N\log \sum)
  * Source: https://cp-algorithms.com/string/suffix-automaton.html
+ 	* https://codeforces.com/blog/entry/62331
  * Verification: 
 	* https://www.spoj.com/problems/SUBLEX/
 	* https://open.kattis.com/problems/stringmultimatching
+	* https://codeforces.com/gym/102129/problem/I
+	* https://codeforces.com/contest/235/problem/C
  */
  
 struct SuffixAutomaton {

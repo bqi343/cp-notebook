@@ -48,7 +48,7 @@ void segProd(vector<poly>& stor, poly& v, int ind, int l, int r) { // v -> place
 	int m = (l+r)/2; segProd(stor,v,2*ind,l,m); segProd(stor,v,2*ind+1,m+1,r);
 	stor[ind] = conv(stor[2*ind],stor[2*ind+1]);
 }
-void evalAll(vector<poly>& stor, vmi& res, poly v, int ind = 1) {
+void evalAll(vector<poly>& stor, poly& res, poly v, int ind = 1) {
 	v = divi(v,stor[ind]).s;
 	if (sz(stor[ind]) == 2) { res.pb(sz(v)?v[0]:0); return; }
 	evalAll(stor,res,v,2*ind); evalAll(stor,res,v,2*ind+1);
@@ -64,8 +64,7 @@ poly combAll(vector<poly>& stor, poly& dems, int ind, int l, int r) {
 	return conv(a,stor[2*ind+1])+conv(b,stor[2*ind]);
 }
 poly interpolate(vector<pair<T,T>> v) {
-	poly x; trav(t,v) x.pb(t.f);
-	int n = sz(v);
+	int n = sz(v); poly x; trav(t,v) x.pb(t.f);
 	vector<poly> stor(4*n); segProd(stor,x,1,0,n-1);
 	poly dems; evalAll(stor,dems,dif(stor[1]));
 	F0R(i,n) dems[i] = v[i].s/dems[i];

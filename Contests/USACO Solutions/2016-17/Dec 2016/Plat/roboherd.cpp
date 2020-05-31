@@ -1,3 +1,5 @@
+// fracturing search: https://www.youtube.com/watch?v=EG_HfFMM0lE
+
 #include <bits/stdc++.h>
 using namespace std;
  
@@ -202,7 +204,7 @@ typedef pair<ll,pi> T;
 int N,K;
 ll tot;
 vector<vi> v;
-priority_queue<T,vector<T>,greater<T>> pq; // fracturing search?
+priority_queue<T,vector<T>,greater<T>> pq;
 
 int main() {
 	setIO("roboherd");

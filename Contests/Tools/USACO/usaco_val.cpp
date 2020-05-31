@@ -214,6 +214,6 @@ int main(int argc, char** argv) {
   cerr << "Test: " << id << endl;
   // write stuff here
 
-  cerr << "OK" << endl;
   in.get_eof();
+  cerr << "OK" << endl;
 }

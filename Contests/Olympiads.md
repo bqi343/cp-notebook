@@ -6,7 +6,7 @@
 
 ## National
 
-See [here](https://ioinformatics.org/page/members/7) for additional links. The [OI Checklist](https://oichecklist.herokuapp.com/view/my/) is not working. :(
+See [here](https://ioinformatics.org/page/members/7) for additional links. The [OI Checklist](https://oichecklist.pythonanywhere.com/) is a great way to track your progress. :)
 
   * [USA](http://www.usaco.org/)
     * Format

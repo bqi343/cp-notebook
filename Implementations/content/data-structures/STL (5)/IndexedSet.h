@@ -3,6 +3,7 @@
  * element, and finding the index of an element. Change \texttt{null\_type} for map.
  * Time: O(\log N)
  * Source: KACTL
+   * https://codeforces.com/blog/entry/11080
  * Verification: many
  */
 

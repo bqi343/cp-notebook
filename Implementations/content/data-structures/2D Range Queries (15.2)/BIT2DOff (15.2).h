@@ -36,7 +36,7 @@ template<class T, int SZ> struct OffBIT2D {
 	}
 	void upd(int x, int y, int t) { 
 		if (!mode) todo.pb({x,y});
-		else for (; x < SZ; x += x&-x) UPD(x,y,t); 
+		else for (;x<SZ;x+=x&-x) UPD(x,y,t); 
 	}
 	int QUERY(int x, int y) {
 		int z = st[x]-cnt[x], res = 0;

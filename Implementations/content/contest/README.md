@@ -10,9 +10,3 @@
 TopCoder:
 
 [New Java Applet](https://codeforces.com/blog/entry/64597) (use ctrl-c instead of command-c on mac ...)
-
-# CF Hacking
-
-  * [Java Arrays.sort()](https://codeforces.com/blog/entry/4827)
-	* [One that actually works?](https://codeforces.com/contest/1324/submission/73058869)
-  * [Blowing up unordered_map](https://codeforces.com/blog/entry/62393)

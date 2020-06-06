@@ -1,18 +1,20 @@
 # Key
 
- * DFS: Depth First Search
-    * FF: Flood Fill (finding the number of connected components)
- * BFS = Breadth First Search
+ * FF: Flood Fill (finding the number of connected components in a graph)
+   * DFS: Depth First Search
+   * BFS = Breadth First Search
+     * actually, don't think you need to know this for silver
  * BinSearch = Binary Search
  * CumSum = Cumulative Sum (or Prefix Sums)
  * STL = containers from standard template library (ex. map, set)
  	* PQ = priority queue
+ * 2P = Two Pointers
 
 #  Silver
 
 | Contest   | #                                                               | Name          | Topic                                  | Result |
 | --------- | --------------------------------------------------------------- | ------------- | -------------------------------------- | ------ |
-| 2015 Dec  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=570)  | lightson      | BFS                                    | Done   |
+| 2015 Dec  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=570)  | lightson      | FF                                     | Done   |
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=571)  | highcard      | BinSearch                              | Done   |
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=572)  | bcount        | CumSum                                 | Done   |
 | 2016 Jan  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=594)  | angry         | BinSearch                              | Done   |
@@ -47,7 +49,7 @@
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=764)  | shuffle       | Graphs                                 | Done   |
 | 2018 Jan  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=786)  | lifeguards    | Sorting                                | Done   |
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=787)  | rental        | Sorting                                | Done   |
-|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=788)  | mootube       | DFS                                    | Done   |
+|           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=788)  | mootube       | FF                                     | Done   |
 | 2018 Feb  | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=810)  |               |                                        |        |
 |           | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=811)  |               |                                        |        |
 |           | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=812)  |               |                                        |        |

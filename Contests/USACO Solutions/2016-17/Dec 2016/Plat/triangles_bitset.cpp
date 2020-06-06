@@ -267,11 +267,4 @@ int main() {
 		res[z.count()] ++;
 	}
 	F0R(i,N-2) ps(res[i]);
-	// you should actually read the stuff at the bottom
 }
-
-/* stuff you should look for
-	* int overflow, array bounds
-	* special cases (n=1?), slow multiset operations
-	* do smth instead of nothing and stay organized
-*/

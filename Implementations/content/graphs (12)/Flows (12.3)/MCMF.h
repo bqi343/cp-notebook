@@ -6,6 +6,7 @@
  * Source: GeeksForGeeks
  	* https://courses.csail.mit.edu/6.854/06/scribe/s12-minCostFlowAlg.pdf
  	* running time is only pseudo-polynomial; see https://codeforces.com/blog/entry/70740
+ 	* https://en.wikipedia.org/wiki/Johnson%27s_algorithm (to get non-negative weights)
  * Verification: https://codeforces.com/contest/164/problem/C
  */
 
@@ -22,10 +23,10 @@ template<int SZ> struct MCMF {
 	C totCost = 0, curCost = 0; F totFlow = 0; 
 	bool spfa() { // find lowest cost path to send flow through
 		F0R(i,N) cost[i] = {numeric_limits<C>::max(),0}; 
-		cost[s] = {0,numeric_limits<F>::max()};
+		cost[s] = {0,numeric_limits<F>::max()}; // infinite flow at source
 		typedef pair<C,int> T;
 		priority_queue<T,vector<T>,greater<T>> todo; 
-		todo.push({0,s});
+		todo.push({0,s}); // just do dijkstra
 		while (sz(todo)) {
 			T x = todo.top(); todo.pop(); 
 			if (x.f > cost[x.s].f) continue;
@@ -41,8 +42,8 @@ template<int SZ> struct MCMF {
 	void backtrack() {
 		F df = cost[t].s; totFlow += df;
 		curCost += cost[t].f; totCost += curCost*df;
-		for (int x = t; x != s; x = pre[x].f) {
-			adj[x][pre[x].s].flow -= df;
+		for (int x = t; x != s; x = pre[x].f) { // subtract from cap,
+			adj[x][pre[x].s].flow -= df; // add two reverse edges
 			adj[pre[x].f][adj[x][pre[x].s].rev].flow += df;
 		}
 		F0R(i,N) trav(p,adj[i]) p.cost += cost[i].f-cost[p.to].f;

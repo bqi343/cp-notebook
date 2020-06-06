@@ -1,14 +1,5 @@
 # Numerical
 
-### 4
-
-  * Matrix Exponentiation
-    * Tutorial
-      * CPH (23, Matrices)
-    * Problems
-      * [Currencies](https://www.hackerrank.com/contests/gs-codesprint/challenges/currencies) [](107)
-      * [A2OJ](https://a2oj.com/category?ID=32)
-
 ### 6
 
   * More Matrices

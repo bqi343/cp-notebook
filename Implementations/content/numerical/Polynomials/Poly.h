@@ -57,13 +57,11 @@ pair<poly,poly> quoRem(poly a, poly b) {
 	trav(t,a) t *= lst;
 	return {q,a}; // quotient, remainder
 }
-/**
-poly quo(poly a, poly b) { return quoRem(a,b).f; }
-poly rem(poly a, poly b) { return quoRem(a,b).s; }
-
-poly a = {1,3,5,8,6,0,0,0,0}, b = {1,5,1};
-ps(quoRem(a,b)); a = 2*a, b = 2*b; ps(quoRem(a,b));
-*/
+poly operator/(const poly& a, const poly& b) { return quoRem(a,b).f; }
+poly operator%(const poly& a, const poly& b) { return quoRem(a,b).s; }
+/**poly a = {1,3,5,8,6,0,0,0,0}, b = {1,5,1};
+ps(quoRem(a,b)); a = 2*a, b = 2*b; ps(quoRem(a,b));*/
+poly gcd(poly a, poly b) { return b == poly{} ? a : gcd(b,a%b); }
 T resultant(poly a, poly b) { // R(A,B)
 	// =b_m^n*prod_{j=1}^mA(mu_j)
 	// =b_m^na_m^n*prod_{i=1}^nprod_{j=1}^m(mu_j-lambda_i)
@@ -72,6 +70,6 @@ T resultant(poly a, poly b) { // R(A,B)
 	// Also, R(A,B)=b_m^{deg(A)-deg(A-CB)}R(A-CB,B)
 	int ad = sz(a)-1, bd = sz(b)-1; 
 	if (bd <= 0) return bd < 0 ? 0 : pow(b.bk,ad);
-    int pw = ad; a = quoRem(a,b).s; pw -= (ad = sz(a)-1);
+    int pw = ad; a = a%b; pw -= (ad = sz(a)-1);
     return resultant(b,a)*pow(b.bk,pw)*T((bd&ad&1)?-1:1);
 }

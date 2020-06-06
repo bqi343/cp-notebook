@@ -4,8 +4,6 @@
 
 ## 2
 
-[Java Arrays.sort() Killer](https://codeforces.com/blog/entry/4827)
-
   * Complete Search
     * Tutorial
       * CPH (5, Complete Search)

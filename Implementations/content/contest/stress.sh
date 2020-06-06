@@ -6,5 +6,5 @@ for((i = 1; ; ++i)); do
     ./A < int > out1
     ./B < int > out2
     diff -w out1 out2 || break
-    # diff -w <(./F2 < int) <(./F < int) || break
+    # diff -w <(./A < int) <(./B < int) || break
 done

@@ -1,38 +1,38 @@
 /**
- * Description: 2D matrix operations. Change \texttt{d} 
- 	* to array if possible.
+ * Description: 2D matrix operations. Use array instead of 
+ 	* vector when possible.
  * Source: KACTL
  * Verification: https://dmoj.ca/problem/si17c1p5, SPOJ MIFF
  */
 
-template<class T> struct Mat {
-	int r,c; vector<vector<T>> d;
-	Mat(int _r, int _c) : r(_r), c(_c) { 
-		d.assign(r,vector<T>(c)); }
-	Mat() : Mat(0,0) {} 
-	Mat(const vector<vector<T>>&_d) : 
-		r(sz(_d)), c(sz(_d[0])) { d = _d; }
-	/// friend str ts(const Mat& m) { return ts(m.d); }
-	Mat& operator+=(const Mat& m) {
-		/// assert(r == m.r && c == m.c);
-		F0R(i,r) F0R(j,c) d[i][j] += m.d[i][j];
-		return *this; }
-	Mat& operator-=(const Mat& m) {
-		/// assert(r == m.r && c == m.c);
-		F0R(i,r) F0R(j,c) d[i][j] -= m.d[i][j];
-		return *this; }
-	Mat operator*(const Mat& m) {
-		assert(c == m.r); Mat x(r,m.c);
-		F0R(i,r) F0R(j,c) F0R(k,m.c) 
-			x.d[i][k] += d[i][j]*m.d[j][k];
-		return x; }
-	Mat operator+(const Mat& m) { return Mat(*this)+=m; }
-	Mat operator-(const Mat& m) { return Mat(*this)-=m; }
-	Mat& operator*=(const Mat& m) { return *this = (*this)*m; }
-	friend Mat pow(Mat m, ll p) {
-		assert(m.r == m.c && p >= 0);
-		Mat res(m.r,m.c); F0R(i,m.r) res.d[i][i] = 1;
-		for (; p; p /= 2, m *= m) if (p&1) res *= m;
-		return res;
-	}
-};
+#include "../../number-theory (11.1)/Modular Arithmetic/ModInt.h"
+
+typedef mi T;
+typedef vector<vector<T>> Mat;
+
+Mat makeMat(int r, int c) { return Mat(r,vector<T>(c)); }
+Mat& operator+=(Mat& a, const Mat& b) {
+    assert(sz(a) == sz(b) && sz(a[0]) == sz(b[0]));
+    F0R(i,sz(a)) F0R(j,sz(a[0])) a[i][j] += b[i][j];
+    return a;
+}
+Mat& operator-=(Mat& a, const Mat& b) {
+    assert(sz(a) == sz(b) && sz(a[0]) == sz(b[0]));
+    F0R(i,sz(a)) F0R(j,sz(a[0])) a[i][j] -= b[i][j];
+    return a;
+}
+Mat operator*(const Mat& a, const Mat& b) {
+    int x = sz(a), y = sz(a[0]), z = sz(b[0]); 
+    assert(y == sz(b)); Mat c = makeMat(x,z);
+    F0R(i,x) F0R(j,y) F0R(k,z) c[i][k] += a[i][j]*b[j][k];
+    return c;
+}
+Mat operator+(Mat a, const Mat& b) { return a += b; }
+Mat operator-(Mat a, const Mat& b) { return a -= b; }
+Mat& operator*=(Mat& a, const Mat& b) { return a = a*b; }
+Mat pow(Mat m, ll p) {
+    int n = sz(m); assert(n == sz(m[0]) && p >= 0);
+    Mat res = makeMat(n,n); F0R(i,n) res[i][i] = 1;
+    for (; p; p /= 2, m *= m) if (p&1) res *= m;
+    return res;
+}

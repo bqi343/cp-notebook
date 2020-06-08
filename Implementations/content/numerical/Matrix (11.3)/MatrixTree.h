@@ -6,15 +6,14 @@
  */
 
 #include "MatrixInv.h"
-#include "../../number-theory (11.1)/Modular Arithmetic/ModInt.h"
 
-mi numSpan(Mat<mi> m) { 
-	int n = m.r; Mat<mi> res(n-1,n-1);
+T numSpan(Mat m) { 
+	int n = sz(m); Mat res(n-1,n-1);
 	F0R(i,n) FOR(j,i+1,n) {
-		mi ed = m.d[i][j]; res.d[i][i] += ed;
+		mi ed = m[i][j]; res[i][i] += ed;
 		if (j != n-1) {
-			res.d[j][j] += ed;
-			res.d[i][j] -= ed, res.d[j][i] -= ed;
+			res[j][j] += ed;
+			res[i][j] -= ed, res[j][i] -= ed;
 		}
 	}
 	return gauss(res).f;

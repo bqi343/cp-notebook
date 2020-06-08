@@ -127,6 +127,15 @@ def process(root,name): # prefix, file name
 			print("NOT INCLUDED:",name)
 	if name == "Snippets.md":
 		snippets = os.path.join(root,name)
+	if name == "stress.sh":
+		global suf
+		_suf = suf
+		suf = suf.replace('.c++','.shell') # https://gist.github.com/J2TeaM/a54bafb082f90c0f20c9
+		print(suf)
+		print("INCLUDED","stress.sh")
+		output("stress",checkNorm(root,name))
+		suf = _suf
+
 
 for root, dirs, files in os.walk(USACO+"/Implementations",topdown=False):
 	for name in files:

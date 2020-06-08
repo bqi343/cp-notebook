@@ -7,10 +7,10 @@
 
 #include "MatrixInv.h"
 
-template<class T> void ad(Mat<T>& A,vector<T> u,vector<T> v) {
-	int n = A.r; vector<T> x(n), y(n); 
+void ad(Mat& A, vector<T> u, vector<T> v) {
+	int n = sz(A); vector<T> x(n), y(n); 
 	F0R(i,n) F0R(j,n)
-		x[i] += A.d[i][j]*u[j], y[j] += v[i]*A.d[i][j];
-	T sum = 1; F0R(i,n) F0R(j,n) sum += v[i]*A.d[i][j]*u[j];
-	F0R(i,n) F0R(j,n) A.d[i][j] -= x[i]*y[j]/sum;
+		x[i] += A[i][j]*u[j], y[j] += v[i]*A[i][j];
+	T sum = 1; F0R(i,n) F0R(j,n) sum += v[i]*A[i][j]*u[j];
+	F0R(i,n) F0R(j,n) A[i][j] -= x[i]*y[j]/sum;
 }

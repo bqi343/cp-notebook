@@ -15,39 +15,39 @@
 #include "Matrix.h"
 
 const ld EPS = 1e-12;
-int getRow(Mat<ld>& m, int n, int i, int nex) {
-	pair<ld,int> bes = {0,-1}; // find row with max absolute value
-	FOR(j,nex,n) ckmax(bes,{abs(m.d[j][i]),j}); 
-	return bes.f < EPS ? -1 : bes.s; }
-int getRow(Mat<mi>& m, int n, int i, int nex) {
-	FOR(j,nex,n) if (m.d[j][i] != 0) return j;
-	return -1; }
-template<class T> pair<T,int> gauss(Mat<T>& m) { 
-	int n = m.r, rank = 0, nex = 0;
-	T prod = 1; // determinant
-	F0R(i,n) {
-		int row = getRow(m,n,i,nex);
-		if (row == -1) { prod = 0; continue; }
-		if (row != nex) prod *= -1, swap(m.d[row],m.d[nex]);
-		prod *= m.d[nex][i]; rank ++;
-		auto x = 1/m.d[nex][i]; FOR(k,i,m.c) m.d[nex][k] *= x;
-		F0R(j,n) if (j != nex) {
-			auto v = m.d[j][i]; if (v == 0) continue;
-			FOR(k,i,m.c) m.d[j][k] -= v*m.d[nex][k];
-		}
-		nex ++;
-	}
-	return {prod,rank};
+int getRow(vector<vector<ld>>& m, int R, int i, int nex) {
+    pair<ld,int> bes = {0,-1}; // find row with max absolute value
+    FOR(j,nex,R) ckmax(bes,{abs(m[j][i]),j}); 
+    return bes.f < EPS ? -1 : bes.s; }
+int getRow(vector<vector<mi>>& m, int R, int i, int nex) {
+    FOR(j,nex,R) if (m[j][i] != 0) return j;
+    return -1; }
+pair<T,int> gauss(Mat& m) { 
+    int R = sz(m), C = sz(m[0]), rank = 0, nex = 0;
+    T prod = 1; // determinant
+    F0R(i,R) {
+        int row = getRow(m,R,i,nex);
+        if (row == -1) { prod = 0; continue; }
+        if (row != nex) prod *= -1, swap(m[row],m[nex]);
+        prod *= m[nex][i]; rank ++;
+        T x = 1/m[nex][i]; FOR(k,i,C) m[nex][k] *= x;
+        F0R(j,R) if (j != nex) {
+            T v = m[j][i]; if (v == 0) continue;
+            FOR(k,i,C) m[j][k] -= v*m[nex][k];
+        }
+        nex ++;
+    }
+    return {prod,rank};
 }
-template<class T> Mat<T> inv(Mat<T> m) {
-	assert(m.r == m.c);
-	int n = m.r; Mat<T> x(n,2*n); 
-	F0R(i,n) {
-		x.d[i][i+n] = 1;
-		F0R(j,n) x.d[i][j] = m.d[i][j];
-	}
-	if (gauss(x).s != n) return Mat<T>();
-	Mat<T> res(n,n); 
-	F0R(i,n) F0R(j,n) res.d[i][j] = x.d[i][j+n];
-	return res;
+Mat inv(Mat m) {
+    int R = sz(m); assert(R == sz(m[0]));
+    Mat x = makeMat(R,2*R);
+    F0R(i,R) {
+        x[i][i+R] = 1;
+        F0R(j,R) x[i][j] = m[i][j];
+    }
+    if (gauss(x).s != R) return Mat();
+    Mat res = makeMat(R,R);
+    F0R(i,R) F0R(j,R) res[i][j] = x[i][j+R];
+    return res;
 }

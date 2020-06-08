@@ -4,6 +4,7 @@
  	* to Gaussian Elimination.
  * Source: Own
  * Verification: GP of Nanjing 2020 A
+ 	* https://atcoder.jp/contests/agc045/tasks/agc045_a (first solve :D)
  */
 
 ll red(vl& b, ll x) { trav(t,b) ckmin(x,x^t);

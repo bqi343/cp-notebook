@@ -1,6 +1,5 @@
-# Geometry
+# Geometry (Advanced)
 
-## 6
   * [KD Tree](https://github.com/kth-competitive-programming/kactl/blob/master/content/geometry/kdTree.h)
     * haven't had to use ...
   * Delaunay Triangulation

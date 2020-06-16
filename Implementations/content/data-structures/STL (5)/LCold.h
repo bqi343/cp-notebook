@@ -10,11 +10,11 @@
    * https://atcoder.jp/contests/arc066/tasks/arc066_d
  */
 
-bool Q;
+bool _Q;
 struct Line {
 	mutable ll k, m, p; // slope, y-intercept, last optimal x
 	ll eval (ll x) { return k*x+m; }
-	bool operator<(const Line& o) const { return Q?p<o.p:k<o.k; }
+	bool operator<(const Line& o) const { return _Q?p<o.p:k<o.k; }
 };
 
 // for doubles, use inf = 1/.0, divi(a,b) = a/b
@@ -40,7 +40,7 @@ struct LC : multiset<Line> {
 	}
 	ll query(ll x) {
 		assert(!empty());
-		Q = 1; auto l = *lb({0,0,x}); Q = 0;
+		_Q = 1; auto l = *lb({0,0,x}); _Q = 0;
 		return l.k*x+l.m;
 	}
 };

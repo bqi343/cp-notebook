@@ -41,15 +41,35 @@ void inp(vi& v) { // common way to reduce amount of input
 	while (sz(v) < N) v.pb((A*v.back()+B)%C+1);
 }
 
-void solve(int caseNum) {
-	cerr << "Doing #" << caseNum << "\n";
+void solve(int tc) {
+	cerr << "Doing #" << tc << "\n";
 	${0}
 }
 
 int main() {
 	// setIO("A");
-	int T; re(T);
-	FOR(i,1,T+1) {
+	int TC; re(TC);
+	FOR(i,1,TC+1) {
+		pr("Case #",i,": ");
+		solve(i);
+	}
+}
+```
+
+## GCJ
+
+```
+// REINITIALIZE ARRAYS BETWEEN TCs
+
+void solve(int tc) {
+	// cerr << "Doing #" << tc << "\n";
+	${0}
+}
+
+int main() {
+	setIO();
+	int TC; re(TC);
+	FOR(i,1,TC+1) {
 		pr("Case #",i,": ");
 		solve(i);
 	}

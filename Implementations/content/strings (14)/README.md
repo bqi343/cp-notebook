@@ -1,6 +1,5 @@
-# Strings
+# Strings (Advanced)
 
-## 6
   * String Suffix Structures
     * [Suffix Automata](http://codeforces.com/blog/entry/20861)
     * Suffix Tree

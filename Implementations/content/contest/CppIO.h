@@ -1,11 +1,11 @@
 /**
  * Description: convenient functions for input / output
  * Source: 
-	* https://codeforces.com/blog/entry/65311
-	* https://codeforces.com/blog/entry/68809 (tests)
 	* https://codeforces.com/blog/entry/5217 (input speed)
 	* https://codeforces.com/contest/1305/submission/72346555 (tourist)
-	* https://codeforces.com/blog/entry/76087
+	* https://codeforces.com/blog/entry/65311 (4-liner for debugging, based off tourist)
+	* https://codeforces.com/blog/entry/68809 (debugging, also based off tourist)
+	* https://codeforces.com/blog/entry/76087 (yet another ...)
  * Verification: http://codeforces.com/contest/1045/problem/D
  */
 

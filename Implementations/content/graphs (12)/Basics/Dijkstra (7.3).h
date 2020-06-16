@@ -7,7 +7,7 @@
 template<class C, bool directed> struct Dijkstra {
 	int SZ; vector<C> dist; 
 	vector<vector<pair<int,C>>> adj;
-	void init(int _SZ) { SZ = _SZ; adj.rsz(SZ); }
+	void init(int _SZ) { SZ = _SZ; adj.clear(); adj.rsz(SZ); }
 	void ae(int u, int v, C cost) {
 		adj[u].pb({v,cost}); if (!directed) adj[v].pb({u,cost}); }
 	void gen(int st) {

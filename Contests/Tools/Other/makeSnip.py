@@ -172,6 +172,6 @@ EN += 2
 
 for i in range(len(names)):
 	code = codes[i]
-	if "TC" in names[i] or "FHC" in names[i]:
+	if "TC" in names[i] or "FHC" in names[i] or "GCJ" in names[i]:
 		code = temp[:ST]+code+temp[EN:]
 	output(names[i],code)

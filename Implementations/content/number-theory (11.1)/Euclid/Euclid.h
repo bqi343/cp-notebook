@@ -1,6 +1,6 @@
 /**
  * Description: euclid finds $\{x,y\}$ such that $ax+by=\gcd(a,b)$ 
- 	* and $|ax|,|by|\le \frac{ab}{\gcd(a,b)}.$ Should work for $a,b<2^{62}$
+ 	* and $|ax|,|by|\le \frac{ab}{\gcd(a,b)}.$ Should work for $a,b<2^{62}$.
  * Source: KACTL
  * Time: O(\log ab)
  */

@@ -51,9 +51,9 @@ template<class T> bool ckmin(T& a, const T& b) {
 	return b < a ? a = b, 1 : 0; }
 template<class T> bool ckmax(T& a, const T& b) { //
 	return a < b ? a = b, 1 : 0; } //
-int pct(int x) { return __builtin_popcount(x); } //
-int bits(int x) { return 31-__builtin_clz(x); } // floor(log2(x)) //
-int cdiv(int a, int b) { return a/b+!(a<0||a%b == 0); } // division of a by b rounded up, assumes b > 0 //
+constexpr int pct(int x) { return __builtin_popcount(x); } //
+constexpr int bits(int x) { return 31-__builtin_clz(x); } // floor(log2(x)) //
+constexpr int cdiv(int a, int b) { return a/b+!(a<0||a%b == 0); } // division of a by b rounded up, assumes b > 0 //
 // IGNORE
 int fstTrue(function<bool(int)> f, int lo, int hi) {
 	hi ++; assert(lo <= hi); // assuming f is increasing
@@ -63,6 +63,8 @@ int fstTrue(function<bool(int)> f, int lo, int hi) {
 	} 
 	return lo;
 }
+template<class T> void remDup(vector<T>& v) { 
+	sort(all(v)); v.erase(unique(all(v)),end(v)); }
 // IGNORE
 //
 int main() { ios_base::sync_with_stdio(0); cin.tie(0); }

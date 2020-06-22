@@ -18,9 +18,6 @@
     * [DMOJ](https://dmoj.ca/problem/globexcup19s4)
     * [Easy Query](https://open.kattis.com/problems/easyquery)
   * [Segment Tree Beats](http://codeforces.com/blog/entry/57319)
-  * Sqrt Tree (don't think this is useful for anything tho)
-    * [Pt 1](http://codeforces.com/blog/entry/57046)
-    * [Pt 2](http://codeforces.com/blog/entry/59092)
 
 # 7
 

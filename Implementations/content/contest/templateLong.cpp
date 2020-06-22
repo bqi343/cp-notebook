@@ -62,6 +62,8 @@ int fstTrue(function<bool(int)> f, int lo, int hi) {
 	} 
 	return lo;
 }
+template<class T> void remDup(vector<T>& v) { 
+	sort(all(v)); v.erase(unique(all(v)),end(v)); }
 
 // INPUT
 template<class A> void re(complex<A>& c);

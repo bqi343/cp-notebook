@@ -1,6 +1,6 @@
 /**
  * Description: Heavy-Light Decomposition, add val to verts 
- 	* and query sum in path/subtree
+ 	* and query sum in path/subtree.
  * Time: any tree path is split into $O(\log N)$ parts
  * Source: http://codeforces.com/blog/entry/22072, https://codeforces.com/blog/entry/53170
  * Verification: USACO Grass Planting, https://www.hackerrank.com/challenges/subtrees-and-paths
@@ -10,43 +10,51 @@
 
 template<int SZ, bool VALS_IN_EDGES> struct HLD { 
 	int N; vi adj[SZ];
-	int par[SZ], sz[SZ], depth[SZ];
-	int root[SZ], pos[SZ]; /// vi rpos;
-	void ae(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
-	void dfsSz(int v = 1) {
-		if (par[v]) adj[v].erase(find(all(adj[v]),par[v]));
-		sz[v] = 1;
-		trav(u,adj[v]) {
-			par[u] = v; depth[u] = depth[v]+1;
-			dfsSz(u); sz[v] += sz[u];
-			if (sz[u] > sz[adj[v][0]]) swap(u, adj[v][0]);
+	int par[SZ], root[SZ], depth[SZ], sz[SZ], ti;
+	int pos[SZ]; vi rpos; // rpos not used, but could be useful
+	void ae(int x, int y) { adj[x].pb(y), adj[y].pb(x); }
+	void dfsSz(int x) { 
+		sz[x] = 1; 
+		trav(y,adj[x]) {
+			par[y] = x; depth[y] = depth[x]+1;
+			adj[y].erase(find(all(adj[y]),x)); // remove parent from adj list
+			dfsSz(y); sz[x] += sz[y];
+			if (sz[y] > sz[adj[x][0]]) swap(y,adj[x][0]);
 		}
 	}
-	void dfsHld(int v = 1) {
-		static int t = 0; pos[v] = t++; /// rpos.pb(v);
-		trav(u,adj[v]) {
-			root[u] = (u == adj[v][0] ? root[v] : u);
-			dfsHld(u); }
+	void dfsHld(int x) {
+		pos[x] = ti++; rpos.pb(x);
+		trav(y,adj[x]) {
+			root[y] = (y == adj[x][0] ? root[x] : y);
+			dfsHld(y); }
 	}
-	void init(int _N) {
-		N = _N; par[1] = depth[1] = 0; root[1] = 1; 
-		dfsSz(); dfsHld(); }
+	void init(int _N, int R = 0) { N = _N; 
+		par[R] = depth[R] = ti = 0; dfsSz(R); 
+		root[R] = R; dfsHld(R); 
+	}
+	int lca(int x, int y) {
+		for (; root[x] != root[y]; y = par[root[y]])
+			if (depth[root[x]] > depth[root[y]]) swap(x,y);
+		return depth[x] < depth[y] ? x : y;
+	}
+	/// int dist(int x, int y) { // # edges on path
+	/// 	return depth[x]+depth[y]-2*depth[lca(x,y)]; }
 	LazySeg<ll,SZ> tree;
 	template <class BinaryOp>
-	void processPath(int u, int v, BinaryOp op) {
-		for (; root[u] != root[v]; v = par[root[v]]) {
-			if (depth[root[u]] > depth[root[v]]) swap(u, v);
-			op(pos[root[v]], pos[v]); }
-		if (depth[u] > depth[v]) swap(u, v);
-		op(pos[u]+VALS_IN_EDGES, pos[v]); 
+	void processPath(int x, int y, BinaryOp op) {
+		for (; root[x] != root[y]; y = par[root[y]]) {
+			if (depth[root[x]] > depth[root[y]]) swap(x,y);
+			op(pos[root[y]],pos[y]); }
+		if (depth[x] > depth[y]) swap(x,y);
+		op(pos[y]+VALS_IN_EDGES,pos[y]); 
 	}
-	void modifyPath(int u, int v, int val) { 
-		processPath(u,v,[this, &val](int l,int r) { 
-			tree.upd(l,r,val); }); }
-	void modifySubtree(int v, int val) { 
-		tree.upd(pos[v]+VALS_IN_EDGES,pos[v]+sz[v]-1,val); }
-	ll queryPath(int u, int v) { 
-		ll res = 0; processPath(u,v,[this,&res](int l,int r) { 
+	void modifyPath(int x, int y, int v) { 
+		processPath(x,y,[this,&v](int l, int r) { 
+			tree.upd(l,r,v); }); }
+	ll queryPath(int x, int y) { 
+		ll res = 0; processPath(x,y,[this,&res](int l, int r) { 
 			res += tree.qsum(l,r); });
 		return res; }
+	void modifySubtree(int x, int v) { 
+		tree.upd(pos[x]+VALS_IN_EDGES,pos[x]+sz[x]-1,v); }
 };

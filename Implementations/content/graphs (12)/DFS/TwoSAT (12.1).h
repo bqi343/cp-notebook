@@ -13,19 +13,21 @@
 	* ts.ans[0..N-1] holds the assigned values to the vars
  * Source: KACTL
  * Verification: https://codeforces.com/contest/1007/problem/D
+ 	* https://cses.fi/problemset/task/1684/
  */
 
 #include "SCC (12.1).h"
 
-template<int SZ> struct TwoSat {
-	SCC<2*SZ> S; bitset<SZ> ans; 
-	int N = 0; int addVar() { return N++; }
+struct TwoSAT {
+	int N; SCC S; vector<bool> ans;
+	void init(int _N) { N = _N; S.init(2*N); ans.rsz(N); }
+	int addVar() { return N++; }
 	void either(int x, int y) { 
 		x = max(2*x,-1-2*x), y = max(2*y,-1-2*y);
 		S.ae(x^1,y); S.ae(y^1,x); }
 	void implies(int x, int y) { either(~x,y); }
 	void must(int x) { either(x,x); }
-	void atMostOne(const vi& li) {
+	void atMostOne(vi li) {
 		if (sz(li) <= 1) return;
 		int cur = ~li[0];
 		FOR(i,2,sz(li)) {
@@ -35,13 +37,12 @@ template<int SZ> struct TwoSat {
 		}
 		either(cur,~li[1]);
 	}
-	bool solve(int _N) {
-		if (_N != -1) N = _N; 
-		S.init(2*N);
+	bool solve(int _N = -1) {
+		if (_N != -1) N = _N, S.init(2*N);
+		S.gen(); reverse(all(S.comps)); // reverse topological order
 		for (int i = 0; i < 2*N; i += 2) 
 			if (S.comp[i] == S.comp[i^1]) return 0;
-		reverse(all(S.allComp));
-		vi tmp(2*N); trav(i,S.allComp) if (!tmp[i]) 
+		vi tmp(2*N); trav(i,S.comps) if (!tmp[i]) 
 			tmp[i] = 1, tmp[S.comp[i^1]] = -1;
 		F0R(i,N) if (tmp[S.comp[2*i]] == 1) ans[i] = 1;
 		return 1;

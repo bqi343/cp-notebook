@@ -14,7 +14,7 @@ template<int SZ> struct FakeMatch {
 		cur[a][b] += c, cur[b][a] += c; }
 	int s,tt;
 	bool dfs(int v, int sz) { // find alternating path
-		static int tt = 0; vis[v] = tt;
+		vis[v] = tt;
 		FOR(a,1,N+1) if (cap[v][a]-cur[v][a] >= sz) 
 			if (f[a] >= 2*sz || (f[a] >= sz && a != s)) {
 				x(v,a,sz); f[s] -= sz; f[a] -= sz; return 1; }
@@ -38,7 +38,7 @@ template<int SZ> struct FakeMatch {
 		while (1) {
 			vi lef; FOR(i,1,N+1) if (f[i]) lef.pb(i);
 			if (!sz(lef)) break;
-			random_shuffle(all(lef));
+			shuffle(all(lef),rng);
 			trav(_s,lef) {
 				s = _s; tt ++;
 				for (int sz = 1<<13; sz; sz /= 2) while (f[s] >= sz) 

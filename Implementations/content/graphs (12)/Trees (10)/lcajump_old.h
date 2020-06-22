@@ -10,11 +10,11 @@
 template<int SZ> struct LCA {
 	static const int BITS = 32-__builtin_clz(SZ);
 	int N, R = 1, par[BITS][SZ], depth[SZ]; vi adj[SZ]; 
-	/// INITIALIZE
 	void ae(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
-	void dfs(int u, int prv){
-		depth[u] = depth[par[0][u] = prv]+1;
-		trav(v,adj[u]) if (v != prv) dfs(v,u); }
+	/// INITIALIZE
+	void dfs(int x, int p){
+		depth[x] = depth[par[0][x] = p]+1;
+		trav(y,adj[x]) if (y != p) dfs(y,x); }
 	void init(int _N) {
 		N = _N; dfs(R,0);
 		FOR(k,1,BITS) FOR(i,1,N+1) 

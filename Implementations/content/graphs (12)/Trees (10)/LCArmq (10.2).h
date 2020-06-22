@@ -12,27 +12,30 @@
 
 #include "../../data-structures/Static Range Queries (9.1)/RMQ (9.1).h"
 
-template<int SZ> struct LCA {
-	int N, R = 1, depth[SZ], st[SZ];
-	vi adj[SZ]; vpi tmp; RMQ<pi> r;
-	void ae(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
-	void dfs(int u, int p) {
-		st[u] = sz(tmp), depth[u] = depth[p]+1;
-		tmp.eb(depth[u],u); 
-		trav(v,adj[u]) if (v != p) 
-			dfs(v,u), tmp.eb(depth[u],u);
+struct LCA {
+	int N; vector<vi> adj;
+	vi depth, pos;
+	vpi tmp; RMQ<pi> r;
+	void init(int _N) { N = _N; adj.rsz(N); depth = pos = vi(N); }
+	void ae(int x, int y) { adj[x].pb(y), adj[y].pb(x); }
+	void dfs(int x, int p) {
+		pos[x] = sz(tmp); tmp.eb(depth[x],x); 
+		trav(y,adj[x]) if (y != p) {
+			depth[y] = depth[x]+1;
+			dfs(y,x), tmp.eb(depth[x],x);
+		}
 	}
-	void init(int _N) { N = _N; dfs(R,0); r.init(tmp); }
+	void gen(int R) { dfs(R,-1); r.init(tmp); }
 	int lca(int u, int v){
-		u = st[u], v = st[v]; if (u > v) swap(u,v);
+		u = pos[u], v = pos[v]; if (u > v) swap(u,v);
 		return r.query(u,v).s; }
-	/// int dist(int u, int v) {
-		/// return depth[u]+depth[v]-2*depth[lca(u,v)]; }
+	int dist(int u, int v) {
+		return depth[u]+depth[v]-2*depth[lca(u,v)]; }
 	vpi compress(vi S) {
-		static vi rev; rev.rsz(N+1);
-		auto cmp = [&](int a, int b) { return st[a] < st[b]; };
+		static vi rev; rev.rsz(N);
+		auto cmp = [&](int a, int b) { return pos[a] < pos[b]; };
 		sort(all(S),cmp); R0F(i,sz(S)-1) S.pb(lca(S[i],S[i+1]));
-		sort(all(S),cmp); S.erase(unique(all(S)),end(S));
+		sort(all(S),cmp); remDup(S);
 		vpi ret{{0,S[0]}}; F0R(i,sz(S)) rev[S[i]] = i;
 		F0R(i,sz(S)-1) ret.eb(rev[lca(S[i],S[i+1])],S[i+1]);
 		return ret;

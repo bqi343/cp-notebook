@@ -5,6 +5,7 @@
 	* https://codeforces.com/blog/entry/63903
 	* https://codeforces.com/contest/1261/submission/65632855 (tourist)
 	* https://codeforces.com/contest/1264/submission/66344993 (ksun)
+	* also see https://github.com/ecnerwala/cp-book/blob/master/src/modnum.hpp (ecnerwal)
  * Verification: 
 	* https://open.kattis.com/problems/modulararithmetic
  */

@@ -4,11 +4,11 @@
  	* Use for Kruskal's or Boruvka's minimum spanning tree.
  * Time: O(\alpha(N))
  * Source: CSAcademy, KACTL
- * Verification: USACO superbull
+ * Verification: *
  */
 
 struct DSU {
-	vi e; void init(int n) { e = vi(n,-1); }
+	vi e; void init(int N) { e = vi(N,-1); }
 	int get(int x) { return e[x] < 0 ? x : e[x] = get(e[x]); } 
 	bool sameSet(int a, int b) { return get(a) == get(b); }
 	int size(int x) { return -e[get(x)]; }
@@ -19,9 +19,9 @@ struct DSU {
 	}
 };
 
-/**template<class T> T kruskal(int n, vector<pair<T,pi>> ed) {
+/**template<class T> T kruskal(int N, vector<pair<T,pi>> ed) {
 	sort(all(ed));
-	T ans = 0; DSU D; D.init(n+1); // edges that unite are in MST
+	T ans = 0; DSU D; D.init(N); // edges that unite are in MST
 	trav(a,ed) if (D.unite(a.s.f,a.s.s)) ans += a.f; 
 	return ans;
 }*/

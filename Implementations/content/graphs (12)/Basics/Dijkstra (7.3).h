@@ -13,7 +13,7 @@ template<class C, bool directed> struct Dijkstra {
 	void gen(int st) {
 		dist = vector<C>(SZ,numeric_limits<C>::max());
 		typedef pair<C,int> T; priority_queue<T,vector<T>,greater<T>> pq; 
-		auto ad = [&](int a, int b) {
+		auto ad = [&](int a, C b) {
 			if (dist[a] <= b) return;
 			pq.push({dist[a] = b,a});
 		}; ad(st,0);

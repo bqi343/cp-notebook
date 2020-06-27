@@ -10,8 +10,8 @@
 const int BIG = 20000;
 array<int,2*BIG+1> dp, tmp;
 
-int solve() {
-	int ind = 0, sum = 0;
+int solve(vi a) {
+	int n = sz(a), ind = 0, sum = 0;
 	while (ind < n && sum+a[ind] <= c) sum += a[ind++];
 	if (ind == n) return sum;
 	F0R(i,2*BIG+1) dp[i] = ind+1, tmp[i] = ind;

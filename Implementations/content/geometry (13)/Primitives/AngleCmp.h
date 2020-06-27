@@ -9,7 +9,7 @@
 
 #include "Point.h"
 
-bool half(P x) { return x.s == 0 ? x.f < 0 : x.s > 0; }
+int half(P x) { return x.s != 0 ? sgn(x.s) : -sgn(x.f); } // -1 if lower half, 0 if origin, 1 if upper half
 bool angleCmp(P a, P b) { 
 	bool A = half(a), B = half(b);
 	return A == B ? cross(a,b) > 0 : A < B; }

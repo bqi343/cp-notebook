@@ -6,7 +6,7 @@
  * Verification: https://dmoj.ca/problem/tle17c4p5
  */
 
-vi invs, fac, ifac;
+vi invs, fac, ifac; // make sure to convert to LL before doing any multiplications ...
 void genFac(int SZ) {
 	invs.rsz(SZ), fac.rsz(SZ), ifac.rsz(SZ); 
 	invs[1] = fac[0] = ifac[0] = 1; 

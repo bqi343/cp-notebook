@@ -21,21 +21,6 @@
       * [Wikipedia](https://en.wikipedia.org/wiki/Karatsuba_algorithm)
       * [Implementation](http://codeforces.com/contest/623/submission/15807539)
       * Typically not needed due to FFT / NTT.
-    * FFT / NTT
-      * Tutorial
-        * [CF Tutorial Pt 1](http://codeforces.com/blog/entry/43499)
-        * [CF Tutorial Pt 2](http://codeforces.com/blog/entry/48798)
-        * [CSAcademy](https://csacademy.com/blog/fast-fourier-transform-and-variations-of-it/)
-        * [adamant](http://codeforces.com/blog/entry/55572)
-        * [CP-Algorithms](https://cp-algorithms.com/algebra/fft.html)
-      * Problems
-        * Base Conversion
-        * Bitwise XOR, And, Or
-        * [K-Inversions](https://open.kattis.com/problems/kinversions)
-        * [Big Integer](https://dmoj.ca/problem/bts17p8)
-        * [Matchings](https://open.kattis.com/contests/acpc17open/problems/matchings)
-        * [Counting Triplets](https://toph.co/p/counting-triplets)
-        * [A2OJ](https://a2oj.com/category?ID=42)
   * Simplex
     * [Goat Ropes](https://open.kattis.com/contests/fvfhq4/problems/goatropes)
   	* [Red & Black Tree](http://codeforces.com/contest/375/problem/E)

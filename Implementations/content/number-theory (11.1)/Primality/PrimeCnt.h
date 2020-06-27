@@ -13,8 +13,9 @@
 
 #include "Sieve.h"
 
-ll primeCnt(ll N) { // A[i] stores # primes <= i
-	int SN = sqrt(N); vl A(SN+1), B(SN+1); 
+ll N; vl A, B; // sieve should store primes up to sqrt(N) and one more
+ll primeCnt() { // A[i] stores # primes <= i
+	int SN = sqrt(N);  A = B = vl(SN+1);
 	FOR(i,1,SN+1) A[i] = i-1, B[i] = N/i-1;
 	vd in(SN+1); FOR(i,1,SN+1) in[i] = 1.0/i;
 	trav(p,S.pr) { if (p > N/p) break;
@@ -32,8 +33,8 @@ ll pre(ll n, int ind) { // sum_{i=1}^n(# divisors of i^3)
 	if (p*p > n) return 1+4*(priNum(n)-ind);
 	ll res = pre(n,ind+1);
 	for (int j=1;;++j) {
-		cur /= p; if (!cur) break;
-		res += (3*j+1)*pre(cur,ind+1);
+		n /= p; if (!n) break;
+		res += (3*j+1)*pre(n,ind+1);
 	}
 	return res;
 }

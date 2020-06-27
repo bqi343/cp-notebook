@@ -1,7 +1,7 @@
 /**
  * Description: insert pair $(a,b)$ and query max value 
  	* of $b$ over all pairs satisfying $a\ge x$.
- * Source: https://codeforces.com/blog/entry/64914
+ * Source: Own
  * Verification: https://codeforces.com/gym/102059/problem/K
  	* http://www.usaco.org/index.php?page=viewproblem2&cpid=995
  * Time: O(\log N)

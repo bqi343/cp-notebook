@@ -5,6 +5,7 @@
  * Time: O(N\log N)
  * Source: https://codeforces.com/gym/102012/submission/54638473
  * Verification: GP of Nanjing 2020 D - String Theory
+ 	* https://judge.yosupo.jp/problem/runenumerate
  */
 
 #include "SuffixArray.h"

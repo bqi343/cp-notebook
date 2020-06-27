@@ -3,7 +3,7 @@
  	* and query sum in path/subtree.
  * Time: any tree path is split into $O(\log N)$ parts
  * Source: http://codeforces.com/blog/entry/22072, https://codeforces.com/blog/entry/53170
- * Verification: USACO Grass Planting, https://www.hackerrank.com/challenges/subtrees-and-paths
+ * Verification: *
  */
 
 #include "../../data-structures/1D Range Queries (9.2)/LazySeg (15.2).h"
@@ -39,21 +39,21 @@ template<int SZ, bool VALS_IN_EDGES> struct HLD {
 	}
 	/// int dist(int x, int y) { // # edges on path
 	/// 	return depth[x]+depth[y]-2*depth[lca(x,y)]; }
-	LazySeg<ll,SZ> tree;
+	LazySeg<ll,SZ> tree; // segtree for sum
 	template <class BinaryOp>
 	void processPath(int x, int y, BinaryOp op) {
 		for (; root[x] != root[y]; y = par[root[y]]) {
 			if (depth[root[x]] > depth[root[y]]) swap(x,y);
 			op(pos[root[y]],pos[y]); }
 		if (depth[x] > depth[y]) swap(x,y);
-		op(pos[y]+VALS_IN_EDGES,pos[y]); 
+		op(pos[x]+VALS_IN_EDGES,pos[y]); 
 	}
 	void modifyPath(int x, int y, int v) { 
 		processPath(x,y,[this,&v](int l, int r) { 
 			tree.upd(l,r,v); }); }
 	ll queryPath(int x, int y) { 
 		ll res = 0; processPath(x,y,[this,&res](int l, int r) { 
-			res += tree.qsum(l,r); });
+			res += tree.query(l,r); });
 		return res; }
 	void modifySubtree(int x, int v) { 
 		tree.upd(pos[x]+VALS_IN_EDGES,pos[x]+sz[x]-1,v); }

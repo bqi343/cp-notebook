@@ -138,9 +138,58 @@ void setIO(string s = "") {
 	if (sz(s)) { setIn(s+".in"), setOut(s+".out"); } // for USACO
 }
 
+int N;
+vpi v;
+vi ang, dist, ret;
+
+int sgn(pi a, pi b, pi c) {
+	a.f -= b.f, a.s -= b.s;
+	c.f -= b.f, c.s -= b.s;
+	ll L = (ll)a.f*c.s-(ll)a.s*c.f;
+	//dbg(L);
+	assert(L != 0);
+	return L > 0;
+}
+
+int dis(pi a, pi b) {
+	return abs(a.f-b.f)+abs(a.s-b.s);
+}
+
+map<vi,int> m;
+
 int main() {
-	setIO();
-	
+	setIO("lightsout"); re(N); v.rsz(N); re(v);
+	F0R(i,N) ang.pb(sgn(v[(i+N-1)%N],v[i],v[(i+1)%N]));
+	F0R(i,N) dist.pb(dis(v[i],v[(i+1)%N]));
+	ret.rsz(N);
+	F0R(i,N-1) ret[i+1] = ret[i]+dist[i];
+	R0F(i,N) ckmin(ret[i],ret[(i+1)%N]+dist[i]);
+	dbg(ret,dist);
+	ang[0] = MOD;
+	F0R(i,N) {
+		vi v;
+		F0R(j,N) {
+			if (j) v.pb(dist[(i+j-1)%N]);
+			v.pb(ang[(i+j)%N]);
+			m[v] ++;
+		}
+	}
+	dbg(m);
+	int res = 0;
+	F0R(i,N) {
+		vi v; int soFar = 0;
+		F0R(j,N) {
+			if (j) soFar += dist[(i+j-1)%N];
+			if (j) v.pb(dist[(i+j-1)%N]);
+			v.pb(ang[(i+j)%N]);
+			if (m[v] == 1) {
+				ckmax(res,ret[(i+j)%N]+soFar-ret[i]);
+				//dbg("HA",i,j,res);
+				break;
+			}
+		}
+	}
+	ps(res);
 	// you should actually read the stuff at the bottom
 }
 
@@ -150,3 +199,4 @@ int main() {
 	* do smth instead of nothing and stay organized
 	* WRITE STUFF DOWN
 */
+

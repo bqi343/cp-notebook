@@ -12,7 +12,7 @@ template <class T, int ...Ns> struct BIT {
 };
 template <class T, int N, int... Ns> struct BIT<T, N, Ns...> {
 	BIT<T,Ns...> bit[N+1];
-	template<typename... Args> void upd(int pos, Args... args) {
+	template<typename... Args> void upd(int pos, Args... args) { assert(pos > 0);
 		for (; pos<=N; pos+=pos&-pos) bit[pos].upd(args...); }
 	template<typename... Args> T sum(int r, Args... args) {
 		T res=0; for (;r;r-=r&-r) res += bit[r].query(args...); 

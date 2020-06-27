@@ -19,8 +19,7 @@ struct Line {
 
 // for doubles, use inf = 1/.0, divi(a,b) = a/b
 const ll inf = LLONG_MAX;
-// floored div
-ll divi(ll a, ll b) { return a/b-((a^b) < 0 && a%b); } 
+ll divi(ll a, ll b) { return a/b-((a^b) < 0 && a%b); } // floor(a/b)
 // last x such that first line is better
 ll bet(const Line& x, const Line& y) { 
 	if (x.k == y.k) return x.m >= y.m ? inf : -inf;
@@ -31,7 +30,7 @@ struct LC : multiset<Line> {
 	bool isect(iterator x, iterator y) { 
 		if (y == end()) { x->p = inf; return 0; }
 		x->p = bet(*x,*y); return x->p >= y->p; }
-	void add(ll k, ll m) {
+	void add(ll k, ll m) { // lol clearly I didn't write this
 		auto z = insert({k,m,0}), y = z++, x = y;
 		while (isect(y, z)) z = erase(z);
 		if (x != begin() && isect(--x, y)) isect(x, y = erase(y));

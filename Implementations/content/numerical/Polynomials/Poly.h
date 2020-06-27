@@ -10,8 +10,13 @@
 
 typedef mi T; using poly = vector<T>;
 void remz(poly& p) { while (sz(p)&&p.bk==T(0)) p.pop_back(); }
+poly REMZ(poly p) { remz(p); return p; }
 poly rev(poly p) { reverse(all(p)); return p; }
-poly shift(poly p, int x) { p.insert(begin(p),x,0); return p; }
+poly shift(poly p, int x) { 
+	if (x >= 0) p.insert(begin(p),x,0); 
+	else assert(sz(p)+x >= 0), p.erase(begin(p),begin(p)-x);
+	return p; 
+}
 poly RSZ(poly p, int x) { p.rsz(x); return p; }
 T eval(const poly& p, T x) { // evaluate at point x
 	T res = 0; R0F(i,sz(p)) res = x*res+p[i]; 

@@ -21,7 +21,7 @@ typedef vector<pd> vpd; //
 #define mp make_pair
 #define f first
 #define s second
-#define sz(x) (int)x.size()
+#define sz(x) (int)(x).size()
 #define all(x) begin(x), end(x)
 #define rall(x) (x).rbegin(), (x).rend() //
 #define rsz resize

@@ -17,7 +17,9 @@ poly shift(poly p, int x) {
 	else assert(sz(p)+x >= 0), p.erase(begin(p),begin(p)-x);
 	return p; 
 }
-poly RSZ(poly p, int x) { p.rsz(x); return p; }
+poly RSZ(const poly& p, int x) { 
+	if (x <= sz(p)) return poly(begin(p),begin(p)+x);
+	poly q = p; q.rsz(x); return q;  }
 T eval(const poly& p, T x) { // evaluate at point x
 	T res = 0; R0F(i,sz(p)) res = x*res+p[i]; 
 	return res; }

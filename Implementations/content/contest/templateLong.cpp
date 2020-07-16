@@ -53,12 +53,23 @@ template<class T> bool ckmax(T& a, const T& b) {
 	return a < b ? a = b, 1 : 0; } 
 constexpr int pct(int x) { return __builtin_popcount(x); } 
 constexpr int bits(int x) { return 31-__builtin_clz(x); } // floor(log2(x)) 
-constexpr int cdiv(int a, int b) { return a/b+!(a<0||a%b == 0); } // division of a by b rounded up, assumes b > 0 
-int fstTrue(function<bool(int)> f, int lo, int hi) {
+ll cdiv(ll a, ll b) { return a/b+((a^b)>0&&a%b); } // divide a by b rounded up
+ll fdiv(ll a, ll b) { return a/b-((a^b)<0&&a%b); } // divide a by b rounded down
+ll half(ll x) { return fdiv(x,2); }
+
+template<class T, class U> T fstTrue(T lo, T hi, U f) {
 	hi ++; assert(lo <= hi); // assuming f is increasing
 	while (lo < hi) { // find first index such that f is true 
-		int mid = (lo+hi)/2; 
+		T mid = half(lo+hi);
 		f(mid) ? hi = mid : lo = mid+1; 
+	} 
+	return lo;
+}
+template<class T, class U> T lstTrue(T lo, T hi, U f) {
+	lo --; assert(lo <= hi); // assuming f is decreasing
+	while (lo < hi) { // find first index such that f is true 
+		T mid = half(lo+hi+1);
+		f(mid) ? lo = mid : hi = mid-1;
 	} 
 	return lo;
 }
@@ -84,12 +95,18 @@ template<class A, size_t SZ> void re(array<A,SZ>& x) { trav(a,x) re(a); }
 // TO_STRING
 #define ts to_string
 str ts(char c) { return str(1,c); }
-str ts(bool b) { return b ? "true" : "false"; }
 str ts(const char* s) { return (str)s; }
 str ts(str s) { return s; }
+str ts(bool b) { 
+	#ifdef LOCAL
+		return b ? "true" : "false"; 
+	#else 
+		return ts((int)b);
+	#endif
+}
 template<class A> str ts(complex<A> c) { 
 	stringstream ss; ss << c; return ss.str(); }
-str ts(vector<bool> v) { 
+str ts(vector<bool> v) {
 	str res = "{"; F0R(i,sz(v)) res += char('0'+v[i]);
 	res += "}"; return res; }
 template<size_t SZ> str ts(bitset<SZ> b) {
@@ -97,15 +114,30 @@ template<size_t SZ> str ts(bitset<SZ> b) {
 	return res; }
 template<class A, class B> str ts(pair<A,B> p);
 template<class T> str ts(T v) { // containers with begin(), end()
-	bool fst = 1; str res = "{";
-	for (const auto& x: v) {
-		if (!fst) res += ", ";
-		fst = 0; res += ts(x);
-	}
-	res += "}"; return res;
+	#ifdef LOCAL
+		bool fst = 1; str res = "{";
+		for (const auto& x: v) {
+			if (!fst) res += ", ";
+			fst = 0; res += ts(x);
+		}
+		res += "}"; return res;
+	#else
+		bool fst = 1; str res = "";
+		for (const auto& x: v) {
+			if (!fst) res += " ";
+			fst = 0; res += ts(x);
+		}
+		return res;
+
+	#endif
 }
 template<class A, class B> str ts(pair<A,B> p) {
-	return "("+ts(p.f)+", "+ts(p.s)+")"; }
+	#ifdef LOCAL
+		return "("+ts(p.f)+", "+ts(p.s)+")"; 
+	#else
+		return ts(p.f)+" "+ts(p.s);
+	#endif
+}
 
 // OUTPUT
 template<class A> void pr(A x) { cout << ts(x); }
@@ -121,16 +153,16 @@ template<class H, class... T> void DBG(H h, T... t) {
 	cerr << ts(h); if (sizeof...(t)) cerr << ", ";
 	DBG(t...); }
 #ifdef LOCAL // compile with -DLOCAL
-#define dbg(...) cerr << "LINE(" << __LINE__ << ") -> [" << #__VA_ARGS__ << "]: [", DBG(__VA_ARGS__)
+	#define dbg(...) cerr << "LINE(" << __LINE__ << ") -> [" << #__VA_ARGS__ << "]: [", DBG(__VA_ARGS__)
 #else
-#define dbg(...) 0
+	#define dbg(...) 0
 #endif
 
 // FILE I/O
-void setIn(string s) { freopen(s.c_str(),"r",stdin); }
-void setOut(string s) { freopen(s.c_str(),"w",stdout); }
+void setIn(str s) { freopen(s.c_str(),"r",stdin); }
+void setOut(str s) { freopen(s.c_str(),"w",stdout); }
 void unsyncIO() { ios_base::sync_with_stdio(0); cin.tie(0); }
-void setIO(string s = "") {
+void setIO(str s = "") {
 	unsyncIO();
 	// cin.exceptions(cin.failbit); 
 	// throws exception when do smth illegal

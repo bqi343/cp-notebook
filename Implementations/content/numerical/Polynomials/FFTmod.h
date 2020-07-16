@@ -1,39 +1,25 @@
 /**
  * Description: Multiply two polynomials with arbitrary $MOD.$
-	* Ensures precision by splitting into halves.
- * Source: KACTL, https://cp-algorithms.com/algebra/fft.html
- * Time: $\sim$0.8s when \texttt{sz(a)=sz(b)=1<<19}
+ * Source: KACTL, https://cp-algorithms.com/algebra/fft.html, maroonrk
  * Verification: see FFT
  */
 
-#include "FFT.h"
-
-vl mulMod(const vl& a, const vl& b) { 
-	if (!min(sz(a),sz(b))) return {};
-	int s = sz(a)+sz(b)-1, n = 1<<size(s), cut = sqrt(MOD);
-	vcd roots(n); genRoots(roots);
-	vcd ax(n), bx(n);
-	// ax(x)=a1(x)+i*a0(x)
-	F0R(i,sz(a)) ax[i] = cd((int)a[i]/cut, (int)a[i]%cut); 
-	// bx(x)=b1(x)+i*b0(x)
-	F0R(i,sz(b)) bx[i] = cd((int)b[i]/cut, (int)b[i]%cut); 
-	fft(ax,roots), fft(bx,roots);
-	vcd v1(n), v0(n);
+template<class M, class T> vector<M> go(vector<T> x, vector<T> y) {
+	auto con = [](const vector<T>& v) {
+		vector<M> w(sz(v)); F0R(i,sz(v)) w[i] = (int)v[i];
+		return w; };
+	return mul(con(x),con(y));
+}
+template<class T> vector<T> MUL(const vector<T>& A, const vector<T>& B) {
+	using m0 = mint<(997<<20)+1,3>; // 2^20 * 997 + 1
+	using m1 = mint<(1003<<20)+1,6>; // 2^20 * 1003 + 1
+	using m2 = mint<(1005<<20)+1,7>; // 2^20 * 1005 + 1
+	auto c0 = go<m0>(A,B); auto c1 = go<m1>(A,B); auto c2 = go<m2>(A,B);
+	int n = sz(c0); vector<T> res(n);
+	m1 r01 = 1/m1(m0::mod); m2 r02 = 1/m2(m0::mod), r12 = 1/m2(m1::mod);
 	F0R(i,n) {
-		int j = (i ? (n-i) : i);
-		// v1 = a1*(b1+b0*cd(0,1));
-		v1[i] = (ax[i]+conj(ax[j]))*cd(0.5,0)*bx[i]; 
-		// v0 = a0*(b1+b0*cd(0,1));
-		v0[i] = (ax[i]-conj(ax[j]))*cd(0,-0.5)*bx[i]; 
+		int a = c0[i].v, b = ((c1[i]-a)*r01).v, c = ((c2[i]-a)*r02-b)*r12.v;
+		res[i] = (T(c)*m1::mod+b)*m0::mod+a;
 	}
-	fft(v1,roots,1), fft(v0,roots,1);
-	vl ret(n);
-	F0R(i,n) {
-		ll V2 = (ll)round(v1[i].real()); // a1*b1
-		ll V1 = (ll)round(v1[i].imag())+(ll)round(v0[i].real()); 
-		// a0*b1+a1*b0
-		ll V0 = (ll)round(v0[i].imag()); // a0*b0
-		ret[i] = ((V2%MOD*cut+V1)%MOD*cut+V0)%MOD;
-	}
-	ret.rsz(s); return ret;
-} 
+	return res;
+}

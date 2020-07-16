@@ -18,30 +18,40 @@
 
 poly inv(poly A, int n) { // Q-(1/Q-A)/(-Q^{-2})
 	poly B{1/A[0]};
-	while (sz(B) < n) { int x = 2*sz(B);
-		B = RSZ(2*B-conv(RSZ(A,x),conv(B,B)),x); }
+	for (int x = 2; x/2 < n; x *= 2)
+		B = 2*B-RSZ(conv(RSZ(A,x),conv(B,B)),x);
 	return RSZ(B,n);
 }
 poly sqrt(const poly& A, int n) {  // Q-(Q^2-A)/(2Q)
 	assert(A[0] == 1); poly B{1};
-	while (sz(B) < n) { int x = 2*sz(B);
-		B = T(1)/T(2)*RSZ(B+mul(RSZ(A,x),inv(B,x)),x); }
+	for (int x = 2; x/2 < n; x *= 2)
+		B = T(1)/T(2)*RSZ(B+conv(RSZ(A,x),inv(B,x)),x);
 	return RSZ(B,n);
 }
-pair<poly,poly> divi(const poly& f, const poly& g) { 
+pair<poly,poly> divi(const poly& f, const poly& g) { // return quotient and remainder
 	if (sz(f) < sz(g)) return {{},f};
-	auto q = mul(inv(rev(g),sz(f)-sz(g)+1),rev(f));
+	poly q = conv(inv(rev(g),sz(f)-sz(g)+1),rev(f));
 	q = rev(RSZ(q,sz(f)-sz(g)+1));
-	auto r = RSZ(f-mul(q,g),sz(g)-1); return {q,r};
+	poly r = RSZ(f-conv(q,g),sz(g)-1); return {q,r};
 }
 poly log(poly A, int n) { assert(A[0] == 1); // (ln A)' = A'/A
-	return RSZ(integ(conv(dif(A),inv(A,n))),n); }
-poly exp(poly A, int n) { // Q-(lnQ-A)/(1/Q)
-	assert(A[0] == 0); poly B = {1};
-	while (sz(B) < n) { int x = 2*sz(B);
-		B = RSZ(B+conv(B,RSZ(A,x)-log(B,x)),x); }
+	A.rsz(n); return integ(RSZ(conv(dif(A),inv(A,n-1)),n-1)); }
+poly exp(poly A, int n) { assert(A[0] == 0);
+	poly B{1}, IB{1};
+	for (int x = 1; x < n; x *= 2) {
+		IB = 2*IB-RSZ(conv(B,conv(IB,IB)),x); // inverse of B to x places
+		poly Q = dif(RSZ(A,x)); Q += RSZ(conv(IB,dif(B)-conv(B,Q)),2*x-1); 
+		// first x-1 terms of dif(B)-conv(B,Q) are zero
+		B = B+RSZ(conv(B,RSZ(A,2*x)-integ(Q)),2*x); 
+	} // We know that Q=A' is B'/B to x-1 places, we want to find B'/B to 2x-1 places
 	return RSZ(B,n);
 }
+// poly expOld(poly A, int n) { // Q-(lnQ-A)/(1/Q)
+// 	assert(A[0] == 0); poly B = {1};
+// 	while (sz(B) < n) { int x = 2*sz(B);
+// 		B = RSZ(B+conv(B,RSZ(A,x)-log(B,x)),x); }
+// 	return RSZ(B,n);
+// }
 
 void segProd(vector<poly>& stor, poly& v, int ind, int l, int r) { // v -> places to evaluate at
 	if (l == r) { stor[ind] = {-v[l],1}; return; }

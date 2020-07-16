@@ -12,49 +12,49 @@
 
 #pragma once
 
-struct mi {
-	typedef decay<decltype(MOD)>::type T; 
- 	/// don't silently convert to T
-	T v; explicit operator T() const { return v; }
-	mi() { v = 0; }
-	mi(ll _v) { 
-		v = (-MOD < _v && _v < MOD) ? _v : _v % MOD;
-		if (v < 0) v += MOD;
-	}
-	friend bool operator==(const mi& a, const mi& b) { 
+template <int MOD, int RT> struct mint {
+	static const int mod = MOD;
+	static mint rt() { return RT; } // primitive root for FFT
+	int v; explicit operator int() const { return v; } // don't silently convert to int
+	mint() { v = 0; }
+	mint(ll _v) { v = (-MOD < _v && _v < MOD) ? _v : _v % MOD;
+		if (v < 0) v += MOD; }
+	friend bool operator==(const mint& a, const mint& b) { 
 		return a.v == b.v; }
-	friend bool operator!=(const mi& a, const mi& b) { 
+	friend bool operator!=(const mint& a, const mint& b) { 
 		return !(a == b); }
-	friend bool operator<(const mi& a, const mi& b) { 
+	friend bool operator<(const mint& a, const mint& b) { 
 		return a.v < b.v; }
-	friend void re(mi& a) { ll x; re(x); a = mi(x); }
-	friend str ts(mi a) { return ts(a.v); }
+	friend void re(mint& a) { ll x; re(x); a = mint(x); }
+	friend str ts(mint a) { return ts(a.v); }
    
-	mi& operator+=(const mi& m) { 
+	mint& operator+=(const mint& m) { 
 		if ((v += m.v) >= MOD) v -= MOD; 
 		return *this; }
-	mi& operator-=(const mi& m) { 
+	mint& operator-=(const mint& m) { 
 		if ((v -= m.v) < 0) v += MOD; 
 		return *this; }
-	mi& operator*=(const mi& m) { 
+	mint& operator*=(const mint& m) { 
 		v = (ll)v*m.v%MOD; return *this; }
-	mi& operator/=(const mi& m) { return (*this) *= inv(m); }
-	friend mi pow(mi a, ll p) {
-		mi ans = 1; assert(p >= 0);
+	mint& operator/=(const mint& m) { return (*this) *= inv(m); }
+	friend mint pow(mint a, ll p) {
+		mint ans = 1; assert(p >= 0);
 		for (; p; p /= 2, a *= a) if (p&1) ans *= a;
 		return ans;
 	}
-	friend mi inv(const mi& a) { assert(a.v != 0); 
+	friend mint inv(const mint& a) { assert(a.v != 0); 
 		return pow(a,MOD-2); }
 		
-	mi operator-() const { return mi(-v); }
-	mi& operator++() { return *this += 1; }
-	mi& operator--() { return *this -= 1; }
-	friend mi operator+(mi a, const mi& b) { return a += b; }
-	friend mi operator-(mi a, const mi& b) { return a -= b; }
-	friend mi operator*(mi a, const mi& b) { return a *= b; }
-	friend mi operator/(mi a, const mi& b) { return a /= b; }
+	mint operator-() const { return mint(-v); }
+	mint& operator++() { return *this += 1; }
+	mint& operator--() { return *this -= 1; }
+	friend mint operator+(mint a, const mint& b) { return a += b; }
+	friend mint operator-(mint a, const mint& b) { return a -= b; }
+	friend mint operator*(mint a, const mint& b) { return a *= b; }
+	friend mint operator/(mint a, const mint& b) { return a /= b; }
 };
+
+typedef mint<MOD,3> mi;
 typedef vector<mi> vmi;
 typedef pair<mi,mi> pmi;
 typedef vector<pmi> vpmi;

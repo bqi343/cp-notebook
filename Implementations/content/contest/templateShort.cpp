@@ -27,6 +27,8 @@ const ld PI = acos((ld)-1);
 mt19937 rng; // or mt19937_64
 template<class T> bool ckmin(T& a, const T& b) { 
 	return b < a ? a = b, 1 : 0; }
+ll cdiv(ll a, ll b) { return a/b+((a^b)>0&&a%b); } // divide a by b rounded up
+ll fdiv(ll a, ll b) { return a/b-((a^b)<0&&a%b); } // divide a by b rounded down
 
 void DBG() { cerr << "]" << endl; }
 template<class H, class... T> void DBG(H h, T... t) {

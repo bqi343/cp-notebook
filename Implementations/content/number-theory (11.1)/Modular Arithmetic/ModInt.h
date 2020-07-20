@@ -12,10 +12,10 @@
 
 #pragma once
 
-template <int MOD, int RT> struct mint {
+template<int MOD, int RT> struct mint {
 	static const int mod = MOD;
-	static mint rt() { return RT; } // primitive root for FFT
-	int v; explicit operator int() const { return v; } // don't silently convert to int
+	static constexpr mint rt() { return RT; } // primitive root for FFT
+	int v; explicit operator int() const { return v; } // explicit -> don't silently convert to int
 	mint() { v = 0; }
 	mint(ll _v) { v = (-MOD < _v && _v < MOD) ? _v : _v % MOD;
 		if (v < 0) v += MOD; }
@@ -40,8 +40,7 @@ template <int MOD, int RT> struct mint {
 	friend mint pow(mint a, ll p) {
 		mint ans = 1; assert(p >= 0);
 		for (; p; p /= 2, a *= a) if (p&1) ans *= a;
-		return ans;
-	}
+		return ans; }
 	friend mint inv(const mint& a) { assert(a.v != 0); 
 		return pow(a,MOD-2); }
 		
@@ -54,7 +53,7 @@ template <int MOD, int RT> struct mint {
 	friend mint operator/(mint a, const mint& b) { return a /= b; }
 };
 
-typedef mint<MOD,3> mi;
+typedef mint<MOD,5> mi; // 5 is primitive root for both common mods
 typedef vector<mi> vmi;
 typedef pair<mi,mi> pmi;
 typedef vector<pmi> vpmi;

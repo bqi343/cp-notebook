@@ -4,6 +4,8 @@
  * Verification: see FFT
  */
 
+#include "FFT.h"
+
 template<class M, class T> vector<M> go(vector<T> x, vector<T> y) {
 	auto con = [](const vector<T>& v) {
 		vector<M> w(sz(v)); F0R(i,sz(v)) w[i] = (int)v[i];
@@ -11,7 +13,7 @@ template<class M, class T> vector<M> go(vector<T> x, vector<T> y) {
 	return mul(con(x),con(y));
 }
 template<class T> vector<T> MUL(const vector<T>& A, const vector<T>& B) {
-	using m0 = mint<(997<<20)+1,3>; // 2^20 * 997 + 1
+	using m0 = mint<(997<<20)+1,3>;  // 2^20 * 997  + 1
 	using m1 = mint<(1003<<20)+1,6>; // 2^20 * 1003 + 1
 	using m2 = mint<(1005<<20)+1,7>; // 2^20 * 1005 + 1
 	auto c0 = go<m0>(A,B); auto c1 = go<m1>(A,B); auto c2 = go<m2>(A,B);

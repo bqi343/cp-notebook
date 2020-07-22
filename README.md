@@ -1,5 +1,7 @@
 # README
 
+Some material has been moved to the [USACO Guide](https://usaco-guide.vercel.app/).
+
 ## Notes
 
 I am currently not updating the following pages:

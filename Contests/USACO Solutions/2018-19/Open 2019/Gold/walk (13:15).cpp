@@ -173,9 +173,85 @@ void setIO(str s = "") {
 	if (sz(s)) { setIn(s+".in"), setOut(s+".out"); } // for USACO
 }
 
+const int a = 2019201997-2019201913;
+const int b = 2019201997-2019201949;
+
+int N,K;
+
+const int WUT = ((1<<16)-1);
+
+pi rhsh(int x) {
+	return {x>>16,x&WUT};
+}
+
+int wei(int x) {
+	return (x>>16)*a+(x&WUT)*b;
+}
+
+
+int hsh(int a, int b) { return (a<<16)+b; }
+
+/**
+ * Description: Disjoint Set Union with path compression
+ 	* and union by size. Add edges and test connectivity. 
+ 	* Use for Kruskal's or Boruvka's minimum spanning tree.
+ * Time: O(\alpha(N))
+ * Source: CSAcademy, KACTL
+ * Verification: *
+ */
+
+struct DSU {
+	vi e; void init(int N) { e = vi(N,-1); }
+	int get(int x) { return e[x] < 0 ? x : e[x] = get(e[x]); } 
+	bool sameSet(int a, int b) { return get(a) == get(b); }
+	int size(int x) { return -e[get(x)]; }
+	bool unite(int x, int y) { // union by size
+		x = get(x), y = get(y); if (x == y) return 0;
+		if (e[x] > e[y]) swap(x,y);
+		e[x] += e[y]; e[y] = x; return 1;
+	}
+};
+
+/**template<class T> T kruskal(int N, vector<pair<T,pi>> ed) {
+	sort(all(ed));
+	T ans = 0; DSU D; D.init(N); // edges that unite are in MST
+	trav(a,ed) if (D.unite(a.s.f,a.s.s)) ans += a.f; 
+	return ans;
+}*/
+
+const int SZ = 28121250;
+int ed[SZ], res[SZ];
+DSU D;
+
+template<class F> void bucket(int a[], int b[], const F& f) {
+	vi cnt(1<<16);
+	F0R(i,N*(N-1)/2) cnt[f(a[i])] ++;
+	int sum = 0;
+	R0F(i,1<<16) {
+		swap(sum,cnt[i]);
+		sum += cnt[i];
+	}
+	F0R(i,N*(N-1)/2) b[cnt[f(a[i])]++] = a[i];
+}
+
 int main() {
-	setIO();
-	
+	setIO("walk"); 
+	clock_t beg = clock();
+	re(N,K); D.init(N+1);
+	int cnt = 0; FOR(i,1,N+1) FOR(j,i+1,N+1) ed[cnt++] = hsh(i,j);
+	dbg((db)(clock()-beg)/CLOCKS_PER_SEC);
+	bucket(ed,res,[](int x) { return wei(x)&WUT; });
+	dbg((db)(clock()-beg)/CLOCKS_PER_SEC);
+	bucket(res,ed,[](int x) { return wei(x)>>16; });
+	dbg((db)(clock()-beg)/CLOCKS_PER_SEC);
+	vi ans;
+	F0R(i,N*(N-1)/2) {
+		int t = ed[i];
+		pi p = rhsh(t);
+		if (D.unite(p.f,p.s)) ans.pb(2019201997-wei(t));
+	}
+	ps(ans[N-K]);
+	dbg((db)(clock()-beg)/CLOCKS_PER_SEC);
 	// you should actually read the stuff at the bottom
 }
 
@@ -185,3 +261,4 @@ int main() {
 	* do smth instead of nothing and stay organized
 	* WRITE STUFF DOWN
 */
+

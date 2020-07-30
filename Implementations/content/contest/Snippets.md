@@ -32,7 +32,7 @@ int main() {
 ## FHC
 
 ```
-// REINITIALIZE ARRAYS BETWEEN TCs
+// make sure to intialize ALL GLOBAL VARS between tcs!
 
 int N;
 
@@ -59,7 +59,7 @@ int main() {
 ## GCJ
 
 ```
-// REINITIALIZE ARRAYS BETWEEN TCs
+// make sure to intialize ALL GLOBAL VARS between tcs!
 
 void solve(int tc) {
 	// cerr << "Doing #" << tc << "\n";

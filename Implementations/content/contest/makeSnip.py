@@ -6,6 +6,7 @@ USACO="/Users/benq/Documents/USACO"
 SUBL="/Users/benq/Library/Application Support/Sublime Text 3/Packages/User"
 LOC=SUBL+"/algos/"
 
+
 if os.path.exists(LOC): # remove loc if it already exists
 	shutil.rmtree(LOC)
 os.makedirs(LOC)
@@ -120,7 +121,7 @@ def process(root,name): # prefix, file name
 		elif "TemplateShort" in name:
 			print("TEMPLATE_SHORT:",name)
 			output("TempShort",tempShort(root,name))
-		elif "usaco" in name:
+		elif "usaco" in name or "Template" in name:
 			print("INCLUDED:",name)
 			output(shorten(name),checkNorm(root,name))
 		elif "template" not in name.lower() and "test" not in name.lower():
@@ -131,7 +132,7 @@ def process(root,name): # prefix, file name
 		global suf
 		_suf = suf
 		suf = suf.replace('.c++','.shell') # https://gist.github.com/J2TeaM/a54bafb082f90c0f20c9
-		print(suf)
+		# print(suf)
 		print("INCLUDED","stress.sh")
 		output("stress",checkNorm(root,name))
 		suf = _suf

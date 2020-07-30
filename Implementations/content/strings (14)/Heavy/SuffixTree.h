@@ -1,76 +1,53 @@
 /**
- * Description: Used infrequently. Ukkonen's algorithm for suffix tree.
+ * Description: Used infrequently. Ukkonen's algorithm for suffix tree. Longest
+   * non-unique suffix of \texttt{s} has length \texttt{len[p]+lef} after each
+   * call to \texttt{add} terminates. Each iteration of loop within \texttt{add}
+   * decreases this quantity by one.
  * Time: O(N\log \sum)
- * Source: 
- 	* https://codeforces.com/blog/entry/16780
- 	* https://stackoverflow.com/questions/9452701/ukkonens-suffix-tree-algorithm-in-plain-english?rq=1
- * Verification: 
- 	* https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=18&page=show_problem&problem=1620
- 	* https://www.hackerearth.com/practice/data-structures/advanced-data-structures/suffix-trees/practice-problems/algorithm/power-of-string-3/description/
+ * Source: *
+ * Verification: *
  */
 
 struct SuffixTree {
-	str s; int node, pos;
-	struct state { // edge to state is s[fpos,fpos+len)
-		int fpos, len, link = -1; map<char,int> to;
-		state(int fpos, int len) : fpos(fpos), len(len) {}
-	}; vector<state> st;
-	int makeNode(int pos, int len) { 
-		st.pb(state(pos,len)); return sz(st)-1; }
-	void goEdge() {
-		while (pos>1 && pos>st[st[node].to[s[sz(s)-pos]]].len) {
-			node = st[node].to[s[sz(s)-pos]];
-			pos -= st[node].len;
-		}
-	}
-	void extend(char c) {
-		s += c; pos ++; int last = 0;
-		while (pos) {
-			goEdge();
-			char edge = s[sz(s)-pos];
-			int& v = st[node].to[edge];
-			char t = s[st[v].fpos+pos-1];
-			if (v == 0) {
-				v = makeNode(sz(s)-pos,MOD);
-				st[last].link = node; last = 0;
-			} else if (t == c) {
-				st[last].link = node;
-				return;
-			} else {
-				int u = makeNode(st[v].fpos,pos-1);
-				st[u].to[c] = makeNode(sz(s)-1,MOD); st[u].to[t] = v;
-				st[v].fpos += pos-1; st[v].len -= pos-1;
-				v = u; st[last].link = u; last = u;
+	str s; int N = 0;
+	vi pos, len, lnk; vector<map<char,int>> to;
+	int make(int POS, int LEN) { // lnk[x] is meaningful when x!=0 and len[x] != MOD
+		pos.pb(POS); len.pb(LEN); lnk.pb(-1); to.eb(); return N++; }
+	void add(int& p, int& lef, char c) { // our longest non-unique suffix is at node p with lef extra chars
+		s += c; lef ++; int lst = 0;
+		for (;lef;p?p=lnk[p]:lef--) { // if p is not root then lnk[p] must be defined
+			while (lef>1 && lef>len[to[p][s[sz(s)-lef]]]) // traverse edges of suffix tree while you can
+				p = to[p][s[sz(s)-lef]], lef -= len[p]; 
+			char e = s[sz(s)-lef]; int& q = to[p][e]; // next edge of suffix tree
+			if (!q) q = make(sz(s)-lef,MOD), lnk[lst] = p, lst = 0; // make new edge
+			else {
+				char t = s[pos[q]+lef-1]; 
+				if (t == c) { lnk[lst] = p; return; } // suffix is not unique, done
+				int u = make(pos[q],lef-1); // new node for the current suffix - 1, define its link
+				to[u][c] = make(sz(s)-1,MOD); to[u][t] = q; // new node, old node
+				pos[q] += lef-1; if (len[q] != MOD) len[q] -= lef-1;
+				q = u, lnk[lst] = u, lst = u;
 			}
-			if (node == 0) pos --;
-			else node = st[node].link;
 		}
 	}
 	void init(str _s) {
-		makeNode(-1,0); node = pos = 0;
-		trav(c,_s) extend(c);
-		extend('$'); s.pop_back(); // terminal char
+		make(-1,0); int p = 0, lef = 0;
+		trav(c,_s) add(p,lef,c);
+		add(p,lef,'$'); s.pop_back(); // terminal char
 	}
 	int maxPre(str x) { // max prefix of x which is substring
-		int node = 0, ind = 0;
-		while (1) {
-			if (ind==sz(x) || !st[node].to.count(x[ind])) return ind;
-			node = st[node].to[x[ind]];
-			F0R(i,st[node].len) {
-				if (ind == sz(x) || x[ind] != s[st[node].fpos+i]) 
-					return ind;
+		for (int p = 0, ind = 0;;) {
+			if (ind == sz(x) || !to[p].count(x[ind])) return ind;
+			p = to[p][x[ind]];
+			F0R(i,len[p]) {
+				if (ind == sz(x) || x[ind] != s[pos[p]+i]) return ind;
 				ind ++;
 			}
 		}
 	}
 	vi sa; // generate suffix array
-	void genSa(int x = 0, int len = 0) {
-		if (!sz(st[x].to)) { // terminal node
-			sa.pb(st[x].fpos-len);
-			if (sa.bk >= sz(s)) sa.pop_back();
-		} else {
-			len += st[x].len;
-			trav(t,st[x].to) genSa(t.s,len);
-		}
+	void genSa(int x = 0, int Len = 0) {
+		if (!sz(to[x])) sa.pb(pos[x]-Len); // found terminal node
+		else trav(t,to[x]) genSa(t.s,Len+len[x]);
 	}
 };

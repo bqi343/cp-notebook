@@ -7,14 +7,8 @@
  	* corresponds to the longest suffix that is in a different class.
  	* Suffix links correspond to suffix tree of the reversed string!
  * Time: O(N\log \sum)
- * Source: https://cp-algorithms.com/string/suffix-automaton.html
- 	* https://codeforces.com/blog/entry/62331
- 	* Siyong Huang!
- * Verification: 
-	* https://www.spoj.com/problems/SUBLEX/
-	* https://open.kattis.com/problems/stringmultimatching
-	* https://codeforces.com/gym/102129/problem/I
-	* https://codeforces.com/contest/235/problem/C
+ * Source: *
+ * Verification: *
  */
  
 struct SuffixAutomaton {
@@ -37,13 +31,13 @@ struct SuffixAutomaton {
 		int x = getNex(); lnk[cur] = x; 
 		return cur;
 	}
-	void init(str s) { int p = 0; trav(x,s) p = add(p,x); } 
+	void init(str s) { int p = 0; trav(x,s) p = add(p,x); } // add string to automaton
 	void genIlnk() { iLnk.rsz(N); FOR(v,1,N) iLnk[lnk[v]].pb(v); } // inverse links
 	// APPLICATIONS
 	void getAllOccur(vi& oc, int v) {
 		if (!isClone[v]) oc.pb(pos[v]); // terminal position
 		trav(u,iLnk[v]) getAllOccur(oc,u); }
-	vi allOccur(str s) {
+	vi allOccur(str s) { // get all occurrences of s in automaton
 		int cur = 0;
 		trav(x,s) {
 			if (!nex[cur].count(x)) return {};

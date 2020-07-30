@@ -253,7 +253,6 @@ int main() {
         B.hole[H] += rec[i+1]-rec[i];
         if (B.hole[H] == 0) {
             ret += B.sz[H];
-            // ps("??",B.sz[H]);
         }
         // rec[0] -> rec[1]
     }

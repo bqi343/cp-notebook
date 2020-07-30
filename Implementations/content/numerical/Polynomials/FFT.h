@@ -15,6 +15,7 @@
  */
 
 #include "ModInt.h"
+const int MOD = 998244353;
 
 template<class T> void fft(vector<T>& A, bool inv = 0) {
 	int n = sz(A); vector<T> B(n);

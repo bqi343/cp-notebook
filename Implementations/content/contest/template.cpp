@@ -11,6 +11,7 @@ typedef pair<ll,ll> pl; //
 typedef pair<db,db> pd; //
 //
 typedef vector<int> vi; 
+typedef vector<bool> vb; //
 typedef vector<ll> vl; //
 typedef vector<db> vd; //
 typedef vector<str> vs; //
@@ -24,6 +25,7 @@ typedef vector<pd> vpd; //
 #define sz(x) (int)(x).size()
 #define all(x) begin(x), end(x)
 #define rall(x) (x).rbegin(), (x).rend() //
+#define sor(x) sort(all(x)) //
 #define rsz resize
 #define ins insert //
 #define ft front() //
@@ -58,7 +60,8 @@ ll fdiv(ll a, ll b) { return a/b-((a^b)<0&&a%b); } // divide a by b rounded down
 // IGNORE
 ll half(ll x) { return fdiv(x,2); }
 
-template<class T, class U> T fstTrue(T lo, T hi, U f) {
+template<class T, class U> T fstTrue(T lo, T hi, U f) { 
+	// note: if (lo+hi)/2 is used instead of half(lo+hi) then this will loop infinitely when lo=hi
 	hi ++; assert(lo <= hi); // assuming f is increasing
 	while (lo < hi) { // find first index such that f is true 
 		T mid = half(lo+hi);
@@ -78,4 +81,4 @@ template<class T> void remDup(vector<T>& v) {
 	sort(all(v)); v.erase(unique(all(v)),end(v)); }
 // IGNORE
 //
-int main() { ios_base::sync_with_stdio(0); cin.tie(0); }
+int main() { cin.tie(0)->sync_with_stdio(0); }

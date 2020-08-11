@@ -40,4 +40,4 @@ template<class H, class... T> void DBG(H h, T... t) {
 #define dbg(...) 0
 #endif
 
-int main() { ios_base::sync_with_stdio(0); cin.tie(0); }
+int main() { cin.tie(0)->sync_with_stdio(0); }

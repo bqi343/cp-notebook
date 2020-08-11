@@ -6,7 +6,8 @@
 	* https://codeforces.com/blog/entry/65311 (4-liner for debugging, based off tourist)
 	* https://codeforces.com/blog/entry/68809 (debugging, also based off tourist)
 	* https://codeforces.com/blog/entry/76087 (yet another ...)
-	* https://gcc.gnu.org/onlinedocs/cpp/Standard-Predefined-Macros.html
+	* https://gcc.gnu.org/onlinedocs/cpp/Standard-Predefined-Macros.html (__LINE__)
+	* https://gcc.gnu.org/onlinedocs/cpp/Variadic-Macros.html (__VA_ARGS__)
  * Verification: http://codeforces.com/contest/1045/problem/D
  */
 
@@ -98,7 +99,7 @@ template<class H, class... T> void DBG(H h, T... t) {
 // FILE I/O
 void setIn(str s) { freopen(s.c_str(),"r",stdin); }
 void setOut(str s) { freopen(s.c_str(),"w",stdout); }
-void unsyncIO() { ios_base::sync_with_stdio(0); cin.tie(0); }
+void unsyncIO() { cin.tie(0)->sync_with_stdio(0); }
 void setIO(str s = "") {
 	unsyncIO();
 	// cin.exceptions(cin.failbit); 

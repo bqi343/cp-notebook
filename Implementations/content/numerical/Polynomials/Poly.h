@@ -1,14 +1,14 @@
 /**
  * Description: Basic poly ops including division. Can replace \texttt{T} with double, complex.
  * Source: Own. Also see
- 	* https://github.com/kth-competitive-programming/kactl/blob/master/content/numerical/PolyInterpolate.h
- 	* https://github.com/ecnerwala/icpc-book/blob/master/content/numerical/fft.cpp
+	* https://github.com/kth-competitive-programming/kactl/blob/master/content/numerical/PolyInterpolate.h
+	* https://github.com/ecnerwala/icpc-book/blob/master/content/numerical/fft.cpp
  * Verification: see FFT
  */
 
 #include "../../number-theory (11.1)/Modular Arithmetic/ModInt.h"
 
-typedef mi T; using poly = vector<T>;
+using T = mi; using poly = vector<T>;
 void remz(poly& p) { while (sz(p)&&p.bk==T(0)) p.pop_back(); }
 poly REMZ(poly p) { remz(p); return p; }
 poly rev(poly p) { reverse(all(p)); return p; }
@@ -77,6 +77,6 @@ T resultant(poly a, poly b) { // R(A,B)
 	// Also, R(A,B)=b_m^{deg(A)-deg(A-CB)}R(A-CB,B)
 	int ad = sz(a)-1, bd = sz(b)-1; 
 	if (bd <= 0) return bd < 0 ? 0 : pow(b.bk,ad);
-    int pw = ad; a = a%b; pw -= (ad = sz(a)-1);
-    return resultant(b,a)*pow(b.bk,pw)*T((bd&ad&1)?-1:1);
+	int pw = ad; a = a%b; pw -= (ad = sz(a)-1);
+	return resultant(b,a)*pow(b.bk,pw)*T((bd&ad&1)?-1:1);
 }

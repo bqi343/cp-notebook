@@ -10,7 +10,7 @@ def parse(url):
 	return BeautifulSoup(page,'html.parser')
 
 def topcoder_stats():
-	url = "https://www.topcoder.com/tc?module=ProblemArchive&sr=1&er=400&sc=&sd=&class=&cat=&div1l=&div2l=&mind1s=&mind2s=&maxd1s=&maxd2s=&wr="
+	url = "https://www.topcoder.com/tc?module=ProblemArchive&sr=1&er=1000&sc=&sd=&class=&cat=&div1l=&div2l=&mind1s=&mind2s=&maxd1s=&maxd2s=&wr="
 	html = parse(url)
 	beg = True
 	prob = []
@@ -24,11 +24,10 @@ def topcoder_stats():
 		if beg:
 			beg = False
 			continue
-
 		event = x[1].find_all(text=True)[1].strip()
 		# if ("TCO18" not in event and "2018 TCO" not in event) or "Fun" in event:
-		if "757" not in event and "758" not in event:
-			continue
+		# if "757" not in event and "758" not in event:
+		# 	continue
 		title = x[0].find_all(text=True)[1].strip()
 		percent = ""
 		for b in x[9].findChildren():
@@ -38,9 +37,11 @@ def topcoder_stats():
 					percent = Z.findChildren(recursive=False)[6].findChildren()[1].text.strip()
 					# print("HA",Z.findChildren()[6].text)
 		prob.append([float(percent[:-1]),event,number,title])
-		print(len(prob))
+		print(len(prob),event)
 	prob.sort()
 	for t in prob:
 		for x in t:
 			print(str(x)+"\t",end='')
 		print()
+
+topcoder_stats()

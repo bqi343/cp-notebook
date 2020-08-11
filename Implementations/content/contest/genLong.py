@@ -55,7 +55,7 @@ with open('TemplateLong.cpp', 'w') as outfile:
 	for line in extra:
 		ad(line)
 	# print("OH",res[-1],"HA",res[-1][-1],res[-1][-2])
-	ind = res[-1].find("ios")
+	ind = res[-1].find("cin.tie(0)->")
 	res[-1] = res[-1][:ind-1]+"\n\tsetIO();\n\t\n"
 
 	res.append('	// you should actually read the stuff at the bottom\n')

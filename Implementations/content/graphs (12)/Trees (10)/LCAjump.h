@@ -18,7 +18,7 @@ struct LCA {
 	void dfs(int x = 0) {
 		FOR(i,1,sz(par)) par[i][x] = par[i-1][par[i-1][x]];
 		trav(y,adj[x]) if (y != par[0][x]) 
-			depth[y] = depth[par[0][y] = x]+1, dfs(y);
+			depth[y] = depth[par[0][y]=x]+1, dfs(y);
 	}
 	int jmp(int x, int d) {
 		F0R(i,sz(par)) if ((d>>i)&1) x = par[i][x];

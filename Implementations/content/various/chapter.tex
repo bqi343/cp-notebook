@@ -29,22 +29,7 @@ When doing DP on intervals: $a[i][j] = \min_{i < k < j}(a[i][k] + a[k][j]) + f(i
 			\item \texttt{ F0R(b,k) F0R(i,1<<K) if (i\&1<<b) D[i] += D[i\^{}(1<<b)]; } computes all sums of subsets.
 		\end{itemize}
 	\subsection{Pragmas}
-		 %  [Explanation](https://codeforces.com/blog/entry/54682?#comment-387553)
-		 %  Problems
-			% [Nagini](https://codeforces.com/contest/855/submission/47823825)
-				% only Ofast: TLE
-				% avx: 2339ms
-				% avx2: 1544ms
-				% sse4: 2479ms
-			% [Welcome home, Chtholly](https://codeforces.com/contest/896/submission/47824007)
-				% no Ofast / only Ofast: TLE
-				% avx: 2354ms
-				% avx2: 1684ms
-				% sse4: 2183ms
-			% [Awesome Substrings](https://codeforces.com/contest/1270/submission/68018017)
-				% sse4 / avx: TLE
-				% avx2: 6894ms
-			
+	
 		\begin{itemize}
 			\item \lstinline{#pragma GCC optimize ("Ofast")} will make GCC auto-vectorize for loops and optimizes floating points better (assumes associativity and turns off denormals).
 			\item \lstinline{#pragma GCC target ("avx,avx2")} can double performance of vectorized code, but causes crashes on old machines. Also consider older \lstinline{#pragma GCC target ("sse4")}.

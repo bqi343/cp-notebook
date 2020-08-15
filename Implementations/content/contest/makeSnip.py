@@ -1,16 +1,7 @@
 ## make snippets in sublime text based on .h files with capital first letters
 import os,shutil,sys
 
-####### CONSTANTS
-USACO="/Users/benq/Documents/USACO"
-SUBL="/Users/benq/Library/Application Support/Sublime Text 3/Packages/User"
-LOC=SUBL+"/algos/"
-
-
-if os.path.exists(LOC): # remove loc if it already exists
-	shutil.rmtree(LOC)
-os.makedirs(LOC)
-
+####### snippets
 pref = """
 <snippet>
 <!-- Hello, ${1:this} is a ${2:snippet}.-->
@@ -23,6 +14,16 @@ suf="""</tabTrigger>
 	<!-- <description> demo description </description> -->
 </snippet>"""
 
+
+####### file paths
+USACO="/Users/benq/Documents/USACO" # location of github repository
+SUBL="/Users/benq/Library/Application Support/Sublime Text 3/Packages/User"
+LOC=SUBL+"/algos/" # location where you want to place snippets
+
+if os.path.exists(LOC): # remove LOC if it already exists
+	shutil.rmtree(LOC)
+os.makedirs(LOC) # make LOC
+
 print("SNIPPETS LOCATION:\n\n",LOC.replace(' ','\\ '),'\n');
 
 snippets = ""
@@ -30,10 +31,7 @@ temp = ""
 
 def getPath(short):
 	return LOC+short+".sublime-snippet"
-def output(short,code):
-	#print("AH",short,code)
-	#sys.exit(0)
-
+def output(short,code): # write "code" to sublime snippet with trigger "short"
 	with open(getPath(short),"w") as fout:
 		fout.write(pref)
 		fout.write(code)
@@ -41,7 +39,7 @@ def output(short,code):
 		fout.write(short)
 		fout.write(suf)
 
-def getNorm(pre):
+def getNorm(pre): # format code
 	blank = False
 	res = ""
 	for a in pre.split('\n'):
@@ -78,8 +76,6 @@ def tempLong(root,name):
 		if main and a == "\t\n":
 			a = "\t$0\n"
 		res += a
-	# print("HUH",root,name,pre,res)
-	# sys.exit(0)
 	return res
 
 def tempShort(root,name):
@@ -90,8 +86,8 @@ def tempShort(root,name):
 		a += '\n'
 		if "int main()" in a: 
 			main = True
-		if main and "ios_base" in a:
-			ind = a.find("ios_base")
+		if main and "cin.tie(0)" in a:
+			ind = a.find("cin.tie(0)")
 			res += a[:ind]+"\n"
 			res += "\t"+a[ind:-2]+"\n"
 			res += "\t$0\n}\n"
@@ -145,8 +141,8 @@ for root, dirs, files in os.walk(USACO+"/Contests/Tools",topdown=False):
 	for name in files:
 		process(root,name)
 
-assert len(snippets) > 0 
-assert len(temp) > 0, "snippets not found"
+assert len(snippets) > 0, "snippets not found"
+assert len(temp) > 0, "long template not found"
 
 codes = []
 names = []

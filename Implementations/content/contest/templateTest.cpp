@@ -5,4 +5,4 @@ int main() {
 		assert(ceil(d) == cdiv(i,j));
 		assert(floor(d) == fdiv(i,j));
 	}
-}
+} // test floor, ceiling division

@@ -20,8 +20,7 @@ struct DiscreteLog {
 	}
 	void init(int r) { // gcd(m,r) = 1
 		root = r; block = sqrt(MOD)+1;
-		u.clear(); 
-		cur = mi(1);
+		u.clear(); cur = mi(1);
 		F0R(i,block) {
 			if (!u.count((int)cur)) u[(int)cur] = i;
 			cur *= root;

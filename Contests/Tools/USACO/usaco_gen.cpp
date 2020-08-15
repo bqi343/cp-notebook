@@ -61,7 +61,7 @@ vpi heavyTallShortTree(int N, db p) { // connected to heavy1 or heavy2
 	return ed;
 }
 
-int main (int argc,char *argv[]) {
+int main(int argc, char* argv[]) {
 	int tc; sscanf(argv[1],"%d",&tc); // test case #
 	// sscanf(argv[2],"%d",&b); // random seed
 	// sscanf(argv[3],"%d",&c); // also random seed

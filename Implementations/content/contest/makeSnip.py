@@ -1,10 +1,13 @@
-## make snippets in sublime text based on .h files with capital first letters
+## make snippets in sublime text based on .h files with capital first letters and some .cpp files
+
 import os,shutil,sys
 
 ####### snippets
+
+# <!-- Hello, ${1:this} is a ${2:snippet}.-->
+
 pref = """
 <snippet>
-<!-- Hello, ${1:this} is a ${2:snippet}.-->
 <content><![CDATA["""
 mid="""
 ]]></content>
@@ -16,6 +19,7 @@ suf="""</tabTrigger>
 
 
 ####### file paths
+
 USACO="/Users/benq/Documents/USACO" # location of github repository
 SUBL="/Users/benq/Library/Application Support/Sublime Text 3/Packages/User"
 LOC=SUBL+"/algos/" # location where you want to place snippets
@@ -54,11 +58,11 @@ def getNorm(pre): # format code
 		else:
 			blank = False
 			res += a.replace('$','\\$')
-	while pre[-1] == '\n':
-		pre = pre[:-1]
+	while res[-1] == '\n': # remove trailing blank lines
+		res = res[:-1]
 	return res
 
-def checkNorm(root,name):
+def checkNorm(root,name): # read file into string and format it
 	res = ""
 	with open(os.path.join(root, name),"r") as fin:
 		for a in fin:
@@ -71,9 +75,9 @@ def tempLong(root,name):
 	main = False
 	for a in pre.split('\n'):
 		a += '\n'
-		if "int main()" in a: 
+		if "int main(" in a: 
 			main = True
-		if main and a == "\t\n":
+		if main and a == "\t\n": # start at blank line
 			a = "\t$0\n"
 		res += a
 	return res
@@ -97,7 +101,7 @@ def tempShort(root,name):
 
 def process(root,name): # prefix, file name
 	global snippets,temp
-	def shorten(name):
+	def shorten(name): # convert to snippet name
 		short = name[:name.rfind('.')] # strip suffix
 		if '(' in short:
 			short = short[:short.find('(')] # remove parentheses
@@ -119,7 +123,7 @@ def process(root,name): # prefix, file name
 			output("TempShort",tempShort(root,name))
 		elif "usaco" in name or "Template" in name:
 			print("INCLUDED:",name)
-			output(shorten(name),checkNorm(root,name))
+			output(shorten(name).replace("Template","Temp"),tempLong(root,name))
 		elif "template" not in name.lower() and "test" not in name.lower():
 			print("NOT INCLUDED:",name)
 	if name == "Snippets.md":

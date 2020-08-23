@@ -1,6 +1,5 @@
 /**
- * Description: Modular arithmetic operations. To make faster, 
- 	* change add and subtract so that they don't require \texttt{\%}.
+ * Description: Modular arithmetic.
  * Source: KACTL
  * Verification: https://open.kattis.com/problems/modulararithmetic
  */

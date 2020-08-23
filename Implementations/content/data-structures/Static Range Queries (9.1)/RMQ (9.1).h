@@ -24,7 +24,7 @@ template<class T> struct RMQ { // floor(log_2(x))
 		}
 	}
 	int index(int l, int r) { // get index of min element
-		int d = level(r-l+1);
+		assert(l <= r); int d = level(r-l+1);
 		return comb(jmp[d][l],jmp[d][r-(1<<d)+1]); }
 	T query(int l, int r) { return v[index(l,r)]; }
 };

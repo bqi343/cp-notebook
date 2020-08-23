@@ -65,6 +65,7 @@ with open('TemplateLong.cpp', 'w') as outfile:
 	* special cases (n=1?)
 	* do smth instead of nothing and stay organized
 	* WRITE STUFF DOWN
+	* DON'T GET STUCK ON ONE APPROACH
 */""")
 	for line in res:
 		outfile.write(line)

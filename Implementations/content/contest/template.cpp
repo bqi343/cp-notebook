@@ -18,6 +18,8 @@ typedef vector<str> vs; //
 typedef vector<pi> vpi;
 typedef vector<pl> vpl; //
 typedef vector<pd> vpd; //
+template<class T> using V = vector<T>; //
+template<class T, size_t SZ> using AR = array<T,SZ>; //
 
 #define mp make_pair
 #define f first

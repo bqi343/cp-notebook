@@ -3,8 +3,7 @@
  	* are coplanar. Normals to returned faces point outwards. 
  	* If coordinates are ints at most $B$ then \texttt{T} 
  	* should be large enough to support ints on the order 
- 	* of $B^3$, so \texttt{__int128} should suffice for 
- 	* $B=10^9$.
+ 	* of $B^3$.
  * Time: O(N^2), O(N\log N)
  * Source: 
  	* KACTL
@@ -16,8 +15,9 @@
  	* https://code.google.com/codejam/contest/6314486/dashboard#s=p3
  */
 
-bool above(P3 a, P3 b, P3 c, P3 p) { // is p strictly above plane
-	return dot(cross(a,b,c),p-a) > 0; }
+// using T = ll;
+T above(const P3&a,const P3&b,const P3&c,const P3&p) { 
+	return DC(a,b,c,p) > 0; } // is p strictly above plane
 void prep(vP3& p) { // rearrange points such that
 	int num = 1; // first four are not coplanar
 	FOR(i,1,sz(p)) 
@@ -71,8 +71,8 @@ V<F> hull3dFast(vP3& p) { // order of points is changed s.t. first four points f
 		pi x = edge(a); assert(edge(b) == mp(x.s,x.f));
 		other[a.f][a.s] = b, other[b.f][b.s] = a;
 	}; 
-	if (abv(1,3)) swap(p[1],p[2]); // ensure face 0 is removed when i=3
-	ad(0,1,2), ad(0,2,1); F0R(i,3) glue({0,i},{1,2-i});
+	ad(0,1,2), ad(0,2,1); if (abv(1,3)) swap(p[1],p[2]); // ensure face 0 is removed when i=3
+	F0R(i,3) glue({0,i},{1,2-i});
 	FOR(i,3,N) ae(abv(1,i),i); // those that are coplanar go in rvis[0]
 	vi label(N,-1);
 	FOR(i,3,N) { // incremental construction

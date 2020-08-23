@@ -11,7 +11,7 @@
 #include "../Primitives/Point.h"
 
 /**
-typedef ld T;
+using T = ld;
 int sgn(T x) { return (x>0)-(x<0); }
 T sq(T x) { return x*x; }
 */
@@ -56,8 +56,11 @@ bool isMult(const P3& a, const P3& b) { // for long longs
 	return 1; }
 bool collinear(const P3& a, const P3& b, const P3& c) { 
 	return isMult(b-a,c-a); }
-bool coplanar(const P3&a,const P3&b,const P3&c,const P3&d) { 
-	return isMult(cross(b-a,c-a),cross(b-a,d-a)); }
+
+T DC(const P3&a,const P3&b,const P3&c,const P3&p) { 
+	return dot(cross(a,b,c),p-a); }
+bool coplanar(const P3&a,const P3&b,const P3&c,const P3&p) { 
+	return DC(a,b,c,p) == 0; }
 bool op(const P3& a, const P3& b) { 
 	int ind = 0; // going in opposite directions?
 	FOR(i,1,3) if (std::abs(a[i]*b[i])>std::abs(a[ind]*b[ind])) 

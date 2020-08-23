@@ -5,7 +5,7 @@
  * Verification: various
  */
 
-typedef ld T;
+using T = ld;
 int sgn(T a) { return (a>0)-(a<0); }
 T sq(T a) { return a*a; }
 

@@ -2,7 +2,9 @@
  * Description: Fast Delaunay triangulation assuming no duplicates and not 
  	* all points collinear (in latter case, result will be empty). Should 
  	* work for doubles as well, though there may be precision issues in 'circ'.
-	* Returns triangles in ccw order. Each circumcircle will contain none of the input points.
+	* Returns triangles in ccw order. Each circumcircle will contain none 
+	* of the input points. If coordinates are ints at most $B$ then \texttt{T} 
+	* should be large enough to support ints on the order of $B^4$.
  * Time: O(N\log N)
  * Source: KACTL
  * Verification: https://dmoj.ca/problem/cco08p6
@@ -10,8 +12,8 @@
 
 #include "../Primitives/Point.h"
 
-// typedef ll T;
-typedef __int128 lll; // (can be ll if coords are < 2e4)
+// using T = ll;
+using lll = __int128; // (can be ll if coords are < 2e4)
 bool inCircle(P p, P a, P b, P c) {
 	a -= p, b -= p, c -= p; // assert(cross(a,b,c)>0);
 	lll x = (lll)norm(a)*cross(b,c)+(lll)norm(b)*cross(c,a)
@@ -79,7 +81,7 @@ pair<Q,Q> rec(const vP& s) {
 	return {ra, rb};
 }
 vector<array<P,3>> triangulate(vP pts) {
-	sort(all(pts)); assert(unique(all(pts)) == end(pts));
+	sort(all(pts)); assert(unique(all(pts)) == end(pts)); // no duplicates
 	if (sz(pts) < 2) return {};
 	Q e = rec(pts).f; vector<Q> q = {e};
 	while (cross(e->o->F(), e->F(), e->p) < 0) e = e->o;

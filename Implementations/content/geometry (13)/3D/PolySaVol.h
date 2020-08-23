@@ -2,11 +2,12 @@
  * Description: surface area and volume of polyhedron,
  	* normals to faces must point outwards
  * Source: KACTL
+ * Verification: See Hull3D
  */
 
 #include "Hull3D.h"
 
-pair<T,T> SaVol(vP3 p, vector<F> faces) {
+pair<T,T> SaVol(vP3 p, V<F> faces) {
 	T s = 0, v = 0; 
 	trav(i,faces) {
 		P3 a = p[i[0]], b = p[i[1]], c = p[i[2]];

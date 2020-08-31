@@ -28,7 +28,7 @@ template<class T> struct node {
 		if (c[1]) res += c[1]->query(lo,hi,M+1,R);
 		return res;
 	}
-	void UPD(int ind, node* c0, node* c1, int L = 0, int R = SZ-1) {
+	void UPD(int ind, node* c0, node* c1, int L = 0, int R = SZ-1) { // for 2D segtree
 		if (L != R) {
 			int M = (L+R)/2;
 			if (ind <= M) {

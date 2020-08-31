@@ -32,15 +32,21 @@ int main() {
 ## FHC
 
 ```
-// make sure to intialize ALL GLOBAL VARS between tcs!
-
-int N;
-void inp(vi& v) { // common way to reduce amount of input
-	v.rsz(1); ll A,B,C; re(v,A,B,C);
-	while (sz(v) < N) v.pb((A*v.back()+B)%C+1);
-}
+// make sure to 
+// * clear ALL GLOBAL VARS between tcs!
+// * generate input correctly LOL
 
 clock_t beg = clock();
+int N,K;
+
+// void inp(vi& v) {
+// 	v.rsz(1); ll A,B,C; re(v,A,B,C);
+// 	while (sz(v) < N) v.pb((A*v.bk+B)%C+1);
+// }
+void inp(vi& v) {
+	v.rsz(K); ll A,B,C,D; re(v,A,B,C,D);
+	while (sz(v) < N) v.pb((A*v[sz(v)-2]+B*v.bk+C)%D);
+}
 
 void solve(int tc) {
 	cerr << "Doing TC #" << tc << " " << (db)(clock()-beg)/CLOCKS_PER_SEC << "\n";

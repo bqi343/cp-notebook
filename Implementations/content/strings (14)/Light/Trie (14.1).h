@@ -5,8 +5,8 @@
  * Verification: January Easy 2018 - Shubham and Subarray Xor
  */
 
-template<int MX, int MXBIT> struct Trie {
-	int nex[MX][2], sz[MX], num = 0; // num is last node in trie
+template<int SZ, int MXBIT> struct Trie {
+	int nex[SZ][2], sz[SZ], num = 0; // num is last node in trie
 	// change 2 to 26 for lowercase letters
 	Trie() { memset(nex,0,sizeof nex); memset(sz,0,sizeof sz); }
 	void ins(ll x, int a = 1) { // insert or delete

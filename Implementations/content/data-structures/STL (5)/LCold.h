@@ -8,16 +8,16 @@
  */
 
 
-using T = db; // ll or db
+using T = ll; // ll or db
 db fdiv(db a, db b) { return a/b; } // for doubles just divide normally
 // for lls do floored division
 
 const T inf = LLONG_MAX; bool _Q;
 struct Line { // a and b -> slope and y-intercept 
 	mutable T a, b, lst; // lst can change
+	/// friend str ts(const Line& L) { return ts(vl{L.a,L.b,L.lst}); }
 	T eval(T x) const { return a*x+b; }
 	bool operator<(const Line& y) const { return _Q?lst<y.lst:a<y.a; }
-	/// friend str ts(const Line& L) { return ts(vl{L.a,L.b,L.lst}); }
 	T bet(const Line& y) const { assert(a <= y.a);
 		return a == y.a ? (b >= y.b ? inf : -inf) : fdiv(b-y.b,y.a-a); }
 };
@@ -30,7 +30,8 @@ struct LC : multiset<Line> {
 		auto z = insert({a,b,0}), y = z++, x = y; 
 		while (rem(y)) erase(z++); /// remove stuff after insertion pos
 		if (x != begin() && rem(--x)) erase(y), rem(x); /// remove inserted line
-		while ((y = x) != begin() && (--x)->lst >= y->lst) erase(y), rem(x); /// remove stuff before insertion pos
+		while ((y = x) != begin() && (--x)->lst >= y->lst) 
+			erase(y), rem(x); /// remove stuff before insertion pos
 	}
 	T query(T p) { 
 		assert(size()); _Q = 1; 

@@ -12,20 +12,21 @@
  */
 
 // INPUT
-template<class A> void re(complex<A>& c);
-template<class A, class B> void re(pair<A,B>& p);
-template<class A> void re(vector<A>& v);
-template<class A, size_t SZ> void re(array<A,SZ>& a);
+#define tcTUU tcT, class ...U
+tcT> void re(complex<T>& c);
+tcTU> void re(pair<T,U>& p);
+tcT> void re(vector<T>& v);
+tcT, size_t SZ> void re(AR<T,SZ>& a);
 
-template<class T> void re(T& x) { cin >> x; }
+tcT> void re(T& x) { cin >> x; }
 void re(db& d) { str t; re(t); d = stod(t); }
 void re(ld& d) { str t; re(t); d = stold(t); }
-template<class H, class... T> void re(H& h, T&... t) { re(h); re(t...); }
+tcTUU> void re(T& t, U&... u) { re(t); re(u...); }
 
-template<class A> void re(complex<A>& c) { A a,b; re(a,b); c = {a,b}; }
-template<class A, class B> void re(pair<A,B>& p) { re(p.f,p.s); }
-template<class A> void re(vector<A>& x) { trav(a,x) re(a); }
-template<class A, size_t SZ> void re(array<A,SZ>& x) { trav(a,x) re(a); }
+tcT> void re(complex<T>& c) { T a,b; re(a,b); c = {a,b}; }
+tcTU> void re(pair<T,U>& p) { re(p.f,p.s); }
+tcT> void re(vector<T>& x) { trav(a,x) re(a); }
+tcT, size_t SZ> void re(AR<T,SZ>& x) { trav(a,x) re(a); }
 
 // TO_STRING
 #define ts to_string
@@ -39,7 +40,7 @@ str ts(bool b) {
 		return ts((int)b);
 	#endif
 }
-template<class A> str ts(complex<A> c) { 
+tcT> str ts(complex<T> c) { 
 	stringstream ss; ss << c; return ss.str(); }
 str ts(vector<bool> v) {
 	str res = "{"; F0R(i,sz(v)) res += char('0'+v[i]);
@@ -47,8 +48,8 @@ str ts(vector<bool> v) {
 template<size_t SZ> str ts(bitset<SZ> b) {
 	str res = ""; F0R(i,SZ) res += char('0'+b[i]);
 	return res; }
-template<class A, class B> str ts(pair<A,B> p);
-template<class T> str ts(T v) { // containers with begin(), end()
+tcTU> str ts(pair<T,U> p);
+tcT> str ts(T v) { // containers with begin(), end()
 	#ifdef LOCAL
 		bool fst = 1; str res = "{";
 		for (const auto& x: v) {
@@ -66,7 +67,7 @@ template<class T> str ts(T v) { // containers with begin(), end()
 
 	#endif
 }
-template<class A, class B> str ts(pair<A,B> p) {
+tcTU> str ts(pair<T,U> p) {
 	#ifdef LOCAL
 		return "("+ts(p.f)+", "+ts(p.s)+")"; 
 	#else
@@ -75,18 +76,18 @@ template<class A, class B> str ts(pair<A,B> p) {
 }
 
 // OUTPUT
-template<class A> void pr(A x) { cout << ts(x); }
-template<class H, class... T> void pr(const H& h, const T&... t) { 
-	pr(h); pr(t...); }
+tcT> void pr(T x) { cout << ts(x); }
+tcTUU> void pr(const T& t, const U&... u) { 
+	pr(t); pr(u...); }
 void ps() { pr("\n"); } // print w/ spaces
-template<class H, class... T> void ps(const H& h, const T&... t) { 
-	pr(h); if (sizeof...(t)) pr(" "); ps(t...); }
+tcTUU> void ps(const T& t, const U&... u) { 
+	pr(t); if (sizeof...(u)) pr(" "); ps(u...); }
 
 // DEBUG
 void DBG() { cerr << "]" << endl; }
-template<class H, class... T> void DBG(H h, T... t) {
-	cerr << ts(h); if (sizeof...(t)) cerr << ", ";
-	DBG(t...); }
+tcTUU> void DBG(const T& t, const U&... u) {
+	cerr << ts(t); if (sizeof...(u)) cerr << ", ";
+	DBG(u...); }
 #ifdef LOCAL // compile with -DLOCAL, chk -> fake assert
 	#define dbg(...) cerr << "Line(" << __LINE__ << ") -> [" << #__VA_ARGS__ << "]: [", DBG(__VA_ARGS__)
 	#define chk(...) if (!(__VA_ARGS__)) cerr << "Line(" << __LINE__ << ") -> function(" \

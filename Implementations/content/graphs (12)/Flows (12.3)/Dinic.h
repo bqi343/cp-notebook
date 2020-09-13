@@ -8,42 +8,42 @@
 	* https://pastebin.com/VJxTvEg1
  */
 
-template<int SZ> struct Dinic {
-	int N,s,t; // # verts, source, sink
-	typedef ll F; // flow type
-	struct Edge { int to, rev; F flo, cap; };
-	vector<Edge> adj[SZ]; // use asserts, don't be dumb
-	void reset() { F0R(i,N) trav(e,adj[i]) e.flo = 0; }
-	void ae(int u, int v, F cap, F rcap = 0) { 
-		assert(min(cap,rcap) >= 0); 
-		Edge a{v,sz(adj[v]),0,cap}, b{u,sz(adj[u]),0,rcap};
-		adj[u].pb(a), adj[v].pb(b); } 
-	int lev[SZ]; typename vector<Edge>::iterator cur[SZ]; 
-	bool bfs() { // level = shortest distance from source
-		F0R(i,N) lev[i] = -1, cur[i] = begin(adj[i]);
+struct Dinic {
+	using F = ll; // flow type
+	struct Edge { int to; F flo, cap; };
+	int N; V<Edge> eds; V<vi> adj;
+	void init(int _N) { N = _N; adj.rsz(N), cur.rsz(N); }
+	/// void reset() { trav(e,eds) e.flo = 0; }
+	void ae(int u, int v, F cap, F rcap = 0) { assert(min(cap,rcap) >= 0); 
+		adj[u].pb(sz(eds)); eds.pb({v,0,cap});
+		adj[v].pb(sz(eds)); eds.pb({u,0,rcap});
+	}
+	vi lev; V<vi::iterator> cur;
+	bool bfs(int s, int t) { // level = shortest distance from source
+		lev = vi(N,-1); F0R(i,N) cur[i] = begin(adj[i]);
 		queue<int> q({s}); lev[s] = 0; 
-		while (sz(q)) {
-			int u = q.ft; q.pop();
-			trav(e,adj[u]) if (lev[e.to] < 0 && e.flo < e.cap) 
-				q.push(e.to), lev[e.to] = lev[u]+1;
+		while (sz(q)) { int u = q.ft; q.pop();
+			trav(e,adj[u]) { const Edge& E = eds[e];
+				int v = E.to; if (lev[v] < 0 && E.flo < E.cap) 
+					q.push(v), lev[v] = lev[u]+1;
+			}
 		}
 		return lev[t] >= 0;
 	}
-	F dfs(int v, F flo) {
+	F dfs(int v, int t, F flo) {
 		if (v == t) return flo;
 		for (; cur[v] != end(adj[v]); cur[v]++) {
-			Edge& e = *cur[v];
-			if (lev[e.to]!=lev[v]+1||e.flo==e.cap) continue;
-			F df = dfs(e.to,min(flo,e.cap-e.flo));
-			if (df) { e.flo += df; adj[e.to][e.rev].flo -= df;
+			Edge& E = eds[*cur[v]];
+			if (lev[E.to]!=lev[v]+1||E.flo==E.cap) continue;
+			F df = dfs(E.to,t,min(flo,E.cap-E.flo));
+			if (df) { E.flo += df; eds[*cur[v]^1].flo -= df;
 				return df; } // saturated >=1 one edge
 		}
 		return 0;
 	}
-	F maxFlow(int _N, int _s, int _t) {
-		N = _N, s = _s, t = _t; assert(s != t);
-		F tot = 0; while (bfs()) while (F df = 
-			dfs(s,numeric_limits<F>::max())) tot += df;
+	F maxFlow(int s, int t) {
+		F tot = 0; while (bfs(s,t)) while (F df = 
+			dfs(s,t,numeric_limits<F>::max())) tot += df;
 		return tot;
 	}
 };

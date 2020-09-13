@@ -1,5 +1,5 @@
 /**
- * Description: multiply two polynomials directly if small, otherwise use FFT
+ * Description: Multiply small polys directly, otherwise use FFT.
  * Source: KACTL, https://cp-algorithms.com/algebra/fft.html
  */
 

@@ -7,9 +7,9 @@
  * Verification: https://open.kattis.com/problems/aladin
  */
 
-typedef unsigned long long ul;
+using ul = unsigned long long;
 ul sumsq(ul to) { return (to-1)*to/2; } // sum of 0..to-1
-ul divsum(ul to, ul c, ul k, ul m) { 
+ul divsum(ul to, ul c, ul k, ul m) { // k >= 0, m > 0
 	ul res = k/m*sumsq(to)+c/m*to;
 	k %= m; c %= m; if (!k) return res;
 	ul to2 = (to*k+c)/m;

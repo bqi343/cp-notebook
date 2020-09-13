@@ -45,7 +45,7 @@ int N,K;
 // }
 void inp(vi& v) {
 	v.rsz(K); ll A,B,C,D; re(v,A,B,C,D);
-	while (sz(v) < N) v.pb((A*v[sz(v)-2]+B*v.bk+C)%D);
+	while (sz(v) < N) v.pb(int((A*v[sz(v)-2]+B*v.bk+C)%D));
 }
 
 void solve(int tc) {

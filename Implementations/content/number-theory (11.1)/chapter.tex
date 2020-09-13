@@ -22,10 +22,21 @@
 
 	The number of divisors of $n$ is at most around 100 for $n < 5e4$, 500 for $n < 1e7$, 2000 for $n < 1e10$, 200\,000 for $n < 1e19$.
 
-	\textbf{Dirichlet Convolution:} Given a function $f(x)$, let $(f*g)(x)=\sum_{d|x}g(d)f(x/d)$. If the partial sums $s_{f*g}(n),s_g(n)$ can be computed in $O(1)$ and $s_f(1\ldots n^{2/3})$ can be computed in $O\left(n^{2/3}\right)$ then $s_f(n)$ can as well. Use
-	$$s_{f*g}(n)=\sum_{d=1}^ng(d)s_f(n/d).$$ % \implies s_f(n)=\frac{s_{f*g}(n)-\sum_{d=2}^ng(d)s_f(n/d)}{g(1)}
-	For example, if $f(x)=\phi(x)$ then $g(x)=1, (f*g)(x)=n$, and $s_f(n)=\frac{n(n+1)}{2}-\sum_{i=2}^ns_f(n/i).$
+	\textbf{Dirichlet Convolution:} Given a function $f(x)$, let 
 
+	$(f*g)(x)=\sum_{d|x}g(d)f(x/d)$. 
+
+	If the partial sums $s_{f*g}(n),s_g(n)$ can be computed in $O(1)$ and $s_f(1\ldots n^{2/3})$ can be computed in $O\left(n^{2/3}\right)$ then all $s_f\left(\frac{n}{d}\right)$ can as well. Use
+
+	$$s_{f*g}(n)=\sum_{d=1}^ng(d)s_f(n/d).$$ 
+
+	% \implies s_f(n)=\frac{s_{f*g}(n)-\sum_{d=2}^ng(d)s_f(n/d)}{g(1)}
+	
+    If $f(x)=\mu(x)$ then $g(x)=1, (f*g)(x)=(x == 1)$, and $s_f(n)=1-\sum_{i=2}^ns_f(n/i)$.
+
+    If $f(x)=\phi(x)$ then $g(x)=1, (f*g)(x)=x$, and $s_f(n)=\frac{n(n+1)}{2}-\sum_{i=2}^ns_f(n/i).$
+
+	% Nisiyama_Suzune tutorial:
 	% https://codeforces.com/blog/entry/54150
 
 	\begin{comment}

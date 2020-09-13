@@ -63,7 +63,6 @@ constexpr int pct(int x) { return __builtin_popcount(x); } // # of bits set
 constexpr int bits(int x) { return 31-__builtin_clz(x); } // floor(log2(x)) 
 ll cdiv(ll a, ll b) { return a/b+((a^b)>0&&a%b); } // divide a by b rounded up
 ll fdiv(ll a, ll b) { return a/b-((a^b)<0&&a%b); } // divide a by b rounded down
-ll half(ll x) { return fdiv(x,2); }
 
 tcT> bool ckmin(T& a, const T& b) {
 	return b < a ? a = b, 1 : 0; } // set a = min(a,b)
@@ -71,12 +70,10 @@ tcT> bool ckmax(T& a, const T& b) {
 	return a < b ? a = b, 1 : 0; }
 
 #define tcTU tcT, class U
-tcTU> T fstTrue(T lo, T hi, U f) { 
-	// note: if (lo+hi)/2 is used instead of half(lo+hi) 
-	// then this will loop infinitely when lo=hi
+tcTU> T fstTrue(T lo, T hi, U f) {
 	hi ++; assert(lo <= hi); // assuming f is increasing
 	while (lo < hi) { // find first index such that f is true 
-		T mid = half(lo+hi);
+		T mid = lo+(hi-lo)/2;
 		f(mid) ? hi = mid : lo = mid+1; 
 	} 
 	return lo;
@@ -84,7 +81,7 @@ tcTU> T fstTrue(T lo, T hi, U f) {
 tcTU> T lstTrue(T lo, T hi, U f) {
 	lo --; assert(lo <= hi); // assuming f is decreasing
 	while (lo < hi) { // find first index such that f is true 
-		T mid = half(lo+hi+1);
+		T mid = lo+(hi-lo+1)/2;
 		f(mid) ? lo = mid : hi = mid-1;
 	} 
 	return lo;

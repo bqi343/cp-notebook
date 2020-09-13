@@ -132,7 +132,6 @@ def process(root,name): # prefix, file name
 		global suf
 		_suf = suf
 		suf = suf.replace('.c++','.shell') # https://gist.github.com/J2TeaM/a54bafb082f90c0f20c9
-		# print(suf)
 		print("INCLUDED","stress.sh")
 		output("stress",checkNorm(root,name))
 		suf = _suf

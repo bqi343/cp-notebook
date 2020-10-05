@@ -54,7 +54,7 @@ struct snode { //////// VARIABLES
 		assert(!isRoot()); int x = dir(); sn pa = p;
 		setLink(pa->p, this, pa->dir());
 		setLink(pa, c[x^1], x); setLink(this, pa, x^1);
-		pa->calc(); calc();
+		pa->calc();
 	}
 	void splay() {
 		while (!isRoot() && !p->isRoot()) {
@@ -63,7 +63,7 @@ struct snode { //////// VARIABLES
 			rot();
 		}
 		if (!isRoot()) p->prop(), prop(), rot();
-		prop();
+		prop(); calc();
 	}
 	sn fbo(int b) { // find by order
 		prop(); int z = getSz(c[0]); // of splay tree

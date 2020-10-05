@@ -4,39 +4,38 @@
 	* Use \texttt{reset} and \texttt{rcap} for Gomory-Hu.
  * Time: $O(N^2M)$ flow, $O(M\sqrt N)$ bipartite matching
  * Source: GeeksForGeeks, Chilli
+ 	* https://codeforces.com/contest/1416/submission/94013395
  * Verification: RMI 2017 Day 1 Fashion
 	* https://pastebin.com/VJxTvEg1
  */
 
 struct Dinic {
 	using F = ll; // flow type
-	struct Edge { int to; F flo, cap; };
-	int N; V<Edge> eds; V<vi> adj;
-	void init(int _N) { N = _N; adj.rsz(N), cur.rsz(N); }
-	/// void reset() { trav(e,eds) e.flo = 0; }
-	void ae(int u, int v, F cap, F rcap = 0) { assert(min(cap,rcap) >= 0); 
-		adj[u].pb(sz(eds)); eds.pb({v,0,cap});
-		adj[v].pb(sz(eds)); eds.pb({u,0,rcap});
+	struct Edge { int to, rev; F flo, cap; };
+	int N; V<V<Edge>> adj;
+	void init(int _N) { N = _N; adj.rsz(N); }
+	/// void reset() { F0R(i,N) trav(e,adj[i]) e.flo = 0; }
+	void ae(int a, int b, F cap, F rcap = 0) { assert(min(cap,rcap) >= 0); 
+		adj[a].pb({b,sz(adj[b]),0,cap});
+		adj[b].pb({a,sz(adj[a])-1,0,rcap});
 	}
-	vi lev; V<vi::iterator> cur;
+	vi lev, ptr;
 	bool bfs(int s, int t) { // level = shortest distance from source
-		lev = vi(N,-1); F0R(i,N) cur[i] = begin(adj[i]);
-		queue<int> q({s}); lev[s] = 0; 
+		lev = ptr = vi(N);
+		lev[s] = 1; queue<int> q({s});
 		while (sz(q)) { int u = q.ft; q.pop();
-			trav(e,adj[u]) { const Edge& E = eds[e];
-				int v = E.to; if (lev[v] < 0 && E.flo < E.cap) 
-					q.push(v), lev[v] = lev[u]+1;
-			}
+			trav(e,adj[u]) if (e.flo < e.cap && !lev[e.to])
+				q.push(e.to), lev[e.to] = lev[u]+1;
 		}
-		return lev[t] >= 0;
+		return lev[t];
 	}
 	F dfs(int v, int t, F flo) {
 		if (v == t) return flo;
-		for (; cur[v] != end(adj[v]); cur[v]++) {
-			Edge& E = eds[*cur[v]];
-			if (lev[E.to]!=lev[v]+1||E.flo==E.cap) continue;
-			F df = dfs(E.to,t,min(flo,E.cap-E.flo));
-			if (df) { E.flo += df; eds[*cur[v]^1].flo -= df;
+		for (int& i = ptr[v]; i < sz(adj[v]); i++) {
+			Edge& e = adj[v][i]; F dif = e.cap-e.flo;
+			if (lev[e.to]!=lev[v]+1||!dif) continue;
+			if (F df = dfs(e.to,t,min(flo,dif))) { 
+				e.flo += df; adj[e.to][e.rev].flo -= df;
 				return df; } // saturated >=1 one edge
 		}
 		return 0;

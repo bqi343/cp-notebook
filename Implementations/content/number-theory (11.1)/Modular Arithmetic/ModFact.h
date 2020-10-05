@@ -10,10 +10,10 @@ vi invs, fac, ifac; // make sure to convert to LL before doing any multiplicatio
 void genFac(int SZ) {
 	invs.rsz(SZ), fac.rsz(SZ), ifac.rsz(SZ); 
 	invs[1] = fac[0] = ifac[0] = 1; 
-	FOR(i,2,SZ) invs[i] = MOD-(ll)MOD/i*invs[MOD%i]%MOD;
+	FOR(i,2,SZ) invs[i] = int(MOD-(ll)MOD/i*invs[MOD%i]%MOD);
 	FOR(i,1,SZ) {
-		fac[i] = (ll)fac[i-1]*i%MOD;
-		ifac[i] = (ll)ifac[i-1]*invs[i]%MOD;
+		fac[i] = int((ll)fac[i-1]*i%MOD);
+		ifac[i] = int((ll)ifac[i-1]*invs[i]%MOD);
 	}
 }
 /**

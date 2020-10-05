@@ -19,43 +19,40 @@
 
 struct MCMF { 
 	using F = ll; using C = ll; // flow type, cost type
-	struct Edge { int to, rev; F flo, cap; C cost; };
-	int N; V<C> p, dist; vpi pre; V<V<Edge>> adj;
+	struct Edge { int to; F flo, cap; C cost; };
+	int N; V<C> p, dist; vi pre; V<Edge> eds; V<vi> adj;
 	void init(int _N) { N = _N;
-		p.rsz(N), adj.rsz(N), dist.rsz(N), pre.rsz(N); }
+		p.rsz(N), dist.rsz(N), pre.rsz(N), adj.rsz(N); }
 	void ae(int u, int v, F cap, C cost) { assert(cap >= 0); 
-		adj[u].pb({v,sz(adj[v]),0,cap,cost,id}); 
-		adj[v].pb({u,sz(adj[u])-1,0,0,-cost,-1});
+		adj[u].pb(sz(eds)); eds.pb({v,0,cap,cost}); 
+		adj[v].pb(sz(eds)); eds.pb({u,0,0,-cost});
 	} // use asserts, don't try smth dumb
 	bool path(int s, int t) { // find lowest cost path to send flow through
-		const C inf = numeric_limits<C>::max(); dist.assign(N,inf);
+		const C inf = numeric_limits<C>::max(); F0R(i,N) dist[i] = inf;
 		using T = pair<C,int>; priority_queue<T,vector<T>,greater<T>> todo; 
 		todo.push({dist[s] = 0,s}); 
 		while (sz(todo)) { // Dijkstra
 			T x = todo.top(); todo.pop(); if (x.f > dist[x.s]) continue;
-			trav(e,adj[x.s]) { // all weights should be non-negative
-				if (e.flo < e.cap && ckmin(dist[e.to],x.f+e.cost+p[x.s]-p[e.to]))
-					pre[e.to] = {x.s,e.rev}, todo.push({dist[e.to],e.to});
+			trav(e,adj[x.s]) { const Edge& E = eds[e]; // all weights should be non-negative
+				if (E.flo < E.cap && ckmin(dist[E.to],x.f+E.cost+p[x.s]-p[E.to]))
+					pre[E.to] = e, todo.push({dist[E.to],E.to});
 			}
 		} // if costs are doubles, add some EPS so you 
 		// don't traverse ~0-weight cycle repeatedly
 		return dist[t] != inf; // return flow
 	}
 	pair<F,C> calc(int s, int t) { assert(s != t);
-		F0R(_,N) F0R(i,N) trav(e,adj[i]) // Bellman-Ford
-			if (e.cap) ckmin(p[e.to],p[i]+e.cost);
+		F0R(_,N) F0R(e,sz(eds)) { const Edge& E = eds[e]; // Bellman-Ford
+			if (E.cap) ckmin(p[E.to],p[eds[e^1].to]+E.cost); }
 		F totFlow = 0; C totCost = 0;
 		while (path(s,t)) { // p -> potentials for Dijkstra
 			F0R(i,N) p[i] += dist[i]; // don't matter for unreachable nodes
 			F df = numeric_limits<F>::max();
-			for (int x = t; x != s; x = pre[x].f) {
-				Edge& e = adj[pre[x].f][adj[x][pre[x].s].rev]; 
-				ckmin(df,e.cap-e.flo); }
+			for (int x = t; x != s; x = eds[pre[x]^1].to) {
+				const Edge& E = eds[pre[x]]; ckmin(df,E.cap-E.flo); }
 			totFlow += df; totCost += (p[t]-p[s])*df;
-			for (int x = t; x != s; x = pre[x].f) {
-				Edge& e = adj[x][pre[x].s]; e.flo -= df;
-				adj[pre[x].f][e.rev].flo += df;
-			}
+			for (int x = t; x != s; x = eds[pre[x]^1].to)
+				eds[pre[x]].flo += df, eds[pre[x]^1].flo -= df;
 		} // get max flow you can send along path
 		return {totFlow,totCost};
 	}

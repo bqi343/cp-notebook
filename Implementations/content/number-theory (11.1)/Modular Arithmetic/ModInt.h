@@ -17,7 +17,7 @@ template<int MOD, int RT> struct mint {
 	static constexpr mint rt() { return RT; } // primitive root for FFT
 	int v; explicit operator int() const { return v; } // explicit -> don't silently convert to int
 	mint() { v = 0; }
-	mint(ll _v) { v = (-MOD < _v && _v < MOD) ? _v : _v % MOD;
+	mint(ll _v) { v = int((-MOD < _v && _v < MOD) ? _v : _v % MOD);
 		if (v < 0) v += MOD; }
 	friend bool operator==(const mint& a, const mint& b) { 
 		return a.v == b.v; }

@@ -13,8 +13,8 @@
  */
 
 struct BCC {
-	vector<vpi> adj; vpi ed; 
-	vector<vi> comps; // edges for each bcc
+	V<vpi> adj; vpi ed; 
+	V<vi> comps, vertSets; // edges for each bcc
 	int N, ti = 0; vi disc, st; 
 	void init(int _N) { N = _N; disc.rsz(N), adj.rsz(N); }
 	void ae(int x, int y) { 
@@ -35,5 +35,14 @@ struct BCC {
 		}
 		return low;
 	}
-	void gen() { F0R(i,N) if (!disc[i]) dfs(i);  }
+	void gen() { 
+		F0R(i,N) if (!disc[i]) dfs(i);  
+		vb in(N);
+		trav(c,comps) { // vertices contained within each BCC
+			vertSets.eb(); // so you can easily create block cut tree
+			auto ad = [&](int x) { if (!in[x]) in[x] = 1, vertSets.bk.pb(x); };
+			trav(e,c) ad(ed[e].f), ad(ed[e].s);
+			trav(e,c) in[ed[e].f] = in[ed[e].s] = 0;
+		}
+	}
 };

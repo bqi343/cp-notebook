@@ -1,4 +1,13 @@
 /**
+ * Description: Stable Roommates problem. Exits with -1 if no solution.
+ * Time: O(N^2)
+ * Source:
+ 	* https://en.wikipedia.org/wiki/Stable_roommates_problem
+ 	* probably better to check https://codeforces.com/contest/1423/submission/94783878
+ * Verification: https://codeforces.com/contest/1423/problem/A
+ */
+
+/**
  * Description: Stable Roommates problem. Exists with -1 if no solution.
  * Time: O(N^3) (idk if this worst case is achievable tho) Can make O(N^2) if needed ...
  * Source:
@@ -12,14 +21,12 @@ bool active[1000][1000];
 deque<int> pref[1000];
 int propose[1000], proposed[1000];
  
-void fin() {
+void fin() { // no solution
 	ps(-1);
 	exit(0);
 }
  
-void rem(int x, int y) {
-	active[x][y] = active[y][x] = 0;
-}
+void rem(int x, int y) { active[x][y] = active[y][x] = 0; }
  
 void clip(int x) {
 	while (sz(pref[x]) && !active[x][pref[x].ft]) pref[x].pop_front();
@@ -28,6 +35,7 @@ void clip(int x) {
 }
  
 void ad(int x, int y) {
+	assert(x != y && propose[x] == -1 && proposed[y] == -1);
 	propose[x] = y, proposed[y] = x;
 	while (1) {
 		clip(y);
@@ -39,7 +47,7 @@ void ad(int x, int y) {
  
 int nex(int x) {
 	assert(sz(pref[x]) > 1);
-	int y = pref[x].ft; pref[x].pop_front();
+	clip(x); int y = pref[x].ft; pref[x].pop_front();
 	clip(x); pref[x].push_front(y);
 	return proposed[pref[x][1]];
 }
@@ -50,61 +58,50 @@ int main() {
 	F0R(i,N) {
 		F0R(j,N) if (i != j) {
 			re(A[i][j]);
-			pref[i].pb(j);
-			active[i][j] = 1;
+			pref[i].pb(j); active[i][j] = 1;
 		}
 		sort(all(pref[i]),[&](int x, int y) { return A[i][x] < A[i][y]; });
-		dbg(i,pref[i]);
 	}
 	F0R(i,N) propose[i] = proposed[i] = -1;
 	queue<int> q; F0R(i,N) q.push(i);
-	while (1) {
-		while (sz(q)) {
-			int x = q.ft; q.pop(); if (propose[x] != -1) continue;
-			while (1) {
-				clip(x);
-				int y = pref[x].ft;
-				if (proposed[y] != -1 && A[y][proposed[y]] < A[y][x]) {
-					assert(active[y][x]); rem(x,y); assert(!active[y][x]);
-					continue;
-				}
-				if (proposed[y] != -1) {
-					q.push(proposed[y]);
-					propose[proposed[y]] = -1; proposed[y] = -1;
-				}
-				ad(x,y);
-				break;
-			}
+	while (sz(q)) {
+		int x = q.ft; q.pop(); assert(propose[x] == -1);
+		while (1) {
+			clip(x); int y = pref[x].ft, X = proposed[y];
+			if (X != -1 && A[y][X] < A[y][x]) { rem(x,y); continue; }
+			if (X != -1) propose[X] = -1, proposed[y] = -1, q.push(X);
+			ad(x,y); break;
 		}
-		int st = -1;
+	}
+	F0R(i,N) assert(propose[i] != -1);
+	int cur = 0;
+	while (1) { // rotation elimination
+		for (;cur<N;++cur) {
+			clip(cur); assert(proposed[cur] != -1 && pref[cur].bk == proposed[cur]);
+			if (sz(pref[cur]) > 1) break;
+		}
 		F0R(i,N) {
-			clip(i); assert(proposed[i] != -1);
-			assert(pref[i].bk == proposed[i]);
-			if (sz(pref[i]) > 1) {
-				st = i;
-				break;
-			}
+			vi tmp;
+			trav(j,pref[i]) if (active[i][j]) tmp.pb(j);
 		}
-		if (st == -1) {
-			F0R(i,N) assert(proposed[propose[i]] == i);
-			F0R(i,N) ps(propose[i]+1);
+		if (cur == N) {
+			F0R(i,N) {
+				assert(proposed[propose[i]] == i);
+				ps(propose[i]+1);
+			}
 			exit(0);
 		}
-		vi cyc;
+		vi cyc, CYC;
 		{
-			int x = st, y = st;
-			do {
-				x = nex(x), y = nex(nex(y));
-			} while (x != y);
-			do {
-				cyc.pb(y);
-				y = nex(y);
-			} while (x != y);
+			int x = cur, y = cur;
+			do { x = nex(x), y = nex(nex(y)); } while (x != y);
+			do { cyc.pb(y); y = nex(y); } while (x != y);
 		}
-		trav(x,cyc) {
-			int y = propose[x];
-			proposed[y] = -1, propose[x] = -1;
-			rem(x,y); q.push(x), q.push(y);
+		trav(x,cyc) { // if there exists a solution,
+			// then there also exists a solution after deleting these edges
+			int y = propose[x]; CYC.pb(y); assert(y != -1);
+			propose[x] = -1, proposed[y] = -1, rem(x,y);
 		}
+		F0R(i,sz(cyc)) ad(cyc[i],CYC[(i+1)%sz(cyc)]);
 	}
 }

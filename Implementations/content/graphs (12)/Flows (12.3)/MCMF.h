@@ -24,8 +24,8 @@ struct MCMF {
 	void init(int _N) { N = _N;
 		p.rsz(N), adj.rsz(N), dist.rsz(N), pre.rsz(N); }
 	void ae(int u, int v, F cap, C cost) { assert(cap >= 0); 
-		adj[u].pb({v,sz(adj[v]),0,cap,cost,id}); 
-		adj[v].pb({u,sz(adj[u])-1,0,0,-cost,-1});
+		adj[u].pb({v,sz(adj[v]),0,cap,cost}); 
+		adj[v].pb({u,sz(adj[u])-1,0,0,-cost});
 	} // use asserts, don't try smth dumb
 	bool path(int s, int t) { // find lowest cost path to send flow through
 		const C inf = numeric_limits<C>::max(); dist.assign(N,inf);

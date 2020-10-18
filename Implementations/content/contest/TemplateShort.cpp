@@ -20,9 +20,11 @@ using vpl = vector<pl>;
 using vpd = vector<pd>;
 
 #define tcT template<class T
+#define tcTU tcT, class U
 // ^ lol this makes everything look weird but I'll try it
 tcT> using V = vector<T>; 
 tcT, size_t SZ> using AR = array<T,SZ>; 
+tcT> using PR = pair<T,T>;
 
 // pairs
 #define mp make_pair
@@ -55,8 +57,9 @@ const int MOD = 1e9+7;
 const int MX = 2e5+5;
 const ll INF = 1e18; // not too close to LLONG_MAX
 const ld PI = acos((ld)-1);
-const int xd[4] = {1,0,-1,0}, yd[4] = {0,1,0,-1}; // for every grid problem!!
+const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1}; // for every grid problem!!
 mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count()); 
+template<class T> using pqg = priority_queue<T,vector<T>,greater<T>>;
 
 // helper funcs
 constexpr int pct(int x) { return __builtin_popcount(x); } // # of bits set
@@ -69,7 +72,6 @@ tcT> bool ckmin(T& a, const T& b) {
 tcT> bool ckmax(T& a, const T& b) {
 	return a < b ? a = b, 1 : 0; }
 
-#define tcTU tcT, class U
 tcTU> T fstTrue(T lo, T hi, U f) {
 	hi ++; assert(lo <= hi); // assuming f is increasing
 	while (lo < hi) { // find first index such that f is true 

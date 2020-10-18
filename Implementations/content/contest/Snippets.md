@@ -104,3 +104,19 @@ F0R(i,N-1) {
 	adj[a].pb(b), adj[b].pb(a);
 }
 ```
+
+## TCS
+
+```
+// make sure to intialize ALL GLOBAL VARS between tcs!
+
+void solve(int tc) {
+	${0}
+}
+
+int main() {
+	setIO();
+	int TC; re(TC);
+	FOR(i,1,TC+1) solve(i);
+}
+```

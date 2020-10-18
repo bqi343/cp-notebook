@@ -148,55 +148,6 @@ namespace io {
 
 using namespace io;
 
-struct mi {
-	typedef decay<decltype(MOD)>::type T;
-	T val; 
-	explicit operator T() const { return val; }
-	mi() { val = 0; }
-	mi(ll v) { 
-		val = (-MOD <= v && v <= MOD) ? v : v % MOD;
-		if (val < 0) val += MOD;
-	}
-	friend bool operator==(const mi& a, const mi& b) { 
-		return a.val == b.val; }
-	friend bool operator!=(const mi& a, const mi& b) { 
-		return !(a == b); }
-	friend bool operator<(const mi& a, const mi& b) { 
-		return a.val < b.val; }
-	friend void re(mi& a) { ll x; re(x); a = mi(x); }
-	friend void pr(const mi& a) { pr(a.val); }
-	friend ostream& operator<<(ostream& os, const mi& a) { 
-		return os << a.val; }
-   
-	mi operator-() const { return mi(-val); }
-	mi& operator+=(const mi& m) { 
-		if ((val += m.val) >= MOD) val -= MOD; 
-		return *this; }
-	mi& operator-=(const mi& m) { 
-		if ((val -= m.val) < 0) val += MOD; 
-		return *this; }
-	mi& operator++() { return *this += 1; }
-	mi& operator--() { return *this -= 1; }
-	friend mi operator+(mi a, const mi& b) { return a += b; }
-	friend mi operator-(mi a, const mi& b) { return a -= b; }
-
-	mi& operator*=(const mi& m) { 
-		val = (ll)val*m.val%MOD; return *this; }
-	friend mi pow(mi a, ll p) {
-		mi ans = 1; assert(p >= 0);
-		for (; p; p /= 2, a *= a) if (p&1) ans *= a;
-		return ans;
-	}
-	friend mi inv(const mi& a) { 
-		assert(!(a == 0)); return pow(a,MOD-2); }
-	mi& operator/=(const mi& m) { return (*this) *= inv(m); }
-	friend mi operator*(mi a, const mi& b) { return a *= b; }
-	friend mi operator/(mi a, const mi& b) { return a /= b; }
-};
-typedef pair<mi,mi> pmi;
-typedef vector<mi> vmi;
-typedef vector<pmi> vpmi;
-
 bool Q;
 
 struct Line {
@@ -244,12 +195,9 @@ ll dp[1001],pre[1001],PRE[1001];
 void upd() {
 	LC L;
 	F0R(i,n+1) {
-		// ps("WUT",i,sz(L));
 		if (dp[i] != MOD) L.add(-pre[i],dp[i]+PRE[i]);
 		dp[i] = L.query(i)+i*pre[i]-PRE[i];
 	}
-	//F0R(i,n+1) cout << dp[i] << " ";
-	//cout << "\n";
 }
 
 int main() {
@@ -257,13 +205,10 @@ int main() {
 	re(n,k); r.rsz(n); re(r); ckmin(k,n);
 	reverse(all(r));
 	F0R(i,n) {
-		//cout << "OH\n";
-		// ps(r);
 		FOR(j,1,n+1) {
 			pre[j] = pre[j-1]+r[j-1];
 			PRE[j] = PRE[j-1]+j*r[j-1];
 		}
-		// ps(PRE[n],pre[n]);
 		F0R(j,n+1) dp[j] = MOD;
 		dp[0] = 0; F0R(j,k) upd();
 		ckmin(ans,dp[n]);

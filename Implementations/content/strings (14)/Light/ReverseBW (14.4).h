@@ -8,11 +8,10 @@
  * Verification: https://cses.fi/problemset/task/1113/
  */
 
-str reverseBW(str s) {
-	vi nex(sz(s)); vi v(sz(s)); iota(all(v),0);
-	stable_sort(all(v),[&s](int a,int b){return s[a]<s[b];});
-	F0R(i,sz(v)) nex[i] = v[i];
-	int cur = nex[0]; str ret;
-	for (; cur; cur = nex[cur]) ret += s[v[cur]];
+str reverseBW(str t) {
+	vi nex(sz(t)); iota(all(nex),0);
+	stable_sort(all(nex),[&t](int a,int b){return t[a]<t[b];});
+	str ret; for (int i = nex[0]; i; ) 
+		ret += t[i = nex[i]];
 	return ret;
 }

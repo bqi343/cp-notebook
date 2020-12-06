@@ -9,7 +9,7 @@
 
 typedef unsigned long long ul; typedef __uint128_t L;
 struct ModFast {
-	ul b,m; ModFast(ul b) : b(b), m(ul((L(1)<<64)/b)) {}
+	ul b,m; ModFast(ul _b) : b(_b), m(ul((L(1)<<64)/_b)) {}
 	ul reduce(ul a) {
 		ul q = (ul)((L(m)*a)>>64), r = a-q*b;
 		return r>=b?r-b:r; }

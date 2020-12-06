@@ -32,19 +32,22 @@ tcT> using PR = pair<T,T>;
 #define s second
 
 // vectors
-#define sz(x) (int)(x).size()
-#define all(x) begin(x), end(x)
-#define rall(x) (x).rbegin(), (x).rend() 
+#define sz(x) int(size(x))
+#define bg(x) begin(x)
+#define all(x) bg(x), end(x)
+#define rall(x) x.rbegin(), x.rend() 
 #define sor(x) sort(all(x)) 
 #define rsz resize
 #define ins insert 
-#define ft front() 
+#define ft front()
 #define bk back()
-#define pf push_front 
 #define pb push_back
 #define eb emplace_back 
-#define lb lower_bound 
+#define pf push_front
+
+#define lb lower_bound
 #define ub upper_bound 
+tcT> int lwb(V<T>& a, const T& b) { return int(lb(all(a),b)-bg(a)); }
 
 // loops
 #define FOR(i,a,b) for (int i = (a); i < (b); ++i)
@@ -61,9 +64,14 @@ const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1}; // for every grid problem!!
 mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count()); 
 template<class T> using pqg = priority_queue<T,vector<T>,greater<T>>;
 
-// helper funcs
+// bitwise ops
+// also see https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html
 constexpr int pct(int x) { return __builtin_popcount(x); } // # of bits set
-constexpr int bits(int x) { return 31-__builtin_clz(x); } // floor(log2(x)) 
+constexpr int bits(int x) { assert(x >= 0);
+	return x == 0 ? 0 : 31-__builtin_clz(x); } // floor(log2(x)) 
+constexpr int p2(int x) { return 1<<x; }
+constexpr int msk2(int x) { return p2(x)-1; }
+
 ll cdiv(ll a, ll b) { return a/b+((a^b)>0&&a%b); } // divide a by b rounded up
 ll fdiv(ll a, ll b) { return a/b-((a^b)<0&&a%b); } // divide a by b rounded down
 
@@ -92,6 +100,6 @@ tcT> void remDup(vector<T>& v) { // sort and remove duplicates
 	sort(all(v)); v.erase(unique(all(v)),end(v)); }
 tcTU> void erase(T& t, const U& u) { // don't erase
 	auto it = t.find(u); assert(it != end(t));
-	t.erase(u); } // element that doesn't exist from (multi)set
+	t.erase(it); } // element that doesn't exist from (multi)set
 
 int main() { cin.tie(0)->sync_with_stdio(0); }

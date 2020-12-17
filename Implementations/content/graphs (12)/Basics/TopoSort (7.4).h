@@ -4,15 +4,16 @@
  * Verification: https://open.kattis.com/problems/quantumsuperposition
  */
 
-template<int SZ> struct TopoSort {
-	int N, in[SZ];
-	vi res, adj[SZ];
+struct TopoSort {
+	int N; vi in, res;
+	V<vi> adj;
+	void init(int _N) { N = _N; in.rsz(N); adj.rsz(N); }
 	void ae(int x, int y) { adj[x].pb(y), in[y] ++; }
-	bool sort(int _N) {
-		N = _N; queue<int> todo;
-		FOR(i,1,N+1) if (!in[i]) todo.push(i);
+	bool sort() {
+		queue<int> todo; 
+		F0R(i,N) if (!in[i]) todo.push(i);
 		while (sz(todo)) {
-			int x = todo.front(); todo.pop(); res.pb(x);
+			int x = todo.ft; todo.pop(); res.pb(x);
 			trav(i,adj[x]) if (!(--in[i])) todo.push(i);
 		}
 		return sz(res) == N;

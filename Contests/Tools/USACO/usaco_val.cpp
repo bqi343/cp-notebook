@@ -171,6 +171,7 @@ typedef vector<pi> vpi;
 #define rsz resize
 #define bk back()
 #define pb push_back
+#define ins insert
 
 #define FOR(i,a,b) for (int i = (a); i < (b); ++i)
 #define F0R(i,a) FOR(i,0,a)
@@ -210,8 +211,8 @@ int main(int argc, char** argv) {
   // vector<int> batches = get_test_case_batches(argc, argv);
   // int batch = batches.empty() ? 1 : batches[0];
   // cerr << "Batch: " << batch << endl;
-  int id = atoi(argv[1]); // test id
-  cerr << "Test: " << id << endl;
+  int tc = atoi(argv[1]); // test id
+  cerr << "Test: " << tc << endl;
   // write stuff here
 
   in.get_eof();

@@ -19,4 +19,19 @@ template <class T, int N, int... Ns> struct BIT<T, N, Ns...> {
 		return res; }
 	template<typename... Args> T query(int l, int r, Args... 
 		args) { return sum(r,args...)-sum(l-1,args...); }
+	int get_kth(T des) { assert(des > 0);
+		int ind = 0;
+		for (int i = 1<<bits(N); i; i /= 2)
+			if (ind+i <= N && bit[ind+i].val < des)
+				des -= bit[ind += i].val;
+		assert(ind < N); return ind+1;
+	}
 }; 
+template<class T, int N> int get_kth(const BIT<T,N>& bit, T des) { 
+	assert(des > 0);
+	int ind = 0;
+	for (int i = 1<<bits(N); i; i /= 2)
+		if (ind+i <= N && bit.bit[ind+i].val < des)
+			des -= bit.bit[ind += i].val;
+	assert(ind < N); return ind+1;
+}

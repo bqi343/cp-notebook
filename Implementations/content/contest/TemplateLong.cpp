@@ -32,7 +32,8 @@ tcT> using PR = pair<T,T>;
 #define s second
 
 // vectors
-#define sz(x) int(size(x))
+// oops size(x), rbegin(x), rend(x) need C++17
+#define sz(x) int((x).size())
 #define bg(x) begin(x)
 #define all(x) bg(x), end(x)
 #define rall(x) x.rbegin(), x.rend() 
@@ -67,7 +68,7 @@ template<class T> using pqg = priority_queue<T,vector<T>,greater<T>>;
 // bitwise ops
 // also see https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html
 constexpr int pct(int x) { return __builtin_popcount(x); } // # of bits set
-constexpr int bits(int x) { assert(x >= 0);
+constexpr int bits(int x) { // assert(x >= 0); // make C++11 compatible until USACO updates ...
 	return x == 0 ? 0 : 31-__builtin_clz(x); } // floor(log2(x)) 
 constexpr int p2(int x) { return 1<<x; }
 constexpr int msk2(int x) { return p2(x)-1; }

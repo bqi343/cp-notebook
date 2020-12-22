@@ -6,13 +6,18 @@
 
 #include "Point.h"
 
-vP segIsect(P a, P b, P c, P d) { 
-	T x = cross(a,b,c), y = cross(a,b,d); 
-	T X = cross(c,d,a), Y = cross(c,d,b); 
-	if (sgn(x)*sgn(y) < 0 && sgn(X)*sgn(Y) < 0) 
-		return {(d*x-c*y)/(x-y)}; // interior
+vP strict_isect(const Line& a, const Line& b) {
+	T a0 = cross(a.f,a.s,b.f), a1 = cross(a.f,a.s,b.s); 
+	T b0 = cross(b.f,b.s,a.f), b1 = cross(b.f,b.s,a.s); 
+	if (sgn(a0)*sgn(a1) < 0 && sgn(b0)*sgn(b1) < 0) // strict intersection
+		return {(b.s*a0-b.f*a1)/(a0-a1)};
+	return {};
+}
+
+vP isect(const Line& a, const Line& b) { 
+	vP v = strict_isect(a,b); if (sz(v)) return v;
 	set<P> s;
-	#define i(a,b,c) if (onSeg(a,b,c)) s.insert(a)
-	i(a,c,d); i(b,c,d); i(c,a,b); i(d,a,b);
+	#define i(x,y) if (p_on_seg(x,y)) s.ins(x)
+	i(a.f,b); i(a.s,b); i(b.f,a); i(b.s,a);
 	return {all(s)};
 }

@@ -25,7 +25,7 @@ T eval(const Half& h, T x) { assert(h[1] != 0); // evaluate half-plane at x-coor
 	return (h[2]-h[0]*x)/h[1]; }
 T x_isect(const Half& h0, const Half& h1) { return isect(h0,h1).f; } // x-coordinate of intersection
 
-vH construct_lower(P x, vH planes) {
+vH construct_lower(P x, vH planes) { // similar to convex hull (by duality)
 	sort(all(planes),[](const Half& a, const Half& b) {
 		return cross(hp_point(a),hp_point(b)) > 0; });
 	vH res{{1,0,x.f}}; // >= x.f
@@ -49,24 +49,24 @@ T isect_area(vH planes) {
 	planes.pb({0,-1,-BIG}); // -y >= -BIG
 	vH upper, lower;
 	trav(t,planes) {
-		if (t[1] == 0) {
+		if (t[1] == 0) { // vertical line
 			T quo = t[2]/t[0];
-			if (t[0] > 0) ckmax(x.f,quo); // 
+			if (t[0] > 0) ckmax(x.f,quo);
 			else ckmin(x.s,quo); // -x >=
 		} else if (t[1] > 0) lower.pb(t);
 		else upper.pb(t);
 	}
-	if (x.f >= x.s) return 0; // OK
-	lower = construct_lower(x,lower); // OK
+	if (x.f >= x.s) return 0;
+	lower = construct_lower(x,lower);
 
-	trav(t,upper) t[0] *= -1, t[1] *= -1; // OK
+	trav(t,upper) t[0] *= -1, t[1] *= -1; 
 	upper = construct_lower({-x.s,-x.f},upper);
 	trav(t,upper) t[0] *= -1, t[1] *= -1;
 	reverse(all(upper));
 	int iu = 1, il = 1;
 	T lst = x.f, lst_dif = eval(upper[1],lst)-eval(lower[1],lst);
 	T ans = 0;
-	while (iu < sz(upper)-1 && il < sz(lower)-1) {
+	while (iu < sz(upper)-1 && il < sz(lower)-1) { // sweep vertical line through lower and upper hulls
 		T nex_upper = x_isect(upper[iu],upper[iu+1]);
 		T nex_lower = x_isect(lower[il],lower[il+1]);
 		T nex = min(nex_upper,nex_lower);
@@ -86,7 +86,7 @@ T isect_area(vH planes) {
 	return ans;
 }
 
-Half make_right(P a, P b) { // half-plane to right of a -> b
+Half plane_right(P a, P b) { // half-plane to right of a -> b
 	return {b.s-a.s,a.f-b.f,(b.s-a.s)*a.f+(a.f-b.f)*a.s}; }
-Half make_through(P p, P dir) { // half-plane through p in direction dir
+Half plane_through(P p, P dir) { // half-plane through p in direction dir
 	return {dir.f,dir.s,dot(p,dir)}; }

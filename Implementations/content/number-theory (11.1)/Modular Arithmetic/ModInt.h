@@ -35,7 +35,7 @@ template<int MOD, int RT> struct mint {
 		if ((v -= m.v) < 0) v += MOD; 
 		return *this; }
 	mint& operator*=(const mint& m) { 
-		v = (ll)v*m.v%MOD; return *this; }
+		v = int((ll)v*m.v%MOD); return *this; }
 	mint& operator/=(const mint& m) { return (*this) *= inv(m); }
 	friend mint pow(mint a, ll p) {
 		mint ans = 1; assert(p >= 0);

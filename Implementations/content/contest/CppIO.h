@@ -19,8 +19,8 @@ tcT> void re(V<T>& v);
 tcT, size_t SZ> void re(AR<T,SZ>& a);
 
 tcT> void re(T& x) { cin >> x; }
-void re(db& d) { str t; re(t); d = stod(t); }
-void re(ld& d) { str t; re(t); d = stold(t); }
+void re(double& d) { str t; re(t); d = stod(t); }
+void re(long double& d) { str t; re(t); d = stold(t); }
 tcTUU> void re(T& t, U&... u) { re(t); re(u...); }
 
 tcT> void re(complex<T>& c) { T a,b; re(a,b); c = {a,b}; }

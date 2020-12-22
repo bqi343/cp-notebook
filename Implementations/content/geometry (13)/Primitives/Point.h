@@ -4,11 +4,14 @@
  * Verification: various
  */
 
-using T = ld;
-int sgn(T a) { return (a>0)-(a<0); }
+using T = db; // or long long
+const T EPS = 1e-9; // might want to change
+using P = pair<T,T>; using vP = V<P>; using Line = pair<P,P>;
+int sgn(T a) { return (a>EPS)-(a<-EPS); }
 T sq(T a) { return a*a; }
 
-typedef pair<T,T> P; typedef vector<P> vP;
+bool close(const P& a, const P& b) { 
+	return sgn(a.f-b.f) == 0 && sgn(a.s-b.s) == 0; } 
 T norm(const P& p) { return sq(p.f)+sq(p.s); }
 T abs(const P& p) { return sqrt(norm(p)); }
 T arg(const P& p) { return atan2(p.s,p.f); }
@@ -42,9 +45,10 @@ T dot(const P& a, const P& b) { return a.f*b.f+a.s*b.s; }
 T cross(const P& a, const P& b) { return a.f*b.s-a.s*b.f; }
 T cross(const P& p, const P& a, const P& b) {
 	return cross(a-p,b-p); }
-P reflect(const P& p, const P& a, const P& b) { 
-	return a+conj((p-a)/(b-a))*(b-a); }
-P foot(const P& p, const P& a, const P& b) { 
-	return (p+reflect(p,a,b))/(T)2; }
-bool onSeg(const P& p, const P& a, const P& b) { 
-	return cross(a,b,p) == 0 && dot(p-a,p-b) <= 0; }
+P reflect(const P& p, const Line& l) { 
+	P a = l.f, d = l.s-l.f;
+	return a+conj((p-a)/d)*d; }
+P foot(const P& p, const Line& l) { 
+	return (p+reflect(p,l))/(T)2; }
+bool p_on_seg(const P& p, const Line& l) {
+	return sgn(cross(l.f,l.s,p)) == 0 && sgn(dot(p-l.f,p-l.s)) <= 0; }

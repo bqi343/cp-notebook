@@ -2,13 +2,14 @@
 using namespace std;
  
 using ll = long long;
-using db = long double; // or double, if TL is tight
+using ld = long double;
+using db = double; 
 using str = string; // yay python!
-
+ 
 using pi = pair<int,int>;
 using pl = pair<ll,ll>;
 using pd = pair<db,db>;
-
+ 
 using vi = vector<int>;
 using vb = vector<bool>;
 using vl = vector<ll>;
@@ -17,19 +18,19 @@ using vs = vector<str>;
 using vpi = vector<pi>;
 using vpl = vector<pl>; 
 using vpd = vector<pd>;
-
+ 
 #define tcT template<class T
 #define tcTU tcT, class U
 // ^ lol this makes everything look weird but I'll try it
 tcT> using V = vector<T>; 
 tcT, size_t SZ> using AR = array<T,SZ>; 
 tcT> using PR = pair<T,T>;
-
+ 
 // pairs
 #define mp make_pair
 #define f first
 #define s second
-
+ 
 // vectors
 // oops size(x), rbegin(x), rend(x) need C++17
 #define sz(x) int((x).size())
@@ -44,42 +45,42 @@ tcT> using PR = pair<T,T>;
 #define pb push_back
 #define eb emplace_back 
 #define pf push_front
-
+ 
 #define lb lower_bound
 #define ub upper_bound 
 tcT> int lwb(V<T>& a, const T& b) { return int(lb(all(a),b)-bg(a)); }
-
+ 
 // loops
 #define FOR(i,a,b) for (int i = (a); i < (b); ++i)
 #define F0R(i,a) FOR(i,0,a)
 #define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
 #define R0F(i,a) ROF(i,0,a)
 #define trav(a,x) for (auto& a: x)
-
+ 
 const int MOD = 1e9+7; // 998244353;
-const int MX = 2e5+5;
+const int MX = 100;
 const ll INF = 1e18; // not too close to LLONG_MAX
-const db PI = acos((db)-1);
+const ld PI = acos((ld)-1);
 const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1}; // for every grid problem!!
 mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count()); 
 template<class T> using pqg = priority_queue<T,vector<T>,greater<T>>;
-
+ 
 // bitwise ops
 // also see https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html
 constexpr int pct(int x) { return __builtin_popcount(x); } // # of bits set
-constexpr int bits(int x) { // assert(x >= 0); // make C++11 compatible until USACO updates ...
+constexpr int bits(int x) { // assert(x >= 0);
 	return x == 0 ? 0 : 31-__builtin_clz(x); } // floor(log2(x)) 
 constexpr int p2(int x) { return 1<<x; }
 constexpr int msk2(int x) { return p2(x)-1; }
-
+ 
 ll cdiv(ll a, ll b) { return a/b+((a^b)>0&&a%b); } // divide a by b rounded up
 ll fdiv(ll a, ll b) { return a/b-((a^b)<0&&a%b); } // divide a by b rounded down
-
+ 
 tcT> bool ckmin(T& a, const T& b) {
 	return b < a ? a = b, 1 : 0; } // set a = min(a,b)
 tcT> bool ckmax(T& a, const T& b) {
 	return a < b ? a = b, 1 : 0; }
-
+ 
 tcTU> T fstTrue(T lo, T hi, U f) {
 	hi ++; assert(lo <= hi); // assuming f is increasing
 	while (lo < hi) { // find first index such that f is true 
@@ -101,25 +102,25 @@ tcT> void remDup(vector<T>& v) { // sort and remove duplicates
 tcTU> void erase(T& t, const U& u) { // don't erase
 	auto it = t.find(u); assert(it != end(t));
 	t.erase(it); } // element that doesn't exist from (multi)set
-
+ 
 // INPUT
 #define tcTUU tcT, class ...U
 tcT> void re(complex<T>& c);
 tcTU> void re(pair<T,U>& p);
 tcT> void re(V<T>& v);
 tcT, size_t SZ> void re(AR<T,SZ>& a);
-
+ 
 tcT> void re(T& x) { cin >> x; }
-void re(double& d) { str t; re(t); d = stod(t); }
-void re(long double& d) { str t; re(t); d = stold(t); }
+void re(db& d) { str t; re(t); d = stod(t); }
+void re(ld& d) { str t; re(t); d = stold(t); }
 tcTUU> void re(T& t, U&... u) { re(t); re(u...); }
-
+ 
 tcT> void re(complex<T>& c) { T a,b; re(a,b); c = {a,b}; }
 tcTU> void re(pair<T,U>& p) { re(p.f,p.s); }
 tcT> void re(V<T>& x) { trav(a,x) re(a); }
 tcT, size_t SZ> void re(AR<T,SZ>& x) { trav(a,x) re(a); }
 tcT> void rv(int n, V<T>& x) { x.rsz(n); re(x); }
-
+ 
 // TO_STRING
 #define ts to_string
 str ts(char c) { return str(1,c); }
@@ -156,7 +157,7 @@ tcT> str ts(T v) { // containers with begin(), end()
 			fst = 0; res += ts(x);
 		}
 		return res;
-
+ 
 	#endif
 }
 tcTU> str ts(pair<T,U> p) {
@@ -166,7 +167,7 @@ tcTU> str ts(pair<T,U> p) {
 		return ts(p.f)+" "+ts(p.s);
 	#endif
 }
-
+ 
 // OUTPUT
 tcT> void pr(T x) { cout << ts(x); }
 tcTUU> void pr(const T& t, const U&... u) { 
@@ -174,7 +175,7 @@ tcTUU> void pr(const T& t, const U&... u) {
 void ps() { pr("\n"); } // print w/ spaces
 tcTUU> void ps(const T& t, const U&... u) { 
 	pr(t); if (sizeof...(u)) pr(" "); ps(u...); }
-
+ 
 // DEBUG
 void DBG() { cerr << "]" << endl; }
 tcTUU> void DBG(const T& t, const U&... u) {
@@ -188,7 +189,7 @@ tcTUU> void DBG(const T& t, const U&... u) {
 	#define dbg(...) 0
 	#define chk(...) 0
 #endif
-
+ 
 void setPrec() { cout << fixed << setprecision(15); }
 void unsyncIO() { cin.tie(0)->sync_with_stdio(0); }
 // FILE I/O
@@ -201,13 +202,140 @@ void setIO(str s = "") {
 	// ex. try to read letter into int
 	if (sz(s)) setIn(s+".in"), setOut(s+".out"); // for USACO
 }
-
+ 
+/**
+ * Description: modular arithmetic operations 
+ * Source: 
+	* KACTL
+	* https://codeforces.com/blog/entry/63903
+	* https://codeforces.com/contest/1261/submission/65632855 (tourist)
+	* https://codeforces.com/contest/1264/submission/66344993 (ksun)
+	* also see https://github.com/ecnerwala/cp-book/blob/master/src/modnum.hpp (ecnerwal)
+ * Verification: 
+	* https://open.kattis.com/problems/modulararithmetic
+ */
+ 
+template<int MOD, int RT> struct mint {
+	static const int mod = MOD;
+	static constexpr mint rt() { return RT; } // primitive root for FFT
+	int v; explicit operator int() const { return v; } // explicit -> don't silently convert to int
+	mint() { v = 0; }
+	mint(ll _v) { v = int((-MOD < _v && _v < MOD) ? _v : _v % MOD);
+		if (v < 0) v += MOD; }
+	friend bool operator==(const mint& a, const mint& b) { 
+		return a.v == b.v; }
+	friend bool operator!=(const mint& a, const mint& b) { 
+		return !(a == b); }
+	friend bool operator<(const mint& a, const mint& b) { 
+		return a.v < b.v; }
+	friend void re(mint& a) { ll x; re(x); a = mint(x); }
+	friend str ts(mint a) { return ts(a.v); }
+   
+	mint& operator+=(const mint& m) { 
+		if ((v += m.v) >= MOD) v -= MOD; 
+		return *this; }
+	mint& operator-=(const mint& m) { 
+		if ((v -= m.v) < 0) v += MOD; 
+		return *this; }
+	mint& operator*=(const mint& m) { 
+		v = (ll)v*m.v%MOD; return *this; }
+	mint& operator/=(const mint& m) { return (*this) *= inv(m); }
+	friend mint pow(mint a, ll p) {
+		mint ans = 1; assert(p >= 0);
+		for (; p; p /= 2, a *= a) if (p&1) ans *= a;
+		return ans; }
+	friend mint inv(const mint& a) { assert(a.v != 0); 
+		return pow(a,MOD-2); }
+		
+	mint operator-() const { return mint(-v); }
+	mint& operator++() { return *this += 1; }
+	mint& operator--() { return *this -= 1; }
+	friend mint operator+(mint a, const mint& b) { return a += b; }
+	friend mint operator-(mint a, const mint& b) { return a -= b; }
+	friend mint operator*(mint a, const mint& b) { return a *= b; }
+	friend mint operator/(mint a, const mint& b) { return a /= b; }
+};
+ 
+typedef mint<MOD,5> mi; // 5 is primitive root for both common mods
+typedef vector<mi> vmi;
+typedef pair<mi,mi> pmi;
+typedef vector<pmi> vpmi;
+ 
+vector<vmi> scmb; // small combinations
+void genComb(int SZ) {
+	scmb.assign(SZ,vmi(SZ)); scmb[0][0] = 1;
+	FOR(i,1,SZ) F0R(j,i+1) 
+		scmb[i][j] = scmb[i-1][j]+(j?scmb[i-1][j-1]:0);
+}
+ 
+mi dp[MX][MX][MX];
+V<vb> adj;
+mi ways[2][MX][MX];
+ 
+int N,K,Q; 
+ 
+void genWays0(pi p) {
+	FOR(i,p.f+1,K) {
+		F0R(j,N) {
+			if (i == p.f+1) {
+				ways[0][i][j] = dp[i-1][p.s][j];
+			} else {
+				ways[0][i][j] = ways[0][i-1][j];
+				F0R(k,N) ways[0][i][j] += ways[0][i-1][k]*dp[i-1][k][j];
+			}
+		}
+	}
+}
+ 
+void genWays1(pi p) {
+	FOR(i,p.f+1,K) {
+		F0R(j,N) {
+			if (i == p.f+1) {
+				ways[1][i][j] = dp[i-1][j][p.s];
+			} else {
+				ways[1][i][j] = ways[1][i-1][j];
+				F0R(k,N) ways[1][i][j] += dp[i-1][j][k]*ways[1][i-1][k];
+			}
+		}
+	}
+}
+ 
+void read() {
+	setIO(); re(N,K,Q);
+	adj.assign(N,vb(N));
+	F0R(i,N) {
+		str s; re(s);
+		F0R(j,N) adj[i][j] = s[j]-'0';
+	}
+}
+ 
 int main() {
-	setIO();
-	
+	read();
+	F0R(lev,K) {
+		F0R(i,N) F0R(j,N) {
+			if (lev == 0) {
+				dp[lev][i][j] = (int)adj[i][j];
+			} else {
+				dp[lev][i][j] = dp[lev-1][i][j];  // there's nothing with lev-1 between them
+				F0R(k,N) // there's a vertex with level lev-1 in between them
+					dp[lev][i][j] += dp[lev-1][i][k]*dp[lev-1][k][j];
+			}
+		}
+	}
+	F0R(_,Q) { // N^2KQ+N^3K
+		pi a, b; re(a,b);
+		-- a.f, -- a.s, -- b.f, -- b.s;
+		genWays0(a); genWays1(b);
+		mi ans = (a == b);
+		FOR(i,max(a.f,b.f)+1,K) F0R(j,N)
+			ans += ways[0][i][j]*ways[1][i][j];
+		if (a.f < b.f) ans += ways[0][b.f][b.s];
+		if (a.f > b.f) ans += ways[1][a.f][a.s];
+		ps(ans);
+	}
 	// you should actually read the stuff at the bottom
 }
-
+ 
 /* stuff you should look for
 	* int overflow, array bounds
 	* special cases (n=1?)

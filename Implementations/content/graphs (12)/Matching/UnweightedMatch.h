@@ -1,8 +1,8 @@
 /**
  * Description: Edmond's Blossom Algorithm. General unweighted 
- 	* matching with 1-based indexing. \texttt{v} is part of every 
- 	* max matching if it's never the case that \texttt{aux[v]=0}
- 	* when \texttt{bfs} returns 0.
+ 	* matching with 1-based indexing. If \texttt{vis[v]=0}
+ 	* when \texttt{bfs} returns 0, \texttt{v} is not part of every 
+ 	* max matching.
  * Time: O(N^3), faster in practice
  * Source: 
 	* https://github.com/koosaga/DeobureoMinkyuParty
@@ -43,7 +43,7 @@ template<int SZ> struct UnweightedMatch {
 	bool bfs(int u) { // u is initially unmatched
 		F0R(i,N+1) par[i] = 0, vis[i] = -1, orig[i] = i;
 		q = queue<int>(); vis[u] = 0, q.push(u);
-		while (sz(q)) {
+		while (sz(q)) { // each node is pushed to q at most once
 			int v = q.ft; q.pop(); // 0 -> unmatched vertex
 			trav(x,adj[v]) {
 				if (vis[x] == -1) { // neither of x, match[x] visited
@@ -60,7 +60,7 @@ template<int SZ> struct UnweightedMatch {
 	}
 	int calc(int _N) { // rand matching -> constant improvement
 		N = _N; F0R(i,N+1) match[i] = aux[i] = 0; 
-		int ans = 0; vi V(N); iota(all(V),1); shuffle(all(V),rng);
+		int ans = 0; vi V(N); iota(all(V),1); shuffle(all(V),rng); // find rand matching
 		trav(x,V) if (!match[x]) trav(y,adj[x]) if (!match[y]) { 
 			match[x] = y, match[y] = x; ++ans; break; }
 		FOR(i,1,N+1) if (!match[i] && bfs(i)) ++ans;

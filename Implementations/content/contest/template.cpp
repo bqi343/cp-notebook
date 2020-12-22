@@ -2,8 +2,7 @@
 using namespace std;
  
 using ll = long long;
-using ld = long double;
-using db = double; 
+using db = long double; // or double, if TL is tight
 using str = string; // yay python!
 
 using pi = pair<int,int>;
@@ -60,7 +59,7 @@ tcT> int lwb(V<T>& a, const T& b) { return int(lb(all(a),b)-bg(a)); }
 const int MOD = 1e9+7; // 998244353;
 const int MX = 2e5+5;
 const ll INF = 1e18; // not too close to LLONG_MAX
-const ld PI = acos((ld)-1);
+const db PI = acos((db)-1);
 const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1}; // for every grid problem!!
 mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count()); 
 template<class T> using pqg = priority_queue<T,vector<T>,greater<T>>;

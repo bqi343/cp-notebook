@@ -1,6 +1,6 @@
 /**
  * Description: Fast flow. After computing flow, edges $\{u,v\}$ such that 
-	* $lev[u] \neq -1,$ $lev[v] = -1$ are part of min cut.
+	* $lev[u] \neq 0,$ $lev[v] = 0$ are part of min cut.
 	* Use \texttt{reset} and \texttt{rcap} for Gomory-Hu.
  * Time: $O(N^2M)$ flow, $O(M\sqrt N)$ bipartite matching
  * Source: GeeksForGeeks, Chilli

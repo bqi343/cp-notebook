@@ -12,9 +12,9 @@
  */
 
 template<int id> struct mint {
-	static ModFast MF;
+	static FastMod MF;
 	static int mod() { return (int)MF.b; }
-	static void set_mod(int m) { assert(1 <= m); MF = ModFast(m); }
+	static void set_mod(int m) { assert(1 <= m); MF = FastMod(m); }
 	int v; explicit operator int() const { return v; } // explicit -> don't silently convert to int
 	mint() { v = 0; }
 	mint(ll _v) { v = int((-mod() < _v && _v < mod()) ? _v : _v % mod());
@@ -52,7 +52,7 @@ template<int id> struct mint {
 	friend mint operator*(mint a, const mint& b) { return a *= b; }
 	friend mint operator/(mint a, const mint& b) { return a /= b; }
 };
-template<int id> ModFast mint<id>::MF = ModFast(1);
+template<int id> FastMod mint<id>::MF = FastMod(1);
 
 typedef mint<0> mi; // 5 is primitive root for both common mods
 typedef vector<mi> vmi;

@@ -99,8 +99,11 @@ def tempShort(root,name):
 			res += a
 	return res
 
+modint_template = ""
+modfact_template = ""
+
 def process(root,name): # prefix, file name
-	global snippets,temp
+	global snippets,temp,modint_template, modfact_template
 	def shorten(name): # convert to snippet name
 		short = name[:name.rfind('.')] # strip suffix
 		if '(' in short:
@@ -113,6 +116,10 @@ def process(root,name): # prefix, file name
 			output(shorten(name),checkNorm(root,name))
 		elif "old" not in name.lower() and "kactl" not in name.lower():
 			print("NOT INCLUDED:",name)
+	if name.endswith("ModInt.h"):
+		modint_template = checkNorm(root,name)
+	if name.endswith("ModFact.h"):
+		modfact_template = checkNorm(root,name)
 	if name.endswith(".cpp"):
 		if "TemplateLong" in name:
 			print("TEMPLATE_LONG:",name)
@@ -172,6 +179,9 @@ EN += 2
 
 for i in range(len(names)):
 	code = codes[i]
-	if "TC" in names[i] or "FHC" in names[i] or "GCJ" in names[i]:
+	if names[i] == "TC":
+		# print("NAME",names[i])
+		code = temp[:ST]+modint_template+"\n\n"+modfact_template+"\n\n"+code+temp[EN:]
+	elif "FHC" in names[i] or "GCJ" in names[i] or "TS" == names[i]:
 		code = temp[:ST]+code+temp[EN:]
 	output(names[i],code)

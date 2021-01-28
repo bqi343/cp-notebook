@@ -25,8 +25,8 @@ tcTUU> void re(T& t, U&... u) { re(t); re(u...); }
 
 tcT> void re(complex<T>& c) { T a,b; re(a,b); c = {a,b}; }
 tcTU> void re(pair<T,U>& p) { re(p.f,p.s); }
-tcT> void re(V<T>& x) { trav(a,x) re(a); }
-tcT, size_t SZ> void re(AR<T,SZ>& x) { trav(a,x) re(a); }
+tcT> void re(V<T>& x) { EACH(a,x) re(a); }
+tcT, size_t SZ> void re(AR<T,SZ>& x) { EACH(a,x) re(a); }
 tcT> void rv(int n, V<T>& x) { x.rsz(n); re(x); }
 
 // TO_STRING
@@ -35,11 +35,11 @@ str ts(char c) { return str(1,c); }
 str ts(const char* s) { return (str)s; }
 str ts(str s) { return s; }
 str ts(bool b) { 
-	#ifdef LOCAL
-		return b ? "true" : "false"; 
-	#else 
-		return ts((int)b);
-	#endif
+	// #ifdef LOCAL
+	// 	return b ? "true" : "false"; 
+	// #else 
+	return ts((int)b);
+	// #endif
 }
 tcT> str ts(complex<T> c) { 
 	stringstream ss; ss << c; return ss.str(); }

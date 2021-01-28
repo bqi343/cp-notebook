@@ -105,7 +105,7 @@ F0R(i,N-1) {
 }
 ```
 
-## TCS
+## TS
 
 ```
 // make sure to intialize ALL GLOBAL VARS between tcs!

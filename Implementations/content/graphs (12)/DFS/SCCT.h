@@ -16,7 +16,7 @@ struct SCC {
 	void ae(int x, int y) { adj[x].pb(y); }
 	int dfs(int x) {
 		int low = disc[x] = ++ti; st.pb(x); // disc[y] != 0 -> in stack
-		trav(y,adj[x]) if (comp[y] == -1) ckmin(low,disc[y]?:dfs(y)); 
+		each(y,adj[x]) if (comp[y] == -1) ckmin(low,disc[y]?:dfs(y)); 
 		if (low == disc[x]) { // make new SCC, pop off stack until you find x
 			comps.pb(x); for (int y = -1; y != x;) 
 				comp[y = st.bk] = x, st.pop_back();

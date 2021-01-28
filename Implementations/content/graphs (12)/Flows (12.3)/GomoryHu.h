@@ -16,7 +16,7 @@ template<int SZ> struct GomoryHu {
 	void ae(int a, int b, int c) { ed.pb({{a,b},c}); }
 	vector<pair<pi,int>> init(int N) { 
 		vpi ret(N); Dinic<SZ> D; 
-		trav(t,ed) D.ae(t.f.f,t.f.s,t.s,t.s);
+		each(t,ed) D.ae(t.f.f,t.f.s,t.s,t.s);
 		FOR(i,1,N) {
 			D.reset(); ret[i].s = D.maxFlow(N,i,ret[i].f);
 			FOR(j,i+1,N+1) if (ret[j].f == ret[i].f 

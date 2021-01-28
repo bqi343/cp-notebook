@@ -42,7 +42,7 @@ struct TwoSAT {
 		S.gen(); reverse(all(S.comps)); // reverse topological order
 		for (int i = 0; i < 2*N; i += 2) 
 			if (S.comp[i] == S.comp[i^1]) return 0;
-		vi tmp(2*N); trav(i,S.comps) if (!tmp[i]) 
+		vi tmp(2*N); each(i,S.comps) if (!tmp[i]) 
 			tmp[i] = 1, tmp[S.comp[i^1]] = -1;
 		F0R(i,N) if (tmp[S.comp[2*i]] == 1) ans[i] = 1;
 		return 1;

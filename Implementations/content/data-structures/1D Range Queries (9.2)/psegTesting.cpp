@@ -38,7 +38,7 @@ typedef vector<pd> vpd;
 #define F0R(i,a) FOR(i,0,a)
 #define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
 #define R0F(i,a) ROF(i,0,a)
-#define trav(a,x) for (auto& a: x)
+#define each(a,x) for (auto& a: x)
 
 const int MOD = 1e9+7; // 998244353;
 const int MX = 2e5+5; 
@@ -414,7 +414,7 @@ int main() {
 	clock_t beg = clock();
 	ll sum0 = 0;
 	p.build(v); 
-	trav(t,upds) {
+	each(t,upds) {
 		if (t[0] < 0) {
 			p.upd(t[1],t[2],t[3]);
 		} else {
@@ -427,7 +427,7 @@ int main() {
 	beg = clock();
 	ll sum1 = 0;
 	p2.build(v);
-	trav(t,upds) {
+	each(t,upds) {
 		if (t[0] < 0) {
 			p2.upd(t[1],t[2],t[3]);
 		} else {
@@ -440,7 +440,7 @@ int main() {
 		ll sum3 = 0;
 		// ps(sum3,(db)(clock()-beg)/CLOCKS_PER_SEC);
 		p3.build(v);
-		trav(t,upds) {
+		each(t,upds) {
 			if (t[0] < 0) {
 				p3.upd(t[1],t[2],t[3]);
 			} else {
@@ -455,7 +455,7 @@ int main() {
 		ll sum4 = 0;
 		// ps(sum3,(db)(clock()-beg)/CLOCKS_PER_SEC);
 		p4.build(v);
-		trav(t,upds) {
+		each(t,upds) {
 			if (t[0] < 0) {
 				p4.upd(t[1],t[2],t[3]);
 			} else {

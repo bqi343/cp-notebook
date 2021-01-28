@@ -19,7 +19,7 @@ template<class C, bool directed> struct Dijkstra {
 		}; ad(st,0);
 		while (sz(pq)) {
 			T x = pq.top(); pq.pop(); if (dist[x.s] < x.f) continue;
-			trav(y,adj[x.s]) ad(y.f,x.f+y.s);
+			each(y,adj[x.s]) ad(y.f,x.f+y.s);
 		}
 	}
 };

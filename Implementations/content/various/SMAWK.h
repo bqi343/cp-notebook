@@ -16,11 +16,11 @@ template<class F, class D=ll> vi smawk (F f, vi x, vi y) {
 	#define upd() if (ans[i] == -1 || w > mx) ans[i] = c, mx = w
 	if (min(sz(x),sz(y)) <= 8) {
 		F0R(i,sz(x)) { int r = x[i]; D mx; 
-			trav(c,y) { D w = f(r,c); upd(); } }
+			each(c,y) { D w = f(r,c); upd(); } }
 		return ans; 
 	}
 	if (sz(x) < sz(y)) { // reduce subset of cols to consider
-		vi Y; trav(c,y) {
+		vi Y; each(c,y) {
 			for (;sz(Y);Y.pop_back()) { int X = x[sz(Y)-1]; 
 				if (f(X,Y.bk) >= f(X,c)) break; }
 			if (sz(Y) < sz(x)) Y.pb(c);

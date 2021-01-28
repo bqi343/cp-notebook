@@ -25,7 +25,7 @@ int main() {
 		int x = q.ft; q.pop(); 
 		if (sz(adj[x]) > 2 || done[x]) continue;
 		done[x] = 1;
-		trav(t,adj[x]) adj[t].erase(x);
+		each(t,adj[x]) adj[t].erase(x);
 		if (sz(adj[x]) == 0) {
 			seq.pb({0,x,-1,-1});
 		} else if (sz(adj[x]) == 1) {
@@ -46,7 +46,7 @@ int main() {
 	vi par(N+1), vert(N+1);
 	vector<vi> bag(N);
 	map<pi,int> edge;
-	trav(t,seq) {
+	each(t,seq) {
 		int v = t[1];
 		auto ad = [&](int a, int b, int c) {
 			if (a > b) swap(a,b);
@@ -71,7 +71,7 @@ int main() {
 	ps("s","td",N,2,N);
 	F0R(i,N) {
 		pr("b ",i+1);
-		trav(t,bag[i]) pr(' ',t);
+		each(t,bag[i]) pr(' ',t);
 		ps();
 	}
 	FOR(i,1,N) ps(par[i]+1,i+1);

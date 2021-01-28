@@ -15,7 +15,7 @@ struct bset {
 	void flip(int x) { b[x/64] ^= (ul)1<<(x%64); }
 	void set(int x) { if (!get(x)) flip(x); }
 	int count() {
-		int res = 0; trav(t,b) res += __builtin_popcountll(t);
+		int res = 0; each(t,b) res += __builtin_popcountll(t);
 		return res; }
 	friend void pr(const bset&x){F0R(i,x.size)pr((int)x.get(i));}
 	bset& operator|=(const bset& r) {

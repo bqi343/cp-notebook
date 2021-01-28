@@ -15,7 +15,7 @@ template<int SZ> struct MaxMatch {
 		if (!x) return 1;
 		if (vis[x]) return 0;
 		vis[x] = 1;
-		trav(t,adj[x]) if (t != match[x] && dfs(rmatch[t])) {
+		each(t,adj[x]) if (t != match[x] && dfs(rmatch[t])) {
 			match[x] = t, rmatch[t] = x; return 1; }
 		return 0;
 	}

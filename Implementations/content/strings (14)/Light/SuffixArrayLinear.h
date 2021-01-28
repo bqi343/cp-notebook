@@ -37,7 +37,7 @@ vi sa_is(const vi& s, int upper) {
 	vi lms_map(n+1,-1), lms; int m = 0;
 	FOR(i,1,n) if (!ls[i-1] && ls[i]) lms_map[i] = m++, lms.pb(i);
 	induce(lms); // sorts LMS prefixes
-	vi sorted_lms; trav(v,sa) if (lms_map[v] != -1) sorted_lms.pb(v);
+	vi sorted_lms; each(v,sa) if (lms_map[v] != -1) sorted_lms.pb(v);
 	vi rec_s(m); int rec_upper = 0; // smaller subproblem
 	FOR(i,1,m) { // compare two lms substrings in sorted order
 		int l = sorted_lms[i-1], r = sorted_lms[i];

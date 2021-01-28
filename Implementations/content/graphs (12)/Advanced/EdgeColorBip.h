@@ -15,7 +15,7 @@ template<int SZ, bool directed> struct Euler { // modified Euler cycle
 	Euler() { F0R(i,SZ) inVert[i] = 0; }
 	vi ans;
 	void clr() {
-		trav(t,verts) adj[t].clear(), inVert[t] = 0;
+		each(t,verts) adj[t].clear(), inVert[t] = 0;
 		verts.clear(); used.clear(); ans.clear();
 	}
 	void addVert(int x) {
@@ -42,11 +42,11 @@ template<int SZ, bool directed> struct Euler { // modified Euler cycle
 		assert(sz(ans)%2 == 0);
 	}
 	array<vi,2> tour() {
-		trav(v,verts) {
+		each(v,verts) {
 			assert(sz(adj[v])%2 == 0);
 			its[v] = begin(adj[v]);
 		}
-		trav(v,verts) trav(e,adj[v]) if (!used[e.s]) go(v);
+		each(v,verts) each(e,adj[v]) if (!used[e.s]) go(v);
 		array<vi,2> res; F0R(i,sz(ans)) res[i%2].pb(ans[i]);
 		return res;
 	}
@@ -57,9 +57,9 @@ struct EdgeColorBip {
 	int N; vector<T> ed; // # verts on each side, edges
 	Euler<200000,0> E; // at least 2*N
 	array<vi,2> split(vi lab) { // K is even, split into two parts
-		E.clr(); trav(t,lab) E.ae(ed[t][0],ed[t][1]);
+		E.clr(); each(t,lab) E.ae(ed[t][0],ed[t][1]);
 		auto v = E.tour(); // get half edges on each
-		F0R(i,2) trav(t,v[i]) t = lab[t];
+		F0R(i,2) each(t,v[i]) t = lab[t];
 		return v;
 	}
 	vi match(vi lab) { // find perfect matching in MlogM
@@ -79,9 +79,9 @@ struct EdgeColorBip {
 				cntBad[i] /= 2;
 			}
 			array<vi,2> x = E.tour(); T cnt = T();
-			F0R(i,2) trav(t,x[i]) cnt[i] += t >= numLab;
+			F0R(i,2) each(t,x[i]) cnt[i] += t >= numLab;
 			if (cnt[0] > cnt[1]) swap(x[0],x[1]);
-			trav(t,x[0]) {
+			each(t,x[0]) {
 				if (t < numLab) cntGood[tmp[t]] ++;
 				else cntBad[tmp[t]] ++;
 			}
@@ -109,18 +109,18 @@ struct EdgeColorBip {
 			}
 			auto b = edgeColor(p[1]); a.insert(end(a),all(b)); return a;
 		} else {
-			vi v = match(lab); trav(t,v) used[t] = 1;
-			vi LAB; trav(t,lab) if (!used[t]) LAB.pb(t);
-			trav(t,v) used[t] = 0;
+			vi v = match(lab); each(t,v) used[t] = 1;
+			vi LAB; each(t,lab) if (!used[t]) LAB.pb(t);
+			each(t,v) used[t] = 0;
 			auto a = edgeColor(LAB); a.pb(v); return a;
 		}
 	}
 	vector<vi> calc(vector<T> _ed) {
-		T side = T(); trav(t,_ed) F0R(i,2) ckmax(side[i],t[i]+1);
+		T side = T(); each(t,_ed) F0R(i,2) ckmax(side[i],t[i]+1);
 		vi deg[2], cmp[2], sz[2]; 
 		F0R(i,2) deg[i].rsz(side[i]), cmp[i].rsz(side[i]);
-		trav(t,_ed) F0R(i,2) deg[i][t[i]] ++;
-		int K = 0; F0R(i,2) trav(t,deg[i]) ckmax(K,t);
+		each(t,_ed) F0R(i,2) deg[i][t[i]] ++;
+		int K = 0; F0R(i,2) each(t,deg[i]) ckmax(K,t);
 		F0R(s,2) for (int i = 0; i < side[s]; ) {
 			sz[s].pb(0);
 			while (i < side[s] && sz[s].bk+deg[s][i] <= K) 
@@ -128,7 +128,7 @@ struct EdgeColorBip {
 		}
 		F0R(i,2) while (sz(sz[i]) < sz(sz[i^1])) sz[i].pb(0);
 		N = sz(sz[0]); 
-		trav(t,_ed) ed.pb({cmp[0][t[0]],N+cmp[1][t[1]]});
+		each(t,_ed) ed.pb({cmp[0][t[0]],N+cmp[1][t[1]]});
 		int ind = 0;
 		F0R(i,N) while (sz[0][i] < K) {
 			while (sz[1][ind] == K) ind ++;

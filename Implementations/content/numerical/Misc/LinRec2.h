@@ -55,7 +55,7 @@ struct LinRec2 {
 		}
 		if (mod > 1) fac.pb({mod,1}), mul.pb(mod);
 		vector<vl> as; int n = 0;
-		trav(x,fac) {
+		each(x,fac) {
 			auto y = primePower(x.f,x.s);
 			as.pb(y); ckmax(n,sz(y));
 		}

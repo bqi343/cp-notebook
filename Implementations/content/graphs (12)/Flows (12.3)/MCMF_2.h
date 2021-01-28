@@ -33,7 +33,7 @@ struct MCMF {
 		todo.push({dist[s] = 0,s}); 
 		while (sz(todo)) { // Dijkstra
 			T x = todo.top(); todo.pop(); if (x.f > dist[x.s]) continue;
-			trav(e,adj[x.s]) { const Edge& E = eds[e]; // all weights should be non-negative
+			each(e,adj[x.s]) { const Edge& E = eds[e]; // all weights should be non-negative
 				if (E.flo < E.cap && ckmin(dist[E.to],x.f+E.cost+p[x.s]-p[E.to]))
 					pre[E.to] = e, todo.push({dist[E.to],E.to});
 			}

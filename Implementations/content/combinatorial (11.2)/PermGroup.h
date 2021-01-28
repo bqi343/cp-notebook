@@ -42,11 +42,11 @@ void updateX(const vi& cur, int k) {
 	int t = cur[k]; // if flag, fixes k -> k
 	if (g[k].flag[t]) ins(inv(g[k].sigma[t])*cur,k-1); 
 	else { g[k].flag[t] = 1, g[k].sigma[t] = cur;
-		trav(x,g[k].gen) updateX(x*cur,k); }
+		each(x,g[k].gen) updateX(x*cur,k); }
 }
 ll order(vector<vi> gen) { 
 	assert(sz(gen)); n = sz(gen[0]); F0R(i,n) g[i].clear(i);
-	trav(a,gen) ins(a,n-1); // insert perms into group one by one
+	each(a,gen) ins(a,n-1); // insert perms into group one by one
 	ll tot = 1;
 	F0R(i,n) {
 		int cnt = 0; F0R(j,i+1) cnt += g[i].flag[j];

@@ -31,24 +31,24 @@ struct SuffixAutomaton {
 		int x = getNex(); lnk[cur] = x; 
 		return cur;
 	}
-	void init(str s) { int p = 0; trav(x,s) p = add(p,x); } // add string to automaton
+	void init(str s) { int p = 0; each(x,s) p = add(p,x); } // add string to automaton
 	void genIlnk() { iLnk.rsz(N); FOR(v,1,N) iLnk[lnk[v]].pb(v); } // inverse links
 	// APPLICATIONS
 	void getAllOccur(vi& oc, int v) {
 		if (!isClone[v]) oc.pb(pos[v]); // terminal position
-		trav(u,iLnk[v]) getAllOccur(oc,u); }
+		each(u,iLnk[v]) getAllOccur(oc,u); }
 	vi allOccur(str s) { // get all occurrences of s in automaton
 		int cur = 0;
-		trav(x,s) {
+		each(x,s) {
 			if (!nex[cur].count(x)) return {};
 			cur = nex[cur][x]; }
-		vi oc; getAllOccur(oc,cur); trav(t,oc) t += 1-sz(s); // convert end pos -> start pos
+		vi oc; getAllOccur(oc,cur); each(t,oc) t += 1-sz(s); // convert end pos -> start pos
 		sort(all(oc)); return oc;
 	}
 	vl distinct;
 	ll getDistinct(int x) { // # of distinct strings starting at state x
 		if (distinct[x]) return distinct[x];
-		distinct[x] = 1; trav(y,nex[x]) distinct[x] += getDistinct(y.s);
+		distinct[x] = 1; each(y,nex[x]) distinct[x] += getDistinct(y.s);
 		return distinct[x]; }
 	ll numDistinct() { // # distinct substrings including empty
 		distinct.rsz(N); return getDistinct(0); }
@@ -62,8 +62,8 @@ vi sa; str s;
 void dfs(int x) {
 	if (!S.isClone[x]) sa.pb(sz(s)-1-S.pos[x]);
 	vector<pair<char,int>> chr;
-	trav(t,S.iLnk[x]) chr.pb({s[S.pos[t]-S.len[x]],t});
-	sort(all(chr)); trav(t,chr) dfs(t.s);
+	each(t,S.iLnk[x]) chr.pb({s[S.pos[t]-S.len[x]],t});
+	sort(all(chr)); each(t,chr) dfs(t.s);
 }
 
 int main() {

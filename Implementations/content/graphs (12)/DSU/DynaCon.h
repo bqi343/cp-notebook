@@ -15,10 +15,10 @@ template<int SZ> struct DynaCon {
 		}
 	}
 	void process(int ind) {
-		trav(t,seg[ind]) D.unite(t.f,t.s);
+		each(t,seg[ind]) D.unite(t.f,t.s);
 		if (ind >= SZ) {
 			// do stuff with D at time ind-SZ
 		} else process(2*ind), process(2*ind+1);
-		trav(t,seg[ind]) D.rollback();
+		each(t,seg[ind]) D.rollback();
 	}
 };

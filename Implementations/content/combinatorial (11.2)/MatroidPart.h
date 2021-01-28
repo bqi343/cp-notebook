@@ -14,9 +14,9 @@
 	vector<vpi> adj;
 	vpi pre;
 	Gmat(vpi ed):ed(ed) {
-		map<int,int> m; trav(t,ed) m[t.f] = m[t.s] = 0;
-		trav(t,m) t.s = V++; 
-		trav(t,this->ed) t.f = m[t.f], t.s = m[t.s];
+		map<int,int> m; each(t,ed) m[t.f] = m[t.s] = 0;
+		each(t,m) t.s = V++; 
+		each(t,this->ed) t.f = m[t.f], t.s = m[t.s];
 	}
 	void clear() { D.init(V); adj = vector<vpi>(V); }
 	void ins(int i) { assert(D.unite(ed[i].f,ed[i].s)); 
@@ -35,7 +35,7 @@
 		return v;
 	}
 	void dfs(int x) {
-		trav(t,adj[x]) if (depth[t.f] == -1) {
+		each(t,adj[x]) if (depth[t.f] == -1) {
 			depth[t.f] = depth[x]+1;
 			pre[t.f] = {x,t.s};
 			dfs(t.f);
@@ -66,7 +66,7 @@ template<class M> struct MatroidPart {
 					return 1;
 				}
 				vi v = m[z].backEdges(x);
-				trav(t,v) if (pre[t] == -1) pre[t] = x, q.push(t);
+				each(t,v) if (pre[t] == -1) pre[t] = x, q.push(t);
 			}
 		}
 		return 0;

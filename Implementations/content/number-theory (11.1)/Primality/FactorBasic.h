@@ -23,7 +23,7 @@ namespace factorBasic {
 	 * Euler's theorem: a^{\phi(p)}\equiv 1 (mod p), gcd(a,p)=1
 	 */
 	ll phi(ll x) {
-		trav(a,factor(x)) x -= x/a.f;
+		each(a,factor(x)) x -= x/a.f;
 		return x;
 	}
 	template<class T> void tour(vector<pair<T,int>>& v, 

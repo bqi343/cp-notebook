@@ -18,7 +18,7 @@ vi z(str s) {
 }
 vi getPrefix(str a, str b) { // find prefixes of a in b
 	vi t = z(a+b); t = vi(sz(a)+all(t)); 
-	trav(u,t) ckmin(u,sz(a));
+	each(u,t) ckmin(u,sz(a));
 	return t;
 }
 /// Usage: pr(z("abcababcabcaba"),getPrefix("abcab","uwetrabcerabcab"));

@@ -24,7 +24,7 @@ ul pollard(ul n) {
 }
 vpl factor(ll d) {
 	vpl res; 
-	trav(t,S.pr) {
+	each(t,S.pr) {
 		if ((ul)t*t > d) break;
 		if (d%t == 0) {
 			res.pb({t,0}); 

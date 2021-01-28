@@ -21,7 +21,7 @@ struct TwoEdgeCC {
 		adj.rsz(N), depth.rsz(N), par = vi(N,-1);
 	}
 	void dfs(int x) {
-		trav(t,adj[x]) if (t != par[x]) 
+		each(t,adj[x]) if (t != par[x]) 
 			par[t] = x, depth[t] = depth[x]+1, dfs(t);
 	}
 	void ae(int a, int b) {
@@ -39,6 +39,6 @@ struct TwoEdgeCC {
 	void gen() {
 		F0R(i,N) if (par[i] == -1) dfs(i);
 		DSU.init(N); // again!
-		trav(t,extra) ad(t.f,t.s);
+		each(t,extra) ad(t.f,t.s);
 	}
 };

@@ -20,14 +20,14 @@ template<int SZ> struct Centroid {
 	int dist[32-__builtin_clz(SZ)][SZ]; // dists to all ancs
 	vi stor[SZ], STOR[SZ];
 	void dfs(int x, int p) { sub[x] = 1; 
-		trav(y,adj[x]) if (!done[y] && y != p) 
+		each(y,adj[x]) if (!done[y] && y != p) 
 			dfs(y,x), sub[x] += sub[y]; 
 	}
 	int centroid(int x) {
 		dfs(x,-1); 
 		for (int sz = sub[x];;) {
 			pi mx = {0,0};
-			trav(y,adj[x]) if (!done[y] && sub[y] < sub[x]) 
+			each(y,adj[x]) if (!done[y] && sub[y] < sub[x]) 
 				ckmax(mx,{sub[y],y});
 			if (mx.f*2 <= sz) return x; 
 			x = mx.s;
@@ -35,14 +35,14 @@ template<int SZ> struct Centroid {
 	}
 	void genDist(int x, int p, int lev) {
 		dist[lev][x] = dist[lev][p]+1;
-		trav(y,adj[x]) if (!done[y] && y != p) genDist(y,x,lev); }
+		each(y,adj[x]) if (!done[y] && y != p) genDist(y,x,lev); }
 	void gen(int CEN, int _x) { // CEN = centroid above x
 		int x = centroid(_x); done[x] = 1; cen[x] = CEN; 
 		sub[x] = sub[_x]; lev[x] = (CEN == -1 ? 0 : lev[CEN]+1);
 		dist[lev[x]][x] = 0; 
 		stor[x].rsz(sub[x]),STOR[x].rsz(sub[x]+1); 
-		trav(y,adj[x]) if (!done[y]) genDist(y,x,lev[x]);
-		trav(y,adj[x]) if (!done[y]) gen(x,y);
+		each(y,adj[x]) if (!done[y]) genDist(y,x,lev[x]);
+		each(y,adj[x]) if (!done[y]) gen(x,y);
 	}
 	void init(int _N) { N = _N; FOR(i,1,N+1) done[i] = 0;
 		gen(-1,1); } // start at vert 1

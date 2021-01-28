@@ -24,7 +24,7 @@ Q vrand() { // random vector
 	Q q = Q(); F0R(i,3) q[i] = rng()%(2*MOD)-MOD;
 	return q; }
 T norm(const Q& x) { // sum of squares
-	T sum = 0; trav(t,x) sum += t*t;
+	T sum = 0; each(t,x) sum += t*t;
 	return sum; }
 T abs(const Q& x) { return sqrt(norm(x)); }
 
@@ -85,7 +85,7 @@ Q operator*(const Mat& l, const Q& r) { isVec(r); // multiply matrix by vector
 	Q res = Q(); F0R(i,3) F0R(j,3) res[i] += l[i][j]*r[j];
 	return res; }
 Q flatten(const vQ& basis, Q x) { isVec(x); // reduce x given orthonormal basis
-	trav(t,basis) x -= t*dot(t,x);
+	each(t,basis) x -= t*dot(t,x);
 	return unit(x); }
 Q findEigenvec(const vQ& basis, const Mat& A) { // if we keep applying it will converge to vector corresponding to largest eigenvalue
 	Q x = flatten(basis,vrand());

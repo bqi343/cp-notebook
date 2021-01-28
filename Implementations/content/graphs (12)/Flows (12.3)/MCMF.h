@@ -33,7 +33,7 @@ struct MCMF {
 		todo.push({dist[s] = 0,s}); 
 		while (sz(todo)) { // Dijkstra
 			T x = todo.top(); todo.pop(); if (x.f > dist[x.s]) continue;
-			trav(e,adj[x.s]) { // all weights should be non-negative
+			each(e,adj[x.s]) { // all weights should be non-negative
 				if (e.flo < e.cap && ckmin(dist[e.to],x.f+e.cost+p[x.s]-p[e.to]))
 					pre[e.to] = {x.s,e.rev}, todo.push({dist[e.to],e.to});
 			}
@@ -42,7 +42,7 @@ struct MCMF {
 		return dist[t] != inf; // return flow
 	}
 	pair<F,C> calc(int s, int t) { assert(s != t);
-		F0R(_,N) F0R(i,N) trav(e,adj[i]) // Bellman-Ford
+		F0R(_,N) F0R(i,N) each(e,adj[i]) // Bellman-Ford
 			if (e.cap) ckmin(p[e.to],p[i]+e.cost);
 		F totFlow = 0; C totCost = 0;
 		while (path(s,t)) { // p -> potentials for Dijkstra

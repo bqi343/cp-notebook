@@ -21,7 +21,7 @@ typedef vector<pl> vpl;
 #define F0R(i,a) FOR(i,0,a)
 #define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
 #define R0F(i,a) ROF(i,0,a)
-#define trav(a,x) for (auto& a: x)
+#define each(a,x) for (auto& a: x)
 
 #define sz(x) (int)(x).size()
 #define all(x) begin(x), end(x)
@@ -218,7 +218,7 @@ struct SuffixArray {
 			isa[b] = i > 1 && S[a] == S[b] ? isa[a] : i; }
 		for (int len = 1; len < N; len *= 2) {
 			vi s(sa), is(isa), pos(N); iota(all(pos),0); 
-			trav(t,s) { int T = t-len; if (T >= 0) sa[pos[isa[T]]++] = T; }
+			each(t,s) { int T = t-len; if (T >= 0) sa[pos[isa[T]]++] = T; }
 			FOR(i,1,N) { int a = sa[i-1], b = sa[i];
 				isa[b] = is[a] == is[b] && is[a+len] == is[b+len] ? isa[a] : i; }
 		}

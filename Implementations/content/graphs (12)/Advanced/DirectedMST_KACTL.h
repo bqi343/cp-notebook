@@ -33,7 +33,7 @@ void pop(Node*& a) { a->prop(); a = merge(a->l, a->r); }
 ll dmstKACTL(int n, int r, const vector<Edge>& g) {
 	DSU dsu; dsu.init(n);
 	vector<Node*> heap(n);
-	trav(e, g) heap[e.b] = merge(heap[e.b], new Node{e});
+	each(e, g) heap[e.b] = merge(heap[e.b], new Node{e});
 	ll res = 0;
 	vi seen(n, -1), path(n); seen[r] = r;
 	F0R(s,n) {

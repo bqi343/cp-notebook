@@ -22,7 +22,7 @@ template<int SZ> struct Sieve {
 		memset(sp,0,sizeof sp);
 		FOR(i,2,SZ) { 
 			if (sp[i] == 0) sp[i] = i, pr.pb(i); 
-			trav(p,pr) {
+			each(p,pr) {
 				if (p > sp[i] || i*p >= SZ) break;
 				sp[i*p] = p;
 			}

@@ -21,7 +21,7 @@ typedef vector<pl> vpl;
 #define F0R(i,a) FOR(i,0,a)
 #define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
 #define R0F(i,a) ROF(i,0,a)
-#define trav(a,x) for (auto& a: x)
+#define each(a,x) for (auto& a: x)
 
 #define sz(x) (int)x.size()
 #define all(x) begin(x), end(x)
@@ -230,7 +230,7 @@ pair<ll,vi> dmst(int n, int r, const vector<Edge>& g) {
 	DSUrb dsu; dsu.init(n); 
 	vector<Node*> heap(n); // store edges entering each vertex 
 	// in increasing order of weight
-	trav(e,g) heap[e.b] = merge(heap[e.b], new Node{e});
+	each(e,g) heap[e.b] = merge(heap[e.b], new Node{e});
 	ll res = 0; vi seen(n,-1); seen[r] = r; 
 	vpi in(n,{-1,-1}); // edge entering each vertex in MST
 	vector<pair<int,vector<Edge>>> cycs;
@@ -254,14 +254,14 @@ pair<ll,vi> dmst(int n, int r, const vector<Edge>& g) {
 				cycs.back().f = u;
 			}
 		}
-		trav(t,path) in[dsu.get(t.s.b)] = {t.s.a,t.s.b}; 
+		each(t,path) in[dsu.get(t.s.b)] = {t.s.a,t.s.b}; 
 		// found path from root
 	}
 	while (sz(cycs)) { // expand cycs to restore sol
 		auto c = cycs.back(); cycs.pop_back();
 		pi inEdge = in[c.f];
-		trav(t,c.s) dsu.rollback();
-		trav(t,c.s) in[dsu.get(t.b)] = {t.a,t.b};
+		each(t,c.s) dsu.rollback();
+		each(t,c.s) in[dsu.get(t.b)] = {t.a,t.b};
 		in[dsu.get(inEdge.s)] = inEdge;
 	}
 	vi inv; 
@@ -275,7 +275,7 @@ pair<ll,vi> dmst(int n, int r, const vector<Edge>& g) {
 ll dmstKACTL(int n, int r, const vector<Edge>& g) {
 	DSUrb dsu; dsu.init(n);
 	vector<Node*> heap(n);
-	trav(e, g) heap[e.b] = merge(heap[e.b], new Node{e});
+	each(e, g) heap[e.b] = merge(heap[e.b], new Node{e});
 	ll res = 0;
 	vi seen(n, -1), path(n); seen[r] = r;
 	F0R(s,n) {
@@ -310,7 +310,7 @@ int main() {
 		{3, 2, 23},
 	};
 	vector<Edge> edges;
-	trav(e, data) {
+	each(e, data) {
 		int a = get<0>(e);
 		int b = get<1>(e);
 		int w = get<2>(e);
@@ -351,7 +351,7 @@ int main() {
 			F0R(qi,sz(q)) {
 				int s = q[qi];
 				if (!seen[s]++)
-					trav(x, ch[s]) q.push_back(x);
+					each(x, ch[s]) q.push_back(x);
 			}
 			assert(count(all(seen), 0) == 0);
 		}

@@ -45,7 +45,7 @@ template<int SZ> struct UnweightedMatch {
 		q = queue<int>(); vis[u] = 0, q.push(u);
 		while (sz(q)) { // each node is pushed to q at most once
 			int v = q.ft; q.pop(); // 0 -> unmatched vertex
-			trav(x,adj[v]) {
+			each(x,adj[v]) {
 				if (vis[x] == -1) { // neither of x, match[x] visited
 					vis[x] = 1; par[x] = v;
 					if (!match[x]) return augment(u,x),1;
@@ -61,7 +61,7 @@ template<int SZ> struct UnweightedMatch {
 	int calc(int _N) { // rand matching -> constant improvement
 		N = _N; F0R(i,N+1) match[i] = aux[i] = 0; 
 		int ans = 0; vi V(N); iota(all(V),1); shuffle(all(V),rng); // find rand matching
-		trav(x,V) if (!match[x]) trav(y,adj[x]) if (!match[y]) { 
+		each(x,V) if (!match[x]) each(y,adj[x]) if (!match[y]) { 
 			match[x] = y, match[y] = x; ++ans; break; }
 		FOR(i,1,N+1) if (!match[i] && bfs(i)) ++ans;
 		return ans;

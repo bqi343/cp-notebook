@@ -18,7 +18,7 @@ vector<pair<int,pi>> manhattanMst(vpi v) {
 		sort(all(id),[&](int i, int j) { 
 			return v[i].f+v[i].s < v[j].f+v[j].s; });
 		map<int,int> sweep; // find first octant neighbors
-		trav(i,id) { // those in sweep haven't found neighbor yet
+		each(i,id) { // those in sweep haven't found neighbor yet
 			for (auto it = sweep.lb(-v[i].s); 
 				it != end(sweep); sweep.erase(it++)) {
 				int j = it->s;
@@ -27,7 +27,7 @@ vector<pair<int,pi>> manhattanMst(vpi v) {
 			}
 			sweep[-v[i].s] = i;
 		}
-		trav(p,v) {
+		each(p,v) {
 			if (k&1) p.f *= -1;
 			else swap(p.f,p.s);
 		}

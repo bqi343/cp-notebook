@@ -14,7 +14,7 @@ struct TopoSort {
 		F0R(i,N) if (!in[i]) todo.push(i);
 		while (sz(todo)) {
 			int x = todo.ft; todo.pop(); res.pb(x);
-			trav(i,adj[x]) if (!(--in[i])) todo.push(i);
+			each(i,adj[x]) if (!(--in[i])) todo.push(i);
 		}
 		return sz(res) == N;
 	}

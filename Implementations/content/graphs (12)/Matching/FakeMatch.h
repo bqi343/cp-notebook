@@ -32,14 +32,14 @@ template<int SZ> struct FakeMatch {
 		N = _N; vpi ed; 
 		FOR(i,1,N+1) FOR(j,i+1,N+1) ed.pb({i,j});
 		random_shuffle(all(ed));
-		trav(c,ed) {
+		each(c,ed) {
 			int a = c.f, b = c.s, w = min(min(f[a],f[b]),cap[a][b]);
 			x(a,b,w); f[a] -= w, f[b] -= w; }
 		while (1) {
 			vi lef; FOR(i,1,N+1) if (f[i]) lef.pb(i);
 			if (!sz(lef)) break;
 			shuffle(all(lef),rng);
-			trav(_s,lef) {
+			each(_s,lef) {
 				s = _s; tt ++;
 				for (int sz = 1<<13; sz; sz /= 2) while (f[s] >= sz) 
 					{ tt ++; if (!dfs(s,sz)) break; }

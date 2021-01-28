@@ -21,7 +21,7 @@ typedef vector<pl> vpl;
 #define F0R(i,a) FOR(i,0,a)
 #define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
 #define R0F(i,a) ROF(i,0,a)
-#define trav(a,x) for (auto& a: x)
+#define each(a,x) for (auto& a: x)
 
 #define sz(x) (int)x.size()
 #define all(x) begin(x), end(x)
@@ -235,7 +235,7 @@ using namespace Point;
 pair<vi,vi> ulHull(const vP& P) {
 	vi p(sz(P)), u, l; iota(all(p), 0);
 	sort(all(p), [&P](int a, int b) { return P[a] < P[b]; });
-	trav(i,p) {
+	each(i,p) {
 		#define ADDP(C, cmp) while (sz(C) > 1 && cross(\
 			P[C[sz(C)-2]],P[C.back()],P[i]) cmp 0) C.pop_back(); C.pb(i);
 		ADDP(u, >=); ADDP(l, <=);
@@ -250,7 +250,7 @@ vi hullInd(const vP& P) {
 }
 vP hull(const vP& P) {
 	vi v = hullInd(P);
-	vP res; trav(t,v) res.pb(P[t]);
+	vP res; each(t,v) res.pb(P[t]);
 	return res;
 }
 

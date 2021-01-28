@@ -36,13 +36,13 @@ poly& operator+=(poly& l, const poly& r) {
 poly& operator-=(poly& l, const poly& r) {
 	l.rsz(max(sz(l),sz(r))); F0R(i,sz(r)) l[i] -= r[i]; 
 	return l; }
-poly& operator*=(poly& l, const T& r) { trav(t,l) t *= r; 
+poly& operator*=(poly& l, const T& r) { each(t,l) t *= r; 
 	return l;	 }
-poly& operator/=(poly& l, const T& r) { trav(t,l) t /= r; 
+poly& operator/=(poly& l, const T& r) { each(t,l) t /= r; 
 	return l; }
 poly operator+(poly l, const poly& r) { return l += r; }
 poly operator-(poly l, const poly& r) { return l -= r; }
-poly operator-(poly l) { trav(t,l) t *= -1; return l; }
+poly operator-(poly l) { each(t,l) t *= -1; return l; }
 poly operator*(poly l, const T& r) { return l *= r; }
 poly operator*(const T& r, const poly& l) { return l*r; }
 poly operator/(poly l, const T& r) { return l /= r;	 }
@@ -56,12 +56,12 @@ poly& operator*=(poly& l, const poly& r) { return l = l*r; }
 
 pair<poly,poly> quoRem(poly a, poly b) { 
 	remz(a); remz(b); assert(sz(b));
-	T lst = b.bk, B = T(1)/lst; trav(t,a) t *= B; 
-	trav(t,b) t *= B;
+	T lst = b.bk, B = T(1)/lst; each(t,a) t *= B; 
+	each(t,b) t *= B;
 	poly q(max(sz(a)-sz(b)+1,0));
 	for (int dif; (dif=sz(a)-sz(b)) >= 0; remz(a)) {
 		q[dif] = a.bk; F0R(i,sz(b)) a[i+dif] -= q[dif]*b[i]; }
-	trav(t,a) t *= lst;
+	each(t,a) t *= lst;
 	return {q,a}; // quotient, remainder
 }
 poly operator/(const poly& a, const poly& b) { return quoRem(a,b).f; }

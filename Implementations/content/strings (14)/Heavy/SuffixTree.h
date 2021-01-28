@@ -32,7 +32,7 @@ struct SuffixTree {
 	}
 	void init(str _s) {
 		make(-1,0); int p = 0, lef = 0;
-		trav(c,_s) add(p,lef,c);
+		each(c,_s) add(p,lef,c);
 		add(p,lef,'$'); s.pop_back(); // terminal char
 	}
 	int maxPre(str x) { // max prefix of x which is substring
@@ -48,6 +48,6 @@ struct SuffixTree {
 	vi sa; // generate suffix array
 	void genSa(int x = 0, int Len = 0) {
 		if (!sz(to[x])) sa.pb(pos[x]-Len); // found terminal node
-		else trav(t,to[x]) genSa(t.s,Len+len[x]);
+		else each(t,to[x]) genSa(t.s,Len+len[x]);
 	}
 };

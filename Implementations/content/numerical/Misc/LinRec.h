@@ -37,7 +37,7 @@ struct LinRec {
 	void init(const poly& _s) { 
 		s = _s; BM();
 		rC = C; reverse(all(rC)); // poly for getPow
-		C.erase(begin(C)); trav(t,C) t *= -1;
+		C.erase(begin(C)); each(t,C) t *= -1;
 	} // now s[i]=sum_{j=0}^{sz(C)-1}C[j]*s[i-j-1]
 	poly getPow(ll p) { // get x^p mod rC
 		if (p == 0) return {1};

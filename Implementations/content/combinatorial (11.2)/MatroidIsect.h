@@ -17,9 +17,9 @@
 struct Gmat { // graphic matroid
 	int V = 0; vpi ed; DSU D;
 	Gmat(vpi ed):ed(ed) {
-		map<int,int> m; trav(t,ed) m[t.f] = m[t.s] = 0;
-		trav(t,m) t.s = V++; 
-		trav(t,this->ed) t.f = m[t.f], t.s = m[t.s];
+		map<int,int> m; each(t,ed) m[t.f] = m[t.s] = 0;
+		each(t,m) t.s = V++; 
+		each(t,this->ed) t.f = m[t.f], t.s = m[t.s];
 	}
 	void clear() { D.init(V); }
 	void ins(int i) { assert(D.unite(ed[i].f,ed[i].s)); }
@@ -27,7 +27,7 @@ struct Gmat { // graphic matroid
 };
 struct Cmat { // colorful matroid
 	int C = 0; vi col; vector<bool> used;
-	Cmat(vi col):col(col) {trav(t,col) ckmax(C,t+1); }
+	Cmat(vi col):col(col) {each(t,col) ckmax(C,t+1); }
 	void clear() { used.assign(C,0); }
 	void ins(int i) { used[col[i]] = 1; }
 	bool indep(int i) { return !used[col[i]]; }

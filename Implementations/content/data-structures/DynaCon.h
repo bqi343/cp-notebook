@@ -210,7 +210,7 @@ struct DynaCon {
 		F0R(i,L+1) E[i].rem(label); // remove from spanning tree
 		while (L >= 0) {
 			pair<vi,int> p = E[L].replace(ed[label].f,ed[label].s);
-			trav(t,p.f) {
+			each(t,p.f) {
 				assert(edgeLevel[t] == L+1);
 				if (span[t]) assert(E[L+1].add(t));
 				else {
@@ -241,7 +241,7 @@ int main() {
 	}
 	vi edgeInds(M); iota(all(edgeInds),0);
 	sort(all(edgeInds),[&](int x, int y) { return d[x] < d[y]; });
-	trav(i,edgeInds) hi.insert({t[i],i});
+	each(i,edgeInds) hi.insert({t[i],i});
 	V<AR<int,3>> query;
 	F0R(i,Q) {
 		int x,y; re(x,y);
@@ -250,7 +250,7 @@ int main() {
 	sort(all(query));
 	int ind = 0;
 	vb ans(Q);
-	trav(_,query) {
+	each(_,query) {
 		while (ind < sz(edgeInds) && d[edgeInds[ind]] < _[0]) {
 			int x = edgeInds[ind++];
 			if (LO[x]) lo.erase({t[x],x}), D.rem(a[x],b[x]);

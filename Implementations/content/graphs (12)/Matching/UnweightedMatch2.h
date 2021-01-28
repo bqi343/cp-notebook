@@ -10,7 +10,7 @@
 
 vpi match(int N, vpi& ed) {
 	Mat<mi> mat(N,N); // skew symmetric adj matrix
-	trav(pa, ed) {
+	each(pa, ed) {
 		int a = pa.f, b = pa.s, r = rand() % MOD;
 		mat.d[a][b] = r, mat.d[b][a] = (MOD-r) % MOD;
 	}

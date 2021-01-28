@@ -8,7 +8,7 @@ template<int SZ> struct DirCyc {
 	vi adj[SZ], st, cyc; vector<bool> inSt, vis; 
 	void dfs(int x) {
 		st.pb(x); inSt[x] = vis[x] = 1;
-		trav(i,adj[x]) {
+		each(i,adj[x]) {
 			if (inSt[i]) cyc = {find(all(st),i),end(st)};
 			else if (!vis[i]) dfs(i); 
 			if (sz(cyc)) return;

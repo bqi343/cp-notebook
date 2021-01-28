@@ -12,7 +12,7 @@ template<int SZ> struct TreeDiameter {
 	vi adj[SZ], dia, center;
 	void ae(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
 	void dfs(int x) {
-		trav(y,adj[x]) if (y != par[x]) {
+		each(y,adj[x]) if (y != par[x]) {
 			par[y] = x; dist[y] = dist[x]+1; 
 			dfs(y); }
 	}

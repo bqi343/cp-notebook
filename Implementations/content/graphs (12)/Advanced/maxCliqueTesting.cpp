@@ -38,7 +38,7 @@ typedef vector<pd> vpd;
 #define F0R(i,a) FOR(i,0,a)
 #define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
 #define R0F(i,a) ROF(i,0,a)
-#define trav(a,x) for (auto& a: x)
+#define each(a,x) for (auto& a: x)
 
 const int MOD = 1e9+7; // 998244353;
 const int MX = 2e5+5; 
@@ -169,8 +169,8 @@ struct MaxClique {
     vector<vi> C; // colors
     vi qmax, q, S, old; // max clique, current clique
     void init(vv& r) {
-        trav(v,r) v.d = 0; 
-        trav(v,r) trav(j,r) v.d += e[v.i][j.i]; // degree
+        each(v,r) v.d = 0; 
+        each(v,r) each(j,r) v.d += e[v.i][j.i]; // degree
         sort(all(r), [](Vertex a,Vertex b) { return a.d > b.d; });
         int mxD = r[0].d; F0R(i,sz(r)) r[i].d = min(i,mxD)+1;
     }
@@ -179,12 +179,12 @@ struct MaxClique {
         while (sz(R)) {
             if (sz(q)+R.bk.d <= sz(qmax)) return; // can't make larger clique
             q.pb(R.bk.i); // insert node with max col into clique
-            vv T; trav(v,R) if (e[R.bk.i][v.i]) T.pb({v.i});
+            vv T; each(v,R) if (e[R.bk.i][v.i]) T.pb({v.i});
             if (sz(T)) {
                 if (S[lev]++/++pk < limit) init(T); // recalc degs within set
                 int j = 0, mxk = 1, mnk = max(sz(qmax)-sz(q)+1,1);
                 C[1].clear(), C[2].clear();
-                trav(v,T) {
+                each(v,T) {
                     int k = 1; auto f = [&](int i) { return e[v.i][i]; };
                     while (any_of(all(C[k]),f)) k++; // inc color while common edge
                     if (k > mxk) mxk = k, C[mxk+1].clear(); // new set
@@ -192,7 +192,7 @@ struct MaxClique {
                     C[k].pb(v.i);
                 }
                 if (j > 0) T[j-1].d = 0; // at least one vertex >= j is part of clique
-                FOR(k,mnk,mxk+1) trav(i,C[k]) T[j].i = i, T[j++].d = k;
+                FOR(k,mnk,mxk+1) each(i,C[k]) T[j].i = i, T[j++].d = k;
                 expand(T,lev+1);
             } else if (sz(q) > sz(qmax)) qmax = q;
             q.pop_back(), R.pop_back(); // R.bk not in set

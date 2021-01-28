@@ -34,7 +34,7 @@ template <class T> using Tree = tree<T, null_type, less<T>, rb_tree_tag,tree_ord
 #define F0R(i, a) for (int i = 0; i < (a); i++)
 #define FORd(i,a,b) for (int i = (b)-1; i >= (a); i--)
 #define F0Rd(i,a) for (int i = (a)-1; i >= 0; i--)
-#define trav(a, x) for (auto& a : x)
+#define each(a, x) for (auto& a : x)
 
 #define mp make_pair
 #define pb push_back
@@ -95,7 +95,7 @@ namespace output {
     }
     template<class T> void prContain(const T& x) {
         pr("{");
-        bool fst = 1; trav(a,x) pr(!fst?", ":"",a), fst = 0; 
+        bool fst = 1; each(a,x) pr(!fst?", ":"",a), fst = 0; 
         pr("}");
     }
     template<class T, size_t SZ> void pr(const array<T,SZ>& x) { prContain(x); }

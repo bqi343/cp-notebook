@@ -13,7 +13,7 @@ struct Dinic {
 	struct Edge { int to; F flo, cap; };
 	int N; V<Edge> eds; V<vi> adj;
 	void init(int _N) { N = _N; adj.rsz(N), cur.rsz(N); }
-	/// void reset() { trav(e,eds) e.flo = 0; }
+	/// void reset() { each(e,eds) e.flo = 0; }
 	void ae(int u, int v, F cap, F rcap = 0) { assert(min(cap,rcap) >= 0); 
 		adj[u].pb(sz(eds)); eds.pb({v,0,cap});
 		adj[v].pb(sz(eds)); eds.pb({u,0,rcap});
@@ -23,7 +23,7 @@ struct Dinic {
 		lev = vi(N,-1); F0R(i,N) cur[i] = begin(adj[i]);
 		queue<int> q({s}); lev[s] = 0; 
 		while (sz(q)) { int u = q.ft; q.pop();
-			trav(e,adj[u]) { const Edge& E = eds[e];
+			each(e,adj[u]) { const Edge& E = eds[e];
 				int v = E.to; if (lev[v] < 0 && E.flo < E.cap) 
 					q.push(v), lev[v] = lev[u]+1;
 			}

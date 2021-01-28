@@ -38,7 +38,7 @@ typedef vector<pd> vpd;
 #define F0R(i,a) FOR(i,0,a)
 #define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
 #define R0F(i,a) ROF(i,0,a)
-#define trav(a,x) for (auto& a: x)
+#define each(a,x) for (auto& a: x)
 
 const int MOD = 1e9+7; // 998244353; // = (119<<23)+1
 const int MX = 2e5+5; 
@@ -350,7 +350,7 @@ void dfs(int a, int b = 0) {
 	par[a] = b;
 	sub[a] = 1;
 	// ps("??",a,b,dist[a]);
-	trav(t,adj[a]) if (t != b) {
+	each(t,adj[a]) if (t != b) {
 		dist[t] = dist[a]+1;
 		dfs(t,a); sub[a] += sub[t];
 	}

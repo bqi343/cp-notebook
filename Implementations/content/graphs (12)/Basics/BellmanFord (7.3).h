@@ -20,14 +20,14 @@ template<int SZ> struct BellmanFord {
         // -> update dists of all vertices which x can go to
         if (dist[x] == -INF) return;
         dist[x] = -INF; 
-        trav(t,adj[x]) genBad(t);
+        each(t,adj[x]) genBad(t);
     }
     void init(int _n, int s) {
         n = _n; F0R(i,n) dist[i] = INF; 
         dist[s] = 0;
-        F0R(i,n) trav(a,ed) if (dist[a.f.f] < INF)
+        F0R(i,n) each(a,ed) if (dist[a.f.f] < INF)
             ckmin(dist[a.f.s],dist[a.f.f]+a.s);
-        trav(a,ed) if (dist[a.f.f] < INF 
+        each(a,ed) if (dist[a.f.f] < INF 
                     && dist[a.f.s] > dist[a.f.f]+a.s) 
             genBad(a.f.s);
     }

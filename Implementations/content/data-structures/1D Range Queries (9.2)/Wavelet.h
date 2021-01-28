@@ -15,7 +15,7 @@ template<int SZ> struct Wavelet {
 		if (L == R) return;
 		nexl[ind] = nexr[ind] = {0};
 		vi A[2]; int M = (L+R)/2;
-		trav(t,a) {
+		each(t,a) {
 			A[t>M].pb(t);
 			nexl[ind].pb(sz(A[0])), nexr[ind].pb(sz(A[1]));
 		}

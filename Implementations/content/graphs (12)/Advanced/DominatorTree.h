@@ -26,7 +26,7 @@ template<int SZ> struct Dominator {
 	void dfs(int x) { // create DFS tree
 		label[x] = ++co; rlabel[co] = x; 
 		sdom[co] = par[co] = bes[co] = co;
-		trav(y,adj[x]) {
+		each(y,adj[x]) {
 			if (!label[y]) {
 				dfs(y); child[label[x]].pb(label[y]); }
 			radj[label[y]].pb(label[x]);
@@ -35,14 +35,14 @@ template<int SZ> struct Dominator {
 	void init(int root) {
 		dfs(root);
 		ROF(i,1,co+1) {
-			trav(j,radj[i]) ckmin(sdom[i],sdom[get(j)]);
+			each(j,radj[i]) ckmin(sdom[i],sdom[get(j)]);
 			if (i > 1) sdomChild[sdom[i]].pb(i);
-			trav(j,sdomChild[i]) {
+			each(j,sdomChild[i]) {
 				int k = get(j);
 				if (sdom[j] == sdom[k]) dom[j] = sdom[j];
 				else dom[j] = k;
 			}
-			trav(j,child[i]) par[j] = i;
+			each(j,child[i]) par[j] = i;
 		}
 		FOR(i,2,co+1) {
 			if (dom[i] != sdom[i]) dom[i] = dom[dom[i]];

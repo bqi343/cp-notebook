@@ -25,10 +25,10 @@ void solve(vi L, vi R, int x) { // first |L|-x elements of L
 	vpi v = maxMatch(Lm,Rm); assert(sz(v) == sz(Lm)); 
 	res.insert(end(res),all(v));
 	vi L2(all(L)-x/2); vi Lp2,Rp2; tie(Lp2,Rp2) = gen(L2,R);
-	int cnt = 0; trav(t,Lp2) cnt += t >= L[sz(L)-x];
+	int cnt = 0; each(t,Lp2) cnt += t >= L[sz(L)-x];
 	solve(Lp2,Rp2,cnt); // Rp2 covered by best matching
 	vi LL = sub(Lp,Lp2), RR = sub(Rp,Rp2); // those in Lp but not 
 	// Lp2 that are < L[sz(L)-x/2] must be in answer, not cnt
-	cnt = 0; trav(t,LL) cnt += t >= L[sz(L)-x/2];
+	cnt = 0; each(t,LL) cnt += t >= L[sz(L)-x/2];
 	solve(LL,RR,cnt); // do rest
 } // x reduced by factor of at least two

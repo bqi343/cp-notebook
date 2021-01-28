@@ -36,7 +36,7 @@ pair<ll,vi> dmst(int n, int r, const vector<Edge>& g) {
 	DSUrb dsu; dsu.init(n); 
 	vector<Node*> heap(n); // store edges entering each vertex 
 	// in increasing order of weight
-	trav(e,g) heap[e.b] = merge(heap[e.b], new Node{e});
+	each(e,g) heap[e.b] = merge(heap[e.b], new Node{e});
 	ll res = 0; vi seen(n,-1); seen[r] = r; 
 	vpi in(n,{-1,-1}); // edge entering each vertex in MST
 	vector<pair<int,vector<Edge>>> cycs;
@@ -60,13 +60,13 @@ pair<ll,vi> dmst(int n, int r, const vector<Edge>& g) {
 				cycs.bk.f = u;
 			}
 		}
-		trav(t,path) in[dsu.get(t.s.b)] = {t.s.a,t.s.b}; 
+		each(t,path) in[dsu.get(t.s.b)] = {t.s.a,t.s.b}; 
 	} // found path from root to s, done
 	while (sz(cycs)) { // expand cycs to restore sol
 		auto c = cycs.bk; cycs.pop_back();
 		pi inEdge = in[c.f];
-		trav(t,c.s) dsu.rollback();
-		trav(t,c.s) in[dsu.get(t.b)] = {t.a,t.b};
+		each(t,c.s) dsu.rollback();
+		each(t,c.s) in[dsu.get(t.b)] = {t.a,t.b};
 		in[dsu.get(inEdge.s)] = inEdge;
 	}
 	vi par(n); F0R(i,n) par[i] = in[i].f; 

@@ -33,7 +33,7 @@ int answer(int L, int R) { // modifyjust interval
 
 void solve() {
 	BLOCK = sqrt(N); sort(all(todo),cmp);
-	trav(x,todo) {
+	each(x,todo) {
 		answer(x[0],x[1]);
 		ans[x[2]] = cans;
 	}

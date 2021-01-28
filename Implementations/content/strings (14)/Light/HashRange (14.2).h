@@ -30,7 +30,7 @@ vector<H> pows = {{1,1}};
 struct HashRange {
 	str S; vector<H> cum = {{0,0}};
 	void add(char c) { S += c; cum.pb(base*cum.bk+makeH(c)); }
-	void add(str s) { trav(c,s) add(c); }
+	void add(str s) { each(c,s) add(c); }
 	void extend(int len) { while (sz(pows) <= len) pows.pb(base*pows.bk); }
 	H hash(int l, int r) { int len = r+1-l; extend(len);
 		return cum[r+1]-pows[len]*cum[l]; }

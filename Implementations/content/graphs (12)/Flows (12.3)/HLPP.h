@@ -37,7 +37,7 @@ template <int SZ> struct HLPP {
 		queue<int> q({t});
 		while (sz(q)) {
 			int v = q.ft; q.pop();
-			trav(e,adj[v])
+			each(e,adj[v])
 				if (height[e.to] == N && adj[e.to][e.rev].f > 0)
 					q.push(e.to), updHeight(e.to, height[v] + 1);
 			highest = height[v];
@@ -51,7 +51,7 @@ template <int SZ> struct HLPP {
 	}
 	void discharge(int v) {
 		int nh = N;
-		trav(e,adj[v]) {
+		each(e,adj[v]) {
 			if (e.f > 0) {
 				if (height[v] == height[e.to] + 1) {
 					push(v, e);
@@ -62,7 +62,7 @@ template <int SZ> struct HLPP {
 		if (cnt[height[v]] > 1) updHeight(v, nh);
 		else {
 			FOR(i,height[v],highest+1) {
-				trav(j,gap[i]) updHeight(j, N);
+				each(j,gap[i]) updHeight(j, N);
 				gap[i].clear();
 			}
 		}
@@ -72,7 +72,7 @@ template <int SZ> struct HLPP {
 		F0R(i,N) excess[i] = 0;
 		excess[s] = INF, excess[t] = -INF;
 		globalRelabel();
-		trav(e,adj[s]) push(s,e);
+		each(e,adj[s]) push(s,e);
 		for (; highest >= 0; highest--) 
 			while (sz(lst[highest])) {
 				int v = lst[highest].bk;

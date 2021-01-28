@@ -7,7 +7,7 @@
 template<class T, int SZ> struct HT {
 	vi keys; bitset<SZ> inside; T dat[SZ];
 	void clear() { 
-		trav(t,keys) inside[t] = 0;
+		each(t,keys) inside[t] = 0;
 		keys.clear(); 
 	}
 	T& operator[](int k) { 

@@ -13,7 +13,7 @@ template<int SZ> struct ThreeEdgeCC {
 		in[v] = ++ti; 
 		auto absorb = [&](int a, int b) { // join into same 3CC
 			assert(D.unite(a,b)); deg[a] += deg[b]; };
-		trav(w,adj[v]) {
+		each(w,adj[v]) {
 			if (w == p) { p = -1; continue; } // ignore first parent edge
 			if (in[w]) { // visited
 				if (in[w] < in[v]) deg[v] ++, ckmin(low[v],in[w]); // above v

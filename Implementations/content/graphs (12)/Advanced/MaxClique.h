@@ -15,7 +15,7 @@ struct MaxClique {
 	vector<bitset<200>> e; vector<vi> C; // colors
 	vi qmax,q,S,old; // max/current clique, sum # steps up to lev
 	void init(vv& r) { // v.d -> degree
-		trav(v,r) { v.d = 0; trav(j,r) v.d += e[v.i][j.i]; } 
+		each(v,r) { v.d = 0; each(j,r) v.d += e[v.i][j.i]; } 
 		sort(all(r),[](Vertex a,Vertex b) { return a.d > b.d; });
 		int mxD = r[0].d; F0R(i,sz(r)) r[i].d = min(i,mxD)+1;
 	}
@@ -24,12 +24,12 @@ struct MaxClique {
 		while (sz(R)) {
 			if (sz(q)+R.bk.d <= sz(qmax)) return; // no larger clique
 			q.pb(R.bk.i); // insert node with max col into clique
-			vv T; trav(v,R) if (e[R.bk.i][v.i]) T.pb({v.i});
+			vv T; each(v,R) if (e[R.bk.i][v.i]) T.pb({v.i});
 			if (sz(T)) {
 				if (S[lev]++/++pk < limit) init(T); // recalc degs
 				int j = 0, mxk = 1, mnk = max(sz(qmax)-sz(q)+1,1);
 				C[1].clear(), C[2].clear();
-				trav(v,T) {
+				each(v,T) {
 					int k = 1; auto f = [&](int i) { return e[v.i][i]; };
 					while (any_of(all(C[k]),f)) k ++; /// while common edge ++
 					if (k > mxk) mxk = k, C[mxk+1].clear(); // new set
@@ -37,7 +37,7 @@ struct MaxClique {
 					C[k].pb(v.i);
 				}
 				if (j > 0) T[j-1].d = 0; // >=1 vert >=j part of clique
-				FOR(k,mnk,mxk+1) trav(i,C[k]) T[j].i = i, T[j++].d = k;
+				FOR(k,mnk,mxk+1) each(i,C[k]) T[j].i = i, T[j++].d = k;
 				expand(T,lev+1);
 			} else if (sz(q) > sz(qmax)) qmax = q;
 			q.pop_back(), R.pop_back(); // R.bk not in set

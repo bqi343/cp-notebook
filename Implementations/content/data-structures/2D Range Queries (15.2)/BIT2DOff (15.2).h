@@ -19,11 +19,11 @@ template<class T, int SZ> struct OffBIT2D {
 		int lst[SZ]; F0R(i,SZ) lst[i] = cnt[i] = 0;
 		sort(all(todo),[](const pi& a, const pi& b) { 
 			return a.s < b.s; });
-		trav(t,todo) for (int x = t.f; x < SZ; x += x&-x) 
+		each(t,todo) for (int x = t.f; x < SZ; x += x&-x) 
 			if (lst[x] != t.s) lst[x] = t.s, cnt[x] ++;
 		int sum = 0; F0R(i,SZ) lst[i] = 0, st[i] = (sum += cnt[i]);
 		val.rsz(sum); bit.rsz(sum); reverse(all(todo));
-		trav(t,todo) for (int x = t.f; x < SZ; x += x&-x) 
+		each(t,todo) for (int x = t.f; x < SZ; x += x&-x) 
 			if (lst[x] != t.s) lst[x] = t.s, val[--st[x]] = t.s;
 	}
 	int rank(int y, int l, int r) {

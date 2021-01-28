@@ -7,7 +7,7 @@
 vi negCyc(int n, vector<pair<pi,int>> ed) {
 	vl d(n); vi p(n); int x = -1;
 	F0R(i,n) {
-		x = -1; trav(t,ed) if (ckmin(d[t.f.s],d[t.f.f]+t.s))
+		x = -1; each(t,ed) if (ckmin(d[t.f.s],d[t.f.f]+t.s))
 			p[t.f.s] = t.f.f, x = t.f.s;
 		if (x == -1) return {};
 	}

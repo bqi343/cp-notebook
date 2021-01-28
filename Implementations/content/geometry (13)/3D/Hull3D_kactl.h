@@ -43,13 +43,13 @@ vector<F> hull3d(const vP3& A) {
 			C(a, b, c); C(a, c, b); C(b, c, a);
 		}
 	}
-	trav(it, FS) if (dot(cross(A[it.b]-A[it.a],A[it.c]-A[it.a]),it.q) <= 0) 
+	each(it, FS) if (dot(cross(A[it.b]-A[it.a],A[it.c]-A[it.a]),it.q) <= 0) 
 		swap(it.c, it.b);
 	return FS;
 } 
 
 T signedPolyVolume(const vP3& p, const vector<F>& trilist) {
 	T v = 0;
-	trav(i,trilist) v += dot(cross(p[i.a],p[i.b]),p[i.c]);
+	each(i,trilist) v += dot(cross(p[i.a],p[i.b]),p[i.c]);
 	return v/6;
 }

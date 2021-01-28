@@ -82,7 +82,7 @@ int main() {
 		}
 		F0R(i,N) {
 			vi tmp;
-			trav(j,pref[i]) if (active[i][j]) tmp.pb(j);
+			each(j,pref[i]) if (active[i][j]) tmp.pb(j);
 		}
 		if (cur == N) {
 			F0R(i,N) {
@@ -97,7 +97,7 @@ int main() {
 			do { x = nex(x), y = nex(nex(y)); } while (x != y);
 			do { cyc.pb(y); y = nex(y); } while (x != y);
 		}
-		trav(x,cyc) { // if there exists a solution,
+		each(x,cyc) { // if there exists a solution,
 			// then there also exists a solution after deleting these edges
 			int y = propose[x]; CYC.pb(y); assert(y != -1);
 			propose[x] = -1, proposed[y] = -1, rem(x,y);

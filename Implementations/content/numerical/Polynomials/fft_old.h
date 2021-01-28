@@ -42,7 +42,7 @@ template<class T> void fft(vector<T>& a,
 		}
 	if (inv) {
 		reverse(1+all(a));
-		T i = T(1)/T(n); trav(x,a) x *= i; 
+		T i = T(1)/T(n); each(x,a) x *= i; 
 	}
 }
 template<class T> vector<T> mul(vector<T> a, vector<T> b) {

@@ -26,7 +26,7 @@ template<class T> void fft(V<T>& A, bool inv = 0) { // NTT
 		}
 	}
 	if (inv) { reverse(1+all(A)); 
-		T z = T(1)/T(n); trav(t,A) t *= z; }
+		T z = T(1)/T(n); each(t,A) t *= z; }
 }
 template<class T> V<T> mul(V<T> A, V<T> B) { // only special moduli for NTT
 	if (!min(sz(A),sz(B))) return {};

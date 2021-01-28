@@ -14,7 +14,7 @@ mi sparseDet(int N, vector<pair<pi,mi>> A) { // nonzero entries of matrix, no re
 	vmi l(N), r(N), seq(2*N); F0R(i,N) l[i] = gen(), r[i] = gen();
 	F0R(i,2*N) { // consider l*A^i*r, recurrence satisfies characteristic equation
 		F0R(j,N) seq[i] += l[j]*r[j];
-		vmi R(N); trav(t,A) R[t.f.s] += r[t.f.f]*t.s;
+		vmi R(N); each(t,A) R[t.f.s] += r[t.f.f]*t.s;
 		swap(r,R);
 	}
 	LinRec L; L.init(seq); // hopefully found characteristic equation

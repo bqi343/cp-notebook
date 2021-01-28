@@ -32,9 +32,9 @@ template<int SZ> struct WeightedMatch {
 		 && st[u] != x && S[st[u]] == 0) updSlack(u,x); }
 	void qPush(int x) {
 		if (x <= N) q.push(x);
-		else trav(t,flo[x]) qPush(t); }
+		else each(t,flo[x]) qPush(t); }
 	void setSt(int x, int b) {
-		st[x] = b; if (x > N) trav(t,flo[x]) setSt(t,b); }
+		st[x] = b; if (x > N) each(t,flo[x]) setSt(t,b); }
 	int getPr(int b, int xr) { // get even position of xr
 		int pr = find(all(flo[b]),xr)-begin(flo[b]);
 		if (pr&1) { reverse(1+all(flo[b])); return sz(flo[b])-pr; } 
@@ -74,7 +74,7 @@ template<int SZ> struct WeightedMatch {
 		// identify all nodes in current blossom
 		FOR(x,1,NX+1) g[b][x].w = g[x][b].w = 0;
 		FOR(x,1,N+1) floFrom[b][x] = 0;
-		trav(xs,flo[b]) { // find tightest constraints
+		each(xs,flo[b]) { // find tightest constraints
 			FOR(x,1,NX+1) if (g[b][x].w == 0 || eDelta(g[xs][x]) < 
 				eDelta(g[b][x])) g[b][x]=g[xs][x], g[x][b]=g[x][xs]; 
 			FOR(x,1,N+1) if (floFrom[xs][x]) floFrom[b][x] = xs; 
@@ -82,7 +82,7 @@ template<int SZ> struct WeightedMatch {
 		setSlack(b); // since didn't qPush everything
 	}
 	void expandBlossom(int b) {
-		trav(t,flo[b]) setSt(t,t); // undo setSt(b,b)
+		each(t,flo[b]) setSt(t,t); // undo setSt(b,b)
 		int xr = floFrom[b][g[b][par[b]].u], pr = getPr(b,xr);
 		for(int i = 0; i < pr; i += 2) {
 			int xs = flo[b][i], xns = flo[b][i+1];

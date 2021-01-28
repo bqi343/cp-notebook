@@ -33,12 +33,12 @@ struct LazySeg {
  
 ll area(vector<pair<pi,pi>> v) {
 	LazySeg L;
-	vi y; trav(t,v) y.pb(t.s.f), y.pb(t.s.s);
+	vi y; each(t,v) y.pb(t.s.f), y.pb(t.s.s);
 	sort(all(y)); y.erase(unique(all(y)),y.end());
 	F0R(i,sz(y)-1) L.seg[SZ+i].s = y[i+1]-y[i];
 	L.build();
 	vector<array<int,4>> ev; // sweep line
-	trav(t,v) {
+	each(t,v) {
 		t.s.f = lb(all(y),t.s.f)-begin(y);
 		t.s.s = lb(all(y),t.s.s)-begin(y)-1;
 		ev.pb({t.f.f,1,t.s.f,t.s.s});

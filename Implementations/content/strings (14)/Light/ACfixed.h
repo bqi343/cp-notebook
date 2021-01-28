@@ -13,7 +13,7 @@ struct ACfixed { // fixed alphabet
 	vector<node> d = {{}};
 	int add(str s) { // add word
 		int v = 0;
-		trav(C,s) {
+		each(C,s) {
 			int c = C-'a';
 			if (!d[v].to[c]) d[v].to[c] = sz(d), d.eb();
 			v = d[v].to[c];

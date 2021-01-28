@@ -34,10 +34,10 @@ void genHeaps() {
 	while (sz(pq)) {
 		auto a = pq.top(); pq.pop(); 
 		if (a.f > dist[a.s]) continue;
-		seq.pb(a.s); trav(t,radj[a.s]) ad(t[0],a.f+t[1],{t[2],a.s}); // edge index, vert
+		seq.pb(a.s); each(t,radj[a.s]) ad(t[0],a.f+t[1],{t[2],a.s}); // edge index, vert
 	}
-	trav(t,seq) {
-		trav(u,adj[t]) if (u[2] != pre[t].f && dist[u[0]] != INF) {
+	each(t,seq) {
+		each(u,adj[t]) if (u[2] != pre[t].f && dist[u[0]] != INF) {
 			ll cost = dist[u[0]]+u[1]-dist[t]; assert(cost >= 0);
 			cand[t] = ins(cand[t],{cost,u[0]});
 		}

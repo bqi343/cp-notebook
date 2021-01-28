@@ -33,8 +33,8 @@ struct TandemRepeats {
 		auto a = solveLeft(t,m);
 		reverse(all(t));
 		auto b = solveLeft(t,sz(t)-2-m);
-		trav(x,a) al.pb({x[0],x[1]+l,x[2]+l});
-		trav(x,b) {
+		each(x,a) al.pb({x[0],x[1]+l,x[2]+l});
+		each(x,b) {
 			int ad = r-x[0]+1;
 			al.pb({x[0],ad-x[2],ad-x[1]});
 		}
@@ -43,10 +43,10 @@ struct TandemRepeats {
 	vi genLen() { 
 		// min length of repeating substr starting at each index
 		priority_queue<pi,vpi,greater<pi>> m; m.push({MOD,MOD});
-		vpi ins[sz(S)]; trav(a,al) ins[a[1]].pb({a[0],a[2]});
+		vpi ins[sz(S)]; each(a,al) ins[a[1]].pb({a[0],a[2]});
 		vi len(sz(S));
 		F0R(i,sz(S)) {
-			trav(j,ins[i]) m.push(j);
+			each(j,ins[i]) m.push(j);
 			while (m.top().s < i) m.pop();
 			len[i] = m.top().f;
 		}

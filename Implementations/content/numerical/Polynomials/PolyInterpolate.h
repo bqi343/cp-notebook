@@ -18,7 +18,7 @@ poly interpolate(vector<pair<T,T>> v) {
 }
 /**
 poly _interpolate(vector<pair<T,T>> v) {
-	poly ret, prod = {1}; trav(t,v) prod *= poly({-t.f,1});
+	poly ret, prod = {1}; each(t,v) prod *= poly({-t.f,1});
 	F0R(i,sz(v)) {
 		T fac = 1; F0R(j,sz(v)) if (i != j) fac *= v[i].f-v[j].f;
 		ret += v[i].s/fac*quoRem(prod,{-v[i].f,1}).f;
@@ -27,6 +27,6 @@ poly _interpolate(vector<pair<T,T>> v) {
 }
 
 vector<pair<T,T>> v; poly p = {4,6,7,11}, x = {1,3,9,16};
-trav(X,x) v.pb({X,eval(p,X)});
+each(X,x) v.pb({X,eval(p,X)});
 ps(interpolate(v));
 */

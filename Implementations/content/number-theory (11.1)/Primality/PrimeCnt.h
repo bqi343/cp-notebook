@@ -18,7 +18,7 @@ ll primeCnt() { // A[i] stores # primes <= i
 	int SN = sqrt(N);  A = B = vl(SN+1);
 	FOR(i,1,SN+1) A[i] = i-1, B[i] = N/i-1;
 	vd in(SN+1); FOR(i,1,SN+1) in[i] = 1.0/i;
-	trav(p,S.pr) { if (p > N/p) break;
+	each(p,S.pr) { if (p > N/p) break;
 		int np=A[p-1],mx=SN/p+1,r=min(N/p/p,(ll)SN);db tmp=N/p;
 		FOR(i,1,mx) B[i]-=B[i*p]-np;
 		FOR(i,mx,r+1) B[i]-=A[tmp*in[i]+1e-9]-np;

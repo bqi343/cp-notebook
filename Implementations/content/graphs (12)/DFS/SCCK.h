@@ -14,14 +14,14 @@ struct SCC {
 		adj.rsz(N), radj.rsz(N), comp = vi(N,-1), vis.rsz(N); }
 	void ae(int x, int y) { adj[x].pb(y), radj[y].pb(x); }
 	void dfs(int x) {
-		vis[x] = 1; trav(y,adj[x]) if (!vis[y]) dfs(y);
+		vis[x] = 1; each(y,adj[x]) if (!vis[y]) dfs(y);
 		todo.pb(x); }
 	void dfs2(int x, int v) {
 		comp[x] = v; 
-		trav(y,radj[x]) if (comp[y] == -1) dfs2(y,v); }
+		each(y,radj[x]) if (comp[y] == -1) dfs2(y,v); }
 	void gen() { // fills allComp
 		F0R(i,N) if (!vis[i]) dfs(i);
 		reverse(all(todo)); 
-		trav(x,todo) if (comp[x] == -1) dfs2(x,x), comps.pb(x);
+		each(x,todo) if (comp[x] == -1) dfs2(x,x), comps.pb(x);
 	}
 };

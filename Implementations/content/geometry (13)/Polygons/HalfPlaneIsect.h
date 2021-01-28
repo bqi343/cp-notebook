@@ -35,7 +35,7 @@ vH construct_lower(P x, vH planes) { // similar to convex hull (by duality)
 			return a[2]/a[1] <= b[2]/b[1] ? x.f : x.s;
 		return x_isect(a,b);
 	};
-	trav(t,planes) {
+	each(t,planes) {
 		while (sz(res) > 1 && lst_x(res.bk,t) <= lst_x(end(res)[-2],res.bk))
 			res.pop_back();
 		res.pb(t);
@@ -48,7 +48,7 @@ T isect_area(vH planes) {
 	planes.pb({0,1,-BIG}); // y >= -BIG
 	planes.pb({0,-1,-BIG}); // -y >= -BIG
 	vH upper, lower;
-	trav(t,planes) {
+	each(t,planes) {
 		if (t[1] == 0) { // vertical line
 			T quo = t[2]/t[0];
 			if (t[0] > 0) ckmax(x.f,quo);
@@ -59,9 +59,9 @@ T isect_area(vH planes) {
 	if (x.f >= x.s) return 0;
 	lower = construct_lower(x,lower);
 
-	trav(t,upper) t[0] *= -1, t[1] *= -1; 
+	each(t,upper) t[0] *= -1, t[1] *= -1; 
 	upper = construct_lower({-x.s,-x.f},upper);
-	trav(t,upper) t[0] *= -1, t[1] *= -1;
+	each(t,upper) t[0] *= -1, t[1] *= -1;
 	reverse(all(upper));
 	int iu = 1, il = 1;
 	T lst = x.f, lst_dif = eval(upper[1],lst)-eval(lower[1],lst);

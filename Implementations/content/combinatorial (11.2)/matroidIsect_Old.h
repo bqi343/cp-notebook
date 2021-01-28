@@ -43,7 +43,7 @@ bool colorOracle(int ins, int rem) {
 	return !colUsed[ins] || ins == rem; }
 void prepColorOracle() {
 	colUsed.assign(cols,0);
-	trav(t,iset) colUsed[gset[t].col] = 1; }
+	each(t,iset) colUsed[gset[t].col] = 1; }
  
 bool augment() {
 	prepGraphOracle(); prepColorOracle();
@@ -60,7 +60,7 @@ bool augment() {
 			}
 		} else {
 			if (graphOracle(cur)) { lst = cur; break;	}
-			trav(to,iset) if (par[to] == -2) {
+			each(to,iset) if (par[to] == -2) {
 				if (!graphOracle(cur,to)) continue;
 				par[to] = cur; q.push(to);
 			}
@@ -74,7 +74,7 @@ bool augment() {
 }
 int calc() {
 	iset.clear(); verts = cols = 0;
-	trav(g,gset) { ckmax(verts,max(g.ed.f,g.ed.s)+1);
+	each(g,gset) { ckmax(verts,max(g.ed.f,g.ed.s)+1);
 		ckmax(cols,g.col+1); }
 	while (augment()); // keep increasing size of indep set
 	return sz(iset);
@@ -89,8 +89,8 @@ int calc() {
 		gset.eb(a,b,i), gset.eb(c,d,i);
 		m[a] = m[b] = m[c] = m[d] = 0;
 	}
-	int co = 0; trav(t,m) t.s = co++;
-	trav(t,gset) t.ed.f = m[t.ed.f], t.ed.s = m[t.ed.s];
+	int co = 0; each(t,m) t.s = co++;
+	each(t,gset) t.ed.f = m[t.ed.f], t.ed.s = m[t.ed.s];
 	return calc();
 }
 int main() {

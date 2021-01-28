@@ -7,7 +7,7 @@
  	* https://atcoder.jp/contests/agc045/tasks/agc045_a (first solve :D)
  */
 
-ll red(vl& b, ll x) { trav(t,b) ckmin(x,x^t);
+ll red(vl& b, ll x) { each(t,b) ckmin(x,x^t);
 	return x; }
 bool add(vl& b, ll x) {
 	if (!(x = red(b,x))) return 0;

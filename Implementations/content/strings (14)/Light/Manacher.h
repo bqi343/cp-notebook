@@ -7,7 +7,7 @@
  */
 
 vi manacher(str s) {
-	str s1 = "@"; trav(c,s) s1 += c, s1 += "#";
+	str s1 = "@"; each(c,s) s1 += c, s1 += "#";
 	s1.bk = '&';
 	vi ans(sz(s1)-1); int lo = 0, hi = 0;
 	FOR(i,1,sz(s1)-1) {

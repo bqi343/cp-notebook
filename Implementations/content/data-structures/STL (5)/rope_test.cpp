@@ -38,7 +38,7 @@ typedef vector<pd> vpd;
 #define F0R(i,a) FOR(i,0,a)
 #define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
 #define R0F(i,a) ROF(i,0,a)
-#define trav(a,x) for (auto& a: x)
+#define each(a,x) for (auto& a: x)
 
 const int MOD = 1e9+7; // 998244353;
 const int MX = 2e5+5; 
@@ -67,8 +67,8 @@ template<class H, class... T> void re(H& h, T&... t) { re(h); re(t...); }
 
 template<class A> void re(complex<A>& c) { A a,b; re(a,b); c = {a,b}; }
 template<class A, class B> void re(pair<A,B>& p) { re(p.f,p.s); }
-template<class A> void re(vector<A>& x) { trav(a,x) re(a); }
-template<class A, size_t SZ> void re(array<A,SZ>& x) { trav(a,x) re(a); }
+template<class A> void re(vector<A>& x) { each(a,x) re(a); }
+template<class A, size_t SZ> void re(array<A,SZ>& x) { each(a,x) re(a); }
 
 // TO_STRING
 #define ts to_string

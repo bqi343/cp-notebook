@@ -12,7 +12,7 @@
 pair<vi,vi> ulHull(const vP& v) {
 	vi p(sz(v)), u, l; iota(all(p), 0);
 	sort(all(p), [&v](int a, int b) { return v[a] < v[b]; });
-	trav(i,p) {
+	each(i,p) {
 		#define ADDP(C, cmp) while (sz(C) > 1 && cross(\
 			v[C[sz(C)-2]],v[C.bk],v[i]) cmp 0) C.pop_back(); C.pb(i);
 		ADDP(u, >=); ADDP(l, <=);
@@ -25,5 +25,5 @@ vi hullInd(const vP& v) {
 	l.insert(end(l),1+rall(u)-1); return l;
 }
 vP hull(const vP& v) {
-	vi w = hullInd(v); vP res; trav(t,w) res.pb(v[t]);
+	vi w = hullInd(v); vP res; each(t,w) res.pb(v[t]);
 	return res; }

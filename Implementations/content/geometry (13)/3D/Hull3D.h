@@ -45,12 +45,12 @@ V<F> hull3d(vP3& p) { // order of points is changed s.t. first four points form 
 			if (in[b][a]) in[b][a] = 0; // kill reverse face
 			else in[a][b] = 1, ad(a,b,c);
 		};
-		trav(f,HULL) {
+		each(f,HULL) {
 			if (above(p[f[0]],p[f[1]],p[f[2]],p[i]))  // recalc all faces such that point is above face
 				F0R(j,3) ins(f[j],f[(j+1)%3],i);
 			else def.pb(f); 
 		}
-		trav(t,hull) if (in[t[0]][t[1]]) // edge is exposed, add a new face
+		each(t,hull) if (in[t[0]][t[1]]) // edge is exposed, add a new face
 			in[t[0]][t[1]] = 0, def.pb(t);
 		swap(hull,def);
 	}
@@ -76,17 +76,17 @@ V<F> hull3dFast(vP3& p) { // order of points is changed s.t. first four points f
 	FOR(i,3,N) ae(abv(1,i),i); // those that are coplanar go in rvis[0]
 	vi label(N,-1);
 	FOR(i,3,N) { // incremental construction
-		vi rem; trav(t,vis[i]) if (active[t]) active[t] = 0, rem.pb(t);
+		vi rem; each(t,vis[i]) if (active[t]) active[t] = 0, rem.pb(t);
 		if (!sz(rem)) continue; // hull unchanged
 		int st = -1; 
-		trav(r,rem) F0R(j,3) {
+		each(r,rem) F0R(j,3) {
 			int o = other[r][j].f;
 			if (active[o]) { // create new face!
 				int a,b; tie(a,b) = edge({r,j}); ad(a,b,i); st = a;
 				int cur = sz(rvis)-1; label[a] = cur; 
 				vi tmp; set_union(all(rvis[r]),all(rvis[o]),back_inserter(tmp)); 
 				// merge sorted vectors ignoring duplicates
-				trav(x,tmp) if (abv(cur,x)) ae(cur,x);
+				each(x,tmp) if (abv(cur,x)) ae(cur,x);
 				// if no rounding errors then guaranteed that only x > i matters
 				glue({cur,0},other[r][j]); // glue old face with new face
 			}

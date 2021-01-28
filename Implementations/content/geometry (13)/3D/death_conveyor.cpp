@@ -40,7 +40,7 @@ typedef vector<pd> vpd;
 #define F0R(i,a) FOR(i,0,a)
 #define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
 #define R0F(i,a) ROF(i,0,a)
-#define trav(a,x) for (auto& a: x)
+#define each(a,x) for (auto& a: x)
 
 const int MOD = 1e9+7; // 998244353;
 const int MX = 2e5+5; 
@@ -80,8 +80,8 @@ template<class H, class... T> void re(H& h, T&... t) { re(h); re(t...); }
 
 template<class A> void re(complex<A>& c) { A a,b; re(a,b); c = {a,b}; }
 template<class A, class B> void re(pair<A,B>& p) { re(p.f,p.s); }
-template<class A> void re(vector<A>& x) { trav(a,x) re(a); }
-template<class A, size_t SZ> void re(array<A,SZ>& x) { trav(a,x) re(a); }
+template<class A> void re(vector<A>& x) { each(a,x) re(a); }
+template<class A, size_t SZ> void re(array<A,SZ>& x) { each(a,x) re(a); }
 
 // TO_STRING
 #define ts to_string
@@ -166,7 +166,7 @@ Q vrand() { // random vector
 	Q q = Q(); F0R(i,3) q[i] = rng()%(2*MOD)-MOD;
 	return q; }
 T norm(const Q& x) { // sum of squares
-	T sum = 0; trav(t,x) sum += t*t;
+	T sum = 0; each(t,x) sum += t*t;
 	return sum; }
 T abs(const Q& x) { return sqrt(norm(x)); }
 
@@ -227,7 +227,7 @@ Q operator*(const Mat& l, const Q& r) { isVec(r); // multiply matrix by vector
 	Q res = Q(); F0R(i,3) F0R(j,3) res[i] += l[i][j]*r[j];
 	return res; }
 Q flatten(const vQ& basis, Q x) { isVec(x); // reduce x given orthonormal basis
-	trav(t,basis) x -= t*dot(t,x);
+	each(t,basis) x -= t*dot(t,x);
 	return unit(x); }
 Q findEigenvec(const vQ& basis, const Mat& A) { // if we keep applying it will converge to vector corresponding to largest eigenvalue
 	Q x = flatten(basis,vrand());
@@ -297,7 +297,7 @@ void init() {
 		}
 	} else exit(5);
 	T mag = abs(verts[0]);
-	trav(t,verts) {
+	each(t,verts) {
 		t /= mag;
 		assert(abs(abs(t)-1) < EPS);
 	}

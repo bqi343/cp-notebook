@@ -21,7 +21,7 @@ struct SuffixArray {
 			isa[b] = i > 1 && S[a] == S[b] ? isa[a] : i; }
 		for (int len = 1; len < N; len *= 2) { // currently sorted by first len chars
 			vi s(sa), is(isa), pos(N); iota(all(pos),0); 
-			trav(t,s) { int T = t-len; if (T >= 0) sa[pos[isa[T]]++] = T; }
+			each(t,s) { int T = t-len; if (T >= 0) sa[pos[isa[T]]++] = T; }
 			FOR(i,1,N) { int a = sa[i-1], b = sa[i];
 				isa[b] = is[a] == is[b] && is[a+len] == is[b+len] ? isa[a] : i; }
 		}

@@ -9,7 +9,7 @@ template<int SZ> struct TreeTour {
 	void ae(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
 	void dfs(int x) {
 		static int t = 0; st[x] = t++;
-		trav(y,adj[x]) if (y != par[x]) {
+		each(y,adj[x]) if (y != par[x]) {
 			par[y] = x; dfs(y); }
 		en[x] = t-1;
 	}	

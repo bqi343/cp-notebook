@@ -14,7 +14,7 @@ struct ACunfixed {
 	ACunfixed() { d.eb(); }
 	int add(str s) { // add word
 		int v = 0;
-		trav(c,s) {
+		each(c,s) {
 			if (!d[v].to.count(c)) {
 				d[v].to[c] = sz(d);
 				d.eb();
@@ -32,7 +32,7 @@ struct ACunfixed {
 		queue<int> q; q.push(0);
 		while (sz(q)) {
 			int v = q.ft; q.pop();
-			trav(it,d[v].to) {
+			each(it,d[v].to) {
 				int u = it.s; d[u].link = nex(d[v].link,it.f); 
 				q.push(u); 
 			}

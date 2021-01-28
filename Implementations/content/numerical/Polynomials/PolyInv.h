@@ -74,7 +74,7 @@ poly combAll(vector<poly>& stor, poly& dems, int ind, int l, int r) {
 	return conv(a,stor[2*ind+1])+conv(b,stor[2*ind]);
 }
 poly interpolate(vector<pair<T,T>> v) {
-	int n = sz(v); poly x; trav(t,v) x.pb(t.f);
+	int n = sz(v); poly x; each(t,v) x.pb(t.f);
 	vector<poly> stor(4*n); segProd(stor,x,1,0,n-1);
 	poly dems; evalAll(stor,dems,dif(stor[1]));
 	F0R(i,n) dems[i] = v[i].s/dems[i];

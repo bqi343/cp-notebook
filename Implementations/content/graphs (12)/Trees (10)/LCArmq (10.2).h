@@ -21,7 +21,7 @@ struct LCA {
 	void ae(int x, int y) { adj[x].pb(y), adj[y].pb(x); }
 	void dfs(int x) {
 		pos[x] = sz(tmp); tmp.eb(depth[x],x); 
-		trav(y,adj[x]) if (y != par[x]) {
+		each(y,adj[x]) if (y != par[x]) {
 			depth[y] = depth[par[y]=x]+1, dfs(y);
 			tmp.eb(depth[x],x); }
 	}

@@ -55,6 +55,7 @@ tcT> int lwb(V<T>& a, const T& b) { return int(lb(all(a),b)-bg(a)); }
 #define F0R(i,a) FOR(i,0,a)
 #define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
 #define R0F(i,a) ROF(i,0,a)
+#define rep(a) F0R(_,a)
 #define each(a,x) for (auto& a: x)
 
 const int MOD = 1e9+7; // 998244353;

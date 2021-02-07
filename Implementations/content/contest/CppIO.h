@@ -65,7 +65,6 @@ tcT> str ts(T v) { // containers with begin(), end()
 			fst = 0; res += ts(x);
 		}
 		return res;
-
 	#endif
 }
 tcTU> str ts(pair<T,U> p) {
@@ -110,3 +109,5 @@ void setIO(str s = "") {
 	// ex. try to read letter into int
 	if (sz(s)) setIn(s+".in"), setOut(s+".out"); // for USACO
 }
+
+#define ints(...) int __VA_ARGS__; re(__VA_ARGS__);

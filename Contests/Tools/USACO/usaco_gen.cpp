@@ -8,6 +8,8 @@
 // return int in [L,R] inclusive
 int rng_int(int L, int R) { assert(L <= R); 
 	return uniform_int_distribution<int>(L,R)(rng);  }
+ll rng_ll(ll L, ll R) { assert(L <= R); 
+	return uniform_int_distribution<ll>(L,R)(rng);  }
 
 // return double in [L,R] inclusive
 db rng_db(db L, db R) { assert(L <= R);
@@ -58,7 +60,7 @@ vi rng_vec_unique(int N, int L, int R) {
 
 // relabel edges ed according to perm, shuffle
 vpi relabelAndShuffle(vpi ed, vi perm) {
-	trav(t,ed) {
+	each(t,ed) {
 		t.f = perm[t.f], t.s = perm[t.s];
 		if (rng()&1) swap(t.f,t.s);
 	}
@@ -68,13 +70,20 @@ vpi relabelAndShuffle(vpi ed, vi perm) {
 // shuffle graph with vertices [0,N-1]
 vpi shufGraph(int N, vpi ed) { // randomly swap endpoints, rearrange labels
 	return relabelAndShuffle(ed,randPerm(N)); }
+vpi shufGraphZero(int N, vpi ed) {
+	return relabelAndShuffle(ed,randPermZero(N)); }
 
 // shuffle tree given N-1 edges
 vpi shufTree(vpi ed) { return shufGraph(sz(ed)+1,ed); }
-
 // randomly swap endpoints, rearrange labels
 vpi shufRootedTree(vpi ed) {
 	return relabelAndShuffle(ed,randPermZero(sz(ed)+1)); }
+
+void pgraphOne(int N, vpi ed) {
+	each(e,ed) ++e.f, ++e.s;
+	ps(N,sz(ed));
+	each(e,ed) ps(1+e.f,1+e.s);
+}
 
 ////////////// GENERATING TREES
 

@@ -8,7 +8,7 @@
 
 #include "../../number-theory (11.1)/Modular Arithmetic/ModInt.h"
 
-using T = mi; using poly = vector<T>;
+using T = mi; using poly = V<T>;
 void remz(poly& p) { while (sz(p)&&p.bk==T(0)) p.pop_back(); }
 poly REMZ(poly p) { remz(p); return p; }
 poly rev(poly p) { reverse(all(p)); return p; }
@@ -26,9 +26,13 @@ T eval(const poly& p, T x) { // evaluate at point x
 poly dif(const poly& p) { // differentiate
 	poly res; FOR(i,1,sz(p)) res.pb(T(i)*p[i]); 
 	return res; }
-poly integ(const poly& p) { // integrate
-	poly res(sz(p)+1); F0R(i,sz(p)) res[i+1] = p[i]/T(i+1);
-	return res; }
+poly integ(const poly& p) { // integratepoly integ(const poly& p) { // integrate
+	static poly invs{0,1};
+	for (int i = sz(invs); i <= sz(p); ++i) 
+		invs.pb(-MOD/i*invs[MOD%i]);
+	poly res(sz(p)+1); F0R(i,sz(p)) res[i+1] = p[i]*invs[i+1];
+	return res; 
+}
 
 poly& operator+=(poly& l, const poly& r) {
 	l.rsz(max(sz(l),sz(r))); F0R(i,sz(r)) l[i] += r[i]; 

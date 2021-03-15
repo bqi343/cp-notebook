@@ -1,40 +1,35 @@
 /**
- * Description: Pollard's rho factors integers up to $2^{60}$. 
- 	* Returns primes in sorted order.
- * Time: $O(N^{1/4})$ gcd calls, less for numbers with small factors
+ * Description: Pollard-rho randomized factorization algorithm. Returns prime
+   * factors of a number, in arbitrary order (e.g. 2299 -> \{11, 19, 11\}).
+ * Time: $O(N^{1/4})$, less for numbers with small factors
  * Source: KACTL
 	* https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm
-	* https://codeforces.com/contest/1033/submission/44009089 is faster
+	* https://codeforces.com/contest/1033/submission/44009089 is faster?
  * Verification: https://www.spoj.com/problems/FACT0/
  */
 
-#include "PrimeSieve.h"
 #include "MillerRabin.h"
 #include "../Modular Arithmetic/ModMulLL.h"
 
-Sieve<1<<20> S; // primes up to N^{1/3}
-ul pollard(ul n) {
-	auto f = [n](ul x) { return (modMul(x,x,n)+1)%n; };
-	if (!(n&1)) return 2;
-	for (ul i = 2;;++i) {
-		ul x = i, y = f(x), p;
-		while ((p = __gcd(n+y-x,n)) == 1) x = f(x), y = f(f(y));
-		if (p != n) return p;
+ul pollard(ul n) { // return some nontrivial factor of n
+	auto f = [n](ul x) { return modMul(x, x, n) + 1; };
+	ul x = 0, y = 0, t = 30, prd = 2, i = 1, q;
+	while (t++ % 40 || __gcd(prd, n) == 1) {
+		if (x == y) x = ++i, y = f(x);
+		if ((q = modMul(prd, max(x,y)-min(x,y), n))) prd = q;
+		x = f(x), y = f(f(y));
 	}
+	return __gcd(prd, n);
 }
-vpl factor(ll d) {
-	vpl res; 
-	each(t,S.pr) {
-		if ((ul)t*t > d) break;
-		if (d%t == 0) {
-			res.pb({t,0}); 
-			while (d%t == 0) d /= t, res.bk.s ++;
-		}
-	}
-	if (prime(d)) res.pb({d,1}), d = 1;
-	if (d == 1) return res; // now a product of at most 2 primes
-	ll c = pollard(d); d /= c; if (d > c) swap(d,c);
-	if (c == d) res.pb({c,2});
-	else res.pb({c,1}), res.pb({d,1});
-	return res;
+
+void factor_rec(ul n, map<ul,int>& cnt) {
+	if (n == 1) return;
+	if (prime(n)) { ++cnt[n]; return; }
+	ul u = pollard(n);
+	factor_rec(u,cnt), factor_rec(n/u,cnt);
+}
+
+V<pair<ul,int>> factor(ul n) {
+	map<ul,int> cnt; factor_rec(n,cnt);
+	return V<pair<ul,int>>(all(cnt));
 }

@@ -6,77 +6,111 @@
  	* \#s of forests and trees on $n$ nodes then 
  	* $\sum_{n=0}^{\infty}f(n)x^n=\exp\left(\sum_{n=1}^{\infty}\frac{g(n)}{n!}\right)$.
  * Time: O(N\log N)
- * Source: CF, http://people.csail.mit.edu/madhu/ST12/scribe/lect06.pdf
+ * Source: CF
+ 	* http://people.csail.mit.edu/madhu/ST12/scribe/lect06.pdf
  	* https://cp-algorithms.com/algebra/polynomial.html
+ 	* maroonrk's submissions ^_^
+ 	* if you need faster exp for some reason, see https://old.yosupo.jp/submission/36732 ...
  * Usage: vmi v={1,5,2,3,4}; ps(exp(2*log(v,9),9)); // squares v
  * Verification: https://codeforces.com/contest/438/problem/E
  	* https://codeforces.com/gym/102028/submission/77687049
  	* https://loj.ac/problem/6703 (MultipointEval)
  */
 
-#include "PolyConv.h"
+#include "FFT.h"
 
-poly inv(poly A, int n) { // Q-(1/Q-A)/(-Q^{-2})
-	poly B{1/A[0]};
-	for (int x = 2; x/2 < n; x *= 2)
-		B = 2*B-RSZ(conv(RSZ(A,x),conv(B,B)),x);
-	return RSZ(B,n);
-}
-poly sqrt(const poly& A, int n) {  // Q-(Q^2-A)/(2Q)
-	assert(A[0] == 1); poly B{1};
-	for (int x = 2; x/2 < n; x *= 2)
-		B = T(1)/T(2)*RSZ(B+conv(RSZ(A,x),inv(B,x)),x);
-	return RSZ(B,n);
-}
-pair<poly,poly> divi(const poly& f, const poly& g) { // return quotient and remainder
-	if (sz(f) < sz(g)) return {{},f};
-	poly q = conv(inv(rev(g),sz(f)-sz(g)+1),rev(f));
-	q = rev(RSZ(q,sz(f)-sz(g)+1));
-	poly r = RSZ(f-conv(q,g),sz(g)-1); return {q,r};
-}
-poly log(poly A, int n) { assert(A[0] == 1); // (ln A)' = A'/A
-	A.rsz(n); return integ(RSZ(conv(dif(A),inv(A,n-1)),n-1)); }
-poly exp(poly A, int n) { assert(A[0] == 0);
-	poly B{1}, IB{1};
-	for (int x = 1; x < n; x *= 2) {
-		IB = 2*IB-RSZ(conv(B,conv(IB,IB)),x); // inverse of B to x places
-		poly Q = dif(RSZ(A,x)); Q += RSZ(conv(IB,dif(B)-conv(B,Q)),2*x-1); 
-		// first x-1 terms of dif(B)-conv(B,Q) are zero
-		B = B+RSZ(conv(B,RSZ(A,2*x)-integ(Q)),2*x); 
-	} // We know that Q=A' is B'/B to x-1 places, we want to find B'/B to 2x-1 places
-	return RSZ(B,n);
-}
-// poly expOld(poly A, int n) { // Q-(lnQ-A)/(1/Q)
-// 	assert(A[0] == 0); poly B = {1};
-// 	while (sz(B) < n) { int x = 2*sz(B);
-// 		B = RSZ(B+conv(B,RSZ(A,x)-log(B,x)),x); }
-// 	return RSZ(B,n);
-// }
+// WARNING: lots of sketchy optimizations to improve constant factors of calls to FFT ...
+// there are much simpler versions of functions below, but they are slower ...
 
-void segProd(vector<poly>& stor, poly& v, int ind, int l, int r) { // v -> places to evaluate at
-	if (l == r) { stor[ind] = {-v[l],1}; return; }
-	int m = (l+r)/2; segProd(stor,v,2*ind,l,m); segProd(stor,v,2*ind+1,m+1,r);
-	stor[ind] = conv(stor[2*ind],stor[2*ind+1]);
+void double_inverse_given(poly& A_inv, poly a, const poly& a_inv) {
+	int N = sz(A_inv);
+	F0R(i,2*N) a[i] *= a_inv[i];
+	fft(a,1); F0R(i,N) a[i] = 0; 
+	// now a represents 1+stuff_{N..3*N-2}, we only care about stuff_{N..2*N-1} 
+	// so we zero out the rest
+	fft(a); F0R(i,2*N) a[i] *= a_inv[i];
+	fft(a,1); FOR(i,N,2*N) A_inv.pb(-a[i]);
 }
-void evalAll(vector<poly>& stor, poly& res, poly v, int ind = 1) {
-	v = divi(v,stor[ind]).s;
-	if (sz(stor[ind]) == 2) { res.pb(sz(v)?v[0]:0); return; }
-	evalAll(stor,res,v,2*ind); evalAll(stor,res,v,2*ind+1);
-}
-poly multiEval(poly v, poly p) {
-	vector<poly> stor(4*sz(p)); segProd(stor,p,1,0,sz(p)-1);
-	poly res; evalAll(stor,res,v); return res; }
 
-poly combAll(vector<poly>& stor, poly& dems, int ind, int l, int r) {
-	if (l == r) return {dems[l]};
-	int m = (l+r)/2;
-	poly a = combAll(stor,dems,2*ind,l,m), b = combAll(stor,dems,2*ind+1,m+1,r);
-	return conv(a,stor[2*ind+1])+conv(b,stor[2*ind]);
+void double_inverse(const poly& A, poly& A_inv) { 
+	// given first 2*N terms of A and N terms of A_inv, extend A_inv
+	// add terms N...2*N-1 of -A_inv^2A to A_inv
+	int N = sz(A_inv);
+	poly f = RSZ(A,2*N); fft(f); // first 2N terms of A
+	poly g = RSZ(A_inv,2*N); fft(g);
+	double_inverse_given(A_inv,f,g);
 }
-poly interpolate(vector<pair<T,T>> v) {
-	int n = sz(v); poly x; each(t,v) x.pb(t.f);
-	vector<poly> stor(4*n); segProd(stor,x,1,0,n-1);
-	poly dems; evalAll(stor,dems,dif(stor[1]));
-	F0R(i,n) dems[i] = v[i].s/dems[i];
-	return combAll(stor,dems,1,0,n-1);
+
+// A_inv such that A*A_inv = 1
+poly inv(const poly& A, int NEED_N) { assert(A[0] != 0);
+	// F(Q)=1/Q
+	// Q-F(Q)/F'(Q)=Q-(1/Q-A)/(-Q^{-2})
+	// =2Q-Q^2A=Q+Q(1-QA)
+	poly A_inv{1/A[0]};
+	while (sz(A_inv) < NEED_N) double_inverse(A,A_inv);
+	return RSZ(A_inv,NEED_N);
+}
+
+// e^{result}=A
+poly log(poly A, int N) { assert(A[0] == 1); 
+	// ln A = integral(A'/A)
+	return integ(RSZ(conv(dif(A),inv(A,N-1)),N-1)); }
+
+// A_sqrt^2=A
+poly sqrt(const poly& A, int NEED_N) { assert(A[0] == 1); 
+	// F(Q)=Q^2-A
+	// Q-F(Q)/F'(Q)=Q-(Q^2-A)/(2Q)
+	// =1/2(Q+A/Q)
+	const T i2 = T(1)/T(2);
+	poly A_sqrt{1}, A_sqrt_inv{1},a_sqrt{1};
+	auto value_at = [&](int i) -> T { return i < sz(A) ? A[i] : 0; };
+	for (int N = 1; N < NEED_N; N *= 2) {
+		F0R(i,N) a_sqrt[i] *= a_sqrt[i]; // z is transform of Q^2
+		fft(a_sqrt,1); poly delta(2*N); // set delta = Q^2-A
+		F0R(i,N) delta[N+i] = a_sqrt[i]-value_at(i)-value_at(N+i);
+		fft(delta); 
+		poly a_sqrt_inv = RSZ(A_sqrt_inv,2*N);
+		fft(a_sqrt_inv); F0R(i,2*N) delta[i] *= a_sqrt_inv[i];
+		fft(delta,1); FOR(i,N,2*N) A_sqrt.pb(-i2*delta[i]); // get terms of (Q^2-A)/92Q
+		if (2*N >= NEED_N) break;
+		a_sqrt = A_sqrt; fft(a_sqrt);
+		double_inverse_given(A_sqrt_inv,a_sqrt,a_sqrt_inv);
+	}
+	return RSZ(A_sqrt,NEED_N);
+}
+
+// e^A
+poly exp(const poly& A, int NEED_N) { assert(A[0] == 0);
+	// F(Q)=ln(Q)-A
+	// Q-F(Q)/F'(Q)=Q-(ln(Q)-A)/(1/Q)
+	// =Q*(1+A-ln(Q))=Q+Q*(A-ln(Q))
+	auto value_at = [&](int i) -> T { return i < sz(A) ? A[i] : 0; };
+	auto conv_given = [&](const poly& a, poly b) { // fft already applied to a
+		b.rsz(sz(a)); fft(b);
+		F0R(i,sz(b)) b[i] *= a[i];
+		fft(b,1); return b;
+	};
+	poly A_exp{1}, A_inv{1};
+	for (int N = 1; N < NEED_N; N *= 2) { // A_exp currently has size N
+		poly a_exp = RSZ(A_exp,2*N); fft(a_exp);
+		if (N > 1) {
+			poly a_inv_small = RSZ(A_inv,2*N); fft(a_inv_small);
+			F0R(i,2*N) a_inv_small[i] *= a_inv_small[i]*a_exp[i];
+			fft(a_inv_small,1);
+			FOR(i,N/2,N) A_inv.pb(-a_inv_small[i]);
+		}
+		poly a_inv = RSZ(A_inv,2*N); fft(a_inv);
+		poly ln = conv_given(a_inv,dif(A_exp));
+		poly a_inv_exp(2*N); F0R(i,2*N) a_inv_exp[i] = a_inv[i]*a_exp[i];
+
+		poly a_dif = RSZ(dif(RSZ(A,N)),2*N); fft(a_dif);
+		F0R(i,2*N) a_inv_exp[i] *= a_dif[i];
+		fft(a_inv_exp,1); FOR(i,N,2*N) ln[i] -= a_inv_exp[i];
+		ln.pop_back(); ln = integ(ln);
+
+		poly A_minus_ln(N); F0R(i,N) A_minus_ln[i] = value_at(i+N)-ln[i+N];
+		poly prod = conv_given(a_exp,A_minus_ln); // conv(N,N)
+		FOR(i,N,2*N) A_exp.pb(prod[i-N]);
+	} 
+	return RSZ(A_exp,NEED_N);
 }

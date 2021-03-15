@@ -19,15 +19,15 @@
 #include "SCC (12.1).h"
 
 struct TwoSAT {
-	int N; SCC S; vector<bool> ans;
-	void init(int _N) { N = _N; S.init(2*N); ans.rsz(N); }
-	int addVar() { return N++; }
+	int N = 0; vpi edges;
+	void init(int _N) { N = _N; }
+	int addVar() { return N++; } // for atMostOne
 	void either(int x, int y) { 
 		x = max(2*x,-1-2*x), y = max(2*y,-1-2*y);
-		S.ae(x^1,y); S.ae(y^1,x); }
+		edges.eb(x,y); }
 	void implies(int x, int y) { either(~x,y); }
 	void must(int x) { either(x,x); }
-	void atMostOne(vi li) {
+	void atMostOne(const vi& li) {
 		if (sz(li) <= 1) return;
 		int cur = ~li[0];
 		FOR(i,2,sz(li)) {
@@ -37,14 +37,16 @@ struct TwoSAT {
 		}
 		either(cur,~li[1]);
 	}
-	bool solve(int _N = -1) {
-		if (_N != -1) N = _N, S.init(2*N);
+	vb solve(int _N = -1) {
+		if (_N != -1) N = _N;
+		SCC S; S.init(2*N);
+		each(e,edges) S.ae(e.f^1,e.s), S.ae(e.s^1,e.f);
 		S.gen(); reverse(all(S.comps)); // reverse topological order
 		for (int i = 0; i < 2*N; i += 2) 
-			if (S.comp[i] == S.comp[i^1]) return 0;
+			if (S.comp[i] == S.comp[i^1]) return {};
 		vi tmp(2*N); each(i,S.comps) if (!tmp[i]) 
 			tmp[i] = 1, tmp[S.comp[i^1]] = -1;
-		F0R(i,N) if (tmp[S.comp[2*i]] == 1) ans[i] = 1;
-		return 1;
+		vb ans(N); F0R(i,N) ans[i] = tmp[S.comp[2*i]] == 1;
+		return ans;
 	}
 };

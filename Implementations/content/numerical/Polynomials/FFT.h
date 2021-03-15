@@ -7,6 +7,7 @@
  	* https://cp-algorithms.com/algebra/fft.html
  	* https://csacademy.com/blog/fast-fourier-transform-and-variations-of-it
  	* maroonrk
+ 	* https://github.com/atcoder/ac-library/blob/master/atcoder/convolution.hpp
  * Verification: 
 	* https://judge.yosupo.jp/problem/convolution_mod
 	* SPOJ polymul, CSA manhattan, CF Perfect Encoding
@@ -19,7 +20,7 @@
 template<class T> void fft(V<T>& A, bool inv = 0) { // NTT
 	int n = sz(A); assert((T::mod-1)%n == 0); V<T> B(n);
 	for(int b = n/2; b; b /= 2, swap(A,B)) {
-		T w = pow(T::rt(),(T::mod-1)/n*b), m = 1;
+		T w = pow(T::rt(),(T::mod-1)/n*b), m = 1; // n/b'th root of unity
 		for(int i = 0; i < n; i += b*2, m *= w) F0R(j,b) {
 			T u = A[i+j], v = A[i+j+b]*m;
 			B[i/2+j] = u+v; B[i/2+j+n/2] = u-v;

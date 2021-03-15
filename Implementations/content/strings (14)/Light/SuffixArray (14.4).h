@@ -14,7 +14,7 @@
 struct SuffixArray {
 	str S; int N; vi sa, isa, lcp;
 	void init(str _S) { N = sz(S = _S)+1; genSa(); genLcp(); }
-	void genSa() {
+	void genSa() { // sa has size sz(S)+1, starts with sz(S)
 		sa = isa = vi(N); sa[0] = N-1; iota(1+all(sa),0);
 		sort(1+all(sa),[&](int a, int b) { return S[a] < S[b]; });
 		FOR(i,1,N) { int a = sa[i-1], b = sa[i];
@@ -22,7 +22,7 @@ struct SuffixArray {
 		for (int len = 1; len < N; len *= 2) { // currently sorted by first len chars
 			vi s(sa), is(isa), pos(N); iota(all(pos),0); 
 			each(t,s) { int T = t-len; if (T >= 0) sa[pos[isa[T]]++] = T; }
-			FOR(i,1,N) { int a = sa[i-1], b = sa[i];
+			FOR(i,1,N) { int a = sa[i-1], b = sa[i]; /// verify that nothing goes out of bounds
 				isa[b] = is[a] == is[b] && is[a+len] == is[b+len] ? isa[a] : i; }
 		}
 	}

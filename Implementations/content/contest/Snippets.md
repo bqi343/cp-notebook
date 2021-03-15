@@ -87,6 +87,51 @@ int main() {
 }
 ```
 
+## TS
+
+```
+// make sure to intialize ALL GLOBAL VARS between tcs!
+
+void solve(int tc) {
+	${0}
+}
+
+int main() {
+	setIO();
+	int TC; re(TC);
+	FOR(i,1,TC+1) solve(i);
+}
+```
+
+## Interact
+
+For CF interactive probs. `ps()` changed to use `endl`.
+
+```
+int query(int i) {
+	ps("?",i);
+	ints(x); 
+	rtn x;
+}
+
+void finish(int ans) {
+	ps("!",ans);
+	exit(0);
+}
+
+int main() {
+	${0}
+}
+```
+
+## lam
+
+```
+auto ${1:name} = [&](${2}) {
+	${3}
+};
+```
+
 ## InG
 
 ```
@@ -105,28 +150,4 @@ F0R(i,N-1) {
 	int a,b; re(a,b);
 	adj[a].pb(b), adj[b].pb(a);
 }
-```
-
-## TS
-
-```
-// make sure to intialize ALL GLOBAL VARS between tcs!
-
-void solve(int tc) {
-	${0}
-}
-
-int main() {
-	setIO();
-	int TC; re(TC);
-	FOR(i,1,TC+1) solve(i);
-}
-```
-
-## lam
-
-```
-auto ${1:name} = [&](${2}) {
-	${3}
-};
 ```

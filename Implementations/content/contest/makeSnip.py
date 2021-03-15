@@ -103,7 +103,7 @@ modint_template = ""
 modfact_template = ""
 
 def process(root,name): # prefix, file name
-	global snippets,temp,modint_template, modfact_template
+	global snippets,temp,temp_old,modint_template, modfact_template
 	def shorten(name): # convert to snippet name
 		short = name[:name.rfind('.')] # strip suffix
 		if '(' in short:
@@ -121,7 +121,7 @@ def process(root,name): # prefix, file name
 	if name.endswith("ModFact.h"):
 		modfact_template = checkNorm(root,name)
 	if name.endswith(".cpp"):
-		if "TemplateLong" in name:
+		if "TemplateLong.cpp" == name:
 			print("TEMPLATE_LONG:",name)
 			temp = tempLong(root,name)
 			output("Temp",temp)
@@ -130,7 +130,10 @@ def process(root,name): # prefix, file name
 			output("TempShort",tempShort(root,name))
 		elif "usaco" in name or "Template" in name:
 			print("INCLUDED:",name)
-			output(shorten(name).replace("Template","Temp"),tempLong(root,name))
+			tmp = tempLong(root,name)
+			output(shorten(name).replace("Template","Temp"),tmp)
+			if name == "TemplateLong_Old.cpp":
+				temp_old = tmp
 		elif "template" not in name.lower() and "test" not in name.lower():
 			print("NOT INCLUDED:",name)
 	if name == "Snippets.md":
@@ -177,11 +180,24 @@ while temp[EN] != '}':
 	EN += 1
 EN += 2
 
+# print("HA",temp_old)
+ST_old = temp_old.find("int main()")
+EN_old = ST_old
+while temp_old[EN_old] != '}':
+	EN_old += 1
+EN_old += 2
+
 for i in range(len(names)):
 	code = codes[i]
 	if names[i] == "TC":
-		# print("NAME",names[i])
-		code = temp[:ST]+modint_template+"\n\n"+modfact_template+"\n\n"+code+temp[EN:]
-	elif "FHC" in names[i] or "GCJ" in names[i] or "TS" == names[i]:
+		code = temp_old[:ST_old]+modint_template+"\n\n"+modfact_template+"\n\n"+code+temp_old[EN_old:]
+	elif names[i] in ["FHC","GCJ","TS","Interact"]:
 		code = temp[:ST]+code+temp[EN:]
+		if names[i] == "Interact":
+			# print("HA",code)
+			# print("GOT INDEX",code.find('''void ps() { pr("\\n"); }'''))
+			code = code.replace(
+				'''cout << "\\n"''',
+				'''cout << endl'''
+			)
 	output(names[i],code)

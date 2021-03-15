@@ -6,9 +6,10 @@
  * Verification: see "Faster Factoring"
  */
 
+/// using db = long double;
 using ul = unsigned long long;
 ul modMul(ul a, ul b, const ul mod) {
-	ll ret = a*b-mod*(ul)((ld)a*b/mod);
+	ll ret = a*b-mod*(ul)((db)a*b/mod);
 	return ret+((ret<0)-(ret>=(ll)mod))*mod; }
 ul modPow(ul a, ul b, const ul mod) {
 	if (b == 0) return 1;

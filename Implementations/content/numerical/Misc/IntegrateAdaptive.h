@@ -13,7 +13,7 @@
  */
 
 /// db f(db x) { return x*x+3*x+1; }
-db simpson(db (*f)(db), db a, db b) {
+template<class F> db simpson(F f, db a, db b) {
 	db c = (a+b)/2; return (f(a)+4*f(c)+f(b))*(b-a)/6; }
 template<class F> db rec(F& f, db a, db b, db eps, db S) {
 	db c = (a+b)/2;
@@ -21,5 +21,5 @@ template<class F> db rec(F& f, db a, db b, db eps, db S) {
 	if (abs(T-S)<=15*eps || b-a<1e-10) return T+(T-S)/15;
 	return rec(f,a,c,eps/2,S1)+rec(f,c,b,eps/2,S2);
 }
-template<class F> quad(F f, db a, db b, db eps = 1e-8) {
+template<class F> db quad(F f, db a, db b, db eps = 1e-8) {
 	return rec(f,a,b,eps,simpson(f,a,b)); }

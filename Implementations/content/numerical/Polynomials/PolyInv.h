@@ -18,6 +18,7 @@
  */
 
 #include "FFT.h"
+#include "Poly.h"
 
 // WARNING: lots of sketchy optimizations to improve constant factors of calls to FFT ...
 // there are much simpler versions of functions below, but they are slower ...
@@ -54,7 +55,7 @@ poly inv(const poly& A, int NEED_N) { assert(A[0] != 0);
 // e^{result}=A
 poly log(poly A, int N) { assert(A[0] == 1); 
 	// ln A = integral(A'/A)
-	return integ(RSZ(conv(dif(A),inv(A,N-1)),N-1)); }
+	return integ(RSZ(mul(dif(A),inv(A,N-1)),N-1)); }
 
 // A_sqrt^2=A
 poly sqrt(const poly& A, int NEED_N) { assert(A[0] == 1); 

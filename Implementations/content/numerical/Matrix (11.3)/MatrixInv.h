@@ -11,21 +11,19 @@
 	* SPOJ MIFF (matrix inverse modulo prime)
 	* https://open.kattis.com/problems/equationsolver
  */
-
-#include "Matrix.h"
-
-const ld EPS = 1e-12;
-int getRow(vector<vector<ld>>& m, int R, int i, int nex) {
-    pair<ld,int> bes = {0,-1}; // find row with max absolute value
+const db EPS = 1e-12;
+int getRow(V<V<db>>& m, int R, int i, int nex) {
+    pair<db,int> bes = {0,-1}; // find row with max absolute value
     FOR(j,nex,R) ckmax(bes,{abs(m[j][i]),j}); 
     return bes.f < EPS ? -1 : bes.s; }
-int getRow(vector<vector<mi>>& m, int R, int i, int nex) {
+int getRow(V<vmi>& m, int R, int i, int nex) {
     FOR(j,nex,R) if (m[j][i] != 0) return j;
     return -1; }
-pair<T,int> gauss(Mat& m) { 
+pair<T,int> gauss(Mat& m) {
+    if (!sz(m)) return {1,0};
     int R = sz(m), C = sz(m[0]), rank = 0, nex = 0;
     T prod = 1; // determinant
-    F0R(i,R) {
+    F0R(i,C) {
         int row = getRow(m,R,i,nex);
         if (row == -1) { prod = 0; continue; }
         if (row != nex) prod *= -1, swap(m[row],m[nex]);

@@ -80,7 +80,6 @@ vpi shufRootedTree(vpi ed) {
 	return relabelAndShuffle(ed,randPermZero(sz(ed)+1)); }
 
 void pgraphOne(int N, vpi ed) {
-	each(e,ed) ++e.f, ++e.s;
 	ps(N,sz(ed));
 	each(e,ed) ps(1+e.f,1+e.s);
 }
@@ -140,7 +139,16 @@ vpi treeTallHeavyShort(int N, db p) {
 	return ed;
 }
 
-int main(int argc, char* argv[]) {
+int rand_prime(int l, int r) {
+	while(1) {
+		int x = rng_int(l,r);
+		bool bad = 0;
+		for (int i = 2; i*i <= x; ++i) if (x%i == 0) bad = 1;
+		if (!bad) return x;
+	}
+}
+
+int main(int, char* argv[]) {
 	int tc; sscanf(argv[1],"%d",&tc); // test case #
 	// sscanf(argv[2],"%d",&b); // random seed
 	// sscanf(argv[3],"%d",&c); // also random seed

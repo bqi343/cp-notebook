@@ -7,15 +7,17 @@
  */
 
 ll prime_cnt(const ll N) {
-	// here we only consider odd primes
 	if (N <= 1) return 0;
 	if (N == 2) return 1;
+
+	// here we only consider odd primes, then add one to the answer at the end
 	const int sq = (int)sqrtl(N);
 	int s = (1+sq)/2;
 
 	vi small_ans(s); iota(all(small_ans),0); 
-	// small[i] = # odd primes <= 2*i+1
+	// small_ans[i] = # odd primes <= 2*i+1 at the end
 	// sq=4 -> 1,3, sq=5 -> 1,3,5
+	// we initialize the counts by treating all odd numbers >1 (3,5,7,9,...) as prime
 
 	vi roughs(s); vl large_ans(s); 
 	F0R(i,s) {
@@ -25,7 +27,8 @@ ll prime_cnt(const ll N) {
 		// a number is a prime candidate if none of primes found so far are a proper factor
 		// initially the prime candidates are 3,5,7,...,N/roughs[i]
 	}
-	auto divide = [&](ll n, ll d) { return int(n/d); };
+	auto divide = [&](ll n, ll d) { return int((double)n/d); }; 
+	// ^ apparently converting to double makes this faster
 	auto half = [&](int n) { return (n-1)/2; };
 	vb skip(sq+1);
 	int pc = 0; // # odd primes <= N^{1/4}
@@ -35,7 +38,8 @@ ll prime_cnt(const ll N) {
 		int ns = 0;
 		F0R(k,s) {
 			int i = roughs[k]; if (skip[i]) continue; 
-			// we only care about the answer when i is not divisible by any found primes so far
+			// only keep roughs[k] in the roughs vector if
+			// roughs[k] is not divisible by p or any other prime found so far
 			ll d = (ll)i*p;
 			large_ans[ns] = large_ans[k]+pc; 
 			// cands(step+1,x) = cands(step,x)-(cands(step,x/prime[step])-pc)
@@ -49,26 +53,30 @@ ll prime_cnt(const ll N) {
 		}
 		++pc;
 	} 
-	// roughs now contains 1 and all primes in (N^{1/4},N^{1/2}]
-	// large_ans[0] contains everything with no prime factor <= N^{1/4} (i.e., it overcounts)
+	// at this point, roughs contains 1 and all primes in (N^{1/4},N^{1/2}]
+	// large_ans[0] contains # of primes <= N
+	// plus # of composites with no prime factor <= N^{1/4}
 
-	// now we need to subtract out the overcounts
-	// several cases (all are of form a*b or a*b*c where N^{1/4} <= a <= b <= c are primes)
-		// a*b where b <= N^{1/2}
-		// a*b where N^{1/4} < a, N^{1/2} < b
+	// it remains to subtract out these composites
+	// the possible forms that the composite can take are as follows:
+	// (all are of form a*b or a*b*c where N^{1/4} <= a <= b <= c are primes)
+		// (1) a*b where b <= N^{1/2}
+		// (2) a*b where N^{1/4} < a, N^{1/2} < b
 		// a*b*c where a<b<c<=N^{1/2}
 		// a*b*c where a=b<c<=N^{1/2}
 		// a*b*c where a<b=c<=N^{1/2}
 		// a*b*c where a=b=c<=N^{1/2}
 
 	// first we deal with both a*b cases, but we don't correctly correctly deal with a*b*c cases
-	FOR(k,1,s) large_ans[0] -= large_ans[k]; // subtract multiples of roughs[k], which is a prime in (N^{1/4},N^{1/2}]
+
+	// 1. subtract multiples of roughs[k], where roughs[k] iterates over all primes in (N^{1/4},N^{1/2}]
+	// correctly deal with (1)
+	FOR(k,1,s) large_ans[0] -= large_ans[k];
+	
+	// 2. add back stuff to correctly deal with (2)
 	large_ans[0] += (ll)(s+2*(pc-1))*(s-1)/2; // = sum(pc...s+pc-2)
-	// correctly deal with a*b where b <= N^{1/2}
 
-	// what about a=b<c
-	// what about a<b=c: subtracted two times, need to add back one
-
+	// 3. now deal with a*b*c cases
 	// a < b = c -> -1 (for q = a, - b)
 	// a < b < c -> -2 (for q = a, - b, - c)
 	// a = b < c -> -1

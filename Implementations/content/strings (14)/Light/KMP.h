@@ -9,7 +9,7 @@
 vi kmp(str s) {
 	int N = sz(s); vi f(N+1); f[0] = -1;
 	FOR(i,1,N+1) {
-		for (f[i]=f[i-1];f[i]!=-1&&s[f[i]]!=s[i-1])f[i]=f[f[i]];
+		for (f[i]=f[i-1];f[i]!=-1&&s[f[i]]!=s[i-1];)f[i]=f[f[i]];
 		f[i] ++; }
 	return f;
 }

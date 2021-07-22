@@ -7,10 +7,10 @@
 
 #include "ConvexHull (13.2).h"
 
-ld diameter(vP P) { 
+db diameter(vP P) { 
 	P = hull(P);
-	int n = sz(P), ind = 1; ld ans = 0;
-	F0R(i,n) for (int j = (i+1)%n;;ind = (ind+1)%n) {
+	int n = sz(P), ind = 1; db ans = 0;
+	if (n > 1) F0R(i,n) for (int j = (i+1)%n;;ind = (ind+1)%n) {
 		ckmax(ans,abs(P[i]-P[ind]));
 		if (cross(P[j]-P[i],P[(ind+1)%n]-P[ind]) <= 0) break;
 	}

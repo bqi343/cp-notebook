@@ -49,6 +49,7 @@ tcT> using PR = pair<T,T>;
 #define lb lower_bound
 #define ub upper_bound 
 tcT> int lwb(V<T>& a, const T& b) { return int(lb(all(a),b)-bg(a)); }
+tcT> int upb(V<T>& a, const T& b) { return int(ub(all(a),b)-bg(a)); }
 
 // loops
 #define FOR(i,a,b) for (int i = (a); i < (b); ++i)
@@ -239,6 +240,9 @@ inline namespace Output {
 		#define dbg(...) 0
 		#define dbgl(lev,x) 0
 	#endif
+
+	const clock_t beg = clock();
+	#define dbg_time() dbg((db)(clock()-beg)/CLOCKS_PER_SEC)
 }
 
 inline namespace FileIO {

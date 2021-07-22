@@ -49,6 +49,7 @@ tcT> using PR = pair<T,T>;
 #define lb lower_bound
 #define ub upper_bound 
 tcT> int lwb(V<T>& a, const T& b) { return int(lb(all(a),b)-bg(a)); }
+tcT> int upb(V<T>& a, const T& b) { return int(ub(all(a),b)-bg(a)); }
 
 // loops
 #define FOR(i,a,b) for (int i = (a); i < (b); ++i)

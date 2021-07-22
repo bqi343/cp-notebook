@@ -9,7 +9,7 @@
  */
 
 // db f(db x) { return x*x+3*x+1; }
-db quad(db (*f)(db), db a, db b) {
+template<class F> db quad(F f, db a, db b) {
 	const int n = 1000;
 	db dif = (b-a)/2/n, tot = f(a)+f(b);
 	FOR(i,1,2*n) tot += f(a+i*dif)*(i&1?4:2);

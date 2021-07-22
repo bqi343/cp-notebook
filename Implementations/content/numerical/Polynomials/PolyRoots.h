@@ -8,7 +8,7 @@
 
 #include "Poly.h"
 
-typedef ld T;
+typedef db T;
 poly polyRoots(poly p, T xmin, T xmax) {
 	if (sz(p) == 2) { return {-p[0]/p[1]}; }
 	auto dr = polyRoots(dif(p),xmin,xmax);

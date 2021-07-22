@@ -146,6 +146,9 @@ inline namespace Output {
 		#define dbg(...) 0
 		#define dbgl(lev,x) 0
 	#endif
+
+	const clock_t beg = clock();
+	#define dbg_time() dbg((db)(clock()-beg)/CLOCKS_PER_SEC)
 }
 
 inline namespace FileIO {

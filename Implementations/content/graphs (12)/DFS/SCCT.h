@@ -12,13 +12,15 @@
 struct SCC {
 	int N, ti = 0; V<vi> adj;
 	vi disc, comp, stk, comps;
-	void init(int _N) { N = _N; adj.rsz(N), disc.rsz(N), comp = vi(N,-1); }
+	void init(int _N){ N = _N, adj.rsz(N);
+		disc.rsz(N), comp.rsz(N,-1);}
 	void ae(int x, int y) { adj[x].pb(y); }
 	int dfs(int x) {
 		int low = disc[x] = ++ti; stk.pb(x);
-		each(y,adj[x]) if (comp[y] == -1) // comp[y] == -1, disc[y] != 0 -> in stack
-			ckmin(low,disc[y]?:dfs(y)); 
-		if (low == disc[x]) { // make new SCC, pop off stack until you find x
+		each(y,adj[x]) if (comp[y] == -1) // comp[y] == -1, 
+			ckmin(low,disc[y]?:dfs(y));  // disc[y] != 0 -> in stack
+		if (low == disc[x]) { // make new SCC
+			// pop off stack until you find x
 			comps.pb(x); for (int y = -1; y != x;) 
 				comp[y = stk.bk] = x, stk.pop_back();
 		}

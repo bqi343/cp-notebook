@@ -3,15 +3,15 @@
 
 \chapter{Mathematics}
 
-\section{Equations}
+% \section{Equations}
 
-\[\begin{aligned}ax+by=e\\cx+dy=f\end{aligned}
-\Rightarrow
-\begin{aligned}x=\dfrac{ed-bf}{ad-bc}\\y=\dfrac{af-ec}{ad-bc}\end{aligned}\]
+% % \[\begin{aligned}ax+by=e\\cx+dy=f\end{aligned}
+% % \Rightarrow
+% % \begin{aligned}x=\dfrac{ed-bf}{ad-bc}\\y=\dfrac{af-ec}{ad-bc}\end{aligned}\]
 
-In general, given an equation $Ax = b$, the solution to a variable $x_i$ is given by
-\[x_i = \frac{\det A_i'}{\det A} \]
-where $A_i'$ is $A$ with the $i$'th column replaced by $b$.
+% Cramer's Rule: given an equation $Ax = b$, the solution to a variable $x_i$ is given by
+% \[x_i = \frac{\det A_i'}{\det A} \]
+% where $A_i'$ is $A$ with the $i$'th column replaced by $b$.
 
 % \section{Recurrences}
 % If $a_n = c_1 a_{n-1} + \dots + c_k a_{n-k}$, and $r_1, \dots, r_k$ are distinct roots of $x^k + c_1 x^{k-1} + \dots + c_k$, there are $d_1, \dots, d_k$ s.t.
@@ -46,22 +46,22 @@ Law of sines: $\dfrac{\sin\alpha}{a}=\dfrac{\sin\beta}{b}=\dfrac{\sin\gamma}{c}=
 Law of cosines: $a^2=b^2+c^2-2bc\cos\alpha$\\
 Law of tangents: $\dfrac{a+b}{a-b}=\dfrac{\tan\dfrac{\alpha+\beta}{2}}{\tan\dfrac{\alpha-\beta}{2}}$\\
 
-\subsection{Quadrilaterals}
-With side lengths $a,b,c,d$, diagonals $e, f$, diagonals angle $\theta$, area $A$ and
-magic flux $F=b^2+d^2-a^2-c^2$:
+% \subsection{Quadrilaterals}
+% With side lengths $a,b,c,d$, diagonals $e, f$, diagonals angle $\theta$, area $A$ and
+% magic flux $F=b^2+d^2-a^2-c^2$:
 
-\[ 4A = 2ef \cdot \sin\theta = F\tan\theta = \sqrt{4e^2f^2-F^2} \]
+% \[ 4A = 2ef \cdot \sin\theta = F\tan\theta = \sqrt{4e^2f^2-F^2} \]
 
- For cyclic quadrilaterals the sum of opposite angles is $180^\circ$,
-$ef = ac + bd$, and $A = \sqrt{(s-a)(s-b)(s-c)(s-d)}$.
+%  For cyclic quadrilaterals the sum of opposite angles is $180^\circ$,
+% $ef = ac + bd$, and $A = \sqrt{(s-a)(s-b)(s-c)(s-d)}$.
 
-\subsection{Spherical coordinates}
-\centerline{\includegraphics[width=25mm]{content/math/sphericalCoordinates}}
-\[\begin{array}{cc}
-x = r\sin\theta\cos\phi & r = \sqrt{x^2+y^2+z^2}\\
-y = r\sin\theta\sin\phi & \theta = \textrm{acos}(z/\sqrt{x^2+y^2+z^2})\\
-z = r\cos\theta & \phi = \textrm{atan2}(y,x)
-\end{array}\]
+% \subsection{Spherical coordinates}
+% \centerline{\includegraphics[width=25mm]{content/math/sphericalCoordinates}}
+% \[\begin{array}{cc}
+% x = r\sin\theta\cos\phi & r = \sqrt{x^2+y^2+z^2}\\
+% y = r\sin\theta\sin\phi & \theta = \textrm{acos}(z/\sqrt{x^2+y^2+z^2})\\
+% z = r\cos\theta & \phi = \textrm{atan2}(y,x)
+% \end{array}\]
 
 \section{Derivatives/Integrals}
 \begin{align*}
@@ -94,15 +94,15 @@ $$\sin x = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\dots,\,(-\infty<x<\in
 $$\cos x = 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\dots,\,(-\infty<x<\infty)$$
 % $$e^{ix}=\cos x+i\sin x$$
 
-\section{Probability theory}
-Let $X$ be a discrete random variable with probability $p_X(x)$ of assuming the value $x$. It will then have an expected value (mean) $\mu=\mathbb{E}(X)=\sum_xxp_X(x)$ and variance $\sigma^2=V(X)=\mathbb{E}(X^2)-(\mathbb{E}(X))^2=\sum_x(x-\mathbb{E}(X))^2p_X(x)$ where $\sigma$ is the standard deviation. 
-\[\mathbb{E}(aX+bY) = a\mathbb{E}(X)+b\mathbb{E}(Y)\]
-If $X,Y$ are independent, \[V(aX+bY) = a^2V(X)+b^2V(Y).\]
+% \section{Probability theory}
+% Let $X$ be a discrete random variable with probability $p_X(x)$ of assuming the value $x$. It will then have an expected value (mean) $\mu=\mathbb{E}(X)=\sum_xxp_X(x)$ and variance $\sigma^2=V(X)=\mathbb{E}(X^2)-(\mathbb{E}(X))^2=\sum_x(x-\mathbb{E}(X))^2p_X(x)$ where $\sigma$ is the standard deviation. 
+% \[\mathbb{E}(aX+bY) = a\mathbb{E}(X)+b\mathbb{E}(Y)\]
+% If $X,Y$ are independent, \[V(aX+bY) = a^2V(X)+b^2V(Y).\]
 % Expectation is linear
 % If $X$ is instead continuous it will have a probability density function $f_X(x)$ and the sums above will instead be integrals with $p_X(x)$ replaced by $f_X(x)$.
 
 
-\subsection{Discrete distributions}
+% \subsection{Discrete distributions}
 
 % \subsubsection{Binomial distribution}
 % \# of successes in $n$ independent yes/no experiments, each which yields success with probability $p$ is $\textrm{Bin}(n,p),\,n=1,2,\dots,\, 0\leq p\leq1$.
@@ -110,18 +110,18 @@ If $X,Y$ are independent, \[V(aX+bY) = a^2V(X)+b^2V(Y).\]
 % \[\mu = np,\,\sigma^2=np(1-p)\]
 % $\textrm{Bin}(n,p)\approx \textrm{Po}(np)$ for small $p$.
 
-\subsubsection{First success distribution}
-The number of trials needed to get the first success in independent yes/no experiments, each wich yields success with probability $p$ is $\textrm{Fs}(p),\,0\leq p\leq1$.
-\[p(k)=p(1-p)^{k-1},\,k=1,2,\dots\]
-\[\mu = \frac1p,\,\sigma^2=\frac{1-p}{p^2}\]
+% \subsubsection{First success distribution}
+% The number of trials needed to get the first success in independent yes/no experiments, each wich yields success with probability $p$ is $\textrm{Fs}(p),\,0\leq p\leq1$.
+% \[p(k)=p(1-p)^{k-1},\,k=1,2,\dots\]
+% \[\mu = \frac1p,\,\sigma^2=\frac{1-p}{p^2}\]
 
-\subsubsection{Poisson distribution}
-The number of events occurring in a fixed period of time $t$ if these events occur with a known average rate $\kappa$ and independently of the time since the last event is $\textrm{Po}(\lambda),\,\lambda=t\kappa$.
-\[p(k)=e^{-\lambda}\frac{\lambda^k}{k!}, k=0,1,2,\dots\]
-\[\mu=\lambda,\,\sigma^2=\lambda\]
-$\textrm{Bin}(n,p)\approx \textrm{Po}(np)$ for small $p$ (binomial distribution with $n$ coin flips, each of which is heads with probability $p$).
+% \subsubsection{Poisson distribution}
+% The number of events occurring in a fixed period of time $t$ if these events occur with a known average rate $\kappa$ and independently of the time since the last event is $\textrm{Po}(\lambda),\,\lambda=t\kappa$.
+% \[p(k)=e^{-\lambda}\frac{\lambda^k}{k!}, k=0,1,2,\dots\]
+% \[\mu=\lambda,\,\sigma^2=\lambda\]
+% $\textrm{Bin}(n,p)\approx \textrm{Po}(np)$ for small $p$ (binomial distribution with $n$ coin flips, each of which is heads with probability $p$).
 
-\subsection{Continuous distributions}
+% \subsection{Continuous distributions}
 
 % \subsubsection{Uniform distribution}
 % If the probability density function is constant between $a$ and $b$ and 0 elsewhere it is $\textrm{U}(a,b),\,a<b$.
@@ -132,40 +132,40 @@ $\textrm{Bin}(n,p)\approx \textrm{Po}(np)$ for small $p$ (binomial distribution 
 % \end{array}\right.\]
 % \[\mu=\frac{a+b}{2},\,\sigma^2=\frac{(b-a)^2}{12}\]
 
-\subsubsection{Exponential distribution}
-The time between events in a Poisson process is $\textrm{Exp}(\lambda),\,\lambda>0$.
-\[f(x) = \left\{
-\begin{array}{cl}
-\lambda e^{-\lambda x} & x\geq0\\
-0 & x<0
-\end{array}\right.\]
-\[\mu=\frac{1}{\lambda},\,\sigma^2=\frac{1}{\lambda^2}\]
+% \subsubsection{Exponential distribution}
+% The time between events in a Poisson process is $\textrm{Exp}(\lambda),\,\lambda>0$.
+% \[f(x) = \left\{
+% \begin{array}{cl}
+% \lambda e^{-\lambda x} & x\geq0\\
+% 0 & x<0
+% \end{array}\right.\]
+% \[\mu=\frac{1}{\lambda},\,\sigma^2=\frac{1}{\lambda^2}\]
 
-\subsubsection{Normal distribution}
-Most real random values with mean $\mu$ and variance $\sigma^2$ are well described by $\mathcal{N}(\mu,\sigma^2),\,\sigma>0$.
-\[ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} \]
+% \subsubsection{Normal distribution}
+% Most real random values with mean $\mu$ and variance $\sigma^2$ are well described by $\mathcal{N}(\mu,\sigma^2),\,\sigma>0$.
+% \[ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} \]
 % If $X_1 \sim \mathcal{N}(\mu_1,\sigma_1^2)$ and $X_2 \sim \mathcal{N}(\mu_2,\sigma_2^2)$ then
 % \[ aX_1 + bX_2 + c \sim \mathcal{N}(\mu_1+\mu_2+c,a^2\sigma_1^2+b^2\sigma_2^2) \]
 
-\section{Markov chains}
-A \emph{Markov chain} is a discrete random process with the property that the next state depends only on the current state.
-Let $X_1,X_2,\ldots$ be a sequence of random variables generated by the Markov process.
-Then there is a transition matrix $\mathbf{P} = (p_{ij})$, with $p_{ij} = \Pr(X_n = i | X_{n-1} = j)$,
-and $\mathbf{p}^{(n)} = \mathbf P^n \mathbf p^{(0)}$ is the probability distribution for $X_n$ (i.e., $p^{(n)}_i = \Pr(X_n = i)$),
-where $\mathbf{p}^{(0)}$ is the initial distribution.
+% \section{Markov chains}
+% A \emph{Markov chain} is a discrete random process with the property that the next state depends only on the current state.
+% Let $X_1,X_2,\ldots$ be a sequence of random variables generated by the Markov process.
+% Then there is a transition matrix $\mathbf{P} = (p_{ij})$, with $p_{ij} = \Pr(X_n = i | X_{n-1} = j)$,
+% and $\mathbf{p}^{(n)} = \mathbf P^n \mathbf p^{(0)}$ is the probability distribution for $X_n$ (i.e., $p^{(n)}_i = \Pr(X_n = i)$),
+% where $\mathbf{p}^{(0)}$ is the initial distribution.
 
 % \subsubsection{Stationary distribution}
-$\mathbf{\pi}$ is a stationary distribution if $\mathbf{\pi} = \mathbf{\pi P}$.
-If the Markov chain is \emph{irreducible} (it is possible to get to any state from any state),
-then $\pi_i = \frac{1}{\mathbb{E}(T_i)}$ where $\mathbb{E}(T_i)$  is the expected time between two visits in state $i$.
-$\pi_j/\pi_i$ is the expected number of visits in state $j$ between two visits in state $i$.
+% $\mathbf{\pi}$ is a stationary distribution if $\mathbf{\pi} = \mathbf{\pi P}$.
+% If the Markov chain is \emph{irreducible} (it is possible to get to any state from any state),
+% then $\pi_i = \frac{1}{\mathbb{E}(T_i)}$ where $\mathbb{E}(T_i)$  is the expected time between two visits in state $i$.
+% $\pi_j/\pi_i$ is the expected number of visits in state $j$ between two visits in state $i$.
 
-For a connected, undirected and non-bipartite graph, where the transition probability is uniform among all neighbors, $\pi_i$ is proportional to node $i$'s degree. \textbf{(IMPORTANT)} % https://codeforces.com/gym/101081/problem/B
+% For a connected, undirected and non-bipartite graph, where the transition probability is uniform among all neighbors, $\pi_i$ is proportional to node $i$'s degree. \textbf{(IMPORTANT)} % https://codeforces.com/gym/101081/problem/B
 
-% \subsubsection{Ergodicity}
-A Markov chain is \emph{ergodic} if the asymptotic distribution is independent of the initial distribution.
-A finite Markov chain is ergodic iff it is irreducible and \emph{aperiodic} (i.e., the gcd of cycle lengths is 1).
-$\lim_{k\rightarrow\infty}\mathbf{P}^k = \mathbf{1}\pi$.
+% % \subsubsection{Ergodicity}
+% A Markov chain is \emph{ergodic} if the asymptotic distribution is independent of the initial distribution.
+% A finite Markov chain is ergodic iff it is irreducible and \emph{aperiodic} (i.e., the gcd of cycle lengths is 1).
+% $\lim_{k\rightarrow\infty}\mathbf{P}^k = \mathbf{1}\pi$.
 
 \begin{comment}
 % \subsubsection{Absorption}

@@ -4,14 +4,14 @@
  * Verification: https://cses.fi/problemset/task/1197/
  */
 
-vi negCyc(int n, vector<pair<pi,int>> ed) {
-	vl d(n); vi p(n); int x = -1;
-	F0R(i,n) {
+vi negCyc(int N, V<pair<pi,int>> ed) {
+	vl d(N); vi p(N); int x = -1;
+	rep(N) {
 		x = -1; each(t,ed) if (ckmin(d[t.f.s],d[t.f.f]+t.s))
 			p[t.f.s] = t.f.f, x = t.f.s;
 		if (x == -1) return {};
 	}
-	F0R(i,n) x = p[x]; // enter cycle
+	rep(N) x = p[x]; // enter cycle
 	vi cyc = {x}; while (p[cyc.bk] != x) cyc.pb(p[cyc.bk]);
 	reverse(all(cyc)); return cyc;
 }

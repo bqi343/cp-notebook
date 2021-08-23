@@ -10,10 +10,10 @@
 
 #include "DSU (7.6).h"
 
-// Use standard MST algorithm on the result to find the final MST.
-vector<pair<int,pi>> manhattanMst(vpi v) {
+// use standard MST algorithm on result to find final MST
+V<pair<int,pi>> manhattanMst(vpi v) {
 	vi id(sz(v)); iota(all(id),0);
-	vector<pair<int,pi>> ed;
+	V<pair<int,pi>> ed;
 	F0R(k,4) {
 		sort(all(id),[&](int i, int j) { 
 			return v[i].f+v[i].s < v[j].f+v[j].s; });

@@ -19,7 +19,6 @@
  */
 
 using ul = uint64_t; 
-
 struct Precalc {
 	ul tmp[64][64], y[8][8][256];
 	unsigned char x[256][256];
@@ -43,9 +42,10 @@ struct Precalc {
 	// 2^{8*i}*(a>>(8*i)&255) * 2^{8*j}*(b>>(8*j)&255)
 	// -> (2^{8*i}*2^{8*j})*((a>>(8*i)&255)*(b>>(8*j)&255))
 	ul multFast(ul a, ul b) const { // faster nim product
-		ul res = 0; auto f = [](ul c, int d) { return c>>(8*d)&255; };
+		ul res = 0; auto f=[](ul c,int d) {return c>>(8*d)&255;};
 		F0R(i,8) {
-			F0R(j,i) res ^= y[i][j][x[f(a,i)][f(b,j)]^x[f(a,j)][f(b,i)]];
+			F0R(j,i) res ^= y[i][j][x[f(a,i)][f(b,j)]
+							^x[f(a,j)][f(b,i)]];
 			res ^= y[i][i][x[f(a,i)][f(b,i)]];
 		}
 		return res;

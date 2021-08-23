@@ -26,7 +26,7 @@ T eval(const poly& p, T x) { // evaluate at point x
 poly dif(const poly& p) { // differentiate
 	poly res; FOR(i,1,sz(p)) res.pb(T(i)*p[i]); 
 	return res; }
-poly integ(const poly& p) { // integratepoly integ(const poly& p) { // integrate
+poly integ(const poly& p) { // integrate
 	static poly invs{0,1};
 	for (int i = sz(invs); i <= sz(p); ++i) 
 		invs.pb(-MOD/i*invs[MOD%i]);
@@ -68,14 +68,16 @@ pair<poly,poly> quoRem(poly a, poly b) {
 	each(t,a) t *= lst;
 	return {q,a}; // quotient, remainder
 }
-poly operator/(const poly& a, const poly& b) { return quoRem(a,b).f; }
-poly operator%(const poly& a, const poly& b) { return quoRem(a,b).s; }
-/**poly a = {1,3,5,8,6,0,0,0,0}, b = {1,5,1};
-ps(quoRem(a,b)); a = 2*a, b = 2*b; ps(quoRem(a,b));*/
-poly gcd(poly a, poly b) { return b == poly{} ? a : gcd(b,a%b); }
+poly operator%(const poly& a, const poly& b) { 
+	return quoRem(a,b).s; }
+/**poly operator/(const poly& a, const poly& b) { 
+	return quoRem(a,b).f; }
+poly a = {1,3,5,8,6,0,0,0,0}, b = {1,5,1};
+ps(quoRem(a,b)); a = 2*a, b = 2*b; ps(quoRem(a,b));
+poly gcd(poly a, poly b) { return b == poly{} ? a : gcd(b,a%b); }*/
 T resultant(poly a, poly b) { // R(A,B)
 	// =b_m^n*prod_{j=1}^mA(mu_j)
-	// =b_m^na_m^n*prod_{i=1}^nprod_{j=1}^m(mu_j-lambda_i)
+	// =b_m^na_n^m*prod_{i=1}^nprod_{j=1}^m(mu_j-lambda_i)
 	// =(-1)^{mn}a_n^m*prod_{i=1}^nB(lambda_i)
 	// =(-1)^{nm}R(B,A)
 	// Also, R(A,B)=b_m^{deg(A)-deg(A-CB)}R(A-CB,B)

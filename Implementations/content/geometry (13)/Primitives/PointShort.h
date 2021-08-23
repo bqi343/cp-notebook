@@ -5,11 +5,12 @@
  * Verification: various
  */
 
-using T = ld;
+using T = db; // or ll
+const T EPS = 1e-9; // adjust as needed
+using P = pair<T,T>; using vP = V<P>; using Line = pair<P,P>;
 int sgn(T a) { return (a>0)-(a<0); }
 T sq(T a) { return a*a; }
 
-typedef pair<T,T> P; typedef vector<P> vP;
 T norm(P p) { return sq(p.f)+sq(p.s); }
 T abs(P p) { return sqrt(norm(p)); }
 T arg(P p) { return atan2(p.s,p.f); }

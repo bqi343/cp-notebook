@@ -4,8 +4,8 @@
  * Verification: various
  */
 
-using T = db; // or long long
-const T EPS = 1e-9; // might want to change
+using T = db; // or ll
+const T EPS = 1e-9; // adjust as needed
 using P = pair<T,T>; using vP = V<P>; using Line = pair<P,P>;
 int sgn(T a) { return (a>EPS)-(a<-EPS); }
 T sq(T a) { return a*a; }
@@ -50,5 +50,5 @@ P reflect(const P& p, const Line& l) {
 	return a+conj((p-a)/d)*d; }
 P foot(const P& p, const Line& l) { 
 	return (p+reflect(p,l))/(T)2; }
-bool p_on_seg(const P& p, const Line& l) {
+bool onSeg(const P& p, const Line& l) {
 	return sgn(cross(l.f,l.s,p)) == 0 && sgn(dot(p-l.f,p-l.s)) <= 0; }

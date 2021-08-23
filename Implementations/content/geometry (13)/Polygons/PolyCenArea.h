@@ -9,10 +9,9 @@
 #include "../Primitives/Point.h"
 
 pair<P,T> cenArea(const vP& v) { 
-	P cen(0,0); T area = 0; 
+	P cen{}; T area{}; 
 	F0R(i,sz(v)) {
 		int j = (i+1)%sz(v); T a = cross(v[i],v[j]);
-		cen += a*(v[i]+v[j]); area += a;
-	}
-	return {cen/area/(T)3,area/2};
+		cen += a*(v[i]+v[j]); area += a; }
+	return {cen/area/(T)3,area/2}; // area is SIGNED
 }

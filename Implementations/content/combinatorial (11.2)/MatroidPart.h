@@ -11,7 +11,7 @@
  struct Gmat { // graphic matroid
 	int V = 0; vpi ed; DSU D;
 	vi depth;
-	vector<vpi> adj;
+	V<vpi> adj;
 	vpi pre;
 	Gmat(vpi ed):ed(ed) {
 		map<int,int> m; each(t,ed) m[t.f] = m[t.s] = 0;
@@ -52,7 +52,7 @@
 
 template<class M> struct MatroidPart {
 	int n,k; vi iset; 
-	vector<M> m;
+	V<M> m;
 	bool augment(int st) {
 		F0R(i,k) m[i].clear();
 		F0R(i,n) if (iset[i] != -1) m[iset[i]].ins(i);
@@ -76,10 +76,10 @@ template<class M> struct MatroidPart {
 		m.assign(k,_m); F0R(i,k) m[i].clear();
 		int cur = 0;
 		F0R(j,k) F0R(i,n) if (iset[i] == -1 && m[j].indep(i)) 
-			iset[i] = j, m[j].ins(i), cur ++;
+			iset[i] = j, m[j].ins(i), ++cur;
 		int lef = n-cur;
 		F0R(i,n) if (iset[i] == -1) {
-			cur += augment(i); lef --;
+			cur += augment(i); --lef;
 			if (cur == des || cur+lef < des) break;
 		}
 	}

@@ -8,9 +8,9 @@
 		Let $g_S(n)$ be the number of $n$-permutations whose cycle lengths all belong to the set $S$. Then
 		$$\sum_{n=0} ^\infty g_S(n) \frac{x^n}{n!} = \exp\left(\sum_{n\in S} \frac{x^n} {n} \right)$$
 
-	\subsection{Derangements}
-		Permutations of a set such that none of the elements appear in their original position.
-		\[ \mkern-2mu D(n) = (n-1)(D(n-1)+D(n-2)) = n D(n-1)+(-1)^n = \left\lfloor\frac{n!}{e}\right\rceil \]
+	% \subsection{Derangements}
+	% 	Permutations of a set such that none of the elements appear in their original position.
+	% 	\[ \mkern-2mu D(n) = (n-1)(D(n-1)+D(n-2)) = n D(n-1)+(-1)^n = \left\lfloor\frac{n!}{e}\right\rceil \]
 
 	\subsection{Burnside's lemma} % https://open.kattis.com/problems/littletoys
 		Given a group $G$ of symmetries and a set $X$, the number of elements of $X$ \emph{up to symmetry} equals
@@ -20,8 +20,8 @@
 		 If $f(n)$ counts ``configurations'' (of some sort) of length $n$, we can ignore rotational symmetry using $G = \mathbb Z_n$ to get
 		 \[ g(n) = \frac 1 n \sum_{k=0}^{n-1}{f(\text{gcd}(n, k))} = \frac 1 n \sum_{k|n}{f(k)\phi(n/k)}. \]
 
-	\kactlimport{IntPerm.h}
-	\kactlimport{PermGroup.h}
+	% \kactlimport{IntPerm.h}
+	% \kactlimport{PermGroup.h}
 
 \section{Partitions and subsets}
 	\subsection{Partition function}
@@ -162,7 +162,7 @@ Let $d_k(\sigma),a_k(\sigma)$ be the lengths of the longest subseqs which are a 
 % 300iq Disjoint LIS
 % msg camp 2014 "sequence shape"
 
-	\kactlimport{RSK.h}
+	% \kactlimport{RSK.h}
 	% \kactlimport{RSKrecover.h}
 
 \section{Other}

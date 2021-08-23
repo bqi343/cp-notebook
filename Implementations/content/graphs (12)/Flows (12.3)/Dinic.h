@@ -14,13 +14,14 @@ struct Dinic {
 	struct Edge { int to, rev; F flo, cap; };
 	int N; V<V<Edge>> adj;
 	void init(int _N) { N = _N; adj.rsz(N); }
-	/// void reset() { F0R(i,N) each(e,adj[i]) e.flo = 0; }
-	void ae(int a, int b, F cap, F rcap = 0) { assert(min(cap,rcap) >= 0); 
+	void reset() { F0R(i,N) each(e,adj[i]) e.flo = 0; }
+	void ae(int a, int b, F cap, F rcap = 0) { 
+		assert(min(cap,rcap) >= 0); // saved me > once
 		adj[a].pb({b,sz(adj[b]),0,cap});
 		adj[b].pb({a,sz(adj[a])-1,0,rcap});
 	}
 	vi lev, ptr;
-	bool bfs(int s, int t) { // level = shortest distance from source
+	bool bfs(int s, int t) { // level=shortest dist from source
 		lev = ptr = vi(N);
 		lev[s] = 1; queue<int> q({s});
 		while (sz(q)) { int u = q.ft; q.pop();

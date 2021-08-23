@@ -7,24 +7,22 @@
  */
 
 template<int SZ> struct Sieve { 
-	bitset<SZ> pri; vi pr;
-	Sieve() { // cum[i] = # of primes up to i
-		pri.set(); pri[0] = pri[1] = 0;
-		for (int i = 4; i < SZ; i += 2) pri[i] = 0;
-		for (int i = 3; i*i < SZ; i += 2) if (pri[i])
-			for (int j = i*i; j < SZ; j += i*2) pri[j] = 0;
-		F0R(i,SZ) if (pri[i]) pr.pb(i);
+	bitset<SZ> is_prime; vi primes;
+	Sieve() {
+		is_prime.set(); is_prime[0] = is_prime[1] = 0;
+		for (int i = 4; i < SZ; i += 2) is_prime[i] = 0;
+		for (int i = 3; i*i < SZ; i += 2) if (is_prime[i])
+			for (int j = i*i; j < SZ; j += i*2) is_prime[j] = 0;
+		F0R(i,SZ) if (is_prime[i]) primes.pb(i);
 	}
-	/*int sp[SZ]; // smallest prime that divides
-	Sieve() { // above is faster
-		memset(sp,0,sizeof sp);
-		FOR(i,2,SZ) { 
-			if (sp[i] == 0) sp[i] = i, pr.pb(i); 
-			each(p,pr) {
-				if (p > sp[i] || i*p >= SZ) break;
-				sp[i*p] = p;
-			}
-		}
-	}*/
+	// int sp[SZ]{}; // smallest prime that divides
+	// Sieve() { // above is faster
+	// 	FOR(i,2,SZ) { 
+	// 		if (sp[i] == 0) sp[i] = i, primes.pb(i); 
+	// 		for (int p: primes) {
+	// 			if (p > sp[i] || i*p >= SZ) break;
+	// 			sp[i*p] = p;
+	// 		}
+	// 	}
+	// }
 };
-Sieve<320000> S;

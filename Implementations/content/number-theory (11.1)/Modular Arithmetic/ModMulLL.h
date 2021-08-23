@@ -7,7 +7,7 @@
  */
 
 /// using db = long double;
-using ul = unsigned long long;
+using ul = uint64_t;
 ul modMul(ul a, ul b, const ul mod) {
 	ll ret = a*b-mod*(ul)((db)a*b/mod);
 	return ret+((ret<0)-(ret>=(ll)mod))*mod; }

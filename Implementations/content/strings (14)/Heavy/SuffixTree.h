@@ -10,21 +10,29 @@
 
 struct SuffixTree {
 	str s; int N = 0;
-	vi pos, len, lnk; vector<map<char,int>> to;
-	int make(int POS, int LEN) { // lnk[x] is meaningful when x!=0 and len[x] != MOD
-		pos.pb(POS); len.pb(LEN); lnk.pb(-1); to.eb(); return N++; }
-	void add(int& p, int& lef, char c) { // our longest non-unique suffix is at node p with lef extra chars
-		s += c; lef ++; int lst = 0;
-		for (;lef;p?p=lnk[p]:lef--) { // if p is not root then lnk[p] must be defined
-			while (lef>1 && lef>len[to[p][s[sz(s)-lef]]]) // traverse edges of suffix tree while you can
+	vi pos, len, lnk; V<map<char,int>> to;
+	int make(int POS, int LEN) { // lnk[x] is meaningful when
+		// x!=0 and len[x] != MOD
+		pos.pb(POS);len.pb(LEN);lnk.pb(-1);to.eb();return N++; }
+	void add(int& p, int& lef, char c) { // longest
+		// non-unique suffix is at node p with lef extra chars
+		s += c; ++lef; int lst = 0;
+		for (;lef;p?p=lnk[p]:lef--) { // if p != root then lnk[p]
+			// must be defined
+			while (lef>1 && lef>len[to[p][s[sz(s)-lef]]]) 
 				p = to[p][s[sz(s)-lef]], lef -= len[p]; 
-			char e = s[sz(s)-lef]; int& q = to[p][e]; // next edge of suffix tree
-			if (!q) q = make(sz(s)-lef,MOD), lnk[lst] = p, lst = 0; // make new edge
+			// traverse edges of suffix tree while you can
+			char e = s[sz(s)-lef]; int& q = to[p][e];
+			// next edge of suffix tree
+			if (!q) q = make(sz(s)-lef,MOD), lnk[lst] = p, lst = 0;
+			// make new edge
 			else {
 				char t = s[pos[q]+lef-1]; 
-				if (t == c) { lnk[lst] = p; return; } // suffix is not unique, done
-				int u = make(pos[q],lef-1); // new node for the current suffix - 1, define its link
-				to[u][c] = make(sz(s)-1,MOD); to[u][t] = q; // new node, old node
+				if (t == c) { lnk[lst] = p; return; } // suffix not unique
+				int u = make(pos[q],lef-1); 
+				// new node for current suffix-1, define its link
+				to[u][c] = make(sz(s)-1,MOD); to[u][t] = q; 
+				// new, old nodes
 				pos[q] += lef-1; if (len[q] != MOD) len[q] -= lef-1;
 				q = u, lnk[lst] = u, lst = u;
 			}

@@ -52,11 +52,11 @@ namespace ExprParse {
 		int state = -1;
 		while (ind < sz(expr)) {
 			if (expr[ind] == ')') {
-				ind ++;
+				++ind;
 				if (cur == 0) return -1;
 				return finish(state,num,op);
 			} else if (expr[ind] == '(') {
-				ind ++;
+				++ind;
 				num.pb(eval(1)); if (num.bk == -1) return -1;
 				if (state == 0) return -1;
 				state = 0;
@@ -64,7 +64,7 @@ namespace ExprParse {
 				int val = 0;
 				while (ind < sz(expr) && isdigit(expr[ind])) {
 					val = (10LL*val+(expr[ind]-'0')) % MOD;
-					ind ++;
+					++ind;
 				}
 				num.pb(val);
 				if (state == 0) return -1;
@@ -77,7 +77,7 @@ namespace ExprParse {
 				op.pb(expr[ind]);
 				if (state != 0) return -1;
 				state = 1;
-				ind ++;
+				++ind;
 			}
 		}
 		

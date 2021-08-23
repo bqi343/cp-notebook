@@ -1,5 +1,5 @@
 /**
- * Description: Recursive FKM, given alphabet $[0,k)$ constructs cyclic string 
+ * Description: Given alphabet $[0,k)$ constructs a cyclic string 
  	* of length $k^n$ that contains every length $n$ string as substr. 
  * Source: https://github.com/koosaga/DeobureoMinkyuParty/blob/master/teamnote.tex
  	* https://en.wikipedia.org/wiki/De_Bruijn_sequence
@@ -7,16 +7,16 @@
  * Verification: https://codeforces.com/gym/102001/problem/C
  */ 
 
-vi dseq(int k, int n) { 
+vi deBruijnSeq(int k, int n) { /// Recursive FKM 
 	if (k == 1) return {0};
-	vi res, aux(n+1); 
+	vi seq, aux(n+1); 
 	function<void(int,int)> gen = [&](int t, int p) {
-		if (t > n) { // consider lyndon word of len p
-			if (n%p == 0) FOR(i,1,p+1) res.pb(aux[i]); 
+		if (t > n) { // +lyndon word of len p
+			if (n%p == 0) FOR(i,1,p+1) seq.pb(aux[i]); 
 		} else {
 			aux[t] = aux[t-p]; gen(t+1,p);
-			FOR(i,aux[t-p]+1,k) aux[t] = i, gen(t+1,t);
+			while (++aux[t] < k) gen(t+1,t);
 		}
 	};
-	gen(1,1); return res;
+	gen(1,1); return seq;
 }

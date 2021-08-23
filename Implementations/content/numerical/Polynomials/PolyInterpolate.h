@@ -8,9 +8,9 @@
 
  #include "Poly.h"
 
-poly interpolate(vector<pair<T,T>> v) {
-	int n = sz(v); poly res, tmp = {1};
-	F0R(i,n) { T prod = 1; // modify poly for previous i points
+poly interpolate(V<pair<T,T>> v) {
+	poly res, tmp = {1};
+	F0R(i,sz(v)) { T prod = 1; // modify poly for previous i points
 		F0R(j,i) v[i].s -= prod*v[j].s, prod *= v[i].f-v[j].f;
 		v[i].s /= prod; res += v[i].s*tmp; tmp *= poly{-v[i].f,1};
 	} // add multiple of (x-v[0].f)*(x-v[1].f)*...*(x-v[i-1].f)

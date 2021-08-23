@@ -7,16 +7,16 @@
  * Verification: http://www.spoj.com/problems/ORDERSET/
  */
 
-typedef struct tnode* pt;
+using pt = struct tnode*;
 struct tnode {
 	int pri, val; pt c[2]; // essential
 	int sz; ll sum; // for range queries
 	bool flip = 0; // lazy update
 	tnode (int _val) {
 		pri = rng(); sum = val = _val; 
-		sz = 1; c[0] = c[1] = NULL;
+		sz = 1; c[0] = c[1] = nullptr;
 	}
-	~tnode() { F0R(i,2) delete c[i]; } // assume no sharing of data
+	~tnode() { F0R(i,2) delete c[i]; } /// assume no sharing of data
 };
 int getsz(pt x) { return x?x->sz:0; }
 ll getsum(pt x) { return x?x->sum:0; }
@@ -59,7 +59,7 @@ pair<pt,pt> splitsz(pt t, int sz) { // sz nodes go to left
 		return {calc(t),p.s};
 	}
 }
-pt merge(pt l, pt r) { // merge treaps, keys in left < keys in right
+pt merge(pt l, pt r) { //  keys in l < keys in r
 	if (!l || !r) return l?:r;
 	prop(l), prop(r); pt t;
 	if (l->pri > r->pri) l->c[1] = merge(l->c[1],r), t = l;

@@ -8,7 +8,7 @@
 
 #include "Circle.h"
 
-vP isect(const Circ& x, const Circ& y) { // precondition: x != y
+vP isect(const Circ& x, const Circ& y) { // precondition: x!=y
 	T d = abs(x.f-y.f), a = x.s, b = y.s; 
 	if (sgn(d) == 0) { assert(a != b); return {}; }
 	T C = (a*a+d*d-b*b)/(2*a*d); 

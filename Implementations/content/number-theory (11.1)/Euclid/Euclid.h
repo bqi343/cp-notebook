@@ -9,18 +9,23 @@
  * Verification: https://codeforces.com/gym/102411/problem/G
  */
 
-pl euclid(ll A, ll B) { // find (x,y) such that $Ax+By=\gcd(A,B)$, $|Ax|,|By|\le \frac{AB}{\gcd(A,B)}$
+// ceil(a/b)
+// ll cdiv(ll a, ll b) { return a/b+((a^b)>0&&a%b); }
+pl euclid(ll A, ll B) { // For A,B>=0, finds (x,y) s.t.
+	// Ax+By=gcd(A,B), |Ax|,|By|<=AB/gcd(A,B)
 	if (!B) return {1,0};
 	pl p = euclid(B,A%B); return {p.s,p.f-A/B*p.s}; }
-ll invGen(ll A, ll B) { // find x in [0,B) such that Ax = 1 mod B
-	pl p = euclid(A,B); assert(p.f*A+p.s*B == 1); // gcd must be 1
-	return p.f+(p.f<0)*B; }
-ll bet(ll A, ll B, ll L, ll R) { // min x s.t. exists y s.t. L <= A*x-B*y <= R
+ll invGen(ll A, ll B) { // find x in [0,B) such that Ax=1 mod B
+	pl p = euclid(A,B); assert(p.f*A+p.s*B == 1);
+	return p.f+(p.f<0)*B; } // must have gcd(A,B)=1
+ll bet(ll A, ll B, ll L, ll R) { // min x s.t.
+	// exists y s.t. L <= A*x-B*y <= R
 	A %= B;
 	if (L == 0) return 0;
 	if (A == 0) return -1;
 	ll k = cdiv(L,A); if (A*k <= R) return k;
-	ll x = bet(B,A,A-R%A,A-L%A); // find min x s.t. exists y s.t. -R <= Bx-Ay <= -L
+	ll x = bet(B,A,A-R%A,A-L%A); // min x s.t. exists y 
+	// s.t. -R <= Bx-Ay <= -L
 	return x == -1 ? x : cdiv(B*x+L,A); // solve for y
 }
 
@@ -42,8 +47,6 @@ ll min_rem(ll A, ll B, ll C, ll M) {
 	// now minimize A*x-new_B*y+C
 	// where 0 <= x,y and x+q*y <= M, 0 <= C < new_B < A
 	// q*y -> C-new_B*y
-
-	// C-M/q*new_B
 	if (C/new_B > M/q) return C-M/q*new_B;
 	M -= C/new_B*q; C %= new_B; // now C < new_B
 

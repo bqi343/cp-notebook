@@ -11,13 +11,13 @@
 template<int SZ, bool VALS_IN_EDGES> struct HLD { 
 	int N; vi adj[SZ];
 	int par[SZ], root[SZ], depth[SZ], sz[SZ], ti;
-	int pos[SZ]; vi rpos; // rpos not used, but could be useful
+	int pos[SZ]; vi rpos; // rpos not used but could be useful
 	void ae(int x, int y) { adj[x].pb(y), adj[y].pb(x); }
 	void dfsSz(int x) { 
 		sz[x] = 1; 
 		each(y,adj[x]) {
 			par[y] = x; depth[y] = depth[x]+1;
-			adj[y].erase(find(all(adj[y]),x)); // remove parent from adj list
+			adj[y].erase(find(all(adj[y]),x)); /// remove parent from adj list
 			dfsSz(y); sz[x] += sz[y];
 			if (sz[y] > sz[adj[x][0]]) swap(y,adj[x][0]);
 		}

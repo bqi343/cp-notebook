@@ -51,7 +51,8 @@ void inp(vi& v) {
 }
 
 void solve(int tc) {
-	cerr << "Doing TC #" << tc << " " << (db)(clock()-beg)/CLOCKS_PER_SEC << "\n";
+    // cerr << "Doing TC #" << tc << endl;
+    // dbg_time();
 	${0}
 }
 
@@ -70,10 +71,9 @@ int main() {
 ```
 // make sure to intialize ALL GLOBAL VARS between tcs!
 
-clock_t beg = clock();
-
 void solve(int tc) {
-	// cerr << "Doing TC #" << tc << " " << (db)(clock()-beg)/CLOCKS_PER_SEC << "\n";
+    // cerr << "Doing TC #" << tc << endl;
+    // dbg_time();
 	${0}
 }
 

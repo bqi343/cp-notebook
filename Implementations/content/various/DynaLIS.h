@@ -116,7 +116,7 @@ void INS(int ind, pt p) { // OK
 void ins(int x) {
 	assert(!in[x]); in[x] = 1;
 	int ind = 0; 
-	while (ind+1 < sz(v) && minY(v[ind+1],x) < c[x]) ind ++;
+	while (ind+1 < sz(v) && minY(v[ind+1],x) < c[x]) ++ind;
 	INS(ind+1,new tnode(x));
 }
 

@@ -8,7 +8,7 @@
 #include "../Primality/FactorBasic.h"
 
 ll order(ll x, ll p) {
-	if (__gcd(x,p) != 1) return 0;
+	if (gcd(x,p) != 1) return 0;
 	ll P = phi(p); auto a = factor(P);
 	each(t,a) while (P % t.f == 0 
 		&& modPow(x,P/t.f,p) == 1) P /= t.f;

@@ -11,7 +11,7 @@ vi z(str s) {
 	vi ans(N); ans[0] = N; 
 	FOR(i,1,N) {
 		if (i <= R) ans[i] = min(R-i+1,ans[i-L]);
-		while (s[i+ans[i]] == s[ans[i]]) ans[i] ++;
+		while (s[i+ans[i]] == s[ans[i]]) ++ans[i];
 		if (i+ans[i]-1 > R) L = i, R = i+ans[i]-1;
 	}
 	return ans;

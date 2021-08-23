@@ -1,6 +1,5 @@
 /**
- * Description: 2D matrix operations. Use array instead of 
- 	* vector when possible.
+ * Description: 2D matrix operations.
  * Source: KACTL
  * Verification: https://dmoj.ca/problem/si17c1p5, SPOJ MIFF
  */
@@ -8,9 +7,9 @@
 #include "../../number-theory (11.1)/Modular Arithmetic/ModInt.h"
 
 using T = mi;
-using Mat = V<V<T>>;
+using Mat = V<V<T>>; // use array instead if tight TL
 
-Mat makeMat(int r, int c) { return Mat(r,vector<T>(c)); }
+Mat makeMat(int r, int c) { return Mat(r,V<T>(c)); }
 Mat makeId(int n) { 
 	Mat m = makeMat(n,n);
 	F0R(i,n) m[i][i] = 1;

@@ -7,30 +7,33 @@
  	* also see B from https://codeforces.com/gym/101657/standings
  */
 
-str A,B; V<vi> dp, dir; // DP values for normal LCS, which direction values came from
-void init() {
+str A,B; V<vi> dp, dir; // DP values for normal LCS, 
+void init() { // + which direction values came from
 	dp = dir = V<vi>(sz(A)+1,vi(sz(B)+1));
 	FOR(i,1,sz(A)+1) FOR(j,1,sz(B)+1) {
 		dp[i][j] = dp[i-1][j];
-		if (A[i-1] == B[j-1] && ckmax(dp[i][j],dp[i-1][j-1]+1)) dir[i][j] = 1;
+		if (A[i-1] == B[j-1] && ckmax(dp[i][j],dp[i-1][j-1]+1)) 
+			dir[i][j] = 1;
 		if (ckmax(dp[i][j],dp[i][j-1])) dir[i][j] = 2;
 	}
 }
 int get_ans(pi p) { // get current LCS
 	int ans = 0;
 	while (p.f) {
-		if (dir[p.f][p.s] == 2) p.s --;
-		else if (dir[p.f][p.s] == 1) p.f --, p.s --, ans ++;
-		else p.f --;
+		if (dir[p.f][p.s] == 2) --p.s;
+		else if (dir[p.f][p.s] == 1) --p.f, --p.s, ++ans;
+		else --p.f;
 	}
 	return ans;
 }
-void remove_char(int ind) { // remove column of DP table, fix dirs
-	for (pi cur{0,ind}; cur.s < sz(B);) { // decrease some suffix of each column
-		if (dir[cur.f][cur.s+1] == 2) dir[cur.f][++cur.s] = 0; // move to next column
-		else {
+void remove_char(int ind) { // remove column of DP table
+	for (pi cur{0,ind};cur.s<sz(B);) {
+		// decrease suffix of each column
+		// move to next column
+		if (dir[cur.f][cur.s+1] == 2) dir[cur.f][++cur.s] = 0; 
+		else { // move to next column, increase by one
 			if (cur.f == sz(A)) break;
-			if (dir[++cur.f][cur.s+1] == 1) dir[cur.f][++cur.s] = 0; // move to next column, increase by one
+			if (dir[++cur.f][cur.s+1] == 1) dir[cur.f][++cur.s] = 0; 
 		}
 	}
 }

@@ -3,7 +3,7 @@ using namespace std;
  
 using ll = long long;
 using db = long double; // or double, if TL is tight
-using str = string; // yay python! 
+using str = string; // yay python!
 
 using pi = pair<int,int>;
 using pl = pair<ll,ll>;
@@ -12,10 +12,10 @@ using pd = pair<db,db>;
 using vi = vector<int>;
 using vb = vector<bool>;
 using vl = vector<ll>;
-using vd = vector<db>;
+using vd = vector<db>; 
 using vs = vector<str>;
 using vpi = vector<pi>;
-using vpl = vector<pl>;
+using vpl = vector<pl>; 
 using vpd = vector<pd>;
 
 #define tcT template<class T
@@ -47,7 +47,7 @@ tcT> using PR = pair<T,T>;
 #define rtn return
 
 #define lb lower_bound
-#define ub upper_bound
+#define ub upper_bound 
 tcT> int lwb(V<T>& a, const T& b) { return int(lb(all(a),b)-bg(a)); }
 tcT> int upb(V<T>& a, const T& b) { return int(ub(all(a),b)-bg(a)); }
 
@@ -61,9 +61,9 @@ tcT> int upb(V<T>& a, const T& b) { return int(ub(all(a),b)-bg(a)); }
 
 const int MOD = 1e9+7; // 998244353;
 const int MX = 2e5+5;
-const ll BIG = 1e18; // not too close to LLONG_MAX
+const ll INF = 1e18; // not too close to LLONG_MAX
 const db PI = acos((db)-1);
-const int dx[4]{1,0,-1,0}, dy[4]{0,1,0,-1}; // for every grid problem!!
+const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1}; // for every grid problem!!
 mt19937 rng((uint32_t)chrono::steady_clock::now().time_since_epoch().count()); 
 template<class T> using pqg = priority_queue<T,vector<T>,greater<T>>;
 

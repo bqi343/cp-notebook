@@ -8,7 +8,7 @@
 #include "../Primitives/Point.h"
 
 pair<P,P> solve(vP v) {
-	pair<ld,pair<P,P>> bes; bes.f = INF;
+	pair<db,pair<P,P>> bes; bes.f = INF;
 	set<P> S; int ind = 0;
 	sort(all(v));
 	F0R(i,sz(v)) {

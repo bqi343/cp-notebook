@@ -11,14 +11,12 @@
 #include "../Primitives/Point.h"
 
 /**
-using T = ld;
+using T = db;
 int sgn(T x) { return (x>0)-(x<0); }
 T sq(T x) { return x*x; }
 */
 
-typedef array<T,3> P3;
-typedef array<P3,3> tri;
-typedef vector<P3> vP3;
+using P3 = AR<T,3>; using Tri = AR<P3,3>; using vP3 = V<P3>;
 T norm(const P3& x) { 
 	T sum = 0; F0R(i,3) sum += sq(x[i]);
 	return sum; }
@@ -70,8 +68,8 @@ bool op(const P3& a, const P3& b) {
 // coplanar points, b0 and b1 on opposite sides of a0-a1?
 bool opSide(const P3&a,const P3&b,const P3&c,const P3&d) { 
 	return op(cross(a,b,c),cross(a,b,d)); }
-// coplanar points, is a in triangle b
-bool inTri(const P3& a, const tri& b) { 
+// coplanar points, is a in Triangle b
+bool inTri(const P3& a, const Tri& b) { 
 	F0R(i,3)if(opSide(b[i],b[(i+1)%3],b[(i+2)%3],a))return 0;
 	return 1; }
 
@@ -91,11 +89,11 @@ P3 rotAxis(const P3& p, const P3& a, const P3& b, T theta) {
 	return f+cos(theta)*dx+sin(theta)*dy;
 }
 // projection onto plane
-P3 foot(const P3& a, const tri& b) {
+P3 foot(const P3& a, const Tri& b) {
 	P3 c = perp(b[0],b[1],b[2]);
 	return a-c*(dot(a,c)-dot(b[0],c)); }
 // line-plane intersection
-P3 lpIntersect(const P3&a0,const P3&a1,const tri&b) { 
+P3 lpIntersect(const P3&a0,const P3&a1,const Tri&b) { 
 	P3 c = unit(cross(b[2]-b[0],b[1]-b[0]));
 	T x = dot(a0,c)-dot(b[0],c), y = dot(a1,c)-dot(b[0],c);
 	return (y*a0-x*a1)/(y-x);

@@ -10,12 +10,12 @@
  */
 
 vs duval(str s) {
-	int n = sz(s); vs factors;
-	for (int i = 0; i < n; ) {
+	int N = sz(s); vs factors;
+	for (int i = 0; i < N; ) {
 		int j = i+1, k = i;
 		for (; j < n && s[k] <= s[j]; j++) {
 			if (s[k] < s[j]) k = i;
-			else k ++;
+			else ++k;
 		}
 		for (; i <= k; i += j-k) factors.pb(s.substr(i,j-k));
 	}

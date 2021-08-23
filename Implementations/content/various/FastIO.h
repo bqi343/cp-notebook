@@ -22,13 +22,13 @@ namespace FastIO {
 		char ch; while (isspace(ch = nc()));
 		do { x += ch; } while (!isspace(ch = nc()) && ch != EOF);
 	}
-	template<class T> void ri(T& x) { // read int or ll
+	tcT> void ri(T& x) { // read int or ll
 		char ch; int sgn = 1;
 		while (!isdigit(ch = nc())) if (ch == '-') sgn *= -1;
 		x = ch-'0'; while (isdigit(ch = nc())) x = x*10+(ch-'0');
 		x *= sgn;
 	}
-	template<class T, class... Ts> void ri(T& t, Ts&... ts) { 
+	tcT, class... Ts> void ri(T& t, Ts&... ts) { 
 		ri(t); ri(ts...); } // read ints
 	////// OUTPUT (call initO() at start)
 	char obuf[BSZ], numBuf[100]; int opos;
@@ -37,7 +37,7 @@ namespace FastIO {
 		if (opos == BSZ) flushOut();
 		obuf[opos++] = c; }
 	void ws(str s) { each(c,s) wc(c); } // write str
-	template<class T> void wi(T x, char after = '\0') { /// write int
+	tcT> void wi(T x, char after = '\0') { /// write int
 		if (x < 0) wc('-'), x *= -1;
 		int len = 0; for (;x>=10;x/=10) numBuf[len++] = '0'+(x%10);
 		wc('0'+x); R0F(i,len) wc(numBuf[i]);

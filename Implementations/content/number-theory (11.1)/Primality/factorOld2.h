@@ -18,7 +18,7 @@ ul pollard(ul n) {
 	if (!(n&1)) return 2;
 	for (ul i = 2;;++i) {
 		ul x = i, y = f(x), p;
-		while ((p = __gcd(n+y-x,n)) == 1) x = f(x), y = f(f(y));
+		while ((p = gcd(n+y-x,n)) == 1) x = f(x), y = f(f(y));
 		if (p != n) return p;
 	}
 }

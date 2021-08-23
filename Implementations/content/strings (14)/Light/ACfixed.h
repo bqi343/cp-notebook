@@ -9,8 +9,8 @@
 
 struct ACfixed { // fixed alphabet
 	static const int ASZ = 26;
-	struct node { array<int,ASZ> to; int link; };
-	vector<node> d = {{}};
+	struct node { AR<int,ASZ> to; int link; };
+	V<node> d = {{}};
 	int add(str s) { // add word
 		int v = 0;
 		each(C,s) {

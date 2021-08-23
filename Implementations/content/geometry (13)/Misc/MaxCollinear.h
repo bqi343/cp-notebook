@@ -7,7 +7,7 @@
 pair<pi,int> getline(pi a, pi b) {
 	pi z = {b.f-a.f,b.s-a.s};
 	swap(z.f,z.s); z.f *= -1;
-	int g = __gcd(z.f,z.s); z.f /= g, z.s /= g;
+	int g = gcd(z.f,z.s); z.f /= g, z.s /= g;
 	ckmin(z,{-z.f,-z.s});
 	return {z,z.f*a.f+z.s*a.s};
 }

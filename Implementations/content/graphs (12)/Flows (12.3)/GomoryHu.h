@@ -11,18 +11,18 @@
 
 #include "Dinic.h"
 
-template<int SZ> struct GomoryHu {
-	vector<pair<pi,int>> ed; // add undirected edge
+struct GomoryHu {
+	V<pair<pi,int>> ed; // add undirected edge
 	void ae(int a, int b, int c) { ed.pb({{a,b},c}); }
-	vector<pair<pi,int>> init(int N) { 
-		vpi ret(N); Dinic<SZ> D; 
+	V<pair<pi,int>> init(int N) { 
+		vpi ret(N); Dinic D; D.init(N);
 		each(t,ed) D.ae(t.f.f,t.f.s,t.s,t.s);
 		FOR(i,1,N) {
 			D.reset(); ret[i].s = D.maxFlow(N,i,ret[i].f);
 			FOR(j,i+1,N+1) if (ret[j].f == ret[i].f 
 				&& D.lev[j] != -1) ret[j].f = i;
 		}
-		vector<pair<pi,int>> res;
+		V<pair<pi,int>> res;
 		FOR(i,1,N) res.pb({{i,ret[i].f},ret[i].s});
 		return res;
 	}

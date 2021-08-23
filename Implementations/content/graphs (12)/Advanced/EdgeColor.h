@@ -20,12 +20,12 @@ template<int SZ> struct EdgeColor {
 	int delEdge(int a, int b) {
 		int c = adj[a][b]; adj[a][b] = adj[b][a] = 0;
 		return c; }
-	vector<bool> genCol(int x) { 
-		vector<bool> col(N+1); F0R(i,N) col[adj[x][i]] = 1;
+	V<bool> genCol(int x) { 
+		V<bool> col(N+1); F0R(i,N) col[adj[x][i]] = 1;
 		return col; }
 	int freeCol(int u) {
 		auto col = genCol(u); int x = 1; 
-		while (col[x]) x ++; return x; }
+		while (col[x]) ++x; return x; }
 	void invert(int x, int d, int c) {
 		F0R(i,N) if (adj[x][i] == d) 
 			delEdge(x,i), invert(i,c,d), ae(x,i,c); }
@@ -36,7 +36,7 @@ template<int SZ> struct EdgeColor {
 		FOR(i,1,maxDeg+2) if (!a[i] && !b[i]) 
 			return ae(u,v,i); 
 		/// 2. find maximal fan of u starting at v
-		vector<bool> use(N); vi fan = {v}; use[v] = 1;
+		V<bool> use(N); vi fan = {v}; use[v] = 1;
 		while (1) {
 			auto col = genCol(fan.bk);
 			if (sz(fan) > 1) col[adj[fan.bk][u]] = 0;

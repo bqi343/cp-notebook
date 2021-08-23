@@ -17,14 +17,14 @@
 struct PalTree {
 	static const int ASZ = 26;
 	struct node {
-		array<int,ASZ> to = array<int,ASZ>();
+		AR<int,ASZ> to = AR<int,ASZ>();
 		int len, link, oc = 0; // # occurrences of pal
 		int slink = 0, diff = 0;
-		array<int,2> seriesAns;
+		AR<int,2> seriesAns;
 		node(int _len, int _link) : len(_len), link(_link) {}
 	};
-	str s = "@"; vector<array<int,2>> ans = {{0,MOD}};
-	vector<node> d = {{0,1},{-1,0}}; // dummy pals of len 0,-1
+	str s = "@"; V<AR<int,2>> ans = {{0,MOD}};
+	V<node> d = {{0,1},{-1,0}}; // dummy pals of len 0,-1
 	int last = 1;
 	int getLink(int v) {
 		while (s[sz(s)-d[v].len-2] != s.bk) v = d[v].link;
@@ -50,7 +50,7 @@ struct PalTree {
 			z.slink = z.diff == d[z.link].diff 
 				? d[z.link].slink : z.link;
 		} // max suf with different dif
-		last = d[last].to[c]; d[last].oc ++;
+		last = d[last].to[c]; ++d[last].oc;
 		updAns();
 	}
 	void numOc() { ROF(i,2,sz(d)) d[d[i].link].oc += d[i].oc; }

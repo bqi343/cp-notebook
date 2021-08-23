@@ -13,7 +13,7 @@
 #include "../../data-structures/Static Range Queries (9.1)/RMQ (9.1).h"
 
 struct LCA {
-	int N; vector<vi> adj;
+	int N; V<vi> adj;
 	vi depth, pos, par, rev; // rev is for compress
 	vpi tmp; RMQ<pi> r;
 	void init(int _N) { N = _N; adj.rsz(N); 

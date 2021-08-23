@@ -13,7 +13,7 @@
  */
 const db EPS = 1e-12;
 int getRow(V<V<db>>& m, int R, int i, int nex) {
-    pair<db,int> bes = {0,-1}; // find row with max absolute value
+    pair<db,int> bes = {0,-1}; // find row with max abs value
     FOR(j,nex,R) ckmax(bes,{abs(m[j][i]),j}); 
     return bes.f < EPS ? -1 : bes.s; }
 int getRow(V<vmi>& m, int R, int i, int nex) {

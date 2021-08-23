@@ -11,7 +11,7 @@
 
 #include "../Primitives/Point.h"
 
-typedef array<P,2> Line;
+using Line = AR<P,2>;
 #define cmp(i,j) sgn(-dot(dir,poly[(i)%n]-poly[(j)%n]))
 #define extr(i) cmp(i+1,i) >= 0 && cmp(i,i-1+n) < 0
 int extrVertex(const vP& poly, P dir) {
@@ -39,7 +39,7 @@ pair<int,vi> lineHull(Line line, const vP& poly) {
 	if (cmpL(endA) >= 0) return {1,same(line,poly,endA)};
 	int endB = extrVertex(poly,perp(line[1]-line[0])); // highest
 	if (cmpL(endB) <= 0) return {-1,same(line,poly,endB)}; 
-	array<int,2> res;
+	AR<int,2> res;
 	F0R(i,2) {
 		int lo = endA, hi = endB; if (hi < lo) hi += n;
 		while (lo < hi) {

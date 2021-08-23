@@ -16,24 +16,24 @@
 
 struct Gmat { // graphic matroid
 	int V = 0; vpi ed; DSU D;
-	Gmat(vpi ed):ed(ed) {
+	Gmat(vpi _ed):ed(_ed) {
 		map<int,int> m; each(t,ed) m[t.f] = m[t.s] = 0;
 		each(t,m) t.s = V++; 
-		each(t,this->ed) t.f = m[t.f], t.s = m[t.s];
+		each(t,ed) t.f = m[t.f], t.s = m[t.s];
 	}
 	void clear() { D.init(V); }
 	void ins(int i) { assert(D.unite(ed[i].f,ed[i].s)); }
 	bool indep(int i) { return !D.sameSet(ed[i].f,ed[i].s); }
 };
 struct Cmat { // colorful matroid
-	int C = 0; vi col; vector<bool> used;
+	int C = 0; vi col; V<bool> used;
 	Cmat(vi col):col(col) {each(t,col) ckmax(C,t+1); }
 	void clear() { used.assign(C,0); }
 	void ins(int i) { used[col[i]] = 1; }
 	bool indep(int i) { return !used[col[i]]; }
 };
 template<class M1, class M2> struct MatroidIsect {
-	int n; vector<bool> iset; M1 m1; M2 m2;
+	int n; V<bool> iset; M1 m1; M2 m2;
 	bool augment() {
 		vi pre(n+1,-1); queue<int> q({n});
 		while (sz(q)) {

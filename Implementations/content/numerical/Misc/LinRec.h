@@ -22,17 +22,18 @@ struct LinRec {
 		// for all i >= sz(C)-1, [D^i]C*s=0
 		int x = 0; T b = 1;
 		poly B; B = C = {1}; // B is fail vector
-		// for all sz(B)+x-1 <= j < i, [D^j](B<<x)*s=0, but [D^i](B<<x)*s=b
-		// invariant: sz(B)+x = M
+		/// for all sz(B)+x-1 <= j < i, [D^j](B<<x)*s=0
+		/// but [D^i](B<<x)*s=b
+		/// invariant: sz(B)+x = M
 		F0R(i,sz(s)) { // update C after adding a term of s
 			++x; int L = sz(C), M = i+3-L;
 			T d = 0; F0R(j,L) d += C[j]*s[i-j]; // [D^i]C*s
-			if (d == 0) continue; // [D^i]C*s=0, continue
-			poly _C = C; T coef = d/b; // d-coef*b = 0
-			// set C := C-coef*(B<<x) to satisfy condition
+			if (d == 0) continue; // [D^i]C*s=0
+			poly _C = C; T coef = d/b; /// d-coef*b = 0
+			/// set C := C-coef*(B<<x) to satisfy condition
 			C.rsz(max(L,M)); F0R(j,sz(B)) C[j+x] -= coef*B[j];
-			if (L < M) B = _C, b = d, x = 0; // replace B<<x with C<<0
-		}
+			if (L < M) B = _C, b = d, x = 0;
+		} /// replace B<<x with C<<0
 	}
 	void init(const poly& _s) { 
 		s = _s; BM();

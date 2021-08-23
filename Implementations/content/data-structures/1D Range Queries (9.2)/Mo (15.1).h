@@ -18,9 +18,9 @@ int l = 0, r = -1, cans = 0;
 
 void modify(int x, int y = 1) {
 	x = A[x];
-	// if condition: cans --;
+	// if condition: --cans;
 	oc[x] += y;
-	// if condition: cans ++;
+	// if condition: ++cans;
 }
 
 int answer(int L, int R) { // modifyjust interval

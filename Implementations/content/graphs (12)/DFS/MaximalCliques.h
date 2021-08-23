@@ -5,7 +5,7 @@
  * Verification: BOSPRE 2016 gaudy
  */
 
-typedef bitset<128> B; B adj[128];
+using B = bitset<128>; B adj[128];
 int N;
 // possibly in clique, not in clique, in clique
 void cliques(B P = ~B(), B X={}, B R={}) { 

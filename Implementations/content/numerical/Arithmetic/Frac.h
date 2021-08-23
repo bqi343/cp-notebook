@@ -8,7 +8,7 @@ struct frac {
 	ll n,d;
 	frac(ll _n, ll _d) {
 		n = _n, d = _d;
-		ll g = __gcd(n,d); n /= g, d /= g;
+		ll g = gcd(n,d); n /= g, d /= g;
 		if (d < 0) n *= -1, d *= -1;
 	}
 	frac(ll _n) : frac(_n,1) {}

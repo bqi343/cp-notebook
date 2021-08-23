@@ -10,7 +10,7 @@ struct ACunfixed {
 		map<char,int> to;
 		int link;
 	};
-	vector<node> d;
+	V<node> d;
 	ACunfixed() { d.eb(); }
 	int add(str s) { // add word
 		int v = 0;

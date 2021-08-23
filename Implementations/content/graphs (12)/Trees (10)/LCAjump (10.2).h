@@ -8,9 +8,9 @@
  */
 
 struct LCA {
-	int N; vector<vi> par, adj; vi depth;
+	int N; V<vi> par, adj; vi depth;
 	void init(int _N) {  N = _N;
-		int d = 1; while ((1<<d) < N) d ++;
+		int d = 1; while ((1<<d) < N) ++d;
 		par.assign(d,vi(N)); adj.rsz(N); depth.rsz(N);
 	}
 	void ae(int x, int y) { adj[x].pb(y), adj[y].pb(x); }

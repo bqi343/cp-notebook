@@ -9,7 +9,7 @@ struct DSUrb {
 	int get(int x) { return e[x] < 0 ? x : get(e[x]); } 
 	bool sameSet(int a, int b) { return get(a) == get(b); }
 	int size(int x) { return -e[get(x)]; }
-	vector<array<int,4>> mod;
+	V<AR<int,4>> mod;
 	bool unite(int x, int y) { // union-by-rank
 		x = get(x), y = get(y); 
 		if (x == y) { mod.pb({-1,-1,-1,-1}); return 0; }

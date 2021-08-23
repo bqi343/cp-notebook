@@ -20,8 +20,9 @@
  * Verification: https://open.kattis.com/contests/ecna19open/problems/cheeseifyouplease
  */
  
-typedef db T; typedef vector<T> vd;
-typedef vector<vd> vvd;
+using T = db; 
+using vd = V<T>;
+using vvd = V<vd>;
 const T eps = 1e-8, inf = 1/.0;
 
 #define ltj(X) if (s==-1 || mp(X[j],N[j])<mp(X[s],N[s])) s=j

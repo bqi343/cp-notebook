@@ -40,9 +40,9 @@ template<int SZ> struct FakeMatch {
 			if (!sz(lef)) break;
 			shuffle(all(lef),rng);
 			each(_s,lef) {
-				s = _s; tt ++;
+				s = _s; ++tt;
 				for (int sz = 1<<13; sz; sz /= 2) while (f[s] >= sz) 
-					{ tt ++; if (!dfs(s,sz)) break; }
+					{ ++tt; if (!dfs(s,sz)) break; }
 			}
 		}
 	}

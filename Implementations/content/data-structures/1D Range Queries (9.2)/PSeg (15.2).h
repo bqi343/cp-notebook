@@ -10,7 +10,7 @@
  	* https://codeforces.com/gym/102423/submission/70170291
  */ 
 
-template<class T, int SZ> struct pseg {
+tcT, int SZ> struct pseg {
 	static const int LIM = 2e7;
 	struct node { 
 		int l, r; T val = 0, lazy = 0; 
@@ -19,15 +19,15 @@ template<class T, int SZ> struct pseg {
 	};
 	node d[LIM]; int nex = 0;
 	int copy(int c) { d[nex] = d[c]; return nex++; }
-	T comb(T a, T b) { return min(a,b); }
+	T cmb(T a, T b) { return min(a,b); }
 	void pull(int c) { d[c].val = 
-		comb(d[d[c].l].get(), d[d[c].r].get()); } 
+		cmb(d[d[c].l].get(), d[d[c].r].get()); } 
 	//// MAIN FUNCTIONS
 	T query(int c, int lo, int hi, int L, int R) {  
 		if (lo <= L && R <= hi) return d[c].get();
 		if (R < lo || hi < L) return MOD;
 		int M = (L+R)/2;
-		return d[c].lazy+comb(query(d[c].l,lo,hi,L,M),
+		return d[c].lazy+cmb(query(d[c].l,lo,hi,L,M),
 							query(d[c].r,lo,hi,M+1,R));
 	}
 	int upd(int c, int lo, int hi, T v, int L, int R) {
@@ -39,7 +39,7 @@ template<class T, int SZ> struct pseg {
 		d[x].r = upd(d[x].r,lo,hi,v,M+1,R);
 		pull(x); return x;
 	}
-	int build(const vector<T>& arr, int L, int R) {
+	int build(const V<T>& arr, int L, int R) {
 		int c = nex++;
 		if (L == R) {
 			if (L < sz(arr)) d[c].val = arr[L];
@@ -54,5 +54,5 @@ template<class T, int SZ> struct pseg {
 		loc.pb(upd(loc.bk,lo,hi,v,0,SZ-1)); }
 	T query(int ti, int lo, int hi) { 
 		return query(loc[ti],lo,hi,0,SZ-1); }
-	void build(const vector<T>&arr) {loc.pb(build(arr,0,SZ-1));}
+	void build(const V<T>&arr) {loc.pb(build(arr,0,SZ-1));}
 };

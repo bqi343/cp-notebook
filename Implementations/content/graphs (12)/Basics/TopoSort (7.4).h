@@ -8,7 +8,7 @@ struct TopoSort {
 	int N; vi in, res;
 	V<vi> adj;
 	void init(int _N) { N = _N; in.rsz(N); adj.rsz(N); }
-	void ae(int x, int y) { adj[x].pb(y), in[y] ++; }
+	void ae(int x, int y) { adj[x].pb(y), ++in[y]; }
 	bool sort() {
 		queue<int> todo; 
 		F0R(i,N) if (!in[i]) todo.push(i);

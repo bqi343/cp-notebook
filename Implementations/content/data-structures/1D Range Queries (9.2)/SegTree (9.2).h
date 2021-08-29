@@ -8,7 +8,7 @@
  * Verification: SPOJ Fenwick
  */
 
-tcT> struct Seg { // cmb(ID,b) = b
+tcT> struct SegTree { // cmb(ID,b) = b
 	const T ID{}; T cmb(T a, T b) { return a+b; } 
 	int n; V<T> seg;
 	void init(int _n) { // upd, query also work if n = _n

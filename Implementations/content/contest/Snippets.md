@@ -38,7 +38,6 @@ int main() {
 // * clear ALL GLOBAL VARS between tcs!
 // * generate input correctly LOL
 
-clock_t beg = clock();
 int N,K;
 
 // void inp(vi& v) {
@@ -51,8 +50,8 @@ void inp(vi& v) {
 }
 
 void solve(int tc) {
-    // cerr << "Doing TC #" << tc << endl;
-    // dbg_time();
+	cerr << "Doing TC #" << tc << endl;
+	dbg_time();
 	${0}
 }
 

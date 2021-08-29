@@ -5,25 +5,24 @@
 	* $\lambda_{ik}\ge \min(\lambda_{ij},\lambda_{jk}),$ 
 	* where $\lambda_{ij}$ denotes the flow between $i$ and $j.$
  * Source: https://github.com/koosaga/DeobureoMinkyuParty/blob/master/teamnote.tex
- * Time: $O(N)$ calls to Dinic
+ * Time: $N-1$ calls to Dinic
  * Verification: https://codeforces.com/problemset/problem/343/E
  */
 
 #include "Dinic.h"
 
-struct GomoryHu {
-	V<pair<pi,int>> ed; // add undirected edge
-	void ae(int a, int b, int c) { ed.pb({{a,b},c}); }
-	V<pair<pi,int>> init(int N) { 
-		vpi ret(N); Dinic D; D.init(N);
-		each(t,ed) D.ae(t.f.f,t.f.s,t.s,t.s);
-		FOR(i,1,N) {
-			D.reset(); ret[i].s = D.maxFlow(N,i,ret[i].f);
-			FOR(j,i+1,N+1) if (ret[j].f == ret[i].f 
-				&& D.lev[j] != -1) ret[j].f = i;
+template<class F> V<pair<pi,F>> gomoryHu(int N, const V<pair<pi,F>>& ed) { 
+	vi par(N); Dinic<F> D; D.init(N);
+	vpi ed_locs; each(t,ed) ed_locs.pb(D.ae(t.f.f,t.f.s,t.s,t.s));
+	V<pair<pi,F>> ans;
+	FOR(i,1,N) {
+		each(p,ed_locs) { // reset capacities
+			auto& e = D.adj.at(p.f).at(p.s);
+			auto& e_rev = D.adj.at(e.to).at(e.rev);
+			e.cap = e_rev.cap = (e.cap+e_rev.cap)/2;
 		}
-		V<pair<pi,int>> res;
-		FOR(i,1,N) res.pb({{i,ret[i].f},ret[i].s});
-		return res;
+		ans.pb({{i,par[i]},D.maxFlow(i,par[i])});
+		FOR(j,i+1,N) if (par[j] == par[i] && D.lev[j]) par[j] = i;
 	}
-};
+	return ans;
+}

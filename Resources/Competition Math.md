@@ -118,7 +118,7 @@ Please email me at *bqi343@gmail.com.*
 ## More Links
 
 Useful:
- * [Expii](https://www.expi.com/)
+ * [Expii](https://www.expii.com/)
  * [Alcumus](https://artofproblemsolving.com/alcumus)
  * [Past Contests](https://artofproblemsolving.com/community/c3158_usa_contests)
  * [Handouts](https://artofproblemsolving.com/community/c5h1578191_handout_compilation)

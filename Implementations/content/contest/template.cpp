@@ -5,30 +5,27 @@ using ll = long long;
 using db = long double; // or double, if TL is tight
 using str = string; // yay python! //
 
+// pairs
 using pi = pair<int,int>;
 using pl = pair<ll,ll>;
 using pd = pair<db,db>;
-
-using vi = vector<int>;
-using vb = vector<bool>;
-using vl = vector<ll>;
-using vd = vector<db>;
-using vs = vector<str>;
-using vpi = vector<pi>;
-using vpl = vector<pl>;
-using vpd = vector<pd>;
+#define mp make_pair
+#define f first
+#define s second
 
 #define tcT template<class T
 #define tcTU tcT, class U
 // ^ lol this makes everything look weird but I'll try it
 tcT> using V = vector<T>; 
 tcT, size_t SZ> using AR = array<T,SZ>; 
-tcT> using PR = pair<T,T>;
-
-// pairs
-#define mp make_pair
-#define f first
-#define s second
+using vi = V<int>;
+using vb = V<bool>;
+using vl = V<ll>;
+using vd = V<db>;
+using vs = V<str>;
+using vpi = V<pi>;
+using vpl = V<pl>;
+using vpd = V<pd>;
 
 // vectors
 // oops size(x), rbegin(x), rend(x) need C++17
@@ -39,12 +36,10 @@ tcT> using PR = pair<T,T>;
 #define sor(x) sort(all(x)) 
 #define rsz resize
 #define ins insert 
+#define pb push_back
+#define eb emplace_back
 #define ft front()
 #define bk back()
-#define pb push_back
-#define eb emplace_back 
-#define pf push_front
-#define rtn return
 
 #define lb lower_bound
 #define ub upper_bound
@@ -81,7 +76,7 @@ ll fdiv(ll a, ll b) { return a/b-((a^b)<0&&a%b); } // divide a by b rounded down
 tcT> bool ckmin(T& a, const T& b) {
 	return b < a ? a = b, 1 : 0; } // set a = min(a,b)
 tcT> bool ckmax(T& a, const T& b) {
-	return a < b ? a = b, 1 : 0; }
+	return a < b ? a = b, 1 : 0; } // set a = max(a,b)
 
 tcTU> T fstTrue(T lo, T hi, U f) {
 	hi ++; assert(lo <= hi); // assuming f is increasing

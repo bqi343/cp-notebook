@@ -1,6 +1,7 @@
 /**
  * Description: Integration of a function over an interval using
-   * Simpson's rule. The error should be proportional to $dif^4$, although in
+   * Simpson's rule, exact for polynomials of degree up to 3. 
+   * The error should be proportional to $dif^4$, although in
    * practice you will want to verify that the result is stable to desired
    * precision when epsilon changes.
  * Source: KACTL

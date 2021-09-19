@@ -21,7 +21,7 @@ tcT> struct BIT {
 		int pos = 0;
 		for (int pw = 1<<25; pw; pw >>= 1) {
 			int npos = pos+pw;
-			if (npos <= n && data[npos-1] < sum)
+			if (npos <= N && data[npos-1] < sum)
 				pos = npos, sum -= data[pos-1];
 		}
 		return pos;

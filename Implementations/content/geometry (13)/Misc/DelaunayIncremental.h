@@ -6,15 +6,16 @@
  * Source: Own
  * Verification: 
 	* ICPC WF 2018 Panda Preserve
-	* https://dmoj.ca/problem/cco08p6 (32/37)
+	* https://dmoj.ca/problem/cco08p6 (32/37 TLE)
  */
 
 #include "DelaunayFast.h"
+// include inCircle from DelaunayFast
 
 const T BIG = 1e9; // >>(10^4)^2
-vector<array<int,3>> triIncrement(vP v) {
+V<AR<int,3>> triIncrement(vP v) {
 	v.pb({-BIG,-BIG}); v.pb({BIG,0}); v.pb({0,BIG});
-	vector<array<int,3>> ret, tmp;
+	V<AR<int,3>> ret, tmp;
 	ret.pb({sz(v)-3,sz(v)-2,sz(v)-1});
 	F0R(i,sz(v)-3) {
 		map<pi,int> m; 
@@ -24,8 +25,8 @@ vector<array<int,3>> triIncrement(vP v) {
 			else tmp.pb(a);
 		}
 		each(a,m) if (a.s == 1) {
-			array<int,3> x = {a.f.f,a.f.s,i}; 
-			sort(all(x)); tmp.pb(x);
+			AR<int,3> x{a.f.f,a.f.s,i}; 
+			sor(x); tmp.pb(x);
 		}
 		swap(ret,tmp); tmp.clear();
 	}

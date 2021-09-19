@@ -9,7 +9,7 @@
 
 #include "LinRec.h"
 
-mi sparseDet(int N, vector<pair<pi,mi>> A) { // nonzero entries of matrix, no repeats
+mi sparseDet(int N, V<pair<pi,mi>> A) { // nonzero entries of matrix, no repeats
 	auto gen = []() { return rng()%(MOD-1)+1; };
 	vmi l(N), r(N), seq(2*N); F0R(i,N) l[i] = gen(), r[i] = gen();
 	F0R(i,2*N) { // consider l*A^i*r, recurrence satisfies characteristic equation

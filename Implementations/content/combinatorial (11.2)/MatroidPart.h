@@ -18,7 +18,7 @@
 		each(t,m) t.s = V++; 
 		each(t,this->ed) t.f = m[t.f], t.s = m[t.s];
 	}
-	void clear() { D.init(V); adj = vector<vpi>(V); }
+	void clear() { D.init(V); adj = V<vpi>(V); }
 	void ins(int i) { assert(D.unite(ed[i].f,ed[i].s)); 
 		adj[ed[i].f].pb({ed[i].s,i});
 		adj[ed[i].s].pb({ed[i].f,i});
@@ -31,7 +31,6 @@
 			if (depth[a] < depth[b]) swap(a,b);
 			v.pb(pre[a].s); a = pre[a].f;
 		}
-		dbg(x,a,b,v);
 		return v;
 	}
 	void dfs(int x) {

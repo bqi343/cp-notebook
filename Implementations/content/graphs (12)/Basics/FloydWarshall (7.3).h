@@ -6,7 +6,7 @@
     * https://cses.fi/problemset/task/1672/
  */
 
-void floydWarshall(vector<vl>& m) {
+void floydWarshall(V<vl>& m) {
     int n = sz(m);
     F0R(i,n) ckmin(m[i][i], 0LL);
     F0R(k,n) F0R(i,n) F0R(j,n)

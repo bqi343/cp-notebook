@@ -11,9 +11,10 @@
 
 #include "Dinic.h"
 
-template<class F> V<pair<pi,F>> gomoryHu(int N, const V<pair<pi,F>>& ed) { 
+template<class F> V<pair<pi,F>> gomoryHu(int N, 
+		const V<pair<pi,F>>& ed) { 
 	vi par(N); Dinic<F> D; D.init(N);
-	vpi ed_locs; each(t,ed) ed_locs.pb(D.ae(t.f.f,t.f.s,t.s,t.s));
+	vpi ed_locs; each(t,ed)ed_locs.pb(D.ae(t.f.f,t.f.s,t.s,t.s));
 	V<pair<pi,F>> ans;
 	FOR(i,1,N) {
 		each(p,ed_locs) { // reset capacities

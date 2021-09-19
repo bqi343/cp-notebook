@@ -1,8 +1,7 @@
 /**
  * Description: Fast flow. After computing flow, edges $\{u,v\}$ such that 
 	* $lev[u] \neq 0,$ $lev[v] = 0$ are part of min cut.
-	* Use \texttt{reset} and \texttt{rcap} for Gomory-Hu.
- * Time: $O(N^2M)$ flow, $O(M\sqrt N)$ bipartite matching
+ * Time: $O(N^2M)$ flow
  * Source: GeeksForGeeks, Chilli
  	* https://codeforces.com/contest/1416/submission/94013395
  * Verification: RMI 2017 Day 1 Fashion

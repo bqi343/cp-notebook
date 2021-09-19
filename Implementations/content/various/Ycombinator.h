@@ -1,3 +1,8 @@
+/**
+ * Description: wraps a lambda so it can call itself
+ * Source: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0200r0.html
+ */
+
 namespace std {
  
 template<class Fun>

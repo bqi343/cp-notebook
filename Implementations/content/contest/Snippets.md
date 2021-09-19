@@ -38,16 +38,15 @@ int main() {
 // * clear ALL GLOBAL VARS between tcs!
 // * generate input correctly LOL
 
-int N,K;
-
+// int N,K;
 // void inp(vi& v) {
 // 	v.rsz(1); ll A,B,C; re(v,A,B,C);
 // 	while (sz(v) < N) v.pb((A*v.bk+B)%C+1);
 // }
-void inp(vi& v) {
-	v.rsz(K); ll A,B,C,D; re(v,A,B,C,D);
-	while (sz(v) < N) v.pb(int((A*v[sz(v)-2]+B*v.bk+C)%D));
-}
+// void inp(vi& v) {
+// 	v.rsz(K); ll A,B,C,D; re(v,A,B,C,D);
+// 	while (sz(v) < N) v.pb(int((A*v[sz(v)-2]+B*v.bk+C)%D));
+// }
 
 void solve(int tc) {
 	cerr << "Doing TC #" << tc << endl;

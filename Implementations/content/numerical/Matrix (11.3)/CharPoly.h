@@ -42,7 +42,7 @@ Mat upperHB(Mat M) { // when k >= j+2, M[k][j] = 0
 }
 poly charUpperHB(Mat M) {
 	int n = sz(M);
-	vector<poly> p(n+1); p[0] = {1};
+	V<poly> p(n+1); p[0] = {1};
 	F0R(k,n) { // casework based on which entry you choose in column k
 		p[k+1] = poly{-M[k][k],1}*p[k]; mi t = 1; // char poly for first (k+1) rows * (k+1) cols
 		F0R(i,k) {

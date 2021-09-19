@@ -53,12 +53,12 @@ template<int MOD, int RT> struct mint {
 	friend mint operator/(mint a, const mint& b) { return a /= b; }
 };
 
-typedef mint<MOD,5> mi; // 5 is primitive root for both common mods
-typedef vector<mi> vmi;
-typedef pair<mi,mi> pmi;
-typedef vector<pmi> vpmi;
+using mi = mint<MOD,5>; // 5 is primitive root for both common mods
+using vmi = V<mi>;
+using pmi = pair<mi,mi>;
+using vpmi = V<pmi>;
 
-vector<vmi> scmb; // small combinations
+V<vmi> scmb; // small combinations
 void genComb(int SZ) {
 	scmb.assign(SZ,vmi(SZ)); scmb[0][0] = 1;
 	FOR(i,1,SZ) F0R(j,i+1) 

@@ -8,8 +8,8 @@
  */
 
 struct SCC {
-	int N; vector<vi> adj, radj;
-	vi todo, comp, comps; vector<bool> vis;
+	int N; V<vi> adj, radj;
+	vi todo, comp, comps; V<bool> vis;
 	void init(int _N) { N = _N; 
 		adj.rsz(N), radj.rsz(N), comp = vi(N,-1), vis.rsz(N); }
 	void ae(int x, int y) { adj[x].pb(y), radj[y].pb(x); }

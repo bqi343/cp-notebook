@@ -12,9 +12,10 @@
 
 #include "../Primitives/Point.h"
 
-// using T = ll;
-using lll = __int128; // (can be ll if coords are < 2e4)
-bool inCircle(P p, P a, P b, P c) {
+// using T = ll; (if coords are < 2e4)
+using lll = __int128;
+// return true if p strictly within circumcircle(a,b,c)
+bool inCircle(P p, P a, P b, P c) { 
 	a -= p, b -= p, c -= p; // assert(cross(a,b,c)>0);
 	lll x = (lll)norm(a)*cross(b,c)+(lll)norm(b)*cross(c,a)
 			+(lll)norm(c)*cross(a,b);
@@ -22,7 +23,7 @@ bool inCircle(P p, P a, P b, P c) {
 }
 
 P arb(LLONG_MAX,LLONG_MAX); // not equal to any other point
-typedef struct Quad* Q;
+using Q = struct Quad*;
 struct Quad {
 	bool mark; Q o, rot; P p;
 	P F() { return r()->p; }
@@ -31,8 +32,8 @@ struct Quad {
 	Q next() { return r()->prev(); }
 };
 Q makeEdge(P orig, P dest) {
-	Q q[] = {new Quad{0,0,0,orig}, new Quad{0,0,0,arb},
-			 new Quad{0,0,0,dest}, new Quad{0,0,0,arb}};
+	Q q[]{new Quad{0,0,0,orig}, new Quad{0,0,0,arb},
+		  new Quad{0,0,0,dest}, new Quad{0,0,0,arb}};
 	F0R(i,4) q[i]->o = q[-i & 3], q[i]->rot = q[(i+1) & 3];
 	return *q;
 }
@@ -80,16 +81,16 @@ pair<Q,Q> rec(const vP& s) {
 	}
 	return {ra, rb};
 }
-vector<array<P,3>> triangulate(vP pts) {
-	sort(all(pts)); assert(unique(all(pts)) == end(pts)); // no duplicates
+V<AR<P,3>> triangulate(vP pts) {
+	sor(pts); assert(unique(all(pts)) == end(pts)); // no duplicates
 	if (sz(pts) < 2) return {};
-	Q e = rec(pts).f; vector<Q> q = {e};
+	Q e = rec(pts).f; V<Q> q = {e};
 	while (cross(e->o->F(), e->F(), e->p) < 0) e = e->o;
 #define ADD { Q c = e; do { c->mark = 1; pts.pb(c->p); \
 	q.pb(c->r()); c = c->next(); } while (c != e); }
 	ADD; pts.clear();
 	int qi = 0; while (qi < sz(q)) if (!(e = q[qi++])->mark) ADD;
-	vector<array<P,3>> ret(sz(pts)/3); 
+	V<AR<P,3>> ret(sz(pts)/3); 
 	F0R(i,sz(pts)) ret[i/3][i%3] = pts[i];
 	return ret;
 }

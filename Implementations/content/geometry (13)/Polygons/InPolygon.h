@@ -7,11 +7,11 @@
 
 #include "../Primitives/Point.h"
 
-int p_in_poly(const P& p, const vP& poly) {
+int inPolygon(const P& p, const vP& poly) {
 	int n = sz(poly), ans = 0;
 	F0R(i,n) {
 		P x = poly[i], y = poly[(i+1)%n]; if (x.s > y.s) swap(x,y);
-		if (p_on_seg(p,{x,y})) return 0;
+		if (onSeg(p,{x,y})) return 0;
 		ans ^= (x.s <= p.s && p.s < y.s && cross(p,x,y) > 0);
 	}
 	return ans ? -1 : 1;

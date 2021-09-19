@@ -1,5 +1,6 @@
 /**
- * Description: Chordal Graph Recognition
+ * Description: Recognizes graph where every induced cycle has length exactly 3
+   * using maximum adjacency search.
  * Source: 
    * https://www.cs.cmu.edu/~janh/courses/411/18/lec/03-chordal-mcs.pdf
    * https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-438-algorithms-for-inference-fall-2014/lecture-notes/MIT6_438F14_Lec14.pdf
@@ -22,7 +23,7 @@ vi find_path(int x, int y, int z) {
 			path.pb(z);
 			return path;
 		}
-		trav(u,adj[t]) if (u != z && !adj[u].count(z) && pre[u] == -1) {
+		each(u,adj[t]) if (u != z && !adj[u].count(z) && pre[u] == -1) {
 			pre[u] = t;
 			q.push(u);
 		}
@@ -43,24 +44,24 @@ int main() {
 		pi p = pq.top(); pq.pop();
 		if (rord[p.s] != -1) continue;
 		rord[p.s] = sz(ord); ord.pb(p.s);
-		trav(t,adj[p.s]) pq.push({++cnt[t],t});
+		each(t,adj[p.s]) pq.push({++cnt[t],t});
 	}
 	assert(sz(ord) == N);
-	trav(z,ord) {
+	each(z,ord) {
 		pi big = {-1,-1}; 
-		trav(y,adj[z]) if (rord[y] < rord[z]) 
+		each(y,adj[z]) if (rord[y] < rord[z]) 
 			ckmax(big,mp(rord[y],y));
 		if (big.f == -1) continue;
 		int y = big.s;
-		trav(x,adj[z]) if (rord[x] < rord[y]) if (!adj[y].count(x)) {
+		each(x,adj[z]) if (rord[x] < rord[y]) if (!adj[y].count(x)) {
 			ps("NO");
 			vi v = find_path(x,y,z);
 			ps(sz(v));
-			trav(t,v) pr(t,' ');
+			each(t,v) pr(t,' ');
 			exit(0);
 		}
 	}
 	ps("YES");
 	reverse(all(ord));
-	trav(z,ord) pr(z,' ');
+	each(z,ord) pr(z,' ');
 }

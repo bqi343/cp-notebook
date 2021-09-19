@@ -14,7 +14,7 @@ struct TwoEdgeCC {
 			e[x] += e[y]; e[y] = x; return 1;
 		}
 	} DSU;
-	int N; vector<vi> adj; vi depth, par;
+	int N; V<vi> adj; vi depth, par;
 	vpi extra;
 	void init(int _N) {
 		N = _N; DSU.init(N);

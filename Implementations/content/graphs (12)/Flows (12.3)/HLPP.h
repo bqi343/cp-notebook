@@ -10,7 +10,7 @@ template <int SZ> struct HLPP {
 	const F INF = numeric_limits<F>::max();
 	
 	int N,s,t;
-	vector<Edge> adj[SZ];
+	V<Edge> adj[SZ];
 	void ae(int u, int v, F cap) {
 		assert(cap >= 0); // don't try smth dumb
 		Edge a{v, sz(adj[v]), cap}, b{u, sz(adj[u]), 0};

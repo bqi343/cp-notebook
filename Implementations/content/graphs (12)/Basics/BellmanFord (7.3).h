@@ -11,7 +11,7 @@
 template<int SZ> struct BellmanFord {
     int n;
     vi adj[SZ];
-    vector<pair<pi,int>> ed;
+    V<pair<pi,int>> ed;
     void ae(int u, int v, int w) { 
         adj[u].pb(v), ed.pb({{u,v},w}); }
     ll dist[SZ];

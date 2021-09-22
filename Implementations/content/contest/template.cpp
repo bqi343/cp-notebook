@@ -79,7 +79,7 @@ tcT> bool ckmax(T& a, const T& b) {
 	return a < b ? a = b, 1 : 0; } // set a = max(a,b)
 
 tcTU> T fstTrue(T lo, T hi, U f) {
-	hi ++; assert(lo <= hi); // assuming f is increasing
+	++hi; assert(lo <= hi); // assuming f is increasing
 	while (lo < hi) { // find first index such that f is true 
 		T mid = lo+(hi-lo)/2;
 		f(mid) ? hi = mid : lo = mid+1; 
@@ -87,7 +87,7 @@ tcTU> T fstTrue(T lo, T hi, U f) {
 	return lo;
 }
 tcTU> T lstTrue(T lo, T hi, U f) {
-	lo --; assert(lo <= hi); // assuming f is decreasing
+	--lo; assert(lo <= hi); // assuming f is decreasing
 	while (lo < hi) { // find first index such that f is true 
 		T mid = lo+(hi-lo+1)/2;
 		f(mid) ? lo = mid : hi = mid-1;

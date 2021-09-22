@@ -6,9 +6,9 @@
 
 #include "Point.h"
 
-T lineDist(P p, P a, P b) { 
-	return abs(cross(p,a,b))/abs(a-b); }
-T segDist(P p, P a, P b) { 
-	if (dot(p-a,b-a) <= 0) return abs(p-a);
-	if (dot(p-b,a-b) <= 0) return abs(p-b);
-	return lineDist(p,a,b); }
+T lineDist(const P& p, const Line& l) { 
+	return abs(cross(p,l.f,l.s))/abs(l.f-l.s); }
+T segDist(const P& p, const Line& l) {
+	if (dot(l.f,p,l.s) <= 0) return abs(p-l.f);
+	if (dot(l.s,p,l.f) <= 0) return abs(p-l.s);
+	return lineDist(p,l); }

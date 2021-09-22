@@ -42,13 +42,14 @@ P& operator/=(P& l, const P& r) { return l = l/r; }
 
 P unit(const P& p) { return p/abs(p); }
 T dot(const P& a, const P& b) { return a.f*b.f+a.s*b.s; }
+T dot(const P& p, const P& a, const P& b) { return dot(a-p,b-p); }
 T cross(const P& a, const P& b) { return a.f*b.s-a.s*b.f; }
 T cross(const P& p, const P& a, const P& b) {
 	return cross(a-p,b-p); }
-P reflect(const P& p, const Line& l) { 
+P reflect(const P& p, const Line& l) {
 	P a = l.f, d = l.s-l.f;
 	return a+conj((p-a)/d)*d; }
-P foot(const P& p, const Line& l) { 
+P foot(const P& p, const Line& l) {
 	return (p+reflect(p,l))/(T)2; }
 bool onSeg(const P& p, const Line& l) {
-	return sgn(cross(l.f,l.s,p)) == 0 && sgn(dot(p-l.f,p-l.s)) <= 0; }
+	return sgn(cross(l.f,l.s,p)) == 0 && sgn(dot(p,l.f,l.s)) <= 0; }

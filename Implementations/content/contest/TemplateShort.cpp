@@ -39,4 +39,13 @@ tcT> bool ckmin(T& a, const T& b) {
 tcT> bool ckmax(T& a, const T& b) {
 	return a < b ? a = b, 1 : 0; } // set a = max(a,b)
 
+tcT, class U> T fstTrue(T lo, T hi, U f) {
+	++hi; assert(lo <= hi); // assuming f is increasing
+	while (lo < hi) { // find first index such that f is true 
+		T mid = lo+(hi-lo)/2;
+		f(mid) ? hi = mid : lo = mid+1; 
+	} 
+	return lo;
+}
+
 int main() { cin.tie(0)->sync_with_stdio(0); }

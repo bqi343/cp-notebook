@@ -8,10 +8,10 @@
  * Verification: https://www.spoj.com/problems/ADABANKET/
  */
 
-pair<int, vi> GlobalMinCut(vector<vi> wei) {
+pair<int,vi> GlobalMinCut(V<vi> wei) {
 	int N = sz(wei);
 	vi par(N); iota(all(par),0);
-	pair<int,vi> bes = {INT_MAX,{}};
+	pair<int,vi> bes{INT_MAX,{}};
 	R0F(phase,N) {
 		vi w = wei[0]; int lst = 0;
 		vector<bool> add(N,1); FOR(i,1,N) if (par[i]==i) add[i]=0;

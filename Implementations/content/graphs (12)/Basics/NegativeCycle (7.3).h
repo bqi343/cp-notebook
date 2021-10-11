@@ -12,7 +12,7 @@ vi negCyc(int N, V<pair<pi,int>> ed) {
 		if (x == -1) return {};
 	}
 	rep(N) x = p[x]; // enter cycle
-	vi cyc = {x}; while (p[cyc.bk] != x) cyc.pb(p[cyc.bk]);
+	vi cyc{x}; while (p[cyc.bk] != x) cyc.pb(p[cyc.bk]);
 	reverse(all(cyc)); return cyc;
 }
 

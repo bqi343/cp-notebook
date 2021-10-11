@@ -11,15 +11,16 @@
 	* SPOJ MIFF (matrix inverse modulo prime)
 	* https://open.kattis.com/problems/equationsolver
  */
-const db EPS = 1e-12;
+
+const db EPS = 1e-9; // adjust?
 int getRow(V<V<db>>& m, int R, int i, int nex) {
-    pair<db,int> bes = {0,-1}; // find row with max abs value
+    pair<db,int> bes{0,-1}; // find row with max abs value
     FOR(j,nex,R) ckmax(bes,{abs(m[j][i]),j}); 
     return bes.f < EPS ? -1 : bes.s; }
 int getRow(V<vmi>& m, int R, int i, int nex) {
     FOR(j,nex,R) if (m[j][i] != 0) return j;
     return -1; }
-pair<T,int> gauss(Mat& m) {
+pair<T,int> gauss(Mat& m) { // convert to reduced row echelon form
     if (!sz(m)) return {1,0};
     int R = sz(m), C = sz(m[0]), rank = 0, nex = 0;
     T prod = 1; // determinant
@@ -27,13 +28,13 @@ pair<T,int> gauss(Mat& m) {
         int row = getRow(m,R,i,nex);
         if (row == -1) { prod = 0; continue; }
         if (row != nex) prod *= -1, swap(m[row],m[nex]);
-        prod *= m[nex][i]; rank ++;
+        prod *= m[nex][i]; rank++;
         T x = 1/m[nex][i]; FOR(k,i,C) m[nex][k] *= x;
         F0R(j,R) if (j != nex) {
             T v = m[j][i]; if (v == 0) continue;
             FOR(k,i,C) m[j][k] -= v*m[nex][k];
         }
-        nex ++;
+        nex++;
     }
     return {prod,rank};
 }

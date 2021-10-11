@@ -32,7 +32,7 @@ template<int SZ, bool directed> struct Euler { // modified Euler cycle
 		// {{vert, prev vert}, edge label}
 		while (sz(s)) {
 			int x = s.bk.f.f; auto& it = its[x], en = end(adj[x]);
-			while (it != en && used[it->s]) it ++;
+			while (it != en && used[it->s]) ++it;
 			if (it == en) { // no more edges out of vertex
 				if (sz(ret) && ret.bk.f.s != x) exit(5);
 				ret.pb(s.bk), s.pop_back(); 

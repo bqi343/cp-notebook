@@ -8,7 +8,7 @@
 
 #include "../Primitives/Point.h"
 
-pair<P,T> cenArea(const vP& v) { 
+pair<P,T> cenArea(const vP& v) { assert(sz(v) >= 3);
 	P cen{}; T area{}; 
 	F0R(i,sz(v)) {
 		int j = (i+1)%sz(v); T a = cross(v[i],v[j]);

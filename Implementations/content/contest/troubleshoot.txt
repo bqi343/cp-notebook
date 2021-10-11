@@ -67,6 +67,7 @@ Are you copying a lot of unnecessary data? (References)
 Avoid vector, map. (use arrays/unordered_map)
 How big is the input and output? (consider FastIO)
 What do your teammates think about your algorithm?
+Calling count() on multiset?
 
 Memory limit exceeded:
 What is the max amount of memory your algorithm should need?

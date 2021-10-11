@@ -9,12 +9,13 @@
 
 #include "Point.h"
 
+// WARNING: you will get unexpected results if you mistype this as bool instead of int
 // -1 if lower half, 0 if origin, 1 if upper half
 int half(P x) { return x.s != 0 ? sgn(x.s) : -sgn(x.f); }
 bool angleCmp(P a, P b) { int A = half(a), B = half(b);
 	return A == B ? cross(a,b) > 0 : A < B; }
 
-/** Usage: 
+/* Usage: 
  	* vP v;
  	* sort(all(v),[](P a, P b) { return 
  		atan2(a.s,a.f) < atan2(b.s,b.f); });

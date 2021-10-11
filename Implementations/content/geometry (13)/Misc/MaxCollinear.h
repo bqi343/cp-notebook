@@ -15,8 +15,7 @@ pair<pi,int> getline(pi a, pi b) {
 int solve(vpi p) {
 	int n = sz(p);
 	map<pair<pi,int>,int> m;
-	F0R(i,n) FOR(j,i+1,n) m[getline(p[i],p[j])] ++;
-
+	F0R(i,n) FOR(j,i+1,n) ++m[getline(p[i],p[j])];
 	int mx = 0; each(a,m) ckmax(mx,a.s);
 	int ans = 0; FOR(i,1,n+1) if (i*(i-1)/2 <= mx) ans = i;
 	return ans;

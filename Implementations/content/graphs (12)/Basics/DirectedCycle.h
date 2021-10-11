@@ -5,7 +5,7 @@
  */
 
 template<int SZ> struct DirCyc {
-	vi adj[SZ], stk, cyc; V<bool> inStk, vis; 
+	vi adj[SZ], stk, cyc; vb inStk, vis; 
 	void dfs(int x) {
 		stk.pb(x); inStk[x] = vis[x] = 1;
 		each(i,adj[x]) {

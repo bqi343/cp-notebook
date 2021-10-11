@@ -3,8 +3,10 @@
  * Time: O(N\log N)
  * Source: Own
  	* http://www.cs.umd.edu/class/spring2020/cmsc754/Lects/lect06-duality.pdf might be of interest
+ 	* I would be interested if someone has a simpler implementation ...
  * Verification:
 	* https://open.kattis.com/problems/bigbrother 
+	* https://icpc.kattis.com/problems/domes
 	* (planes through two points with integer coordinates <= 10^7)
  */
 
@@ -44,9 +46,9 @@ vH construct_lower(P x, vH planes) { // similar to convex hull (by duality)
 }
 
 T isect_area(vH planes) {
-	const T BIG = 1e9; P x{-BIG,BIG};
-	planes.pb({0,1,-BIG}); // y >= -BIG
-	planes.pb({0,-1,-BIG}); // -y >= -BIG
+	const T BOUND = 1e9; P x{-BOUND,BOUND};
+	planes.pb({0,1,-BOUND}); // y >= -BOUND
+	planes.pb({0,-1,-BOUND}); // -y >= -BOUND
 	vH upper, lower;
 	each(t,planes) {
 		if (t[1] == 0) { // vertical line

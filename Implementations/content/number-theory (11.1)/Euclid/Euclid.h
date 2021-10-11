@@ -30,7 +30,8 @@ ll minBetween(ll A, ll B, ll L, ll R) {
 }
 
 // find min((Ax+C)%B) for 0 <= x <= M
-// aka find minimum non-negative value of A*x-B*y+C where 0 <= x <= M, 0 <= y
+// aka find minimum non-negative value of A*x-B*y+C
+// where 0 <= x <= M, 0 <= y
 ll minRemainder(ll A, ll B, ll C, ll M) {
 	assert(A >= 0 && B > 0 && C >= 0 && M >= 0);
 	A %= B, C %= B; ckmin(M,B-1);

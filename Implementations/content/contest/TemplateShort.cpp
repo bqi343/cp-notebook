@@ -3,6 +3,7 @@ using namespace std;
  
 using ll = long long;
 using db = long double; // or double if tight TL
+using str = string;
 
 using pi = pair<int,int>;
 #define mp make_pair
@@ -13,6 +14,7 @@ using pi = pair<int,int>;
 tcT> using V = vector<T>; 
 tcT, size_t SZ> using AR = array<T,SZ>;
 using vi = V<int>;
+using vb = V<bool>;
 using vpi = V<pi>;
 
 #define sz(x) int((x).size())

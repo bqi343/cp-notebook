@@ -30,7 +30,7 @@ vP halfPlaneIsect(V<Ray> _segs) {
 	}
 	auto bad = [&](const Ray& a, const Ray& b, const Ray& c) {
 		P p1 = a.isect(b), p2 = b.isect(c);
-		if (dot(p2-p1,b.dp) <= EPS) { // note: this EPS is required ...
+		if (dot(p2-p1,b.dp) <= EPS) { // this EPS is required ...
 			if (cross(a.dp,c.dp) <= 0) return 2; // isect(a,b,c) = empty
 			return 1;
 		}
@@ -50,6 +50,7 @@ vP halfPlaneIsect(V<Ray> _segs) {
 		if (!bad(poly.bk,poly[0],poly[1])) break;
 	}
 	assert(sz(poly) >= 3); // if you reach this point, area should be nonzero
-	vP poly_points; F0R(i,sz(poly)) poly_points.pb(poly[i].isect(poly[(i+1)%sz(poly)]));
+	vP poly_points; F0R(i,sz(poly)) 
+		poly_points.pb(poly[i].isect(poly[(i+1)%sz(poly)]));
 	return poly_points;
 }

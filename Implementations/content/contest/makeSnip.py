@@ -193,7 +193,7 @@ for i in range(len(names)):
 		code = temp_old[:ST_old]+modint_template+"\n\n"+modfact_template+"\n\n"+code+temp_old[EN_old:]
 	elif names[i] in ["FHC","GCJ"]:
 		code = temp[:ST]+modint_template+"\n\n"+modfact_template+"\n\n"+code+temp[EN:]
-	elif names[i] in ["FHC","GCJ","TS","Interact"]:
+	elif names[i] in ["TS","Interact"]:
 		code = temp[:ST]+code+temp[EN:]
 		if names[i] == "Interact":
 			# print("HA",code)

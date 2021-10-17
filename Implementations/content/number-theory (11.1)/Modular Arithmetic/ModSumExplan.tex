@@ -57,3 +57,22 @@ int main() {
     
     // you should actually read the stuff at the bottom
 }
+
+-----
+
+int main() {
+    setIO();
+    const int BIG = 51;
+    FOR(m,1,BIG) F0R(a,BIG) F0R(b,BIG) F0R(n,BIG) {
+        auto x = divSum(n,a,b,m);
+        ul ans = 0;
+        F0R(i,n) ans += (a*i+b)/m;
+        if (ans != x) {
+            dbg("OOPS",m,a,b,n);
+            dbg(x,ans);
+            exit(0);
+        }
+    }
+    dbg("OK");
+    // you should actually read the stuff at the bottom
+}

@@ -1,6 +1,6 @@
 Explanation:
 $$\sum_{i=0}^{to-1}\left\lfloor \frac{ki+c}{m}\right\rfloor=\sum_{x=1}^{to}\left\lfloor \frac{k(to-x)+c}{m}\right\rfloor$$
-This is equal the number of lattice points $(x,y)$ such that $x,y>0$ and
+This is equal to the number of lattice points $(x,y)$ such that $x,y>0$ and
 $$y\le \left\lfloor \frac{k(to-x)+c}{m}\right\rfloor\implies my+kx\le k\cdot to+c.$$
 If we swap $x,y$ then the sum is equal to
 \begin{align*}
@@ -12,3 +12,48 @@ If we swap $x,y$ then the sum is equal to
 &=(to-1)\cdot to2-\sum_{y=0}^{to2-1}\left\lfloor \frac{my+m-c-1}{k}\right\rfloor
 \end{align*}
 as desired.
+
+-----
+
+
+// count(a*x+b*y <= c)
+/// y <= (c-a*x)/b, 0 <= x <= c/a
+/// y <= (c-a*(c/a-x'))/b
+/// y <= (c-c/a*a+a*x')/b
+ul triangle_count_naive(ul a, ul b, ul c) {
+    ul ans = 0;
+    for (ul x = 0; a*x <= c; ++x) 
+        for (ul y = 0; a*x+b*y <= c; ++y) 
+            ++ans;
+    return ans;
+}
+/**
+*/
+
+/**
+Explanation:
+- Start with 0 < my <= ax+b < an+b
+- Now take an+b - (everything)
+- 0 < a(n-x) <= -my+an+b < an+b
+- 0 < a(n-x) <= m(floor((an+b)/m)-y)+(an+b)%m < an+b
+- 0 < ay' <= mx'+(an+b)%m, 0 <= x' < floor((an+b)/m)
+
+To recap: go from 
+ - (x,y) satisfying 0 <= x < n, 0 < y, my <= ax+b
+ - to (x',y') = (floor((an+b)/m)-y,n-x) satisfying 
+   0 <= x' < floor((an+b)/m), 0 < y', ax' <= my'+(an+b)%m
+*/
+
+int main() {
+    setIO();
+    FOR(a,1,11) FOR(b,1,11) FOR(c,1,101) {
+        if (triangle_count(a,b,c) != triangle_count_naive(a,b,c)) {
+            dbg("HA",a,b,c,triangle_count(a,b,c),triangle_count_naive(a,b,c));
+            exit(0);
+        }
+    }
+    dbg("OK");
+    // ps(triangle_count());
+    
+    // you should actually read the stuff at the bottom
+}

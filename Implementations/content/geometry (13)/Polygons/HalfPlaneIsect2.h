@@ -3,7 +3,8 @@
    * A half-plane is the area to the left of a ray, which is defined
    * by a point \texttt{p} and a direction \texttt{dp}. 
    * Area of intersection should be sufficiently precise when all inputs
-   * are integers with magnitude $\le 10^5$.
+   * are integers with magnitude $\le 10^5$. Assumes intersection is
+   * bounded (easiest way to ensure this is to uncomment the code below).
  * Time: O(N\log N)
  * Source: Own
  * Verification: 
@@ -22,6 +23,11 @@ struct Ray {
 };
 
 vP halfPlaneIsect(V<Ray> _segs) {
+	// int DX = 1e9, DY = 1e9; // bound input by rectangle [0,DX] x [0,DY]
+	// _segs.pb({P{0,0},P{1,0}});
+	// _segs.pb({P{DX,0},P{0,1}});
+	// _segs.pb({P{DX,DY},P{-1,0}});
+	// _segs.pb({P{0,DY},P{0,-1}});
 	sor(_segs); // sort planes by angle
 	V<Ray> segs; // remove parallel planes
 	each(t,_segs) {

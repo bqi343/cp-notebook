@@ -70,7 +70,7 @@ Please email me at *bqi343@gmail.com.*
        * monthly (free?) contests
  * Links
    * Again, [Alcumus](https://artofproblemsolving.com/alcumus) is quite good and now includes Intermediate Algebra + Precalculus.
-   * [AIME Links](https://drive.google.com/drive/folders/0B95dMIY7fstOemlzdThlZjFCUnc?usp=sharing)
+   * [AIME Links](https://drive.google.com/drive/folders/0B95dMIY7fstOemlzdThlZjFCUnc?resourcekey=0-NQq-JWyy0wc0Db34sIIZ9A&usp=sharing)
      * includes a large collection of AIME problems sorted by subject
    * [PHS Materials](https://sites.google.com/view/phsmathteam/resources/materials?authuser=0)
      * many for later AMC / AIME

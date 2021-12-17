@@ -8,8 +8,8 @@
 
 #include "Euclid.h"
 
-pl CRT(pl a, pl b) {
-	if (a.s < b.s) swap(a,b);
+pl CRT(pl a, pl b) { assert(0 <= a.f && a.f < a.s && 0 <= b.f && b.f < b.s);
+	if (a.s < b.s) swap(a,b); // will overflow if b.s^2 > 2^{62}
 	ll x,y; tie(x,y) = euclid(a.s,b.s); 
 	ll g = a.s*x+b.s*y, l = a.s/g*b.s;
 	if ((b.f-a.f)%g) return {-1,-1}; // no solution

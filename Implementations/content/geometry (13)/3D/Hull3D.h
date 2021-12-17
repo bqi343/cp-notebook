@@ -16,7 +16,7 @@
  */
 
 // using T = ll;
-T above(const P3&a,const P3&b,const P3&c,const P3&p) { 
+bool above(const P3&a,const P3&b,const P3&c,const P3&p) { 
 	return DC(a,b,c,p) > 0; } // is p strictly above plane
 void prep(vP3& p) { // rearrange points such that
 	shuffle(all(p),rng); // first four are not coplanar

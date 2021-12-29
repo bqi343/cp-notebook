@@ -3,7 +3,11 @@
  	* are coplanar. Normals to returned faces point outwards. 
  	* If coordinates are ints at most $B$ then \texttt{T} 
  	* should be large enough to support ints on the order 
- 	* of $B^3$. Changes order of points.
+ 	* of $B^3$. Changes order of points. WARNING: If there are
+ 	* coplanar points, the number of faces that are output will
+ 	* depend on the random seed, because points that are on the
+ 	* boundary of the convex hull may or may not be included
+ 	* in the output.
  * Time: O(N^2), O(N\log N)
  * Source: 
  	* KACTL
@@ -63,10 +67,9 @@ V<F> hull3d(vP3& p) {
 }
 V<F> hull3dFast(vP3& p) {
 	prep(p); int N = sz(p); V<F> hull; 
-	vb active; V<vi> rvis; V<AR<pi,3>> other;
-	// whether face is active
-	// points visible from each face
-	// other face adjacent to each edge of face
+	vb active; // whether face is active
+	V<vi> rvis; // points visible from each face
+	V<AR<pi,3>> other; // other face adjacent to each edge of face
 	V<vi> vis(N); // faces visible from each point
 	auto ad = [&](int a, int b, int c) { 
 		hull.pb({a,b,c}); active.pb(1); rvis.eb(); other.eb(); };

@@ -15,7 +15,7 @@
 
 template<int SZ> struct UnweightedMatch {
 	int match[SZ], N; vi adj[SZ];
-	void ae(int u, int v) { adj[u].pb(v), adj[v].pb(u); }
+	void ae(int u, int v) { assert(u != v); adj[u].pb(v), adj[v].pb(u); }
 	queue<int> q;
 	int par[SZ], vis[SZ], orig[SZ], aux[SZ];
 	void augment(int u, int v) { // toggle edges on u-v path

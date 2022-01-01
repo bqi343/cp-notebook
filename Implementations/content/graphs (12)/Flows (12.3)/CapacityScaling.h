@@ -24,7 +24,7 @@ struct CapacityScaling {
 			E[pre_edge[x]].flow += delta;
 			assert(E[pre_edge[x]].flow <= E[pre_edge[x]].cap);
 			E[pre_edge[x]^1].flow -= delta; 
-			x = p.src;
+			x = E[pre_edge[x]].src;
 		}
 		return x;
 	}

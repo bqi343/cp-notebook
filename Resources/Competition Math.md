@@ -13,7 +13,7 @@ If you're still coming up with new ideas, keep thinking. Otherwise, you have sev
  * Leave it for a while and do something else if you actually want to solve it on your own.
  * Get a hint from someone else.
 
-I'm impatient, so usually I go with the first option. Sometimes I end up reading a CF editorial before reading the statement? Idk if this is a good strategy tho. :/
+I'm impatient, so usually I go with the first option.
 
 > I think something should be added or clarified.
 

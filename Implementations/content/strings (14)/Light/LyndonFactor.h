@@ -13,7 +13,7 @@ vs duval(str s) {
 	int N = sz(s); vs factors;
 	for (int i = 0; i < N; ) {
 		int j = i+1, k = i;
-		for (; j < n && s[k] <= s[j]; j++) {
+		for (; j < N && s[k] <= s[j]; ++j) {
 			if (s[k] < s[j]) k = i;
 			else ++k;
 		}
@@ -22,9 +22,9 @@ vs duval(str s) {
 	return factors;
 }
 int minRotation(str s) { 
-	int n = sz(s); s += s;
-	auto d = duval(s); int ind = 0, ans = 0;
-	while (ans+sz(d[ind]) < n) ans += sz(d[ind++]);
+	int N = sz(s); s += s;
+	vs d = duval(s); int ind = 0, ans = 0;
+	while (ans+sz(d[ind]) < N) ans += sz(d[ind++]);
 	while (ind && d[ind] == d[ind-1]) ans -= sz(d[ind--]);
 	return ans;
 }

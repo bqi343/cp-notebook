@@ -17,7 +17,7 @@ void evalAll(V<poly>& stor, poly& res, poly v, int ind = 1) {
 	evalAll(stor,res,v,2*ind); evalAll(stor,res,v,2*ind+1);
 }
 
-//evaluate polynomial v on points p
+// evaluate polynomial v at points in p
 poly multiEval(poly v, poly p) {
 	V<poly> stor(4*sz(p)); segProd(stor,p,1,0,sz(p)-1);
 	poly res; evalAll(stor,res,v); return res; }

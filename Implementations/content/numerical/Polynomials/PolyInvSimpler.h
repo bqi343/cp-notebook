@@ -29,7 +29,7 @@ poly sqrt(const poly& A, int n) {  // Q-(Q^2-A)/(2Q)
 	return RSZ(B,n);
 }
 // return {quotient, remainder}
-pair<poly,poly> divi(const poly& f, const poly& g) {
+pair<poly,poly> quoRem(const poly& f, const poly& g) {
 	if (sz(f) < sz(g)) return {{},f};
 	poly q = conv(inv(rev(g),sz(f)-sz(g)+1),rev(f));
 	q = rev(RSZ(q,sz(f)-sz(g)+1));

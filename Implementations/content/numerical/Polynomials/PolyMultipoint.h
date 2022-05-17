@@ -12,7 +12,7 @@ void segProd(V<poly>& stor, poly& v, int ind, int l, int r) { // v -> places to 
 	stor[ind] = conv(stor[2*ind],stor[2*ind+1]);
 }
 void evalAll(V<poly>& stor, poly& res, poly v, int ind = 1) {
-	v = divi(v,stor[ind]).s;
+	v = quoRem(v,stor[ind]).s;
 	if (sz(stor[ind]) == 2) { res.pb(sz(v)?v[0]:0); return; }
 	evalAll(stor,res,v,2*ind); evalAll(stor,res,v,2*ind+1);
 }

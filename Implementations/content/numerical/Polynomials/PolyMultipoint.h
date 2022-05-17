@@ -4,6 +4,7 @@
  */
 
 #include "PolyInv.h"
+#include "PolyConv.h"
 
 void segProd(V<poly>& stor, poly& v, int ind, int l, int r) { // v -> places to evaluate at
 	if (l == r) { stor[ind] = {-v[l],1}; return; }
@@ -11,10 +12,12 @@ void segProd(V<poly>& stor, poly& v, int ind, int l, int r) { // v -> places to 
 	stor[ind] = conv(stor[2*ind],stor[2*ind+1]);
 }
 void evalAll(V<poly>& stor, poly& res, poly v, int ind = 1) {
-	v = divi(v,stor[ind]).s;
+	v = quoRem(v,stor[ind]).s;
 	if (sz(stor[ind]) == 2) { res.pb(sz(v)?v[0]:0); return; }
 	evalAll(stor,res,v,2*ind); evalAll(stor,res,v,2*ind+1);
 }
+
+// evaluate polynomial v at points in p
 poly multiEval(poly v, poly p) {
 	V<poly> stor(4*sz(p)); segProd(stor,p,1,0,sz(p)-1);
 	poly res; evalAll(stor,res,v); return res; }

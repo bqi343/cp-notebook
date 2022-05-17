@@ -6,7 +6,7 @@
 
 tcT, int SZ> struct LazySeg { 
 	static_assert(pct(SZ) == 1); // SZ must be power of 2
-	const T ID = 0; T cmb(T a, T b) { return a+b; }
+	const T ID{}; T cmb(T a, T b) { return a+b; }
 	T seg[2*SZ], lazy[2*SZ]; 
 	LazySeg() { F0R(i,2*SZ) seg[i] = lazy[i] = ID; }
 	void push(int ind, int L, int R) { /// modify values for current node

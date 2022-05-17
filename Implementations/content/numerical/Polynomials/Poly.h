@@ -58,7 +58,7 @@ poly operator*(const poly& l, const poly& r) {
 }
 poly& operator*=(poly& l, const poly& r) { return l = l*r; }
 
-pair<poly,poly> quoRem(poly a, poly b) { 
+pair<poly,poly> quoRemSlow(poly a, poly b) { 
 	remz(a); remz(b); assert(sz(b));
 	T lst = b.bk, B = T(1)/lst; each(t,a) t *= B; 
 	each(t,b) t *= B;
@@ -69,11 +69,11 @@ pair<poly,poly> quoRem(poly a, poly b) {
 	return {q,a}; // quotient, remainder
 }
 poly operator%(const poly& a, const poly& b) { 
-	return quoRem(a,b).s; }
+	return quoRemSlow(a,b).s; }
 /**poly operator/(const poly& a, const poly& b) { 
-	return quoRem(a,b).f; }
+	return quoRemSlow(a,b).f; }
 poly a = {1,3,5,8,6,0,0,0,0}, b = {1,5,1};
-ps(quoRem(a,b)); a = 2*a, b = 2*b; ps(quoRem(a,b));
+ps(quoRemSlow(a,b)); a = 2*a, b = 2*b; ps(quoRemSlow(a,b));
 poly gcd(poly a, poly b) { return b == poly{} ? a : gcd(b,a%b); }*/
 T resultant(poly a, poly b) { // R(A,B)
 	// =b_m^n*prod_{j=1}^mA(mu_j)

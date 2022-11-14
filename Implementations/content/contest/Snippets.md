@@ -70,8 +70,9 @@ int main() {
 // make sure to intialize ALL GLOBAL VARS between tcs!
 
 void solve(int tc) {
-    // cerr << "Doing TC #" << tc << endl;
-    // dbg_time();
+	// cerr << "Doing TC #" << tc << endl;
+	// make sure to READ THE CONSTRAINTS and NOT TLE
+	// dbg_time();
 	${0}
 }
 

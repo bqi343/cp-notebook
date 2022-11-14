@@ -8,7 +8,28 @@ def write_to(name, filenames):
 		def ad(line):
 			nonlocal active
 			if line.startswith('#include "'):
-				return 
+				return
+			if line.startswith("#include <bits/stdc++.h>"):
+				res.append("""#include <algorithm>
+#include <array>
+#include <bitset>
+#include <cassert>
+#include <chrono>
+#include <cmath>
+#include <complex>
+#include <cstring>
+#include <functional>
+#include <iomanip>
+#include <iostream>
+#include <map>
+#include <numeric>
+#include <queue>
+#include <random>
+#include <set>
+#include <vector>
+#include <climits>
+""")
+				return
 			if line.startswith('/**'): 
 				active = True
 			if active and '*/' in line:
@@ -55,9 +76,8 @@ def write_to(name, filenames):
 			ad('\n')
 		for line in extra:
 			ad(line)
-		# print("OH",res[-1],"HA",res[-1][-1],res[-1][-2])
 		ind = res[-1].find("cin.tie(0)->")
-		res[-1] = res[-1][:ind-1]+"\n\tsetIO();\n\t\n"
+		res[-1] = res[-1][:ind-1]+"\n\t// read read read\n\tsetIO();\n\t\n"
 
 		res.append('	// you should actually read the stuff at the bottom\n')
 		res.append('}\n\n')

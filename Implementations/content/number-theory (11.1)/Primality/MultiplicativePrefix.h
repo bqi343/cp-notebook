@@ -1,8 +1,10 @@
 /**
- * Description: Prefix sums of some multiplicative functions.
- 	* Solve for all square-free numbers in range, then fix.
- * Time: faster than $O(N^{2/3})$?
+ * Description: $\sum_{i=1}^Nf(i)$ for any multiplicative function 
+ 	* $f$ such that for square-free $x$, $f(x) = x^e$ for some fixed $e$
+ * Usage: $pre0(N, 0)$ or $pre1(N, 0)$
+ * Time: $O(\sqrt N)$
  * Source: Project Euler, https://oeis.org/A085731
+ * Verification: https://www.codechef.com/problems/TABRARRAY
  */
 
 #include "Sieve.h"

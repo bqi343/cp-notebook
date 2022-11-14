@@ -1,4 +1,21 @@
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <array>
+#include <bitset>
+#include <cassert>
+#include <chrono>
+#include <cmath>
+#include <complex>
+#include <cstring>
+#include <functional>
+#include <iomanip>
+#include <iostream>
+#include <map>
+#include <numeric>
+#include <queue>
+#include <random>
+#include <set>
+#include <vector>
+#include <climits>
 using namespace std;
  
 using ll = long long;
@@ -54,8 +71,8 @@ tcT> int upb(V<T>& a, const T& b) { return int(ub(all(a),b)-bg(a)); }
 #define rep(a) F0R(_,a)
 #define each(a,x) for (auto& a: x)
 
-const int MOD = 1e9+7; // 998244353;
-const int MX = 2e5+5;
+const int MOD = (int)1e9+7; // 998244353;
+const int MX = (int)2e5+5;
 const ll BIG = 1e18; // not too close to LLONG_MAX
 const db PI = acos((db)-1);
 const int dx[4]{1,0,-1,0}, dy[4]{0,1,0,-1}; // for every grid problem!!
@@ -202,6 +219,7 @@ void setIO(str s = "") {
 #define ints(...) int __VA_ARGS__; re(__VA_ARGS__);
 
 int main() {
+	// read read read
 	setIO();
 	
 	// you should actually read the stuff at the bottom

@@ -1,6 +1,6 @@
 /**
- * Description: 1D range minimum query. Can also do queries 
- 	* for any associative operation in $O(1)$ with D\&C
+ * Description: 1D range minimum query. If TL is an issue, use 
+	* arrays instead of vectors and store values instead of indices.
  * Source: KACTL
  * Verification: 
 	* https://cses.fi/problemset/stats/1647/

@@ -1,27 +1,31 @@
 /**
- * Description: Modular arithmetic.
+ * Description: Modular arithmetic. Assumes $MOD$ is prime.
  * Source: KACTL
  * Verification: https://open.kattis.com/problems/modulararithmetic
- * Usage: mi a = MOD+5; cout << (int)inv(a); // 400000003
+ * Usage: mi a = MOD+5; inv(a); // 400000003
  */
 
-struct mi { // WARNING: needs some adjustment to work with FFT
- 	int v; explicit operator int() const { return v; } 
-	mi():v(0) {}
-	mi(ll _v):v(int(_v%MOD)) { v += (v<0)*MOD; }
+template<int MOD, int RT> struct mint {
+	static const int mod = MOD;
+	static constexpr mint rt() { return RT; } // primitive root
+ 	int v; 
+ 	explicit operator int() const { return v; } 
+	mint():v(0) {}
+	mint(ll _v):v(int(_v%MOD)) { v += (v<0)*MOD; }
+	mint& operator+=(mint o) { 
+		if ((v += o.v) >= MOD) v -= MOD; 
+		return *this; }
+	mint& operator-=(mint o) { 
+		if ((v -= o.v) < 0) v += MOD; 
+		return *this; }
+	mint& operator*=(mint o) { 
+		v = int((ll)v*o.v%MOD); return *this; }
+	friend mint pow(mint a, ll p) { assert(p >= 0);
+		return p==0?1:pow(a*a,p/2)*(p&1?a:1); }
+	friend mint inv(mint a) { assert(a.v != 0); return pow(a,MOD-2); }
+	friend mint operator+(mint a, mint b) { return a += b; }
+	friend mint operator-(mint a, mint b) { return a -= b; }
+	friend mint operator*(mint a, mint b) { return a *= b; }
 };
-mi& operator+=(mi& a, mi b) { 
-	if ((a.v += b.v) >= MOD) a.v -= MOD; 
-	return a; }
-mi& operator-=(mi& a, mi b) { 
-	if ((a.v -= b.v) < 0) a.v += MOD; 
-	return a; }
-mi operator+(mi a, mi b) { return a += b; }
-mi operator-(mi a, mi b) { return a -= b; }
-mi operator*(mi a, mi b) { return mi((ll)a.v*b.v); }
-mi& operator*=(mi& a, mi b) { return a = a*b; }
-mi pow(mi a, ll p) { assert(p >= 0); // won't work for negative p
-	return p==0?1:pow(a*a,p/2)*(p&1?a:1); }
-mi inv(mi a) { assert(a.v != 0); return pow(a,MOD-2); }
-mi operator/(mi a, mi b) { return a*inv(b); }
-bool operator==(mi a, mi b) { return a.v == b.v; }
+using mi = mint<(int)1e9+7, 5>;
+using vmi = V<mi>;

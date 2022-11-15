@@ -6,6 +6,7 @@
  	* https://codeforces.com/contest/1254/submission/65420506 (neal)
  	* https://codeforces.com/blog/entry/45835 (AI.Cash)
  * Verification: https://codeforces.com/gym/102394/problem/G 
+ * Usage: initO(); int a,b; ri(a,b); wi(b,'\\n'); wi(a,'\\n'); 
  */
 
 inline namespace FastIO {
@@ -47,4 +48,3 @@ tcT> void wi(T x, char after = '\0') { /// write int
 void initO() { assert(atexit(flushOut) == 0); } /// auto-flush output
 
 }
-/// initO(); int a,b; ri(a,b); wi(b,'\n'); wi(a,'\n'); 

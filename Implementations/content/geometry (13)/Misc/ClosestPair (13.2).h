@@ -1,5 +1,5 @@
 /**
- * Description: line sweep to find two closest points 
+ * Description: Line sweep to find two closest points .
  * Time: O(N\log N)
  * Source: Own
  * Verification: https://open.kattis.com/problems/closestpair2

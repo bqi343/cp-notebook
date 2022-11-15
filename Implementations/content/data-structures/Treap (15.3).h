@@ -12,7 +12,7 @@ struct tnode {
 	int pri, val; pt c[2]; // essential
 	int sz; ll sum; // for range queries
 	bool flip = 0; // lazy update
-	tnode (int _val) {
+	tnode(int _val) {
 		pri = rng(); sum = val = _val; 
 		sz = 1; c[0] = c[1] = nullptr;
 	}

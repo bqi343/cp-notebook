@@ -1,7 +1,8 @@
 /**
  * Description: 1D range increment and sum query.
  * Source: USACO Counting Haybales
- * Verification: SPOJ Horrible
+ * Verification: SPOJ Horrible, USACO Counting Haybales
+ * Time: O(\log N)
  */
 
 tcT, int SZ> struct LazySeg { 

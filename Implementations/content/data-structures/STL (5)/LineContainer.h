@@ -25,11 +25,11 @@ struct LineContainer: multiset<Line> {
 	bool isect(iterator it) { auto n_it = next(it);
 		if (n_it == end()) return it->lst = INF, 0;
 		return it->last_gre(*n_it) >= n_it->lst; }
-	void add(T a, T b) { // remove lines after
+	void add(T a, T b) { /// remove lines after
 		auto it = ins({a,b,0}); while (isect(it)) erase(next(it));
 		if (it == begin()) return;
 		if (isect(--it)) erase(next(it)), isect(it);
-		while (it != begin()) { // remove lines before
+		while (it != begin()) { /// remove lines before
 			--it; if (it->lst < next(it)->lst) break;
 			erase(next(it)); isect(it); }
 	}

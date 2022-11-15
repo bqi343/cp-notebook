@@ -1,6 +1,6 @@
 /**
- * Description: 1D point update, range query where \texttt{cmb} is
- 	* any associative operation. If $N=2^p$ then \texttt{seg[1]==query(0,N-1)}.
+ * Description: 1D point update and range query where \texttt{cmb} is
+ 	* any associative operation. \texttt{seg[1]==query(0,N-1)}.
  * Time: O(\log N)
  * Source: 
 	* http://codeforces.com/blog/entry/18051
@@ -17,7 +17,7 @@ tcT> struct SegTree { // cmb(ID,b) = b
 	void pull(int p) { seg[p] = cmb(seg[2*p],seg[2*p+1]); }
 	void upd(int p, T val) { // set val at position p
 		seg[p += n] = val; for (p /= 2; p; p /= 2) pull(p); }
-	T query(int l, int r) {	// associative op on [l, r]
+	T query(int l, int r) {	// zero-indexed, inclusive
 		T ra = ID, rb = ID;
 		for (l += n, r += n+1; l < r; l /= 2, r /= 2) {
 			if (l&1) ra = cmb(ra,seg[l++]);

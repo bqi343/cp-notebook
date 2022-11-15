@@ -1,6 +1,6 @@
 /**
  * Description: Statistics on mod'ed arithmetic series.
-   * \texttt{minBetween} and \texttt{min\_rem} both assume that 
+   * \texttt{minBetween} and \texttt{minRemainder} both assume that 
    * $0\le L\le R<B$, $AB<2^{62}$
  * Source: https://codeforces.com/gym/102411/submission/64315879
  	* also https://codeforces.com/blog/entry/90690

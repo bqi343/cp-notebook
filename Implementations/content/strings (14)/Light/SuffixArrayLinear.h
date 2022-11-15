@@ -1,5 +1,7 @@
 /**
- * Description: Linear Time Suffix Array
+ * Description: Linear-time suffix array.
+ * Time: $O(N)$, \tilde 100ms for $N=5\cdot 10^5$
+ * Usage: sa_is(s, 26) // all entries must be in [0, 26)
  * Source: 
 	* https://github.com/atcoder/ac-library/blob/master/atcoder/string.hpp
  	* https://www.researchgate.net/publication/224176324_Two_Efficient_Algorithms_for_Linear_Time_Suffix_Array_Construction

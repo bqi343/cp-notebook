@@ -7,9 +7,9 @@
  * Source: KACTL
 	* https://en.wikipedia.org/wiki/Simpson%27s_rule
  * Verification: https://codeforces.com/gym/101793/problem/C
+ * Usage: quad([](db x) { return x*x+3*x+1; }, 2, 3) // 14.833...
  */
 
-// db f(db x) { return x*x+3*x+1; }
 template<class F> db quad(F f, db a, db b) {
 	const int n = 1000;
 	db dif = (b-a)/2/n, tot = f(a)+f(b);

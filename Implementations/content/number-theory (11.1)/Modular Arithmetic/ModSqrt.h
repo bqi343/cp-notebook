@@ -1,8 +1,9 @@
 /**
- * Description: square root of integer mod a prime, -1 if doesn't exist.
+ * Description: Tonelli-Shanks algorithm for square roots mod a prime. -1 if doesn't exist.
  * Time: O(\log^2(MOD))
  * Source: http://www.math.vt.edu/people/brown/class_homepages/shanks_tonelli.pdf
  * Verification: https://www.spoj.com/problems/CRYPTO1
+ * Usage: sqrt(mi((ll)1e10)); // 100000
  */
 
 #include "ModInt.h"

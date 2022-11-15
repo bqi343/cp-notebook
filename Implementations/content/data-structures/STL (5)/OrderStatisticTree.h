@@ -1,6 +1,6 @@
 /**
  * Description: A set (not multiset!) with support for finding the $n$'th
- * element, and finding the index of an element. Change \texttt{null\_type} for map.
+   * element, and finding the index of an element. Change \texttt{null\_type} to get a map.
  * Time: O(\log N)
  * Source: KACTL
    * https://codeforces.com/blog/entry/11080

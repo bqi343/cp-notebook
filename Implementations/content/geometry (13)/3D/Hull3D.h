@@ -3,9 +3,8 @@
  	* are coplanar. Normals to returned faces point outwards. 
  	* If coordinates are ints at most $B$ then \texttt{T} 
  	* should be large enough to support ints on the order 
- 	* of $B^3$. Changes order of points. WARNING: If there are
- 	* coplanar points, the number of faces that are output will
- 	* depend on the random seed, because points that are on the
+ 	* of $B^3$. Changes order of points. The number of returned faces
+ 	* may depend on the random seed, because points that are on the
  	* boundary of the convex hull may or may not be included
  	* in the output.
  * Time: O(N^2), O(N\log N)

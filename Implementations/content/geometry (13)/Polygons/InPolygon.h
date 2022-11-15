@@ -7,7 +7,7 @@
 
 #include "../Primitives/Point.h"
 
-int inPolygon(const P& p, const vP& poly) {
+int inPoly(const P& p, const vP& poly) {
 	int n = sz(poly), ans = 0;
 	F0R(i,n) {
 		P x = poly[i], y = poly[(i+1)%n]; if (x.s > y.s) swap(x,y);

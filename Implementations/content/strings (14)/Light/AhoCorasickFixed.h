@@ -7,10 +7,9 @@
 	* https://codeforces.com/contest/1207/problem/G
  */
 
-struct ACfixed { // fixed alphabet
-	static const int ASZ = 26;
-	struct node { AR<int,ASZ> to; int link; };
-	V<node> d = {{}};
+template<size_t ASZ> struct ACfixed {
+	struct Node { AR<int, ASZ> to; int link; };
+	V<Node> d{{}};
 	int add(str s) { // add word
 		int v = 0;
 		each(C,s) {

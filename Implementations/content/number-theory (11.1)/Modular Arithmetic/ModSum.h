@@ -1,6 +1,6 @@
 /**
- * Description: Counts $\#$ of lattice points $(x,y)$ s.t. $1 \le x, 1 \le y, ax+by \le s$
- * $\pmod 2^{64}$ and related quantities.
+ * Description: Counts $\#$ of lattice points $(x,y)$ in the triangle 
+ * $1 \le x, 1 \le y, ax+by \le s$ $\pmod{2^{64}}$ and related quantities.
  * Time: O(\log ab)
  * Source: KACTL
    * https://github.com/ecnerwala/cp-book/blob/master/src/lattice_cnt.hpp

@@ -6,14 +6,15 @@
  * Source: https://codeforces.com/gym/102012/submission/54638473
  * Verification: GP of Nanjing 2020 D - String Theory
  	* https://judge.yosupo.jp/problem/runenumerate
+ * Usage: solve("aaabababa") // {{0, 1, 1}, {2, 5, 2}}
  */
 
 #include "SuffixArray.h"
 
-V<array<int,3>> solve(str s) {
+V<AR<int,3>> solve(str s) {
 	int N = sz(s); SuffixArray A,B; 
 	A.init(s); reverse(all(s)); B.init(s);
-	V<array<int,3>> runs;
+	V<AR<int,3>> runs;
 	for (int p = 1; 2*p <= N; ++p) { // do in O(N/p) for period p
 		for (int i = 0, lst = -1; i+p <= N; i += p) {
 			int l = i-B.getLCP(N-i-p,N-i), r = i-p+A.getLCP(i,i+p);
@@ -22,4 +23,4 @@ V<array<int,3>> solve(str s) {
 		} // s.substr(i,p) == s.substr(i+p,p)
 	}
 	return runs;
-} // ps(solve("aaabababa"));
+}

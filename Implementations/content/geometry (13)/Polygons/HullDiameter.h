@@ -7,7 +7,7 @@
 
 #include "ConvexHull (13.2).h"
 
-db diameter(vP P) { 
+db diameter(vP P) {
 	P = hull(P);
 	int n = sz(P), ind = 1; db ans = 0;
 	if (n > 1) F0R(i,n) for (int j = (i+1)%n;;ind = (ind+1)%n) {

@@ -1,5 +1,5 @@
 /**
- * Description: not PyPy3, solves CF Factorisation Collaboration
+ * Description: Solution to CF Factorisation Collaboration. Demonstrates usage of Decimal.
  * Source: own
  * Verification: 
 	* https://codeforces.com/contest/1091/problem/G
@@ -21,7 +21,7 @@ def process(x):
 	global v
 	x = abs(x)
 	V = []
-	for t in v: # print(type(t)) -> <class 'int'> 
+	for t in v:
 		g = gcd(t,x)
 		if g != 1:
 			V.append(g)
@@ -34,7 +34,7 @@ for i in range(50):
 		process(x)
 	else:
 		sx = x*x%n # assert(gcd(sx,n) == 1)
-		print(f"sqrt {sx}") # print value of var
+		print(f"sqrt {sx}")
 		sys.stdout.flush()
 		X = nextInt()
 		process(x+X)

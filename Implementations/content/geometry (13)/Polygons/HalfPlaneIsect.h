@@ -3,9 +3,8 @@
    * A half-plane is the area to the left of a ray, which is defined
    * by a point \texttt{p} and a direction \texttt{dp}. 
    * Area of intersection should be sufficiently precise when all inputs
-   * are integers with magnitude $\le 10^5$. Probably works with floating 
-   * point too (but not well tested). Assumes intersection is bounded 
-   * (easiest way to ensure this is to uncomment the code below).
+   * are integers with magnitude $\le 10^5$. Intersection must be bounded.
+   * Probably works with floating point too (but EPS might need to be adjusted?).
  * Time: O(N\log N)
  * Source: Own
  * Verification: 
@@ -24,26 +23,31 @@ struct Ray {
 		return angleCmp(dp,L.dp); }
 };
 
-vP halfPlaneIsect(V<Ray> rays_orig) {
-	// int DX = 1e9, DY = 1e9; // bound input by rectangle [0,DX] x [0,DY]
-	// rays_orig.pb({P{0,0},P{1,0}});
-	// rays_orig.pb({P{DX,0},P{0,1}});
-	// rays_orig.pb({P{DX,DY},P{-1,0}});
-	// rays_orig.pb({P{0,DY},P{0,-1}});
-	sor(rays_orig); // sort rays by angle
-	V<Ray> rays; // without parallel rays
-	each(t,rays_orig) {
-		if (!sz(rays) || rays.bk < t) { rays.pb(t); continue; }
-		// WARNING: use cross(rays.bk,t) > EPS instead of rays.bk < t if working with floating point dp
-		if (cross(t.dp,t.p-rays.bk.p) > 0) rays.bk = t; // last two rays are parallel, remove one
+vP halfPlaneIsect(V<Ray> rays, bool add_bounds = false) {
+	if (add_bounds) {
+		int DX = 1e9, DY = 1e9; // bound input by rectangle [0,DX] x [0,DY]
+		rays.pb({P{0,0},P{1,0}});
+		rays.pb({P{DX,0},P{0,1}});
+		rays.pb({P{DX,DY},P{-1,0}});
+		rays.pb({P{0,DY},P{0,-1}});
+	}
+	sor(rays); // sort rays by angle
+	{ // remove parallel rays
+		V<Ray> nrays;
+		each(t,rays) {
+			if (!sz(nrays) || cross(nrays.bk.dp,t.dp) > EPS) { nrays.pb(t); continue; }
+			// last two rays are parallel, keep only one
+			if (cross(t.dp,t.p-nrays.bk.p) > 0) nrays.bk = t;
+		}
+		swap(rays, nrays);
 	}
 	auto bad = [&](const Ray& a, const Ray& b, const Ray& c) {
 		P p1 = a.isect(b), p2 = b.isect(c);
-		if (dot(p2-p1,b.dp) <= EPS) { // this EPS is required ...
+		if (dot(p2-p1,b.dp) <= EPS) { /// this EPS is required ...
 			if (cross(a.dp,c.dp) <= 0) return 2; // isect(a,b,c) = empty
-			return 1; // isect(a,c) == isect(a,b,c), remove b
+			return 1; // isect(a,c) == isect(a,b,c)
 		}
-		return 0; // all the rays matter
+		return 0; // all three rays matter
 	};
 	#define reduce(t) \
 		while (sz(poly) > 1) { \
@@ -58,7 +62,7 @@ vP halfPlaneIsect(V<Ray> rays_orig) {
 		reduce(poly[0]);
 		if (!bad(poly.bk,poly[0],poly[1])) break;
 	}
-	assert(sz(poly) >= 3); // if you reach this point, area should be nonzero
+	assert(sz(poly) >= 3); // expect nonzero area
 	vP poly_points; F0R(i,sz(poly)) 
 		poly_points.pb(poly[i].isect(poly[(i+1)%sz(poly)]));
 	return poly_points;

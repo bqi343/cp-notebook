@@ -1,5 +1,5 @@
 /**
- * Description: skack
+ * Description: stack
  * Source: https://www.geeksforgeeks.org/detect-cycle-in-a-graph/
  * Verification: VT HSPC 2019 D
  */

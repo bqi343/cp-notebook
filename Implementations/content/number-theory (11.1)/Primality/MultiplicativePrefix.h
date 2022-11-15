@@ -1,7 +1,7 @@
 /**
- * Description: $\sum_{i=1}^Nf(i)$ for any multiplicative function 
- 	* $f$ such that for square-free $x$, $f(x) = x^e$ for some fixed $e$
- * Usage: $pre0(N, 0)$ or $pre1(N, 0)$
+ * Description: $\sum_{i=1}^Nf(i)$ where $f(i)=\prod \texttt{val}[e]$ for each $p^e$
+    * in the factorization of $i$. Must satisfy $\texttt{val}[1]=1$.
+    * Generalizes to any multiplicative function with $f(p)=p^{\text{fixed power}}$.
  * Time: $O(\sqrt N)$
  * Source: Project Euler, https://oeis.org/A085731
  * Verification: https://www.codechef.com/problems/TABRARRAY
@@ -9,25 +9,14 @@
 
 #include "Sieve.h"
 
-ll pre0(ll n, int i) { // prod(primes) in factorization of x
-	ll res = n*(n+1)/2; // assume all square-free
-	for (;;++i) {
-		ll p = S.pr[i], nn = n/p/p; if (!nn) break;
-		for(ll coef=p*(p-1);nn;nn/=p)res-=coef*pre0(nn,i+1);
-	}
-	return res;
-}
-ll pre1(ll n, int i) { // gcd of x and arithmetic derivative 
-	// p^e contributes p^e if e%p == 0 and p^{e-1} otherwise
-	ll res = n; // assume all square-free
-	for (;;++i) {
-		ll p = S.pr[i], nn = n/p/p; if (!nn) break;
-		ll lst = 1, mul = p*p;
-		for (int e = 2; nn; mul *= p, nn /= p, ++e) {
-			ll nex = mul; if (e%p) nex /= p;
-			if (lst != nex) res += (nex-lst)*pre1(nn,i+1); 
-			lst = nex;
+vmi val;
+mi get_prefix(ll N, int p = 0) {
+	mi ans = N;
+	for (; S.primes.at(p) <= N / S.primes.at(p); ++p) {
+		ll new_N = N / S.primes.at(p) / S.primes.at(p);
+		for (int idx = 2; new_N; ++idx, new_N /= S.primes.at(p)) {
+			ans += (val.at(idx) - val.at(idx - 1)) * get_prefix(new_N, p + 1);
 		}
 	}
-	return res;
+	return ans;
 }

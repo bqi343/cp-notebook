@@ -1,4 +1,6 @@
+% check https://github.com/kth-competitive-programming/kactl/blob/main/content/tex/kactlpkg.sty for updates
 % This file contains LaTeX macros for KACTL
+% License: CC0
 \ProvidesPackage{kactlpkg}
 
 \usepackage{comment}
@@ -22,9 +24,6 @@
 \usepackage[normalem]{ulem}
 \usepackage[hidelinks]{hyperref}        % For clickable table of contents
 
-%\usepackage[T1]{fontenc}
-%\usepackage[scale]{beramono}
-
 % Config commands
 \newcommand{\subtitle}[1]{
 	\def\@subtitle{#1}
@@ -43,6 +42,13 @@
 	\def\@unilogo{#3}
 }
 
+\newcommand{\enablecolors}{
+	\lstset{basicstyle=\footnotesize\ttfamily\color{mygreen}}
+	\lstset{commentstyle=\color{darkgray}\itshape}
+	\lstset{keywordstyle=\color{myblue}}
+	\lstset{identifierstyle=\color{black}}
+}
+
 % Some default config
 \subtitle{{\tiny new}KACTL}
 \title{KTH Algorithm Competition Template Library}
@@ -53,15 +59,15 @@
 
 \renewcommand{\maketitle}[2]{
 	\begin{center}
-		{\LARGE \@title}\\
-		{\Large \@subtitle{} version #2}\\[0.1cm]
-		{\LARGE \textsc{#1}}
+		{\Huge \@title}\\
+		{\huge \@subtitle{} version #2}\\[0.1cm]
+		{\Huge \textsc{#1}}
 	\end{center}
 }
 
 % Remove temp files from old failed runs
 \AtBeginDocument{\immediate\write18{rm -f \@builddir/header.tmp}}
-\AtEndDocument{\immediate\write18{rm -f \@builddir/header.tmp}\immediate\write18{rm -f \@builddir/header2.tmp}\immediate\write18{rm -f \@builddir/kactl.tmp}\immediate\write18{rm -f ./header.tmp}}
+\AtEndDocument{\immediate\write18{rm -f \@builddir/header.tmp}\immediate\write18{rm -f \@builddir/header2.tmp}\immediate\write18{rm -f \@builddir/kactl.tmp}}
 
 % https://tex.stackexchange.com/questions/20444/what-are-immediate-write18-and-how-does-one-use-them
 
@@ -117,42 +123,37 @@
 }
 
 \def\@makechapterhead#1{
-
 	\parindent \z@ \raggedright \normalfont
 		\interlinepenalty\@M
-	{\underline{\Large \bfseries #1} }
+	{\underline{\huge \bfseries #1} }
 	\ifnum \c@secnumdepth >\m@ne
-		{\Large\bfseries (\thechapter) \par\nobreak }
+		{\huge\bfseries (\thechapter) \par\nobreak }
 	\fi
 	\startcontents[chapters]
 }
-
 \renewcommand\section{\@startsection {section}{1}{\z@}%
                                    {-0.5ex \@plus -1ex \@minus -.2ex}%
                                    {.4ex}%
-                                   {\normalfont\large\bfseries}}
-
+                                   {\normalfont\LARGE\bfseries}}
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}
 	{1ex\@plus -1ex \@minus -.3ex}
 	{.2ex}
-	{\normalfont\bfseries}}
-
+	{\normalfont\large\bfseries}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}
 	{1ex\@plus -1ex \@minus -.3ex}
 	{1ex \@plus .2ex}
-	{\normalfont\normalsize\bfseries}}
-
+	{\normalfont\large\bfseries}}
 % Styles for local toc
-\titlecontents{localsection}[1.5em]{\footnotesize}{}
-	{\footnotesize}{\titlerule*[0.8em]{.}\contentspage}
-\titlecontents{localsubsection}[3.8em]{\footnotesize}{}
-	{\footnotesize}{\titlerule*[0.8em]{.}\contentspage}
-
+\titlecontents{localsection}[1.5em]{\small}{}
+	{\small}{\titlerule*[0.8em]{.}\contentspage}
+\titlecontents{localsubsection}[3.8em]{\small}{}
+	{\small}{\titlerule*[0.8em]{.}\contentspage}
 % Styles for main toc
 \renewcommand{\chaptermark}[1]{\markboth{\emph{ #1}}{}}
-\renewcommand{\cftbeforetoctitleskip}{-50pt}
+\renewcommand{\cftbeforetoctitleskip}{-45pt}
 \renewcommand{\cftaftertoctitleskip}{10pt}
-\renewcommand{\cftbeforechapskip}{10pt}
+\renewcommand{\cftbeforechapskip}{11pt}
+\renewcommand\cftchapfont{\large\bfseries}
 \renewcommand{\cftdotsep}{4.5}
 
 % Proper carets and tildes
@@ -187,23 +188,16 @@
 
 \definecolor{mygreen}{HTML}{007000}
 \definecolor{myblue}{HTML}{0000dd}
-\definecolor{mygray}{HTML}{eeeeee}
 
 % Configure source code listings
 \lstset{language=C++}
-\lstset{aboveskip=3pt}	
-\lstset{belowskip=2pt}
-% \lstset{morekeywords={alignas,alignof}}
-% \lstset{deletedirectives={line}}
-% \lstset{backgroundcolor=\color{mygray}}
+\lstset{morekeywords={alignas,alignof}}
+\lstset{deletedirectives={line}}
 \lstset{frame=t} % line on top of code block
 \lstset{tabsize=2}
 \lstset{showstringspaces=false}
 \lstset{breaklines=true,breakindent=12pt} 
-\lstset{postbreak=\raisebox{0ex}[0ex][0ex]{\color{darkgray}\ensuremath{\hookrightarrow}}} 
-% arrow after break
-% \lstset{emptylines=1} % skip > 1 empty line, * maintains original line numbering
-% \lstset{numbers=left}
+\lstset{postbreak=\raisebox{0ex}[0ex][0ex]{\color{darkgray}\ensuremath{\hookrightarrow}}} % arrow after break
 \lstset{stepnumber=1}
 \lstset{numberstyle=\footnotesize\color{black}}
 
@@ -212,7 +206,6 @@
 % https://tex.stackexchange.com/questions/24599/what-point-pt-font-size-are-large-etc
 % tt family: monospaced typedwriter - https://www.tug.org/pracjourn/2006-1/schmidt/schmidt.pdf
 % http://texdoc.net/texmf-dist/doc/latex/listings/listings.pdf
-
 
 % https://tex.stackexchange.com/questions/240262/digit-zero-with-a-dot-inside-also-in-text-mode
 % \makeatletter
@@ -265,17 +258,12 @@
 }
 % \makeatother
 
-\lstset{basicstyle=\scriptsize\ttfamily}
+\lstset{basicstyle=\footnotesize\ttfamily}
 \lstset{literate={^}{\caret}{1} {~}{\tilde}{1} {\{}{\nicelbrace}{1} {\}}{\nicerbrace}{1} {0}{\pmzerodot}{1}}
+\lstset{emptylines=*1}
 \lstset{inputencoding=utf8}
-
-\newcommand{\enablecolors}{	
-	\lstset{basicstyle=\scriptsize\ttfamily\color{mygreen}}	
-	\lstset{commentstyle=\color{darkgray}\itshape}
-	\lstset{keywordstyle=\color{myblue}} % default \bfseries
-	%ex. for, if, int, ...,	
-	\lstset{identifierstyle=\color{black}}	
-}
+\lstset{aboveskip=3pt}
+\lstset{belowskip=2pt}
 
 \lstdefinelanguage{raw}{} % Raw language, no keywords.
 
@@ -287,23 +275,23 @@
 
 \newcommand{\maketeampage}{
 	\pagestyle{empty}
+	\setcounter{page}{0}
 	\begin{center}
 		\strut % Magic
 		\vspace{3cm}\\
-		\includegraphics[width=8cm]{\@unilogo}\\
-		{\Huge \@unilong\\}
+		\includegraphics[width=3cm]{\@unilogo}\\
+		{\fontsize{25}{30}\selectfont \@unilong\\}
 		{\fontsize{60}{60}\selectfont \@teamname\\}
 		\vspace{0.5cm}
-		{\Large \@teammembers\\}
+		{\huge \@teammembers\\}
 		\vfill
-		{\huge \@contestname}\\
+		{\fontsize{21}{25}\selectfont \@contestname}\\
 		\vspace{0.5cm}
-		{\Large \@contestdate}\\
+		{\huge \@contestdate}\\
 		\vspace{1cm}
 	\end{center}
 	\clearpage
 	\pagestyle{fancy}
-	\setcounter{page}{1}
 }
 
 \newcommand{\kactlref}[1]{
@@ -413,7 +401,7 @@
 
 
 \newcommand{\codeheader}[2]{
-	{\par\noindent\scriptsize{\textbf{#1:} #2\par}}
+	{\par\noindent\footnotesize{\textbf{#1:} #2\par}}
 }
 
 \long\def\@makecaption#1#2{

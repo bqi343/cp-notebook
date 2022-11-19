@@ -5,6 +5,7 @@
  * Verification: https://codeforces.com/contest/1284/submission/68175790
  	* https://codeforces.com/contest/1284/submission/68207607 
  	* (don't use atan2, weird stuff happens!)
+ * Usage: vP v; sort(all(v),angleCmp);
  */
 
 #include "Point.h"
@@ -15,9 +16,5 @@ int half(P x) { return x.s != 0 ? sgn(x.s) : -sgn(x.f); }
 bool angleCmp(P a, P b) { int A = half(a), B = half(b);
 	return A == B ? cross(a,b) > 0 : A < B; }
 
-/* Usage: 
- 	* vP v;
- 	* sort(all(v),[](P a, P b) { return 
- 		atan2(a.s,a.f) < atan2(b.s,b.f); });
- 	* sort(all(v),angleCmp); // should give same result
-*/
+// equivalent to: sort(all(v),[](P a, P b) { 
+//    return atan2(a.s,a.f) < atan2(b.s,b.f); });

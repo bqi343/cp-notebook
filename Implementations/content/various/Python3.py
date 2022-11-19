@@ -1,5 +1,5 @@
 /**
- * Description: Solution to CF Factorisation Collaboration. Demonstrates usage of Decimal.
+ * Description: Python review.
  * Source: own
  * Verification: 
 	* https://codeforces.com/contest/1091/problem/G
@@ -46,10 +46,3 @@ print()
 sys.stdout.flush() # sys.exit(0) -> exit
 # sys.setrecursionlimit(int(1e9)) -> stack size
 # print(f'{ans:=.6f}') -> print ans to 6 decimal places
-
-from decimal import * # arbitrary precision decimals
-
-ctx = getcontext()
-ctx.prec = 28
-print(Decimal(1) / Decimal(7)) # 0.1428571428571428571428571429
-print(ctx.power(Decimal(10),-30)) # 1E-30

@@ -11,7 +11,6 @@
 
 #include "DelaunayFast.h"
 // include inCircle from DelaunayFast
-
 const T BIG = 1e9; // >>(10^4)^2
 V<AR<int,3>> triIncrement(vP v) {
 	v.pb({-BIG,-BIG}); v.pb({BIG,0}); v.pb({0,BIG});

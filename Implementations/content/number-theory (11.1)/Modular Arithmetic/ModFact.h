@@ -1,6 +1,6 @@
 /**
- * Description: Combinations modulo a prime $MOD$. Assumes $SZ \le MOD$.
- * Time: O(SZ)
+ * Description: Combinations modulo a prime $MOD$. Assumes $2\le N \le MOD$.
+ * Time: O(N)
  * Source: KACTL
  * Verification: https://dmoj.ca/problem/tle17c4p5
  * Usage: Factorials F; F.init(10); F.C(6, 4); // 15

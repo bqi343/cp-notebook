@@ -51,6 +51,8 @@ def getNorm(pre): # format code
 			a += '\n'
 		if '#pragma once' in a:
 			continue
+		if len(a) > 0 and a.startswith('#include "ModInt.h"'):
+			continue
 		if len(a) <= 1:
 			if not blank:
 				res += a
@@ -190,7 +192,7 @@ EN_old += 2
 for i in range(len(names)):
 	code = codes[i]
 	if names[i] == "TC": # C++11 ...
-		code = temp_old[:ST_old]+modint_template+"\n\n"+modfact_template+"\n\n"+code+temp_old[EN_old:]
+		code = temp[:ST]+modint_template+"\n\n"+modfact_template+"\n\n"+code+temp[EN:]
 	elif names[i] in ["FHC","GCJ"]:
 		code = temp[:ST]+modint_template+"\n\n"+modfact_template+"\n\n"+code+temp[EN:]
 	elif names[i] in ["TS","Interact"]:

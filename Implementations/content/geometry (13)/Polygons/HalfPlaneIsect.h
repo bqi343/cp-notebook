@@ -24,8 +24,8 @@ struct Ray {
 };
 
 vP halfPlaneIsect(V<Ray> rays, bool add_bounds = false) {
-	if (add_bounds) {
-		int DX = 1e9, DY = 1e9; // bound input by rectangle [0,DX] x [0,DY]
+	if (add_bounds) { // bound input by rectangle [0,DX] x [0,DY]
+		int DX = 1e9, DY = 1e9;
 		rays.pb({P{0,0},P{1,0}});
 		rays.pb({P{DX,0},P{0,1}});
 		rays.pb({P{DX,DY},P{-1,0}});

@@ -12,9 +12,9 @@
 
 #include "../Primitives/Point.h"
 
-// using T = ll; (if coords are < 2e4)
+// using lll = ll; (if coords are < 2e4)
 using lll = __int128;
-// return true if p strictly within circumcircle(a,b,c)
+// returns true if p strictly within circumcircle(a,b,c)
 bool inCircle(P p, P a, P b, P c) { 
 	a -= p, b -= p, c -= p; // assert(cross(a,b,c)>0);
 	lll x = (lll)norm(a)*cross(b,c)+(lll)norm(b)*cross(c,a)

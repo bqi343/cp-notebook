@@ -15,7 +15,8 @@ mi get_prefix(ll N, int p = 0) {
 	for (; S.primes.at(p) <= N / S.primes.at(p); ++p) {
 		ll new_N = N / S.primes.at(p) / S.primes.at(p);
 		for (int idx = 2; new_N; ++idx, new_N /= S.primes.at(p)) {
-			ans += (val.at(idx) - val.at(idx - 1)) * get_prefix(new_N, p + 1);
+			ans += (val.at(idx) - val.at(idx - 1))
+					 * get_prefix(new_N, p + 1);
 		}
 	}
 	return ans;

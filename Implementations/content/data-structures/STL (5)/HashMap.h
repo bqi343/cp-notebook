@@ -2,8 +2,8 @@
  * Description: Hash map with similar API as unordered\_map.
  	* Initial capacity must be a power of 2 if provided.
  * Source: KACTL
- * Memory: \tilde 1.5x
- * Time: \tilde 3x faster
+ * Memory: \tilde 1.5x unordered map
+ * Time: \tilde 3x faster than unordered map
  * Usage: ht<int,int> h({},{},{},{},{1<<16});
  */
 

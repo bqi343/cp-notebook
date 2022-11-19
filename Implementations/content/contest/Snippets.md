@@ -24,7 +24,6 @@ struct ${1:Name} {
 
 #ifdef LOCAL
 int main() {
-	clock_t beg = clock();
 	${1:Name} c; ps(c.${2:method}());
 	dbg((db)(clock()-beg)/CLOCKS_PER_SEC);
 }

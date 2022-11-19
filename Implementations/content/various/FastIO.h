@@ -6,7 +6,7 @@
  	* https://codeforces.com/contest/1254/submission/65420506 (neal)
  	* https://codeforces.com/blog/entry/45835 (AI.Cash)
  * Verification: https://codeforces.com/gym/102394/problem/G 
- * Usage: initO(); int a,b; ri(a,b); wi(b,'\\n'); wi(a,'\\n'); 
+ * Usage: initO(); int a,b; ri(a,b); wi(b,'\textbackslash n'); wi(a,'\textbackslash n'); 
  */
 
 inline namespace FastIO {

@@ -21,7 +21,7 @@
 struct TwoSAT {
 	int N = 0; vpi edges;
 	void init(int _N) { N = _N; }
-	int addVar() { return N++; } // for atMostOne
+	int addVar() { return N++; }
 	void either(int x, int y) { 
 		x = max(2*x,-1-2*x), y = max(2*y,-1-2*y);
 		edges.eb(x,y); }
@@ -37,8 +37,7 @@ struct TwoSAT {
 		}
 		either(cur,~li[1]);
 	}
-	vb solve(int _N = -1) {
-		if (_N != -1) N = _N;
+	vb solve() {
 		SCC S; S.init(2*N);
 		each(e,edges) S.ae(e.f^1,e.s), S.ae(e.s^1,e.f);
 		S.gen(); reverse(all(S.comps)); // reverse topo order

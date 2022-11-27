@@ -7,8 +7,6 @@
  * Verification: https://codeforces.com/gym/102411/problem/G
  */
 
-#include "Euclid.h"
-
 ll minBetween(ll A, ll B, ll L, ll R) {
 	// min x s.t. exists y s.t. L <= A*x-B*y <= R
 	A %= B;

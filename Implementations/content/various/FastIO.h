@@ -1,10 +1,12 @@
 /**
- * Description: Fast input and output.
- * Time: input is $\sim$300ms faster for $10^6$ long longs on CF
+ * Description: Fast input and output for integers and strings. For doubles, read them
+ * as strings and convert them to double using \texttt{stod}.
+ * Time: input is $\sim$300ms faster for $10^6$ long longs on CF.
  * Source: 
  	* https://codeforces.com/gym/102394/submission/64154785
  	* https://codeforces.com/contest/1254/submission/65420506 (neal)
  	* https://codeforces.com/blog/entry/45835 (AI.Cash)
+ 	* https://codeforces.com/blog/entry/93706 (double input)
  * Verification: https://codeforces.com/gym/102394/problem/G 
  * Usage: initO(); int a,b; ri(a,b); wi(b,'\textbackslash n'); wi(a,'\textbackslash n'); 
  */

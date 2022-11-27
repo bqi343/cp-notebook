@@ -2,13 +2,13 @@
  * Description: Kirchhoff's Matrix Tree Theorem.
 	* Given adjacency matrix, calculates \# of spanning trees.
  * Source: various
- * Verification: SPOJ MIFF (matrix inverse modulo prime)
+ * Verification: TC Finals 2022 1000
  */
 
 #include "MatrixInv.h"
 
-T numSpan(Mat m) { 
-	int n = sz(m); Mat res(n-1,n-1);
+T numSpan(const Mat& m) { 
+	int n = sz(m); Mat res = makeMat(n-1,n-1);
 	F0R(i,n) FOR(j,i+1,n) {
 		mi ed = m[i][j]; res[i][i] += ed;
 		if (j != n-1) {

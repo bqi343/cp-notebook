@@ -1,10 +1,10 @@
 /**
  * Description: Arbitrary-precision decimals
+ * Source: https://docs.python.org/3/library/decimal.html
  */
 
 from decimal import *
 
-ctx = getcontext()
-ctx.prec = 28
-print(Decimal(1) / Decimal(7)) # 0.1428571428571428571428571429
-print(ctx.power(Decimal(10),-30)) # 1E-30
+getcontext().prec = 100 # how many digits of precision
+print(Decimal(1) / Decimal(7)) # 0.142857142857...
+print(Decimal(10) ** -100) # 1E-100

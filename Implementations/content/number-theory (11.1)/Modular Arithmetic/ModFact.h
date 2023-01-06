@@ -3,12 +3,12 @@
  * Time: O(N)
  * Source: KACTL
  * Verification: https://dmoj.ca/problem/tle17c4p5
- * Usage: Factorials F; F.init(10); F.C(6, 4); // 15
+ * Usage: F.init(10); F.C(6, 4); // 15
  */
 
 #include "ModInt.h"
 
-struct Factorials {
+struct {
 	vmi invs, fac, ifac;
 	void init(int N) { // idempotent
 		invs.rsz(N), fac.rsz(N), ifac.rsz(N); 
@@ -20,4 +20,4 @@ struct Factorials {
 		if (a < b || b < 0) return 0;
 		return fac[a]*ifac[b]*ifac[a-b]; 
 	}
-};
+} F;

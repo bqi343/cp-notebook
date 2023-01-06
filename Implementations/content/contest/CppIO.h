@@ -143,12 +143,17 @@ inline namespace Output {
 		#define dbg(...) loc_info(__LINE__,#__VA_ARGS__), dbg_out(__VA_ARGS__)
 		#define dbgl(lev,x) loc_info(__LINE__,#x), dbgl_out<lev>(x)
 	#else // don't actually submit with this
-		#define dbg(...) 0
-		#define dbgl(lev,x) 0
+		#define dbg(...)
+		#define dbgl(lev,x)
 	#endif
 
-	const clock_t beg = clock();
-	#define dbg_time() dbg((db)(clock()-beg)/CLOCKS_PER_SEC)
+	// https://stackoverflow.com/questions/47980498/accurate-c-c-clock-on-a-multi-core-processor-with-auto-overclock?noredirect=1&lq=1
+	const auto beg = std::chrono::high_resolution_clock::now();
+	void dbg_time() {
+		auto duration = chrono::duration<double>(
+			std::chrono::high_resolution_clock::now() - beg);
+		dbg(duration.count());
+	}
 }
 
 inline namespace FileIO {

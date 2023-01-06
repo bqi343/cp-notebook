@@ -2,6 +2,8 @@
 
 You might want to read [Um_nik's FAQ](https://codeforces.com/blog/entry/47516) too. I hope this is slightly more informative. :)
 
+(Update: FAQs specifically for USACO contests can be found [here](https://usaco.guide/general/usaco-faq).)
+
 ## General
 
 > Hey, could you help me get started with competitive programming.
@@ -16,7 +18,7 @@ You might want to read [Um_nik's FAQ](https://codeforces.com/blog/entry/47516) t
 
 > I have just started on codeforces and competetive programming. Can you suggest something?
 
-I hope this link helps you. If not, please let me know!
+I hope this document helps you. If not, please let me know!
 
 > does this contains all the things or full training materials
 
@@ -38,25 +40,25 @@ Mostly just looking stuff up along the way.
 
 > What are the ways that you practice makes you so perfect about programming?
 
-Keep doing interesting problems (and stay organized??) idk
+idk
 
-> I find difficult to prepare for math and cp competitions together without neglecting school ...  I know you obviously can't solve my problem, but I'd just like to have the advice of an expert like you and if you've ever been in my situation
+> I find difficult to prepare for math and cp competitions together without neglecting school ... I know you obviously can't solve my problem, but I'd just like to have the advice of an expert like you and if you've ever been in my situation
 
-You shouldn't neglect school, but generally I've kept up with schoolwork and still had plenty of free time.
+Generally I've kept up with schoolwork and still had plenty of free time.
 
 > do you have a particular method to organize time well and manage everything (competitions, courses, homework ...)
 
 > Pls which calendar do u use to structure ur coding schedule.
 
-clist.by & workflowy & google calendar
+[clist.by](https://clist.by/) & workflowy & google calendar. [Notion](https://www.notion.so/) is good too.
 
 > Which site to practice on ? I want to concentrate only on one ... Which is better way of practice, doing questions topic wise ? Or sorting all the questions in ascending order and try to complete as many as possible ?
 
-I don’t know, try all of them and see what works for you ...
+idk, try all of them and see what works for you ...
 
 > What was your strategy considering you were preparing for IOI.
 
-Other than doing past IOI tasks, I didn't do anything specifically for IOI. If you're looking for olympiad problems see "Contests."
+Other than doing past IOI tasks, I didn't do anything specifically for IOI.
 
 ## Redirection
 
@@ -70,23 +72,23 @@ See "Competition Math."
 
 > which problems should I solve
 
-See "Contests."
+See [Contests](https://usaco.guide/general/contests).
 
 > Can you provide me some coding books where I can inprove my skills.
 
-See "Resources."
+See [Resources](https://usaco.guide/general/resources-cp).
 
 > I looked at your guide, but some resources were quite difficult.
 
-See "Resources" again; I think that CPH and USACO Bronze are definitely okay for beginners.
+See [Resources](https://usaco.guide/general/resources-cp) again; I think that CPH and USACO Bronze are definitely okay for beginners.
+
+(Update: USACO Bronze is harder nowadays so maybe this is not actually true ... [here](https://usaco.guide/general/expected-knowledge) are some suggestions)
 
 > i think whenever i am learning some new topic i m not able to solve good questions on that topic so thats what holding me back.
 
-I hope the links in "Implementations" will suffice.
-
 > Can you suggest me some of the topics or algorithms I need to master to rock on Silver Category???
 
-See "Contests" -> "USACO Links."
+See the [USACO Guide](https://usaco.guide/).
 
 ## Topics
 
@@ -96,7 +98,7 @@ See "Contests" -> "USACO Links."
 
 Well, a fair amount of C and D questions are hard precisely because they don't really fall into any of these categories.
 
-> i m always interested in this but i m not able to understand whether i m doin wrong by taking hard topics and not able to solve questions on them  or am i doing wrong on solving too easy ones ,
+> i m always interested in this but i m not able to understand whether i m doin wrong by taking hard topics and not able to solve questions on them or am i doing wrong on solving too easy ones ,
 
 Idk, there are plenty of hard questions involving easy topics.
 
@@ -120,11 +122,11 @@ The former is quite good. I haven't read the latter.
 
 > i need help with a problem related to calculating ( a power b )mod prime
 
-> i need help with  a combinatorial problem. the problem is as follows : given a grid of size 2xN, you need to count number of ways to paint the blocks of this grid with M litres of red colour such that painted blocks does not share a side. To paint 1 block ,1 litre of colour is required. I can do this with the help of dynamic programming if value of N less than 1000. Can I solve this problem in case of N <= 10^9. (codechef)
+> i need help with a combinatorial problem. the problem is as follows : given a grid of size 2xN, you need to count number of ways to paint the blocks of this grid with M litres of red colour such that painted blocks does not share a side. To paint 1 block ,1 litre of colour is required. I can do this with the help of dynamic programming if value of N less than 1000. Can I solve this problem in case of N <= 10^9. (codechef)
 
 > hi dude, can you help me please?, I realy stuck at this problem, could you give me a hint?, I think it is a graph problem
 
-If you give me a link to the problem and I find it sufficiently interesting, then I might solve it (or not, if I don't check my messages).
+If you give me a link to the problem and I find it sufficiently interesting, then I might solve it (or not).
 
 > Any opinion on working through random contests v.s. practicing topic by topic?
 
@@ -152,13 +154,13 @@ Until recently, I don’t believe that I have ever finished a virtual contest wh
 
 > could you please tell me which IDE do you use on your MAC?
 
-I use https://ideone.com/ LOL. I used to use https://csacademy.com/ but it looks like the queue times are rlly bad now. Locally I use Sublime Text w/ command line. At IOI I used Geany.
-
-[Why the downvotes? :(](https://codeforces.com/blog/entry/63065?#comment-469907)
+I used to use https://ideone.com/ or https://csacademy.com/workspace/. Now I use Sublime Text w/ command line. At IOI I used Geany.
 
 > Do you use a debugger?
 
-No, ~~I can't figure out how to get GDB to work on Mac~~ and print statements generally suffice. Actually, [these instructions](https://sourceware.org/gdb/wiki/BuildingOnDarwin) work but sometimes it hangs ...
+No, ~~I can't figure out how to get GDB to work on Mac~~ and print statements generally suffice.
+
+(Update: I got LLDB working on Mac but I haven't actually used it in-contest.)
 
 > did you do it on your own or did you have a coach !
 
@@ -170,10 +172,9 @@ mostly self? haven't been tutored or done any tutoring myself
 
 ## Bad
 
-
 > I've been doing Programming since almost 2 years, And I didn't see a much progress. I sometimes struggle with Div2 C in contest time. I have solved almost 400 problems from different OJs like spoj, codechef or cf. I generally got fear from higher difficulty problems.
 
-> i left coding some months ago. i was distressed as i was not doing well as i was not improving , the time when i started codechef contests  i was stuck on question 4 or 5 and now also i m stuck on same level questions
+> i left coding some months ago. i was distressed as i was not doing well as i was not improving , the time when i started codechef contests i was stuck on question 4 or 5 and now also i m stuck on same level questions
 
 Do more problems? :shrug:
 
@@ -207,7 +208,7 @@ Doubt it. (How are you going to do ALL of the questions that I've done? o_O)
 
 > How many hours you practice daily?
 
-Idk, you can probably estimate from my submission history and tell me.
+Idk. Maybe you can probably estimate from my submission history and tell me.
 
 > ur graph seems very interesting to me .
 
@@ -215,13 +216,15 @@ ok !
 
 > but i don't know where to start
 
-idk either (just go with CPH?)
+idk either
+
+(Update: [Here](https://usaco.guide/general/expected-knowledge) are some suggestions.)
 
 > please please could u please tell me how much mathematics or TOPICS needed for CP ? please tell me please
 
 a lot
 
-> how can I solve problem B(div 2) and C(div 2) regular  in codeforces contest
+> how can I solve problem B(div 2) and C(div 2) regular in codeforces contest
 
 think (and practice)
 
@@ -229,7 +232,7 @@ think (and practice)
 
 yes
 
-> If I walk with your link on github only enough to be a master on CodeForces in 3 month's  , and Pass an interview in international companies like : amazon , facebook , apple , google...etc
+> If I walk with your link on github only enough to be a master on CodeForces in 3 month's , and Pass an interview in international companies like : amazon , facebook , apple , google...etc
 
 no
 

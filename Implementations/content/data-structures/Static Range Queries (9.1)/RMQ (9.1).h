@@ -10,7 +10,7 @@
  * Time: O(1)
  */
 
-tcT> struct RMQ {
+tcT> struct RMQ { // floor(log_2(x))
 	int level(int x) { return 31-__builtin_clz(x); }
 	V<T> v; V<vi> jmp;
 	int cmb(int a, int b) {

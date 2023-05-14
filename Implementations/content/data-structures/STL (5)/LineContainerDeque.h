@@ -6,7 +6,7 @@
  	* http://www.usaco.org/index.php?page=viewproblem2&cpid=626
  */
 
-#include "LCold.h"
+#include "LineContainer.h"
 
 struct LCdeque : deque<Line> { 
 	void addBack(Line L) { // assume nonempty

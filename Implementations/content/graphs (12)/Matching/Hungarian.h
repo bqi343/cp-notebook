@@ -1,46 +1,64 @@
 /**
- * Description: Given array of (possibly negative) costs to complete 
-	* each of $N$ (1-indexed) jobs w/ each of $M$ workers $(N\le M)$, 
-	* finds min cost to complete all jobs such that each worker is 
-	* assigned to at most one job. Dijkstra with potentials works
-	* in almost the same way as MCMF.
- * Time: O(N^2M)
- * Source: https://github.com/mpfeifer1/Kattis/blob/master/cordonbleu.cpp, tourist?
-	* http://www.hungarianalgorithm.com/examplehungarianalgorithm.php
-	* https://en.wikipedia.org/wiki/Hungarian_algorithm
-	* https://www.geeksforgeeks.org/hungarian-algorithm-assignment-problem-set-1-introduction/
-	* https://brilliant.org/wiki/hungarian-matching/
-	* https://www.topcoder.com/community/competitive-programming/tutorials/assignment-problem-and-hungarian-algorithm/
- * Verification: https://www.spoj.com/problems/BABY/
- 	* https://open.kattis.com/problems/cordonbleu
-	* also see https://codeforces.com/blog/entry/63701
+ * Description: Given J jobs and W workers (J <= W), computes the minimum cost
+ * to assign each prefix of jobs to distinct workers.
+ *
+ * @tparam T a type large enough to represent integers on the order of J *
+ * max(|C|)
+ * @param C a matrix of dimensions JxW such that C[j][w] = cost to assign j-th
+ * job to w-th worker (possibly negative)
+ *
+ * @return a vector of length J, with the j-th entry equaling the minimum cost
+ * to assign the first (j+1) jobs to distinct workers
+ * Time: O(J^2W)
+ * Source:
+	 * http://e-maxx.ru/algo/assignment_hungary#6
+	 * https://en.wikipedia.org/wiki/Hungarian_algorithm
+ * Verification:
+	 * https://www.spoj.com/problems/BABY/
+	 * https://open.kattis.com/problems/cordonbleu
+	 * more problems at https://codeforces.com/blog/entry/63701
  */
-
-using C = ll;
-C hungarian(const V<V<C>>& a) { 
-	int N = sz(a)-1, M = sz(a[0])-1; assert(N <= M);
-	V<C> u(N+1), v(M+1); // potentials to make edge weights >= 0
-	vi job(M+1);
-	FOR(i,1,N+1) { // find alternating path with job i
-		const C inf = numeric_limits<C>::max();
-		int w = 0; job[w] = i; // add "dummy" worker 0
-		V<C> dist(M+1,inf); vi pre(M+1,-1); vb done(M+1);
-		while (job[w]) { // dijkstra
-			done[w] = 1; int j = job[w], nexW; C delta = inf; 
-			// fix dist[j], update dists from j
-			F0R(W,M+1) if (!done[W]) { // try all workers
-				if (ckmin(dist[W],a[j][W]-u[j]-v[W])) pre[W] = w;
-				if (ckmin(delta,dist[W])) nexW = W;
+template <class T> vector<T> hungarian(const vector<vector<T>> &C) {
+	const int J = (int)size(C), W = (int)size(C[0]);
+	assert(J <= W);
+	/// job[w] = job assigned to w-th worker, or -1 if no job assigned
+	/// note: a W-th worker was added for convenience
+	vector<int> job(W + 1, -1);
+	vector<T> ys(J), yt(W + 1); /// potentials
+	/// -yt[W] will equal the sum of all deltas
+	vector<T> answers;
+	const T inf = numeric_limits<T>::max();
+	for (int j_cur = 0; j_cur < J; ++j_cur) { /// assign j_cur-th job
+		int w_cur = W;
+		job[w_cur] = j_cur;
+		/// min reduced cost over edges from Z to worker w
+		vector<T> min_to(W + 1, inf);
+		vector<int> prv(W + 1, -1); /// previous worker on alternating path
+		vector<bool> in_Z(W + 1);   /// whether worker is in Z
+		while (job[w_cur] != -1) {  /// runs at most j_cur + 1 times
+			in_Z[w_cur] = true;
+			const int j = job[w_cur];
+			T delta = inf;
+			int w_next;
+			for (int w = 0; w < W; ++w) {
+				if (!in_Z[w]) {
+					if (ckmin(min_to[w], C[j][w] - ys[j] - yt[w]))
+						prv[w] = w_cur;
+					if (ckmin(delta, min_to[w])) w_next = w;
+				}
 			}
-			F0R(W,M+1) { // subtract constant from all edges going 
-				// from done -> not done vertices, lowers all 
-				// remaining dists by constant
-				if (done[W]) u[job[W]] += delta, v[W] -= delta; 
-				else dist[W] -= delta; 
+			/// delta will always be non-negative,
+			/// except possibly during the first time this loop runs
+			/// if any entries of C[j_cur] are negative
+			for (int w = 0; w <= W; ++w) {
+				if (in_Z[w]) ys[job[w]] += delta, yt[w] -= delta;
+				else min_to[w] -= delta;
 			}
-			w = nexW;
-		} // potentials adjusted so all edge weights >= 0
-		for (int W; w; w = W) job[w] = job[W = pre[w]];
-	} // job[w] = 0, found alternating path 
-	return -v[0]; // min cost
+			w_cur = w_next;
+		}
+		/// update assignments along alternating path
+		for (int w; w_cur != -1; w_cur = w) job[w_cur] = job[w = prv[w_cur]];
+		answers.push_back(-yt[W]);
+	}
+	return answers;
 }

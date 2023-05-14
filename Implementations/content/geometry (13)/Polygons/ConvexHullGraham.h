@@ -15,7 +15,7 @@ vi hullInd(const vP& v) {
 	sort(all(cand),[&](int a, int b) { 
 		// sort by angle, tiebreak by distance
 		P x = v[a]-v[ind], y = v[b]-v[ind]; T t = cross(x,y);
-		return t != 0 ? t > 0 : norm(x) < norm(y); }); 
+		return t != 0 ? t > 0 : abs2(x) < abs2(y); }); 
 	each(c,cand) {
 		while (sz(C) > 1 && cross(v[end(C)[-2]],v[C.bk],v[c]) <= 0) 
 			C.pop_back();

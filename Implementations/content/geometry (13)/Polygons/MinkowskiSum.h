@@ -35,6 +35,6 @@ T diameter2(vP p) { // example application: squared diameter
 	vP a = hull(p);
 	vP b = a; each(t, b) t *= -1;
 	vP c = minkowski_sum(a, b);
-	T ret = 0; each(t, c) ckmax(ret, norm(t));
+	T ret = 0; each(t, c) ckmax(ret, abs2(t));
 	return ret;
 }

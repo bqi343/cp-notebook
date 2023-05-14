@@ -12,8 +12,8 @@ T sq(T a) { return a*a; }
 
 bool close(const P& a, const P& b) { 
 	return sgn(a.f-b.f) == 0 && sgn(a.s-b.s) == 0; } 
-T norm(const P& p) { return sq(p.f)+sq(p.s); }
-T abs(const P& p) { return sqrt(norm(p)); }
+T abs2(const P& p) { return sq(p.f)+sq(p.s); }
+T abs(const P& p) { return sqrt(abs2(p)); }
 T arg(const P& p) { return atan2(p.s,p.f); }
 P conj(const P& p) { return P(p.f,-p.s); }
 P perp(const P& p) { return P(-p.s,p.f); }
@@ -32,7 +32,7 @@ P operator/(const P& l, const T& r) {
 P operator*(const P& l, const P& r) { 
 	return P(l.f*r.f-l.s*r.s,l.s*r.f+l.f*r.s); }
 P operator/(const P& l, const P& r) { 
-	return l*conj(r)/norm(r); }
+	return l*conj(r)/abs2(r); }
 P& operator+=(P& l, const P& r) { return l = l+r; }
 P& operator-=(P& l, const P& r) { return l = l-r; }
 P& operator*=(P& l, const T& r) { return l = l*r; }

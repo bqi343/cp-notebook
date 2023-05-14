@@ -11,8 +11,8 @@ using P = pair<T,T>; using vP = V<P>; using Line = pair<P,P>;
 int sgn(T a) { return (a>EPS)-(a<-EPS); }
 T sq(T a) { return a*a; }
 
-T norm(P p) { return sq(p.f)+sq(p.s); }
-T abs(P p) { return sqrt(norm(p)); }
+T abs2(P p) { return sq(p.f)+sq(p.s); }
+T abs(P p) { return sqrt(abs2(p)); }
 T arg(P p) { return atan2(p.s,p.f); }
 P conj(P p) { return P(p.f,-p.s); }
 P perp(P p) { return P(-p.s,p.f); }
@@ -24,7 +24,7 @@ P operator*(P l, T r) { return P(l.f*r,l.s*r); }
 P operator/(P l, T r) { return P(l.f/r,l.s/r); }
 P operator*(P l, P r) { // complex # multiplication 
 	return P(l.f*r.f-l.s*r.s,l.s*r.f+l.f*r.s); }
-P operator/(P l, P r) { return l*conj(r)/norm(r); }
+P operator/(P l, P r) { return l*conj(r)/abs2(r); }
 
 P unit(const P& p) { return p/abs(p); }
 T dot(const P& a, const P& b) { return a.f*b.f+a.s*b.s; }

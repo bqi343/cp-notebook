@@ -17,8 +17,8 @@ using lll = __int128;
 // returns true if p strictly within circumcircle(a,b,c)
 bool inCircle(P p, P a, P b, P c) { 
 	a -= p, b -= p, c -= p; // assert(cross(a,b,c)>0);
-	lll x = (lll)norm(a)*cross(b,c)+(lll)norm(b)*cross(c,a)
-			+(lll)norm(c)*cross(a,b);
+	lll x = (lll)abs2(a)*cross(b,c)+(lll)abs2(b)*cross(c,a)
+			+(lll)abs2(c)*cross(a,b);
 	return x*(cross(a,b,c)>0?1:-1) > 0;
 }
 

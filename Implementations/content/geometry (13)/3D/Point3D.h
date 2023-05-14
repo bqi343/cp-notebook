@@ -17,10 +17,10 @@ T sq(T x) { return x*x; }
 */
 
 using P3 = AR<T,3>; using Tri = AR<P3,3>; using vP3 = V<P3>;
-T norm(const P3& x) { 
+T abs2(const P3& x) { 
 	T sum = 0; F0R(i,3) sum += sq(x[i]);
 	return sum; }
-T abs(const P3& x) { return sqrt(norm(x)); }
+T abs(const P3& x) { return sqrt(abs2(x)); }
 
 P3& operator+=(P3& l, const P3& r) { F0R(i,3) l[i] += r[i]; 
 	return l; }

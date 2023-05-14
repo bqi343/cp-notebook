@@ -165,10 +165,10 @@ Q ortho(const Q& x) { isVec(x); // return any nonzero vector perpendicular to q
 Q vrand() { // random vector
 	Q q = Q(); F0R(i,3) q[i] = rng()%(2*MOD)-MOD;
 	return q; }
-T norm(const Q& x) { // sum of squares
+T abs2(const Q& x) { // sum of squares
 	T sum = 0; each(t,x) sum += t*t;
 	return sum; }
-T abs(const Q& x) { return sqrt(norm(x)); }
+T abs(const Q& x) { return sqrt(abs2(x)); }
 
 /////// BASIC ARITHMETIC
 Q& operator+=(Q& l, const Q& r) { F0R(i,4) l[i] += r[i]; 
@@ -186,7 +186,7 @@ Q operator*(Q l, const T& r) { return l *= r; }
 Q operator*(const T& r, const Q& l) { return l*r; }
 Q operator/(Q l, const T& r) { return l /= r; }
 Q unit(Q x) { return x/abs(x); }
-Q inv(const Q& x) { return conj(x)/norm(x); }
+Q inv(const Q& x) { return conj(x)/abs2(x); }
 bool eq(Q a, Q b) { return abs(a-b) < EPS; }
 
 Q operator*(const Q& x, const Q& y) { Q z = Q(); // multiply quaters
@@ -248,10 +248,10 @@ vQ eigenBasis(const Mat& A) {
 Q round(const Q& q) { Q a, b; // get closest Hurwitz quaternion
 	F0R(i,4) a[i] = round(q[i]); // try int
 	F0R(i,4) b[i] = round(q[i]-0.5)+0.5; // and half-int
-	return norm(a-q) < norm(b-q) ? a : b; }
+	return abs2(a-q) < abs2(b-q) ? a : b; }
 Q operator%(const Q& a, const Q& b) { return a-b*round(inv(b)*a); }
-Q gcd(Q a, Q b) { if (norm(a) > norm(b)) swap(a,b);
-	return norm(a) == 0 ? b : gcd(b%a,a); }
+Q gcd(Q a, Q b) { if (abs2(a) > abs2(b)) swap(a,b);
+	return abs2(a) == 0 ? b : gcd(b%a,a); }
 
 vQ verts;
 str shape;

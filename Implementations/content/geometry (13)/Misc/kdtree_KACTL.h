@@ -15,7 +15,7 @@ struct Node {
 	Node *f = 0, *s = 0;
 	T distance(const P& p) { // min squared dist to point p
 		T x = min(max(p.f,x0),x1), y = min(max(p.s,y0),y1); 
-		return norm(P(x,y)-p); }
+		return abs2(P(x,y)-p); }
 	Node(vP&& vp) : pt(vp[0]) {
 		for (P p : vp) { ckmin(x0,p.f), ckmax(x1,p.f);
 			ckmin(y0,p.s), ckmax(y1,p.s); }
@@ -36,7 +36,7 @@ struct KDtree {
 	pair<T,P> search(Node *node, const P& p) {
 		if (!node->f) { // should not find the point itself
 			if (p == node->pt) return {INF, P()};
-			return {norm(p-node->pt), node->pt}; }
+			return {abs2(p-node->pt), node->pt}; }
 		Node *f = node->f, *s = node->s;
 		T bf = f->distance(p), bs = s->distance(p);
 		if (bf > bs) swap(bs,bf), swap(f,s);

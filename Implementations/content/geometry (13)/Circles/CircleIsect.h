@@ -17,7 +17,7 @@ vP isect(const Circ& x, const Circ& y) { // precondition: x!=y
 	return {x.f+tmp*P(C,S),x.f+tmp*P(C,-S)};
 }
 vP isect(const Circ& x, const Line& y) {
-	P c = foot(x.f,y); T sq_dist = sq(x.s)-norm(x.f-c);
+	P c = foot(x.f,y); T sq_dist = sq(x.s)-abs2(x.f-c);
 	if (sgn(sq_dist) < 0) return {};
 	P offset = unit(y.s-y.f)*sqrt(max(sq_dist,T(0)));
 	return {c+offset,c-offset};

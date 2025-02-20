@@ -2,6 +2,7 @@
  * Description: Multiply two 64-bit integers mod another if 128-bit is not available.
 	* modMul is equivalent to \texttt{(ul)(\_\_int128(a)*b\%mod)}. 
 	* Works for $0\le a,b<mod<2^{63}.$
+ 	* NOTE: Only works if system supports 18-bit floating point.
  * Source: KACTL
  * Verification: see "Faster Factoring"
  */
